@@ -1,7 +1,13 @@
-desc "Runs tests."
+desc "Runs tests with xctool."
 # Usage: rake test
 task :test do
   system "xctool -project RRiOSApp/RRiOSApp.xcodeproj -scheme RRiOSApp -sdk iphonesimulator8.0 build"
+end
+
+desc "Builds with xcodebuild."
+# Usage: rake build
+task :buid do
+  system "xcodebuild -project RRiOSApp/RRiOSApp.xcodeproj -target RRiOSApp -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO"
 end
 
 desc "Commits changes."
