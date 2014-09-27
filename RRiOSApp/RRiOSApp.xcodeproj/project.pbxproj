@@ -15,6 +15,8 @@
 		CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9719D5F92D004E34F9 /* Images.xcassets */; };
 		CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */; };
 		CE70CFA719D5F92D004E34F9 /* RRiOSAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CFA619D5F92D004E34F9 /* RRiOSAppTests.m */; };
+		CE70CFBE19D624EF004E34F9 /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CFBD19D624EF004E34F9 /* Restroom.m */; };
+		CE70CFBF19D624EF004E34F9 /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CFBD19D624EF004E34F9 /* Restroom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CE70CFA619D5F92D004E34F9 /* RRiOSAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRiOSAppTests.m; sourceTree = "<group>"; };
 		CE70CFB019D61C38004E34F9 /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restroom.h; path = RRiOSApp/Restroom.h; sourceTree = SOURCE_ROOT; };
 		CE70CFB119D61C38004E34F9 /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restroom.m; path = RRiOSApp/Restroom.m; sourceTree = SOURCE_ROOT; };
+		CE70CFBC19D624EF004E34F9 /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restroom.h; sourceTree = "<group>"; };
+		CE70CFBD19D624EF004E34F9 /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restroom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			children = (
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
+				CE70CFBC19D624EF004E34F9 /* Restroom.h */,
+				CE70CFBD19D624EF004E34F9 /* Restroom.m */,
 				CE70CF9119D5F92D004E34F9 /* ViewController.h */,
 				CE70CF9219D5F92D004E34F9 /* ViewController.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
@@ -228,6 +234,7 @@
 			files = (
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
+				CE70CFBE19D624EF004E34F9 /* Restroom.m in Sources */,
 				CE70CF9319D5F92D004E34F9 /* ViewController.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 			);
@@ -237,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE70CFBF19D624EF004E34F9 /* Restroom.m in Sources */,
 				CE70CFA719D5F92D004E34F9 /* RRiOSAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

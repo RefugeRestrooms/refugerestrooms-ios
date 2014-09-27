@@ -19,10 +19,6 @@ task :commit do
   system "git commit -am '#{message}'"
   system "rm -r ../refuge-ios/*"
   system "cp -r ./* ../refuge-ios/"
-  system "cd ../refuge-ios/"
-  system "git add --all"
-  system "git commit -am '#{message}'"
-  system "cd ../iOS-RefugeRestrooms-App"
   puts "Git commit attempt complete."
 end
 
@@ -36,10 +32,5 @@ task :ship do
   system "git push"
   system "rm -r ../refuge-ios/*"
   system "cp -r ./* ../refuge-ios/"
-  system "cd ../refuge-ios/"
-  system "git add --all"
-  system "git commit -am '#{message}'"
-  system "git push"
-  system "cd ../iOS-RefugeRestrooms-App"
   puts "Git commit attempt complete."
 end
