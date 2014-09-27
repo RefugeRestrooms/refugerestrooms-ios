@@ -23,7 +23,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andFlagForAccessibility:@"false" andFlagForUnisex:@"true" andDirections:@"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. " andComments:@"" andLatitude:@"35.8448936" andLongitude:@"-78.8860234" andNumDownvotes:@"0" andNumUpvotes:@"0" andDateCreated:@"2014-09-21T01:36:51.593Z" andDateUpdated:@"2014-09-21T01:36:51.593Z" andDatabaseID:@"6303"];
+    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andDirections:@"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. " andComments:@"" andNumDownvotes:0 andNumUpvotes:0 andDateCreated:[NSDate distantPast] andDateUpdated:[NSDate distantPast] andDatabaseID:@"6303"];
 }
 
 - (void)tearDown {
@@ -35,9 +35,25 @@
 
 # pragma mark - Test Initialization of Restroom objects
 
-- (void)testThatRestroomExists
+- (void)testThatARestroomCanBeCreated
 {
     XCTAssertNotNil(restroom, @"Should be able to create a Restroom instance.");
+}
+
+- (void)testThatLatitudeCanBeSet
+{
+    double testLatitude = 35.8448936;
+    restroom.latitude = testLatitude;
+    
+    XCTAssertEqual(testLatitude, restroom.latitude, @"Should be able to set latitude for Restroom.");
+}
+
+- (void)testThatLongitudeCanBeSet
+{
+    double testLongitude = -78.8860234;
+    restroom.longitude = testLongitude;
+    
+    XCTAssertEqual(testLongitude, restroom.longitude, @"Should be able to set longitude for Restroom.");
 }
 
 - (void)testThatRestroomHasAName
@@ -67,12 +83,12 @@
 
 - (void)testThatRestroomHasAFlagForAccessibility
 {
-    XCTAssertEqualObjects(restroom.isAccessible, @"false", @"Restroom should have the accessibility flag given when initialized.");
+    XCTAssertEqual(restroom.isAccessible, FALSE, @"Restroom should have the accessibility flag given when initialized.");
 }
 
 - (void)testThatRestroomHasAFlagForUnisex
 {
-    XCTAssertEqualObjects(restroom.isUnisex, @"true", @"Restroom should have the unisex flag given when initialized.");
+    XCTAssertEqual(restroom.isUnisex, TRUE, @"Restroom should have the unisex flag given when initialized.");
 }
 
 - (void)testThatRestroomHasDirections
@@ -85,34 +101,24 @@
     XCTAssertEqualObjects(restroom.comment, @"", @"Restroom should have the comments given when initialized.");
 }
 
-- (void)testThatRestroomHasALatitude
-{
-    XCTAssertEqualObjects(restroom.latitude, @"35.8448936", @"Restroom should have the latitude given when initialized.");
-}
-
-- (void)testThatRestroomHasALongitude
-{
-    XCTAssertEqualObjects(restroom.longitude, @"-78.8860234", @"Restroom should have the longitude given when initialized.");
-}
-
 - (void)testThatRestroomHasAValueForDownvote
 {
-    XCTAssertEqualObjects(restroom.numDownvotes, @"0", @"Restroom should have the number of downvotes given when initialized.");
+    XCTAssertEqual(restroom.numDownvotes, 0, @"Restroom should have the number of downvotes given when initialized.");
 }
 
 - (void)testThatRestroomHasAValueForUpvote
 {
-    XCTAssertEqualObjects(restroom.numUpvotes, @"0", @"Restroom should have the number of upvotes given when initialized.");
+    XCTAssertEqual(restroom.numUpvotes, 0, @"Restroom should have the number of upvotes given when initialized.");
 }
 
 - (void)testThatRestroomHasADateForCreatedAt
 {
-    XCTAssertEqualObjects(restroom.dateCreated, @"2014-09-21T01:36:51.593Z", @"Restroom should have the date created given when initialized.");
+    XCTAssertTrue([restroom.dateCreated isKindOfClass:[NSDate class]], @"Restroom should have the date created given when initialized.");
 }
 
 - (void)testThatRestroomHasADateForUpdatedAt
 {
-    XCTAssertEqualObjects(restroom.dateUpdated, @"2014-09-21T01:36:51.593Z", @"Restroom should have the date last update given when initialized.");
+    XCTAssertTrue([restroom.dateUpdated isKindOfClass:[NSDate class]], @"Restroom should have the date last update given when initialized.");
 }
 
 - (void)testThatRestroomHasAnID

@@ -10,7 +10,7 @@
 
 @implementation Restroom
 
--(id) initWithName:(NSString *)name andStreet:(NSString *)street andCity:(NSString *)city andState:(NSString *)state andCountry:(NSString *)country andFlagForAccessibility:(NSString *)isAccessible andFlagForUnisex:(NSString *)isUnisex andDirections:(NSString *)directions andComments:(NSString *)comment andLatitude:(NSString *)latitude andLongitude:(NSString *)longitude andNumDownvotes:(NSString *)numDownvotes andNumUpvotes:(NSString *)numUpvotes andDateCreated:(NSString *)dateCreated andDateUpdated:(NSString *)dateUpdated andDatabaseID:(NSString *)databaseID
+-(id) initWithName:(NSString *)name andStreet:(NSString *)street andCity:(NSString *)city andState:(NSString *)state andCountry:(NSString *)country andIsAccessible:(BOOL)isAccessible andIsUnisex:(BOOL)isUnisex andDirections:(NSString *)directions andComments:(NSString *)comment andNumDownvotes:(int)numDownvotes andNumUpvotes:(int)numUpvotes andDateCreated:(NSDate *)dateCreated andDateUpdated:(NSDate *)dateUpdated andDatabaseID:(NSString *)databaseID
 {
     self = [super init];
     
@@ -23,8 +23,6 @@
     _isUnisex = isUnisex;
     _directions = directions;
     _comment = comment;
-    _latitude = latitude;
-    _longitude = longitude;
     _numDownvotes = numDownvotes;
     _numUpvotes = numUpvotes;
     _dateCreated = dateCreated;

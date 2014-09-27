@@ -20,13 +20,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RRiOSApp/Restroom.h"
-            timestampString = "433468941.167516"
+            timestampString = "433480572.960003"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "-initWithName:andStreet:andCity:andState:andCountry:andFlagForAccessibility:andFlagForUnisex:andDirections:andComments:andLatitude:andLongitude:andNumDownvotes:andNumUpvotes:andDateCreated:andDateUpdated:andDatabaseID:"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-initWithName:andStreet:andCity:andState:andCountry:andIsAccessible:andIsUnisex:andDirections:andComments:andNumDownvotes:andNumUpvotes:andDateCreated:andDateUpdated:andDatabaseID:"
             landmarkType = "4">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSAppTests/RRiOSAppTests.m"
+            timestampString = "433483979.015953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-testThatLatitudeCanBeSet"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
