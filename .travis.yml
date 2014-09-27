@@ -1,4 +1,7 @@
 language: objective-c
-xcode_project: RRiOSApp/RRiOSApp.xcodeproj # path to your xcodeproj folder
-xcode_scheme: RRiOSApp
-xcode_sdk: iphonesimulator7.0
+install:
+  - brew remove --force xctool
+  - brew install xctool --HEAD
+
+script:
+  - xctool test -project RRiOSApp/RRiOSAppxcodeproj -scheme RRiOSApp -sdk iphonesimulator7.0
