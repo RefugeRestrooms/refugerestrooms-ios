@@ -83,12 +83,12 @@
 
 - (void)testThatRestroomHasAFlagForAccessibility
 {
-    XCTAssertEqual(restroom.isAccessible, FALSE, @"Restroom should have the accessibility flag given when initialized.");
+    XCTAssertEqual(restroom.isAccessible, 0, @"Restroom should have the accessibility flag given when initialized.");
 }
 
 - (void)testThatRestroomHasAFlagForUnisex
 {
-    XCTAssertEqual(restroom.isUnisex, TRUE, @"Restroom should have the unisex flag given when initialized.");
+    XCTAssertEqual(restroom.isUnisex, 1, @"Restroom should have the unisex flag given when initialized.");
 }
 
 - (void)testThatRestroomHasDirections
