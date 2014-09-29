@@ -33,12 +33,8 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     // get underlying error
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
     
-    // create reportable error
-    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
-    
-//    [_delegate fetchingRestroomsWithQuery:nil failedWithError:reportableError];
-    
-    [_delegate fetchingRestroomsFailedWithError:reportableError];
+    // tell delegate about an error occuring
+    [self tellDelegateAboutQuestionSearchError:errorInfo];
 }
 
 - (void)recievedRestroomsJSON:(NSString *)objectNotation
@@ -49,15 +45,25 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     
     if(!restrooms)
     {
+        // underlying error
         if(error)
         {
             errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
         }
         
-        NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
-        
-        [_delegate fetchingRestroomsFailedWithError:reportableError];
+        // tell delegate about an error occcuring
+        [self tellDelegateAboutQuestionSearchError:errorInfo];
     }
+}
+
+#pragma mark - Helper methods
+
+- (void)tellDelegateAboutQuestionSearchError:(NSDictionary *)errorInfo
+{
+    // create reportable error
+    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
+    
+    [_delegate fetchingRestroomsFailedWithError:reportableError];
 }
 
 @end

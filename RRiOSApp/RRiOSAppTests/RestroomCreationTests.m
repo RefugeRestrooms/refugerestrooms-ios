@@ -25,6 +25,7 @@
 
     MockRestroomManagerDelegate *delegate;
     NSError *underlyingError;
+    MockRestroomBuilder *restroomBuilder;
 }
 
 - (void)setUp
@@ -38,6 +39,14 @@
     restroomManager.delegate = delegate;
     
     underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
+    
+    restroomBuilder = [[MockRestroomBuilder alloc] init];
+    restroomBuilder.arrayToReturn = nil;
+    restroomBuilder.errorToSet = underlyingError;
+    
+    restroomManager.restroomBuilder = restroomBuilder;
+    
+    [restroomManager recievedRestroomsJSON:@"Fake JSON"];
 }
 
 - (void)tearDown
@@ -45,6 +54,7 @@
     restroomManager = nil;
     delegate = nil;
     underlyingError = nil;
+    restroomManager.restroomBuilder = nil;
     
     [super tearDown];
 }
@@ -101,30 +111,12 @@
 
 - (void)testRestroomJSONIsPassedToRestroomBuilder
 {
-    // set RestroomBuilder
-    MockRestroomBuilder *restroomBuilder = [[MockRestroomBuilder alloc] init];
-    restroomManager.restroomBuilder = restroomBuilder;
-    
-    [restroomManager recievedRestroomsJSON:@"Fake JSON"];
-    
     XCTAssertEqualObjects(restroomBuilder.JSON, @"Fake JSON", @"Downloaded JSON should be sent to RestroomBuilder.");
-    
-    restroomManager.restroomBuilder = nil;
 }
 
 - (void)testDelegateNotifiedOfErrorWhenRestroomBuilderFails
 {
-    MockRestroomBuilder *restroomBuider = [[MockRestroomBuilder alloc] init];
-    restroomBuider.arrayToReturn = nil;
-    restroomBuider.errorToSet = underlyingError;
-    
-    restroomManager.restroomBuilder = restroomBuider;
-    
-    [restroomManager recievedRestroomsJSON:@"Fake JSON"];
-    
     XCTAssertNotNil(@"The delegate should have found out about the error created when RestroomBuilder fails.");
-    
-    restroomManager.restroomBuilder = nil;
 }
 
 // TODO: Implement this test
