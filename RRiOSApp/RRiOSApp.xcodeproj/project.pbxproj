@@ -19,6 +19,9 @@
 		CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E6619DA0114005F3B04 /* MockRestroomCommunicator.m */; };
 		CE1F5E6B19DA05C0005F3B04 /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E6A19DA05C0005F3B04 /* Restroom.m */; };
 		CE1F5E6C19DA05C0005F3B04 /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E6A19DA05C0005F3B04 /* Restroom.m */; };
+		CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */; };
+		CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */; };
+		CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -54,6 +57,10 @@
 		CE1F5E6619DA0114005F3B04 /* MockRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRestroomCommunicator.m; sourceTree = "<group>"; };
 		CE1F5E6919DA05C0005F3B04 /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restroom.h; sourceTree = "<group>"; };
 		CE1F5E6A19DA05C0005F3B04 /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restroom.m; sourceTree = "<group>"; };
+		CE1F5E6F19DA1AA1005F3B04 /* RestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomBuilder.h; sourceTree = "<group>"; };
+		CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilder.m; sourceTree = "<group>"; };
+		CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRestroomBuilder.h; sourceTree = "<group>"; };
+		CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRestroomBuilder.m; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE70CF8919D5F92D004E34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +120,8 @@
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
 				CE1F5E6919DA05C0005F3B04 /* Restroom.h */,
 				CE1F5E6A19DA05C0005F3B04 /* Restroom.m */,
+				CE1F5E6F19DA1AA1005F3B04 /* RestroomBuilder.h */,
+				CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */,
 				CE1F5E5D19DA0055005F3B04 /* RestroomCommunicator.h */,
 				CE1F5E5E19DA0055005F3B04 /* RestroomCommunicator.m */,
 				CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */,
@@ -141,6 +150,8 @@
 		CE70CFA319D5F92D004E34F9 /* RRiOSAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */,
+				CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */,
 				CE1F5E6519DA0114005F3B04 /* MockRestroomCommunicator.h */,
 				CE1F5E6619DA0114005F3B04 /* MockRestroomCommunicator.m */,
 				CE1F5E5919D9FD4E005F3B04 /* MockRestroomManagerDelegate.h */,
@@ -269,6 +280,7 @@
 				CE1F5E6719DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CE70CF9319D5F92D004E34F9 /* ViewController.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
+				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationTests.m in Sources */,
 				CE1F5E5B19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m in Sources */,
+				CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */,
 				CE1F5E4519D9D86D005F3B04 /* RestroomTests.m in Sources */,
 				CE1F5E4719D9DA6F005F3B04 /* RestroomManagerTests.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,

@@ -12,6 +12,7 @@
 #import "RestroomCommunicator.h"
 
 #import "RestroomCommunicator.h"
+#import "RestroomBuilder.h"
 
 extern NSString *RestroomManagerError;
 
@@ -24,8 +25,10 @@ enum
 
 @property (weak, nonatomic) id <RestroomManagerDelegate> delegate;
 @property (strong) RestroomCommunicator *communicator;
+@property (strong) RestroomBuilder *restroomBuilder;
 
 - (void)fetchRestroomsForQuery:(NSString *)query;
 - (void)searchingForRestroomFailedWithError:(NSError *)error;
+- (void)recievedRestroomsJSON:(NSString *)objectNotation;
 
 @end

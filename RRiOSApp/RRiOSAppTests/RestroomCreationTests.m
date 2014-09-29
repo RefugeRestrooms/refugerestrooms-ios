@@ -11,6 +11,8 @@
 
 #import "MockRestroomManagerDelegate.h"
 #import "MockRestroomCommunicator.h"
+#import "MockRestroomBuilder.h"
+
 #import "RestroomManager.h"
 
 @interface RestroomCreationTests : XCTestCase
@@ -95,6 +97,19 @@
     [restroomManager searchingForRestroomFailedWithError: underlyingError];
     
     XCTAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey: NSUnderlyingErrorKey], underlyingError, @"The underlying should be available to client code.");
+}
+
+- (void)testRestroomJSONIsPassedToRestroomBuilder
+{
+    // set RestroomBuilder
+    MockRestroomBuilder *restroomBuilder = [[MockRestroomBuilder alloc] init];
+    restroomManager.restroomBuilder = restroomBuilder;
+    
+    [restroomManager recievedRestroomsJSON:@"Fake JSON"];
+    
+    XCTAssertEqualObjects(restroomBuilder.JSON, @"Fake JSON", @"Downloaded JSON should be sent to RestroomBuilder.");
+    
+    restroomManager.restroomBuilder = nil;
 }
 
 // TODO: Implement this test

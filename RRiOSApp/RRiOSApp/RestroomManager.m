@@ -41,4 +41,9 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     [_delegate fetchingRestroomsFailedWithError:reportableError];
 }
 
+- (void)recievedRestroomsJSON:(NSString *)objectNotation
+{
+    NSArray *restrooms = [_restroomBuilder restroomsFromJSON:objectNotation error:NULL];
+}
+
 @end
