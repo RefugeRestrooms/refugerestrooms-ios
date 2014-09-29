@@ -10,4 +10,9 @@
 
 @implementation MockRestroomManagerDelegate
 
+- (void)fetchingRestroomsFailedWithError:(NSError *)error
+{
+    self.fetchError = error;
+}
+
 @end

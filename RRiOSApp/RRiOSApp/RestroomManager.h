@@ -11,11 +11,21 @@
 #import "RestroomManagerDelegate.h"
 #import "RestroomCommunicator.h"
 
+#import "RestroomCommunicator.h"
+
+extern NSString *RestroomManagerError;
+
+enum
+{
+    RestroomManagerErrorSearchCode
+};
+
 @interface RestroomManager : NSObject
 
 @property (weak, nonatomic) id <RestroomManagerDelegate> delegate;
 @property (strong) RestroomCommunicator *communicator;
 
 - (void)fetchRestroomsForQuery:(NSString *)query;
+- (void)searchingForRestroomFailedWithError:(NSError *)error;
 
 @end

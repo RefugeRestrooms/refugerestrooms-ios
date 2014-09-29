@@ -58,6 +58,14 @@
     XCTAssertEqual(testLongitude, restroom.longitude, @"Should be able to set longitude for Restroom.");
 }
 
+- (void)testThatSearchRankCanBeSet
+{
+    double testSearchRank = 0.0607927;
+    restroom.searchRank = testSearchRank;
+    
+    XCTAssertEqual(testSearchRank, restroom.searchRank, @"Should be able to se search rank for Restroom.");
+}
+
 - (void)testThatRestroomHasAName
 {
     XCTAssertEqualObjects(restroom.name, @"Target", @"Restroom should have the name given when initialized.");

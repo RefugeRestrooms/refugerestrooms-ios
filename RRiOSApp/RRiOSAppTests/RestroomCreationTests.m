@@ -71,4 +71,36 @@
     XCTAssertTrue([communicator wasAskedToFetchRestrooms], @"The communicator should need to fetch data.");
 }
 
+// don't report underlying error to delegate for user to see
+- (void)testErrorReturnedToDelegateIsNotSameErrorNotifiedByCommunicator
+{
+    // create delegate
+    MockRestroomManagerDelegate *delegate = [[MockRestroomManagerDelegate alloc] init];
+    restroomManager.delegate = delegate;
+
+    // create underlying error
+    NSError *underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
+    [restroomManager searchingForRestroomFailedWithError: underlyingError];
+    
+    XCTAssertFalse(underlyingError == [delegate fetchError], @"Error should be at the correct level of abstraction.");
+}
+
+// we still want to document error for admins
+- (void)testErrorReturnedToDelegateDocumentsUnderlyingError
+{
+    MockRestroomManagerDelegate *delegate = [[MockRestroomManagerDelegate alloc] init];
+    restroomManager.delegate = delegate;
+    
+    NSError *underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
+    [restroomManager searchingForRestroomFailedWithError: underlyingError];
+    
+    XCTAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey: NSUnderlyingErrorKey], underlyingError, @"The underlying should be available to client code.");
+}
+
+// TODO: Implement this test
+- (void)testRestroomCreatedFromSearchHasSearchRankSet
+{
+    XCTAssert(YES, @"Pass");
+}
+
 @end

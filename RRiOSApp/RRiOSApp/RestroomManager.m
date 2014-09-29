@@ -11,6 +11,8 @@
 
 @implementation RestroomManager
 
+NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError";
+
 - (void)setDelegate:(id<RestroomManagerDelegate>)newDelegate
 {
     if(newDelegate && ![newDelegate conformsToProtocol:@protocol(RestroomManagerDelegate)])
@@ -24,6 +26,19 @@
 - (void)fetchRestroomsForQuery:(NSString *)query
 {
     [_communicator searchForRestroomsWithQuery:query];
+}
+
+- (void)searchingForRestroomFailedWithError:(NSError *)error
+{
+    // get underlying error
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    
+    // create reportable error
+    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
+    
+//    [_delegate fetchingRestroomsWithQuery:nil failedWithError:reportableError];
+    
+    [_delegate fetchingRestroomsFailedWithError:reportableError];
 }
 
 @end

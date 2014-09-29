@@ -27,6 +27,7 @@
 
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitude;
+@property (assign, nonatomic) double searchRank;
 
 - (id)initWithName:(NSString *)name
          andStreet:(NSString *)street

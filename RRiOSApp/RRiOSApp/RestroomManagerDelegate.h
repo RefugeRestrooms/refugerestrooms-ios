@@ -10,4 +10,8 @@
 
 @protocol RestroomManagerDelegate <NSObject>
 
+//- (void)fetchingRestroomsWithQuery:(NSString *)query failedWithError:(NSError *)error;
+
+- (void)fetchingRestroomsFailedWithError:(NSError *)error;
+
 @end
