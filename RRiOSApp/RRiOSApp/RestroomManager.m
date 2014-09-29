@@ -21,4 +21,9 @@
     _delegate = newDelegate;
 }
 
+- (void)fetchRestroomsForQuery:(NSString *)query
+{
+    [_communicator searchForRestroomsWithQuery:query];
+}
+
 @end

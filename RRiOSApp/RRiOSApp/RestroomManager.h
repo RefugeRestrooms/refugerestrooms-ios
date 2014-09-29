@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 
 #import "RestroomManagerDelegate.h"
+#import "RestroomCommunicator.h"
 
 @interface RestroomManager : NSObject
 
 @property (weak, nonatomic) id <RestroomManagerDelegate> delegate;
+@property (strong) RestroomCommunicator *communicator;
+
+- (void)fetchRestroomsForQuery:(NSString *)query;
 
 @end

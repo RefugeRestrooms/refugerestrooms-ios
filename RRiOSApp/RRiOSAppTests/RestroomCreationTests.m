@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import "MockRestroomManagerDelegate.h"
+#import "MockRestroomCommunicator.h"
 #import "RestroomManager.h"
 
 @interface RestroomCreationTests : XCTestCase
@@ -56,6 +57,18 @@
 - (void)testManagerAcceptsNilAsDelegate
 {
     XCTAssertNoThrow(restroomManager.delegate = nil, @"It should be acceptable to use nil as an object's delegate.");
+}
+
+- (void)testSearchingForRestroomMeansReqestingData
+{
+    MockRestroomCommunicator *communicator = [[MockRestroomCommunicator alloc] init];
+    
+    NSString *query = @"Target";
+    
+    restroomManager.communicator = communicator;
+    [restroomManager fetchRestroomsForQuery:query];
+    
+    XCTAssertTrue([communicator wasAskedToFetchRestrooms], @"The communicator should need to fetch data.");
 }
 
 @end
