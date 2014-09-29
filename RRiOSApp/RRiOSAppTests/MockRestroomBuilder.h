@@ -13,5 +13,7 @@
 @interface MockRestroomBuilder : RestroomBuilder
 
 @property (copy) NSString *JSON;
+@property (copy) NSArray *arrayToReturn;
+@property (copy) NSError *errorToSet;
 
 @end

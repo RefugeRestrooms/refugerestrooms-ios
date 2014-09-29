@@ -14,7 +14,7 @@
 {
     _JSON = objectNoation;
     
-    return nil;
+    return _arrayToReturn;
 }
 
 @end
