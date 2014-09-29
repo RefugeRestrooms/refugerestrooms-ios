@@ -35,14 +35,106 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RRiOSAppTests/RRiOSAppTests.m"
-            timestampString = "433536765.294718"
+            filePath = "RRiOSAppTests/MockRestroomManagerDelegate.h"
+            timestampString = "433716718.507904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-testThatLatitudeCanBeSet"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "@interface MockRestroomManagerDelegate"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RestroomManager.m"
+            timestampString = "433710254.541151"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "-setDelegate:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomManager setDelegate:]"
+                  moduleName = "RRiOSApp"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomManager.m"
+                  timestampString = "433716160.972871"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "39">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomManager setDelegate:]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomManager.m"
+                  timestampString = "433716169.771121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSAppTests/RestroomCreationTests.m"
+            timestampString = "433716281.13352"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-testConformingObjectCanBeDelegate"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomCreationTests testConformingObjectCanBeDelegate]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCreationTests.m"
+                  timestampString = "433716727.351143"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomCreationTests testConformingObjectCanBeDelegate]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCreationTests.m"
+                  timestampString = "433716727.351579"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "171">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
