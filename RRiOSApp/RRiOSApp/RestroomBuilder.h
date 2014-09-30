@@ -12,7 +12,8 @@
 
 enum
 {
-    RestroomBuilderInvalidJSONError
+    RestroomBuilderInvalidJSONError,
+    RestroomBuilderMissingDataError
 };
 
 - (NSArray *)restroomsFromJSON: (NSString *)objectNotation error:(NSError **)error;

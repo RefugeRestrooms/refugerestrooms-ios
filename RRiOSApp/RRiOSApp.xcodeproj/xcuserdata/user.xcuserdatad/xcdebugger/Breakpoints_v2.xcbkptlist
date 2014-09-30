@@ -65,12 +65,12 @@
                   symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
                   moduleName = "RRiOSApp"
                   urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
-                  timestampString = "433796612.144006"
+                  timestampString = "433797654.832302"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "55">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -79,12 +79,12 @@
                   symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
                   moduleName = "RRiOSAppTests"
                   urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
-                  timestampString = "433796614.680564"
+                  timestampString = "433797656.145434"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "52">
+                  offsetFromSymbolStart = "55">
                </Location>
             </Locations>
          </BreakpointContent>

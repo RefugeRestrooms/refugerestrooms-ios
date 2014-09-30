@@ -97,6 +97,64 @@
     XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a database ID.");
 }
 
+- (void) testRealJSONWithoutQuestionsReturnsMissingDataError
+{
+    NSString *jsonString = @"{ \"name\": "" }";
+    NSError *error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"street\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"city\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"state\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"country\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"accessible\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"unisex\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"downvote\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"upvote\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"created_at\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    
+    jsonString = @"{ \"id\": "" }";
+    error = nil;
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+}
+
 // TODO create tests for latitude, longitude, directions, comment, and search_rank being updated if JSON values exist
 
 @end

@@ -16,9 +16,20 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 {
     NSParameterAssert(objectNotation != nil);
     
-    if(error != NULL)
+    // create JSON object
+    NSData *unicodeNotation = [objectNotation dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *localError = nil;
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:unicodeNotation options:0 error:&localError];
+    NSDictionary *parsedObject = (id)jsonObject;
+    
+    if(parsedObject == nil)
     {
-        *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderInvalidJSONError userInfo:nil];
+        if(error != NULL)
+        {
+            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+        }
+        
+        return nil;
     }
     
     return nil;
