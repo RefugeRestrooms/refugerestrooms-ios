@@ -61,4 +61,6 @@
     XCTAssertNoThrow([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
 }
 
+
+
 @end

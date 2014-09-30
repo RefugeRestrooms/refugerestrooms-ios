@@ -10,13 +10,15 @@
 
 @implementation RestroomBuilder
 
-- (NSArray *)restroomsFromJSON:(NSString *)objectNoation error:(NSError **)error
+NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
+
+- (NSArray *)restroomsFromJSON:(NSString *)objectNotation error:(NSError **)error
 {
-    NSParameterAssert(objectNoation != nil);
+    NSParameterAssert(objectNotation != nil);
     
     if(error != NULL)
     {
-        *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderInvalidJSONError userInfo:NIL];
+        *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderInvalidJSONError userInfo:nil];
     }
     
     return nil;

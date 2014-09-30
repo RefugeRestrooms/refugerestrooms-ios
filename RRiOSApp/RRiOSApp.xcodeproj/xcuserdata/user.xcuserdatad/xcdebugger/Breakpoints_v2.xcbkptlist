@@ -45,5 +45,49 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RestroomBuilder.m"
+            timestampString = "433746998.699089"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "9"
+            endingLineNumber = "9">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSApp"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433747118.135782"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433747118.721995"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

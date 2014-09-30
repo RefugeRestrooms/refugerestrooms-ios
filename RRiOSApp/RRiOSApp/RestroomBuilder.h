@@ -10,6 +10,11 @@
 
 @interface RestroomBuilder : NSObject
 
-- (NSArray *)restroomsFromJSON: (NSString *)objectNoation error:(NSError **)error;
+enum
+{
+    RestroomBuilderInvalidJSONError
+};
+
+- (NSArray *)restroomsFromJSON: (NSString *)objectNotation error:(NSError **)error;
 
 @end
