@@ -16,11 +16,11 @@
 #import "RestroomManager.h"
 #import "Restroom.h"
 
-@interface RestroomCreationTests : XCTestCase
+@interface RestroomCreationWorkflowTests : XCTestCase
 
 @end
 
-@implementation RestroomCreationTests
+@implementation RestroomCreationWorkflowTests
 {
     RestroomManager *restroomManager;
     MockRestroomManagerDelegate *delegate;

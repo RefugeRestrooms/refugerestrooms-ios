@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE1F5E4519D9D86D005F3B04 /* RestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4419D9D86D005F3B04 /* RestroomTests.m */; };
 		CE1F5E4719D9DA6F005F3B04 /* RestroomManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4619D9DA6F005F3B04 /* RestroomManagerTests.m */; };
-		CE1F5E4919D9DAF2005F3B04 /* RestroomCreationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4819D9DAF2005F3B04 /* RestroomCreationTests.m */; };
+		CE1F5E4919D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4819D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m */; };
 		CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */; };
 		CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */; };
 		CE1F5E5B19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E5A19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m */; };
@@ -22,6 +22,7 @@
 		CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */; };
 		CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */; };
 		CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */; };
+		CE39974D19DA6A1F001C98F8 /* RestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -45,7 +46,7 @@
 /* Begin PBXFileReference section */
 		CE1F5E4419D9D86D005F3B04 /* RestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestroomTests.m; path = ../RestroomTests.m; sourceTree = "<group>"; };
 		CE1F5E4619D9DA6F005F3B04 /* RestroomManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomManagerTests.m; sourceTree = "<group>"; };
-		CE1F5E4819D9DAF2005F3B04 /* RestroomCreationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomCreationTests.m; sourceTree = "<group>"; };
+		CE1F5E4819D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomCreationWorkflowTests.m; sourceTree = "<group>"; };
 		CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomManager.h; sourceTree = "<group>"; };
 		CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomManager.m; sourceTree = "<group>"; };
 		CE1F5E5919D9FD4E005F3B04 /* MockRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRestroomManagerDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilder.m; sourceTree = "<group>"; };
 		CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRestroomBuilder.h; sourceTree = "<group>"; };
 		CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRestroomBuilder.m; sourceTree = "<group>"; };
+		CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilderTests.m; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE70CF8919D5F92D004E34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,9 +158,10 @@
 				CE1F5E6619DA0114005F3B04 /* MockRestroomCommunicator.m */,
 				CE1F5E5919D9FD4E005F3B04 /* MockRestroomManagerDelegate.h */,
 				CE1F5E5A19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m */,
-				CE1F5E4419D9D86D005F3B04 /* RestroomTests.m */,
-				CE1F5E4819D9DAF2005F3B04 /* RestroomCreationTests.m */,
+				CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */,
+				CE1F5E4819D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m */,
 				CE1F5E4619D9DA6F005F3B04 /* RestroomManagerTests.m */,
+				CE1F5E4419D9D86D005F3B04 /* RestroomTests.m */,
 				CE70CFA619D5F92D004E34F9 /* RRiOSAppTests.m */,
 				CE70CFA419D5F92D004E34F9 /* Supporting Files */,
 			);
@@ -290,7 +293,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
-				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationTests.m in Sources */,
+				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m in Sources */,
+				CE39974D19DA6A1F001C98F8 /* RestroomBuilderTests.m in Sources */,
 				CE1F5E5B19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m in Sources */,
 				CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */,
 				CE1F5E4519D9D86D005F3B04 /* RestroomTests.m in Sources */,

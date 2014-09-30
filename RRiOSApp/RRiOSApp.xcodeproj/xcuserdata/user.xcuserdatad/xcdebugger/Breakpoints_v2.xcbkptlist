@@ -19,13 +19,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RRiOSAppTests/RestroomCreationTests.m"
+            filePath = "RRiOSAppTests/RestroomCreationWorkflowTests.m"
             timestampString = "433729553.957081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "@implementation RestroomCreationTests"
+            landmarkName = "@implementation RestroomCreationWorkflowTests"
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
