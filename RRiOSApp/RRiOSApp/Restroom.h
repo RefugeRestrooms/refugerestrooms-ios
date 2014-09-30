@@ -19,8 +19,8 @@
 @property (readonly) BOOL isUnisex;
 @property (readonly) int numDownvotes;
 @property (readonly) int numUpvotes;
-@property (readonly) NSDate *dateCreated;
-@property (readonly) NSString *databaseID;
+@property (readonly) NSString *dateCreated;
+@property (readonly) int databaseID;
 
 @property (assign, nonatomic) NSString *directions;
 @property (assign, nonatomic) NSString *comment;
@@ -37,8 +37,8 @@
        andIsUnisex:(BOOL)isUnisex
    andNumDownvotes:(int)numDownvotes
      andNumUpvotes:(int)numUpvotes
-    andDateCreated:(NSDate *)dateCreated
-     andDatabaseID:(NSString *)databaseID
+    andDateCreated:(NSString *)dateCreated
+     andDatabaseID:(int)databaseID
 ;
 
 @end

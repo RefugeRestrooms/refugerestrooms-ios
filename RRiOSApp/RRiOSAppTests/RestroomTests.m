@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:[NSDate distantPast] andDatabaseID:@"6303"];
+    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:@"2014-02-02T20:55:31.555Z" andDatabaseID:6303];
 }
 
 - (void)tearDown
@@ -144,7 +144,7 @@
 
 - (void)testThatRestroomHasAnID
 {
-    XCTAssertEqualObjects(restroom.databaseID, @"6303", @"Restroom should have the database ID given when initialized.");
+    XCTAssertEqual(restroom.databaseID, 6303, @"Restroom should have the database ID given when initialized.");
 }
 
 
