@@ -148,10 +148,6 @@
     XCTAssertEqualObjects([delegate receivedRestrooms], [NSArray array], @"Returning an empty array of Restrooms should not be an error.");
 }
 
-// TODO: Implement this test
-- (void)testRestroomCreatedFromSearchHasSearchRankSet
-{
-    XCTAssert(YES, @"Pass");
-}
+
 
 @end

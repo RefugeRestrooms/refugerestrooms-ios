@@ -45,7 +45,7 @@
 
 - (void)testNilReturnedWhenStringIsNotJSON
 {
-    XCTAssertNil([restroomBuilder restroomsFromJSON:@"Not JSOM" error:NULL], @"Restroom JSON should be parsable.");
+    XCTAssertNil([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
 }
 
 - (void)testErrorSetWhenStringIsNotJSON
@@ -61,6 +61,48 @@
     XCTAssertNoThrow([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
 }
 
+- (void)testRealJSONWithoutRequiredDataIsError
+{    
+    NSString *jsonString = @"{ \"name\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
+    
+    jsonString = @"{ \"street\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a street.");
+    
+    jsonString = @"{ \"city\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a city.");
+    
+    jsonString = @"{ \"state\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a state.");
+    
+    jsonString = @"{ \"country\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a country.");
+    
+    jsonString = @"{ \"accessible\": null }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a flag for accessbility.");
+    
+    jsonString = @"{ \"unisex\": null }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a flag for unisex.");
+    
+    jsonString = @"{ \"downvote\": null }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
+    
+    jsonString = @"{ \"upvote\": null }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
+    
+    jsonString = @"{ \"created_at\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
+    
+    jsonString = @"{ \"id\": null }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a database ID.");
+}
 
+// TODO refactor to not require directions, comment, or updated_at
+
+// TODO: Implement this test
+- (void)testRestroomCreatedFromSearchHasSearchRankSet
+{
+    XCTAssert(TRUE, @"Pass");
+}
 
 @end

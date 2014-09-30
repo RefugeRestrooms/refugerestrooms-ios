@@ -65,7 +65,7 @@
                   symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
                   moduleName = "RRiOSApp"
                   urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
-                  timestampString = "433747118.135782"
+                  timestampString = "433795778.844391"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -79,7 +79,7 @@
                   symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
                   moduleName = "RRiOSAppTests"
                   urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
-                  timestampString = "433747118.721995"
+                  timestampString = "433795782.429627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
@@ -87,6 +87,22 @@
                   offsetFromSymbolStart = "52">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSAppTests/RestroomBuilderTests.m"
+            timestampString = "433795777.812427"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "-testRestroomCreatedFromSearchHasSearchRankSet"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
