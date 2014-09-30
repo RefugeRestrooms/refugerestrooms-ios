@@ -97,12 +97,6 @@
     XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a database ID.");
 }
 
-// TODO refactor to not require directions, comment, or updated_at
-
-// TODO: Implement this test
-- (void)testRestroomCreatedFromSearchHasSearchRankSet
-{
-    XCTAssert(TRUE, @"Pass");
-}
+// TODO create tests for latitude, longitude, directions, comment, and search_rank being updated if JSON values exist
 
 @end

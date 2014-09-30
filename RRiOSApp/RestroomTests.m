@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andDirections:@"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. " andComments:@"" andNumDownvotes:0 andNumUpvotes:0 andDateCreated:[NSDate distantPast] andDateUpdated:[NSDate distantPast] andDatabaseID:@"6303"];
+    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:[NSDate distantPast] andDatabaseID:@"6303"];
 }
 
 - (void)tearDown
@@ -40,6 +40,22 @@
 - (void)testThatARestroomCanBeCreated
 {
     XCTAssertNotNil(restroom, @"Should be able to create a Restroom instance.");
+}
+
+- (void)testThatDirectionsCanBeSet
+{
+    NSString *testDirections = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
+    restroom.directions = testDirections;
+    
+    XCTAssertEqual(testDirections, restroom.directions, @"Should be able to set directions for Restroom.");
+}
+
+- (void)testThatCommentCanBeSet
+{
+    NSString *testComment = @"Test Comment";
+    restroom.comment = testComment;
+    
+    XCTAssertEqual(testComment, restroom.comment, @"Should be able to set comment for Restroom.");
 }
 
 - (void)testThatLatitudeCanBeSet
@@ -124,11 +140,6 @@
 - (void)testThatRestroomHasADateForCreatedAt
 {
     XCTAssertTrue([restroom.dateCreated isKindOfClass:[NSDate class]], @"Restroom should have the date created given when initialized.");
-}
-
-- (void)testThatRestroomHasADateForUpdatedAt
-{
-    XCTAssertTrue([restroom.dateUpdated isKindOfClass:[NSDate class]], @"Restroom should have the date last update given when initialized.");
 }
 
 - (void)testThatRestroomHasAnID

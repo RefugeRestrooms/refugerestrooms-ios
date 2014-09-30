@@ -17,14 +17,13 @@
 @property (readonly) NSString *country;
 @property (readonly) BOOL isAccessible;
 @property (readonly) BOOL isUnisex;
-@property (readonly) NSString *directions;
-@property (readonly) NSString *comment;
 @property (readonly) int numDownvotes;
 @property (readonly) int numUpvotes;
 @property (readonly) NSDate *dateCreated;
-@property (readonly) NSDate *dateUpdated;
 @property (readonly) NSString *databaseID;
 
+@property (assign, nonatomic) NSString *directions;
+@property (assign, nonatomic) NSString *comment;
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitude;
 @property (assign, nonatomic) double searchRank;
@@ -36,12 +35,9 @@
         andCountry:(NSString *)country
    andIsAccessible:(BOOL)isAccessible
        andIsUnisex:(BOOL)isUnisex
-     andDirections:(NSString *)directions
-       andComments:(NSString *)comment
    andNumDownvotes:(int)numDownvotes
      andNumUpvotes:(int)numUpvotes
     andDateCreated:(NSDate *)dateCreated
-    andDateUpdated:(NSDate *)dateUpdated
      andDatabaseID:(NSString *)databaseID
 ;
 
