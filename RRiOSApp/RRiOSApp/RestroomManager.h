@@ -29,6 +29,6 @@ enum
 
 - (void)fetchRestroomsForQuery:(NSString *)query;
 - (void)searchingForRestroomFailedWithError:(NSError *)error;
-- (void)recievedRestroomsJSON:(NSString *)objectNotation;
+- (void)receivedRestroomsJSON:(NSString *)objectNotation;
 
 @end

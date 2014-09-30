@@ -9,10 +9,25 @@
 #import "MockRestroomManagerDelegate.h"
 
 @implementation MockRestroomManagerDelegate
+{
+    NSArray *receivedRestrooms;
+}
+
+@synthesize fetchError;
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.fetchError = error;
+}
+
+- (void)didReceiveRestrooms:(NSArray *)restrooms
+{
+    receivedRestrooms = restrooms;
+}
+
+- (NSArray *)receivedRestrooms
+{
+    return receivedRestrooms;
 }
 
 @end

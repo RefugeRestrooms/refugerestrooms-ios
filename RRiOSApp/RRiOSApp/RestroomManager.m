@@ -30,36 +30,34 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 
 - (void)searchingForRestroomFailedWithError:(NSError *)error
 {
-    // get underlying error
-    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
-    
-    // tell delegate about an error occuring
-    [self tellDelegateAboutQuestionSearchError:errorInfo];
+    [self tellDelegateAboutQuestionSearchError:error];
 }
 
-- (void)recievedRestroomsJSON:(NSString *)objectNotation
+- (void)receivedRestroomsJSON:(NSString *)objectNotation
 {
     NSError *error = nil;
     NSArray *restrooms = [_restroomBuilder restroomsFromJSON:objectNotation error:&error];
-    NSDictionary *errorInfo = nil;
     
     if(!restrooms)
     {
         // underlying error
         if(error)
         {
-            errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+            [self tellDelegateAboutQuestionSearchError:error];
         }
-        
-        // tell delegate about an error occcuring
-        [self tellDelegateAboutQuestionSearchError:errorInfo];
+    }
+    else
+    {
+        [_delegate didReceiveRestrooms:restrooms];
     }
 }
 
 #pragma mark - Helper methods
 
-- (void)tellDelegateAboutQuestionSearchError:(NSDictionary *)errorInfo
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)error
 {
+    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    
     // create reportable error
     NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
     

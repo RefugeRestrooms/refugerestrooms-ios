@@ -12,6 +12,6 @@
 
 @interface MockRestroomManagerDelegate : NSObject <RestroomManagerDelegate>
 
-@property (strong) NSError *fetchError;
+//@property (strong) NSError *fetchError;
 
 @end

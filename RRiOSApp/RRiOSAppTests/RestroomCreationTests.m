@@ -14,6 +14,7 @@
 #import "MockRestroomBuilder.h"
 
 #import "RestroomManager.h"
+#import "Restroom.h"
 
 @interface RestroomCreationTests : XCTestCase
 
@@ -22,16 +23,19 @@
 @implementation RestroomCreationTests
 {
     RestroomManager *restroomManager;
-
     MockRestroomManagerDelegate *delegate;
     NSError *underlyingError;
     MockRestroomBuilder *restroomBuilder;
+    
+    NSArray *restroomArray;
 }
 
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    Restroom *restroom = [[Restroom alloc] init];
+    restroomArray = [NSArray arrayWithObject:restroom];
     
     restroomManager = [[RestroomManager alloc] init];
     
@@ -46,7 +50,7 @@
     
     restroomManager.restroomBuilder = restroomBuilder;
     
-    [restroomManager recievedRestroomsJSON:@"Fake JSON"];
+    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
 }
 
 - (void)tearDown
@@ -55,6 +59,7 @@
     delegate = nil;
     underlyingError = nil;
     restroomManager.restroomBuilder = nil;
+    restroomArray = nil;
     
     [super tearDown];
 }
@@ -71,9 +76,9 @@
 
 - (void)testConformingObjectCanBeDelegate
 {
-    id <RestroomManagerDelegate> delegate = [[MockRestroomManagerDelegate alloc] init];
+    id <RestroomManagerDelegate> testDelegate = [[MockRestroomManagerDelegate alloc] init];
     
-    XCTAssertNoThrow(restroomManager.delegate = delegate, @"Object conforming to the delegate protocol should be used as the delegate.");
+    XCTAssertNoThrow(restroomManager.delegate = testDelegate, @"Object conforming to the delegate protocol should be used as the delegate.");
 }
 
 - (void)testManagerAcceptsNilAsDelegate
@@ -117,6 +122,30 @@
 - (void)testDelegateNotifiedOfErrorWhenRestroomBuilderFails
 {
     XCTAssertNotNil(@"The delegate should have found out about the error created when RestroomBuilder fails.");
+}
+
+- (void)testDelegateIsNotToldAboutErrorWhenRestroomsReceived
+{
+    restroomBuilder.arrayToReturn = restroomArray;
+    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    
+    XCTAssertNil([delegate fetchError], @"No error should be received on restroom JSON being received successfully.");
+}
+
+- (void)testDelegateReceivesTheRestroomsDiscoveredByManager
+{
+    restroomBuilder.arrayToReturn = restroomArray;
+    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    
+    XCTAssertEqualObjects([delegate receivedRestrooms], restroomArray, @"The manager should have sent its restroom to the delegate.");
+}
+
+- (void)testEmptyArrayIsPassedToDelegateWhenNoRestroomsReceived
+{
+    restroomBuilder.arrayToReturn = [NSArray array];
+    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    
+    XCTAssertEqualObjects([delegate receivedRestrooms], [NSArray array], @"Returning an empty array of Restrooms should not be an error.");
 }
 
 // TODO: Implement this test
