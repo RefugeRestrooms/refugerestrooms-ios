@@ -11,6 +11,8 @@
 @interface RestroomCommunicator : NSObject
 
 - (NSURL *)URLToFetch;
+- (NSURLConnection *)currentURLConnection;
 - (void)searchForRestroomsWithQuery:(NSString *)query;
+- (void)cancelAndDiscardURLConnection;
 
 @end

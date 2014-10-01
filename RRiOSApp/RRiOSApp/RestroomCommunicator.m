@@ -14,6 +14,7 @@ static NSString *apiURLStub = @"http://www.refugerestrooms.org:80/api/v1/restroo
 {
     BOOL wasAskedToFetchRestrooms;
     NSURL *fetchingURL;
+    NSURLConnection *fetchingConnection;
 }
 
 - (BOOL)wasAskedToFetchRestrooms
@@ -24,6 +25,11 @@ static NSString *apiURLStub = @"http://www.refugerestrooms.org:80/api/v1/restroo
 - (NSURL *)URLToFetch
 {
     return fetchingURL;
+}
+
+- (NSURLConnection *)currentURLConnection
+{
+    return fetchingConnection;
 }
 
 - (void)searchForRestroomsWithQuery:(NSString *)query
@@ -39,6 +45,16 @@ static NSString *apiURLStub = @"http://www.refugerestrooms.org:80/api/v1/restroo
 - (void)fetchContentAtURL:(NSURL *)url
 {
     fetchingURL = url;
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:fetchingURL];
+    
+    fetchingConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+}
+
+- (void)cancelAndDiscardURLConnection
+{
+    [fetchingConnection cancel];
+    fetchingConnection = nil;
 }
 
 @end
