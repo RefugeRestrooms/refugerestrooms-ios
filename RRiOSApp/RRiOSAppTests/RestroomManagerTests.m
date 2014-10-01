@@ -23,7 +23,6 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
     
     restroomManager = [[RestroomManager alloc] init];
 }
@@ -39,6 +38,5 @@
 {
     XCTAssertNotNil(restroomManager, @"Should be able to create a RestroomManager instance.");
 }
-
 
 @end
