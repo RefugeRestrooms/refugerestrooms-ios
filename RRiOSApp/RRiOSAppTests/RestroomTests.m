@@ -25,6 +25,9 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
     restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:@"2014-02-02T20:55:31.555Z" andDatabaseID:6303];
+    
+    restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
+    restroom.comment = @"";
 }
 
 - (void)tearDown
@@ -139,7 +142,7 @@
 
 - (void)testThatRestroomHasADateForCreatedAt
 {
-    XCTAssertTrue([restroom.dateCreated isKindOfClass:[NSDate class]], @"Restroom should have the date created given when initialized.");
+    XCTAssertEqualObjects(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"Restroom should have the date created given when initialized.");
 }
 
 - (void)testThatRestroomHasAnID
