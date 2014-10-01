@@ -157,31 +157,31 @@ static NSString *restroomJSON = @"[{"
     XCTAssertEqual(restroom.databaseID, 4327, @"The restroom object's databaseID should match the data we sent.");
 }
 
-//- (void)testOptionalDataSetIfAvailable
-//{
-//    XCTAssertEqual(restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom should have directions set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom should have comment set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroom.latitude, 35.867321, @"Restroom should have latitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroom.longitude, -78.567711, @"Restroom should have longitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroom.searchRank, 0.66872, @"Restroom should have search rank set if avaiable in JSON.");
-//}
+- (void)testOptionalDataSetIfAvailable
+{
+    XCTAssertEqualObjects(restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom should have directions set if avaiable in JSON.");
+    
+    XCTAssertEqualObjects(restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom should have comment set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroom.latitude, 35.867321, @"Restroom should have latitude set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroom.longitude, -78.567711, @"Restroom should have longitude set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroom.searchRank, 0.66872, @"Restroom should have search rank set if avaiable in JSON.");
+}
 
-//- (void)testOptionalDataNotSetIfUnvailable
-//{
-//    XCTAssertEqual(restroomMinimalData.directions, nil, @"Restroom should not have directions set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.comment, nil, @"Restroom should not have comment set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.latitude, nil, @"Restroom should not have latitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.longitude, nil, @"Restroom should not have longitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.searchRank, nil, @"Restroom should not have search rank set if avaiable in JSON.");
-//}
+- (void)testOptionalDataNotSetIfUnvailable
+{
+    XCTAssertEqualObjects(restroomMinimalData.directions, @"", @"Restroom should not have directions set if avaiable in JSON.");
+    
+    XCTAssertEqualObjects(restroomMinimalData.comment, @"", @"Restroom should not have comment set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroomMinimalData.latitude, 0, @"Restroom should not have latitude set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroomMinimalData.longitude, 0, @"Restroom should not have longitude set if avaiable in JSON.");
+    
+    XCTAssertEqual(restroomMinimalData.searchRank, 0, @"Restroom should not have search rank set if avaiable in JSON.");
+}
 
 // TODO make dateCreated an NSDate object from string passed by API
 

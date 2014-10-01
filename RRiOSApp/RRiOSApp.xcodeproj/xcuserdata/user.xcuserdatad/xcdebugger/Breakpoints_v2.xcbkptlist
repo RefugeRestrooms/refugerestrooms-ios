@@ -59,5 +59,217 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSAppTests/RestroomBuilderTests.m"
+            timestampString = "433825695.456532"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-testOptionalDataSetIfAvailable"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilderTests testOptionalDataSetIfAvailable]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomBuilderTests.m"
+                  timestampString = "433826071.557012"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "597">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilderTests testOptionalDataSetIfAvailable]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomBuilderTests.m"
+                  timestampString = "433826071.557451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "2938">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilderTests testOptionalDataSetIfAvailable]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomBuilderTests.m"
+                  timestampString = "433826071.557699"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "3072">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilderTests testOptionalDataSetIfAvailable]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomBuilderTests.m"
+                  timestampString = "433826071.558127"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "3571">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RestroomBuilder.m"
+            timestampString = "433825750.414928"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-restroomsFromJSON:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSApp"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433825936.313345"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2560">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433825936.594695"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2560">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RestroomBuilder.m"
+            timestampString = "433825838.604825"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "-restroomsFromJSON:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSApp"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433825936.315576"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2283">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433825936.594955"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2283">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RestroomBuilder.m"
+            timestampString = "433825987.822296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-restroomsFromJSON:error:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSApp"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433826071.548373"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "3082">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RestroomBuilder restroomsFromJSON:error:]"
+                  moduleName = "RRiOSAppTests"
+                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomBuilder.m"
+                  timestampString = "433826071.558396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "3082">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

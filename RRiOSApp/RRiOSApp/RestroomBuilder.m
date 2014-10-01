@@ -72,7 +72,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         
         
         if(!(directions == nil)) { restroom.directions = directions; }
-        if(!(comment = nil)) { restroom.comment = comment; }
+        if(!(comment == nil)) { restroom.comment = comment; }
         if(!(latitude == [NSNull null])) { restroom.latitude = [latitude doubleValue]; }
         if(!(longitude == [NSNull null])) { restroom.longitude = [longitude doubleValue]; }
         if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue];}
