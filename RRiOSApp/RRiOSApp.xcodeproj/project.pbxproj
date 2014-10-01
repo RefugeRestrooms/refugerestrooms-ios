@@ -24,6 +24,7 @@
 		CE39974D19DA6A1F001C98F8 /* RestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */; };
 		CE39974F19DB3BB7001C98F8 /* RestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974E19DB3BB7001C98F8 /* RestroomTests.m */; };
 		CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */; };
+		CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -65,6 +66,8 @@
 		CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilderTests.m; sourceTree = "<group>"; };
 		CE39974E19DB3BB7001C98F8 /* RestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomTests.m; sourceTree = "<group>"; };
 		CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomCommunicatorTests.m; sourceTree = "<group>"; };
+		CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableRestroomCommunicator.h; sourceTree = "<group>"; };
+		CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableRestroomCommunicator.m; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE70CF8919D5F92D004E34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +157,8 @@
 		CE70CFA319D5F92D004E34F9 /* RRiOSAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */,
+				CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */,
 				CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */,
 				CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */,
 				CE1F5E6519DA0114005F3B04 /* MockRestroomCommunicator.h */,
@@ -305,6 +310,7 @@
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */,
 				CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
+				CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CE70CFA719D5F92D004E34F9 /* RRiOSAppTests.m in Sources */,
 				CE1F5E6C19DA05C0005F3B04 /* Restroom.m in Sources */,

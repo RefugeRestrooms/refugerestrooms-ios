@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "RestroomCommunicator.h"
+#import "InspectableRestroomCommunicator.h"
 
 @interface RestroomCommunicatorTests : XCTestCase
 {
-    RestroomCommunicator *restroomCommunicator;
+    InspectableRestroomCommunicator *inspectableRestroomCommunicator;
 }
 @end
 
@@ -23,19 +23,35 @@
 {
     [super setUp];
     
-    restroomCommunicator = [[RestroomCommunicator alloc] init];
+    inspectableRestroomCommunicator = [[InspectableRestroomCommunicator alloc] init];
 }
 
 - (void)tearDown
 {
-    restroomCommunicator = nil;
+    inspectableRestroomCommunicator = nil;
     
     [super tearDown];
 }
 
 - (void)testThatARestroomManagerCanBeCreated
 {
-    XCTAssertNotNil(restroomCommunicator, @"Should be able to create a RestroomCommunicator instance.");
+    XCTAssertNotNil(inspectableRestroomCommunicator, @"Should be able to create a RestroomCommunicator instance.");
 }
+
+- (void)testSearchingForRestroomsWithQueryCallsRefugeAPICorrectly
+{
+    [inspectableRestroomCommunicator searchForRestroomsWithQuery:@"Walmart"];
+    
+    XCTAssertEqualObjects([[inspectableRestroomCommunicator URLToFetch] absoluteString], @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json?query=Walmart", @"Searching should call the Refuge API.");
+}
+
+- (void)testSearchingForRestroomsWithQueryContainingSpacesCallsRefugeAPICorrectly
+{
+    [inspectableRestroomCommunicator searchForRestroomsWithQuery:@"San Francisco"];
+    
+    XCTAssertEqualObjects([[inspectableRestroomCommunicator URLToFetch] absoluteString], @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json?query=San%20Francisco", @"Searching should call the Refuge API.");
+}
+
+// TODO: add support for filtering by accessibility/unisex
 
 @end

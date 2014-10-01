@@ -9,18 +9,6 @@
 #import "MockRestroomCommunicator.h"
 
 @implementation MockRestroomCommunicator
-{
-    BOOL wasAskedToFetchRestrooms;
-}
 
-- (void)searchForRestroomsWithQuery:(NSString *)query
-{
-    wasAskedToFetchRestrooms = YES;
-}
-
-- (BOOL)wasAskedToFetchRestrooms
-{
-    return wasAskedToFetchRestrooms;
-}
 
 @end

@@ -10,6 +10,7 @@
 
 @interface RestroomCommunicator : NSObject
 
+- (NSURL *)URLToFetch;
 - (void)searchForRestroomsWithQuery:(NSString *)query;
 
 @end
