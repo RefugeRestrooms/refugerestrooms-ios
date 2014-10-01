@@ -112,99 +112,19 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testRealJSONWithoutRequiredDataIsError
 {    
-    NSString *jsonString = @"{ \"name\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
-    
-    jsonString = @"{ \"street\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a street.");
-    
-    jsonString = @"{ \"city\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a city.");
-    
-    jsonString = @"{ \"state\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a state.");
-    
-    jsonString = @"{ \"country\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a country.");
-    
-    jsonString = @"{ \"accessible\": null }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a flag for accessbility.");
-    
-    jsonString = @"{ \"unisex\": null }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a flag for unisex.");
-    
-    jsonString = @"{ \"downvote\": null }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
-    
-    jsonString = @"{ \"upvote\": null }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
-    
-    jsonString = @"{ \"created_at\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a name.");
-    
-    jsonString = @"{ \"id\": null }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON does not include a database ID.");
+    NSString *jsonString = @"{ \"notalldata\": "" }";
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
 }
 
 - (void) testRealJSONWithoutQuestionsReturnsMissingDataError
 {
-    NSString *jsonString = @"{ \"name\": "" }";
+    NSString *jsonString = @"{ \"notalldata\": "" }";
     NSError *error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"street\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"city\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"state\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"country\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"accessible\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"unisex\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"downvote\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"upvote\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"created_at\": "" }";
-    error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
-    
-    jsonString = @"{ \"id\": "" }";
-    error = nil;
     [restroomBuilder restroomsFromJSON:jsonString error:&error];
     XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }
 
-- (void)testJSONWithTwoRestroomsReturnsTwpRestroomObjects
+- (void)testJSONWithTwoRestroomsReturnsTwoRestroomObjects
 {
     NSError *error = nil;
     NSArray *restrooms = [restroomBuilder restroomsFromJSON:restroomJSON error:&error];
@@ -212,30 +132,30 @@ static NSString *restroomJSON = @"[{"
     XCTAssertEqual([restrooms count], (NSUInteger)2, @"The RestroomBuilder should have created two restroom objects.");
 }
 
-//- (void)testRestroomCreatedFromJSonHasPropertiesPresentedInJSON
-//{
-//    XCTAssertEqual(restroom.name, @"Target", @"The restroom object's name should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.street, @"7900 Old Wake Forest Rd", @"The restroom object's street should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.city, @"Raleigh", @"The restroom object's city should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.state, @"NC", @"The restroom object's state should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.country, @"US", @"The restroom object's country should match the data we sent.");
-//    
-//    XCTAssertFalse(restroom.isAccessible, @"The restroom object's accessibility flag should match the data we sent.");
-//    
-//    XCTAssertTrue(restroom.isUnisex, @"The restroom object's unisex flag should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.numDownvotes, 0, @"The restroom object's number of downvotes should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.numUpvotes, 1, @"The restroom object's number of upvotes should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"The restroom object's creation date should match the data we sent.");
-//    
-//    XCTAssertEqual(restroom.databaseID, 4327, @"The restroom object's databaseID should match the data we sent.");
-//}
+- (void)testRestroomCreatedFromJSonHasPropertiesPresentedInJSON
+{
+    XCTAssertEqualObjects(restroom.name, @"Target", @"The restroom object's name should match the data we sent.");
+    
+    XCTAssertEqualObjects(restroom.street, @"7900 Old Wake Forest Rd", @"The restroom object's street should match the data we sent.");
+    
+    XCTAssertEqualObjects(restroom.city, @"Raleigh", @"The restroom object's city should match the data we sent.");
+    
+    XCTAssertEqualObjects(restroom.state, @"NC", @"The restroom object's state should match the data we sent.");
+    
+    XCTAssertEqualObjects(restroom.country, @"US", @"The restroom object's country should match the data we sent.");
+    
+    XCTAssertFalse(restroom.isAccessible, @"The restroom object's accessibility flag should match the data we sent.");
+    
+    XCTAssertTrue(restroom.isUnisex, @"The restroom object's unisex flag should match the data we sent.");
+    
+    XCTAssertEqual(restroom.numDownvotes, 0, @"The restroom object's number of downvotes should match the data we sent.");
+    
+    XCTAssertEqual(restroom.numUpvotes, 1, @"The restroom object's number of upvotes should match the data we sent.");
+    
+    XCTAssertEqualObjects(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"The restroom object's creation date should match the data we sent.");
+    
+    XCTAssertEqual(restroom.databaseID, 4327, @"The restroom object's databaseID should match the data we sent.");
+}
 
 //- (void)testOptionalDataSetIfAvailable
 //{
@@ -252,9 +172,9 @@ static NSString *restroomJSON = @"[{"
 
 //- (void)testOptionalDataNotSetIfUnvailable
 //{
-//    XCTAssertEqual(restroomMinimalData.directions, @"", @"Restroom should not have directions set if avaiable in JSON.");
+//    XCTAssertEqual(restroomMinimalData.directions, nil, @"Restroom should not have directions set if avaiable in JSON.");
 //    
-//    XCTAssertEqual(restroomMinimalData.comment, @"", @"Restroom should not have comment set if avaiable in JSON.");
+//    XCTAssertEqual(restroomMinimalData.comment, nil, @"Restroom should not have comment set if avaiable in JSON.");
 //    
 //    XCTAssertEqual(restroomMinimalData.latitude, nil, @"Restroom should not have latitude set if avaiable in JSON.");
 //    

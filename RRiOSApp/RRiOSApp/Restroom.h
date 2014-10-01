@@ -20,7 +20,7 @@
 @property (readonly) int numDownvotes;
 @property (readonly) int numUpvotes;
 @property (readonly) NSString *dateCreated;
-@property (readonly) int databaseID;
+@property (readonly) long databaseID;
 
 @property (assign, nonatomic) NSString *directions;
 @property (assign, nonatomic) NSString *comment;
