@@ -10,9 +10,16 @@
 
 @implementation MockRestroomBuilder
 
-- (NSArray *)restroomsFromJSON:(NSString *)objectNoation error:(NSError **)error
+@synthesize errorToSet;
+
+- (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
 {
-    _JSON = objectNoation;
+    _JSON = jsonString;
+    
+    if (error)
+    {
+        *error = errorToSet;
+    }
     
     return _arrayToReturn;
 }

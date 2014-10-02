@@ -20,117 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RRiOSAppTests/RestroomCommunicatorTests.m"
-            timestampString = "433885419.641834"
+            timestampString = "433981148.334285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "-testSearchingForRestroomsCreatesURLConnection"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-setUp"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicatorTests testSearchingForRestroomsCreatesURLConnection]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCommunicatorTests.m"
-                  timestampString = "433885694.88701"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "62">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicatorTests testSearchingForRestroomsCreatesURLConnection]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCommunicatorTests.m"
-                  timestampString = "433885694.887422"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "549">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicatorTests testSearchingForRestroomsCreatesURLConnection]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCommunicatorTests.m"
-                  timestampString = "433885694.887744"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "677">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicatorTests testSearchingForRestroomsCreatesURLConnection]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSAppTests/RestroomCommunicatorTests.m"
-                  timestampString = "433885694.888011"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "1156">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "RRiOSApp/RestroomCommunicator.m"
-            timestampString = "433885460.03894"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-searchForRestroomsWithQuery:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicator searchForRestroomsWithQuery:]"
-                  moduleName = "RRiOSApp"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomCommunicator.m"
-                  timestampString = "433890544.903809"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "49">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomCommunicator searchForRestroomsWithQuery:]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomCommunicator.m"
-                  timestampString = "433890546.776605"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "49">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

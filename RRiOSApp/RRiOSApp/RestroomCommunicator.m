@@ -10,51 +10,98 @@
 
 static NSString *apiURLStub = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
 
+NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
+
 @implementation RestroomCommunicator
+
+@synthesize delegate;
+
+- (void)launchConnectionForRequest:(NSURLRequest *)request
 {
-    BOOL wasAskedToFetchRestrooms;
-    NSURL *fetchingURL;
-    NSURLConnection *fetchingConnection;
+    [self cancelAndDiscardURLConnection];
+    
+    fetchingConnection = [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
-- (BOOL)wasAskedToFetchRestrooms
+- (void)fetchContentAtURL: (NSURL *)url
+             errorHandler: (void (^)(NSError *))errorBlock
+           successHandler: (void (^)(NSString *))successBlock
 {
-    return wasAskedToFetchRestrooms;
-}
-
-- (NSURL *)URLToFetch
-{
-    return fetchingURL;
-}
-
-- (NSURLConnection *)currentURLConnection
-{
-    return fetchingConnection;
+    fetchingURL = url;
+    errorHandler = [errorBlock copy];
+    successHandler = [successBlock copy];
+                
+    NSURLRequest *request = [NSURLRequest requestWithURL:fetchingURL];
+                
+    [self launchConnectionForRequest:request];
 }
 
 - (void)searchForRestroomsWithQuery:(NSString *)query
 {
-    // set flag
-    wasAskedToFetchRestrooms = YES;
-    
     NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStub, escapedQuery]]];
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStub, escapedQuery]]
+               errorHandler:^(NSError *error) {
+                   [delegate searchingForRestroomsFailedWithError:error];
+               }
+             successHandler:^(NSString *jsonString) {
+                 [delegate receivedRestroomsJSONString:jsonString];
+             }
+     ];
 }
 
-- (void)fetchContentAtURL:(NSURL *)url
+- (void)dealloc
 {
-    fetchingURL = url;
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:fetchingURL];
-    
-    fetchingConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+    [fetchingConnection cancel];
 }
 
 - (void)cancelAndDiscardURLConnection
 {
     [fetchingConnection cancel];
     fetchingConnection = nil;
+}
+
+#pragma mark - NSURLConnection Delegate
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    receivedData = nil;
+    
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    
+    if ([httpResponse statusCode] != 200)
+    {
+        NSError *error = [NSError errorWithDomain:RestroomCommunicatorErrorDomain code:[httpResponse statusCode] userInfo:nil];
+        errorHandler(error);
+        [self cancelAndDiscardURLConnection];
+    }
+    else
+    {
+        receivedData = [[NSMutableData alloc] init];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    receivedData = nil;
+    fetchingConnection = nil;
+    fetchingURL = nil;
+    errorHandler(error);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    fetchingConnection = nil;
+    fetchingURL = nil;
+    NSString *receivedText = [[NSString alloc] initWithData: receivedData
+                                                   encoding: NSUTF8StringEncoding];
+    receivedData = nil;
+    successHandler(receivedText);
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [receivedData appendData:data];
 }
 
 @end

@@ -10,5 +10,9 @@
 
 @implementation MockRestroomCommunicator
 
+- (BOOL)wasAskedToFetchRestrooms
+{
+    return YES;
+}
 
 @end

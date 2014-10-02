@@ -9,20 +9,21 @@
 #import "RestroomBuilder.h"
 #import "Restroom.h"
 
-@implementation RestroomBuilder
-
 NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 
-- (NSArray *)restroomsFromJSON:(NSString *)objectNotation error:(NSError **)error
+@implementation RestroomBuilder
+
+- (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
 {
-    NSParameterAssert(objectNotation != nil);
+    NSParameterAssert(jsonString != nil);
     
     // create JSON object
-    NSData *jsonData = [objectNotation dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *localError = nil;
     id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&localError];
     NSDictionary *parsedObject = (id)jsonObject;
     
+    // if not parsed successfully, error
     if(parsedObject == nil)
     {
         if(error != NULL)
@@ -33,9 +34,9 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         return nil;
     }
     
+    // else create Restroom objects out of parsed data
     NSMutableArray *restrooms = [NSMutableArray array];
     
-    // create Restroom objects out of parsed data
     for(NSDictionary *restroomDictionary in parsedObject)
     {
         // required properties
@@ -81,7 +82,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     
     }
     
-    return [NSArray arrayWithArray:restrooms];
+    return [restrooms copy];
 }
 
 @end

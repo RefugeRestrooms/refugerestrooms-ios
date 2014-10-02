@@ -9,42 +9,41 @@
 #import "RestroomManager.h"
 #import "RestroomManagerDelegate.h"
 
+@interface RestroomManager ()
+
+- (void)tellDelegateAboutRestroomSearchError: (NSError *)underlyingError;
+
+@end
+
 @implementation RestroomManager
 
 NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError";
 
 - (void)setDelegate:(id<RestroomManagerDelegate>)newDelegate
 {
-    if(newDelegate && ![newDelegate conformsToProtocol:@protocol(RestroomManagerDelegate)])
+    if (newDelegate && ![newDelegate conformsToProtocol: @protocol(RestroomManagerDelegate)])
     {
-        [[NSException exceptionWithName:NSInvalidArgumentException reason:@"Delegate object does not conform to the delegate protocol" userInfo:nil] raise];
+        [[NSException exceptionWithName: NSInvalidArgumentException reason: @"Delegate object does not conform to the delegate protocol." userInfo: nil] raise];
     }
     
     _delegate = newDelegate;
 }
+
+#pragma mark - Restrooms
 
 - (void)fetchRestroomsForQuery:(NSString *)query
 {
     [_communicator searchForRestroomsWithQuery:query];
 }
 
-- (void)searchingForRestroomFailedWithError:(NSError *)error
-{
-    [self tellDelegateAboutQuestionSearchError:error];
-}
-
-- (void)receivedRestroomsJSON:(NSString *)objectNotation
+- (void)receivedRestroomsJSONString:(NSString *)jsonString
 {
     NSError *error = nil;
-    NSArray *restrooms = [_restroomBuilder restroomsFromJSON:objectNotation error:&error];
-    
+    NSArray *restrooms = [_restroomBuilder restroomsFromJSON:jsonString error:&error];
     if(!restrooms)
     {
         // underlying error
-        if(error)
-        {
-            [self tellDelegateAboutQuestionSearchError:error];
-        }
+        [self tellDelegateAboutRestroomSearchError:error];
     }
     else
     {
@@ -52,14 +51,24 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     }
 }
 
+- (void)searchingForRestroomsFailedWithError:(NSError *)error
+{
+    [self tellDelegateAboutRestroomSearchError:error];
+}
+
+
 #pragma mark - Helper methods
 
-- (void)tellDelegateAboutQuestionSearchError:(NSError *)error
+- (void)tellDelegateAboutRestroomSearchError:(NSError *)underlyingError
 {
-    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+    NSDictionary *errorInfo = nil;
     
-    // create reportable error
-    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
+    if (underlyingError)
+    {
+        errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey:NSUnderlyingErrorKey];
+    }
+    
+    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo: errorInfo];
     
     [_delegate fetchingRestroomsFailedWithError:reportableError];
 }

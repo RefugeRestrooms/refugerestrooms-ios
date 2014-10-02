@@ -25,6 +25,9 @@
 		CE39974F19DB3BB7001C98F8 /* RestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974E19DB3BB7001C98F8 /* RestroomTests.m */; };
 		CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */; };
 		CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */; };
+		CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12B19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m */; };
+		CE60F12F19DCA738003C5E57 /* MockRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12E19DCA738003C5E57 /* MockRestroomManager.m */; };
+		CE60F13C19DDD487003C5E57 /* FakeURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F13B19DDD487003C5E57 /* FakeURLResponse.m */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -68,6 +71,13 @@
 		CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomCommunicatorTests.m; sourceTree = "<group>"; };
 		CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableRestroomCommunicator.h; sourceTree = "<group>"; };
 		CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableRestroomCommunicator.m; sourceTree = "<group>"; };
+		CE60F12A19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NonNetworkedRestroomCommunicator.h; sourceTree = "<group>"; };
+		CE60F12B19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NonNetworkedRestroomCommunicator.m; sourceTree = "<group>"; };
+		CE60F12D19DCA738003C5E57 /* MockRestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRestroomManager.h; sourceTree = "<group>"; };
+		CE60F12E19DCA738003C5E57 /* MockRestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRestroomManager.m; sourceTree = "<group>"; };
+		CE60F13919DCAD34003C5E57 /* RestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
+		CE60F13A19DDD487003C5E57 /* FakeURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FakeURLResponse.h; sourceTree = "<group>"; };
+		CE60F13B19DDD487003C5E57 /* FakeURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FakeURLResponse.m; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE70CF8919D5F92D004E34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,6 +141,7 @@
 				CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */,
 				CE1F5E5D19DA0055005F3B04 /* RestroomCommunicator.h */,
 				CE1F5E5E19DA0055005F3B04 /* RestroomCommunicator.m */,
+				CE60F13919DCAD34003C5E57 /* RestroomCommunicatorDelegate.h */,
 				CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */,
 				CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */,
 				CE1F5E5C19D9FD9D005F3B04 /* RestroomManagerDelegate.h */,
@@ -157,14 +168,20 @@
 		CE70CFA319D5F92D004E34F9 /* RRiOSAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE60F13A19DDD487003C5E57 /* FakeURLResponse.h */,
+				CE60F13B19DDD487003C5E57 /* FakeURLResponse.m */,
 				CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */,
 				CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */,
 				CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */,
 				CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */,
 				CE1F5E6519DA0114005F3B04 /* MockRestroomCommunicator.h */,
 				CE1F5E6619DA0114005F3B04 /* MockRestroomCommunicator.m */,
+				CE60F12D19DCA738003C5E57 /* MockRestroomManager.h */,
+				CE60F12E19DCA738003C5E57 /* MockRestroomManager.m */,
 				CE1F5E5919D9FD4E005F3B04 /* MockRestroomManagerDelegate.h */,
 				CE1F5E5A19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m */,
+				CE60F12A19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.h */,
+				CE60F12B19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m */,
 				CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */,
 				CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */,
 				CE1F5E4819D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m */,
@@ -300,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE60F12F19DCA738003C5E57 /* MockRestroomManager.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m in Sources */,
 				CE39974F19DB3BB7001C98F8 /* RestroomTests.m in Sources */,
@@ -307,10 +325,12 @@
 				CE1F5E5B19D9FD4E005F3B04 /* MockRestroomManagerDelegate.m in Sources */,
 				CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */,
 				CE1F5E4719D9DA6F005F3B04 /* RestroomManagerTests.m in Sources */,
+				CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */,
 				CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */,
+				CE60F13C19DDD487003C5E57 /* FakeURLResponse.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CE70CFA719D5F92D004E34F9 /* RRiOSAppTests.m in Sources */,
 				CE1F5E6C19DA05C0005F3B04 /* Restroom.m in Sources */,

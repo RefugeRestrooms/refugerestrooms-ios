@@ -49,8 +49,6 @@
     restroomBuilder.errorToSet = underlyingError;
     
     restroomManager.restroomBuilder = restroomBuilder;
-    
-    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
 }
 
 - (void)tearDown
@@ -101,7 +99,7 @@
 // don't report underlying error to delegate for user to see
 - (void)testErrorReturnedToDelegateIsNotSameErrorNotifiedByCommunicator
 {
-    [restroomManager searchingForRestroomFailedWithError:underlyingError];
+    [restroomManager searchingForRestroomsFailedWithError:underlyingError];
     
     XCTAssertFalse(underlyingError == [delegate fetchError], @"Error should be at the correct level of abstraction.");
 }
@@ -109,13 +107,15 @@
 // we still want to document error for admins
 - (void)testErrorReturnedToDelegateDocumentsUnderlyingError
 {
-    [restroomManager searchingForRestroomFailedWithError: underlyingError];
+    [restroomManager searchingForRestroomsFailedWithError: underlyingError];
     
     XCTAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey: NSUnderlyingErrorKey], underlyingError, @"The underlying should be available to client code.");
 }
 
 - (void)testRestroomJSONIsPassedToRestroomBuilder
 {
+    [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
+    
     XCTAssertEqualObjects(restroomBuilder.JSON, @"Fake JSON", @"Downloaded JSON should be sent to RestroomBuilder.");
 }
 
@@ -127,7 +127,27 @@
 - (void)testDelegateIsNotToldAboutErrorWhenRestroomsReceived
 {
     restroomBuilder.arrayToReturn = restroomArray;
-    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    [restroomManager receivedRestroomsJSONString:
+        @"{"
+        @"\"id\": 4327,"
+        @"\"name\": \"Target\","
+        @"\"street\": \"7900 Old Wake Forest Rd\","
+        @"\"city\": \"Raleigh\","
+        @"\"state\": \"NC\","
+        @"\"accessible\": false,"
+        @"\"unisex\": true,"
+        @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+        @"\"comment\": \"This is the Target by Triangle Town Center.\","
+        @"\"latitude\": 35.867321,"
+        @"\"longitude\": -78.567711,"
+        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"downvote\": 0,"
+        @"\"upvote\": 1,"
+        @"\"country\": \"US\","
+        @"\"pg_search_rank\": 0.66872"
+        @"}"
+     ];
     
     XCTAssertNil([delegate fetchError], @"No error should be received on restroom JSON being received successfully.");
 }
@@ -135,7 +155,7 @@
 - (void)testDelegateReceivesTheRestroomsDiscoveredByManager
 {
     restroomBuilder.arrayToReturn = restroomArray;
-    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
     
     XCTAssertEqualObjects([delegate receivedRestrooms], restroomArray, @"The manager should have sent its restroom to the delegate.");
 }
@@ -143,11 +163,9 @@
 - (void)testEmptyArrayIsPassedToDelegateWhenNoRestroomsReceived
 {
     restroomBuilder.arrayToReturn = [NSArray array];
-    [restroomManager receivedRestroomsJSON:@"Fake JSON"];
+    [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
     
     XCTAssertEqualObjects([delegate receivedRestrooms], [NSArray array], @"Returning an empty array of Restrooms should not be an error.");
 }
-
-
 
 @end

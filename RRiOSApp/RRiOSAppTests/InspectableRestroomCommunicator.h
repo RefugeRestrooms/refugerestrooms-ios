@@ -10,4 +10,7 @@
 
 @interface InspectableRestroomCommunicator : RestroomCommunicator
 
+- (NSURL *)URLToFetch;
+- (NSURLConnection *)currentURLConnection;
+
 @end
