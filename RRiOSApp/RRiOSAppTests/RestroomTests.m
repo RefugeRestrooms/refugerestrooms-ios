@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:@"2014-02-02T20:55:31.555Z" andDatabaseID:6303];
+    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:@"2014-02-02T20:55:31.555Z"];
     
     restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
     restroom.comment = @"";
@@ -43,6 +43,14 @@
 - (void)testThatARestroomCanBeCreated
 {
     XCTAssertNotNil(restroom, @"Should be able to create a Restroom instance.");
+}
+
+- (void)testThatIDCanBeSet
+{
+    int testID = 1111;
+    restroom.databaseID = testID;
+    
+    XCTAssertEqual(testID, restroom.databaseID, @"Should be able to set ID for Restroom.");
 }
 
 - (void)testThatDirectionsCanBeSet
@@ -112,12 +120,12 @@
 
 - (void)testThatRestroomHasAFlagForAccessibility
 {
-    XCTAssertEqual(restroom.isAccessible, (BOOL)FALSE, @"Restroom should have the accessibility flag given when initialized.");
+    XCTAssertFalse(restroom.isAccessible, @"Restroom should have the accessibility flag given when initialized.");
 }
 
 - (void)testThatRestroomHasAFlagForUnisex
 {
-    XCTAssertEqual(restroom.isUnisex, (BOOL)TRUE, @"Restroom should have the unisex flag given when initialized.");
+    XCTAssertTrue(restroom.isUnisex, @"Restroom should have the unisex flag given when initialized.");
 }
 
 - (void)testThatRestroomHasDirections
@@ -145,10 +153,6 @@
     XCTAssertEqualObjects(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"Restroom should have the date created given when initialized.");
 }
 
-- (void)testThatRestroomHasAnID
-{
-    XCTAssertEqual(restroom.databaseID, 6303, @"Restroom should have the database ID given when initialized.");
-}
 
 
 @end

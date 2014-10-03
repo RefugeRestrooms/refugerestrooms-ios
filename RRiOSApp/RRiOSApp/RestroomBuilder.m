@@ -41,18 +41,18 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     {
         // required properties
         Restroom *restroom = [[Restroom alloc]
-                          initWithName:[restroomDictionary objectForKey:@"name"]
-                          andStreet:[restroomDictionary objectForKey:@"street"]
-                          andCity:[restroomDictionary objectForKey:@"city"]
-                          andState:[restroomDictionary objectForKey:@"state"]
-                          andCountry:[restroomDictionary objectForKey:@"country"]
-                          andIsAccessible:[[restroomDictionary objectForKey:@"accessible"] boolValue]
-                          andIsUnisex:[[restroomDictionary objectForKey:@"unisex"] boolValue]
-                          andNumDownvotes:[[restroomDictionary objectForKey:@"downvote"] intValue]
-                          andNumUpvotes:[[restroomDictionary objectForKey:@"upvote"] intValue]
-                          andDateCreated:[restroomDictionary objectForKey:@"created_at"]
-                          andDatabaseID:[[restroomDictionary objectForKey:@"id"] intValue]];
-        
+                                initWithName:[restroomDictionary objectForKey:@"name"]
+                                andStreet:[restroomDictionary objectForKey:@"street"]
+                                andCity:[restroomDictionary objectForKey:@"city"]
+                                andState:[restroomDictionary objectForKey:@"state"]
+                                andCountry:[restroomDictionary objectForKey:@"country"]
+                                andIsAccessible:[[restroomDictionary objectForKey:@"accessible"] boolValue]
+                                andIsUnisex:[[restroomDictionary objectForKey:@"unisex"] boolValue]
+                                andNumDownvotes:[[restroomDictionary objectForKey:@"downvote"] intValue]
+                                andNumUpvotes:[[restroomDictionary objectForKey:@"upvote"] intValue]
+                                andDateCreated:[restroomDictionary objectForKey:@"created_at"]
+                              ];
+                              
         // if error, return
         if(restroom == nil)
         {
@@ -70,13 +70,14 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         id latitude = [restroomDictionary objectForKey:@"latitude"];
         id longitude = [restroomDictionary objectForKey:@"longitude"];
         id searchRank = [restroomDictionary objectForKey:@"pg_search_rank"];
-        
+        id databaseID = [restroomDictionary objectForKey:@"id"];
         
         if(!(directions == nil)) { restroom.directions = directions; }
         if(!(comment == nil)) { restroom.comment = comment; }
         if(!(latitude == [NSNull null])) { restroom.latitude = [latitude doubleValue]; }
         if(!(longitude == [NSNull null])) { restroom.longitude = [longitude doubleValue]; }
-        if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue];}
+        if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }
+        if(!(databaseID == [NSNull null])) { restroom.databaseID = [databaseID intValue]; }
         
         [restrooms addObject:restroom];
     

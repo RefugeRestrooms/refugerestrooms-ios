@@ -10,7 +10,9 @@
 
 @implementation Restroom
 
--(id) initWithName:(NSString *)name andStreet:(NSString *)street andCity:(NSString *)city andState:(NSString *)state andCountry:(NSString *)country andIsAccessible:(BOOL)isAccessible andIsUnisex:(BOOL)isUnisex andNumDownvotes:(int)numDownvotes andNumUpvotes:(int)numUpvotes andDateCreated:(NSString *)dateCreated andDatabaseID:(int)databaseID
+
+// Designated initializer
+-(id) initWithName:(NSString *)name andStreet:(NSString *)street andCity:(NSString *)city andState:(NSString *)state andCountry:(NSString *)country andIsAccessible:(BOOL)isAccessible andIsUnisex:(BOOL)isUnisex andNumDownvotes:(int)numDownvotes andNumUpvotes:(int)numUpvotes andDateCreated:(NSString *)dateCreated
 {
     self = [super init];
     
@@ -24,7 +26,6 @@
     _numDownvotes = numDownvotes;
     _numUpvotes = numUpvotes;
     _dateCreated = dateCreated;
-    _databaseID = databaseID;
     
     return self;
 }

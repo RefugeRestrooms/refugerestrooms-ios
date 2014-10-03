@@ -20,8 +20,8 @@
 @property (readonly) int numDownvotes;
 @property (readonly) int numUpvotes;
 @property (readonly) NSString *dateCreated;
-@property (readonly) long databaseID;
 
+@property (assign, nonatomic) int databaseID;
 @property (assign, nonatomic) NSString *directions;
 @property (assign, nonatomic) NSString *comment;
 @property (assign, nonatomic) double latitude;
@@ -38,7 +38,6 @@
    andNumDownvotes:(int)numDownvotes
      andNumUpvotes:(int)numUpvotes
     andDateCreated:(NSString *)dateCreated
-     andDatabaseID:(int)databaseID
 ;
 
 @end
