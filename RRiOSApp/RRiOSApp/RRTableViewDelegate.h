@@ -1,5 +1,5 @@
 //
-//  EmptyTableViewDelegate.h
+//  RRTableViewDelegate.h
 //  RRiOSApp
 //
 //  Created by Harlan Kellaway on 10/3/14.
@@ -10,6 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EmptyTableViewDelegate : NSObject <UITableViewDelegate>
+@class RRTableViewDataSource;
+
+@interface RRTableViewDelegate : NSObject <UITableViewDelegate>
+
+@property (strong) RRTableViewDataSource *tableDataSource;
 
 @end

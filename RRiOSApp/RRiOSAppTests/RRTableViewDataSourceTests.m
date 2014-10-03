@@ -42,7 +42,7 @@
     [super tearDown];
 }
 
-- (void)testRRDataSourceCanReceiveAListOfRestrooms
+- (void)testDataSourceCanReceiveAListOfRestrooms
 {
 
     XCTAssertNoThrow(dataSource.restroomsList = restroomsList, @"The data source should have a list of Restrooms.");

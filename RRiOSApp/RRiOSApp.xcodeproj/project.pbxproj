@@ -38,10 +38,11 @@
 		CEA950A519DF436200D8553D /* RRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950A419DF436200D8553D /* RRViewController.m */; };
 		CEA950A619DF436200D8553D /* RRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950A419DF436200D8553D /* RRViewController.m */; };
 		CEA950A819DF43A600D8553D /* RRViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950A719DF43A600D8553D /* RRViewControllerTests.m */; };
-		CEA950B619DF482E00D8553D /* EmptyTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950B519DF482E00D8553D /* EmptyTableViewDelegate.m */; };
 		CEA950B919DF4F5100D8553D /* RRTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950B819DF4F5100D8553D /* RRTableViewDataSource.m */; };
 		CEA950BA19DF4F5100D8553D /* RRTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950B819DF4F5100D8553D /* RRTableViewDataSource.m */; };
 		CEA950BE19DF4FE400D8553D /* RRTableViewDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */; };
+		CEA950C119DF5C7700D8553D /* RRTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */; };
+		CEA950C219DF5C7700D8553D /* RRTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,11 +101,11 @@
 		CEA950A319DF436200D8553D /* RRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRViewController.h; sourceTree = "<group>"; };
 		CEA950A419DF436200D8553D /* RRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRViewController.m; sourceTree = "<group>"; };
 		CEA950A719DF43A600D8553D /* RRViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRViewControllerTests.m; sourceTree = "<group>"; };
-		CEA950B419DF482E00D8553D /* EmptyTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyTableViewDelegate.h; sourceTree = "<group>"; };
-		CEA950B519DF482E00D8553D /* EmptyTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyTableViewDelegate.m; sourceTree = "<group>"; };
 		CEA950B719DF4F5100D8553D /* RRTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTableViewDataSource.h; sourceTree = "<group>"; };
 		CEA950B819DF4F5100D8553D /* RRTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDataSource.m; sourceTree = "<group>"; };
 		CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDataSourceTests.m; sourceTree = "<group>"; };
+		CEA950BF19DF5C7700D8553D /* RRTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTableViewDelegate.h; sourceTree = "<group>"; };
+		CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +163,8 @@
 				CEA950A419DF436200D8553D /* RRViewController.m */,
 				CEA950B719DF4F5100D8553D /* RRTableViewDataSource.h */,
 				CEA950B819DF4F5100D8553D /* RRTableViewDataSource.m */,
+				CEA950BF19DF5C7700D8553D /* RRTableViewDelegate.h */,
+				CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */,
 				CE70CF9119D5F92D004E34F9 /* ViewController.h */,
 				CE70CF9219D5F92D004E34F9 /* ViewController.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
@@ -187,8 +190,6 @@
 			children = (
 				CE60F13A19DDD487003C5E57 /* FakeURLResponse.h */,
 				CE60F13B19DDD487003C5E57 /* FakeURLResponse.m */,
-				CEA950B419DF482E00D8553D /* EmptyTableViewDelegate.h */,
-				CEA950B519DF482E00D8553D /* EmptyTableViewDelegate.m */,
 				CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */,
 				CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */,
 				CE1F5E7319DA1B35005F3B04 /* MockRestroomBuilder.h */,
@@ -327,6 +328,7 @@
 				CEA950B919DF4F5100D8553D /* RRTableViewDataSource.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
+				CEA950C119DF5C7700D8553D /* RRTableViewDelegate.m in Sources */,
 				CE1F5E6719DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CE70CF9319D5F92D004E34F9 /* ViewController.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
@@ -349,7 +351,6 @@
 				CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */,
 				CE1F5E4719D9DA6F005F3B04 /* RestroomManagerTests.m in Sources */,
 				CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */,
-				CEA950B619DF482E00D8553D /* EmptyTableViewDelegate.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */,
 				CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
@@ -357,6 +358,7 @@
 				CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */,
 				CE60F13C19DDD487003C5E57 /* FakeURLResponse.m in Sources */,
 				CEA950A619DF436200D8553D /* RRViewController.m in Sources */,
+				CEA950C219DF5C7700D8553D /* RRTableViewDelegate.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEA950A819DF43A600D8553D /* RRViewControllerTests.m in Sources */,
 				CE1F5E6C19DA05C0005F3B04 /* Restroom.m in Sources */,

@@ -14,8 +14,10 @@
 {
     [super viewDidLoad];
     
-    self.tableView.delegate = self.tableViewDelegate;
-    self.tableView.dataSource = self.dataSource;
+    _tableView.delegate = self.tableViewDelegate;
+    _tableView.dataSource = self.dataSource;
+    
+    _tableViewDelegate.tableDataSource = self.dataSource;
 }
 
 @end
