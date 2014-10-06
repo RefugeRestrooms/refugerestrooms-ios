@@ -12,10 +12,12 @@
 
 #import "Restroom.h"
 
-@interface RRTableViewDataSource : NSObject <UITableViewDataSource>
+extern NSString *RRTableViewDidSelectRestroomNotification;
+
+@interface RRTableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 @property (assign, nonatomic) NSArray *restroomsList;
 
-- (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath;
+- (void)setRestroomsList:(NSArray *)restroomsList;
 
 @end

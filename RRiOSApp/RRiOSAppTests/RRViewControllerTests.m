@@ -12,7 +12,6 @@
 #import <objc/runtime.h>
 
 #import "RRTableViewDataSource.h"
-#import "RRTableViewDelegate.h"
 
 #import "RRViewController.h"
 
@@ -20,8 +19,7 @@
 {
     RRViewController *viewController;
     UITableView *tableView;
-    id <UITableViewDataSource> dataSource;
-    RRTableViewDelegate *delegate;
+    id <UITableViewDataSource, UITableViewDelegate> dataSource;
 }
 @end
 
@@ -37,9 +35,7 @@
     viewController.tableView = tableView;
     
     dataSource = [[RRTableViewDataSource alloc] init];
-    delegate = [[RRTableViewDelegate alloc] init];
     viewController.dataSource = dataSource;
-    viewController.tableViewDelegate = delegate;
 }
 
 - (void)tearDown
@@ -47,7 +43,6 @@
     viewController = nil;
     tableView = nil;
     dataSource = nil;
-    delegate = nil;
     
     [super tearDown];
 }
@@ -66,13 +61,6 @@
     XCTAssertTrue(dataSourceProperty != NULL, @"RRViewController should have a table view delegate.");
 }
 
-- (void)testViewControllerHasATableViewDelegateProperty
-{
-    objc_property_t delegateProperty = class_getProperty([viewController class], "tableViewDelegate");
-    
-    XCTAssertTrue(delegateProperty != NULL, @"View Controller needs a table view delegate.");
-}
-
 - (void)testViewControllerConnectsDataSourceInViewDidLoad
 {
     [viewController viewDidLoad];
@@ -84,14 +72,7 @@
 {
     [viewController viewDidLoad];
     
-    XCTAssertEqualObjects([tableView delegate], delegate, @"View Controller should have set the table view's delegate.");
-}
-
-- (void)testViewControllerConnectsDataSourceToDelegate
-{
-    [viewController viewDidLoad];
-    
-    XCTAssertEqualObjects(delegate.tableDataSource, dataSource, @"The ViewController should tell the table view delegate about its datasource.");
+    XCTAssertEqualObjects([tableView delegate], dataSource, @"View Controller should have set the table view's delegate.");
 }
 
 @end

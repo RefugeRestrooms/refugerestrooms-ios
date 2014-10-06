@@ -94,13 +94,4 @@
     XCTAssertEqualObjects(@"Ferry Bldg", cellText, @"Cell's text should be equal to the Restroom's name.");
 }
 
-- (void)testDataSourceIndicatesWhichRestroomIsRepresentedForAnIndexPath
-{
-    NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
-    
-    Restroom *firstRestroom = [dataSource restroomForIndexPath:firstRow];
-    
-    XCTAssertEqualObjects(firstRestroom.name, @"Ferry Bldg", @"The Restroom at row 0 should be the default name (Ferry Bldg).");
-}
-
 @end

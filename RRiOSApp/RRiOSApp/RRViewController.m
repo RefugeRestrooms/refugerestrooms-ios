@@ -7,6 +7,7 @@
 //
 
 #import "RRViewController.h"
+#import "RRTableViewDataSource.h"
 
 @implementation RRViewController
 
@@ -14,10 +15,8 @@
 {
     [super viewDidLoad];
     
-    _tableView.delegate = self.tableViewDelegate;
+    _tableView.delegate = self.dataSource;
     _tableView.dataSource = self.dataSource;
-    
-    _tableViewDelegate.tableDataSource = self.dataSource;
 }
 
 @end

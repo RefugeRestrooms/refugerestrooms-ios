@@ -9,15 +9,10 @@
 #import <UIKit/UIKit.h>
 
 #import "RRTableViewDataSource.h"
-#import "RRTableViewDelegate.h"
 
 @interface RRViewController : UIViewController
 
 @property (strong) UITableView *tableView;
-
-// TODO: make generic if this controller is to be re-used
-// i.e. <id> UITableViewDataSource and <id> UITableViewDelegate
-@property (strong) RRTableViewDataSource *dataSource;
-@property (strong) RRTableViewDelegate *tableViewDelegate;
+@property (strong) NSObject <UITableViewDataSource, UITableViewDelegate> *dataSource;
 
 @end

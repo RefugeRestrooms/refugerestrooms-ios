@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-#import "RRTableViewDelegate.h"
 #import "RRTableViewDataSource.h"
 #import "Restroom.h"
 
@@ -17,7 +16,6 @@
 {
     NSNotification *receivedNotification;
     RRTableViewDataSource *dataSource;
-    RRTableViewDelegate *delegate;
     Restroom *testRestroom;
 }
 @end
@@ -28,12 +26,10 @@
 {
     [super setUp];
     
-    delegate = [[RRTableViewDelegate alloc] init];
     dataSource = [[RRTableViewDataSource alloc] init];
     testRestroom = [[Restroom alloc] init];
     
     dataSource.restroomsList = [NSArray arrayWithObject: testRestroom];
-    delegate.tableDataSource = dataSource;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNotification:) name:RRTableViewDidSelectRestroomNotification object:nil];
 }
@@ -42,7 +38,6 @@
 {
     receivedNotification = nil;
     dataSource = nil;
-    delegate = nil;
     testRestroom = nil;
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -50,11 +45,11 @@
     [super tearDown];
 }
 
-- (void)testDelegatePostNotificationOnSelectionIsShowingSelectedRestroom
+- (void)testDelegatePostsNotificationOnSelectionShowingWhichRestroomWasSelected
 {
     NSIndexPath *selection = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    [delegate tableView:nil didSelectRowAtIndexPath:selection];
+    [dataSource tableView:nil didSelectRowAtIndexPath:selection];
     
     XCTAssertEqualObjects([receivedNotification name], @"RRTableViewDidSelectRestroomNotification", @"The delegate should notify that a Restroom was selected.");
     

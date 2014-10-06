@@ -9,6 +9,7 @@
 #import "RRTableViewDataSource.h"
 
 NSString *restroomCellReuseIdentifier = @"RestroomCell";
+NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestroomNotification";
 
 @implementation RRTableViewDataSource
 
@@ -46,6 +47,16 @@ NSString *restroomCellReuseIdentifier = @"RestroomCell";
     restroomCell.textLabel.text = [[_restroomsList objectAtIndex:[indexPath row]] name];
     
     return restroomCell;
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // post a notification whe a selection is made
+    NSNotification *notification = [NSNotification notificationWithName:RRTableViewDidSelectRestroomNotification object:[self restroomForIndexPath:indexPath]];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
 }
 
 @end
