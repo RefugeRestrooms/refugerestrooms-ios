@@ -8,6 +8,15 @@
 
 #import "RRTableViewDelegate.h"
 
+NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestroomNotification";
+
 @implementation RRTableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSNotification *notification = [NSNotification notificationWithName:RRTableViewDidSelectRestroomNotification object:[_tableDataSource restroomForIndexPath:indexPath]];
+    
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+}
 
 @end

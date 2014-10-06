@@ -43,6 +43,7 @@
 		CEA950BE19DF4FE400D8553D /* RRTableViewDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */; };
 		CEA950C119DF5C7700D8553D /* RRTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */; };
 		CEA950C219DF5C7700D8553D /* RRTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */; };
+		CEA950C619DF652F00D8553D /* RRTableViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950C519DF652F00D8553D /* RRTableViewDelegateTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDataSourceTests.m; sourceTree = "<group>"; };
 		CEA950BF19DF5C7700D8553D /* RRTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTableViewDelegate.h; sourceTree = "<group>"; };
 		CEA950C019DF5C7700D8553D /* RRTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDelegate.m; sourceTree = "<group>"; };
+		CEA950C519DF652F00D8553D /* RRTableViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTableViewDelegateTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,8 +209,9 @@
 				CE1F5E4819D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m */,
 				CE1F5E4619D9DA6F005F3B04 /* RestroomManagerTests.m */,
 				CE39974E19DB3BB7001C98F8 /* RestroomTests.m */,
-				CEA950A719DF43A600D8553D /* RRViewControllerTests.m */,
 				CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */,
+				CEA950C519DF652F00D8553D /* RRTableViewDelegateTests.m */,
+				CEA950A719DF43A600D8553D /* RRViewControllerTests.m */,
 				CE70CFA419D5F92D004E34F9 /* Supporting Files */,
 			);
 			path = RRiOSAppTests;
@@ -353,6 +356,7 @@
 				CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */,
+				CEA950C619DF652F00D8553D /* RRTableViewDelegateTests.m in Sources */,
 				CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CEA950BA19DF4F5100D8553D /* RRTableViewDataSource.m in Sources */,
 				CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */,

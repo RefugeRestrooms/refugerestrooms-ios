@@ -10,8 +10,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Restroom.h"
+
 @interface RRTableViewDataSource : NSObject <UITableViewDataSource>
 
 @property (assign, nonatomic) NSArray *restroomsList;
+
+- (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath;
 
 @end

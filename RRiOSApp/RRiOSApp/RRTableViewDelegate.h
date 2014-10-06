@@ -10,6 +10,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RRTableViewDataSource.h"
+
+extern NSString *RRTableViewDidSelectRestroomNotification;
+
 @class RRTableViewDataSource;
 
 @interface RRTableViewDelegate : NSObject <UITableViewDelegate>

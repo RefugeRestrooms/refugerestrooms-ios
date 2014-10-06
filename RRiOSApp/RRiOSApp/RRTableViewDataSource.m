@@ -17,6 +17,11 @@ NSString *restroomCellReuseIdentifier = @"RestroomCell";
     _restroomsList = restroomsList;
 }
 
+- (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath
+{
+    return [_restroomsList objectAtIndex:[indexPath row]];
+}
+
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
