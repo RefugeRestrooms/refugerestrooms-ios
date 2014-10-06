@@ -63,6 +63,7 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     RRViewController *viewController;
     UITableView *tableView;
     id <UITableViewDataSource, UITableViewDelegate> dataSource;
+    UINavigationController *navigationController;
     
     // view appear/disappear selectors
     SEL realViewDidAppear, testViewDidAppear;
@@ -108,6 +109,9 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     // swap RRViewControllers real -userDidSelectRestroom with our test version
     realUserDidSelectRestroom = @selector(userDidSelectRestroomNotification:);
     testUserDidSelectRestroom = @selector(RRViewControllerTests_userDidSelectRestroomNotification:);
+    
+    // navigation controller set up
+    navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 }
 
 - (void)tearDown
@@ -117,6 +121,7 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     viewController = nil;
     tableView = nil;
     dataSource = nil;
+    navigationController = nil;
     
     // undo swaps
     [RRViewControllerTests swapInstanceMethodsForClass:[UIViewController class] selector:realViewDidAppear andSelector:testViewDidAppear];
@@ -155,9 +160,15 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
 
 - (void)testDefaultStateOfViewControllerDoesNotReceiveNotifications
 {
+    // swap
+    [RRViewControllerTests swapInstanceMethodsForClass:[RRViewController class] selector:realUserDidSelectRestroom andSelector:testUserDidSelectRestroom];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:RRTableViewDidSelectRestroomNotification object:nil userInfo:nil];
     
     XCTAssertNil(objc_getAssociatedObject(viewController, notificationKey), @"Notification should not be received before -viewDidAppear");
+    
+    // un-do swap
+    [RRViewControllerTests swapInstanceMethodsForClass:[RRViewController class] selector:realUserDidSelectRestroom andSelector:testUserDidSelectRestroom];
 }
 
 - (void)testViewControllerReceivesTableSelectionNotificationAfterViewDidAppear
@@ -177,11 +188,18 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
 
 - (void)testViewControllerDoesNotReceiveTableSelectionNotificationAfterViewWillDisappear
 {
+    // swap
+    [RRViewControllerTests swapInstanceMethodsForClass:[RRViewController class] selector:realUserDidSelectRestroom andSelector:testUserDidSelectRestroom];
+    
     [viewController viewDidAppear:NO];
+    [viewController viewWillDisappear:NO];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:RRTableViewDidSelectRestroomNotification object:nil userInfo:nil];
     
     XCTAssertNil(objc_getAssociatedObject(viewController, notificationKey), @"After -viewWillDisappear, the View Controller should no longer respond to topic selection notifications.");
+    
+    // un-do swap
+    [RRViewControllerTests swapInstanceMethodsForClass:[RRViewController class] selector:realUserDidSelectRestroom andSelector:testUserDidSelectRestroom];
 }
 
 - (void)testViewControllerCallsSuperViewDidAppear
