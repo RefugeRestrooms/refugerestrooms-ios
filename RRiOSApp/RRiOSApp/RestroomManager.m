@@ -29,17 +29,18 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     _delegate = newDelegate;
 }
 
-#pragma mark - Restrooms
-
 - (void)fetchRestroomsForQuery:(NSString *)query
 {
     [_communicator searchForRestroomsWithQuery:query];
 }
 
+#pragma mark - Helper methods
+
 - (void)receivedRestroomsJSONString:(NSString *)jsonString
 {
     NSError *error = nil;
     NSArray *restrooms = [_restroomBuilder restroomsFromJSON:jsonString error:&error];
+    
     if(!restrooms)
     {
         // underlying error
@@ -51,13 +52,11 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     }
 }
 
+
 - (void)searchingForRestroomsFailedWithError:(NSError *)error
 {
     [self tellDelegateAboutRestroomSearchError:error];
 }
-
-
-#pragma mark - Helper methods
 
 - (void)tellDelegateAboutRestroomSearchError:(NSError *)underlyingError
 {
@@ -68,7 +67,7 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
         errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey:NSUnderlyingErrorKey];
     }
     
-    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo: errorInfo];
+    NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
     
     [_delegate fetchingRestroomsFailedWithError:reportableError];
 }

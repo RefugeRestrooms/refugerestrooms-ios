@@ -12,7 +12,7 @@
 
 @interface RRViewController : UIViewController
 
-@property (strong) UITableView *tableView;
+@property (strong) IBOutlet UITableView *tableView;
 @property (strong) NSObject <UITableViewDataSource, UITableViewDelegate> *dataSource;
 
 - (void)userDidSelectRestroomNotification:(NSNotification *)notification;

@@ -18,11 +18,6 @@ NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestr
     _restroomsList = restroomsList;
 }
 
-- (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath
-{
-    return [_restroomsList objectAtIndex:[indexPath row]];
-}
-
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -57,6 +52,13 @@ NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestr
     NSNotification *notification = [NSNotification notificationWithName:RRTableViewDidSelectRestroomNotification object:[self restroomForIndexPath:indexPath]];
     
     [[NSNotificationCenter defaultCenter] postNotification:notification];
+}
+
+#pragma mark - Helper methods
+
+- (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath
+{
+    return [_restroomsList objectAtIndex:[indexPath row]];
 }
 
 @end

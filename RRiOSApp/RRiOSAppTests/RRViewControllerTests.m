@@ -13,6 +13,7 @@
 
 #import "RRTableViewDataSource.h"
 #import "RRViewController.h"
+#import "RestroomDetailsViewController.h"
 
 // CATEGORY = TestNotificationDelivery
 static const char *notificationKey = "RRViewControllerTestsAssociatedNotificationKey";
@@ -137,7 +138,7 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     XCTAssertTrue(tableViewProperty != NULL, @"RRViewController should have a table view.");
 }
 
-- (void)testViewControllerHasADataSourceProperty
+- (void)testViewControllerHasDataSourceProperty
 {
     objc_property_t dataSourceProperty = class_getProperty([viewController class], "dataSource");
     
@@ -214,6 +215,17 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     [viewController viewWillDisappear:NO];
     
     XCTAssertNotNil(objc_getAssociatedObject(viewController, viewWillDisappearKey), @"-viewWillDisappear should call through to supperclass implementation.");
+}
+
+- (void)testSelectingRestroomPushesNewViewController
+{
+    [viewController userDidSelectRestroomNotification:nil];
+    
+    UIViewController *currentTopViewController = navigationController.topViewController;
+    
+    XCTAssertFalse([currentTopViewController isEqual:viewController], @"New view controller should be pushed onto Navigation Controller stack.");
+    
+    XCTAssertTrue([currentTopViewController isKindOfClass:[RestroomDetailsViewController class]], @"New view Controller should be an RestroomDetailsViewController.");
 }
 
 @end

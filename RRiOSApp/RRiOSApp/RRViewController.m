@@ -8,6 +8,7 @@
 
 #import "RRViewController.h"
 #import "RRTableViewDataSource.h"
+#import "RestroomDetailsViewController.h"
 
 @implementation RRViewController
 
@@ -42,12 +43,13 @@
 //    objc_setAssociatedObject(self, viewControllerTestsNotificationKey, notification, OBJC_ASSOCIATION_RETAIN);
 
     Restroom *selectedRestroom = (Restroom *)[notification object];
-    RRViewController *nextViewController = [[RRViewController alloc] init];
-//    QuestionListTableDataSource *questionsDataSource = [[QuestionListTableDataSource alloc] init];
-//    questionsDataSource.topic = selectedTopic;
-//    nextViewController.dataSource = questionsDataSource;
-//    nextViewController.objectConfiguration = self.objectConfiguration;
-    [[self navigationController] pushViewController: nextViewController animated: YES];
+    RestroomDetailsViewController *nextViewController = [[RestroomDetailsViewController alloc] init];
+    
+    nextViewController.restroom = selectedRestroom;
+    
+    // TODO: review whether animated s hould be NO
+    // (changed to this because of http://stackoverflow.com/q/26223897/3777116 )
+    [[self navigationController] pushViewController:nextViewController animated:NO];
 }
 
 
