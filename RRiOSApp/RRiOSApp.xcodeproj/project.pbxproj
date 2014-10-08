@@ -31,7 +31,6 @@
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
-		CE70CF9319D5F92D004E34F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF9219D5F92D004E34F9 /* ViewController.m */; };
 		CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9419D5F92D004E34F9 /* Main.storyboard */; };
 		CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9719D5F92D004E34F9 /* Images.xcassets */; };
 		CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */; };
@@ -93,8 +92,6 @@
 		CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE70CF8F19D5F92D004E34F9 /* RRiOSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RRiOSApp.xcdatamodel; sourceTree = "<group>"; };
-		CE70CF9119D5F92D004E34F9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE70CF9219D5F92D004E34F9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE70CF9519D5F92D004E34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE70CF9719D5F92D004E34F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CE70CF9A19D5F92D004E34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -169,8 +166,6 @@
 				CEA950A419DF436200D8553D /* RRViewController.m */,
 				CEA950B719DF4F5100D8553D /* RRTableViewDataSource.h */,
 				CEA950B819DF4F5100D8553D /* RRTableViewDataSource.m */,
-				CE70CF9119D5F92D004E34F9 /* ViewController.h */,
-				CE70CF9219D5F92D004E34F9 /* ViewController.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
@@ -336,7 +331,6 @@
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE1F5E6719DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
-				CE70CF9319D5F92D004E34F9 /* ViewController.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,

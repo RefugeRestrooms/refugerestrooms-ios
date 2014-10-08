@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ivA-hg-Iaf">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,6 +26,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pa-zh-ITA" id="Cot-Lm-CHi">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="2dB-tB-w3A" kind="show" identifier="ShowRestroomDetails" id="bw5-0g-QJf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -60,17 +62,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPW-Vi-qOi">
-                                <rect key="frame" x="16" y="28" width="400" height="120"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPW-Vi-qOi">
+                                <rect key="frame" x="16" y="30" width="94" height="560"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WPW-Vi-qOi" firstAttribute="leading" secondItem="2vU-Re-rAK" secondAttribute="leadingMargin" id="4Mn-NI-5lr"/>
+                            <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="WPW-Vi-qOi" secondAttribute="bottom" constant="10" id="TEE-03-01F"/>
+                            <constraint firstItem="WPW-Vi-qOi" firstAttribute="top" secondItem="2vU-Re-rAK" secondAttribute="topMargin" constant="30" id="YYR-3c-iA5"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameLabel" destination="WPW-Vi-qOi" id="v0T-Fl-ORH"/>
+                        <outlet property="nameLabel" destination="WPW-Vi-qOi" id="ic8-NR-acn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajN-3Z-1Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>

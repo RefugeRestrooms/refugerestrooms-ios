@@ -6,7 +6,6 @@
   * [Architecture](#architecture)
     * [Design](#design)
     * [Classes](#classes)
-  * Graphic Design (#graphic-design)
   * [Milestones](#milestones)
     * [Milestone 1](#milestone-1)
     * [Milestone 2](#milestone-2)
@@ -60,15 +59,6 @@ Navigation will be handled through a *Tab Bar Controller* with these options opt
     - *Toggles*
     - etc.
 
-
-[Back to top ^](#)
-
----
-
-### Graphic Design
-
-[Color Palette](https://color.adobe.com/Refuge-Restrooms-color-theme-4191730/)
-[Assets](https://github.com/RefugeRestrooms/refuge_assets)
 
 [Back to top ^](#)
 

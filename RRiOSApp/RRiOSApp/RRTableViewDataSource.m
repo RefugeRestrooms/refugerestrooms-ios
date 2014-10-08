@@ -8,10 +8,27 @@
 
 #import "RRTableViewDataSource.h"
 
+#import "Restroom.h"
+
 NSString *restroomCellReuseIdentifier = @"RestroomCell";
 NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestroomNotification";
 
 @implementation RRTableViewDataSource
+
+// TODO: remove after testing
+- (instancetype)init
+{
+    self = [super init];
+    
+    if(self)
+    {
+        Restroom *restroom = [[Restroom alloc] init];
+    
+        self.restroomsList = @[ restroom ];
+    }
+    
+    return self;
+}
 
 - (void)setRestroomsList:(NSArray *)restroomsList
 {

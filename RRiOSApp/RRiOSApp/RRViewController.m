@@ -16,8 +16,10 @@
 {
     [super viewDidLoad];
     
-    _tableView.delegate = self.dataSource;
-    _tableView.dataSource = self.dataSource;
+    self.dataSource = [[RRTableViewDataSource alloc] init];
+    
+    _tableView.delegate = _dataSource;
+    _tableView.dataSource = _dataSource;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -40,17 +42,22 @@
 
 - (void)userDidSelectRestroomNotification:(NSNotification *)notification
 {
-//    objc_setAssociatedObject(self, viewControllerTestsNotificationKey, notification, OBJC_ASSOCIATION_RETAIN);
-
     Restroom *selectedRestroom = (Restroom *)[notification object];
-    RestroomDetailsViewController *nextViewController = [[RestroomDetailsViewController alloc] init];
     
-    nextViewController.restroom = selectedRestroom;
-    
-    // TODO: review whether animated s hould be NO
-    // (changed to this because of http://stackoverflow.com/q/26223897/3777116 )
-    [[self navigationController] pushViewController:nextViewController animated:NO];
-}
+    [self performSegueWithIdentifier:@"ShowRestroomDetails" sender:selectedRestroom];
+};
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowRestroomDetails"])
+    {
+        if([sender isKindOfClass:[Restroom class]])
+        {
+            RestroomDetailsViewController *restroomDetailsViewController = (RestroomDetailsViewController*)segue.destinationViewController;
+    
+            restroomDetailsViewController.restroom = sender;
+        }
+    }
+}
 
 @end

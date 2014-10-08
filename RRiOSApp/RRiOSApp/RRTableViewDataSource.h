@@ -16,7 +16,7 @@ extern NSString *RRTableViewDidSelectRestroomNotification;
 
 @interface RRTableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-@property (assign, nonatomic) NSArray *restroomsList;
+@property (strong, nonatomic) NSArray *restroomsList;
 
 - (void)setRestroomsList:(NSArray *)restroomsList;
 

@@ -19,13 +19,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RRiOSAppTests/RestroomDetailsViewControllerTests.m"
-            timestampString = "434325398.464235"
+            filePath = "RRiOSApp/RRViewController.m"
+            timestampString = "434485553.487863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "47"
             endingLineNumber = "47"
-            landmarkName = "-testThatNameIsSet"
+            landmarkName = "-userDidSelectRestroomNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RRTableViewDataSource.m"
+            timestampString = "434424442.482999"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,59 +51,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RRiOSApp/RestroomDetailsViewController.m"
-            timestampString = "434325490.451726"
+            filePath = "RRiOSApp/RRTableViewDataSource.m"
+            timestampString = "434484361.45625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomDetailsViewController viewWillAppear:]"
-                  moduleName = "RRiOSApp"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomDetailsViewController.m"
-                  timestampString = "434329949.089777"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "183">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[RestroomDetailsViewController viewWillAppear:]"
-                  moduleName = "RRiOSAppTests"
-                  urlString = "file:///Users/user/Documents/Github-Projects/MakeSchool/iOS-RefugeRestrooms-App/RRiOSApp/RRiOSApp/RestroomDetailsViewController.m"
-                  timestampString = "434329958.539369"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "183">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "RRiOSAppTests/RestroomDetailsViewControllerTests.m"
-            timestampString = "434327191.522451"
+            filePath = "RRiOSApp/RRViewController.m"
+            timestampString = "434484376.098556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-testThatNameIsSet"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "-userDidSelectRestroomNotification:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RRiOSApp/RRViewController.m"
+            timestampString = "434485593.613517"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-prepareForSegue:sender:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

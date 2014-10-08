@@ -22,7 +22,7 @@
 {
     [super viewWillAppear:animated];
     
-    _nameLabel.text = _restroom.name;
+    self.nameLabel.text = self.restroom.name;
 }
 
 @end

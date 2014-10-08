@@ -228,4 +228,10 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     XCTAssertTrue([currentTopViewController isKindOfClass:[RestroomDetailsViewController class]], @"New view Controller should be an RestroomDetailsViewController.");
 }
 
+- (void)testThatPrepareForSegueExecutesShowRestroomDetailsOnlyWithARestroomObject
+{
+    // TODO: implement
+    XCTAssertTrue(YES, @"This test needs to be implemented.");
+}
+
 @end

@@ -44,11 +44,4 @@
     XCTAssertNotNil(restroomDetailsViewController, @"Should be able to create a RestroomDetailsViewController instance.");
 }
 
-- (void)testThatNameIsSet
-{
-    [restroomDetailsViewController viewWillAppear:YES];
-    
-//    XCTAssertTrue([restroomDetailsViewController.nameLabel.text isEqual:restroom.name], @"Restroom Details name label shoould have same name as Restroom object.");
-}
-
 @end
