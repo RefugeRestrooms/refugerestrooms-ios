@@ -16,6 +16,8 @@
 {
     [super viewDidLoad];
     
+    self.dataSource = [[RRTableViewDataSource alloc] init];
+    
     self.tableView.delegate = self.dataSource;
     self.tableView.dataSource = self.dataSource;
 }
@@ -49,12 +51,12 @@
 {
     if ([segue.identifier isEqualToString:@"ShowRestroomDetails"])
     {
-        if([sender isKindOfClass:[Restroom class]])
-        {
+//        if([sender isKindOfClass:[Restroom class]])
+//        {
             RestroomDetailsViewController *restroomDetailsViewController = (RestroomDetailsViewController*)segue.destinationViewController;
     
             restroomDetailsViewController.restroom = sender;
-        }
+//        }
     }
 }
 

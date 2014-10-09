@@ -92,8 +92,8 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     tableView = [[UITableView alloc] init];
     viewController.tableView = tableView;
     
-    dataSource = [[RRTableViewDataSource alloc] init];
-    viewController.dataSource = dataSource;
+//    dataSource = [[RRTableViewDataSource alloc] init];
+//    viewController.dataSource = dataSource;
     
     objc_removeAssociatedObjects(viewController);
     
@@ -149,14 +149,18 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
 {
     [viewController viewDidLoad];
     
-    XCTAssertEqualObjects([tableView dataSource], dataSource, @"View Controller should have set the table view's data source.");
+    XCTAssertNotNil([tableView dataSource], @"View Controller should have set the table view's data source.");
+    
+    XCTAssertTrue([[tableView dataSource] isKindOfClass:[RRTableViewDataSource class]], @"Table view's data source should be an RRTableViewDataSource.");
 }
 
 - (void)testViewControllerConnectsDelegateInViewDidLoad
 {
     [viewController viewDidLoad];
     
-    XCTAssertEqualObjects([tableView delegate], dataSource, @"View Controller should have set the table view's delegate.");
+    XCTAssertNotNil([tableView delegate], @"View Controller should have set the table view's delegate.");
+    
+    XCTAssertTrue([[tableView delegate] isKindOfClass:[RRTableViewDataSource class]], @"Table view's delegate should be an RRTableViewDataSource.");
 }
 
 - (void)testDefaultStateOfViewControllerDoesNotReceiveNotifications

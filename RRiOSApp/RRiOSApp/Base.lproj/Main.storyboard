@@ -26,9 +26,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Pa-zh-ITA" id="Cot-Lm-CHi">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="2dB-tB-w3A" kind="show" identifier="ShowRestroomDetails" id="bw5-0g-QJf"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -44,6 +41,7 @@
                     <navigationItem key="navigationItem" id="3rB-QC-Y71"/>
                     <connections>
                         <outlet property="tableView" destination="aPF-km-aHa" id="Z7Q-Si-vyK"/>
+                        <segue destination="2dB-tB-w3A" kind="show" identifier="ShowRestroomDetails" id="T3R-Jz-y8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
