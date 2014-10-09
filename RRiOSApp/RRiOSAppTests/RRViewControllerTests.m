@@ -217,17 +217,6 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     XCTAssertNotNil(objc_getAssociatedObject(viewController, viewWillDisappearKey), @"-viewWillDisappear should call through to supperclass implementation.");
 }
 
-- (void)testSelectingRestroomPushesNewViewController
-{
-    [viewController userDidSelectRestroomNotification:nil];
-    
-    UIViewController *currentTopViewController = navigationController.topViewController;
-    
-    XCTAssertFalse([currentTopViewController isEqual:viewController], @"New view controller should be pushed onto Navigation Controller stack.");
-    
-    XCTAssertTrue([currentTopViewController isKindOfClass:[RestroomDetailsViewController class]], @"New view Controller should be an RestroomDetailsViewController.");
-}
-
 - (void)testThatPrepareForSegueExecutesShowRestroomDetailsOnlyWithARestroomObject
 {
     // TODO: implement

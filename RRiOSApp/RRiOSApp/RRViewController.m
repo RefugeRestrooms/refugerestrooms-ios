@@ -16,10 +16,8 @@
 {
     [super viewDidLoad];
     
-    self.dataSource = [[RRTableViewDataSource alloc] init];
-    
-    _tableView.delegate = _dataSource;
-    _tableView.dataSource = _dataSource;
+    self.tableView.delegate = self.dataSource;
+    self.tableView.dataSource = self.dataSource;
 }
 
 - (void)viewDidAppear:(BOOL)animated
