@@ -138,9 +138,9 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     XCTAssertTrue(tableViewProperty != NULL, @"RRViewController should have a table view.");
 }
 
-- (void)testViewControllerHasDataSourceProperty
+- (void)testViewControllerTableViewHasDataSourceProperty
 {
-    objc_property_t dataSourceProperty = class_getProperty([viewController class], "dataSource");
+    objc_property_t dataSourceProperty = class_getProperty([viewController.tableView class], "dataSource");
     
     XCTAssertTrue(dataSourceProperty != NULL, @"RRViewController should have a table view delegate.");
 }
@@ -150,8 +150,6 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     [viewController viewDidLoad];
     
     XCTAssertNotNil([tableView dataSource], @"View Controller should have set the table view's data source.");
-    
-    XCTAssertTrue([[tableView dataSource] isKindOfClass:[RRTableViewDataSource class]], @"Table view's data source should be an RRTableViewDataSource.");
 }
 
 - (void)testViewControllerConnectsDelegateInViewDidLoad
@@ -159,8 +157,6 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     [viewController viewDidLoad];
     
     XCTAssertNotNil([tableView delegate], @"View Controller should have set the table view's delegate.");
-    
-    XCTAssertTrue([[tableView delegate] isKindOfClass:[RRTableViewDataSource class]], @"Table view's delegate should be an RRTableViewDataSource.");
 }
 
 - (void)testDefaultStateOfViewControllerDoesNotReceiveNotifications

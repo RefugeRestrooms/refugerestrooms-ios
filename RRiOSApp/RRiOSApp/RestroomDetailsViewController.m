@@ -22,6 +22,8 @@
 {
     [super viewWillAppear:animated];
     
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
     self.nameLabel.text = self.restroom.name;
 }
 
