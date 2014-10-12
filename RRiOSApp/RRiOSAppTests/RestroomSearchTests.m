@@ -60,7 +60,6 @@
     
     restrooms = @[ restroom1, restroom2, restroom3 ];
     
-//    viewController.dataSource.restroomsList = restrooms;
     viewController.restroomsList = restrooms;
 }
 
@@ -73,5 +72,29 @@
     
     [super tearDown];
 }
+
+- (void)testThatTableViewHasNoRecordsBeforeSearch
+{
+    [viewController viewDidAppear:NO];
+    
+    XCTAssertTrue([viewController tableView:tableView numberOfRowsInSection:0] == 0, @"There should be no records in table view before a search is started.");
+}
+
+//- (void)testSearchProducesResults
+//{
+//    [viewController viewDidAppear:NO];
+//    
+//    // add Restroom
+//    Restroom *restroom = [[Restroom alloc] init];
+//    viewController.restroomsList = [NSArray arrayWithObject:restroom];
+//    
+//    // update search text
+//    viewController.searchDisplayController.searchBar.text = restroom.name;
+//    
+//    // notify view controller that search query has changed
+//    [viewController searchBar:viewController.searchDisplayController.searchBar textDidChange:restroom.name];
+//    
+//    XCTAssertTrue([viewController tableView:tableView numberOfRowsInSection:0] == 1, @"Searching should return results.");
+//}
 
 @end

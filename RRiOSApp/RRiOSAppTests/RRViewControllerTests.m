@@ -217,10 +217,11 @@ static const char *viewWillAppearKey = "RRViewControllerTestsViewWillAppearKey";
     XCTAssertNotNil(objc_getAssociatedObject(viewController, viewWillDisappearKey), @"-viewWillDisappear should call through to supperclass implementation.");
 }
 
-- (void)testThatPrepareForSegueExecutesShowRestroomDetailsOnlyWithARestroomObject
+- (void)testThatNavigationBarIsNotPresentAfterViewWillAppear
 {
-    // TODO: implement
-    XCTAssertTrue(YES, @"This test needs to be implemented.");
+    [viewController viewWillAppear:NO];
+    
+    XCTAssertTrue(viewController.navigationController.navigationBarHidden, @"Navication bar should be hidden before view appears.");
 }
 
 @end
