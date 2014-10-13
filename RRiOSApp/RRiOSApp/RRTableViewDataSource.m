@@ -31,27 +31,27 @@
         
         Restroom *restroom2 = [[Restroom alloc]
                                initWithName:@"Target"
-                               andStreet:@"7129 O'Kelly Chapel Road"
-                               andCity:@"Cary"
-                               andState:@"North Carolina"
-                               andCountry:@"United States"
-                               andIsAccessible:FALSE
-                               andIsUnisex:TRUE
-                               andNumDownvotes:0
-                               andNumUpvotes:0
-                               andDateCreated:@"2014-02-02T20:55:31.555Z"];
+                               Street:@"7129 O'Kelly Chapel Road"
+                               City:@"Cary"
+                               State:@"North Carolina"
+                               Country:@"United States"
+                               IsAccessible:FALSE
+                               IsUnisex:TRUE
+                               NumDownvotes:0
+                               NumUpvotes:0
+                               DateCreated:@"2014-02-02T20:55:31.555Z"];
         
         Restroom *restroom3 = [[Restroom alloc]
                                initWithName:@"Walmart"
-                               andStreet:@"123 ABC St"
-                               andCity:@"Boston"
-                               andState:@"Massachusetts"
-                               andCountry:@"United States"
-                               andIsAccessible:FALSE
-                               andIsUnisex:TRUE
-                               andNumDownvotes:0
-                               andNumUpvotes:0
-                               andDateCreated:@"2014-01-01T20:55:31.555Z"];
+                               Street:@"123 ABC St"
+                               City:@"Boston"
+                               State:@"Massachusetts"
+                               Country:@"United States"
+                               IsAccessible:FALSE
+                               IsUnisex:TRUE
+                               NumDownvotes:0
+                               NumUpvotes:0
+                               DateCreated:@"2014-01-01T20:55:31.555Z"];
         restroom3.directions = @"Take a left at Harvard.";
         
         self.restroomsList = @[ restroom1, restroom2, restroom3 ];
@@ -64,11 +64,6 @@
 {
     _restroomsList = restroomsList;
 }
-
-//- (void)setSearchDisplayController:(UISearchDisplayController *)searchDisplayController
-//{
-//    _searchDisplayController = searchDisplayController;
-//}
 
 #pragma mark - UITableViewDataSource methods
 
@@ -133,15 +128,6 @@
     
     searchResults = [self.restroomsList filteredArrayUsingPredicate:resultPredicate];
 }
-
-//-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-//{
-//    [self filterContentForSearchText:searchString
-//                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-//                               objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
-//    
-//    return YES;
-//}
 
 #pragma mark - Helper methods
 

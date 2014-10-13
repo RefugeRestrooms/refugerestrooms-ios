@@ -48,7 +48,7 @@
     restroomBuilder.arrayToReturn = nil;
     restroomBuilder.errorToSet = underlyingError;
     
-    restroomManager.restroomBuilder = restroomBuilder;
+//    restroomManager.restroomBuilder = restroomBuilder;
 }
 
 - (void)tearDown
@@ -56,7 +56,7 @@
     restroomManager = nil;
     delegate = nil;
     underlyingError = nil;
-    restroomManager.restroomBuilder = nil;
+//    restroomManager.restroomBuilder = nil;
     restroomArray = nil;
     
     [super tearDown];

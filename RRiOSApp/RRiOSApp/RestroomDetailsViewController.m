@@ -13,6 +13,9 @@
 @interface RestroomDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 
 @end
 
@@ -25,6 +28,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     self.nameLabel.text = self.restroom.name;
+    self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
+    self.directionsLabel.text = self.restroom.directions;
+    self.commentsLabel.text = self.restroom.comment;
 }
 
 @end

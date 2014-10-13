@@ -13,6 +13,13 @@
 NSString *restroomCellReuseIdentifier = @"RestroomCell";
 NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestroomNotification";
 
+@interface RRViewController ()
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+//@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@end
+
 @implementation RRViewController
 {
     NSMutableArray *filteredRestroomArray;
@@ -29,28 +36,28 @@ NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestr
     Restroom *restroom1 = [[Restroom alloc] init];
     
     Restroom *restroom2 = [[Restroom alloc]
-                           initWithName:@"Target"
-                           andStreet:@"7129 O'Kelly Chapel Road"
-                           andCity:@"Cary"
-                           andState:@"North Carolina"
-                           andCountry:@"United States"
-                           andIsAccessible:FALSE
-                           andIsUnisex:TRUE
-                           andNumDownvotes:0
-                           andNumUpvotes:0
-                           andDateCreated:@"2014-02-02T20:55:31.555Z"];
+                           initWithName:@"Friendlys"
+                           Street:@"7129 O'Kelly Chapel Road"
+                           City:@"Cary"
+                           State:@"North Carolina"
+                           Country:@"United States"
+                           IsAccessible:FALSE
+                           IsUnisex:TRUE
+                           NumDownvotes:0
+                           NumUpvotes:0
+                           DateCreated:@"2014-02-02T20:55:31.555Z"];
     
     Restroom *restroom3 = [[Restroom alloc]
-                           initWithName:@"Walmart"
-                           andStreet:@"123 ABC St"
-                           andCity:@"Boston"
-                           andState:@"Massachusetts"
-                           andCountry:@"United States"
-                           andIsAccessible:FALSE
-                           andIsUnisex:TRUE
-                           andNumDownvotes:0
-                           andNumUpvotes:0
-                           andDateCreated:@"2014-01-01T20:55:31.555Z"];
+                           initWithName:@"Target"
+                           Street:@"123 ABC St"
+                           City:@"Boston"
+                           State:@"Massachusetts"
+                           Country:@"United States"
+                           IsAccessible:FALSE
+                           IsUnisex:TRUE
+                           NumDownvotes:0
+                           NumUpvotes:0
+                           DateCreated:@"2014-01-01T20:55:31.555Z"];
     restroom3.directions = @"Take a left at Harvard.";
     
     self.restroomsList = @[ restroom1, restroom2, restroom3 ];
@@ -109,7 +116,7 @@ NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestr
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSParameterAssert([indexPath section] == 0);
-    NSParameterAssert([indexPath row] < [_restroomsList count]);
+    NSParameterAssert([indexPath row] < [self.restroomsList count]);
     
     UITableViewCell *restroomCell = [tableView dequeueReusableCellWithIdentifier:restroomCellReuseIdentifier];
     
@@ -191,7 +198,7 @@ NSString *RRTableViewDidSelectRestroomNotification = @"RRTableViewDidSelectRestr
 
 - (Restroom *)restroomForIndexPath:(NSIndexPath *)indexPath
 {
-    return [_restroomsList objectAtIndex:[indexPath row]];
+    return [filteredRestroomArray objectAtIndex:[indexPath row]];
 }
 
 @end

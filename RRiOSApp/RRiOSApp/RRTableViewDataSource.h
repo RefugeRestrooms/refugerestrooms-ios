@@ -17,9 +17,5 @@ extern NSString *RRTableViewDidSelectRestroomNotification;
 @interface RRTableViewDataSource : NSObject <UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSArray *restroomsList;
-//@property (strong, nonatomic) UISearchDisplayController *searchDisplayController;
-
-- (void)setRestroomsList:(NSArray *)restroomsList;
-//- (void)setSearchDisplayController:(UISearchDisplayController *)searchDisplayController;
 
 @end

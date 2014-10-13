@@ -11,8 +11,7 @@
 @interface RRViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 
 @property (strong, nonatomic) NSArray *restroomsList;
-@property (strong) IBOutlet UITableView *tableView;
-@property IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (void)setRestroomsList:(NSArray *)restroomsList;
 - (void)userDidSelectRestroomNotification:(NSNotification *)notification;

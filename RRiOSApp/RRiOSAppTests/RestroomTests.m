@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" andStreet:@"7129 O'Kelly Chapel Road" andCity:@"Cary" andState:@"North Carolina" andCountry:@"United States" andIsAccessible:FALSE andIsUnisex:TRUE andNumDownvotes:0 andNumUpvotes:0 andDateCreated:@"2014-02-02T20:55:31.555Z"];
+    restroom = [[Restroom alloc] initWithName:@"Target" Street:@"7129 O'Kelly Chapel Road" City:@"Cary" State:@"North Carolina" Country:@"United States" IsAccessible:FALSE IsUnisex:TRUE NumDownvotes:0 NumUpvotes:0 DateCreated:@"2014-02-02T20:55:31.555Z"];
     
     restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
     restroom.comment = @"";

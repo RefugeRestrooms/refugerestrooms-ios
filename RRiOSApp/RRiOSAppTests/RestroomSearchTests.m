@@ -36,26 +36,26 @@
     Restroom *restroom1 = [[Restroom alloc] init];
     Restroom *restroom2 = [[Restroom alloc]
                            initWithName:@"Target"
-                           andStreet:@"7129 O'Kelly Chapel Road"
-                           andCity:@"Cary"
-                           andState:@"North Carolina"
-                           andCountry:@"United States"
-                           andIsAccessible:FALSE
-                           andIsUnisex:TRUE
-                           andNumDownvotes:0
-                           andNumUpvotes:0
-                           andDateCreated:@"2014-02-02T20:55:31.555Z"];
+                           Street:@"7129 O'Kelly Chapel Road"
+                           City:@"Cary"
+                           State:@"North Carolina"
+                           Country:@"United States"
+                           IsAccessible:FALSE
+                           IsUnisex:TRUE
+                           NumDownvotes:0
+                           NumUpvotes:0
+                           DateCreated:@"2014-02-02T20:55:31.555Z"];
     Restroom *restroom3 = [[Restroom alloc]
                            initWithName:@"Walmart"
-                           andStreet:@"123 ABC St"
-                           andCity:@"Boston"
-                           andState:@"Massachusetts"
-                           andCountry:@"United States"
-                           andIsAccessible:FALSE
-                           andIsUnisex:TRUE
-                           andNumDownvotes:0
-                           andNumUpvotes:0
-                           andDateCreated:@"2014-01-01T20:55:31.555Z"];
+                           Street:@"123 ABC St"
+                           City:@"Boston"
+                           State:@"Massachusetts"
+                           Country:@"United States"
+                           IsAccessible:FALSE
+                           IsUnisex:TRUE
+                           NumDownvotes:0
+                           NumUpvotes:0
+                           DateCreated:@"2014-01-01T20:55:31.555Z"];
     restroom3.directions = @"Take a left at Harvard.";
     
     restrooms = @[ restroom1, restroom2, restroom3 ];
@@ -66,7 +66,6 @@
 - (void)tearDown
 {
     viewController = nil;
-    tableView = nil;
     tableView = nil;
     restrooms = nil;
     

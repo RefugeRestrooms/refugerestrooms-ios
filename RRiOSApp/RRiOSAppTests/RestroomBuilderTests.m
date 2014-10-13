@@ -53,7 +53,7 @@ static NSString *restroomJSON = @"[{"
 
 @interface RestroomBuilderTests : XCTestCase
 {
-    RestroomBuilder *restroomBuilder;
+//    RestroomBuilder *restroomBuilder;
     NSArray *restroomArray;
     Restroom *restroom;
     Restroom *restroomMinimalData; // a restroom with only required data
@@ -66,15 +66,15 @@ static NSString *restroomJSON = @"[{"
 {
     [super setUp];
     
-    restroomBuilder = [[RestroomBuilder alloc] init];
-    restroomArray = [restroomBuilder restroomsFromJSON:restroomJSON error:NULL];
+//    restroomBuilder = [[RestroomBuilder alloc] init];
+    restroomArray = [RestroomBuilder restroomsFromJSON:restroomJSON error:NULL];
     restroom = [restroomArray objectAtIndex:0];
     restroomMinimalData = [restroomArray objectAtIndex:1];
 }
 
 - (void)tearDown
 {
-    restroomBuilder = nil;
+//    restroomBuilder = nil;
     restroomArray = nil;
     restroom = nil;
     restroomMinimalData = nil;
@@ -82,52 +82,52 @@ static NSString *restroomJSON = @"[{"
     [super tearDown];
 }
 
-- (void)testThatARestroomBuilderCanBeCreated
-{
-    XCTAssertNotNil(restroomBuilder, @"Should be able to create a RestroomBuilder instance.");
-}
+//- (void)testThatARestroomBuilderCanBeCreated
+//{
+//    XCTAssertNotNil(restroomBuilder, @"Should be able to create a RestroomBuilder instance.");
+//}
 
 - (void)testThatNilIsNotAnAcceptableParameter
 {
-    XCTAssertThrows([restroomBuilder restroomsFromJSON:nil error:NULL], @"Lack of data for RestroomBuilder should have been handled elsewhere.");
+    XCTAssertThrows([RestroomBuilder restroomsFromJSON:nil error:NULL], @"Lack of data for RestroomBuilder should have been handled elsewhere.");
 }
 
 - (void)testNilReturnedWhenStringIsNotJSON
 {
-    XCTAssertNil([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
+    XCTAssertNil([RestroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
 }
 
 - (void)testErrorSetWhenStringIsNotJSON
 {
     NSError *error = nil;
-    [restroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
+    [RestroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
     
     XCTAssertNotNil(error, @"Error should best set when Restroom data is not JSON.");
 }
 
 - (void)testPassingNullErrorDoesNotCauseCrash
 {
-    XCTAssertNoThrow([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
+    XCTAssertNoThrow([RestroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
 }
 
 - (void)testRealJSONWithoutRequiredDataIsError
 {    
     NSString *jsonString = @"{ \"notalldata\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
+    XCTAssertNil([RestroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
 }
 
 - (void) testRealJSONWithoutQuestionsReturnsMissingDataError
 {
     NSString *jsonString = @"{ \"notalldata\": "" }";
     NSError *error = nil;
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    [RestroomBuilder restroomsFromJSON:jsonString error:&error];
     XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }
 
 - (void)testJSONWithTwoRestroomsReturnsTwoRestroomObjects
 {
     NSError *error = nil;
-    NSArray *restrooms = [restroomBuilder restroomsFromJSON:restroomJSON error:&error];
+    NSArray *restrooms = [RestroomBuilder restroomsFromJSON:restroomJSON error:&error];
     
     XCTAssertEqual([restrooms count], (NSUInteger)2, @"The RestroomBuilder should have created two restroom objects.");
 }
@@ -168,6 +168,18 @@ static NSString *restroomJSON = @"[{"
     XCTAssertEqual(restroom.longitude, -78.567711, @"Restroom should have longitude set if avaiable in JSON.");
     
     XCTAssertEqual(restroom.searchRank, 0.66872, @"Restroom should have search rank set if avaiable in JSON.");
+}
+
+#warning unimplemented test
+- (void)testDirectionsSetToEmptyStringIfUnavailable
+{
+    
+}
+
+#warning unimplemented test
+- (void)testCommentsSetToEmptyStringIfUnavailable
+{
+    
 }
 
 //- (void)testOptionalDataNotSetIfUnvailable

@@ -13,7 +13,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 
 @implementation RestroomBuilder
 
-- (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
++ (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
 {
     NSParameterAssert(jsonString != nil);
     
@@ -41,22 +41,22 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     {
         // required properties
         Restroom *restroom = [[Restroom alloc]
-                                initWithName:[restroomDictionary objectForKey:@"name"]
-                                andStreet:[restroomDictionary objectForKey:@"street"]
-                                andCity:[restroomDictionary objectForKey:@"city"]
-                                andState:[restroomDictionary objectForKey:@"state"]
-                                andCountry:[restroomDictionary objectForKey:@"country"]
-                                andIsAccessible:[[restroomDictionary objectForKey:@"accessible"] boolValue]
-                                andIsUnisex:[[restroomDictionary objectForKey:@"unisex"] boolValue]
-                                andNumDownvotes:[[restroomDictionary objectForKey:@"downvote"] intValue]
-                                andNumUpvotes:[[restroomDictionary objectForKey:@"upvote"] intValue]
-                                andDateCreated:[restroomDictionary objectForKey:@"created_at"]
+                                initWithName:restroomDictionary[@"name"]
+                                Street:restroomDictionary[@"street"]
+                                City:restroomDictionary[@"city"]
+                                State:restroomDictionary[@"state"]
+                                Country:restroomDictionary[@"country"]
+                                IsAccessible:[restroomDictionary[@"accessible"] boolValue]
+                                IsUnisex:[restroomDictionary[@"unisex"] boolValue]
+                                NumDownvotes:[restroomDictionary[@"downvote"] intValue]
+                                NumUpvotes:[restroomDictionary[@"upvote"] intValue]
+                                DateCreated:restroomDictionary[@"created_at"]
                               ];
                               
         // if error, return
         if(restroom == nil)
         {
-            if(error != NULL)
+            if(!error)
             {
                 *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
             }
@@ -65,15 +65,15 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         }
         
         // add optional properties if Restroom was formed
-        id directions = [restroomDictionary objectForKey:@"directions"];
-        id comment = [restroomDictionary objectForKey:@"comment"];
-        id latitude = [restroomDictionary objectForKey:@"latitude"];
-        id longitude = [restroomDictionary objectForKey:@"longitude"];
-        id searchRank = [restroomDictionary objectForKey:@"pg_search_rank"];
-        id databaseID = [restroomDictionary objectForKey:@"id"];
+        id directions = restroomDictionary[@"directions"];
+        id comment = restroomDictionary[@"comment"];
+        id latitude = restroomDictionary[@"latitude"];
+        id longitude = restroomDictionary[@"longitude"];
+        id searchRank = restroomDictionary[@"pg_search_rank"];
+        id databaseID = restroomDictionary[@"id"];
         
-        if(!(directions == nil)) { restroom.directions = directions; }
-        if(!(comment == nil)) { restroom.comment = comment; }
+        (directions == nil) ? (restroom.directions = @"") : (restroom.directions = directions);
+        (comment == nil) ? (restroom.comment = @"") : (restroom.comment = comment);
         if(!(latitude == [NSNull null])) { restroom.latitude = [latitude doubleValue]; }
         if(!(longitude == [NSNull null])) { restroom.longitude = [longitude doubleValue]; }
         if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }

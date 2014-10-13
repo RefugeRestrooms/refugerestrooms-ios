@@ -16,7 +16,7 @@
 
 extern NSString *RestroomManagerError;
 
-enum
+typedef NS_ENUM(NSInteger, RestroomManagerErrorCode)
 {
     RestroomManagerErrorSearchCode
 };
@@ -25,10 +25,7 @@ enum
 
 @property (weak, nonatomic) id <RestroomManagerDelegate> delegate;
 @property (strong) RestroomCommunicator *communicator;
-@property (strong) RestroomBuilder *restroomBuilder;
 
 - (void)fetchRestroomsForQuery:(NSString *)query;
-//- (void)searchingForRestroomsFailedWithError:(NSError *)error;
-//- (void)receivedRestroomsJSONString:(NSString *)jsonString;
 
 @end

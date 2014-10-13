@@ -26,12 +26,12 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
         [[NSException exceptionWithName: NSInvalidArgumentException reason: @"Delegate object does not conform to the delegate protocol." userInfo: nil] raise];
     }
     
-    _delegate = newDelegate;
+    self.delegate = newDelegate;
 }
 
 - (void)fetchRestroomsForQuery:(NSString *)query
 {
-    [_communicator searchForRestroomsWithQuery:query];
+    [self.communicator searchForRestroomsWithQuery:query];
 }
 
 #pragma mark - Helper methods
@@ -39,7 +39,7 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 - (void)receivedRestroomsJSONString:(NSString *)jsonString
 {
     NSError *error = nil;
-    NSArray *restrooms = [_restroomBuilder restroomsFromJSON:jsonString error:&error];
+    NSArray *restrooms = [RestroomBuilder restroomsFromJSON:jsonString error:&error];
     
     if(!restrooms)
     {
@@ -48,7 +48,7 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     }
     else
     {
-        [_delegate didReceiveRestrooms:restrooms];
+        [self.delegate didReceiveRestrooms:restrooms];
     }
 }
 
@@ -68,8 +68,8 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     }
     
     NSError *reportableError = [NSError errorWithDomain:RestroomManagerSearchFailedError code:RestroomManagerErrorSearchCode userInfo:errorInfo];
-    
-    [_delegate fetchingRestroomsFailedWithError:reportableError];
+
+    [self.delegate fetchingRestroomsFailedWithError:reportableError];
 }
 
 @end

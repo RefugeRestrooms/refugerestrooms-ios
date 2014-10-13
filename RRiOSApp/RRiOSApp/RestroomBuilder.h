@@ -10,12 +10,12 @@
 
 @interface RestroomBuilder : NSObject
 
-enum
+typedef NS_ENUM(NSInteger, RestroomBuilderErrorCode)
 {
     RestroomBuilderInvalidJSONError,
     RestroomBuilderMissingDataError
 };
 
-- (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
++ (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
 
 @end

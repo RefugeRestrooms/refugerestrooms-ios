@@ -14,7 +14,10 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
 @implementation RestroomCommunicator
 
-@synthesize delegate;
+- (void)dealloc
+{
+    [fetchingConnection cancel];
+}
 
 - (void)launchConnectionForRequest:(NSURLRequest *)request
 {
@@ -48,11 +51,6 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
                  [delegate receivedRestroomsJSONString:jsonString];
              }
      ];
-}
-
-- (void)dealloc
-{
-    [fetchingConnection cancel];
 }
 
 - (void)cancelAndDiscardURLConnection

@@ -17,8 +17,8 @@
 @property (readonly) NSString *country;
 @property (readonly) BOOL isAccessible;
 @property (readonly) BOOL isUnisex;
-@property (readonly) int numDownvotes;
-@property (readonly) int numUpvotes;
+@property (readonly) NSInteger numDownvotes;
+@property (readonly) NSInteger numUpvotes;
 @property (readonly) NSString *dateCreated;
 
 @property (assign, nonatomic) int databaseID;
@@ -29,15 +29,15 @@
 @property (assign, nonatomic) double searchRank;
 
 - (id)initWithName:(NSString *)name
-         andStreet:(NSString *)street
-           andCity:(NSString *)city
-          andState:(NSString *)state
-        andCountry:(NSString *)country
-   andIsAccessible:(BOOL)isAccessible
-       andIsUnisex:(BOOL)isUnisex
-   andNumDownvotes:(int)numDownvotes
-     andNumUpvotes:(int)numUpvotes
-    andDateCreated:(NSString *)dateCreated
+            Street:(NSString *)street
+              City:(NSString *)city
+             State:(NSString *)state
+           Country:(NSString *)country
+      IsAccessible:(BOOL)isAccessible
+          IsUnisex:(BOOL)isUnisex
+      NumDownvotes:(NSInteger)numDownvotes
+        NumUpvotes:(NSInteger)numUpvotes
+       DateCreated:(NSString *)dateCreated
 ;
 
 @end
