@@ -13,7 +13,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 
 @implementation RestroomBuilder
 
-+ (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
+- (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
 {
     NSParameterAssert(jsonString != nil);
     
@@ -52,7 +52,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                                 NumUpvotes:[restroomDictionary[@"upvote"] intValue]
                                 DateCreated:restroomDictionary[@"created_at"]
                               ];
-                              
+        
         // if error, return
         if(restroom == nil)
         {

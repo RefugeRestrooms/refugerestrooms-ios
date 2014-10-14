@@ -57,6 +57,7 @@ static NSString *restroomJSON = @"[{"
     NSArray *restroomArray;
     Restroom *restroom;
     Restroom *restroomMinimalData; // a restroom with only required data
+    RestroomBuilder *restroomBuilder;
 }
 @end
 
@@ -66,8 +67,8 @@ static NSString *restroomJSON = @"[{"
 {
     [super setUp];
     
-//    restroomBuilder = [[RestroomBuilder alloc] init];
-    restroomArray = [RestroomBuilder restroomsFromJSON:restroomJSON error:NULL];
+    restroomBuilder = [[RestroomBuilder alloc] init];
+    restroomArray = [restroomBuilder restroomsFromJSON:restroomJSON error:NULL];
     restroom = [restroomArray objectAtIndex:0];
     restroomMinimalData = [restroomArray objectAtIndex:1];
 }
@@ -78,6 +79,7 @@ static NSString *restroomJSON = @"[{"
     restroomArray = nil;
     restroom = nil;
     restroomMinimalData = nil;
+    restroomBuilder = nil;
     
     [super tearDown];
 }
@@ -89,45 +91,45 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testThatNilIsNotAnAcceptableParameter
 {
-    XCTAssertThrows([RestroomBuilder restroomsFromJSON:nil error:NULL], @"Lack of data for RestroomBuilder should have been handled elsewhere.");
+    XCTAssertThrows([restroomBuilder restroomsFromJSON:nil error:NULL], @"Lack of data for RestroomBuilder should have been handled elsewhere.");
 }
 
 - (void)testNilReturnedWhenStringIsNotJSON
 {
-    XCTAssertNil([RestroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
+    XCTAssertNil([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
 }
 
 - (void)testErrorSetWhenStringIsNotJSON
 {
     NSError *error = nil;
-    [RestroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
+    [restroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
     
     XCTAssertNotNil(error, @"Error should best set when Restroom data is not JSON.");
 }
 
 - (void)testPassingNullErrorDoesNotCauseCrash
 {
-    XCTAssertNoThrow([RestroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
+    XCTAssertNoThrow([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Using NULL for error parameter in JSON parser should not cause a crash.");
 }
 
 - (void)testRealJSONWithoutRequiredDataIsError
 {    
     NSString *jsonString = @"{ \"notalldata\": "" }";
-    XCTAssertNil([RestroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
 }
 
 - (void) testRealJSONWithoutQuestionsReturnsMissingDataError
 {
     NSString *jsonString = @"{ \"notalldata\": "" }";
     NSError *error = nil;
-    [RestroomBuilder restroomsFromJSON:jsonString error:&error];
+    [restroomBuilder restroomsFromJSON:jsonString error:&error];
     XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }
 
 - (void)testJSONWithTwoRestroomsReturnsTwoRestroomObjects
 {
     NSError *error = nil;
-    NSArray *restrooms = [RestroomBuilder restroomsFromJSON:restroomJSON error:&error];
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:restroomJSON error:&error];
     
     XCTAssertEqual([restrooms count], (NSUInteger)2, @"The RestroomBuilder should have created two restroom objects.");
 }

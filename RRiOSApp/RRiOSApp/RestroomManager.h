@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger, RestroomManagerErrorCode)
 
 @property (weak, nonatomic) id <RestroomManagerDelegate> delegate;
 @property (strong) RestroomCommunicator *communicator;
+@property (strong) RestroomBuilder *restroomBuilder;
 
 - (void)fetchRestroomsForQuery:(NSString *)query;
 

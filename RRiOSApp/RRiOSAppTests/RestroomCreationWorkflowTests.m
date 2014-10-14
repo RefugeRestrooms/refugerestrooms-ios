@@ -25,7 +25,8 @@
     RestroomManager *restroomManager;
     MockRestroomManagerDelegate *delegate;
     NSError *underlyingError;
-    MockRestroomBuilder *restroomBuilder;
+    MockRestroomBuilder *mockRestroomBuilder;
+    NSString *restroomJSON;
     
     NSArray *restroomArray;
 }
@@ -44,11 +45,50 @@
     
     underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
     
-    restroomBuilder = [[MockRestroomBuilder alloc] init];
-    restroomBuilder.arrayToReturn = nil;
-    restroomBuilder.errorToSet = underlyingError;
+    mockRestroomBuilder = [[MockRestroomBuilder alloc] init];
+    mockRestroomBuilder.arrayToReturn = nil;
+    mockRestroomBuilder.errorToSet = underlyingError;
     
-//    restroomManager.restroomBuilder = restroomBuilder;
+    restroomManager.restroomBuilder = mockRestroomBuilder;
+    
+    restroomJSON = @"[{"
+        @"\"id\": 4327,"
+        @"\"name\": \"Target\","
+        @"\"street\": \"7900 Old Wake Forest Rd\","
+        @"\"city\": \"Raleigh\","
+        @"\"state\": \"NC\","
+        @"\"accessible\": false,"
+        @"\"unisex\": true,"
+        @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+        @"\"comment\": \"This is the Target by Triangle Town Center.\","
+        @"\"latitude\": 35.867321,"
+        @"\"longitude\": -78.567711,"
+        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"downvote\": 0,"
+        @"\"upvote\": 1,"
+        @"\"country\": \"US\","
+        @"\"pg_search_rank\": 0.66872"
+        @"},"
+        @"{"
+        @"\"id\": 4327,"
+        @"\"name\": \"Target\","
+        @"\"street\": \"7900 Old Wake Forest Rd\","
+        @"\"city\": \"Raleigh\","
+        @"\"state\": \"NC\","
+        @"\"accessible\": false,"
+        @"\"unisex\": true,"
+        @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+        @"\"comment\": \"This is the Target by Triangle Town Center.\","
+        @"\"latitude\": 35.867321,"
+        @"\"longitude\": -78.567711,"
+        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"downvote\": 0,"
+        @"\"upvote\": 1,"
+        @"\"country\": \"US\","
+        @"\"pg_search_rank\": 0.66872"
+        @"}]";
 }
 
 - (void)tearDown
@@ -57,7 +97,9 @@
     delegate = nil;
     underlyingError = nil;
 //    restroomManager.restroomBuilder = nil;
+    mockRestroomBuilder = nil;
     restroomArray = nil;
+    restroomJSON = nil;
     
     [super tearDown];
 }
@@ -114,9 +156,15 @@
 
 - (void)testRestroomJSONIsPassedToRestroomBuilder
 {
-    [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
+    [restroomManager receivedRestroomsJSONString:restroomJSON];
     
-    XCTAssertEqualObjects(restroomBuilder.JSON, @"Fake JSON", @"Downloaded JSON should be sent to RestroomBuilder.");
+    XCTAssertEqualObjects(mockRestroomBuilder.JSON, restroomJSON, @"Downloaded JSON should be sent to RestroomBuilder.");
+}
+
+#warning unimplemented method
+- (void)testLessThanTwoRestroomsPassedASJSONDoesntCauseError
+{
+    
 }
 
 - (void)testDelegateNotifiedOfErrorWhenRestroomBuilderFails
@@ -126,35 +174,15 @@
 
 - (void)testDelegateIsNotToldAboutErrorWhenRestroomsReceived
 {
-    restroomBuilder.arrayToReturn = restroomArray;
-    [restroomManager receivedRestroomsJSONString:
-        @"{"
-        @"\"id\": 4327,"
-        @"\"name\": \"Target\","
-        @"\"street\": \"7900 Old Wake Forest Rd\","
-        @"\"city\": \"Raleigh\","
-        @"\"state\": \"NC\","
-        @"\"accessible\": false,"
-        @"\"unisex\": true,"
-        @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
-        @"\"comment\": \"This is the Target by Triangle Town Center.\","
-        @"\"latitude\": 35.867321,"
-        @"\"longitude\": -78.567711,"
-        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
-        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
-        @"\"downvote\": 0,"
-        @"\"upvote\": 1,"
-        @"\"country\": \"US\","
-        @"\"pg_search_rank\": 0.66872"
-        @"}"
-     ];
+    mockRestroomBuilder.arrayToReturn = restroomArray;
+    [restroomManager receivedRestroomsJSONString:restroomJSON];
     
     XCTAssertNil([delegate fetchError], @"No error should be received on restroom JSON being received successfully.");
 }
 
 - (void)testDelegateReceivesTheRestroomsDiscoveredByManager
 {
-    restroomBuilder.arrayToReturn = restroomArray;
+    mockRestroomBuilder.arrayToReturn = restroomArray;
     [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
     
     XCTAssertEqualObjects([delegate receivedRestrooms], restroomArray, @"The manager should have sent its restroom to the delegate.");
@@ -162,7 +190,7 @@
 
 - (void)testEmptyArrayIsPassedToDelegateWhenNoRestroomsReceived
 {
-    restroomBuilder.arrayToReturn = [NSArray array];
+    mockRestroomBuilder.arrayToReturn = [NSArray array];
     [restroomManager receivedRestroomsJSONString:@"Fake JSON"];
     
     XCTAssertEqualObjects([delegate receivedRestrooms], [NSArray array], @"Returning an empty array of Restrooms should not be an error.");

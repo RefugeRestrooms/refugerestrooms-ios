@@ -14,21 +14,25 @@
 
 @interface RestroomCommunicator : NSObject <NSURLConnectionDelegate>
 {
-    @protected NSURL *fetchingURL;
-    NSURLConnection *fetchingConnection;
-    NSMutableData *receivedData;
+    @protected
+        NSURL *fetchingURL;
+        NSURLConnection *fetchingConnection;
+        NSMutableData *receivedData;
     
-    @private id <RestroomCommunicatorDelegate> __weak delegate;
-    void (^errorHandler)(NSError *);        // block for error handling
-    void (^successHandler)(NSString *);     // block for success handling
+    @private
+        id <RestroomCommunicatorDelegate> __weak delegate;
+        void (^errorHandler)(NSError *);        // block for error handling
+        void (^successHandler)(NSString *);     // block for success handling
 }
+
+@property (weak) id <RestroomCommunicatorDelegate> delegate;
 
 - (void)searchForRestroomsWithQuery:(NSString *)query;
 - (void)cancelAndDiscardURLConnection;
 
-//- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
-//- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
-//- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
-//- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 
 @end

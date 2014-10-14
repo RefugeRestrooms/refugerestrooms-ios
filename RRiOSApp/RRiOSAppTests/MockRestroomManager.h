@@ -11,14 +11,15 @@
 @class Topic;
 @class Question;
 
-@interface MockRestroomManager : NSObject <RestroomCommunicatorDelegate> {
+@interface MockRestroomManager : RestroomManager <RestroomCommunicatorDelegate>
+{
     NSInteger restroomFailureErrorCode;
     NSString *restroomSearchString;
     
     BOOL wasAskedToFetchRestrooms;
 }
 
-@property (strong) id delegate;
+//@property (strong) id delegate;
 
 - (NSInteger)restroomFailureErrorCode;
 - (NSString *)restroomSearchString;

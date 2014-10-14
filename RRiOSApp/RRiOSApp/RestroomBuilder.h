@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, RestroomBuilderErrorCode)
     RestroomBuilderMissingDataError
 };
 
-+ (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
+- (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
 
 @end
