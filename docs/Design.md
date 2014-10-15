@@ -5,6 +5,7 @@
     * [Purpose](#purpose)
   * [Architecture](#architecture)
     * [Design](#design)
+    * [Approach](#approach)
     * [Classes](#classes)
   * Graphic Design (#graphic-design)
   * [Milestones](#milestones)
@@ -34,6 +35,10 @@ The Refuge Restrooms app is a complement to the Refuge Restrooms web application
 
 * Attached is the first mockup for the app screens: [Mockup V1] (https://github.com/mgwu-students/harlan-kellaway/raw/master/Images/app-mockup-v1.tiff)
 * The mockup was run by the creator of refugerestrooms.org - she indicated she'd like the Details scene (when a bathroom is selected) to look more like the screen on this thread: https://github.com/RefugeRestrooms/refugerestrooms/issues/20 [(Image)] (https://github.com/mgwu-students/harlan-kellaway/raw/master/Images/app-details-scene1.jpeg)
+
+#### Approach
+
+The app will be bundled with current Restroom data (as JSON or Restroom objects in Core Data) at the time of release. Upon first opening the application, Restroom objects will be created and/or used to create MapLocation objects. A flag will be set in NSUserDefaults to record that the initial set had been created. Each time the user then opens the application, an API call can be made (if the user is online) to fetch records that have since been created and translate them accordingly - a data should also be set in NSUserDefaults to determine records to be fetched after the last date.
 
 #### Classes
 

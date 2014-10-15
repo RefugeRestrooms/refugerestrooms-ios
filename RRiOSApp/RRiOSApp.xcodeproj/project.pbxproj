@@ -45,6 +45,14 @@
 		CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
 		CEA950D219E3238500D8553D /* RestroomDetailsViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950D119E3238500D8553D /* RestroomDetailsViewControllerTests.m */; };
 		CEDE162019E712AA006EB5F6 /* RestroomSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDE161F19E712AA006EB5F6 /* RestroomSearchTests.m */; };
+		CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
+		CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
+		CEE0A92E19EDBB9F00B5846B /* RRMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92D19EDBB9F00B5846B /* RRMapViewControllerTests.m */; };
+		CEE0A93419EDC29F00B5846B /* RRMapLocationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93319EDC29F00B5846B /* RRMapLocationTests.m */; };
+		CEE0A93719EDC68600B5846B /* RRMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapLocation.m */; };
+		CEE0A93819EDC68600B5846B /* RRMapLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapLocation.m */; };
+		CEE0A93B19EDC75600B5846B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A92719EDB08400B5846B /* MapKit.framework */; };
+		CEE0A93C19EDC75D00B5846B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A93919EDC70C00B5846B /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +117,14 @@
 		CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewController.m; sourceTree = "<group>"; };
 		CEA950D119E3238500D8553D /* RestroomDetailsViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewControllerTests.m; sourceTree = "<group>"; };
 		CEDE161F19E712AA006EB5F6 /* RestroomSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomSearchTests.m; sourceTree = "<group>"; };
+		CEE0A92719EDB08400B5846B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEE0A92919EDBB5700B5846B /* RRMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapViewController.h; sourceTree = "<group>"; };
+		CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapViewController.m; sourceTree = "<group>"; };
+		CEE0A92D19EDBB9F00B5846B /* RRMapViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapViewControllerTests.m; sourceTree = "<group>"; };
+		CEE0A93319EDC29F00B5846B /* RRMapLocationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapLocationTests.m; sourceTree = "<group>"; };
+		CEE0A93519EDC68600B5846B /* RRMapLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapLocation.h; sourceTree = "<group>"; };
+		CEE0A93619EDC68600B5846B /* RRMapLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapLocation.m; sourceTree = "<group>"; };
+		CEE0A93919EDC70C00B5846B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE0A93C19EDC75D00B5846B /* AddressBook.framework in Frameworks */,
+				CEE0A93B19EDC75600B5846B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +182,10 @@
 				CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */,
 				CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */,
 				CE1F5E5C19D9FD9D005F3B04 /* RestroomManagerDelegate.h */,
+				CEE0A93519EDC68600B5846B /* RRMapLocation.h */,
+				CEE0A93619EDC68600B5846B /* RRMapLocation.m */,
+				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
+				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
 				CE00E8B919EC5F110067ED8A /* RRTableViewDataSource.h */,
 				CE00E8BA19EC5F110067ED8A /* RRTableViewDataSource.m */,
 				CEA950A319DF436200D8553D /* RRViewController.h */,
@@ -172,6 +194,8 @@
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
 				CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */,
+				CEE0A93919EDC70C00B5846B /* AddressBook.framework */,
+				CEE0A92719EDB08400B5846B /* MapKit.framework */,
 				CE70CF8719D5F92D004E34F9 /* Supporting Files */,
 			);
 			path = RRiOSApp;
@@ -210,6 +234,8 @@
 				CEA950D119E3238500D8553D /* RestroomDetailsViewControllerTests.m */,
 				CE1F5E4619D9DA6F005F3B04 /* RestroomManagerTests.m */,
 				CEDE161F19E712AA006EB5F6 /* RestroomSearchTests.m */,
+				CEE0A93319EDC29F00B5846B /* RRMapLocationTests.m */,
+				CEE0A92D19EDBB9F00B5846B /* RRMapViewControllerTests.m */,
 				CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */,
 				CEA950C519DF652F00D8553D /* RRTableViewDelegateTests.m */,
 				CEA950A719DF43A600D8553D /* RRViewControllerTests.m */,
@@ -335,6 +361,8 @@
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE1F5E6719DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
+				CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */,
+				CEE0A93719EDC68600B5846B /* RRMapLocation.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 			);
@@ -345,8 +373,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE60F12F19DCA738003C5E57 /* MockRestroomManager.m in Sources */,
+				CEE0A93419EDC29F00B5846B /* RRMapLocationTests.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CEA950BE19DF4FE400D8553D /* RRTableViewDataSourceTests.m in Sources */,
+				CEE0A92E19EDBB9F00B5846B /* RRMapViewControllerTests.m in Sources */,
 				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m in Sources */,
 				CEDE162019E712AA006EB5F6 /* RestroomSearchTests.m in Sources */,
 				CE39974F19DB3BB7001C98F8 /* RestroomTests.m in Sources */,
@@ -355,6 +385,7 @@
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
 				CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */,
 				CE1F5E4719D9DA6F005F3B04 /* RestroomManagerTests.m in Sources */,
+				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */,
 				CE00E8BC19EC5F110067ED8A /* RRTableViewDataSource.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
@@ -366,6 +397,7 @@
 				CE60F13C19DDD487003C5E57 /* FakeURLResponse.m in Sources */,
 				CEA950A619DF436200D8553D /* RRViewController.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
+				CEE0A93819EDC68600B5846B /* RRMapLocation.m in Sources */,
 				CEA950A819DF43A600D8553D /* RRViewControllerTests.m in Sources */,
 				CE1F5E6C19DA05C0005F3B04 /* Restroom.m in Sources */,
 			);

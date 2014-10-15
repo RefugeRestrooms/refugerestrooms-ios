@@ -1,0 +1,58 @@
+//
+//  RRMapViewControllerTests.m
+//  RRiOSApp
+//
+//  Created by Harlan Kellaway on 10/14/14.
+//  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import <XCTest/XCTest.h>
+
+#import <objc/runtime.h>
+
+#import "RRMapViewController.h"
+
+@interface RRMapViewControllerTests : XCTestCase
+
+@end
+
+@implementation RRMapViewControllerTests
+{
+    RRMapViewController *mapViewController;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    
+    mapViewController = [[RRMapViewController alloc ] init];
+}
+
+- (void)tearDown
+{
+    mapViewController = nil;
+    
+    [super tearDown];
+}
+
+- (void)testMapViewControllerHasMapViewProperty
+{
+    objc_property_t mapViewProperty = class_getProperty([mapViewController class], "mapView");
+    
+    XCTAssertTrue(mapViewProperty != NULL, @"RRMapViewController should have a map view.");
+}
+
+#warning unimplemented test
+- (void)testAnnotationsSavedToCoreDataUponApplicationLaunch
+{
+    
+}
+
+#warning unimplemented test
+- (void)testExistingAnnotationsNotRecreated
+{
+    
+}
+
+@end

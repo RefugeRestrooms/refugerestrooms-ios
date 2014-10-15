@@ -184,6 +184,12 @@ static NSString *restroomJSON = @"[{"
     
 }
 
+#warning unimplementedtest
+- (void)testRestroomNotBuiltIfLatitudeOrLongitudeUnavailable
+{
+    
+}
+
 //- (void)testOptionalDataNotSetIfUnvailable
 //{
 //    XCTAssertEqualObjects(restroomMinimalData.directions, @"", @"Restroom should not have directions set if avaiable in JSON.");
