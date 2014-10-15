@@ -10,4 +10,6 @@
 
 @interface RRMapViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *restroomsList;
+
 @end

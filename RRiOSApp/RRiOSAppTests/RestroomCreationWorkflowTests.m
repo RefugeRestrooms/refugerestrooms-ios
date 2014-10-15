@@ -132,7 +132,7 @@
     
     NSString *query = @"Target";
     
-    restroomManager.communicator = communicator;
+    restroomManager.restroomCommunicator = communicator;
     [restroomManager fetchRestroomsForQuery:query];
     
     XCTAssertTrue([communicator wasAskedToFetchRestrooms], @"The communicator should need to fetch data.");

@@ -8,16 +8,37 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "RestroomManager.h"
+#import "RestroomCommunicator.h"
+#import "RestroomBuilder.h"
 
+@interface AppDelegate ()
+{
+    RestroomManager *restroomManager;
+   
+}
 @end
 
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // create RestroomManager
+    restroomManager = [[RestroomManager alloc] init];
+    RestroomCommunicator *restroomCommunicator = [[RestroomCommunicator alloc] init];
+    RestroomBuilder *restroomBuilder = [[RestroomBuilder alloc] init];
     
-    // Override point for customization after application launch.
+    restroomManager.restroomCommunicator = restroomCommunicator;
+    restroomManager.restroomBuilder = restroomBuilder;
+    
+    // fetch restroom objects
+    [restroomManager fetchRestroomsForQuery:@"Baltimore MD"];
+    
+    UIViewController *vc = self.window.rootViewController;
+    
+    
+    
     return YES;
 }
 

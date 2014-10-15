@@ -25,6 +25,9 @@
 		CE1F5E7519DA1B35005F3B04 /* MockRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */; };
 		CE39974D19DA6A1F001C98F8 /* RestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */; };
 		CE39974F19DB3BB7001C98F8 /* RestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39974E19DB3BB7001C98F8 /* RestroomTests.m */; };
+		CE3F16F319EF264100BBE33B /* RRObjectConfigurationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F16F219EF264100BBE33B /* RRObjectConfigurationTests.m */; };
+		CE3F16F619EF27D900BBE33B /* RRObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F16F519EF27D900BBE33B /* RRObjectConfiguration.m */; };
+		CE3F16F719EF27D900BBE33B /* RRObjectConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F16F519EF27D900BBE33B /* RRObjectConfiguration.m */; };
 		CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */; };
 		CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */; };
 		CE60F12C19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE60F12B19DCA6C3003C5E57 /* NonNetworkedRestroomCommunicator.m */; };
@@ -87,6 +90,9 @@
 		CE1F5E7419DA1B35005F3B04 /* MockRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRestroomBuilder.m; sourceTree = "<group>"; };
 		CE39974C19DA6A1F001C98F8 /* RestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilderTests.m; sourceTree = "<group>"; };
 		CE39974E19DB3BB7001C98F8 /* RestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomTests.m; sourceTree = "<group>"; };
+		CE3F16F219EF264100BBE33B /* RRObjectConfigurationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRObjectConfigurationTests.m; sourceTree = "<group>"; };
+		CE3F16F419EF27D900BBE33B /* RRObjectConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRObjectConfiguration.h; sourceTree = "<group>"; };
+		CE3F16F519EF27D900BBE33B /* RRObjectConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRObjectConfiguration.m; sourceTree = "<group>"; };
 		CE60F12519DC79DA003C5E57 /* RestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomCommunicatorTests.m; sourceTree = "<group>"; };
 		CE60F12719DC7DBF003C5E57 /* InspectableRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectableRestroomCommunicator.h; sourceTree = "<group>"; };
 		CE60F12819DC7DC0003C5E57 /* InspectableRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectableRestroomCommunicator.m; sourceTree = "<group>"; };
@@ -186,6 +192,8 @@
 				CEE0A93619EDC68600B5846B /* RRMapLocation.m */,
 				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
 				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
+				CE3F16F419EF27D900BBE33B /* RRObjectConfiguration.h */,
+				CE3F16F519EF27D900BBE33B /* RRObjectConfiguration.m */,
 				CE00E8B919EC5F110067ED8A /* RRTableViewDataSource.h */,
 				CE00E8BA19EC5F110067ED8A /* RRTableViewDataSource.m */,
 				CEA950A319DF436200D8553D /* RRViewController.h */,
@@ -236,6 +244,7 @@
 				CEDE161F19E712AA006EB5F6 /* RestroomSearchTests.m */,
 				CEE0A93319EDC29F00B5846B /* RRMapLocationTests.m */,
 				CEE0A92D19EDBB9F00B5846B /* RRMapViewControllerTests.m */,
+				CE3F16F219EF264100BBE33B /* RRObjectConfigurationTests.m */,
 				CEA950BD19DF4FE400D8553D /* RRTableViewDataSourceTests.m */,
 				CEA950C519DF652F00D8553D /* RRTableViewDelegateTests.m */,
 				CEA950A719DF43A600D8553D /* RRViewControllerTests.m */,
@@ -363,6 +372,7 @@
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CEE0A93719EDC68600B5846B /* RRMapLocation.m in Sources */,
+				CE3F16F619EF27D900BBE33B /* RRObjectConfiguration.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 			);
@@ -375,6 +385,7 @@
 				CE60F12F19DCA738003C5E57 /* MockRestroomManager.m in Sources */,
 				CEE0A93419EDC29F00B5846B /* RRMapLocationTests.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
+				CE3F16F719EF27D900BBE33B /* RRObjectConfiguration.m in Sources */,
 				CEA950BE19DF4FE400D8553D /* RRTableViewDataSourceTests.m in Sources */,
 				CEE0A92E19EDBB9F00B5846B /* RRMapViewControllerTests.m in Sources */,
 				CE1F5E4919D9DAF2005F3B04 /* RestroomCreationWorkflowTests.m in Sources */,
@@ -391,6 +402,7 @@
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE60F12619DC79DA003C5E57 /* RestroomCommunicatorTests.m in Sources */,
 				CEA950D219E3238500D8553D /* RestroomDetailsViewControllerTests.m in Sources */,
+				CE3F16F319EF264100BBE33B /* RRObjectConfigurationTests.m in Sources */,
 				CEA950C619DF652F00D8553D /* RRTableViewDelegateTests.m in Sources */,
 				CE1F5E6819DA0114005F3B04 /* MockRestroomCommunicator.m in Sources */,
 				CE60F12919DC7DC0003C5E57 /* InspectableRestroomCommunicator.m in Sources */,

@@ -31,7 +31,7 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 
 - (void)fetchRestroomsForQuery:(NSString *)query
 {
-    [self.communicator searchForRestroomsWithQuery:query];
+    [self.restroomCommunicator searchForRestroomsWithQuery:query];
 }
 
 #pragma mark - Helper methods
