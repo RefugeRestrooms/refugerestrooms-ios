@@ -28,6 +28,7 @@
 @property (weak) id <RestroomCommunicatorDelegate> delegate;
 
 - (void)searchForRestroomsWithQuery:(NSString *)query;
+- (void)searchForNewRestrooms;
 - (void)cancelAndDiscardURLConnection;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;

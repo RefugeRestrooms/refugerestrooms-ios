@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 
 #import "Restroom.h"
+#import "RestroomManager.h"
 #import "RRMapLocation.h"
 
 #define METERS_PER_MILE 1609.344
@@ -21,9 +22,17 @@
 @end
 
 @implementation RRMapViewController
+{
+    RestroomManager *restroomManager;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // TODO: should RestroomManager be a singleton
+    restroomManager = [[RestroomManager alloc] init];
+    
+    restroomManager.delegate = self;
+    
     // set default view region
     CLLocationCoordinate2D zoomLocation;
     zoomLocation.latitude = 39.281516;
@@ -82,6 +91,20 @@
     
         [self.mapView addAnnotation:annotation];
     }
+}
+
+#pragma mark - RestroomManagerDelegate methods
+
+- (void)didReceiveRestrooms:(NSArray *)restrooms
+{
+    // plot Restrooms on map
+    [self plotRestrooms:restrooms];
+}
+
+- (void)fetchingRestroomsFailedWithError:(NSError *)error
+{
+    // TODO: Handle fetching error
+    NSLog(@"Error fetching Restroom data.");
 }
 
 #pragma mark - Helper methods

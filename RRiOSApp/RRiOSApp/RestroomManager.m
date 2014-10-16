@@ -34,6 +34,11 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     [self.restroomCommunicator searchForRestroomsWithQuery:query];
 }
 
+- (void)fetchNewRestrooms
+{
+    [self.restroomCommunicator searchForNewRestrooms];
+}
+
 #pragma mark - Helper methods
 
 - (void)receivedRestroomsJSONString:(NSString *)jsonString

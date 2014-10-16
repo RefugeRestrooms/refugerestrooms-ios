@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "RRMapViewController.h"
 #import "RestroomManager.h"
 #import "RestroomCommunicator.h"
 #import "RestroomBuilder.h"
@@ -32,12 +33,9 @@
     restroomManager.restroomCommunicator = restroomCommunicator;
     restroomManager.restroomBuilder = restroomBuilder;
     
-    // fetch restroom objects
-    [restroomManager fetchRestroomsForQuery:@"Baltimore MD"];
-    
-    UIViewController *vc = self.window.rootViewController;
-    
-    
+    // app will be bundled with initial set of Restroom objects
+    // fetch restrooms since app did last fetch
+    [restroomManager fetchNewRestrooms];
     
     return YES;
 }

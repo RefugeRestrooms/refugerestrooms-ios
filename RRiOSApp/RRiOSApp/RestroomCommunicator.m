@@ -8,7 +8,8 @@
 
 #import "RestroomCommunicator.h"
 
-static NSString *apiURLStub = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
+static NSString *apiURLStubSearch = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
+static NSString *apiURLStubAllRestrooms = @"http://www.refugerestrooms.org:80/api/v1/restrooms/restrooms.json";
 
 NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
@@ -43,7 +44,23 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 {
     NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStub, escapedQuery]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStubSearch, escapedQuery]]
+               errorHandler:^(NSError *error) {
+                   [delegate searchingForRestroomsFailedWithError:error];
+               }
+             successHandler:^(NSString *jsonString) {
+                 [delegate receivedRestroomsJSONString:jsonString];
+             }
+     ];
+}
+
+- (void)searchForNewRestrooms
+{
+    // get date Restrooms last fetched from NSUserDefaults
+#warning unimplemented
+    
+    // create fetch URl and fetch
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", apiURLStubAllRestrooms]]
                errorHandler:^(NSError *error) {
                    [delegate searchingForRestroomsFailedWithError:error];
                }

@@ -2,7 +2,7 @@
 //  RRObjectConfiguration.h
 //  RRiOSApp
 //
-//  Created by Harlan Kellaway on 10/15/14.
+//  Created by Harlan Kellaway on 10/16/14.
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 
 @interface RRObjectConfiguration : NSObject
 
-- (RestroomManager *)restroomManager;
++ (id)sharedInstance;
+_ (RestroomManager *)restroomManager;
 
 @end

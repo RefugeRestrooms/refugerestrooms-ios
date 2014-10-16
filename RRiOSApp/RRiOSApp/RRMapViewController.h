@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RRMapViewController : UIViewController
+#import "RestroomManagerDelegate.h"
 
-@property (strong, nonatomic) NSArray *restroomsList;
+@interface RRMapViewController : UIViewController <RestroomManagerDelegate>
 
 @end

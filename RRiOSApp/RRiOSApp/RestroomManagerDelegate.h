@@ -14,6 +14,6 @@
 
 - (void)didReceiveRestrooms:(NSArray *)restrooms;
 - (void)fetchingRestroomsFailedWithError:(NSError *)error;
-- (NSArray *)receivedRestrooms;
+//- (NSArray *)receivedRestrooms;
 
 @end
