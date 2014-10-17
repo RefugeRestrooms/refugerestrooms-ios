@@ -12,7 +12,7 @@
 
 @interface RRObjectConfiguration : NSObject
 
-+ (id)sharedInstance;
-_ (RestroomManager *)restroomManager;
+//+ (id)sharedInstance;
+- (RestroomManager *)restroomManager;
 
 @end

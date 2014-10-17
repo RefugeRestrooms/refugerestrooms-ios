@@ -23,15 +23,16 @@
 
 @implementation RRMapViewController
 {
-    RestroomManager *restroomManager;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    // TODO: should RestroomManager be a singleton
-    restroomManager = [[RestroomManager alloc] init];
-    
+    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
     restroomManager.delegate = self;
+    
+    // fetch restrooms
+//    [[RestroomManager sharedInstance] fetchNewRestrooms];
+    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Baltimore MD"];
     
     // set default view region
     CLLocationCoordinate2D zoomLocation;
@@ -41,35 +42,35 @@
     
     [self.mapView setRegion:viewRegion animated:YES];
     
-    Restroom *restroom1 = [[Restroom alloc] initWithName:@"Verde Pizza"
-                                                 Street:@"641 S Montford Ave"
-                                                   City:@"Baltimore"
-                                                  State:@"MD"
-                                                Country:@"US"
-                                           IsAccessible:YES
-                                               IsUnisex:NO
-                                           NumDownvotes:1
-                                             NumUpvotes:0
-                                            DateCreated:@"Todays Date"];
-    restroom1.latitude = 39.2841239;
-    restroom1.longitude = -76.5825334;
-    
-    
-    Restroom *restroom2 = [[Restroom alloc] initWithName:@"Baltimore Aquarium"
-                                                  Street:@"501 E Pratt St"
-                                                    City:@"Baltimore"
-                                                   State:@"MD"
-                                                 Country:@"US"
-                                            IsAccessible:NO
-                                                IsUnisex:YES
-                                            NumDownvotes:0
-                                              NumUpvotes:0
-                                             DateCreated:@"Todays Date"];
-    
-    restroom2.latitude = 39.284619;
-    restroom2.longitude = -76.607012;
-    
-    [self plotRestrooms:[NSArray arrayWithObjects:restroom1, restroom2, nil]];
+//    Restroom *restroom1 = [[Restroom alloc] initWithName:@"Verde Pizza"
+//                                                 Street:@"641 S Montford Ave"
+//                                                   City:@"Baltimore"
+//                                                  State:@"MD"
+//                                                Country:@"US"
+//                                           IsAccessible:YES
+//                                               IsUnisex:NO
+//                                           NumDownvotes:1
+//                                             NumUpvotes:0
+//                                            DateCreated:@"Todays Date"];
+//    restroom1.latitude = 39.2841239;
+//    restroom1.longitude = -76.5825334;
+//    
+//    
+//    Restroom *restroom2 = [[Restroom alloc] initWithName:@"Baltimore Aquarium"
+//                                                  Street:@"501 E Pratt St"
+//                                                    City:@"Baltimore"
+//                                                   State:@"MD"
+//                                                 Country:@"US"
+//                                            IsAccessible:NO
+//                                                IsUnisex:YES
+//                                            NumDownvotes:0
+//                                              NumUpvotes:0
+//                                             DateCreated:@"Todays Date"];
+//    
+//    restroom2.latitude = 39.284619;
+//    restroom2.longitude = -76.607012;
+//    
+//    [self plotRestrooms:[NSArray arrayWithObjects:restroom1, restroom2, nil]];
 }
 
 - (void)plotRestrooms:(NSArray *)restrooms

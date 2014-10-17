@@ -12,6 +12,8 @@
 
 @interface MockRestroomManagerDelegate : NSObject <RestroomManagerDelegate>
 
+- (NSArray *)receivedRestrooms;
+
 //@property (strong) NSError *fetchError;
 
 @end

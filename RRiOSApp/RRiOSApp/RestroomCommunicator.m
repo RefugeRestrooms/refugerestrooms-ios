@@ -9,7 +9,7 @@
 #import "RestroomCommunicator.h"
 
 static NSString *apiURLStubSearch = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
-static NSString *apiURLStubAllRestrooms = @"http://www.refugerestrooms.org:80/api/v1/restrooms/restrooms.json";
+static NSString *apiURLStubAllRestrooms = @"http://www.refugerestrooms.org:80/api/v1/restrooms.json";
 
 NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
@@ -46,10 +46,10 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
     
     [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStubSearch, escapedQuery]]
                errorHandler:^(NSError *error) {
-                   [delegate searchingForRestroomsFailedWithError:error];
+                   [self.delegate searchingForRestroomsFailedWithError:error];
                }
              successHandler:^(NSString *jsonString) {
-                 [delegate receivedRestroomsJSONString:jsonString];
+                 [self.delegate receivedRestroomsJSONString:jsonString];
              }
      ];
 }
@@ -62,10 +62,10 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
     // create fetch URl and fetch
     [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", apiURLStubAllRestrooms]]
                errorHandler:^(NSError *error) {
-                   [delegate searchingForRestroomsFailedWithError:error];
+                   [self.delegate searchingForRestroomsFailedWithError:error];
                }
              successHandler:^(NSString *jsonString) {
-                 [delegate receivedRestroomsJSONString:jsonString];
+                 [self.delegate receivedRestroomsJSONString:jsonString];
              }
      ];
 }

@@ -20,7 +20,7 @@
         NSMutableData *receivedData;
     
     @private
-        id <RestroomCommunicatorDelegate> __weak delegate;
+//        id <RestroomCommunicatorDelegate> __weak delegate;
         void (^errorHandler)(NSError *);        // block for error handling
         void (^successHandler)(NSString *);     // block for success handling
 }

@@ -8,16 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "RRMapViewController.h"
 #import "RestroomManager.h"
-#import "RestroomCommunicator.h"
-#import "RestroomBuilder.h"
 
 @interface AppDelegate ()
-{
-    RestroomManager *restroomManager;
-   
-}
 @end
 
 @implementation AppDelegate
@@ -25,18 +18,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // create RestroomManager
-    restroomManager = [[RestroomManager alloc] init];
-    RestroomCommunicator *restroomCommunicator = [[RestroomCommunicator alloc] init];
-    RestroomBuilder *restroomBuilder = [[RestroomBuilder alloc] init];
-    
-    restroomManager.restroomCommunicator = restroomCommunicator;
-    restroomManager.restroomBuilder = restroomBuilder;
-    
-    // app will be bundled with initial set of Restroom objects
-    // fetch restrooms since app did last fetch
-    [restroomManager fetchNewRestrooms];
-    
     return YES;
 }
 
