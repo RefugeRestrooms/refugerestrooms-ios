@@ -29,6 +29,7 @@
 
 - (void)searchForRestroomsWithQuery:(NSString *)query;
 - (void)searchForNewRestrooms;
+- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms;
 - (void)cancelAndDiscardURLConnection;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;

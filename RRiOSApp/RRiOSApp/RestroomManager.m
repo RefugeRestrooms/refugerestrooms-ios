@@ -34,6 +34,11 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     [self.restroomCommunicator searchForRestroomsWithQuery:query];
 }
 
+- (void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms
+{
+    [self.restroomCommunicator searchForRestroomsOfAmount:numberRestrooms];
+}
+
 - (void)fetchNewRestrooms
 {
     [self.restroomCommunicator searchForNewRestrooms];

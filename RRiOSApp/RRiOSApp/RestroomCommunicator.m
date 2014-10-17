@@ -56,11 +56,21 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
 - (void)searchForNewRestrooms
 {
-    // get date Restrooms last fetched from NSUserDefaults
-#warning unimplemented
-    
     // create fetch URl and fetch
     [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", apiURLStubAllRestrooms]]
+               errorHandler:^(NSError *error) {
+                   [self.delegate searchingForRestroomsFailedWithError:error];
+               }
+             successHandler:^(NSString *jsonString) {
+                 [self.delegate receivedRestroomsJSONString:jsonString];
+             }
+     ];
+}
+
+- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
+{
+    // create fetch URl and fetch
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li", apiURLStubAllRestrooms, numberRestrooms]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
