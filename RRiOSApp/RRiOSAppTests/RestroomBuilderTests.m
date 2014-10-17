@@ -42,8 +42,8 @@ static NSString *restroomJSON = @"[{"
     @"\"unisex\": false,"
     @"\"directions\": \"\","
     @"\"comment\": \"\","
-    @"\"latitude\": null,"
-    @"\"longitude\": null,"
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
     @"\"created_at\": \"2014-09-22T18:40:15.660Z\","
     @"\"updated_at\": \"2014-09-22T18:40:15.660Z\","
     @"\"downvote\": 0,"
@@ -56,7 +56,6 @@ static NSString *restroomJSON = @"[{"
 //    RestroomBuilder *restroomBuilder;
     NSArray *restroomArray;
     Restroom *restroom;
-    Restroom *restroomMinimalData; // a restroom with only required data
     RestroomBuilder *restroomBuilder;
 }
 @end
@@ -70,24 +69,22 @@ static NSString *restroomJSON = @"[{"
     restroomBuilder = [[RestroomBuilder alloc] init];
     restroomArray = [restroomBuilder restroomsFromJSON:restroomJSON error:NULL];
     restroom = [restroomArray objectAtIndex:0];
-    restroomMinimalData = [restroomArray objectAtIndex:1];
 }
 
 - (void)tearDown
 {
-//    restroomBuilder = nil;
+    restroomBuilder = nil;
     restroomArray = nil;
     restroom = nil;
-    restroomMinimalData = nil;
     restroomBuilder = nil;
     
     [super tearDown];
 }
 
-//- (void)testThatARestroomBuilderCanBeCreated
-//{
-//    XCTAssertNotNil(restroomBuilder, @"Should be able to create a RestroomBuilder instance.");
-//}
+- (void)testThatARestroomBuilderCanBeCreated
+{
+    XCTAssertNotNil(restroomBuilder, @"Should be able to create a RestroomBuilder instance.");
+}
 
 - (void)testThatNilIsNotAnAcceptableParameter
 {
@@ -96,15 +93,17 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testNilReturnedWhenStringIsNotJSON
 {
-    XCTAssertNil([restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL], @"Restroom JSON should be parsable.");
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL];
+    
+    XCTAssertNil(restrooms, @"Restroom JSON should be parsable.");
 }
 
-- (void)testErrorSetWhenStringIsNotJSON
+- (void)testNotJSONReturnsInvalidJSONError
 {
     NSError *error = nil;
     [restroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
     
-    XCTAssertNotNil(error, @"Error should best set when Restroom data is not JSON.");
+    XCTAssertEqual([error code], RestroomBuilderInvalidJSONError, @"Invalid JSON syntax should return RestroomBuilderInvalidJSONError.");
 }
 
 - (void)testPassingNullErrorDoesNotCauseCrash
@@ -114,15 +113,35 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testRealJSONWithoutRequiredDataIsError
 {    
-    NSString *jsonString = @"{ \"notalldata\": "" }";
-    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonString error:NULL], @"JSON is missing required data.");
+    NSString *jsonWithoutName = @"{"
+    @"\"id\": 4327,"
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"}";
+    
+    XCTAssertNil([restroomBuilder restroomsFromJSON:jsonWithoutName error:NULL], @"Restroom should not be built if JSON is missing required data.");
 }
 
-- (void) testRealJSONWithoutQuestionsReturnsMissingDataError
+- (void)testRealJSONWithoutAllDataReturnsMissingDataError
 {
     NSString *jsonString = @"{ \"notalldata\": "" }";
     NSError *error = nil;
+    
     [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    
     XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }
 
@@ -165,44 +184,226 @@ static NSString *restroomJSON = @"[{"
     
     XCTAssertEqualObjects(restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom should have comment set if avaiable in JSON.");
     
-    XCTAssertEqual(restroom.latitude, 35.867321, @"Restroom should have latitude set if avaiable in JSON.");
-    
-    XCTAssertEqual(restroom.longitude, -78.567711, @"Restroom should have longitude set if avaiable in JSON.");
-    
     XCTAssertEqual(restroom.searchRank, 0.66872, @"Restroom should have search rank set if avaiable in JSON.");
 }
 
-#warning unimplemented test
 - (void)testDirectionsSetToEmptyStringIfUnavailable
 {
+    NSString *json = @"[{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"},"
+    @"{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"}]";
     
+    NSError *error = nil;
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:json error:&error];
+    
+    Restroom *noDirectionsRestroom = [restrooms objectAtIndex:0];
+    
+    XCTAssertEqualObjects(noDirectionsRestroom.directions, @"", @"Restroom built from JSON with no directions should have an empty string for directions.");
 }
 
-#warning unimplemented test
 - (void)testCommentsSetToEmptyStringIfUnavailable
 {
+    NSString *json = @"[{"
+        @"\"id\": 4327,"
+        @"\"name\": \"Target\","
+        @"\"street\": \"7900 Old Wake Forest Rd\","
+        @"\"city\": \"Raleigh\","
+        @"\"state\": \"NC\","
+        @"\"accessible\": false,"
+        @"\"unisex\": true,"
+        @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+        @"\"comment\": \"\","
+        @"\"latitude\": 35.867321,"
+        @"\"longitude\": -78.567711,"
+        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"downvote\": 0,"
+        @"\"upvote\": 1,"
+        @"\"country\": \"US\","
+        @"\"pg_search_rank\": 0.66872"
+        @"},"
+        @"{"
+        @"\"id\": 4327,"
+        @"\"name\": \"Target\","
+        @"\"street\": \"7900 Old Wake Forest Rd\","
+        @"\"city\": \"Raleigh\","
+        @"\"state\": \"NC\","
+        @"\"accessible\": false,"
+        @"\"unisex\": true,"
+        @"\"directions\": \"\","
+        @"\"comment\": \"This is the Target by Triangle Town Center.\","
+        @"\"latitude\": 35.867321,"
+        @"\"longitude\": -78.567711,"
+        @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+        @"\"downvote\": 0,"
+        @"\"upvote\": 1,"
+        @"\"country\": \"US\","
+        @"\"pg_search_rank\": 0.66872"
+        @"}]";
     
+    NSError *error = nil;
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:json error:&error];
+    
+    Restroom *noCommentRestroom = [restrooms objectAtIndex:0];
+    
+    XCTAssertEqualObjects(noCommentRestroom.comment, @"", @"Restroom built from JSON with no comment should have an empty string for comment.");
 }
 
-#warning unimplementedtest
 - (void)testRestroomNotBuiltIfLatitudeOrLongitudeUnavailable
 {
+    NSString *json = @"[{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": null,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"},"
+    @"{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"}]";
     
+    NSError *error = nil;
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:json error:&error];
+    
+    XCTAssertThrows([restrooms objectAtIndex:0], @"Restroom should not be built if it has no latitude.");
+    
+    json = @"[{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": null,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"},"
+    @"{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"}]";
+    
+    error = nil;
+    restrooms = [restroomBuilder restroomsFromJSON:json error:&error];
+    
+    XCTAssertThrows([restrooms objectAtIndex:0], @"Restroom should not be built if it has no longitude.");
 }
 
-//- (void)testOptionalDataNotSetIfUnvailable
-//{
-//    XCTAssertEqualObjects(restroomMinimalData.directions, @"", @"Restroom should not have directions set if avaiable in JSON.");
-//    
-//    XCTAssertEqualObjects(restroomMinimalData.comment, @"", @"Restroom should not have comment set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.latitude, 0, @"Restroom should not have latitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.longitude, 0, @"Restroom should not have longitude set if avaiable in JSON.");
-//    
-//    XCTAssertEqual(restroomMinimalData.searchRank, 0, @"Restroom should not have search rank set if avaiable in JSON.");
-//}
-
-// TODO make dateCreated an NSDate object from string passed by API
+- (void)testBuildingOnlyOneRestroomIsPossible
+{
+    NSString *json = @"{"
+    @"\"id\": 4327,"
+    @"\"name\": \"Target\","
+    @"\"street\": \"7900 Old Wake Forest Rd\","
+    @"\"city\": \"Raleigh\","
+    @"\"state\": \"NC\","
+    @"\"accessible\": false,"
+    @"\"unisex\": true,"
+    @"\"directions\": \"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.\","
+    @"\"comment\": \"This is the Target by Triangle Town Center.\","
+    @"\"latitude\": 35.867321,"
+    @"\"longitude\": -78.567711,"
+    @"\"created_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"updated_at\": \"2014-02-02T20:55:31.555Z\","
+    @"\"downvote\": 0,"
+    @"\"upvote\": 1,"
+    @"\"country\": \"US\","
+    @"\"pg_search_rank\": 0.66872"
+    @"}";
+    
+    NSError *error = nil;
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:json error:&error];
+    
+    Restroom *singleRestroom = [restrooms objectAtIndex:0];
+    
+    XCTAssertNotNil(singleRestroom, @"It should be possible to build just one Restroom.");
+}
 
 @end

@@ -20,24 +20,34 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     // create JSON object
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *localError = nil;
-    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&localError];
-    NSDictionary *parsedObject = (id)jsonObject;
     
-    // if not parsed successfully, error
-    if(parsedObject == nil)
+    id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&localError];
+    NSArray *restroomDictionaries = nil;
+    
+    if (jsonObject == nil)
     {
-        if(error != NULL)
+        // handle error
+        if(!error)
         {
-            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+//            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
         }
         
         return nil;
+    }
+    else if ([jsonObject isKindOfClass:[NSArray class]])
+    {
+        restroomDictionaries = jsonObject;
+    }
+    else // jsonObject is not an array
+    {
+        // make it into an array
+        restroomDictionaries = @[ jsonObject ];
     }
     
     // else create Restroom objects out of parsed data
     NSMutableArray *restrooms = [NSMutableArray array];
     
-    for(NSDictionary *restroomDictionary in parsedObject)
+    for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
         // required properties
         Restroom *restroom = [[Restroom alloc]
@@ -53,34 +63,50 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                                 DateCreated:restroomDictionary[@"created_at"]
                               ];
         
+        
         // if error, return
-        if(restroom == nil)
+        if(restroom == nil ||
+           restroom.name == nil ||
+           restroom.street == nil ||
+           restroom.state == nil ||
+           restroom.country == nil ||
+           restroom.dateCreated == nil
+           )
         {
             if(!error)
             {
-                *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+//                *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
             }
             
             return nil;
         }
         
+        // if no latitude or longitude, discard
+        id latitude = restroomDictionary[@"latitude"];
+        id longitude = restroomDictionary[@"longitude"];
+        
+        if((latitude == [NSNull null]) || (longitude == [NSNull null]))
+        {
+            if(!error)
+            {
+                [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+            }
+            
+            break;
+        }
+        
         // add optional properties if Restroom was formed
         id directions = restroomDictionary[@"directions"];
         id comment = restroomDictionary[@"comment"];
-        id latitude = restroomDictionary[@"latitude"];
-        id longitude = restroomDictionary[@"longitude"];
         id searchRank = restroomDictionary[@"pg_search_rank"];
         id databaseID = restroomDictionary[@"id"];
         
         (directions == nil) ? (restroom.directions = @"") : (restroom.directions = directions);
         (comment == nil) ? (restroom.comment = @"") : (restroom.comment = comment);
-        if(!(latitude == [NSNull null])) { restroom.latitude = [latitude doubleValue]; }
-        if(!(longitude == [NSNull null])) { restroom.longitude = [longitude doubleValue]; }
         if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }
         if(!(databaseID == [NSNull null])) { restroom.databaseID = [databaseID intValue]; }
         
         [restrooms addObject:restroom];
-    
     }
     
     return [restrooms copy];
