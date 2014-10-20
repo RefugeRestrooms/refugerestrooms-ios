@@ -13,6 +13,7 @@
 #import "Restroom.h"
 #import "RestroomManager.h"
 #import "RRMapLocation.h"
+#import "Reachability.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -24,53 +25,92 @@
 
 @implementation RRMapViewController
 {
+    Reachability *internetReachability;
     CLLocationManager *locationManager;
+    BOOL initialZoomComplete;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // set up to get user's location
+    // Update the UI on the main thread
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"Loading...");
+    });
+    
+    initialZoomComplete = NO;
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
+    // prompt for location allowing
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
     {
         [locationManager requestWhenInUseAuthorization];
     }
     
     [locationManager startUpdatingLocation];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
     
+    // set RestroomManager delegate
     RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
     restroomManager.delegate = self;
     
-    // fetch restrooms
-//    [[RestroomManager sharedInstance] fetchNewRestrooms];
-//    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Baltimore MD"];
-    [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
+    // check for Internet reachability
+    internetReachability = [Reachability reachabilityWithHostname:@"www.google.com"];
     
-    // set default view region
-//    float latitude = locationManager.location.coordinate.latitude;
-//    float longitude = locationManager.location.coordinate.longitude;
-//    
-//    NSLog(@"dLongitude : %f",longitude);
-//    NSLog(@"dLatitude : %f", latitude);
-//    
-//    CLLocationCoordinate2D zoomLocation;
-//    zoomLocation.latitude = latitude;
-//    zoomLocation.longitude= longitude;
-//    MKCoordinateRegion viewRegion = [self getRegionWithZoomLocation:zoomLocation];
-//    
-//    [self.mapView setRegion:viewRegion animated:YES];
+    // Internet is reachable
+    internetReachability.reachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Finished loading. Fetching restrooms...");
+        });
+        
+        dispatch_async
+        (
+            dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
+            {
+                // fetch Restrooms in background
+                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+                
+                // update UI when finished
+                dispatch_async
+                (
+                    dispatch_get_main_queue(), ^(void)
+                    {
+                        NSLog(@"Finished fetching restrooms.");
+                    }
+                );
+            }
+         );
+        
+        // Fetch restrooms
+//        [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+    };
+    
+    // Internet is not reachable
+    internetReachability.unreachableBlock = ^(Reachability*reach)
+    {
+        // Update the UI on the main thread
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Someone broke the internet :(");
+        });
+    };
+    
+    [internetReachability startNotifier];
 }
+
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    
+//     fetch restrooms
+//    [[RestroomManager sharedInstance] fetchNewRestrooms];
+//    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+//    [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
+//}
 
 - (void)plotRestrooms:(NSArray *)restrooms
 {
@@ -99,21 +139,29 @@
 {
     [locationManager stopUpdatingLocation];
     
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
+    if(!initialZoomComplete)
+    {
+        // zoom to initial location
+        CLLocation *location = [locationManager location];
+        CLLocationCoordinate2D coordinate = [location coordinate];
     
-    float longitude = coordinate.longitude;
-    float latitude = coordinate.latitude;
+        float longitude = coordinate.longitude;
+        float latitude = coordinate.latitude;
     
-    NSLog(@"dLongitude : %f",longitude);
-    NSLog(@"dLatitude : %f", latitude);
+        NSLog(@"dLongitude : %f",longitude);
+        NSLog(@"dLatitude : %f", latitude);
     
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = latitude;
-    zoomLocation.longitude= longitude;
-    MKCoordinateRegion viewRegion = [self getRegionWithZoomLocation:zoomLocation];
+        CLLocationCoordinate2D zoomLocation;
+        zoomLocation.latitude = latitude;
+        zoomLocation.longitude= longitude;
+        MKCoordinateRegion viewRegion = [self getRegionWithZoomLocation:zoomLocation];
     
-    [self.mapView setRegion:viewRegion animated:YES];
+        [self.mapView setRegion:viewRegion animated:YES];
+    
+        [locationManager startUpdatingLocation];
+        
+        initialZoomComplete = YES;
+    }
 }
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -129,7 +177,19 @@
 - (void)didReceiveRestrooms:(NSArray *)restrooms
 {
     // plot Restrooms on map
-    [self plotRestrooms:restrooms];
+    dispatch_async
+    (
+        dispatch_get_main_queue(), ^(void)
+        {
+            [self plotRestrooms:restrooms];
+            
+            NSLog(@"Finished fetching retrooms.");
+        }
+     );
+    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSLog(@"Finished fetching retrooms.");
+//    });
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error

@@ -44,7 +44,7 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 {
     NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?query=%@", apiURLStubSearch, escapedQuery]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=1000&query=%@", apiURLStubSearch, escapedQuery]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

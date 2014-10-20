@@ -8,6 +8,7 @@
 
 #import "RestroomManager.h"
 #import "RestroomManagerDelegate.h"
+#import "Reachability.h"
 
 @interface RestroomManager ()
 
@@ -43,8 +44,6 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 {
     [self.restroomCommunicator searchForNewRestrooms];
 }
-
-#pragma mark - Helper methods
 
 - (void)receivedRestroomsJSONString:(NSString *)jsonString
 {
