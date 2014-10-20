@@ -86,6 +86,15 @@ static NSString *restroomJSON = @"[{"
     XCTAssertNotNil(restroomBuilder, @"Should be able to create a RestroomBuilder instance.");
 }
 
+- (void)testThatErrorsWithCustomCodesCanBeCreated
+{
+    NSError *error1 = [NSError errorWithDomain:@"TestingErrorDomain" code:RestroomBuilderMissingDataError userInfo:nil];
+    
+    XCTAssertNotNil(error1, @"Should be able to create RestroomBuilderMissingDataError.");
+    XCTAssertEqual([error1 code], RestroomBuilderMissingDataError, @"Error should have correct code.");
+    
+}
+
 - (void)testThatNilIsNotAnAcceptableParameter
 {
     XCTAssertThrows([restroomBuilder restroomsFromJSON:nil error:NULL], @"Lack of data for RestroomBuilder should have been handled elsewhere.");
@@ -93,7 +102,9 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testNilReturnedWhenStringIsNotJSON
 {
-    NSArray *restrooms = [restroomBuilder restroomsFromJSON:@"Not JSON" error:NULL];
+    NSString *invalidJSON = @"Not JSON";
+    
+    NSArray *restrooms = [restroomBuilder restroomsFromJSON:invalidJSON error:NULL];
     
     XCTAssertNil(restrooms, @"Restroom JSON should be parsable.");
 }
@@ -103,6 +114,7 @@ static NSString *restroomJSON = @"[{"
     NSError *error = nil;
     [restroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
     
+    XCTAssertNotNil(error, @"Error should have been created.");
     XCTAssertEqual([error code], RestroomBuilderInvalidJSONError, @"Invalid JSON syntax should return RestroomBuilderInvalidJSONError.");
 }
 
@@ -137,10 +149,10 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testRealJSONWithoutAllDataReturnsMissingDataError
 {
-    NSString *jsonString = @"{ \"notalldata\": "" }";
+    NSString *validJSON = @"{ \"notalldata\": \"\" }";
     NSError *error = nil;
     
-    [restroomBuilder restroomsFromJSON:jsonString error:&error];
+    [restroomBuilder restroomsFromJSON:validJSON error:&error];
     
     XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }

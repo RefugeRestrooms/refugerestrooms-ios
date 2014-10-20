@@ -30,6 +30,8 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         if(!error)
         {
 //            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+            
+            *error = [NSError errorWithDomain:@"TEST" code:RestroomBuilderInvalidJSONError userInfo:nil];
         }
         
         return nil;
@@ -64,7 +66,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                               ];
         
         
-        // if error, return
+        // if error or incomplete, return
         if(restroom == nil ||
            restroom.name == nil ||
            restroom.street == nil ||
@@ -75,7 +77,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         {
             if(!error)
             {
-//                *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+                *error = [NSError errorWithDomain:@"TEST" code:RestroomBuilderMissingDataError userInfo:nil];
             }
             
             return nil;
@@ -93,6 +95,11 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
             }
             
             break;
+        }
+        else
+        {
+            restroom.latitude = [latitude doubleValue];
+            restroom.longitude = [longitude doubleValue];
         }
         
         // add optional properties if Restroom was formed
