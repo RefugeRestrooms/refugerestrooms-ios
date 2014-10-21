@@ -32,18 +32,26 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    initialZoomComplete = NO;
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    
+    // set RestroomManager delegate
+    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance]; // put in Viewwill Load
+    restroomManager.delegate = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     
     // Update the UI on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"Loading...");
     });
-    
-    initialZoomComplete = NO;
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
     // prompt for location allowing
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
@@ -53,10 +61,6 @@
     
     [locationManager startUpdatingLocation];
     
-    // set RestroomManager delegate
-    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
-    restroomManager.delegate = self;
-    
     // check for Internet reachability
     internetReachability = [Reachability reachabilityWithHostname:@"www.google.com"];
     
@@ -64,53 +68,31 @@
     internetReachability.reachableBlock = ^(Reachability*reach)
     {
         // Update the UI on the main thread
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Finished loading. Fetching restrooms...");
-        });
-        
         dispatch_async
         (
-            dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
+            // update UI on main thread
+            dispatch_get_main_queue(), ^
             {
-                // fetch Restrooms in background
                 [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
-                
-                // update UI when finished
-                dispatch_async
-                (
-                    dispatch_get_main_queue(), ^(void)
-                    {
-                        NSLog(@"Finished fetching restrooms.");
-                    }
-                );
             }
          );
-        
-        // Fetch restrooms
-//        [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
     };
     
     // Internet is not reachable
     internetReachability.unreachableBlock = ^(Reachability*reach)
     {
         // Update the UI on the main thread
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Someone broke the internet :(");
-        });
+        dispatch_async
+        (
+            dispatch_get_main_queue(), ^
+            {
+                NSLog(@"Someone broke the internet :(");
+            }
+         );
     };
     
     [internetReachability startNotifier];
 }
-
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    
-//     fetch restrooms
-//    [[RestroomManager sharedInstance] fetchNewRestrooms];
-//    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
-//    [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
-//}
 
 - (void)plotRestrooms:(NSArray *)restrooms
 {
@@ -169,7 +151,7 @@
     [locationManager stopUpdatingLocation];
     
     // TODO: implement error handling for finding location
-    NSLog(@"ERROR finding location.");
+    NSLog(@"ERROR finding location: %@", error);
 }
 
 #pragma mark - RestroomManagerDelegate methods
@@ -179,6 +161,7 @@
     // plot Restrooms on map
     dispatch_async
     (
+        // update UI on main thread
         dispatch_get_main_queue(), ^(void)
         {
             [self plotRestrooms:restrooms];
@@ -186,10 +169,6 @@
             NSLog(@"Finished fetching retrooms.");
         }
      );
-    
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        NSLog(@"Finished fetching retrooms.");
-//    });
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
