@@ -73,7 +73,7 @@
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
             }
          );
     };

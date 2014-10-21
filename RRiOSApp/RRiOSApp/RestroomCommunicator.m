@@ -70,7 +70,7 @@ NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 - (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
 {
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li", apiURLStubAllRestrooms, numberRestrooms]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%l i", apiURLStubAllRestrooms, numberRestrooms]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
