@@ -73,7 +73,12 @@
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
+                RestroomManager *restroomManager = [RestroomManager sharedInstance];
+                
+                [restroomManager fetchRestroomsOfAmount:10000];
+                
+//                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
+//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
             }
          );
     };

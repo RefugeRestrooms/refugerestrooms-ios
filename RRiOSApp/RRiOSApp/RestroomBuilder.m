@@ -66,7 +66,7 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                               ];
         
         
-        // if error or incomplete, return
+        // if error or incomplete
         if(restroom == nil ||
            restroom.name == nil ||
            restroom.street == nil ||
@@ -80,40 +80,31 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                 *error = [NSError errorWithDomain:@"TEST" code:RestroomBuilderMissingDataError userInfo:nil];
             }
             
-            return nil;
+//            return nil;
         }
         
         // if no latitude or longitude, discard
         id latitude = restroomDictionary[@"latitude"];
         id longitude = restroomDictionary[@"longitude"];
         
-        if((latitude == [NSNull null]) || (longitude == [NSNull null]))
-        {
-            if(!error)
-            {
-                [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
-            }
-            
-            break;
-        }
-        else
+        if(!((latitude == [NSNull null]) || (longitude == [NSNull null])))
         {
             restroom.latitude = [latitude doubleValue];
             restroom.longitude = [longitude doubleValue];
+            
+            // add optional properties if Restroom was formed
+            id directions = restroomDictionary[@"directions"];
+            id comment = restroomDictionary[@"comment"];
+            id searchRank = restroomDictionary[@"pg_search_rank"];
+            id databaseID = restroomDictionary[@"id"];
+            
+            (directions == nil) ? (restroom.directions = @"") : (restroom.directions = directions);
+            (comment == nil) ? (restroom.comment = @"") : (restroom.comment = comment);
+            if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }
+            if(!(databaseID == [NSNull null])) { restroom.databaseID = [databaseID intValue]; }
+            
+            [restrooms addObject:restroom];
         }
-        
-        // add optional properties if Restroom was formed
-        id directions = restroomDictionary[@"directions"];
-        id comment = restroomDictionary[@"comment"];
-        id searchRank = restroomDictionary[@"pg_search_rank"];
-        id databaseID = restroomDictionary[@"id"];
-        
-        (directions == nil) ? (restroom.directions = @"") : (restroom.directions = directions);
-        (comment == nil) ? (restroom.comment = @"") : (restroom.comment = comment);
-        if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }
-        if(!(databaseID == [NSNull null])) { restroom.databaseID = [databaseID intValue]; }
-        
-        [restrooms addObject:restroom];
     }
     
     return [restrooms copy];
