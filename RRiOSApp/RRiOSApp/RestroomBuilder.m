@@ -68,6 +68,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                                 databaseID:[restroomDictionary[@"id"] intValue]
                               ];
         
+        // lat/long must be tested for validity before extracting double value and assigning
         id latitude = restroomDictionary[@"latitude"];
         id longitude = restroomDictionary[@"longitude"];
         

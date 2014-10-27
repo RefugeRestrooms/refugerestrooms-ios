@@ -414,4 +414,10 @@ static NSString *restroomJSON = @"[{"
     XCTAssertNotNil(singleRestroom, @"It should be possible to build just one Restroom.");
 }
 
+#warning unimplemented test
+- (void)testRestroomObjectWrittenToCoreData
+{
+    
+}
+
 @end

@@ -30,5 +30,7 @@ task :ship do
   system "git add --all"
   system "git commit -am '#{message}'"
   system "git push"
+  rm -r ../refuge-ios/*
+  cp -r ./* ../refuge-ios
   puts "Git commit attempt complete."
 end
