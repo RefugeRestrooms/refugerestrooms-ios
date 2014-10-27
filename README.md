@@ -9,4 +9,5 @@ iOS client for refugerestrooms.org
 
 #### Dependencies
 
+MBProgressHUD [![Reference Status](https://www.versioneye.com/objective-c/mbprogresshud/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/mbprogresshud/references)
 Reachability [![Reference Status](https://www.versioneye.com/objective-c/reachability/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/reachability/references)

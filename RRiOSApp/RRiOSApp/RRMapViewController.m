@@ -9,6 +9,7 @@
 #import "RRMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "MBProgressHUD.h"
 
 #import "Restroom.h"
 #import "RestroomManager.h"
@@ -27,11 +28,16 @@
 {
     Reachability *internetReachability;
     CLLocationManager *locationManager;
+    MBProgressHUD *hud;
     BOOL initialZoomComplete;
 }
 
 - (void)viewDidLoad
 {
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDAnimationFade;
+    hud.labelText = @"Loading...";
+    
     initialZoomComplete = NO;
     
     locationManager = [[CLLocationManager alloc] init];
@@ -50,7 +56,7 @@
     
     // Update the UI on the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"Loading...");
+//        [MBProgressHUD hideHUDForView:self.view animated:YES];
     });
     
     // prompt for location allowing
@@ -67,22 +73,36 @@
     // Internet is reachable
     internetReachability.reachableBlock = ^(Reachability*reach)
     {
-        // Update the UI on the main thread
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+//        dispatch_async
+//        (
+//            dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^
+//            {
+//                // fetch restrooms
+//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+//                
+//                dispatch_async
+//                (
+//                    dispatch_get_main_queue(), ^
+//                    {
+//                        [MBProgressHUD hideHUDForView:self.view animated:YES];
+//                    }
+//                );
+//            }
+//        );
+        
         dispatch_async
         (
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                RestroomManager *restroomManager = [RestroomManager sharedInstance];
-                
-                [restroomManager fetchRestroomsOfAmount:10000];
-                
 //                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
-//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
             }
          );
     };
-    
+
     // Internet is not reachable
     internetReachability.unreachableBlock = ^(Reachability*reach)
     {
@@ -118,6 +138,8 @@
     
         [self.mapView addAnnotation:annotation];
     }
+    
+    [hud hide:YES];
 }
 
 #pragma mark - CLLocationManagerDelegate methods
