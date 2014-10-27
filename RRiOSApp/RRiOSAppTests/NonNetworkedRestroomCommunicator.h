@@ -8,7 +8,7 @@
 
 #import "RestroomCommunicator.h"
 
-@interface NonNetworkedRestroomCommunicator : RestroomCommunicator <NSURLConnectionDelegate>
+@interface NonNetworkedRestroomCommunicator : RestroomCommunicator //<NSURLConnectionDelegate>
 
 @property (copy) NSData *receivedData;
 

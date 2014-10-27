@@ -13,7 +13,6 @@
 @property (strong, nonatomic) NSArray *restroomsList;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (void)setRestroomsList:(NSArray *)restroomsList;
 - (void)userDidSelectRestroomNotification:(NSNotification *)notification;
 
 @end

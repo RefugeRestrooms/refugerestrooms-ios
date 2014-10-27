@@ -10,13 +10,15 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "MBProgressHUD.h"
-
 #import "Restroom.h"
 #import "RestroomManager.h"
 #import "RRMapLocation.h"
 #import "Reachability.h"
 
-#define METERS_PER_MILE 1609.344
+#define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
+#define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
+
+const float METERS_PER_MILE = 1609.344;
 
 @interface RRMapViewController ()
 
@@ -34,9 +36,14 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
+    self.navigationController.navigationBar.topItem.title = @"Refuge Restrooms";
+    
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
-    hud.labelText = @"Loading...";
+    hud.color = RGB(65.0, 60.0, 107.0);
+    hud.labelText = @"Syncing";
     
     initialZoomComplete = NO;
     
@@ -53,16 +60,17 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    // Update the UI on the main thread
-    dispatch_async(dispatch_get_main_queue(), ^{
-//        [MBProgressHUD hideHUDForView:self.view animated:YES];
-    });
+
     
     // prompt for location allowing
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
     {
         [locationManager requestWhenInUseAuthorization];
+    }
+    else
+    {
+#pragma message "Should provide else case here that can run on iOS 7"
+        // TODO: Test on iOS 7 device
     }
     
     [locationManager startUpdatingLocation];
@@ -73,32 +81,13 @@
     // Internet is reachable
     internetReachability.reachableBlock = ^(Reachability*reach)
     {
-//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        
-//        dispatch_async
-//        (
-//            dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^
-//            {
-//                // fetch restrooms
-//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
-//                
-//                dispatch_async
-//                (
-//                    dispatch_get_main_queue(), ^
-//                    {
-//                        [MBProgressHUD hideHUDForView:self.view animated:YES];
-//                    }
-//                );
-//            }
-//        );
-        
         dispatch_async
         (
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-//                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
-                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
+//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"New York NY"];
             }
          );
     };

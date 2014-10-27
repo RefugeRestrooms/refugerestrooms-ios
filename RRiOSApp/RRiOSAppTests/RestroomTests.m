@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" Street:@"7129 O'Kelly Chapel Road" City:@"Cary" State:@"North Carolina" Country:@"United States" IsAccessible:FALSE IsUnisex:TRUE NumDownvotes:0 NumUpvotes:0 DateCreated:@"2014-02-02T20:55:31.555Z"];
+    restroom = [[Restroom alloc] initWithName:@"Target" street:@"7129 O'Kelly Chapel Road" city:@"Cary" state:@"North Carolina" country:@"United States" isAccessible:FALSE isUnisex:TRUE numDownvotes:0 numUpvotes:0 latitude:10.0 longitude:20.0 databaseID:30];
     
     restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
     restroom.comment = @"";
@@ -85,14 +85,6 @@
     XCTAssertEqual(testLongitude, restroom.longitude, @"Should be able to set longitude for Restroom.");
 }
 
-- (void)testThatSearchRankCanBeSet
-{
-    double testSearchRank = 0.0607927;
-    restroom.searchRank = testSearchRank;
-    
-    XCTAssertEqual(testSearchRank, restroom.searchRank, @"Should be able to se search rank for Restroom.");
-}
-
 - (void)testThatRestroomHasAName
 {
     XCTAssertEqualObjects(restroom.name, @"Target", @"Restroom should have the name given when initialized.");
@@ -138,11 +130,6 @@
     XCTAssertEqual(restroom.numUpvotes, 0, @"Restroom should have the number of upvotes given when initialized.");
 }
 
-- (void)testThatRestroomHasADateForCreatedAt
-{
-    XCTAssertEqualObjects(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"Restroom should have the date created given when initialized.");
-}
-
 - (void)testInitIsOverriddenWithCustomDesignatedInitializer
 {
     Restroom *testRestroom = [[Restroom alloc] init];
@@ -156,7 +143,6 @@
     XCTAssertFalse(testRestroom.isUnisex, @"Restroom should have the unisex flag given by init override.");
     XCTAssertEqual(testRestroom.numDownvotes, 0, @"Restroom should have the number of downvotes given by init override.");
     XCTAssertEqual(testRestroom.numUpvotes, 0, @"Restroom should have the number of upvotes given by init override.");
-    XCTAssertEqualObjects(testRestroom.dateCreated, @"Todays Date", @"Restroom should have the date given by init override.");
 }
 
 @end

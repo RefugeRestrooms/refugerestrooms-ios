@@ -48,6 +48,8 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 - (void)receivedRestroomsJSONString:(NSString *)jsonString
 {
     NSError *error = nil;
+    
+    //build restrooms from JSON
     NSArray *restrooms = [self.restroomBuilder restroomsFromJSON:jsonString error:&error];
     
     if(!restrooms)
@@ -69,6 +71,7 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
 
 #pragma mark - Singleton methods
 
+#pragma message "Initializers should go to the top"
 
 + (id)sharedInstance
 {

@@ -88,10 +88,10 @@ static NSString *restroomJSON = @"[{"
 
 - (void)testThatErrorsWithCustomCodesCanBeCreated
 {
-    NSError *error1 = [NSError errorWithDomain:@"TestingErrorDomain" code:RestroomBuilderMissingDataError userInfo:nil];
+    NSError *error1 = [NSError errorWithDomain:@"TestingErrorDomain" code:RestroomBuilderErrorCodeMissingDataError userInfo:nil];
     
     XCTAssertNotNil(error1, @"Should be able to create RestroomBuilderMissingDataError.");
-    XCTAssertEqual([error1 code], RestroomBuilderMissingDataError, @"Error should have correct code.");
+    XCTAssertEqual([error1 code], RestroomBuilderErrorCodeMissingDataError, @"Error should have correct code.");
     
 }
 
@@ -115,7 +115,7 @@ static NSString *restroomJSON = @"[{"
     [restroomBuilder restroomsFromJSON:@"Not JSON" error:&error];
     
     XCTAssertNotNil(error, @"Error should have been created.");
-    XCTAssertEqual([error code], RestroomBuilderInvalidJSONError, @"Invalid JSON syntax should return RestroomBuilderInvalidJSONError.");
+    XCTAssertEqual([error code], RestroomBuilderErrorCodeInvalidJSONError, @"Invalid JSON syntax should return RestroomBuilderInvalidJSONError.");
 }
 
 - (void)testPassingNullErrorDoesNotCauseCrash
@@ -154,7 +154,7 @@ static NSString *restroomJSON = @"[{"
     
     [restroomBuilder restroomsFromJSON:validJSON error:&error];
     
-    XCTAssertEqual([error code], RestroomBuilderMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
+    XCTAssertEqual([error code], RestroomBuilderErrorCodeMissingDataError, @"Missing JSON data should return RestroomBuilderMissingDataError.");
 }
 
 - (void)testJSONWithTwoRestroomsReturnsTwoRestroomObjects
@@ -185,8 +185,6 @@ static NSString *restroomJSON = @"[{"
     
     XCTAssertEqual(restroom.numUpvotes, 1, @"The restroom object's number of upvotes should match the data we sent.");
     
-    XCTAssertEqualObjects(restroom.dateCreated, @"2014-02-02T20:55:31.555Z", @"The restroom object's creation date should match the data we sent.");
-    
     XCTAssertEqual(restroom.databaseID, 4327, @"The restroom object's databaseID should match the data we sent.");
 }
 
@@ -195,8 +193,6 @@ static NSString *restroomJSON = @"[{"
     XCTAssertEqualObjects(restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom should have directions set if avaiable in JSON.");
     
     XCTAssertEqualObjects(restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom should have comment set if avaiable in JSON.");
-    
-    XCTAssertEqual(restroom.searchRank, 0.66872, @"Restroom should have search rank set if avaiable in JSON.");
 }
 
 - (void)testDirectionsSetToEmptyStringIfUnavailable

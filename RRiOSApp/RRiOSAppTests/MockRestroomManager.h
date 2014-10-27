@@ -26,6 +26,6 @@
 
 - (BOOL)didFetchRestrooms;
 - (void)fetchRestroomsForQuery:(NSString *)query;
-- (NSArray *)receivedRestrooms;
+//- (NSArray *)receivedRestrooms;
 
 @end

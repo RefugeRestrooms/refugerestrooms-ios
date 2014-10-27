@@ -12,8 +12,8 @@
 
 typedef NS_ENUM(NSInteger, RestroomBuilderErrorCode)
 {
-    RestroomBuilderInvalidJSONError,
-    RestroomBuilderMissingDataError
+    RestroomBuilderErrorCodeInvalidJSONError,
+    RestroomBuilderErrorCodeMissingDataError
 };
 
 - (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;

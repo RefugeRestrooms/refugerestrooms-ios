@@ -12,7 +12,7 @@
 
 
 // Designated Initializer
--(id)initWithName:(NSString *)name Street:(NSString *)street City:(NSString *)city State:(NSString *)state Country:(NSString *)country IsAccessible:(BOOL)isAccessible IsUnisex:(BOOL)isUnisex NumDownvotes:(NSInteger)numDownvotes NumUpvotes:(NSInteger)numUpvotes DateCreated:(NSString *)dateCreated
+-(id)initWithName:(NSString *)name street:(NSString *)street city:(NSString *)city state:(NSString *)state country:(NSString *)country isAccessible:(BOOL)isAccessible isUnisex:(BOOL)isUnisex numDownvotes:(NSInteger)numDownvotes numUpvotes:(NSInteger)numUpvotes latitude:(double)latitude longitude:(double)longitude databaseID:(int)databaseID
 {
     self = [super init];
     
@@ -25,7 +25,9 @@
     _isUnisex = isUnisex;
     _numDownvotes = numDownvotes;
     _numUpvotes = numUpvotes;
-    _dateCreated = dateCreated;
+    _latitude = latitude;
+    _longitude = longitude;
+    _databaseID = databaseID;
     
     return self;
 }
@@ -43,18 +45,23 @@
     static BOOL defaultUnisexFlag = NO;
     static NSInteger defaultNumDownvotes = 0;
     static NSInteger defaultNumUpvotes = 0;
-    static NSString *defaultDateCreated = @"Todays Date";    // TODO: change this when date created is a Date object!
+    static double defaultLatitude = 37.7944167;
+    static double defaultLongitude = -122.3996389;
+    static int defaultDatabaseID = 847;
     
     return [self initWithName:defaultName
-                    Street:defaultStreet
-                      City:defaultCity
-                     State:defaultState
-                   Country:defaultCountry
-              IsAccessible:defaultAccessibilityFlag
-                  IsUnisex:defaultUnisexFlag
-              NumDownvotes:defaultNumDownvotes
-                NumUpvotes:defaultNumUpvotes
-               DateCreated:defaultDateCreated];
+                       street:defaultStreet
+                         city:defaultCity
+                        state:defaultState
+                      country:defaultCountry
+                 isAccessible:defaultAccessibilityFlag
+                     isUnisex:defaultUnisexFlag
+                 numDownvotes:defaultNumDownvotes
+                   numUpvotes:defaultNumUpvotes
+                    latitude:defaultLatitude
+                    longitude:defaultLongitude
+                   databaseID:defaultDatabaseID
+            ];
 }
 
 @end

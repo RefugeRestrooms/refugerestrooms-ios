@@ -11,9 +11,13 @@
 static NSString *apiURLStubSearch = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
 static NSString *apiURLStubAllRestrooms = @"http://www.refugerestrooms.org:80/api/v1/restrooms.json";
 
-NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
+static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
 @implementation RestroomCommunicator
+{
+    void (^errorHandler)(NSError *);        // block for error handling
+    void (^successHandler)(NSString *);     // block for success handling
+}
 
 - (void)dealloc
 {

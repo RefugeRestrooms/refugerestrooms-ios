@@ -36,26 +36,32 @@
     Restroom *restroom1 = [[Restroom alloc] init];
     Restroom *restroom2 = [[Restroom alloc]
                            initWithName:@"Target"
-                           Street:@"7129 O'Kelly Chapel Road"
-                           City:@"Cary"
-                           State:@"North Carolina"
-                           Country:@"United States"
-                           IsAccessible:FALSE
-                           IsUnisex:TRUE
-                           NumDownvotes:0
-                           NumUpvotes:0
-                           DateCreated:@"2014-02-02T20:55:31.555Z"];
+                           street:@"7129 O'Kelly Chapel Road"
+                           city:@"Cary"
+                           state:@"North Carolina"
+                           country:@"United States"
+                           isAccessible:FALSE
+                           isUnisex:TRUE
+                           numDownvotes:0
+                           numUpvotes:0
+                           latitude:10.0
+                           longitude:20.0
+                           databaseID:30
+                           ];
     Restroom *restroom3 = [[Restroom alloc]
                            initWithName:@"Walmart"
-                           Street:@"123 ABC St"
-                           City:@"Boston"
-                           State:@"Massachusetts"
-                           Country:@"United States"
-                           IsAccessible:FALSE
-                           IsUnisex:TRUE
-                           NumDownvotes:0
-                           NumUpvotes:0
-                           DateCreated:@"2014-01-01T20:55:31.555Z"];
+                           street:@"123 ABC St"
+                           city:@"Boston"
+                           state:@"Massachusetts"
+                           country:@"United States"
+                           isAccessible:FALSE
+                           isUnisex:TRUE
+                           numDownvotes:0
+                           numUpvotes:0
+                           latitude:40.0
+                           longitude:50.0
+                           databaseID:60
+                           ];
     restroom3.directions = @"Take a left at Harvard.";
     
     restrooms = @[ restroom1, restroom2, restroom3 ];

@@ -25,6 +25,8 @@
  POSSIBILITY OF SUCH DAMAGE. 
  */
 
+#pragma message "Add as Cocoapod"
+
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 

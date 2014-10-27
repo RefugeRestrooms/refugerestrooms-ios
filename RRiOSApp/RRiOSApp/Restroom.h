@@ -19,25 +19,25 @@
 @property (readonly) BOOL isUnisex;
 @property (readonly) NSInteger numDownvotes;
 @property (readonly) NSInteger numUpvotes;
-@property (readonly) NSString *dateCreated;
-
-@property (assign, nonatomic) int databaseID;
-@property (assign, nonatomic) NSString *directions;
-@property (assign, nonatomic) NSString *comment;
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitude;
-@property (assign, nonatomic) double searchRank;
+@property (assign, nonatomic) int databaseID;
+
+@property (assign, nonatomic) NSString *directions;
+@property (assign, nonatomic) NSString *comment;
 
 - (id)initWithName:(NSString *)name
-            Street:(NSString *)street
-              City:(NSString *)city
-             State:(NSString *)state
-           Country:(NSString *)country
-      IsAccessible:(BOOL)isAccessible
-          IsUnisex:(BOOL)isUnisex
-      NumDownvotes:(NSInteger)numDownvotes
-        NumUpvotes:(NSInteger)numUpvotes
-       DateCreated:(NSString *)dateCreated
+            street:(NSString *)street
+              city:(NSString *)city
+             state:(NSString *)state
+           country:(NSString *)country
+      isAccessible:(BOOL)isAccessible
+          isUnisex:(BOOL)isUnisex
+      numDownvotes:(NSInteger)numDownvotes
+        numUpvotes:(NSInteger)numUpvotes
+         latitude:(double)latitude
+         longitude:(double)longitude
+        databaseID:(int)databaseID
 ;
 
 @end

@@ -39,7 +39,7 @@
     return self;
 }
 
-- (MKMapItem*)mapItem
+- (MKMapItem *)mapItem
 {
     NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
     

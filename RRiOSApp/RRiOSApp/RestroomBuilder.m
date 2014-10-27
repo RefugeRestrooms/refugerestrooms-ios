@@ -9,7 +9,7 @@
 #import "RestroomBuilder.h"
 #import "Restroom.h"
 
-NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
+static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 
 @implementation RestroomBuilder
 
@@ -29,9 +29,9 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         // handle error
         if(!error)
         {
-//            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+            // *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
             
-            *error = [NSError errorWithDomain:@"TEST" code:RestroomBuilderInvalidJSONError userInfo:nil];
+            *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
         }
         
         return nil;
@@ -52,42 +52,36 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
         // required properties
+        // if lat/long is null, setting here with doubleValue throws error - 0.0 default used
         Restroom *restroom = [[Restroom alloc]
                                 initWithName:restroomDictionary[@"name"]
-                                Street:restroomDictionary[@"street"]
-                                City:restroomDictionary[@"city"]
-                                State:restroomDictionary[@"state"]
-                                Country:restroomDictionary[@"country"]
-                                IsAccessible:[restroomDictionary[@"accessible"] boolValue]
-                                IsUnisex:[restroomDictionary[@"unisex"] boolValue]
-                                NumDownvotes:[restroomDictionary[@"downvote"] intValue]
-                                NumUpvotes:[restroomDictionary[@"upvote"] intValue]
-                                DateCreated:restroomDictionary[@"created_at"]
+                                street:restroomDictionary[@"street"]
+                                city:restroomDictionary[@"city"]
+                                state:restroomDictionary[@"state"]
+                                country:restroomDictionary[@"country"]
+                                isAccessible:[restroomDictionary[@"accessible"] boolValue]
+                                isUnisex:[restroomDictionary[@"unisex"] boolValue]
+                                numDownvotes:[restroomDictionary[@"downvote"] intValue]
+                                numUpvotes:[restroomDictionary[@"upvote"] intValue]
+                                latitude:0.0
+                                longitude:0.0
+                                databaseID:[restroomDictionary[@"id"] intValue]
                               ];
         
-        
-        // if error or incomplete
-        if(restroom == nil ||
-           restroom.name == nil ||
-           restroom.street == nil ||
-           restroom.state == nil ||
-           restroom.country == nil ||
-           restroom.dateCreated == nil
-           )
-        {
-            if(!error)
-            {
-                *error = [NSError errorWithDomain:@"TEST" code:RestroomBuilderMissingDataError userInfo:nil];
-            }
-            
-//            return nil;
-        }
-        
-        // if no latitude or longitude, discard
         id latitude = restroomDictionary[@"latitude"];
         id longitude = restroomDictionary[@"longitude"];
         
-        if(!((latitude == [NSNull null]) || (longitude == [NSNull null])))
+        // if error or incomplete
+        if(![self isValidRestroom:restroom withLatitude:latitude andLongitude:longitude])
+        {
+            if(!error)
+            {
+                //            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+                
+                *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
+            }
+        }
+        else
         {
             restroom.latitude = [latitude doubleValue];
             restroom.longitude = [longitude doubleValue];
@@ -95,19 +89,36 @@ NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
             // add optional properties if Restroom was formed
             id directions = restroomDictionary[@"directions"];
             id comment = restroomDictionary[@"comment"];
-            id searchRank = restroomDictionary[@"pg_search_rank"];
-            id databaseID = restroomDictionary[@"id"];
             
             (directions == nil) ? (restroom.directions = @"") : (restroom.directions = directions);
             (comment == nil) ? (restroom.comment = @"") : (restroom.comment = comment);
-            if(!(searchRank == [NSNull null])) { restroom.searchRank = [searchRank doubleValue]; }
-            if(!(databaseID == [NSNull null])) { restroom.databaseID = [databaseID intValue]; }
             
             [restrooms addObject:restroom];
         }
     }
     
     return [restrooms copy];
+}
+
+#pragma mark - Helper methods
+
+// tests if Restroom data has required fields
+- (BOOL)isValidRestroom:(Restroom *)restroom withLatitude:(id)latitude andLongitude:(id)longitude
+{
+    if(restroom == nil ||
+       restroom.name == nil ||
+       restroom.street == nil ||
+       restroom.state == nil ||
+       restroom.country == nil ||
+       latitude == [NSNull null] ||
+       longitude == [NSNull null]
+       )
+    {
+        return NO;
+    }
+    
+
+    return YES;
 }
 
 @end
