@@ -26,7 +26,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#pragma message Add as Cocoapod
+#pragma message "Add as Cocoapod"
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>

@@ -46,7 +46,7 @@
                            numUpvotes:0
                            latitude:10.0
                            longitude:20.0
-                           databaseID:30
+                           identifier:[NSNumber numberWithInt:30]
                            ];
     Restroom *restroom3 = [[Restroom alloc]
                            initWithName:@"Walmart"
@@ -60,7 +60,7 @@
                            numUpvotes:0
                            latitude:40.0
                            longitude:50.0
-                           databaseID:60
+                           identifier:[NSNumber numberWithInt:30]
                            ];
     restroom3.directions = @"Take a left at Harvard.";
     

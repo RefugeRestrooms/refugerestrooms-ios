@@ -12,7 +12,7 @@
 
 
 // Designated Initializer
--(id)initWithName:(NSString *)name street:(NSString *)street city:(NSString *)city state:(NSString *)state country:(NSString *)country isAccessible:(BOOL)isAccessible isUnisex:(BOOL)isUnisex numDownvotes:(NSInteger)numDownvotes numUpvotes:(NSInteger)numUpvotes latitude:(double)latitude longitude:(double)longitude databaseID:(int)databaseID
+-(id)initWithName:(NSString *)name street:(NSString *)street city:(NSString *)city state:(NSString *)state country:(NSString *)country isAccessible:(BOOL)isAccessible isUnisex:(BOOL)isUnisex numDownvotes:(NSInteger)numDownvotes numUpvotes:(NSInteger)numUpvotes latitude:(double)latitude longitude:(double)longitude identifier:(NSNumber *)identifier
 {
     self = [super init];
     
@@ -27,7 +27,7 @@
     _numUpvotes = numUpvotes;
     _latitude = latitude;
     _longitude = longitude;
-    _databaseID = databaseID;
+    _identifier = identifier;
     
     return self;
 }
@@ -47,7 +47,7 @@
     static NSInteger defaultNumUpvotes = 0;
     static double defaultLatitude = 37.7944167;
     static double defaultLongitude = -122.3996389;
-    static int defaultDatabaseID = 847;
+    NSNumber *defaultIdentifier = [NSNumber numberWithInt:847];
     
     return [self initWithName:defaultName
                        street:defaultStreet
@@ -60,7 +60,7 @@
                    numUpvotes:defaultNumUpvotes
                     latitude:defaultLatitude
                     longitude:defaultLongitude
-                   databaseID:defaultDatabaseID
+                   identifier:defaultIdentifier
             ];
 }
 

@@ -185,7 +185,7 @@ static NSString *restroomJSON = @"[{"
     
     XCTAssertEqual(restroom.numUpvotes, 1, @"The restroom object's number of upvotes should match the data we sent.");
     
-    XCTAssertEqual(restroom.databaseID, 4327, @"The restroom object's databaseID should match the data we sent.");
+    XCTAssertEqual(restroom.identifier, [NSNumber numberWithInt:4327], @"The restroom object's databaseID should match the data we sent.");
 }
 
 - (void)testOptionalDataSetIfAvailable

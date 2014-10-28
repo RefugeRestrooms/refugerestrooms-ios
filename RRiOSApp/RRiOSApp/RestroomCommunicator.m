@@ -130,6 +130,8 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    NSLog(@"Data Received: %@", receivedData);
+    
     [receivedData appendData:data];
 }
 

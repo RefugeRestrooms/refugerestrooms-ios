@@ -31,6 +31,7 @@ const float METERS_PER_MILE = 1609.344;
     Reachability *internetReachability;
     CLLocationManager *locationManager;
     MBProgressHUD *hud;
+    BOOL internetIsAccessible;
     BOOL initialZoomComplete;
 }
 
@@ -45,6 +46,7 @@ const float METERS_PER_MILE = 1609.344;
     hud.color = RGB(65.0, 60.0, 107.0);
     hud.labelText = @"Syncing";
     
+    internetIsAccessible = YES;
     initialZoomComplete = NO;
     
     locationManager = [[CLLocationManager alloc] init];
@@ -53,7 +55,7 @@ const float METERS_PER_MILE = 1609.344;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
     // set RestroomManager delegate
-    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance]; // put in Viewwill Load
+    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
     restroomManager.delegate = self;
 }
 
@@ -86,8 +88,8 @@ const float METERS_PER_MILE = 1609.344;
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:10000];
-//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"New York NY"];
+//                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:5000];
+                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
             }
          );
     };
@@ -100,7 +102,10 @@ const float METERS_PER_MILE = 1609.344;
         (
             dispatch_get_main_queue(), ^
             {
-                NSLog(@"Someone broke the internet :(");
+                internetIsAccessible = NO;
+                
+                hud.mode = MBProgressHUDModeText;
+                hud.labelText = @"Internet connection required";
             }
          );
     };
@@ -127,8 +132,6 @@ const float METERS_PER_MILE = 1609.344;
     
         [self.mapView addAnnotation:annotation];
     }
-    
-    [hud hide:YES];
 }
 
 #pragma mark - CLLocationManagerDelegate methods
@@ -166,7 +169,10 @@ const float METERS_PER_MILE = 1609.344;
 {
     [locationManager stopUpdatingLocation];
     
-    // TODO: implement error handling for finding location
+    if(internetIsAccessible) {
+        hud.labelText = @"Could not find your location"; }
+    [hud hide:YES afterDelay:5];
+    
     NSLog(@"ERROR finding location: %@", error);
 }
 
@@ -182,15 +188,20 @@ const float METERS_PER_MILE = 1609.344;
         {
             [self plotRestrooms:restrooms];
             
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = @"Complete!";
+            [hud hide:YES afterDelay:2];
+            
             NSLog(@"Finished fetching retrooms.");
         }
      );
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
-{
-    // TODO: Handle fetching error
-    NSLog(@"Error fetching Restroom data.");
+{;
+    // display error
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = [NSString stringWithFormat:@"Sync error. Error code: %i", [error code]];
 }
 
 #pragma mark - Helper methods

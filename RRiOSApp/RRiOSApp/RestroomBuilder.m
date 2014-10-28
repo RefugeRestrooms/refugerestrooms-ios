@@ -65,7 +65,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                                 numUpvotes:[restroomDictionary[@"upvote"] intValue]
                                 latitude:0.0
                                 longitude:0.0
-                                databaseID:[restroomDictionary[@"id"] intValue]
+                                identifier:[NSNumber numberWithInt:[restroomDictionary[@"id"] intValue]]
                               ];
         
         // lat/long must be tested for validity before extracting double value and assigning

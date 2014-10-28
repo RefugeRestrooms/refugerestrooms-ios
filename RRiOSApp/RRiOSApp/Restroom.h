@@ -21,7 +21,7 @@
 @property (readonly) NSInteger numUpvotes;
 @property (assign, nonatomic) double latitude;
 @property (assign, nonatomic) double longitude;
-@property (assign, nonatomic) int databaseID;
+@property (assign, nonatomic) NSNumber *identifier;
 
 @property (assign, nonatomic) NSString *directions;
 @property (assign, nonatomic) NSString *comment;
@@ -37,7 +37,7 @@
         numUpvotes:(NSInteger)numUpvotes
          latitude:(double)latitude
          longitude:(double)longitude
-        databaseID:(int)databaseID
+        identifier:(NSNumber *)identifier
 ;
 
 @end

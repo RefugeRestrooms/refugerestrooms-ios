@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
-    restroom = [[Restroom alloc] initWithName:@"Target" street:@"7129 O'Kelly Chapel Road" city:@"Cary" state:@"North Carolina" country:@"United States" isAccessible:FALSE isUnisex:TRUE numDownvotes:0 numUpvotes:0 latitude:10.0 longitude:20.0 databaseID:30];
+    restroom = [[Restroom alloc] initWithName:@"Target" street:@"7129 O'Kelly Chapel Road" city:@"Cary" state:@"North Carolina" country:@"United States" isAccessible:FALSE isUnisex:TRUE numDownvotes:0 numUpvotes:0 latitude:10.0 longitude:20.0 identifier:[NSNumber numberWithInt:30]];
     
     restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in. ";
     restroom.comment = @"";
@@ -47,10 +47,10 @@
 
 - (void)testThatIDCanBeSet
 {
-    int testID = 1111;
-    restroom.databaseID = testID;
+    NSNumber *testID = [NSNumber numberWithInt:1111];
+    restroom.identifier = testID;
     
-    XCTAssertEqual(testID, restroom.databaseID, @"Should be able to set ID for Restroom.");
+    XCTAssertEqual(testID, restroom.identifier, @"Should be able to set ID for Restroom.");
 }
 
 - (void)testThatDirectionsCanBeSet
