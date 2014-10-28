@@ -40,6 +40,7 @@
 		CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9419D5F92D004E34F9 /* Main.storyboard */; };
 		CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9719D5F92D004E34F9 /* Images.xcassets */; };
 		CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */; };
+		CE787F9D19FF3FA7008C4E1A /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */; };
 		CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE79545819F857600004179B /* CoreGraphics.framework */; };
 		CEA950A519DF436200D8553D /* RRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950A419DF436200D8553D /* RRViewController.m */; };
 		CEA950A619DF436200D8553D /* RRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950A419DF436200D8553D /* RRViewController.m */; };
@@ -119,6 +120,7 @@
 		CE70CF9A19D5F92D004E34F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CE70CFA019D5F92D004E34F9 /* RRiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RRiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CFA519D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		CE79545819F857600004179B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEA950A319DF436200D8553D /* RRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRViewController.h; sourceTree = "<group>"; };
 		CEA950A419DF436200D8553D /* RRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRViewController.m; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 		CE70CF8619D5F92D004E34F9 /* RRiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
 				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
+				CE787F9D19FF3FA7008C4E1A /* 37x-Checkmark@2x.png in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
 			);

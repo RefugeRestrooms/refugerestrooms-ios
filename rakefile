@@ -31,6 +31,6 @@ task :ship do
   system "git commit -am '#{message}'"
   system "git push"
   system "rm -r ../refuge-ios/*"
-  "cp -r ./* ../refuge-ios"
+  system "cp -r ./* ../refuge-ios"
   puts "Git commit attempt complete."
 end

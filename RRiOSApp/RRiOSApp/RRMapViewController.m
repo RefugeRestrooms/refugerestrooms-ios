@@ -188,8 +188,9 @@ const float METERS_PER_MILE = 1609.344;
         {
             [self plotRestrooms:restrooms];
             
-            hud.mode = MBProgressHUDModeText;
-            hud.labelText = @"Complete!";
+            hud.mode = MBProgressHUDModeCustomView;
+            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark@2x"]];
+            hud.labelText = @"Complete";
             [hud hide:YES afterDelay:2];
             
             NSLog(@"Finished fetching retrooms.");
@@ -201,7 +202,8 @@ const float METERS_PER_MILE = 1609.344;
 {;
     // display error
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = [NSString stringWithFormat:@"Sync error. Error code: %i", [error code]];
+    hud.labelText = @"Sync error";
+    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %i", [error code]];
 }
 
 #pragma mark - Helper methods
