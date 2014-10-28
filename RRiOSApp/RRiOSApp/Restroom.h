@@ -2,42 +2,29 @@
 //  Restroom.h
 //  RRiOSApp
 //
-//  Created by Harlan Kellaway on 9/26/14.
+//  Created by Harlan Kellaway on 10/28/14.
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
 
-@interface Restroom : NSObject
 
-@property (readonly) NSString *name;
-@property (readonly) NSString *street;
-@property (readonly) NSString *city;
-@property (readonly) NSString *state;
-@property (readonly) NSString *country;
-@property (readonly) BOOL isAccessible;
-@property (readonly) BOOL isUnisex;
-@property (readonly) NSInteger numDownvotes;
-@property (readonly) NSInteger numUpvotes;
-@property (assign, nonatomic) double latitude;
-@property (assign, nonatomic) double longitude;
-@property (assign, nonatomic) NSNumber *identifier;
+@interface Restroom : NSManagedObject
 
-@property (assign, nonatomic) NSString *directions;
-@property (assign, nonatomic) NSString *comment;
-
-- (id)initWithName:(NSString *)name
-            street:(NSString *)street
-              city:(NSString *)city
-             state:(NSString *)state
-           country:(NSString *)country
-      isAccessible:(BOOL)isAccessible
-          isUnisex:(BOOL)isUnisex
-      numDownvotes:(NSInteger)numDownvotes
-        numUpvotes:(NSInteger)numUpvotes
-         latitude:(double)latitude
-         longitude:(double)longitude
-        identifier:(NSNumber *)identifier
-;
+@property (nonatomic, retain) NSNumber * longitude;
+@property (nonatomic, retain) NSNumber * latitude;
+@property (nonatomic, retain) NSNumber * numUpvotes;
+@property (nonatomic, retain) NSNumber * numDownvotes;
+@property (nonatomic, retain) NSNumber * isUnisex;
+@property (nonatomic, retain) NSNumber * isAccessible;
+@property (nonatomic, retain) NSString * country;
+@property (nonatomic, retain) NSString * state;
+@property (nonatomic, retain) NSString * city;
+@property (nonatomic, retain) NSString * street;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * identifier;
+@property (nonatomic, retain) NSString * directions;
+@property (nonatomic, retain) NSString * comment;
 
 @end

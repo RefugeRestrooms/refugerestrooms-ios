@@ -125,8 +125,8 @@ const float METERS_PER_MILE = 1609.344;
     for (Restroom *restroom in restrooms)
     {
         CLLocationCoordinate2D coordinate;
-        coordinate.latitude = restroom.latitude;
-        coordinate.longitude = restroom.longitude;
+        coordinate.latitude = [restroom.latitude doubleValue];
+        coordinate.longitude = [restroom.longitude doubleValue];
     
         RRMapLocation *annotation = [[RRMapLocation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
     
@@ -169,11 +169,8 @@ const float METERS_PER_MILE = 1609.344;
 {
     [locationManager stopUpdatingLocation];
     
-    if(internetIsAccessible) {
-        hud.labelText = @"Could not find your location"; }
+    if(internetIsAccessible) { hud.labelText = @"Could not find your location"; }
     [hud hide:YES afterDelay:5];
-    
-    NSLog(@"ERROR finding location: %@", error);
 }
 
 #pragma mark - RestroomManagerDelegate methods
@@ -192,8 +189,6 @@ const float METERS_PER_MILE = 1609.344;
             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark@2x"]];
             hud.labelText = @"Complete";
             [hud hide:YES afterDelay:2];
-            
-            NSLog(@"Finished fetching retrooms.");
         }
      );
 }
