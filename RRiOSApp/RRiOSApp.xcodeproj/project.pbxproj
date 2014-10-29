@@ -28,6 +28,8 @@
 		CE787F9D19FF3FA7008C4E1A /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */; };
 		CE787FA41A003A69008C4E1A /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FA31A003A69008C4E1A /* Restroom.m */; };
 		CE787FA51A003A69008C4E1A /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FA31A003A69008C4E1A /* Restroom.m */; };
+		CE787FBE1A01A4AD008C4E1A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787FBD1A01A4AD008C4E1A /* pin.png */; };
+		CE787FBF1A01A4AD008C4E1A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787FBD1A01A4AD008C4E1A /* pin.png */; };
 		CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE79545819F857600004179B /* CoreGraphics.framework */; };
 		CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
 		CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
@@ -79,6 +81,7 @@
 		CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		CE787FA21A003A69008C4E1A /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restroom.h; sourceTree = "<group>"; };
 		CE787FA31A003A69008C4E1A /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restroom.m; sourceTree = "<group>"; };
+		CE787FBD1A01A4AD008C4E1A /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		CE79545819F857600004179B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEA950CD19E3236900D8553D /* RestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewController.m; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */,
+				CE787FBD1A01A4AD008C4E1A /* pin.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
 				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
@@ -287,6 +291,7 @@
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
 				CE787F9D19FF3FA7008C4E1A /* 37x-Checkmark@2x.png in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
+				CE787FBE1A01A4AD008C4E1A /* pin.png in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE787FBF1A01A4AD008C4E1A /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

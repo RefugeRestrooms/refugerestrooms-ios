@@ -30,7 +30,7 @@
         }
         else
         {
-            self.name = @"Unknown charge";
+            self.name = @"No Name";
         }
         
         self.address = address;
@@ -42,19 +42,10 @@
 
 - (MKPointAnnotation *)annotation
 {
-//    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
-//    
-//    MKPlacemark *placemark = [[MKPlacemark alloc]
-//                              initWithCoordinate:self.coordinate
-//                              addressDictionary:addressDict];
-//    
-//    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-//    mapItem.name = self.title;
-    
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = self.coordinate;
-    annotation.title = NSLocalizedString(self.name,
-                                         self.address);
+    annotation.title = NSLocalizedString(self.name, @"Name");
+    annotation.subtitle = NSLocalizedString(self.address, @"Address");
     
     return annotation;
 }

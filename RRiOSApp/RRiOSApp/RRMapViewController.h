@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 #import "RestroomManagerDelegate.h"
 
-@interface RRMapViewController : UIViewController <RestroomManagerDelegate, CLLocationManagerDelegate>
+@interface RRMapViewController : UIViewController <RestroomManagerDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
 
 @end

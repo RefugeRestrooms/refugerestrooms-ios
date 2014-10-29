@@ -9,6 +9,7 @@
 #import "RRMapViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+
 #import "MBProgressHUD.h"
 #import "Restroom.h"
 #import "RestroomManager.h"
@@ -22,7 +23,8 @@ static NSString *mapTitle = @"Refuge Restrooms";
 static NSString *syncText = @"Syncing";
 static NSString *noLocationText = @"Could not find your location";
 static NSString *noInternetText = @"Internet connection unavailable";
-static NSString *completionGraphic = @"37x-Checkmark@2x";
+static NSString *completionGraphic = @"37x-Checkmark@2x.png";
+static NSString *pinGraphic = @"pin.png";
 
 const float METERS_PER_MILE = 1609.344;
 
@@ -46,6 +48,11 @@ const float METERS_PER_MILE = 1609.344;
     [super viewDidLoad];
     
     self.navigationController.navigationBar.topItem.title = mapTitle;
+    
+    // set up mapView
+    self.mapView.delegate = self;
+    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
@@ -94,7 +101,8 @@ const float METERS_PER_MILE = 1609.344;
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                [[RestroomManager sharedInstance] fetchNewRestrooms];
+//                [[RestroomManager sharedInstance] fetchNewRestrooms];
+                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
             }
          );
     };
@@ -134,8 +142,10 @@ const float METERS_PER_MILE = 1609.344;
         coordinate.longitude = [restroom.longitude doubleValue];
     
         RRMapLocation *mapLocation = [[RRMapLocation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
-    
-        [self.mapView addAnnotation:[mapLocation annotation]];
+        MKPointAnnotation *annotation = [mapLocation annotation];
+        
+        [self.mapView addAnnotation:annotation];
+        [self mapView:self.mapView viewForAnnotation:annotation];
     }
 }
 
@@ -214,6 +224,37 @@ const float METERS_PER_MILE = 1609.344;
 - (MKCoordinateRegion)getRegionWithZoomLocation:(CLLocationCoordinate2D)zoomLocation
 {
     return MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    // Handle any custom annotations.
+    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    {
+        // Try to dequeue an existing pin view first.
+        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+        if (!pinView)
+        {
+            // If an existing pin view was not available, create one.
+            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"CustomPinAnnotationView"];
+            pinView.canShowCallout = YES;
+             
+            pinView.image = [UIImage imageNamed:pinGraphic];
+//            pinView.calloutOffset = CGPointMake(0, 32);
+        }
+        else
+        {
+            pinView.annotation = annotation;
+        }
+        
+        return pinView;
+    }
+    
+    return nil;
 }
 
 @end
