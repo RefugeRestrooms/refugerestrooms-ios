@@ -15,6 +15,8 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 @implementation RestroomBuilder
 {
     NSManagedObjectContext *context;
+    
+    int numInvalidLat;
 }
 
 - (id)init
@@ -24,6 +26,8 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     if(self)
     {
         context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+        
+        numInvalidLat = 0;
     }
         
     return self;
@@ -132,6 +136,8 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         }
     }
     
+    NSLog(@"Num Invalid Lat: %i", numInvalidLat);
+    
     return [restrooms copy];
 }
 
@@ -164,19 +170,21 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 // tests if Restroom data has required fields
 - (BOOL)isValidRestroom:(Restroom *)restroom withIdentifier:(id)identifier latitude:(id)latitude longitude:(id)longitude
 {
-    // no lat/lon is invalid
+    // no lat/lon  or ID is invalid
     
     if(
-        restroom == nil ||
-        restroom.name == nil ||
-        restroom.street == nil ||
-        restroom.state == nil ||
-        restroom.country == nil ||
         latitude == [NSNull null] ||
         longitude == [NSNull null] ||
         identifier == [NSNull null]
        )
     {
+        if(latitude == [NSNull null])
+        {
+            numInvalidLat++;
+            
+            NSLog(@"%@", [identifier stringValue]);
+        }
+        
         return NO;
     }
     

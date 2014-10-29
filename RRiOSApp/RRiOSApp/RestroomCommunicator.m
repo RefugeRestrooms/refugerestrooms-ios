@@ -58,10 +58,11 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
      ];
 }
 
+#pragma message "Should retrieve newly update/created Restrooms based on a data provided"
 - (void)searchForNewRestrooms
 {
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@", apiURLStubAllRestrooms]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=50000", apiURLStubAllRestrooms]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

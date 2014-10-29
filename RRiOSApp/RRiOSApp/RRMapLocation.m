@@ -36,21 +36,27 @@
         self.address = address;
         self.coordinate = coordinate;
     }
+    
     return self;
 }
 
-- (MKMapItem *)mapItem
+- (MKPointAnnotation *)annotation
 {
-    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
+//    NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
+//    
+//    MKPlacemark *placemark = [[MKPlacemark alloc]
+//                              initWithCoordinate:self.coordinate
+//                              addressDictionary:addressDict];
+//    
+//    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+//    mapItem.name = self.title;
     
-    MKPlacemark *placemark = [[MKPlacemark alloc]
-                              initWithCoordinate:self.coordinate
-                              addressDictionary:addressDict];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = self.coordinate;
+    annotation.title = NSLocalizedString(self.name,
+                                         self.address);
     
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    mapItem.name = self.title;
-    
-    return mapItem;
+    return annotation;
 }
 
 @end

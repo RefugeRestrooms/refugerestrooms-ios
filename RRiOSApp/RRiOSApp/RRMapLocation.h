@@ -13,6 +13,6 @@
 @interface RRMapLocation : NSObject <MKAnnotation>
 
 - (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
-- (MKMapItem*)mapItem;
+- (MKPointAnnotation *)annotation;
 
 @end

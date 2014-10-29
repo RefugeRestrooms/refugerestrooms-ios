@@ -18,6 +18,12 @@
 #define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
 #define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
 
+static NSString *mapTitle = @"Refuge Restrooms";
+static NSString *syncText = @"Syncing";
+static NSString *noLocationText = @"Could not find your location";
+static NSString *noInternetText = @"Internet connection unavailable";
+static NSString *completionGraphic = @"37x-Checkmark@2x";
+
 const float METERS_PER_MILE = 1609.344;
 
 @interface RRMapViewController ()
@@ -39,12 +45,12 @@ const float METERS_PER_MILE = 1609.344;
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.topItem.title = @"Refuge Restrooms";
+    self.navigationController.navigationBar.topItem.title = mapTitle;
     
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
     hud.color = RGB(65.0, 60.0, 107.0);
-    hud.labelText = @"Syncing";
+    hud.labelText = syncText;
     
     internetIsAccessible = YES;
     initialZoomComplete = NO;
@@ -88,8 +94,7 @@ const float METERS_PER_MILE = 1609.344;
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-//                [[RestroomManager sharedInstance] fetchRestroomsOfAmount:5000];
-                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+                [[RestroomManager sharedInstance] fetchNewRestrooms];
             }
          );
     };
@@ -105,7 +110,7 @@ const float METERS_PER_MILE = 1609.344;
                 internetIsAccessible = NO;
                 
                 hud.mode = MBProgressHUDModeText;
-                hud.labelText = @"Internet connection required";
+                hud.labelText = noInternetText;
             }
          );
     };
@@ -128,9 +133,9 @@ const float METERS_PER_MILE = 1609.344;
         coordinate.latitude = [restroom.latitude doubleValue];
         coordinate.longitude = [restroom.longitude doubleValue];
     
-        RRMapLocation *annotation = [[RRMapLocation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
+        RRMapLocation *mapLocation = [[RRMapLocation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
     
-        [self.mapView addAnnotation:annotation];
+        [self.mapView addAnnotation:[mapLocation annotation]];
     }
 }
 
@@ -169,8 +174,11 @@ const float METERS_PER_MILE = 1609.344;
 {
     [locationManager stopUpdatingLocation];
     
-    if(internetIsAccessible) { hud.labelText = @"Could not find your location"; }
+    if(internetIsAccessible) { hud.labelText = noLocationText; }
     [hud hide:YES afterDelay:5];
+    
+    hud.labelText = syncText;
+    [hud hide:NO];
 }
 
 #pragma mark - RestroomManagerDelegate methods
@@ -186,7 +194,7 @@ const float METERS_PER_MILE = 1609.344;
             [self plotRestrooms:restrooms];
             
             hud.mode = MBProgressHUDModeCustomView;
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark@2x"]];
+            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:completionGraphic]];
             hud.labelText = @"Complete";
             [hud hide:YES afterDelay:2];
         }
