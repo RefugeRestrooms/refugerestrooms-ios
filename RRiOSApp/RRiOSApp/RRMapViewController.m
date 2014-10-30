@@ -12,6 +12,7 @@
 
 #import "Constants.h"
 #import "MBProgressHUD.h"
+#import "MKPointAnnotation+RR.h"
 #import "Restroom.h"
 #import "RestroomManager.h"
 #import "RestroomDetailsViewController.h"
@@ -264,12 +265,10 @@
 {
     id <MKAnnotation> annotation = [view annotation];
     
-    if ([[view annotation] isKindOfClass:[RRPointAnnotation class]])
+    if ([[view annotation] isKindOfClass:[MKPointAnnotation class]])
     {
-        RRPointAnnotation *restroomAnnotation = (RRPointAnnotation *)annotation;
-        
         // segue to details controller
-        [self performSegueWithIdentifier:@"ShowRestroomDetails" sender:restroomAnnotation];
+        [self performSegueWithIdentifier:@"ShowRestroomDetails" sender:annotation];
         
     }
 }
@@ -282,8 +281,8 @@
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
-        RRPointAnnotation *restroomAnnotation = (RRPointAnnotation *)sender;
-        destinationController.restroom = restroomAnnotation.restroom;
+        MKPointAnnotation *annotation = (MKPointAnnotation *)sender;
+        destinationController.restroom = annotation.restroom;
     }
 }
 

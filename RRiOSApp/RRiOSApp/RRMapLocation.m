@@ -7,6 +7,7 @@
 //
 
 #import "Constants.h"
+#import "MKPointAnnotation+RR.h"
 #import "RRMapLocation.h"
 
 #import <AddressBook/AddressBook.h>
@@ -41,9 +42,9 @@
     return self;
 }
 
-- (RRPointAnnotation *)annotation
+- (MKPointAnnotation *)annotation
 {
-    RRPointAnnotation *annotation = [[RRPointAnnotation alloc] init];
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     
     annotation.coordinate = self.coordinate;
     annotation.title = NSLocalizedString(self.name, @"Name");

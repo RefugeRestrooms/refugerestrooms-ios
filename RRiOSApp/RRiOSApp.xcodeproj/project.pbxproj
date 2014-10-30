@@ -28,10 +28,10 @@
 		CE787FA51A003A69008C4E1A /* Restroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FA31A003A69008C4E1A /* Restroom.m */; };
 		CE787FBE1A01A4AD008C4E1A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787FBD1A01A4AD008C4E1A /* pin.png */; };
 		CE787FBF1A01A4AD008C4E1A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787FBD1A01A4AD008C4E1A /* pin.png */; };
-		CE787FC21A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */; };
-		CE787FC31A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */; };
 		CE787FC51A02C930008C4E1A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC41A02C92F008C4E1A /* Constants.m */; };
 		CE787FC61A02C930008C4E1A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC41A02C92F008C4E1A /* Constants.m */; };
+		CE787FCE1A02D826008C4E1A /* MKPointAnnotation+RR.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FCD1A02D826008C4E1A /* MKPointAnnotation+RR.m */; };
+		CE787FCF1A02D826008C4E1A /* MKPointAnnotation+RR.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FCD1A02D826008C4E1A /* MKPointAnnotation+RR.m */; };
 		CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE79545819F857600004179B /* CoreGraphics.framework */; };
 		CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
 		CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
@@ -82,10 +82,10 @@
 		CE787FA21A003A69008C4E1A /* Restroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restroom.h; sourceTree = "<group>"; };
 		CE787FA31A003A69008C4E1A /* Restroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restroom.m; sourceTree = "<group>"; };
 		CE787FBD1A01A4AD008C4E1A /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
-		CE787FC01A01EEC3008C4E1A /* RRPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRPointAnnotation.h; sourceTree = "<group>"; };
-		CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRPointAnnotation.m; sourceTree = "<group>"; };
 		CE787FC41A02C92F008C4E1A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		CE787FC71A02C958008C4E1A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CE787FCC1A02D826008C4E1A /* MKPointAnnotation+RR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+RR.h"; sourceTree = "<group>"; };
+		CE787FCD1A02D826008C4E1A /* MKPointAnnotation+RR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+RR.m"; sourceTree = "<group>"; };
 		CE79545819F857600004179B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEA950CD19E3236900D8553D /* RestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewController.m; sourceTree = "<group>"; };
@@ -158,6 +158,8 @@
 				CE787FC41A02C92F008C4E1A /* Constants.m */,
 				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
 				CE095ACF19F9C8C4008F3EDB /* MBProgressHUD.m */,
+				CE787FCC1A02D826008C4E1A /* MKPointAnnotation+RR.h */,
+				CE787FCD1A02D826008C4E1A /* MKPointAnnotation+RR.m */,
 				CE04B66B19F5AE60003D19EE /* Reachability.h */,
 				CE04B66C19F5AE60003D19EE /* Reachability.m */,
 				CE787FA21A003A69008C4E1A /* Restroom.h */,
@@ -176,8 +178,6 @@
 				CEE0A93619EDC68600B5846B /* RRMapLocation.m */,
 				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
 				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
-				CE787FC01A01EEC3008C4E1A /* RRPointAnnotation.h */,
-				CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
@@ -330,7 +330,7 @@
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 				CE095AD019F9C8C4008F3EDB /* MBProgressHUD.m in Sources */,
-				CE787FC21A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */,
+				CE787FCE1A02D826008C4E1A /* MKPointAnnotation+RR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,9 +345,9 @@
 				CE04B66E19F5AE60003D19EE /* Reachability.m in Sources */,
 				CE787FC61A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
+				CE787FCF1A02D826008C4E1A /* MKPointAnnotation+RR.m in Sources */,
 				CEE0A93819EDC68600B5846B /* RRMapLocation.m in Sources */,
 				CE787FA51A003A69008C4E1A /* Restroom.m in Sources */,
-				CE787FC31A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
