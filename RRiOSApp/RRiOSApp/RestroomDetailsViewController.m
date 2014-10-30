@@ -25,8 +25,15 @@
 {
     [super viewWillAppear:animated];
     
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    // navigation bar styling
+//    self.navigationController.navigationBar.topItem.title = self.restroom.name;
+    self.title = self.restroom.name;
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                           nil]
+     ];
     
+    // set details
     self.nameLabel.text = self.restroom.name;
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
     self.directionsLabel.text = self.restroom.directions;

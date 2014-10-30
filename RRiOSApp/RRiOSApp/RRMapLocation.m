@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
+#import "Constants.h"
 #import "RRMapLocation.h"
 
 #import <AddressBook/AddressBook.h>
-
-static NSString *noNameText = @"No Name";
 
 @interface RRMapLocation ()
 
@@ -32,7 +31,7 @@ static NSString *noNameText = @"No Name";
         }
         else
         {
-            self.name = noNameText;
+            self.name = NO_NAME_TEXT;
         }
         
         self.address = address;
@@ -42,7 +41,7 @@ static NSString *noNameText = @"No Name";
     return self;
 }
 
-- (MKPointAnnotation *)annotation
+- (RRPointAnnotation *)annotation
 {
     RRPointAnnotation *annotation = [[RRPointAnnotation alloc] init];
     

@@ -6,10 +6,8 @@
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
+#import "Constants.h"
 #import "RestroomCommunicator.h"
-
-static NSString *apiURLStubSearch = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
-static NSString *apiURLStubAllRestrooms = @"http://www.refugerestrooms.org:80/api/v1/restrooms.json";
 
 static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDomain";
 
@@ -48,7 +46,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 {
     NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=100&query=%@", apiURLStubSearch, escapedQuery]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=100&query=%@", API_CALL_SEARCH_RESTROOMS, escapedQuery]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
@@ -62,7 +60,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 - (void)searchForNewRestrooms
 {
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=50000", apiURLStubAllRestrooms]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=50000", API_CALL_ALL_RESTROOMS]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
@@ -75,7 +73,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 - (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
 {
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", apiURLStubAllRestrooms, numberRestrooms]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", API_CALL_ALL_RESTROOMS, numberRestrooms]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
@@ -131,6 +129,8 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    NSLog(@"Data: %@", data);
+    
     [receivedData appendData:data];
 }
 

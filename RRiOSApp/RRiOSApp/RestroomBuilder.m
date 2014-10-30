@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
 #import "RestroomBuilder.h"
 #import "Restroom.h"
 

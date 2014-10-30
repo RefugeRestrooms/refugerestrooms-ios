@@ -30,6 +30,8 @@
 		CE787FBF1A01A4AD008C4E1A /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = CE787FBD1A01A4AD008C4E1A /* pin.png */; };
 		CE787FC21A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */; };
 		CE787FC31A01EEC3008C4E1A /* RRPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */; };
+		CE787FC51A02C930008C4E1A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC41A02C92F008C4E1A /* Constants.m */; };
+		CE787FC61A02C930008C4E1A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FC41A02C92F008C4E1A /* Constants.m */; };
 		CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE79545819F857600004179B /* CoreGraphics.framework */; };
 		CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
 		CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
@@ -82,6 +84,8 @@
 		CE787FBD1A01A4AD008C4E1A /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
 		CE787FC01A01EEC3008C4E1A /* RRPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRPointAnnotation.h; sourceTree = "<group>"; };
 		CE787FC11A01EEC3008C4E1A /* RRPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRPointAnnotation.m; sourceTree = "<group>"; };
+		CE787FC41A02C92F008C4E1A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		CE787FC71A02C958008C4E1A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CE79545819F857600004179B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEA950CD19E3236900D8553D /* RestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewController.m; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				CE787FBD1A01A4AD008C4E1A /* pin.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
+				CE787FC71A02C958008C4E1A /* Constants.h */,
+				CE787FC41A02C92F008C4E1A /* Constants.m */,
 				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
 				CE095ACF19F9C8C4008F3EDB /* MBProgressHUD.m */,
 				CE04B66B19F5AE60003D19EE /* Reachability.h */,
@@ -316,6 +322,7 @@
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
 				CE787FA41A003A69008C4E1A /* Restroom.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
+				CE787FC51A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */,
@@ -336,6 +343,7 @@
 				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE04B66E19F5AE60003D19EE /* Reachability.m in Sources */,
+				CE787FC61A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A93819EDC68600B5846B /* RRMapLocation.m in Sources */,
 				CE787FA51A003A69008C4E1A /* Restroom.m in Sources */,

@@ -10,27 +10,13 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "Constants.h"
 #import "MBProgressHUD.h"
 #import "Restroom.h"
 #import "RestroomManager.h"
 #import "RestroomDetailsViewController.h"
 #import "RRMapLocation.h"
 #import "Reachability.h"
-
-#define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
-#define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
-
-static NSString *mapTitle = @"Refuge Restrooms";
-static NSString *urlToTestReachability = @"www.google.com";
-static NSString *syncText = @"Syncing";
-static NSString *syncErrorText = @"Sync error";
-static NSString *noLocationText = @"Could not find your location";
-static NSString *noInternetText = @"Internet connection unavailable";
-static NSString *completionText = @"Complete";
-static NSString *completionGraphic = @"37x-Checkmark@2x.png";
-static NSString *pinGraphic = @"pin.png";
-
-const float METERS_PER_MILE = 1609.344;
 
 @interface RRMapViewController ()
 
@@ -51,7 +37,7 @@ const float METERS_PER_MILE = 1609.344;
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.topItem.title = mapTitle;
+    self.navigationController.navigationBar.topItem.title = APP_NAME;
     
     // set up mapView
     self.mapView.delegate = self;
@@ -61,8 +47,8 @@ const float METERS_PER_MILE = 1609.344;
     // set up HUD
     hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.mode = MBProgressHUDAnimationFade;
-    hud.color = RGB(65.0, 60.0, 107.0);
-    hud.labelText = syncText;
+    hud.color = [UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0];
+    hud.labelText = SYNC_TEXT;
     
     // set up location manager
     locationManager = [[CLLocationManager alloc] init];
@@ -96,7 +82,7 @@ const float METERS_PER_MILE = 1609.344;
     [locationManager startUpdatingLocation];
     
     // check for Internet reachability
-    internetReachability = [Reachability reachabilityWithHostname:urlToTestReachability];
+    internetReachability = [Reachability reachabilityWithHostname:URL_TO_TEST_REACHABILITY];
     
     // Internet is reachable
     internetReachability.reachableBlock = ^(Reachability*reach)
@@ -108,8 +94,10 @@ const float METERS_PER_MILE = 1609.344;
             {
                 internetIsAccessible = YES;
                 
-                if(!initialZoomComplete) { [[RestroomManager sharedInstance] fetchNewRestrooms]; }
-//                [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"San Francisco CA"];
+//                if(!initialZoomComplete) { [[RestroomManager sharedInstance] fetchNewRestrooms]; }
+//                if(!initialZoomComplete) {
+                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Palo Alto CA"];
+//                }
             }
          );
     };
@@ -125,7 +113,7 @@ const float METERS_PER_MILE = 1609.344;
                 internetIsAccessible = NO;
                 
                 hud.mode = MBProgressHUDModeText;
-                hud.labelText = noInternetText;
+                hud.labelText = NO_INTERNET_TEXT;
             }
          );
     };
@@ -192,10 +180,10 @@ const float METERS_PER_MILE = 1609.344;
 {
     [locationManager stopUpdatingLocation];
     
-    if(internetIsAccessible) { hud.labelText = noLocationText; }
+    if(internetIsAccessible) { hud.labelText = NO_LOCATION_TEXT; }
     [hud hide:YES afterDelay:5];
     
-    hud.labelText = syncText;
+    hud.labelText = SYNC_TEXT;
     [hud hide:NO];
 }
 
@@ -212,8 +200,8 @@ const float METERS_PER_MILE = 1609.344;
             [self plotRestrooms:restrooms];
             
             hud.mode = MBProgressHUDModeCustomView;
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:completionGraphic]];
-            hud.labelText = completionText;
+            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
+            hud.labelText = COMPLETION_TEXT;
             [hud hide:YES afterDelay:2];
         }
      );
@@ -223,7 +211,7 @@ const float METERS_PER_MILE = 1609.344;
 {;
     // display error
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = syncErrorText;
+    hud.labelText = SYNC_ERROR_TEXT;
     hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
 }
 
@@ -249,7 +237,7 @@ const float METERS_PER_MILE = 1609.344;
             // re-size pin image
             CGSize newSize = CGSizeMake(31.0f, 39.5f);
             UIGraphicsBeginImageContext(newSize);
-            [[UIImage imageNamed:pinGraphic] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+            [[UIImage imageNamed:PIN_GRAPHIC] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
             UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             

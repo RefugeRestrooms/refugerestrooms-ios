@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 
+#import "Constants.h"
 #import "RestroomManager.h"
 
 #define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
@@ -22,13 +23,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // change navigation bar color
-    [[UINavigationBar appearance] setBarTintColor:RGB(65.0, 60.0, 107.0)];
+    // change navigation style
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            nil]
      ];
+    
+    
 
     // clear our Core Data for testing
 //    [self resetApplicationModel];
