@@ -10,6 +10,8 @@
 
 #import <AddressBook/AddressBook.h>
 
+static NSString *noNameText = @"No Name";
+
 @interface RRMapLocation ()
 
 @property (nonatomic, copy) NSString *name;
@@ -30,7 +32,7 @@
         }
         else
         {
-            self.name = @"No Name";
+            self.name = noNameText;
         }
         
         self.address = address;
@@ -42,10 +44,12 @@
 
 - (MKPointAnnotation *)annotation
 {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    RRPointAnnotation *annotation = [[RRPointAnnotation alloc] init];
+    
     annotation.coordinate = self.coordinate;
     annotation.title = NSLocalizedString(self.name, @"Name");
     annotation.subtitle = NSLocalizedString(self.address, @"Address");
+    annotation.restroom = self.restroom;
     
     return annotation;
 }
