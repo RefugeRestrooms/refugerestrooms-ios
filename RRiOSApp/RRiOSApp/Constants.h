@@ -40,6 +40,7 @@ extern NSString *const NO_INTERNET_TEXT;
 extern NSString *const NO_LOCATION_TEXT;
 extern NSString *const NO_NAME_TEXT;
 extern NSString *const PIN_GRAPHIC;
+extern NSString *const REUSABLE_ANNOTATION_VIEW_IDENTIFIER;
 extern NSString *const SYNC_TEXT;
 extern NSString *const SYNC_ERROR_TEXT;
 extern NSString *const URL_TO_TEST_REACHABILITY;

@@ -12,11 +12,10 @@
 
 #import "Constants.h"
 #import "MBProgressHUD.h"
-#import "MKPointAnnotation+RR.h"
 #import "Restroom.h"
 #import "RestroomManager.h"
 #import "RestroomDetailsViewController.h"
-#import "RRMapLocation.h"
+#import "RRMapKitAnnotation.h"
 #import "Reachability.h"
 
 @interface RRMapViewController ()
@@ -148,14 +147,13 @@
         coordinate.longitude = [restroom.longitude doubleValue];
     
         // create map location object
-        RRMapLocation *mapLocation = [[RRMapLocation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
+        RRMapKitAnnotation *mapLocation = [[RRMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
         mapLocation.restroom = restroom;
         
         // add annotation
-        MKPointAnnotation *annotation = [mapLocation annotation];
-        [self.mapView addAnnotation:annotation];
+        [self.mapView addAnnotation:mapLocation];
         
-        [self mapView:self.mapView viewForAnnotation:annotation];
+        [self mapView:self.mapView viewForAnnotation:mapLocation];
     }
 }
 
@@ -230,20 +228,21 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    // If it's the user location, just return nil.
+    // If it's the user location, just return nil
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
     // Handle any custom annotations.
-    if ([annotation isKindOfClass:[MKPointAnnotation class]])
+    if ([annotation isKindOfClass:[RRMapKitAnnotation class]])
     {
-        // Try to dequeue an existing pin view first
-        MKAnnotationView *pinView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"RestroomPinAnnotationView"];
-        if (!pinView)
+        // Try to dequeue an existing annotation view first
+        MKAnnotationView *annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:REUSABLE_ANNOTATION_VIEW_IDENTIFIER];
+        
+        if (!annotationView)
         {
             // If an existing pin view was not available, create one.
-            pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RestroomPinAnnotationView"];
-            pinView.canShowCallout = YES;
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:REUSABLE_ANNOTATION_VIEW_IDENTIFIER];
+            annotationView.canShowCallout = YES;
             
             // re-size pin image
             CGSize newSize = CGSizeMake(31.0f, 39.5f);
@@ -253,19 +252,18 @@
             UIGraphicsEndImageContext();
             
             // set pin image
-            pinView.image = newImage;
-//            pinView.calloutOffset = CGPointMake(0, 32);
+            annotationView.image = newImage;
             
             // set callout
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            pinView.rightCalloutAccessoryView = rightButton;
+            annotationView.rightCalloutAccessoryView = rightButton;
         }
         else
         {
-            pinView.annotation = annotation;
+            annotationView.annotation = annotation;
         }
         
-        return pinView;
+        return annotationView;
     }
     
     return nil;
@@ -275,7 +273,7 @@
 {
     id <MKAnnotation> annotation = [view annotation];
     
-    if ([[view annotation] isKindOfClass:[MKPointAnnotation class]])
+    if ([[view annotation] isKindOfClass:[RRMapKitAnnotation class]])
     {
         // segue to details controller
         [self performSegueWithIdentifier:RESTROOM_DETAILS_TRANSITION_NAME sender:annotation];
@@ -291,7 +289,7 @@
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
-        MKPointAnnotation *annotation = (MKPointAnnotation *)sender;
+        RRMapKitAnnotation *annotation = (RRMapKitAnnotation *)sender;
         destinationController.restroom = annotation.restroom;
     }
 }

@@ -26,6 +26,7 @@ const NSString *NO_INTERNET_TEXT = @"Internet connection unavailable";
 const NSString *NO_LOCATION_TEXT = @"Could not find your location";
 const NSString *NO_NAME_TEXT = @"Details";
 const NSString *PIN_GRAPHIC = @"pin.png";
+const NSString *REUSABLE_ANNOTATION_VIEW_IDENTIFIER = @"RestroomAnnotationView";
 const NSString *SYNC_TEXT = @"Syncing";
 const NSString *SYNC_ERROR_TEXT = @"Sync error";
 const NSString *URL_TO_TEST_REACHABILITY = @"www.google.com";
