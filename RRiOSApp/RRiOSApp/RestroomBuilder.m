@@ -183,7 +183,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         {
             numInvalidLat++;
             
-            NSLog(@"%@", [identifier stringValue]);
+            NSLog(@"Invalid Restroom: %@", restroom);
         }
         
         return NO;

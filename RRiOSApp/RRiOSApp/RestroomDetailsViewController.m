@@ -8,6 +8,7 @@
 
 #import "UIKit/UIKit.h"
 
+#import "Constants.h"
 #import "RestroomDetailsViewController.h"
 
 @interface RestroomDetailsViewController ()
@@ -26,18 +27,27 @@
     [super viewWillAppear:animated];
     
     // navigation bar styling
-//    self.navigationController.navigationBar.topItem.title = self.restroom.name;
     self.title = self.restroom.name;
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
-                                                           nil]
-     ];
+    
+//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Map"
+//                                                                   style:UIBarButtonItemStyleDone
+//                                                                  target:self
+//                                                                  action:@selector(goBack)];
+//    backButton.tintColor = [UIColor whiteColor];
+//    [self.navigationItem setLeftBarButtonItem:backButton];
+    
+    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
     
     // set details
     self.nameLabel.text = self.restroom.name;
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
+}
+
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

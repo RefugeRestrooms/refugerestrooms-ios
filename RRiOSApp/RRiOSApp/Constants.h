@@ -11,14 +11,20 @@
 #ifndef RRiOSApp_Constants_h
 #define RRiOSApp_Constants_h
 
-#define METERS_PER_MILE 1609.344
+#pragma mark - Colors
+
 #define RRCOLOR_DARKPURPLE_RED 65.0/255.0
 #define RRCOLOR_DARKPURPLE_GREEN 60.0/255.0
 #define RRCOLOR_DARKPURPLE_BLUE 107.0/255.0
 
+#define RRCOLOR_LIGHTPURPLE_RED 131.0/255.0 
+#define RRCOLOR_LIGHTPURPLE_GREEN 119.0/255.0 
+#define RRCOLOR_LIGHTPURPLE_BLUE 175.0/255.0
+
 #pragma mark - General constants
 
 extern NSString *const APP_NAME;
+#define METERS_PER_MILE 1609.344
 
 #pragma mark - API constants
 

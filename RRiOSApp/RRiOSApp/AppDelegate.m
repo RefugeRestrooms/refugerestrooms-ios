@@ -11,9 +11,6 @@
 #import "Constants.h"
 #import "RestroomManager.h"
 
-#define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:1.0]
-#define RGBA(r, g, b, a) [UIColor colorWithRed:(float)r / 255.0 green:(float)g / 255.0 blue:(float)b / 255.0 alpha:a]
-
 @interface AppDelegate ()
 @end
 
@@ -30,7 +27,7 @@
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            nil]
      ];
-    
+//    self.window.tintColor = [UIColor colorWithRed:RRCOLOR_LIGHTPURPLE_RED green:RRCOLOR_LIGHTPURPLE_GREEN blue:RRCOLOR_LIGHTPURPLE_BLUE alpha:1.0];
     
 
     // clear our Core Data for testing
