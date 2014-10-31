@@ -16,10 +16,6 @@
         NSURL *fetchingURL;
         NSURLConnection *fetchingConnection;
         NSMutableData *receivedData;
-    
-//    @private
-//        void (^errorHandler)(NSError *);        // block for error handling
-//        void (^successHandler)(NSString *);     // block for success handling
 }
 
 @property (weak) id <RestroomCommunicatorDelegate> delegate;
@@ -28,11 +24,5 @@
 - (void)searchForNewRestrooms;
 - (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms;
 - (void)cancelAndDiscardURLConnection;
-
-// in here for tests to pass, currently
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response;
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error;
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection;
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data;
 
 @end

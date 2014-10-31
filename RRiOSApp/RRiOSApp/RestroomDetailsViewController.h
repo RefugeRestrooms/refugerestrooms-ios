@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Restroom.h"
+@class Restroom;
+
+//#import "Restroom.h"
 
 @interface RestroomDetailsViewController : UIViewController
 

@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
-#import "Constants.h"
-#import "RRMapKitAnnotation.h"
-
 #import <AddressBook/AddressBook.h>
+
+#import "Constants.h"
+#import "REstroom.h"
+#import "RRMapKitAnnotation.h"
 
 @interface RRMapKitAnnotation ()
 

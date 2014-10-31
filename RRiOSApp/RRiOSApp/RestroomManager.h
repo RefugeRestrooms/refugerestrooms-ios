@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RestroomCommunicatorDelegate.h"
 #import "RestroomManagerDelegate.h"
-#import "RestroomCommunicator.h"
 
-#import "RestroomCommunicator.h"
-#import "RestroomBuilder.h"
+@class RestroomBuilder;
+@class RestroomCommunicator;
 
 extern NSString *RestroomManagerError;
 

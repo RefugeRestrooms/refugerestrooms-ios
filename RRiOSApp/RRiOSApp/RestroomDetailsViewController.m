@@ -9,6 +9,7 @@
 #import "UIKit/UIKit.h"
 
 #import "Constants.h"
+#import "Restroom.h"
 #import "RestroomDetailsViewController.h"
 
 @interface RestroomDetailsViewController ()
@@ -35,11 +36,6 @@
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
-}
-
-- (void)goBack
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

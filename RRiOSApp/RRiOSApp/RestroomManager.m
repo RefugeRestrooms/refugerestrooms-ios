@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
+#import "RestroomBuilder.h"
+#import "RestroomCommunicator.h"
 #import "RestroomManager.h"
 #import "RestroomManagerDelegate.h"
 #import "Reachability.h"

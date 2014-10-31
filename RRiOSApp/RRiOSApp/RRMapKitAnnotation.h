@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import <MapKit/MapKit.h>
-#import "Restroom.h"
+
+@class Restroom;
 
 @interface RRMapKitAnnotation : NSObject <MKAnnotation>
 
@@ -22,8 +23,5 @@
 @property (nonatomic, readonly, copy) NSString *subtitle;
 
 - (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
-
-// Called as a result of dragging an annotation view.
-//- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate NS_AVAILABLE(10_9, 4_0);
 
 @end
