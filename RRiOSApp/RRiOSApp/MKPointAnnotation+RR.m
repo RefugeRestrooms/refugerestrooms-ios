@@ -8,6 +8,9 @@
 
 #import <objc/runtime.h>
 #import "MKPointAnnotation+RR.h"
+#import "Restroom.h"
+
+#pragma message "Why are you using a category on MKPointAnnotation? Using the associated object is also kind of hacky."
 
 @implementation MKPointAnnotation (RR)
 

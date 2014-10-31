@@ -28,15 +28,7 @@
     
     // navigation bar styling
     self.title = self.restroom.name;
-    
-//    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Map"
-//                                                                   style:UIBarButtonItemStyleDone
-//                                                                  target:self
-//                                                                  action:@selector(goBack)];
-//    backButton.tintColor = [UIColor whiteColor];
-//    [self.navigationItem setLeftBarButtonItem:backButton];
-    
-    self.navigationItem.backBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // set details
     self.nameLabel.text = self.restroom.name;

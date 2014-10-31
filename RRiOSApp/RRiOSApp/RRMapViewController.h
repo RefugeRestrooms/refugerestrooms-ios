@@ -12,6 +12,6 @@
 
 #import "RestroomManagerDelegate.h"
 
-@interface RRMapViewController : UIViewController <RestroomManagerDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@interface RRMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate>
 
 @end

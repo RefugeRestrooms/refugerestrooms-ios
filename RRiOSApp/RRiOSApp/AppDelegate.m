@@ -27,6 +27,7 @@
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            nil]
      ];
+    
 //    self.window.tintColor = [UIColor colorWithRed:RRCOLOR_LIGHTPURPLE_RED green:RRCOLOR_LIGHTPURPLE_GREEN blue:RRCOLOR_LIGHTPURPLE_BLUE alpha:1.0];
     
 

@@ -17,7 +17,8 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 {
     NSManagedObjectContext *context;
     
-    int numInvalidLat;
+    // TODO: remove variable; just used for testing purposes
+    int numberInvalidLatitude;
 }
 
 - (id)init
@@ -28,7 +29,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     {
         context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
         
-        numInvalidLat = 0;
+        numberInvalidLatitude = 0;
     }
         
     return self;
@@ -137,7 +138,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         }
     }
     
-    NSLog(@"Num Invalid Lat: %i", numInvalidLat);
+    NSLog(@"Num Invalid Lat: %i", numberInvalidLatitude);
     
     return [restrooms copy];
 }
@@ -157,13 +158,13 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     id numUpvotes = dictionary[@"upvote"];
     
     // values should not end up as null
-    (name == [NSNull null]) ? (restroom.name = @"No Name") : (restroom.name = name);
+    (name == [NSNull null]) ? (restroom.name = NO_NAME_TEXT) : (restroom.name = name);
     (street == [NSNull null]) ? (restroom.street = @"") : (restroom.street = street);
     (city == [NSNull null]) ? (restroom.city = @"") : (restroom.city = city);
     (state == [NSNull null]) ? (restroom.state = @"") : (restroom.state = state);
     (country == [NSNull null]) ? (restroom.country = @"") : (restroom.country = country);
-    (isAccessible == [NSNull null]) ? (restroom.isAccessible = NO) : (restroom.isAccessible = isAccessible);
-    (isUnisex == [NSNull null]) ? (restroom.isUnisex  = NO) : (restroom.isUnisex = isUnisex);
+    (isAccessible == [NSNull null]) ? (restroom.isAccessible = @(NO)) : (restroom.isAccessible = isAccessible);
+    (isUnisex == [NSNull null]) ? (restroom.isUnisex = @(NO)) : (restroom.isUnisex = isUnisex);
     (numDownVotes == [NSNull null]) ? (restroom.numDownvotes  = 0) : (restroom.numDownvotes = numDownVotes);
     (numUpvotes == [NSNull null]) ? (restroom.numUpvotes  = 0) : (restroom.numUpvotes = numUpvotes);
 }
@@ -181,7 +182,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     {
         if(latitude == [NSNull null])
         {
-            numInvalidLat++;
+            numberInvalidLatitude++;
             
             NSLog(@"Invalid Restroom: %@", restroom);
         }

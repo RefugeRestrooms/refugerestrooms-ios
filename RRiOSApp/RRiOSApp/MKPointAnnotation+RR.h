@@ -7,8 +7,9 @@
 //
 
 #import <MapKit/MapKit.h>
+//#import "Restroom.h"
 
-#import "Restroom.h"
+@class Restroom;
 
 @interface MKPointAnnotation (RR)
 

@@ -85,6 +85,8 @@
     // check for Internet reachability
     internetReachability = [Reachability reachabilityWithHostname:URL_TO_TEST_REACHABILITY];
     
+    __weak RRMapViewController *weakSelf = self;
+    
     // Internet is reachable
     internetReachability.reachableBlock = ^(Reachability*reach)
     {
@@ -93,12 +95,15 @@
             // update UI on main thread
             dispatch_get_main_queue(), ^
             {
-                internetIsAccessible = YES;
+                RRMapViewController *strongSelf = weakSelf;
                 
-//                if(!initialZoomComplete) { [[RestroomManager sharedInstance] fetchNewRestrooms]; }
-//                if(!initialZoomComplete) {
+                if(strongSelf)
+                {
+                    strongSelf->internetIsAccessible = YES;
+                    
+                    // TODO: replace with query for newly update/created Restrooms
                     [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Palo Alto CA"];
-//                }
+                }
             }
          );
     };
@@ -111,10 +116,15 @@
         (
             dispatch_get_main_queue(), ^
             {
-                internetIsAccessible = NO;
+                RRMapViewController *strongSelf = weakSelf;
                 
-                hud.mode = MBProgressHUDModeText;
-                hud.labelText = NO_INTERNET_TEXT;
+                if(strongSelf)
+                {
+                    strongSelf->internetIsAccessible = NO;
+                    
+                    strongSelf->hud.mode = MBProgressHUDModeText;
+                    strongSelf->hud.labelText = NO_INTERNET_TEXT;
+                }
             }
          );
     };
@@ -167,7 +177,7 @@
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = latitude;
         zoomLocation.longitude= longitude;
-        MKCoordinateRegion viewRegion = [self getRegionWithZoomLocation:zoomLocation];
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
     
         [self.mapView setRegion:viewRegion animated:YES];
     
@@ -268,7 +278,7 @@
     if ([[view annotation] isKindOfClass:[MKPointAnnotation class]])
     {
         // segue to details controller
-        [self performSegueWithIdentifier:@"ShowRestroomDetails" sender:annotation];
+        [self performSegueWithIdentifier:RESTROOM_DETAILS_TRANSITION_NAME sender:annotation];
         
     }
 }
@@ -277,20 +287,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:@"ShowRestroomDetails"])
+    if([[segue identifier] isEqualToString:RESTROOM_DETAILS_TRANSITION_NAME])
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
         MKPointAnnotation *annotation = (MKPointAnnotation *)sender;
         destinationController.restroom = annotation.restroom;
     }
-}
-
-#pragma mark - Helper methods
-
-- (MKCoordinateRegion)getRegionWithZoomLocation:(CLLocationCoordinate2D)zoomLocation
-{
-    return MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
 }
 
 

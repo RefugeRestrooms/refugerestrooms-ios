@@ -11,6 +11,7 @@
 #pragma mark - General constants
 
 const NSString *APP_NAME = @"Refuge Restrooms";
+const NSString *RESTROOM_DETAILS_TRANSITION_NAME = @"ShowRestroomDetails";
 
 #pragma mark - API constants
 

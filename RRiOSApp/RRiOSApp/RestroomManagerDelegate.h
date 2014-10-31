@@ -10,10 +10,7 @@
 
 @protocol RestroomManagerDelegate <NSObject>
 
-@property (strong) NSError *fetchError;
-
 - (void)didReceiveRestrooms:(NSArray *)restrooms;
 - (void)fetchingRestroomsFailedWithError:(NSError *)error;
-//- (NSArray *)receivedRestrooms;
 
 @end
