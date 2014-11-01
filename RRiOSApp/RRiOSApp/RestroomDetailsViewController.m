@@ -14,8 +14,8 @@
 
 @interface RestroomDetailsViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 
@@ -31,9 +31,13 @@
     self.title = self.restroom.name;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
+    int numUpvotes = [self.restroom.numUpvotes intValue];
+    int numDownvotes = [self.restroom.numDownvotes intValue];
+    int numVotes = numUpvotes + numDownvotes;
+    
     // set details
-    self.nameLabel.text = self.restroom.name;
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
+    self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% Positive", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : @"Not yet rated";
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
 }

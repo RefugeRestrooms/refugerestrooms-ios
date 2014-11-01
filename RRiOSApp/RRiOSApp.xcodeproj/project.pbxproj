@@ -39,6 +39,10 @@
 		CEE0A93819EDC68600B5846B /* RRMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */; };
 		CEE0A93B19EDC75600B5846B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A92719EDB08400B5846B /* MapKit.framework */; };
 		CEE0A93C19EDC75D00B5846B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A93919EDC70C00B5846B /* AddressBook.framework */; };
+		CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB21A044CE300A6CA11 /* button_unisex.png */; };
+		CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB21A044CE300A6CA11 /* button_unisex.png */; };
+		CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB31A044CE300A6CA11 /* button_accessibility.png */; };
+		CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB31A044CE300A6CA11 /* button_accessibility.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,8 @@
 		CEE0A93519EDC68600B5846B /* RRMapKitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapKitAnnotation.h; sourceTree = "<group>"; };
 		CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapKitAnnotation.m; sourceTree = "<group>"; };
 		CEE0A93919EDC70C00B5846B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CEECCCB21A044CE300A6CA11 /* button_unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_unisex.png; sourceTree = "<group>"; };
+		CEECCCB31A044CE300A6CA11 /* button_accessibility.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_accessibility.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,8 @@
 			children = (
 				CE787F9C19FF3FA7008C4E1A /* 37x-Checkmark@2x.png */,
 				CE787FBD1A01A4AD008C4E1A /* pin.png */,
+				CEECCCB21A044CE300A6CA11 /* button_unisex.png */,
+				CEECCCB31A044CE300A6CA11 /* button_accessibility.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
 				CE787FC71A02C958008C4E1A /* Constants.h */,
@@ -291,6 +299,8 @@
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
 				CE787F9D19FF3FA7008C4E1A /* 37x-Checkmark@2x.png in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
+				CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */,
+				CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */,
 				CE787FBE1A01A4AD008C4E1A /* pin.png in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
 			);
@@ -300,7 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */,
 				CE787FBF1A01A4AD008C4E1A /* pin.png in Resources */,
+				CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

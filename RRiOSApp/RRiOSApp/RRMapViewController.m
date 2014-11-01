@@ -101,7 +101,7 @@
                     strongSelf->internetIsAccessible = YES;
                     
                     // TODO: replace with query for newly update/created Restrooms
-                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Palo Alto CA"];
+                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Stanford CA"];
                 }
             }
          );
@@ -211,7 +211,7 @@
             hud.mode = MBProgressHUDModeCustomView;
             hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
             hud.labelText = COMPLETION_TEXT;
-            [hud hide:YES afterDelay:2];
+            [hud hide:YES afterDelay:1];
         }
      );
 }

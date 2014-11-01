@@ -73,25 +73,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     
     for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
-        // required properties
-        // if lat/long is null, setting here with doubleValue throws error - 0.0 default used
-//        Restroom *restroom = [[Restroom alloc]
-//                                initWithName:restroomDictionary[@"name"]
-//                                street:restroomDictionary[@"street"]
-//                                city:restroomDictionary[@"city"]
-//                                state:restroomDictionary[@"state"]
-//                                country:restroomDictionary[@"country"]
-//                                isAccessible:[restroomDictionary[@"accessible"] boolValue]
-//                                isUnisex:[restroomDictionary[@"unisex"] boolValue]
-//                                numDownvotes:[restroomDictionary[@"downvote"] intValue]
-//                                numUpvotes:[restroomDictionary[@"upvote"] intValue]
-//                                latitude:0.0
-//                                longitude:0.0
-//                                identifier:restroomDictionary[@"id"]
-//                              ];
-        
-//        NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-        
         Restroom *restroom = [NSEntityDescription insertNewObjectForEntityForName:@"Restroom" inManagedObjectContext:context];
         [self setRestroomProperties:restroom fromDictionary:restroomDictionary];
         
