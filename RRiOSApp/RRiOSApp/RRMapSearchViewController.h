@@ -8,13 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+// FROM SP
+#import <MapKit/MapKit.h>
+@class SPGooglePlacesAutocompleteQuery;
+
+
 @interface RRMapSearchViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
+{
+    // FROM SP
+    NSArray *searchResultPlaces;
+    SPGooglePlacesAutocompleteQuery *searchQuery;
+    MKPointAnnotation *selectedPlaceAnnotation;
+    
+    BOOL shouldBeginEditing;
+}
 
-//@property (strong, nonatomic) NSArray *restroomsList;
-@property (strong) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property IBOutlet UISearchBar *searchBar;
-
-//- (void)setRestroomsList:(NSArray *)restroomsList;
-//- (void)userDidSelectRestroomNotification:(NSNotification *)notification;
 
 @end
