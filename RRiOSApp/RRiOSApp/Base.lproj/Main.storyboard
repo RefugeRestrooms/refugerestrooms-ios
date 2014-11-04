@@ -182,6 +182,9 @@
                     <navigationItem key="navigationItem" id="HeF-Xt-TPL">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="jCh-jN-vYg">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="53O-HQ-t9Z" kind="show" identifier="ShowMapSearch" id="KmG-1a-Wge"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="UFP-VT-ydX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,6 +198,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEV-yD-jJy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993" y="933"/>
+        </scene>
+        <!--Map Search View Controller-->
+        <scene sceneID="kKw-PA-HvZ">
+            <objects>
+                <tableViewController id="53O-HQ-t9Z" customClass="RRMapSearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2hK-p6-7Ow">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="BVL-eP-8bT">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="53O-HQ-t9Z" id="uGn-Ro-u2O"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1z4-E7-PEe">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1z4-E7-PEe" id="dNT-jR-ch6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="53O-HQ-t9Z" id="Pmy-0Z-gak"/>
+                            <outlet property="delegate" destination="53O-HQ-t9Z" id="K0K-LE-8L9"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="searchBar" destination="BVL-eP-8bT" id="bpT-Xs-asV"/>
+                        <outlet property="searchDisplayController" destination="cNa-qM-7Xe" id="gK9-Ph-1U0"/>
+                        <outlet property="tableView" destination="2hK-p6-7Ow" id="WHr-y6-etw"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2zm-hm-s7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="nmd-RM-9d0">
+                    <connections>
+                        <outlet property="delegate" destination="53O-HQ-t9Z" id="pxF-fP-bTE"/>
+                        <outlet property="searchContentsController" destination="53O-HQ-t9Z" id="5YE-kh-Elx"/>
+                        <outlet property="searchResultsDataSource" destination="53O-HQ-t9Z" id="GuK-il-FOp"/>
+                        <outlet property="searchResultsDelegate" destination="53O-HQ-t9Z" id="wvU-Qb-Ic0"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="cNa-qM-7Xe">
+                    <connections>
+                        <outlet property="delegate" destination="53O-HQ-t9Z" id="EZn-zn-EFS"/>
+                        <outlet property="searchBar" destination="BVL-eP-8bT" id="KCv-Fv-mO8"/>
+                        <outlet property="searchContentsController" destination="53O-HQ-t9Z" id="CKG-fE-3F2"/>
+                        <outlet property="searchResultsDataSource" destination="53O-HQ-t9Z" id="HUR-u1-ApG"/>
+                        <outlet property="searchResultsDelegate" destination="53O-HQ-t9Z" id="Mqg-9L-5xU"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="993" y="1674"/>
         </scene>
         <!--Navigation Contorller-->
         <scene sceneID="zza-0b-5TR">
