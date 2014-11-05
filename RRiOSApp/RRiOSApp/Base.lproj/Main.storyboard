@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Y4-yB-MKN">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -199,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="993" y="933"/>
         </scene>
-        <!--Map Search View Controller-->
+        <!--View Controller - Map Search-->
         <scene sceneID="kKw-PA-HvZ">
             <objects>
-                <tableViewController id="53O-HQ-t9Z" customClass="RRMapSearchViewController" sceneMemberID="viewController">
+                <tableViewController id="53O-HQ-t9Z" userLabel="View Controller - Map Search" customClass="RRMapSearchViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2hK-p6-7Ow">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,6 +231,7 @@
                         <outlet property="searchBar" destination="BVL-eP-8bT" id="bpT-Xs-asV"/>
                         <outlet property="searchDisplayController" destination="cNa-qM-7Xe" id="gK9-Ph-1U0"/>
                         <outlet property="tableView" destination="2hK-p6-7Ow" id="WHr-y6-etw"/>
+                        <segue destination="eh7-1O-dRH" kind="show" identifier="ShowMap" id="7iR-R9-Z4e"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zm-hm-s7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,7 +253,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="993" y="1674"/>
+            <point key="canvasLocation" x="181" y="1711"/>
         </scene>
         <!--Navigation Contorller-->
         <scene sceneID="zza-0b-5TR">
@@ -279,5 +279,8 @@
         <image name="button_accessibility.png" width="52" height="52"/>
         <image name="button_unisex.png" width="51" height="52"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7iR-R9-Z4e"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.51372549019607838" green="0.46666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
 </document>

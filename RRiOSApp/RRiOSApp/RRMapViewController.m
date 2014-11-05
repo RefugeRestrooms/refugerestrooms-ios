@@ -6,9 +6,10 @@
 //  Copyright (c) 2014 ___REFUGERESTROOMS___. All rights reserved.
 //
 
-#import "RRMapViewController.h"
-#import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
+#import "RRMapViewController.h"
 
 #import "Constants.h"
 #import "MBProgressHUD.h"
@@ -16,6 +17,7 @@
 #import "RestroomManager.h"
 #import "RestroomDetailsViewController.h"
 #import "RRMapKitAnnotation.h"
+#import "RRMapSearchViewController.h"
 #import "Reachability.h"
 
 @interface RRMapViewController ()
@@ -101,7 +103,7 @@
                     strongSelf->internetIsAccessible = YES;
                     
                     // TODO: replace with query for newly update/created Restrooms
-                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Stanford CA"];
+                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Palo Alto CA"];
                 }
             }
          );
@@ -224,7 +226,7 @@
     hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
 }
 
-#pragma mark MKMapViewDelegate methods
+#pragma mark - MKMapViewDelegate methods
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -281,6 +283,13 @@
     }
 }
 
+#pragma mark - RRMapSearchDelegate methods
+
+- (void)placemarkSelected:(CLPlacemark *)placemark
+{
+    NSLog(@"PLACEMARK SELECTED!");
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -292,7 +301,13 @@
         RRMapKitAnnotation *annotation = (RRMapKitAnnotation *)sender;
         destinationController.restroom = annotation.restroom;
     }
+    
+    if([[segue identifier] isEqualToString:MAP_SEARCH_TRANSITION_NAME])
+    {
+        RRMapSearchViewController *destinationController = [segue destinationViewController];
+        
+        destinationController.delegate = self;
+    }
 }
-
 
 @end

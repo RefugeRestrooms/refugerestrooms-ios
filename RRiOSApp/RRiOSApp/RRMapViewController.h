@@ -11,7 +11,8 @@
 #import <MapKit/MapKit.h>
 
 #import "RestroomManagerDelegate.h"
+#import "RRMapSearchViewController.h"
 
-@interface RRMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate>
+@interface RRMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate>
 
 @end

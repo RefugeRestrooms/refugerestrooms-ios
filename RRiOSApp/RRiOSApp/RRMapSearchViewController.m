@@ -7,10 +7,8 @@
 //
 
 #import "RRMapSearchViewController.h"
-#import "RestroomDetailsViewController.h"
-#import "Restroom.h"
 
-// FROM SP
+#import "Constants.h"
 #import "SPGooglePlacesAutocompleteQuery.h"
 #import "SPGooglePlacesAutocompletePlace.h"
 
@@ -22,10 +20,6 @@ NSString *SEARCH_ERROR_PLACE_NOT_FOUND = @"Could not map selected Place";
 NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
 
 @implementation RRMapSearchViewController
-{
-    NSArray *sourceArray;
-    NSMutableArray *filteredArray;
-}
 
 - (void)viewDidLoad
 {
@@ -82,8 +76,10 @@ NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
             SPPresentAlertViewWithErrorAndTitle(error, SEARCH_ERROR_PLACE_NOT_FOUND);
         }
         else if (placemark)
-        {            
-            NSLog(@"PLACE SELECTED!");
+        {
+            [self.delegate placemarkSelected:placemark];
+            
+            [self performSegueWithIdentifier:MAP_VIEW_TRANSITION_NAME sender:self];
         }
     }];
 }
@@ -107,7 +103,6 @@ NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
         // User tapped the 'clear' button.
         shouldBeginEditing = NO;
         [self.searchDisplayController setActive:NO];
-//        [self.mapView removeAnnotation:selectedPlaceAnnotation];
     }
 }
 

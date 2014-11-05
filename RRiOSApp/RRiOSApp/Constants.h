@@ -15,6 +15,8 @@
 
 extern NSString *const APP_NAME;
 static const float METERS_PER_MILE = 1609.344;
+extern NSString *const MAP_VIEW_TRANSITION_NAME;
+extern NSString *const MAP_SEARCH_TRANSITION_NAME;
 extern NSString *const RESTROOM_DETAILS_TRANSITION_NAME;
 
 #pragma mark - Colors

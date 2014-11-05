@@ -11,6 +11,7 @@
 #pragma mark - General constants
 
 const NSString *APP_NAME = @"Refuge Restrooms";
+const NSString *MAP_VIEW_TRANSITION_NAME = @"ShowMap";
 const NSString *MAP_SEARCH_TRANSITION_NAME = @"ShowMapSearch";
 const NSString *RESTROOM_DETAILS_TRANSITION_NAME = @"ShowRestroomDetails";
 

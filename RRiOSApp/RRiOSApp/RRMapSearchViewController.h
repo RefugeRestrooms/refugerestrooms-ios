@@ -7,15 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-
-// FROM SP
 #import <MapKit/MapKit.h>
+
 @class SPGooglePlacesAutocompleteQuery;
+
+@class RRMapSearchViewController;
+
+@protocol RRMapSearchDelegate <NSObject>
+
+- (void)placemarkSelected:(CLPlacemark *)placemark;
+
+@end
 
 
 @interface RRMapSearchViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
 {
-    // FROM SP
     NSArray *searchResultPlaces;
     SPGooglePlacesAutocompleteQuery *searchQuery;
     MKPointAnnotation *selectedPlaceAnnotation;
@@ -23,6 +29,7 @@
     BOOL shouldBeginEditing;
 }
 
+@property (weak) id <RRMapSearchDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property IBOutlet UISearchBar *searchBar;
 
