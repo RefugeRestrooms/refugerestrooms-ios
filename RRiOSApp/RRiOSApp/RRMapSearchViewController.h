@@ -15,7 +15,7 @@
 
 @protocol RRMapSearchDelegate <NSObject>
 
-- (void)placemarkSelected:(CLPlacemark *)placemark;
+- (void)mapSearchPlacemarkSelected:(CLPlacemark *)placemark;
 
 @end
 

@@ -77,8 +77,13 @@ NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
         }
         else if (placemark)
         {
-            [self.delegate placemarkSelected:placemark];
+            // notify delegate of placemark selected
+            [self.delegate mapSearchPlacemarkSelected:placemark];
             
+            // deselect row
+            [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
+            
+            // segue to map
             [self performSegueWithIdentifier:MAP_VIEW_TRANSITION_NAME sender:self];
         }
     }];

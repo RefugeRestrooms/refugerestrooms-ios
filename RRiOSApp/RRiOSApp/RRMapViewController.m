@@ -20,6 +20,8 @@
 #import "RRMapSearchViewController.h"
 #import "Reachability.h"
 
+BOOL initialZoomComplete = NO;
+
 @interface RRMapViewController ()
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -32,7 +34,7 @@
     CLLocationManager *locationManager;
     MBProgressHUD *hud;
     BOOL internetIsAccessible;
-    BOOL initialZoomComplete;
+//    BOOL initialZoomComplete;
 }
 
 - (void)viewDidLoad
@@ -41,6 +43,8 @@
     
     self.navigationController.navigationBar.topItem.title = APP_NAME;
     
+    if(!initialZoomComplete)
+    {
     // set up mapView
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
@@ -63,12 +67,15 @@
     restroomManager.delegate = self;
     
     internetIsAccessible = YES;
-    initialZoomComplete = NO;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    if(!initialZoomComplete)
+    {
     
     // prompt for location allowing
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
@@ -91,6 +98,7 @@
     // Internet is reachable
     internetReachability.reachableBlock = ^(Reachability*reach)
     {
+        
         dispatch_async
         (
             // update UI on main thread
@@ -131,6 +139,7 @@
     };
     
     [internetReachability startNotifier];
+    }
 }
 
 - (void)plotRestrooms:(NSArray *)restrooms
@@ -285,9 +294,12 @@
 
 #pragma mark - RRMapSearchDelegate methods
 
-- (void)placemarkSelected:(CLPlacemark *)placemark
+- (void)mapSearchPlacemarkSelected:(CLPlacemark *)placemark
 {
     NSLog(@"PLACEMARK SELECTED!");
+    
+    [self addPlacemarkAnnotationToMap:placemark addressString:placemark.name];
+    [self recenterMapToPlacemark:placemark];
 }
 
 #pragma mark - Segue
@@ -309,5 +321,45 @@
         destinationController.delegate = self;
     }
 }
+
+# pragma mark - Helper methods
+
+- (void)recenterMapToPlacemark:(CLPlacemark *)placemark
+{
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+
+    span.latitudeDelta = 0.02;
+    span.longitudeDelta = 0.02;
+
+    region.span = span;
+    region.center = placemark.location.coordinate;
+
+    [self.mapView setRegion:region];
+}
+
+- (void)addPlacemarkAnnotationToMap:(CLPlacemark *)placemark addressString:(NSString *)address
+{
+//    [self.mapView removeAnnotation:selectedPlaceAnnotation];
+
+    MKPointAnnotation *selectedPlaceAnnotation = [[MKPointAnnotation alloc] init];
+    selectedPlaceAnnotation.coordinate = placemark.location.coordinate;
+    selectedPlaceAnnotation.title = address;
+    
+    [self.mapView addAnnotation:selectedPlaceAnnotation];
+}
+
+//- (void)dismissSearchControllerWhileStayingActive
+//{
+//    // Animate out the table view.
+//    NSTimeInterval animationDuration = 0.3;
+//    [UIView beginAnimations:nil context:NULL];
+//    [UIView setAnimationDuration:animationDuration];
+//    self.searchDisplayController.searchResultsTableView.alpha = 0.0;
+//    [UIView commitAnimations];
+//
+//    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
+//    [self.searchDisplayController.searchBar resignFirstResponder];
+//}
 
 @end
