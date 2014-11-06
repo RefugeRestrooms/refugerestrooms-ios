@@ -29,7 +29,7 @@ typedef NS_ENUM(NSInteger, RestroomManagerErrorCode)
 
 + (id)sharedInstance;
 - (void)fetchRestroomsForQuery:(NSString *)query;
-- (void)fetchNewRestrooms;
 -(void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms;
+- (void)fetchRestroomsModifiedSince:(NSDate *)date;
 
 @end

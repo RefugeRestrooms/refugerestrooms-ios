@@ -36,29 +36,26 @@ static NSString *const GAME_STATE_DATE_LAST_SYNCED_KEY = @"GameStateDateLastSync
     if(self)
     {
         // sync date
-        NSDate *latestSyncDate = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_DATE_LAST_SYNCED_KEY];
+        NSDate *dateLastSynced = [[NSUserDefaults standardUserDefaults]objectForKey:GAME_STATE_DATE_LAST_SYNCED_KEY];
         
         // if never synced before, set date in far past
-        if(latestSyncDate == nil)
+        if(dateLastSynced == nil)
         {
             // arbitrary
             NSTimeZone *pacificTime = [NSTimeZone timeZoneWithName:@"America/Los_Angeles"];
             
-            NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-            [dateComps setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar]];
-            [dateComps setYear:1970];
-            [dateComps setMonth:1];
-            [dateComps setDay:1];
-            [dateComps setTimeZone:pacificTime];
-            [dateComps setHour:0];
+            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+            [dateComponents setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
+            [dateComponents setYear:1970];
+            [dateComponents setMonth:1];
+            [dateComponents setDay:1];
+            [dateComponents setTimeZone:pacificTime];
+            [dateComponents setHour:0];
             
-            NSDate *dateInPast = [dateComps date];
-            
-            [self setDateLastSynced:dateInPast];
+            dateLastSynced = [dateComponents date];
         }
         
-        // save defaults
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        [self setDateLastSynced:dateLastSynced];
     }
     
     return self;

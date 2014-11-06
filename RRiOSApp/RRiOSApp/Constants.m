@@ -19,6 +19,7 @@ const NSString *RESTROOM_DETAILS_TRANSITION_NAME = @"ShowRestroomDetails";
 
 const NSString *API_CALL_ALL_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms.json";
 const NSString *API_CALL_SEARCH_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
+const NSString *API_CALL_BY_DATE_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms/by_date.json";
 
 #pragma mark - Map constants
 

@@ -11,6 +11,7 @@
 
 #import "RRMapViewController.h"
 
+#import "AppState.h"
 #import "Constants.h"
 #import "MBProgressHUD.h"
 #import "Restroom.h"
@@ -110,8 +111,10 @@ BOOL initialZoomComplete = NO;
                 {
                     strongSelf->internetIsAccessible = YES;
                     
-                    // TODO: replace with query for newly update/created Restrooms
-                    [[RestroomManager sharedInstance] fetchRestroomsForQuery:@"Palo Alto CA"];
+                    // fetch restrooms newly created and updated
+                    NSDate *dateLastSynced = [AppState sharedInstance].dateLastSynced;
+                    
+                    [[RestroomManager sharedInstance] fetchRestroomsModifiedSince:dateLastSynced];
                 }
             }
          );
@@ -207,34 +210,6 @@ BOOL initialZoomComplete = NO;
     [hud hide:NO];
 }
 
-#pragma mark - RestroomManagerDelegate methods
-
-- (void)didReceiveRestrooms:(NSArray *)restrooms
-{
-    // plot Restrooms on map
-    dispatch_async
-    (
-        // update UI on main thread
-        dispatch_get_main_queue(), ^(void)
-        {
-            [self plotRestrooms:restrooms];
-            
-            hud.mode = MBProgressHUDModeCustomView;
-            hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
-            hud.labelText = COMPLETION_TEXT;
-            [hud hide:YES afterDelay:1];
-        }
-     );
-}
-
-- (void)fetchingRestroomsFailedWithError:(NSError *)error
-{;
-    // display error
-    hud.mode = MBProgressHUDModeText;
-    hud.labelText = SYNC_ERROR_TEXT;
-    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
-}
-
 #pragma mark - MKMapViewDelegate methods
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
@@ -290,6 +265,38 @@ BOOL initialZoomComplete = NO;
         [self performSegueWithIdentifier:RESTROOM_DETAILS_TRANSITION_NAME sender:annotation];
         
     }
+}
+
+#pragma mark - RestroomManagerDelegate methods
+
+- (void)didReceiveRestrooms:(NSArray *)restrooms
+{
+    // TODO: write new Restrooms to CoreData
+    // TODO: fetch all restrooms and plot
+    
+    
+    // plot Restrooms on map
+    dispatch_async
+    (
+     // update UI on main thread
+     dispatch_get_main_queue(), ^(void)
+     {
+         [self plotRestrooms:restrooms];
+         
+         hud.mode = MBProgressHUDModeCustomView;
+         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
+         hud.labelText = COMPLETION_TEXT;
+         [hud hide:YES afterDelay:1];
+     }
+     );
+}
+
+- (void)fetchingRestroomsFailedWithError:(NSError *)error
+{;
+    // display error
+    hud.mode = MBProgressHUDModeText;
+    hud.labelText = SYNC_ERROR_TEXT;
+    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
 }
 
 #pragma mark - RRMapSearchDelegate methods

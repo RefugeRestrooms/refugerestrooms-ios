@@ -56,11 +56,10 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
      ];
 }
 
-#pragma message "Should retrieve newly update/created Restrooms based on a data provided"
-- (void)searchForNewRestrooms
+- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
 {
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=50000", API_CALL_ALL_RESTROOMS]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", API_CALL_ALL_RESTROOMS, numberRestrooms]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
@@ -70,10 +69,26 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
      ];
 }
 
-- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
+ - (void)searchForRestroomsModifiedSince:(NSDate *)date;
 {
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSDateComponents* dateComponents = [gregorianCalendar components:NSCalendarUnitDay fromDate:date];
+    
+//    NSString *day = [NSString stringWithFormat:@"%i", [dateComponents day]];
+//    NSString *month = [NSString stringWithFormat:@"%i", [dateComponents month]];
+//    NSString *year = [NSString stringWithFormat:@"%i", [dateComponents year]];
+
+    int day = [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date] day];
+    int month = [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:date] month];
+    int year = [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
+    
+    // TODO: remove test data!
+    day = 1;
+    month = 11;
+    year = 2014;
+    
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", API_CALL_ALL_RESTROOMS, numberRestrooms]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?day=%i&month=%i&year=%i", API_CALL_BY_DATE_RESTROOMS, day, month, year]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

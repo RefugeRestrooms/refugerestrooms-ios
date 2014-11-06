@@ -33,6 +33,7 @@ static const float RRCOLOR_LIGHTPURPLE_BLUE = 175.0/255.0;
 
 extern NSString *const API_CALL_ALL_RESTROOMS;
 extern NSString *const API_CALL_SEARCH_RESTROOMS;
+extern NSString *const API_CALL_BY_DATE_RESTROOMS;
 
 #pragma mark - Map constants
 

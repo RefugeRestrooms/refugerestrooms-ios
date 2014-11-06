@@ -76,9 +76,9 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     [self.restroomCommunicator searchForRestroomsOfAmount:numberRestrooms];
 }
 
-- (void)fetchNewRestrooms
+- (void)fetchRestroomsModifiedSince:(NSDate *)date
 {
-    [self.restroomCommunicator searchForNewRestrooms];
+    [self.restroomCommunicator searchForRestroomsModifiedSince:date];
 }
 
 - (void)receivedRestroomsJSONString:(NSString *)jsonString
