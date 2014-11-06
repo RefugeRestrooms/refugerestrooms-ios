@@ -21,16 +21,8 @@
 		CE2EE00D1A0959AE00BE1912 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CE2EE00B1A0959AC00BE1912 /* Images */; };
 		CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
 		CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
-		CE31C6521A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */; };
-		CE31C6531A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */; };
-		CE31C6541A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */; };
-		CE31C6551A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */; };
-		CE31C6561A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */; };
-		CE31C6571A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */; };
-		CE31C6581A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */; };
-		CE31C6591A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */; };
-		CE31C65E1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
-		CE31C65F1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
+		CE31C62F1A0AECA600682429 /* SPGooglePlacesAutocomplete in Resources */ = {isa = PBXBuildFile; fileRef = CE31C62E1A0AECA600682429 /* SPGooglePlacesAutocomplete */; };
+		CE31C6301A0AECA600682429 /* SPGooglePlacesAutocomplete in Resources */ = {isa = PBXBuildFile; fileRef = CE31C62E1A0AECA600682429 /* SPGooglePlacesAutocomplete */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -57,20 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CE31C6461A0AEE1D00682429 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE70CF8419D5F92D004E34F9;
-			remoteInfo = RRiOSApp;
-		};
-		CE31C6481A0AEE1D00682429 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE70CFA019D5F92D004E34F9;
-			remoteInfo = RRiOSAppTests;
-		};
 		CE70CFA119D5F92D004E34F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE70CF7C19D5F92C004E34F9 /* Project object */;
@@ -96,17 +74,7 @@
 		CE2EE00B1A0959AC00BE1912 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapSearchViewController.h; sourceTree = "<group>"; };
 		CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapSearchViewController.m; sourceTree = "<group>"; };
-		CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RRiOSApp.xcodeproj; sourceTree = "<group>"; };
-		CE31C64A1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
-		CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
-		CE31C64C1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
-		CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteQuery.m; sourceTree = "<group>"; };
-		CE31C64E1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteUtilities.h; sourceTree = "<group>"; };
-		CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteUtilities.m; sourceTree = "<group>"; };
-		CE31C6501A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesPlaceDetailQuery.h; sourceTree = "<group>"; };
-		CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesPlaceDetailQuery.m; sourceTree = "<group>"; };
-		CE31C65C1A0C0D7500682429 /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
-		CE31C65D1A0C0D7500682429 /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
+		CE31C62E1A0AECA600682429 /* SPGooglePlacesAutocomplete */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SPGooglePlacesAutocomplete; sourceTree = "<group>"; };
 		CE60F13919DCAD34003C5E57 /* RestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,15 +133,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE31C63A1A0AEE1D00682429 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE31C6471A0AEE1D00682429 /* RRiOSApp.app */,
-				CE31C6491A0AEE1D00682429 /* RRiOSAppTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CE70CF7B19D5F92C004E34F9 = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +162,6 @@
 				CEECCCB31A044CE300A6CA11 /* button_accessibility.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
-				CE31C65C1A0C0D7500682429 /* AppState.h */,
-				CE31C65D1A0C0D7500682429 /* AppState.m */,
 				CE787FC71A02C958008C4E1A /* Constants.h */,
 				CE787FC41A02C92F008C4E1A /* Constants.m */,
 				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
@@ -229,19 +186,11 @@
 				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
 				CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */,
 				CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */,
-				CE31C64A1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.h */,
-				CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */,
-				CE31C64C1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.h */,
-				CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */,
-				CE31C64E1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.h */,
-				CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */,
-				CE31C6501A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.h */,
-				CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */,
+				CE31C62E1A0AECA600682429 /* SPGooglePlacesAutocomplete */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
 				CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */,
-				CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */,
 				CEE0A93919EDC70C00B5846B /* AddressBook.framework */,
 				CEE0A92719EDB08400B5846B /* MapKit.framework */,
 				CE70CF8719D5F92D004E34F9 /* Supporting Files */,
@@ -341,12 +290,6 @@
 			mainGroup = CE70CF7B19D5F92C004E34F9;
 			productRefGroup = CE70CF8519D5F92D004E34F9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CE31C63A1A0AEE1D00682429 /* Products */;
-					ProjectRef = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CE70CF8319D5F92D004E34F9 /* RRiOSApp */,
@@ -354,23 +297,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CE31C6471A0AEE1D00682429 /* RRiOSApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RRiOSApp.app;
-			remoteRef = CE31C6461A0AEE1D00682429 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CE31C6491A0AEE1D00682429 /* RRiOSAppTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RRiOSAppTests.xctest;
-			remoteRef = CE31C6481A0AEE1D00682429 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE70CF8219D5F92D004E34F9 /* Resources */ = {
@@ -380,6 +306,7 @@
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
 				CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */,
+				CE31C62F1A0AECA600682429 /* SPGooglePlacesAutocomplete in Resources */,
 				CE2EE00C1A0959AD00BE1912 /* Images in Resources */,
 				CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
@@ -390,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE31C6301A0AECA600682429 /* SPGooglePlacesAutocomplete in Resources */,
 				CE2EE00D1A0959AE00BE1912 /* Images in Resources */,
 				CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */,
 				CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */,
@@ -404,24 +332,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
-				CE31C65E1A0C0D7500682429 /* AppState.m in Sources */,
 				CE04B66D19F5AE60003D19EE /* Reachability.m in Sources */,
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
 				CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
-				CE31C6541A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
 				CE787FA41A003A69008C4E1A /* Restroom.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
 				CE787FC51A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
-				CE31C6561A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
 				CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */,
-				CE31C6581A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
 				CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
 				CE095AD019F9C8C4008F3EDB /* MBProgressHUD.m in Sources */,
-				CE31C6521A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,16 +354,11 @@
 			files = (
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
-				CE31C6591A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
-				CE31C6531A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
-				CE31C6571A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
-				CE31C65F1A0C0D7500682429 /* AppState.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE04B66E19F5AE60003D19EE /* Reachability.m in Sources */,
 				CE787FC61A02C930008C4E1A /* Constants.m in Sources */,
-				CE31C6551A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A93819EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
 				CE787FA51A003A69008C4E1A /* Restroom.m in Sources */,
