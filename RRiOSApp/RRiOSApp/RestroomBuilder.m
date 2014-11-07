@@ -51,8 +51,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
             
             *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
         }
-        
-//        return nil;
     }
     else if ([jsonObject isKindOfClass:[NSArray class]])
     {
@@ -66,7 +64,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     
     // else create Restroom objects out of parsed data
     NSError *syncError = nil;
-//    NSMutableArray *restrooms = [self syncRestrooms:restroomDictionaries error:&syncError];
     
     [self syncRestrooms:restroomDictionaries error:&syncError];
     
@@ -74,29 +71,18 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     {
         *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeSyncError userInfo:nil];
     }
-
-//    return [restrooms copy];
 }
 
 #pragma mark - Helper methods
 
 - (void)syncRestrooms:(NSArray *)restroomDictionaries error:(NSError **)error
 {
-//    NSMutableArray *restrooms = [NSMutableArray array];
-    
     for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
         // lat/lon and id must be tested for validity before assigning
         id latitude = restroomDictionary[@"latitude"];
         id longitude = restroomDictionary[@"longitude"];
         id identifier = restroomDictionary[@"id"];
-        
-//        // if error or not including require properties
-//        if(![self isValidIdentifier:identifier latitude:latitude longitude:longitude])
-//        {
-//            *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
-//        }
-//        else
         
         if([self isValidIdentifier:identifier latitude:latitude longitude:longitude])
         {
@@ -141,10 +127,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                 {
                     *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataSaveError userInfo:nil];
                 }
-//                else
-//                {
-//                    [restrooms addObject:restroom];
-//                }
             }
             else // Restroom already exists in Core Data
             {
@@ -207,7 +189,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 - (BOOL)isValidIdentifier:(id)identifier latitude:(id)latitude longitude:(id)longitude
 {
     // no lat/lon  or ID is invalid
-    
     if(
         latitude == [NSNull null] ||
         longitude == [NSNull null] ||

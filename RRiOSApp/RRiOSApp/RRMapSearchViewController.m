@@ -158,42 +158,4 @@ NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
     return boolToReturn;
 }
 
-//- (void)recenterMapToPlacemark:(CLPlacemark *)placemark
-//{
-//    MKCoordinateRegion region;
-//    MKCoordinateSpan span;
-//
-//    span.latitudeDelta = 0.02;
-//    span.longitudeDelta = 0.02;
-//
-//    region.span = span;
-//    region.center = placemark.location.coordinate;
-//
-//    [self.mapView setRegion:region];
-//}
-
-//- (void)addPlacemarkAnnotationToMap:(CLPlacemark *)placemark addressString:(NSString *)address
-//{
-//    [self.mapView removeAnnotation:selectedPlaceAnnotation];
-////    [selectedPlaceAnnotation release];
-//
-//    selectedPlaceAnnotation = [[MKPointAnnotation alloc] init];
-//    selectedPlaceAnnotation.coordinate = placemark.location.coordinate;
-//    selectedPlaceAnnotation.title = address;
-//    [self.mapView addAnnotation:selectedPlaceAnnotation];
-//}
-
-//- (void)dismissSearchControllerWhileStayingActive
-//{
-//    // Animate out the table view.
-//    NSTimeInterval animationDuration = 0.3;
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:animationDuration];
-//    self.searchDisplayController.searchResultsTableView.alpha = 0.0;
-//    [UIView commitAnimations];
-//
-//    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
-//    [self.searchDisplayController.searchBar resignFirstResponder];
-//}
-
 @end

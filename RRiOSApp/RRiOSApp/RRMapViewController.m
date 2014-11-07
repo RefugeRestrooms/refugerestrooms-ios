@@ -279,24 +279,6 @@ BOOL syncComplete = NO;
 
 #pragma mark - RestroomManagerDelegate methods
 
-//- (void)didReceiveRestrooms:(NSArray *)restrooms
-//{
-//    // plot Restrooms on map
-//    dispatch_async
-//    (
-//     // update UI on main thread
-//     dispatch_get_main_queue(), ^(void)
-//     {
-//         [self plotRestrooms:restrooms];
-//         
-//         hud.mode = MBProgressHUDModeCustomView;
-//         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
-//         hud.labelText = COMPLETION_TEXT;
-//         [hud hide:YES afterDelay:1];
-//     }
-//     );
-//}
-
 - (void)didBuildRestrooms
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITY_NAME_RESTROOM];
