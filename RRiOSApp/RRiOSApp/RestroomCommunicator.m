@@ -46,7 +46,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 {
     NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=100&query=%@", API_CALL_SEARCH_RESTROOMS, escapedQuery]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%I&query=%@", API_CALL_SEARCH_RESTROOMS, MAX_RESTROOMS_TO_FETCH, escapedQuery]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }
@@ -88,7 +88,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
     year = 2014;
     
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?day=%i&month=%i&year=%i", API_CALL_BY_DATE_RESTROOMS, day, month, year]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i&day=%i&month=%i&year=%i", API_CALL_BY_DATE_RESTROOMS, MAX_RESTROOMS_TO_FETCH, day, month, year]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

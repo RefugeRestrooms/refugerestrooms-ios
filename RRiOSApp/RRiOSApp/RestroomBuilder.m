@@ -16,9 +16,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 @implementation RestroomBuilder
 {
     NSManagedObjectContext *context;
-    
-    // TODO: remove variable; just used for testing purposes
-    int numberInvalidLatitude;
 }
 
 - (id)init
@@ -28,8 +25,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     if(self)
     {
         context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-        
-        numberInvalidLatitude = 0;
     }
         
     return self;
@@ -69,62 +64,115 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     }
     
     // else create Restroom objects out of parsed data
+    NSError *syncError = nil;
+    NSMutableArray *restrooms = [self syncRestrooms:restroomDictionaries error:&syncError];
+    
+    if(syncError)
+    {
+        *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeSyncError userInfo:nil];
+    }
+
+    return [restrooms copy];
+}
+
+#pragma mark - Helper methods
+
+- (NSMutableArray *)syncRestrooms:(NSArray *)restroomDictionaries error:(NSError **)error
+{
     NSMutableArray *restrooms = [NSMutableArray array];
     
     for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
-        Restroom *restroom = [NSEntityDescription insertNewObjectForEntityForName:@"Restroom" inManagedObjectContext:context];
-        [self setRestroomProperties:restroom fromDictionary:restroomDictionary];
-        
         // lat/lon and id must be tested for validity before assigning
         id latitude = restroomDictionary[@"latitude"];
         id longitude = restroomDictionary[@"longitude"];
         id identifier = restroomDictionary[@"id"];
         
-        // if error or incomplete
-        if(![self isValidRestroom:restroom withIdentifier:identifier latitude:latitude longitude:longitude])
+        // if error or not including require properties
+        if(![self isValidIdentifier:identifier latitude:latitude longitude:longitude])
         {
-            if(error)
-            {
-                //            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
-                
-                *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
-            }
+            *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
         }
         else
         {
-            restroom.latitude = latitude;
-            restroom.longitude = longitude;
-            restroom.identifier = [identifier stringValue];
+            NSString *identifierString = [identifier stringValue];
             
-            // add optional properties if Restroom was formed
-            id directions = restroomDictionary[@"directions"];
-            id comment = restroomDictionary[@"comment"];
+            // see if Restroom exists in Core Data based on identifier
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITY_NAME_RESTROOM];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", identifierString];
+            [fetchRequest setPredicate:predicate];
+            [fetchRequest setFetchLimit:1];
             
-            (directions == [NSNull null]) ? (restroom.directions  = @"") : (restroom.directions = directions);
-            (comment == [NSNull null]) ? (restroom.comment = @"") : (restroom.comment = comment);
+            NSError *coreDataFetchError = nil;
+            NSUInteger count = [context countForFetchRequest:fetchRequest error:&coreDataFetchError];
             
-            NSError *saveError = nil;
-            
-            [context save:&saveError];
-            
-            if(saveError)
+            if (count == NSNotFound || coreDataFetchError)
             {
-                saveError = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeSaveError userInfo:nil];
+                *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataSaveError userInfo:nil];
             }
-            else
+            else if (count == 0) // no matching object already in Core Data
             {
-                [restrooms addObject:restroom];
+                // Insert new Restroom
+                Restroom *restroom = [NSEntityDescription insertNewObjectForEntityForName:@"Restroom" inManagedObjectContext:context];
+                
+                // fill out restroom properties
+                [self setRestroomProperties:restroom fromDictionary:restroomDictionary];
+                
+                restroom.latitude = latitude;
+                restroom.longitude = longitude;
+                restroom.identifier = identifierString;
+                
+                // add optional properties if Restroom was formed
+                id directions = restroomDictionary[@"directions"];
+                id comment = restroomDictionary[@"comment"];
+                
+                (directions == [NSNull null]) ? (restroom.directions  = @"") : (restroom.directions = directions);
+                (comment == [NSNull null]) ? (restroom.comment = @"") : (restroom.comment = comment);
+                
+                NSError *coreDataSaveError = nil;
+                [context save:&coreDataSaveError];
+                
+                if(coreDataSaveError)
+                {
+                    *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataSaveError userInfo:nil];
+                }
+                else
+                {
+                    [restrooms addObject:restroom];
+                }
+            }
+            else // Restroom already exists in Core Data
+            {
+                NSError *coreDataUpdateError = nil;
+                NSArray *restroomsForIdentifier = [context executeFetchRequest:fetchRequest error:&coreDataUpdateError];
+                
+                if(restroomsForIdentifier == nil || coreDataUpdateError)
+                {
+                    *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataFetchError userInfo:nil];
+                }
+                else
+                {
+                    Restroom *restroomToUpdate = restroomsForIdentifier[0];
+                    
+                    [self setRestroomProperties:restroomToUpdate fromDictionary:restroomDictionary];
+                    restroomToUpdate.latitude = latitude;
+                    restroomToUpdate.longitude = longitude;
+                    restroomToUpdate.identifier = identifierString;
+                    
+                    NSError *coreDataSaveError = nil;
+                    [context save:&coreDataSaveError];
+                    
+                    if(coreDataSaveError)
+                    {
+                        *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataSaveError userInfo:nil];
+                    }
+                }
             }
         }
     }
     
-    NSLog(@"Num Invalid Lat: %i", numberInvalidLatitude);
-    
-    return [restrooms copy];
+    return restrooms;
 }
-
-#pragma mark - Helper methods
 
 - (void)setRestroomProperties:(Restroom *)restroom fromDictionary:(NSDictionary *)dictionary
 {
@@ -151,7 +199,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
 }
 
 // tests if Restroom data has required fields
-- (BOOL)isValidRestroom:(Restroom *)restroom withIdentifier:(id)identifier latitude:(id)latitude longitude:(id)longitude
+- (BOOL)isValidIdentifier:(id)identifier latitude:(id)latitude longitude:(id)longitude
 {
     // no lat/lon  or ID is invalid
     
@@ -161,13 +209,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         identifier == [NSNull null]
        )
     {
-        if(latitude == [NSNull null])
-        {
-            numberInvalidLatitude++;
-            
-            NSLog(@"Invalid Restroom: %@", restroom);
-        }
-        
         return NO;
     }
     

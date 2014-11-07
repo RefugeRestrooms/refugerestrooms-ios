@@ -14,10 +14,11 @@
 #pragma mark - General constants
 
 extern NSString *const APP_NAME;
+extern NSString *const ENTITY_NAME_RESTROOM;
 static const float METERS_PER_MILE = 1609.344;
-extern NSString *const MAP_VIEW_TRANSITION_NAME;
-extern NSString *const MAP_SEARCH_TRANSITION_NAME;
-extern NSString *const RESTROOM_DETAILS_TRANSITION_NAME;
+extern NSString *const TRANSITION_NAME_MAP_VIEW;
+extern NSString *const TRANSITION_NAME_MAP_SEARCH;
+extern NSString *const TRANSITION_NAME_RESTROOM_DETAILS;
 
 #pragma mark - Colors
 
@@ -34,6 +35,7 @@ static const float RRCOLOR_LIGHTPURPLE_BLUE = 175.0/255.0;
 extern NSString *const API_CALL_ALL_RESTROOMS;
 extern NSString *const API_CALL_SEARCH_RESTROOMS;
 extern NSString *const API_CALL_BY_DATE_RESTROOMS;
+extern NSInteger const MAX_RESTROOMS_TO_FETCH;
 
 #pragma mark - Map constants
 

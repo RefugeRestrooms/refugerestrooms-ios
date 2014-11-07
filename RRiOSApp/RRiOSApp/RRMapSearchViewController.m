@@ -84,7 +84,7 @@ NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
             [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
             
             // segue to map
-            [self performSegueWithIdentifier:MAP_VIEW_TRANSITION_NAME sender:self];
+            [self performSegueWithIdentifier:TRANSITION_NAME_MAP_VIEW sender:self];
         }
     }];
 }

@@ -11,15 +11,17 @@
 #pragma mark - General constants
 
 const NSString *APP_NAME = @"Refuge Restrooms";
-const NSString *MAP_VIEW_TRANSITION_NAME = @"ShowMap";
-const NSString *MAP_SEARCH_TRANSITION_NAME = @"ShowMapSearch";
-const NSString *RESTROOM_DETAILS_TRANSITION_NAME = @"ShowRestroomDetails";
+const NSString *ENTITY_NAME_RESTROOM = @"Restroom";
+const NSString *TRANSITION_NAME_MAP_VIEW = @"ShowMap";
+const NSString *TRANSITION_NAME_MAP_SEARCH = @"ShowMapSearch";
+const NSString *TRANSITION_NAME_RESTROOM_DETAILS = @"ShowRestroomDetails";
 
 #pragma mark - API constants
 
 const NSString *API_CALL_ALL_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms.json";
 const NSString *API_CALL_SEARCH_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms/search.json";
 const NSString *API_CALL_BY_DATE_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms/by_date.json";
+const NSInteger MAX_RESTROOMS_TO_FETCH = 10000;
 
 #pragma mark - Map constants
 

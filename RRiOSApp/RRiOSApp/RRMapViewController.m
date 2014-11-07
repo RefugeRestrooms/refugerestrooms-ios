@@ -11,6 +11,7 @@
 
 #import "RRMapViewController.h"
 
+#import "AppDelegate.h"
 #import "AppState.h"
 #import "Constants.h"
 #import "MBProgressHUD.h"
@@ -22,6 +23,7 @@
 #import "Reachability.h"
 
 BOOL initialZoomComplete = NO;
+BOOL syncComplete = NO;
 
 @interface RRMapViewController ()
 
@@ -34,8 +36,8 @@ BOOL initialZoomComplete = NO;
     Reachability *internetReachability;
     CLLocationManager *locationManager;
     MBProgressHUD *hud;
+    NSManagedObjectContext *context;
     BOOL internetIsAccessible;
-//    BOOL initialZoomComplete;
 }
 
 - (void)viewDidLoad
@@ -66,7 +68,9 @@ BOOL initialZoomComplete = NO;
     // set RestroomManager delegate
     RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
     restroomManager.delegate = self;
-    
+        
+    context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+        
     internetIsAccessible = YES;
     }
 }
@@ -111,10 +115,16 @@ BOOL initialZoomComplete = NO;
                 {
                     strongSelf->internetIsAccessible = YES;
                     
-                    // fetch restrooms newly created and updated
-                    NSDate *dateLastSynced = [AppState sharedInstance].dateLastSynced;
+                    // if not synced yet, fetch restrooms newly created and updated
+                    if(!syncComplete)
+                    {
+                        [[RestroomManager sharedInstance] fetchRestroomsModifiedSince:[AppState sharedInstance].dateLastSynced];
+                    }
                     
-                    [[RestroomManager sharedInstance] fetchRestroomsModifiedSince:dateLastSynced];
+                    // reset date last synced
+                    [AppState sharedInstance].dateLastSynced = [NSDate date];
+                    
+                    syncComplete = YES;
                 }
             }
          );
@@ -262,7 +272,7 @@ BOOL initialZoomComplete = NO;
     if ([[view annotation] isKindOfClass:[RRMapKitAnnotation class]])
     {
         // segue to details controller
-        [self performSegueWithIdentifier:RESTROOM_DETAILS_TRANSITION_NAME sender:annotation];
+        [self performSegueWithIdentifier:TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
         
     }
 }
@@ -271,10 +281,6 @@ BOOL initialZoomComplete = NO;
 
 - (void)didReceiveRestrooms:(NSArray *)restrooms
 {
-    // TODO: write new Restrooms to CoreData
-    // TODO: fetch all restrooms and plot
-    
-    
     // plot Restrooms on map
     dispatch_async
     (
@@ -313,7 +319,7 @@ BOOL initialZoomComplete = NO;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:RESTROOM_DETAILS_TRANSITION_NAME])
+    if([[segue identifier] isEqualToString:TRANSITION_NAME_RESTROOM_DETAILS])
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
@@ -321,7 +327,7 @@ BOOL initialZoomComplete = NO;
         destinationController.restroom = annotation.restroom;
     }
     
-    if([[segue identifier] isEqualToString:MAP_SEARCH_TRANSITION_NAME])
+    if([[segue identifier] isEqualToString:TRANSITION_NAME_MAP_SEARCH])
     {
         RRMapSearchViewController *destinationController = [segue destinationViewController];
         
