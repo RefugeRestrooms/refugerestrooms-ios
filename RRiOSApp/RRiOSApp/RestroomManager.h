@@ -28,8 +28,9 @@ typedef NS_ENUM(NSInteger, RestroomManagerErrorCode)
 @property (strong) RestroomBuilder *restroomBuilder;
 
 + (id)sharedInstance;
-- (void)fetchRestroomsForQuery:(NSString *)query;
--(void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms;
 - (void)fetchRestroomsModifiedSince:(NSDate *)date;
+
+//- (void)fetchRestroomsForQuery:(NSString *)query;
+//-(void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms;
 
 @end

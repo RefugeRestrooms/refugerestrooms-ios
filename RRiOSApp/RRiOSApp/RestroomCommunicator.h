@@ -20,9 +20,10 @@
 
 @property (weak) id <RestroomCommunicatorDelegate> delegate;
 
-- (void)searchForRestroomsWithQuery:(NSString *)query;
-- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms;
 - (void)searchForRestroomsModifiedSince:(NSDate *)date;
 - (void)cancelAndDiscardURLConnection;
+//
+//- (void)searchForRestroomsWithQuery:(NSString *)query;
+//- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms;
 
 @end

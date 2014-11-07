@@ -66,15 +66,15 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     _delegate = newDelegate;
 }
 
-- (void)fetchRestroomsForQuery:(NSString *)query
-{
-    [self.restroomCommunicator searchForRestroomsWithQuery:query];
-}
-
-- (void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms
-{
-    [self.restroomCommunicator searchForRestroomsOfAmount:numberRestrooms];
-}
+//- (void)fetchRestroomsForQuery:(NSString *)query
+//{
+//    [self.restroomCommunicator searchForRestroomsWithQuery:query];
+//}
+//
+//- (void)fetchRestroomsOfAmount:(NSInteger)numberRestrooms
+//{
+//    [self.restroomCommunicator searchForRestroomsOfAmount:numberRestrooms];
+//}
 
 - (void)fetchRestroomsModifiedSince:(NSDate *)date
 {
@@ -86,16 +86,27 @@ NSString *RestroomManagerSearchFailedError = @"RestroomManagerSearchFailedError"
     NSError *error = nil;
     
     //build restrooms from JSON
-    NSArray *restrooms = [self.restroomBuilder restroomsFromJSON:jsonString error:&error];
+//    NSArray *restrooms = [self.restroomBuilder restroomsFromJSON:jsonString error:&error];
+//    
+//    if(!restrooms)
+//    {
+//        // underlying error
+//        [self searchingForRestroomsFailedWithError:error];
+//    }
+//    else
+//    {
+//        [self.delegate didReceiveRestrooms:restrooms];
+//    }
     
-    if(!restrooms)
+    [self.restroomBuilder buildRestroomsFromJSON:jsonString error:&error];
+    
+    if(error)
     {
-        // underlying error
         [self searchingForRestroomsFailedWithError:error];
     }
     else
     {
-        [self.delegate didReceiveRestrooms:restrooms];
+        [self.delegate didBuildRestrooms];
     }
 }
 

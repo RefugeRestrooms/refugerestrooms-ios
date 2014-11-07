@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, RestroomBuilderErrorCode)
     RestroomBuilderErrorCodeCoreDataSaveError
 };
 
-- (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
+//- (NSArray *)restroomsFromJSON: (NSString *)jsonString error:(NSError **)error;
+
+- (void)buildRestroomsFromJSON:(NSString *)jsonString error:(NSError **)error;
 
 @end

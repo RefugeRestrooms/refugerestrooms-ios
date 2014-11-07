@@ -42,42 +42,35 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
     [self launchConnectionForRequest:request];
 }
 
-- (void)searchForRestroomsWithQuery:(NSString *)query
-{
-    NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%I&query=%@", API_CALL_SEARCH_RESTROOMS, MAX_RESTROOMS_TO_FETCH, escapedQuery]]
-               errorHandler:^(NSError *error) {
-                   [self.delegate searchingForRestroomsFailedWithError:error];
-               }
-             successHandler:^(NSString *jsonString) {
-                 [self.delegate receivedRestroomsJSONString:jsonString];
-             }
-     ];
-}
-
-- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
-{
-    // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", API_CALL_ALL_RESTROOMS, numberRestrooms]]
-               errorHandler:^(NSError *error) {
-                   [self.delegate searchingForRestroomsFailedWithError:error];
-               }
-             successHandler:^(NSString *jsonString) {
-                 [self.delegate receivedRestroomsJSONString:jsonString];
-             }
-     ];
-}
+//- (void)searchForRestroomsWithQuery:(NSString *)query
+//{
+//    NSString *escapedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    
+//    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%I&query=%@", API_CALL_SEARCH_RESTROOMS, MAX_RESTROOMS_TO_FETCH, escapedQuery]]
+//               errorHandler:^(NSError *error) {
+//                   [self.delegate searchingForRestroomsFailedWithError:error];
+//               }
+//             successHandler:^(NSString *jsonString) {
+//                 [self.delegate receivedRestroomsJSONString:jsonString];
+//             }
+//     ];
+//}
+//
+//- (void)searchForRestroomsOfAmount:(NSInteger)numberRestrooms
+//{
+//    // create fetch URl and fetch
+//    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i", API_CALL_ALL_RESTROOMS, numberRestrooms]]
+//               errorHandler:^(NSError *error) {
+//                   [self.delegate searchingForRestroomsFailedWithError:error];
+//               }
+//             successHandler:^(NSString *jsonString) {
+//                 [self.delegate receivedRestroomsJSONString:jsonString];
+//             }
+//     ];
+//}
 
  - (void)searchForRestroomsModifiedSince:(NSDate *)date;
 {
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSDateComponents* dateComponents = [gregorianCalendar components:NSCalendarUnitDay fromDate:date];
-    
-//    NSString *day = [NSString stringWithFormat:@"%i", [dateComponents day]];
-//    NSString *month = [NSString stringWithFormat:@"%i", [dateComponents month]];
-//    NSString *year = [NSString stringWithFormat:@"%i", [dateComponents year]];
-
     int day = [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date] day];
     int month = [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:date] month];
     int year = [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];

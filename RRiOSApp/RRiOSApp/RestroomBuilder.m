@@ -1,3 +1,4 @@
+
 //
 //  RestroomBuilder.m
 //  RRiOSApp
@@ -30,7 +31,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     return self;
 }
 
-- (NSArray *)restroomsFromJSON:(NSString *)jsonString error:(NSError **)error
+- (void)buildRestroomsFromJSON:(NSString *)jsonString error:(NSError **)error
 {
     NSParameterAssert(jsonString != nil);
     
@@ -46,12 +47,12 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         // handle error
         if(!error)
         {
-            // *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
+//            *error = [NSError errorWithDomain:RestroomBuilderErrorDomain code:RestroomBuilderMissingDataError userInfo:nil];
             
             *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
         }
         
-        return nil;
+//        return nil;
     }
     else if ([jsonObject isKindOfClass:[NSArray class]])
     {
@@ -65,21 +66,23 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     
     // else create Restroom objects out of parsed data
     NSError *syncError = nil;
-    NSMutableArray *restrooms = [self syncRestrooms:restroomDictionaries error:&syncError];
+//    NSMutableArray *restrooms = [self syncRestrooms:restroomDictionaries error:&syncError];
+    
+    [self syncRestrooms:restroomDictionaries error:&syncError];
     
     if(syncError)
     {
         *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeSyncError userInfo:nil];
     }
 
-    return [restrooms copy];
+//    return [restrooms copy];
 }
 
 #pragma mark - Helper methods
 
-- (NSMutableArray *)syncRestrooms:(NSArray *)restroomDictionaries error:(NSError **)error
+- (void)syncRestrooms:(NSArray *)restroomDictionaries error:(NSError **)error
 {
-    NSMutableArray *restrooms = [NSMutableArray array];
+//    NSMutableArray *restrooms = [NSMutableArray array];
     
     for(NSDictionary *restroomDictionary in restroomDictionaries)
     {
@@ -88,12 +91,14 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         id longitude = restroomDictionary[@"longitude"];
         id identifier = restroomDictionary[@"id"];
         
-        // if error or not including require properties
-        if(![self isValidIdentifier:identifier latitude:latitude longitude:longitude])
-        {
-            *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
-        }
-        else
+//        // if error or not including require properties
+//        if(![self isValidIdentifier:identifier latitude:latitude longitude:longitude])
+//        {
+//            *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeInvalidJSONError userInfo:nil];
+//        }
+//        else
+        
+        if([self isValidIdentifier:identifier latitude:latitude longitude:longitude])
         {
             NSString *identifierString = [identifier stringValue];
             
@@ -136,10 +141,10 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
                 {
                     *error = [NSError errorWithDomain:@"RestroomBuilderErrorDomain" code:RestroomBuilderErrorCodeCoreDataSaveError userInfo:nil];
                 }
-                else
-                {
-                    [restrooms addObject:restroom];
-                }
+//                else
+//                {
+//                    [restrooms addObject:restroom];
+//                }
             }
             else // Restroom already exists in Core Data
             {
@@ -171,7 +176,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
         }
     }
     
-    return restrooms;
+//    return restrooms;
 }
 
 - (void)setRestroomProperties:(Restroom *)restroom fromDictionary:(NSDictionary *)dictionary

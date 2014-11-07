@@ -279,26 +279,48 @@ BOOL syncComplete = NO;
 
 #pragma mark - RestroomManagerDelegate methods
 
-- (void)didReceiveRestrooms:(NSArray *)restrooms
+//- (void)didReceiveRestrooms:(NSArray *)restrooms
+//{
+//    // plot Restrooms on map
+//    dispatch_async
+//    (
+//     // update UI on main thread
+//     dispatch_get_main_queue(), ^(void)
+//     {
+//         [self plotRestrooms:restrooms];
+//         
+//         hud.mode = MBProgressHUDModeCustomView;
+//         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
+//         hud.labelText = COMPLETION_TEXT;
+//         [hud hide:YES afterDelay:1];
+//     }
+//     );
+//}
+
+- (void)didBuildRestrooms
 {
-    // plot Restrooms on map
-    dispatch_async
-    (
-     // update UI on main thread
-     dispatch_get_main_queue(), ^(void)
-     {
-         [self plotRestrooms:restrooms];
-         
-         hud.mode = MBProgressHUDModeCustomView;
-         hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
-         hud.labelText = COMPLETION_TEXT;
-         [hud hide:YES afterDelay:1];
-     }
-     );
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITY_NAME_RESTROOM];
+    
+    NSError *error = nil;
+    NSArray *allRestrooms = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if(error)
+    {
+        // TODO: Handle error fetching Restrooms from Core Data
+    }
+    else
+    {
+        [self plotRestrooms:allRestrooms];
+        
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
+        hud.labelText = COMPLETION_TEXT;
+        [hud hide:YES afterDelay:1];
+    }
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
-{;
+{
     // display error
     hud.mode = MBProgressHUDModeText;
     hud.labelText = SYNC_ERROR_TEXT;
