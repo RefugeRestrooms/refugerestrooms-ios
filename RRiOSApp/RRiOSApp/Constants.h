@@ -32,13 +32,14 @@ static const float RRCOLOR_LIGHTPURPLE_BLUE = 175.0/255.0;
 
 #pragma mark - API constants
 
-extern NSString *const API_CALL_BY_DATE_RESTROOMS;
+extern NSString *const API_CALL_RESTROOMS_BY_DATE;
 extern NSInteger const MAX_RESTROOMS_TO_FETCH;
 
 #pragma mark - Map constants
 
 extern NSString *const COMPLETION_TEXT;
 extern NSString *const COMPLETION_GRAPHIC;
+extern NSInteger const MAX_NUM_PIN_CLUSTERS;
 extern NSString *const NO_INTERNET_TEXT;
 extern NSString *const NO_LOCATION_TEXT;
 extern NSString *const NO_NAME_TEXT;
@@ -48,6 +49,16 @@ static const float PIN_GRAPHIC_WIDTH = 31.0;
 static const float PIN_GRAPHIC_HEIGHT = 39.5;
 extern NSString *const SYNC_TEXT;
 extern NSString *const SYNC_ERROR_TEXT;
+extern NSString *const SYNC_ERROR_DETAILS_TEXT;
 extern NSString *const URL_TO_TEST_REACHABILITY;
+
+# pragma mark - Map Search constants
+
+static const float SEARCH_QUERY_RADIUS = 100.0;
+const NSString *SEARCH_CELL_REUSE_IDENTIFIER;
+const NSString *SEARCH_CONTROLLER_NAME;
+const NSString *SEARCH_BAR_DEFAULT_TEXT;
+const NSString *SEARCH_ERROR_PLACE_NOT_FOUND;
+const NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES;
 
 #endif

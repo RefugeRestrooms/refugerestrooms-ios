@@ -17,8 +17,8 @@
 @interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate>
 
 @property (weak, nonatomic) IBOutlet ADClusterMapView *mapView;
-@property (weak, readonly, nonatomic) NSString *seedFileName; // abstract
-@property (weak, readonly, nonatomic) NSString *pictoName; // abstract
-@property (weak, readonly, nonatomic) NSString *clusterPictoName; // abstract
+@property (strong, readonly, nonatomic) NSString *seedFileName; // abstract
+@property (strong, readonly, nonatomic) NSString *pictoName; // abstract
+@property (strong, readonly, nonatomic) NSString *clusterPictoName; // abstract
 
 @end

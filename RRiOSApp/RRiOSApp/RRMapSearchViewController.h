@@ -21,13 +21,6 @@
 
 
 @interface RRMapSearchViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate>
-{
-    NSArray *searchResultPlaces;
-    SPGooglePlacesAutocompleteQuery *searchQuery;
-    MKPointAnnotation *selectedPlaceAnnotation;
-    
-    BOOL shouldBeginEditing;
-}
 
 @property (weak) id <RRMapSearchDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

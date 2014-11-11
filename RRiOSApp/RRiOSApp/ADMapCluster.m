@@ -227,9 +227,9 @@
         }
     }
 
-    NSLog(@"Computing KD-tree...");
+    // computer KD-tree
     ADMapCluster * cluster = [[ADMapCluster alloc] initWithAnnotations:initialAnnotations atDepth:0 inMapRect:boundaries gamma:gamma clusterTitle:clusterTitle showSubtitle:showSubtitle];
-    NSLog(@"Computation done !");
+    
     return cluster;
 }
 

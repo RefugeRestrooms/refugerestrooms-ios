@@ -31,6 +31,7 @@
 		CE31C6591A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */; };
 		CE31C65E1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE31C65F1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
+		CE4AB6571A11DA6D002C559D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4AB6561A11DA6D002C559D /* CoreLocation.framework */; };
 		CE6CB6C41A1140A600B90B52 /* ADClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */; };
 		CE6CB6C51A1140A600B90B52 /* ADClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */; };
 		CE6CB6C61A1140A600B90B52 /* ADClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BF1A1140A600B90B52 /* ADClusterMapView.m */; };
@@ -115,6 +116,7 @@
 		CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesPlaceDetailQuery.m; sourceTree = "<group>"; };
 		CE31C65C1A0C0D7500682429 /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		CE31C65D1A0C0D7500682429 /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
+		CE4AB6561A11DA6D002C559D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE60F13919DCAD34003C5E57 /* RestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
 		CE6CB6BC1A1140A600B90B52 /* ADClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADClusterAnnotation.h; sourceTree = "<group>"; };
 		CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADClusterAnnotation.m; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4AB6571A11DA6D002C559D /* CoreLocation.framework in Frameworks */,
 				CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */,
 				CE04B67019F5AE8A003D19EE /* SystemConfiguration.framework in Frameworks */,
 				CEE0A93C19EDC75D00B5846B /* AddressBook.framework in Frameworks */,
@@ -177,6 +180,7 @@
 		03B5B95313CD1E04E3B1BFB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE4AB6561A11DA6D002C559D /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

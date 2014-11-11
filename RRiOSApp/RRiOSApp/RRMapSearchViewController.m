@@ -12,14 +12,14 @@
 #import "SPGooglePlacesAutocompleteQuery.h"
 #import "SPGooglePlacesAutocompletePlace.h"
 
-CGFloat SEARCH_QUERY_RADIUS = 100.0;
-NSString *SEARCH_CELL_REUSE_IDENTIFIER = @"MapSearchCellResueIdentifier";
-NSString *SEARCH_CONTROLLER_NAME = @"Search";
-NSString *SEARCH_BAR_DEFAULT_TEXT = @"Address";
-NSString *SEARCH_ERROR_PLACE_NOT_FOUND = @"Could not map selected Place";
-NSString *SEARCH_ERROR_COULD_NOT_FETCH_PLACES = @"Could not fetch Places";
-
 @implementation RRMapSearchViewController
+{
+    NSArray *searchResultPlaces;
+    SPGooglePlacesAutocompleteQuery *searchQuery;
+    MKPointAnnotation *selectedPlaceAnnotation;
+    
+    BOOL shouldBeginEditing;
+}
 
 - (void)viewDidLoad
 {

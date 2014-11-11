@@ -182,8 +182,7 @@ BOOL syncComplete = NO;
 
 - (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
 {
-    // default is 32
-    return 10;
+    return MAX_NUM_PIN_CLUSTERS;
 }
 
 - (NSString *)seedFileName
@@ -201,6 +200,12 @@ BOOL syncComplete = NO;
     return PIN_CLUSTER_GRAPHIC;
 }
 
+- (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
+{
+    // default : @"%d elements"
+    return @"%d Restrooms";
+}
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[MKUserLocation class]])
@@ -213,7 +218,7 @@ BOOL syncComplete = NO;
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                reuseIdentifier:@"ADClusterableAnnotation"];
         
-        // TODO: don't re-set pin size in code
+        // TODO: don't re-size pin size in code
         UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
         
         annotationView.image = resizedImage;
@@ -333,17 +338,15 @@ BOOL syncComplete = NO;
     // display error
     hud.mode = MBProgressHUDModeText;
     hud.labelText = SYNC_ERROR_TEXT;
-//    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
-    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %@", [error description]];
-    [hud hide:YES afterDelay:1];
+    hud.detailsLabelText = SYNC_ERROR_DETAILS_TEXT;
+    
+    NSLog(@"Sync Error Description: %@", [error description]);
 }
 
 #pragma mark - RRMapSearchDelegate methods
 
 - (void)mapSearchPlacemarkSelected:(CLPlacemark *)placemark
 {
-    NSLog(@"PLACEMARK SELECTED!");
-    
     [self addPlacemarkAnnotationToMap:placemark addressString:placemark.name];
     [self recenterMapToPlacemark:placemark];
 }

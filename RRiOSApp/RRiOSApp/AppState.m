@@ -41,21 +41,10 @@ static NSString *const GAME_STATE_DATE_LAST_SYNCED_KEY = @"GameStateDateLastSync
         // if never synced before, set date in far past
         if(dateLastSynced == nil)
         {
-            // arbitrary
-            NSTimeZone *pacificTime = [NSTimeZone timeZoneWithName:@"America/Los_Angeles"];
-            
-            NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
-            [dateComponents setCalendar:[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian]];
-            [dateComponents setYear:1970];
-            [dateComponents setMonth:1];
-            [dateComponents setDay:1];
-            [dateComponents setTimeZone:pacificTime];
-            [dateComponents setHour:0];
-            
-            dateLastSynced = [dateComponents date];
+            dateLastSynced = [NSDate dateWithTimeIntervalSince1970:0];
         }
         
-        [self setDateLastSynced:dateLastSynced];
+        self.dateLastSynced = dateLastSynced;
     }
     
     return self;
