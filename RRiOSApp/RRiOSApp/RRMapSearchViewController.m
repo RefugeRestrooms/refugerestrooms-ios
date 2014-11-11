@@ -84,7 +84,7 @@
             [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
             
             // segue to map
-            [self performSegueWithIdentifier:TRANSITION_NAME_MAP_VIEW sender:self];
+            [self performSegueWithIdentifier:@"UnwindToMap" sender:self];
         }
     }];
 }

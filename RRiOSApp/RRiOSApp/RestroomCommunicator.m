@@ -49,9 +49,9 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
     int year = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
     
     // TODO: remove test values
-//    day = 1;
-//    month = 11;
-//    year = 2014;
+    day = 1;
+    month = 11;
+    year = 2014;
     
     // create fetch URl and fetch
     [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", API_CALL_RESTROOMS_BY_DATE, (long)MAX_RESTROOMS_TO_FETCH, day, month, year]]

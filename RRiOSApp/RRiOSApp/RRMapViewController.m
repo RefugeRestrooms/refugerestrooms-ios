@@ -208,10 +208,27 @@ BOOL syncComplete = NO;
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
+    MKAnnotationView *annotationView = nil;
+    
+    // user location
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
+//    // location returned from Search
+//    if([annotation isKindOfClass:[MKPointAnnotation class]])
+//    {
+//        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RestroomSearchAnnotation"];
+//        annotationView.canShowCallout = NO;
+//        annotationView.highlighted = YES;
+//    }
+//    else
+//    {
+//    
+    // custom pin
+    
+    if([annotation isKindOfClass:[ADClusterAnnotation class]])
+    {
+    annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
     
     if (!annotationView)
     {
@@ -231,6 +248,7 @@ BOOL syncComplete = NO;
     {
         annotationView.annotation = annotation;
     }
+    }
     
     return annotationView;
 }
@@ -242,7 +260,7 @@ BOOL syncComplete = NO;
     if (!annotationView)
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                               reuseIdentifier:@"ADMapCluster"];
+                                                      reuseIdentifier:@"ADMapCluster"];
         
         // TODO: don't re-set pin size in code
         UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
@@ -278,19 +296,11 @@ BOOL syncComplete = NO;
     
     if(!initialZoomComplete)
     {
-        // zoom to initial location
         CLLocation *location = [locationManager location];
         CLLocationCoordinate2D coordinate = [location coordinate];
         
-        float longitude = coordinate.longitude;
-        float latitude = coordinate.latitude;
-        
-        CLLocationCoordinate2D zoomLocation;
-        zoomLocation.latitude = latitude;
-        zoomLocation.longitude= longitude;
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
-        
-        [self.mapView setRegion:viewRegion animated:YES];
+        // zoom to initial location
+        [self zoomToLatitude:coordinate.latitude longitude:coordinate.longitude];
         
         [locationManager startUpdatingLocation];
         
@@ -375,18 +385,43 @@ BOOL syncComplete = NO;
 
 # pragma mark - Helper methods
 
+- (IBAction)unwindToMapViewController:(UIStoryboardSegue *)unwindSegue
+{
+    UIViewController* sourceViewController = unwindSegue.sourceViewController;
+    
+    if ([sourceViewController isKindOfClass:[RRMapSearchViewController class]])
+    {
+        // handle unwinds coming from Search
+    }
+}
+
+- (void)zoomToLatitude:(float)latitude longitude:(float)longitude
+{
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = latitude;
+    zoomLocation.longitude= longitude;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
+    
+    [self.mapView setRegion:viewRegion animated:YES];
+}
+
 - (void)recenterMapToPlacemark:(CLPlacemark *)placemark
 {
-    MKCoordinateRegion region;
-    MKCoordinateSpan span;
-
-    span.latitudeDelta = 0.02;
-    span.longitudeDelta = 0.02;
-
-    region.span = span;
-    region.center = placemark.location.coordinate;
-
-    [self.mapView setRegion:region];
+//    MKCoordinateRegion region;
+//    MKCoordinateSpan span;
+//
+//    span.latitudeDelta = 0.02;
+//    span.longitudeDelta = 0.02;
+//
+//    region.span = span;
+//    region.center = placemark.location.coordinate;
+//
+//    [self.mapView setRegion:region];
+    
+    CLLocationCoordinate2D coordinate = placemark.location.coordinate;
+    
+    [self zoomToLatitude:coordinate.latitude longitude:coordinate.longitude];
 }
 
 - (void)addPlacemarkAnnotationToMap:(CLPlacemark *)placemark addressString:(NSString *)address
@@ -397,7 +432,14 @@ BOOL syncComplete = NO;
     selectedPlaceAnnotation.coordinate = placemark.location.coordinate;
     selectedPlaceAnnotation.title = address;
     
-    [self.mapView addAnnotation:selectedPlaceAnnotation];
+//    [self.mapView addAnnotation:selectedPlaceAnnotation];
+    
+    [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
+    
+//    NSMutableArray *newAnnotationsArray = [NSMutableArray arrayWithArray:self.mapView.annotations];
+//    [newAnnotationsArray addObject:selectedPlaceAnnotation];
+//    
+//    [self.mapView setAnnotations:[newAnnotationsArray copy]];
 }
 
 //- (void)dismissSearchControllerWhileStayingActive

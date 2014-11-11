@@ -32,7 +32,7 @@ BOOL SPEnsureGoogleAPIKey() {
     BOOL userHasProvidedAPIKey = YES;
     if ([kGoogleAPIKey isEqualToString:@"YOUR_API_KEY"]) {
         userHasProvidedAPIKey = NO;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"API Key Needed" message:@"Please replace kGoogleAPIKey with your Google API key." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Fetch error :(" message:@"Could not fetch addresses for autocomplete." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
         [alert show];
 //        [alert release];
     }
