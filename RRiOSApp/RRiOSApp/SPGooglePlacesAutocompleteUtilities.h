@@ -6,8 +6,6 @@
 //  Copyright (c) 2012 Stephen Poletto. All rights reserved.
 //
 
-#pragma message "Add as Cocoapod"
-
 #import <Foundation/Foundation.h>
 
 #define kGoogleAPIKey @"YOUR_API_KEY"

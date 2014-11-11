@@ -44,17 +44,17 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
 
  - (void)searchForRestroomsModifiedSince:(NSDate *)date;
 {
-    int day = [[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date] day];
-    int month = [[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:date] month];
-    int year = [[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
+    int day = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date] day];
+    int month = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:date] month];
+    int year = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
     
-    // TODO: remove test data!
-    day = 1;
-    month = 11;
-    year = 2014;
+//    // TODO: remove test values
+//    day = 1;
+//    month = 11;
+//    year = 2014;
     
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%i&day=%i&month=%i&year=%i", API_CALL_BY_DATE_RESTROOMS, MAX_RESTROOMS_TO_FETCH, day, month, year]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", API_CALL_BY_DATE_RESTROOMS, (long)MAX_RESTROOMS_TO_FETCH, day, month, year]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

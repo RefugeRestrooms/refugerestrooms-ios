@@ -10,9 +10,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
+#import "ADClusterMapView.h"
 #import "RestroomManagerDelegate.h"
 #import "RRMapSearchViewController.h"
 
-@interface RRMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate>
+@interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate>
+
+@property (weak, nonatomic) IBOutlet ADClusterMapView *mapView;
+@property (weak, readonly, nonatomic) NSString *seedFileName; // abstract
+@property (weak, readonly, nonatomic) NSString *pictoName; // abstract
+@property (weak, readonly, nonatomic) NSString *clusterPictoName; // abstract
 
 @end

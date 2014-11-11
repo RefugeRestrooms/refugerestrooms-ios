@@ -19,7 +19,7 @@ const NSString *TRANSITION_NAME_RESTROOM_DETAILS = @"ShowRestroomDetails";
 #pragma mark - API constants
 
 const NSString *API_CALL_BY_DATE_RESTROOMS = @"http://www.refugerestrooms.org:80/api/v1/restrooms/by_date.json";
-const NSInteger MAX_RESTROOMS_TO_FETCH = 500;
+const NSInteger MAX_RESTROOMS_TO_FETCH = 10000;
 
 #pragma mark - Map constants
 
@@ -29,7 +29,7 @@ const NSString *NO_INTERNET_TEXT = @"Internet connection unavailable";
 const NSString *NO_LOCATION_TEXT = @"Could not find your location";
 const NSString *NO_NAME_TEXT = @"Details";
 const NSString *PIN_GRAPHIC = @"Images/pin.png";
-const NSString *REUSABLE_ANNOTATION_VIEW_IDENTIFIER = @"RestroomAnnotationView";
+const NSString *PIN_CLUSTER_GRAPHIC = @"Images/pin.png";
 const NSString *SYNC_TEXT = @"Syncing";
 const NSString *SYNC_ERROR_TEXT = @"Sync error";
 const NSString *URL_TO_TEST_REACHABILITY = @"www.google.com";

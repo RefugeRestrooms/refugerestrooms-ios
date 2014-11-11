@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Stephen Poletto. All rights reserved.
 //
 
+#pragma message "Add as Cocoapod"
+
 #import <CoreLocation/CoreLocation.h>
 
 #import "SPGooglePlacesAutocompleteUtilities.h"

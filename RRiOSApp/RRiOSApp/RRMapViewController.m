@@ -25,12 +25,6 @@
 BOOL initialZoomComplete = NO;
 BOOL syncComplete = NO;
 
-@interface RRMapViewController ()
-
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
-@end
-
 @implementation RRMapViewController
 {
     Reachability *internetReachability;
@@ -48,30 +42,30 @@ BOOL syncComplete = NO;
     
     if(!initialZoomComplete)
     {
-    // set up mapView
-    self.mapView.delegate = self;
-    self.mapView.mapType = MKMapTypeStandard;
-    self.mapView.showsUserLocation = YES;
+        // set up mapView
+        self.mapView.delegate = self;
+        self.mapView.mapType = MKMapTypeStandard;
+        self.mapView.showsUserLocation = YES;
     
-    // set up HUD
-    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.mode = MBProgressHUDAnimationFade;
-    hud.color = [UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0];
-    hud.labelText = SYNC_TEXT;
+        // set up HUD
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode = MBProgressHUDAnimationFade;
+        hud.color = [UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0];
+        hud.labelText = SYNC_TEXT;
     
-    // set up location manager
-    locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+        // set up location manager
+        locationManager = [[CLLocationManager alloc] init];
+        locationManager.delegate = self;
+        locationManager.distanceFilter = kCLDistanceFilterNone;
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
     
-    // set RestroomManager delegate
-    RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
-    restroomManager.delegate = self;
+        // set RestroomManager delegate
+        RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
+        restroomManager.delegate = self;
         
-    context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+        context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
         
-    internetIsAccessible = YES;
+        internetIsAccessible = YES;
     }
 }
 
@@ -82,76 +76,76 @@ BOOL syncComplete = NO;
     if(!initialZoomComplete)
     {
     
-    // prompt for location allowing
-    if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
-    {
-        [locationManager requestWhenInUseAuthorization];
-    }
-    else
-    {
+        // prompt for location allowing
+        if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+        {
+            [locationManager requestWhenInUseAuthorization];
+        }
+        else
+        {
 #pragma message "Should provide else case here that can run on iOS 7"
-        // TODO: Test on iOS 7 device
-    }
+            // TODO: Test on iOS 7 device
+        }
     
-    [locationManager startUpdatingLocation];
+        [locationManager startUpdatingLocation];
     
-    // check for Internet reachability
-    internetReachability = [Reachability reachabilityWithHostname:URL_TO_TEST_REACHABILITY];
+        // check for Internet reachability
+        internetReachability = [Reachability reachabilityWithHostname:URL_TO_TEST_REACHABILITY];
     
-    __weak RRMapViewController *weakSelf = self;
+        __weak RRMapViewController *weakSelf = self;
     
-    // Internet is reachable
-    internetReachability.reachableBlock = ^(Reachability*reach)
-    {
+        // Internet is reachable
+        internetReachability.reachableBlock = ^(Reachability*reach)
+        {
         
-        dispatch_async
-        (
-            // update UI on main thread
-            dispatch_get_main_queue(), ^
-            {
-                RRMapViewController *strongSelf = weakSelf;
-                
-                if(strongSelf)
+            dispatch_async
+            (
+                // update UI on main thread
+                dispatch_get_main_queue(), ^
                 {
-                    strongSelf->internetIsAccessible = YES;
-                    
-                    // if not synced yet, fetch restrooms newly created and updated
-                    if(!syncComplete)
+                    RRMapViewController *strongSelf = weakSelf;
+                
+                    if(strongSelf)
                     {
-                        [[RestroomManager sharedInstance] fetchRestroomsModifiedSince:[AppState sharedInstance].dateLastSynced];
+                        strongSelf->internetIsAccessible = YES;
+                    
+                        // if not synced yet, fetch restrooms newly created and updated
+                        if(!syncComplete)
+                        {
+                            [[RestroomManager sharedInstance] fetchRestroomsModifiedSince:[AppState sharedInstance].dateLastSynced];
+                        }
+                    
+                        // reset date last synced
+                        [AppState sharedInstance].dateLastSynced = [NSDate date];
+                    
+                        syncComplete = YES;
                     }
-                    
-                    // reset date last synced
-                    [AppState sharedInstance].dateLastSynced = [NSDate date];
-                    
-                    syncComplete = YES;
                 }
-            }
-         );
-    };
+             );
+        };
 
-    // Internet is not reachable
-    internetReachability.unreachableBlock = ^(Reachability*reach)
-    {
-        // Update the UI on the main thread
-        dispatch_async
-        (
-            dispatch_get_main_queue(), ^
-            {
-                RRMapViewController *strongSelf = weakSelf;
-                
-                if(strongSelf)
+        // Internet is not reachable
+        internetReachability.unreachableBlock = ^(Reachability*reach)
+        {
+            // Update the UI on the main thread
+            dispatch_async
+            (
+                dispatch_get_main_queue(), ^
                 {
-                    strongSelf->internetIsAccessible = NO;
+                    RRMapViewController *strongSelf = weakSelf;
+                
+                    if(strongSelf)
+                    {
+                        strongSelf->internetIsAccessible = NO;
                     
-                    strongSelf->hud.mode = MBProgressHUDModeText;
-                    strongSelf->hud.labelText = NO_INTERNET_TEXT;
+                        strongSelf->hud.mode = MBProgressHUDModeText;
+                        strongSelf->hud.labelText = NO_INTERNET_TEXT;
+                    }
                 }
-            }
-         );
-    };
+             );
+        };
     
-    [internetReachability startNotifier];
+        [internetReachability startNotifier];
     }
 }
 
@@ -163,6 +157,8 @@ BOOL syncComplete = NO;
         [self.mapView removeAnnotation:annotation];
     }
     
+    NSMutableArray *annotations = [NSMutableArray array];
+    
     // add all annotations
     for (Restroom *restroom in restrooms)
     {
@@ -171,13 +167,101 @@ BOOL syncComplete = NO;
         coordinate.longitude = [restroom.longitude doubleValue];
     
         // create map location object
-        RRMapKitAnnotation *mapLocation = [[RRMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
-        mapLocation.restroom = restroom;
+        RRMapKitAnnotation *annotation = [[RRMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
+        annotation.restroom = restroom;
         
         // add annotation
-        [self.mapView addAnnotation:mapLocation];
+        [annotations addObject:annotation];
+    }
+    
+    // set annotations
+    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
+}
+
+#pragma mark - ADClusterMapView methods
+
+- (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
+{
+    // default is 32
+    return 10;
+}
+
+- (NSString *)seedFileName
+{
+    return nil;
+}
+
+- (NSString *)pictoName
+{
+    return PIN_GRAPHIC;
+}
+
+- (NSString *)clusterPictoName
+{
+    return PIN_CLUSTER_GRAPHIC;
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
+    
+    if (!annotationView)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                               reuseIdentifier:@"ADClusterableAnnotation"];
         
-        [self mapView:self.mapView viewForAnnotation:mapLocation];
+        // TODO: don't re-set pin size in code
+        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
+        
+        annotationView.image = resizedImage;
+        annotationView.canShowCallout = YES;
+        
+        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        annotationView.rightCalloutAccessoryView = rightButton;
+    }
+    else
+    {
+        annotationView.annotation = annotation;
+    }
+    
+    return annotationView;
+}
+
+- (MKAnnotationView *)mapView:(ADClusterMapView *)mapView viewForClusterAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADMapCluster"];
+    
+    if (!annotationView)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                               reuseIdentifier:@"ADMapCluster"];
+        
+        // TODO: don't re-set pin size in code
+        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
+        
+        annotationView.image = resizedImage;
+        annotationView.canShowCallout = YES;
+    }
+    else
+    {
+        annotationView.annotation = annotation;
+    }
+    
+    return annotationView;
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    id <MKAnnotation> annotation = [view annotation];
+    
+    if ([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
+    {
+        // segue to details controller
+        [self performSegueWithIdentifier:TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
+        
     }
 }
 
@@ -192,17 +276,17 @@ BOOL syncComplete = NO;
         // zoom to initial location
         CLLocation *location = [locationManager location];
         CLLocationCoordinate2D coordinate = [location coordinate];
-    
+        
         float longitude = coordinate.longitude;
         float latitude = coordinate.latitude;
-    
+        
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = latitude;
         zoomLocation.longitude= longitude;
         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
-    
+        
         [self.mapView setRegion:viewRegion animated:YES];
-    
+        
         [locationManager startUpdatingLocation];
         
         initialZoomComplete = YES;
@@ -218,63 +302,6 @@ BOOL syncComplete = NO;
     
     hud.labelText = SYNC_TEXT;
     [hud hide:NO];
-}
-
-#pragma mark - MKMapViewDelegate methods
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
-{
-    // If it's the user location, just return nil
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    // Handle any custom annotations.
-    if ([annotation isKindOfClass:[RRMapKitAnnotation class]])
-    {
-        // Try to dequeue an existing annotation view first
-        MKAnnotationView *annotationView = (MKAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:REUSABLE_ANNOTATION_VIEW_IDENTIFIER];
-        
-        if (!annotationView)
-        {
-            // If an existing pin view was not available, create one.
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:REUSABLE_ANNOTATION_VIEW_IDENTIFIER];
-            annotationView.canShowCallout = YES;
-            
-            // re-size pin image
-            CGSize newSize = CGSizeMake(31.0f, 39.5f);
-            UIGraphicsBeginImageContext(newSize);
-            [[UIImage imageNamed:PIN_GRAPHIC] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-            UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            
-            // set pin image
-            annotationView.image = newImage;
-            
-            // set callout
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            annotationView.rightCalloutAccessoryView = rightButton;
-        }
-        else
-        {
-            annotationView.annotation = annotation;
-        }
-        
-        return annotationView;
-    }
-    
-    return nil;
-}
-
--(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
-{
-    id <MKAnnotation> annotation = [view annotation];
-    
-    if ([[view annotation] isKindOfClass:[RRMapKitAnnotation class]])
-    {
-        // segue to details controller
-        [self performSegueWithIdentifier:TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
-        
-    }
 }
 
 #pragma mark - RestroomManagerDelegate methods
@@ -306,7 +333,9 @@ BOOL syncComplete = NO;
     // display error
     hud.mode = MBProgressHUDModeText;
     hud.labelText = SYNC_ERROR_TEXT;
-    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
+//    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %li", (long)[error code]];
+    hud.detailsLabelText = [NSString stringWithFormat:@"Code: %@", [error description]];
+    [hud hide:YES afterDelay:1];
 }
 
 #pragma mark - RRMapSearchDelegate methods
@@ -327,8 +356,10 @@ BOOL syncComplete = NO;
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
-        RRMapKitAnnotation *annotation = (RRMapKitAnnotation *)sender;
-        destinationController.restroom = annotation.restroom;
+        ADClusterAnnotation *annotation = (ADClusterAnnotation *)sender;
+        RRMapKitAnnotation *originalAnnotation = annotation.originalAnnotations[0];
+        
+        destinationController.restroom = originalAnnotation.restroom;
     }
     
     if([[segue identifier] isEqualToString:TRANSITION_NAME_MAP_SEARCH])
@@ -378,5 +409,17 @@ BOOL syncComplete = NO;
 //    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
 //    [self.searchDisplayController.searchBar resignFirstResponder];
 //}
+
+- (UIImage *)resizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height
+{
+    CGSize newSize = CGSizeMake(width, height);
+    UIGraphicsBeginImageContext(newSize);
+    [[UIImage imageNamed:imageName] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    
+    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return resizedImage;
+}
 
 @end

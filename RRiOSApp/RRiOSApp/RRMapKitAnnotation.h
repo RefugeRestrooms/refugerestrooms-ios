@@ -15,7 +15,7 @@
 @interface RRMapKitAnnotation : NSObject <MKAnnotation>
 
 // custom properties
-@property (nonatomic, strong)  Restroom *restroom;
+@property (nonatomic, strong) Restroom *restroom;
 
 // MKAnnotation properties
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
