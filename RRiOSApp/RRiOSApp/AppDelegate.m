@@ -21,18 +21,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // change navigation style
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor
+                                                   colorWithRed: RRCONSTANTS_COLOR_DARKPURPLE_RED
+                                                   green:RRCONSTANTS_COLOR_DARKPURPLE_GREEN
+                                                   blue:RRCONSTANTS_COLOR_DARKPURPLE_BLUE
+                                                   alpha:1.0]];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,
                                                            nil]
      ];
-    
-//    self.window.tintColor = [UIColor colorWithRed:RRCOLOR_LIGHTPURPLE_RED green:RRCOLOR_LIGHTPURPLE_GREEN blue:RRCOLOR_LIGHTPURPLE_BLUE alpha:1.0];
-    
-
-    // clear our Core Data for testing
-//    [self resetApplicationModel];
     
     return YES;
 }
@@ -139,60 +137,6 @@
             abort();
         }
     }
-}
-
-#pragma mark - Helper methods
-
-// removes all traces of the Core Data store and then resets the application defaults
-- (BOOL) resetApplicationModel
-{
-    // set flag for first-time use
-    // [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:kApplicationIsFirstTimeRunKey];
-    
-    NSError *error = nil;
-//    NSURL *storeURL = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: ]];
-    NSURL *storeURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@%@", [[self applicationDocumentsDirectory] absoluteString], @"MyAppSQLStore.sqlite"]];
-    NSPersistentStore *store = [_persistentStoreCoordinator persistentStoreForURL:storeURL];
-    
-    // Remove the SQL store and the file associated with it
-    if ([_persistentStoreCoordinator removePersistentStore:store error:&error])
-    {
-        [[NSFileManager defaultManager] removeItemAtPath:storeURL.path error:&error];
-    }
-    
-    if (error)
-    {
-        NSLog(@"Failed to remove persistent store: %@", [error localizedDescription]);
-        
-        NSArray *detailedErrors = [[error userInfo] objectForKey:NSDetailedErrorsKey];
-        
-        if (detailedErrors != nil && [detailedErrors count] > 0)
-        {
-            for (NSError *detailedError in detailedErrors)
-            {
-                NSLog(@" DetailedError: %@", [detailedError userInfo]);
-            }
-        }
-        else
-        {
-            NSLog(@" %@", [error userInfo]);
-        }
-        return NO;
-    }
-    
-//    [persistentStoreCoordinator release], persistentStoreCoordinator = nil;
-//    [managedObjectContext release], managedObjectContext = nil;
-    _persistentStoreCoordinator = nil;
-    _managedObjectContext = nil;
-    
-    // Rebuild the application's managed object context
-    [self managedObjectContext];
-    [self persistentStoreCoordinator];
-    
-    // Repopulate Core Data defaults
-//    [self setupModelDefaults];
-    
-    return YES;
 }
 
 @end

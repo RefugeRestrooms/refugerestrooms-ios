@@ -172,11 +172,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
-                                <rect key="frame" x="0.0" y="-41" width="600" height="682"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="centerY" secondItem="xTJ-MC-Jka" secondAttribute="centerY" id="L4e-og-i9u"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="top" secondItem="xTJ-MC-Jka" secondAttribute="topMargin" id="bvA-jq-p3K"/>
+                            <constraint firstAttribute="trailing" secondItem="cgS-PL-hUi" secondAttribute="trailing" id="cMI-qT-QSL"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="nIP-vZ-Lza"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HeF-Xt-TPL">
                         <barButtonItem key="leftBarButtonItem" systemItem="search" id="jCh-jN-vYg">
@@ -231,7 +237,6 @@
                         <outlet property="searchBar" destination="BVL-eP-8bT" id="bpT-Xs-asV"/>
                         <outlet property="searchDisplayController" destination="cNa-qM-7Xe" id="gK9-Ph-1U0"/>
                         <outlet property="tableView" destination="2hK-p6-7Ow" id="WHr-y6-etw"/>
-                        <segue destination="eh7-1O-dRH" kind="show" identifier="ShowMap" id="7iR-R9-Z4e"/>
                         <segue destination="5ao-IR-z5Y" kind="unwind" identifier="UnwindToMap" unwindAction="unwindToMapViewController:" id="XeE-at-CRH"/>
                     </connections>
                 </tableViewController>
@@ -281,8 +286,5 @@
         <image name="button_accessibility.png" width="52" height="52"/>
         <image name="button_unisex.png" width="51" height="52"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="7iR-R9-Z4e"/>
-    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.51372549019607838" green="0.46666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
 </document>

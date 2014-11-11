@@ -28,7 +28,7 @@
         }
         else
         {
-            _title = NO_NAME_TEXT;
+            _title = RRCONSTANTS_NO_NAME_TEXT;
         }
         
         _subtitle = address;

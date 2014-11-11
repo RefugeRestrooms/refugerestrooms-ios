@@ -54,7 +54,7 @@ static NSString *RestroomCommunicatorErrorDomain = @"RestroomCommunicatorErrorDo
     year = 2014;
     
     // create fetch URl and fetch
-    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", API_CALL_RESTROOMS_BY_DATE, (long)MAX_RESTROOMS_TO_FETCH, day, month, year]]
+    [self fetchContentAtURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", RRCONSTANTS_API_CALL_RESTROOMS_BY_DATE, (long)RRCONSTANTS_MAX_RESTROOMS_TO_FETCH, day, month, year]]
                errorHandler:^(NSError *error) {
                    [self.delegate searchingForRestroomsFailedWithError:error];
                }

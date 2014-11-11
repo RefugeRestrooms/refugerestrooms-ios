@@ -89,7 +89,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
             NSString *identifierString = [identifier stringValue];
             
             // see if Restroom exists in Core Data based on identifier
-            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITY_NAME_RESTROOM];
+            NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier = %@", identifierString];
             [fetchRequest setPredicate:predicate];
             [fetchRequest setFetchLimit:1];
@@ -174,7 +174,7 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
     id numUpvotes = dictionary[@"upvote"];
     
     // values should not end up as null
-    (name == [NSNull null]) ? (restroom.name = NO_NAME_TEXT) : (restroom.name = name);
+    (name == [NSNull null]) ? (restroom.name = RRCONSTANTS_NO_NAME_TEXT) : (restroom.name = name);
     (street == [NSNull null]) ? (restroom.street = @"") : (restroom.street = street);
     (city == [NSNull null]) ? (restroom.city = @"") : (restroom.city = city);
     (state == [NSNull null]) ? (restroom.state = @"") : (restroom.state = state);

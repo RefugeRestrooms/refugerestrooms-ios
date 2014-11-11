@@ -38,7 +38,7 @@ BOOL syncComplete = NO;
 {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.topItem.title = APP_NAME;
+    self.navigationController.navigationBar.topItem.title = RRCONSTANTS_APP_NAME;
     
     if(!initialZoomComplete)
     {
@@ -50,8 +50,8 @@ BOOL syncComplete = NO;
         // set up HUD
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDAnimationFade;
-        hud.color = [UIColor colorWithRed:RRCOLOR_DARKPURPLE_RED green:RRCOLOR_DARKPURPLE_GREEN blue:RRCOLOR_DARKPURPLE_BLUE alpha:1.0];
-        hud.labelText = SYNC_TEXT;
+        hud.color = [UIColor colorWithRed:RRCONSTANTS_COLOR_DARKPURPLE_RED green:RRCONSTANTS_COLOR_DARKPURPLE_GREEN blue:RRCONSTANTS_COLOR_DARKPURPLE_BLUE alpha:1.0];
+        hud.labelText = RRCONSTANTS_SYNC_TEXT;
     
         // set up location manager
         locationManager = [[CLLocationManager alloc] init];
@@ -90,7 +90,7 @@ BOOL syncComplete = NO;
         [locationManager startUpdatingLocation];
     
         // check for Internet reachability
-        internetReachability = [Reachability reachabilityWithHostname:URL_TO_TEST_REACHABILITY];
+        internetReachability = [Reachability reachabilityWithHostname:RRCONSTANTS_URL_TO_TEST_REACHABILITY];
     
         __weak RRMapViewController *weakSelf = self;
     
@@ -139,7 +139,7 @@ BOOL syncComplete = NO;
                         strongSelf->internetIsAccessible = NO;
                     
                         strongSelf->hud.mode = MBProgressHUDModeText;
-                        strongSelf->hud.labelText = NO_INTERNET_TEXT;
+                        strongSelf->hud.labelText = RRCONSTANTS_NO_INTERNET_TEXT;
                     }
                 }
              );
@@ -182,7 +182,7 @@ BOOL syncComplete = NO;
 
 - (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
 {
-    return MAX_NUM_PIN_CLUSTERS;
+    return RRCONSTANTS_MAX_NUM_PIN_CLUSTERS;
 }
 
 - (NSString *)seedFileName
@@ -192,12 +192,12 @@ BOOL syncComplete = NO;
 
 - (NSString *)pictoName
 {
-    return PIN_GRAPHIC;
+    return RRCONSTANTS_PIN_GRAPHIC;
 }
 
 - (NSString *)clusterPictoName
 {
-    return PIN_CLUSTER_GRAPHIC;
+    return RRCONSTANTS_PIN_CLUSTER_GRAPHIC;
 }
 
 - (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
@@ -214,40 +214,30 @@ BOOL syncComplete = NO;
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     
-//    // location returned from Search
-//    if([annotation isKindOfClass:[MKPointAnnotation class]])
-//    {
-//        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"RestroomSearchAnnotation"];
-//        annotationView.canShowCallout = NO;
-//        annotationView.highlighted = YES;
-//    }
-//    else
-//    {
-//    
     // custom pin
     
     if([annotation isKindOfClass:[ADClusterAnnotation class]])
     {
-    annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
+        annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
     
-    if (!annotationView)
-    {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+        if (!annotationView)
+        {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                reuseIdentifier:@"ADClusterableAnnotation"];
         
-        // TODO: don't re-size pin size in code
-        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
+            // TODO: don't re-size pin size in code
+            UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:RRCONSTANTS_PIN_GRAPHIC_WIDTH height:RRCONSTANTS_PIN_GRAPHIC_HEIGHT];
         
-        annotationView.image = resizedImage;
-        annotationView.canShowCallout = YES;
+            annotationView.image = resizedImage;
+            annotationView.canShowCallout = YES;
         
-        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        annotationView.rightCalloutAccessoryView = rightButton;
-    }
-    else
-    {
-        annotationView.annotation = annotation;
-    }
+            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            annotationView.rightCalloutAccessoryView = rightButton;
+        }
+        else
+        {
+            annotationView.annotation = annotation;
+        }
     }
     
     return annotationView;
@@ -263,7 +253,7 @@ BOOL syncComplete = NO;
                                                       reuseIdentifier:@"ADMapCluster"];
         
         // TODO: don't re-set pin size in code
-        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:PIN_GRAPHIC_WIDTH height:PIN_GRAPHIC_HEIGHT];
+        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:RRCONSTANTS_PIN_GRAPHIC_WIDTH height:RRCONSTANTS_PIN_GRAPHIC_HEIGHT];
         
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;
@@ -283,7 +273,7 @@ BOOL syncComplete = NO;
     if ([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
     {
         // segue to details controller
-        [self performSegueWithIdentifier:TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
+        [self performSegueWithIdentifier:RRCONSTANTS_TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
         
     }
 }
@@ -312,10 +302,10 @@ BOOL syncComplete = NO;
 {
     [locationManager stopUpdatingLocation];
     
-    if(internetIsAccessible) { hud.labelText = NO_LOCATION_TEXT; }
+    if(internetIsAccessible) { hud.labelText = RRCONSTANTS_NO_LOCATION_TEXT; }
     [hud hide:YES afterDelay:5];
     
-    hud.labelText = SYNC_TEXT;
+    hud.labelText = RRCONSTANTS_SYNC_TEXT;
     [hud hide:NO];
 }
 
@@ -323,7 +313,7 @@ BOOL syncComplete = NO;
 
 - (void)didBuildRestrooms
 {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:ENTITY_NAME_RESTROOM];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
     
     NSError *error = nil;
     NSArray *allRestrooms = [context executeFetchRequest:fetchRequest error:&error];
@@ -337,8 +327,8 @@ BOOL syncComplete = NO;
         [self plotRestrooms:allRestrooms];
         
         hud.mode = MBProgressHUDModeCustomView;
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:COMPLETION_GRAPHIC]];
-        hud.labelText = COMPLETION_TEXT;
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:RRCONSTANTS_COMPLETION_GRAPHIC]];
+        hud.labelText = RRCONSTANTS_COMPLETION_TEXT;
         [hud hide:YES afterDelay:1];
     }
 }
@@ -347,17 +337,19 @@ BOOL syncComplete = NO;
 {
     // display error
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = SYNC_ERROR_TEXT;
-    hud.detailsLabelText = SYNC_ERROR_DETAILS_TEXT;
+    hud.labelText = RRCONSTANTS_SYNC_ERROR_TEXT;
+    hud.detailsLabelText = RRCONSTANTS_SYNC_ERROR_DETAILS_TEXT;
     
     NSLog(@"Sync Error Description: %@", [error description]);
 }
 
 #pragma mark - RRMapSearchDelegate methods
 
-- (void)mapSearchPlacemarkSelected:(CLPlacemark *)placemark
+- (void)mapSearchPlacemarkSelected:(CLPlacemark *)placemark cellName:(NSString *)cellName
 {
-    [self addPlacemarkAnnotationToMap:placemark addressString:placemark.name];
+    NSString *placemarkLabel = [NSString stringWithFormat:@"Search: %@", cellName];
+    
+    [self addPlacemarkAnnotationToMap:placemark addressString:placemarkLabel];
     [self recenterMapToPlacemark:placemark];
 }
 
@@ -365,7 +357,7 @@ BOOL syncComplete = NO;
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:TRANSITION_NAME_RESTROOM_DETAILS])
+    if([[segue identifier] isEqualToString:RRCONSTANTS_TRANSITION_NAME_RESTROOM_DETAILS])
     {
         RestroomDetailsViewController *destinationController = [segue destinationViewController];
         
@@ -375,7 +367,7 @@ BOOL syncComplete = NO;
         destinationController.restroom = originalAnnotation.restroom;
     }
     
-    if([[segue identifier] isEqualToString:TRANSITION_NAME_MAP_SEARCH])
+    if([[segue identifier] isEqualToString:RRCONSTANTS_TRANSITION_NAME_MAP_SEARCH])
     {
         RRMapSearchViewController *destinationController = [segue destinationViewController];
         
@@ -401,24 +393,13 @@ BOOL syncComplete = NO;
     zoomLocation.latitude = latitude;
     zoomLocation.longitude= longitude;
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * METERS_PER_MILE), (0.5 * METERS_PER_MILE));
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, (0.5 * RRCONSTANTS_METERS_PER_MILE), (0.5 * RRCONSTANTS_METERS_PER_MILE));
     
     [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)recenterMapToPlacemark:(CLPlacemark *)placemark
 {
-//    MKCoordinateRegion region;
-//    MKCoordinateSpan span;
-//
-//    span.latitudeDelta = 0.02;
-//    span.longitudeDelta = 0.02;
-//
-//    region.span = span;
-//    region.center = placemark.location.coordinate;
-//
-//    [self.mapView setRegion:region];
-    
     CLLocationCoordinate2D coordinate = placemark.location.coordinate;
     
     [self zoomToLatitude:coordinate.latitude longitude:coordinate.longitude];
@@ -426,20 +407,11 @@ BOOL syncComplete = NO;
 
 - (void)addPlacemarkAnnotationToMap:(CLPlacemark *)placemark addressString:(NSString *)address
 {
-//    [self.mapView removeAnnotation:selectedPlaceAnnotation];
-
     MKPointAnnotation *selectedPlaceAnnotation = [[MKPointAnnotation alloc] init];
     selectedPlaceAnnotation.coordinate = placemark.location.coordinate;
     selectedPlaceAnnotation.title = address;
     
-//    [self.mapView addAnnotation:selectedPlaceAnnotation];
-    
     [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
-    
-//    NSMutableArray *newAnnotationsArray = [NSMutableArray arrayWithArray:self.mapView.annotations];
-//    [newAnnotationsArray addObject:selectedPlaceAnnotation];
-//    
-//    [self.mapView setAnnotations:[newAnnotationsArray copy]];
 }
 
 //- (void)dismissSearchControllerWhileStayingActive

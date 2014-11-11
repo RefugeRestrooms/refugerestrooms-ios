@@ -27,15 +27,15 @@
     
     // set up search
     searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-    searchQuery.radius = SEARCH_QUERY_RADIUS;
+    searchQuery.radius = RRCONSTANTS_SEARCH_QUERY_RADIUS;
     shouldBeginEditing = YES;
     
     // style navigation bar
-    self.title = SEARCH_CONTROLLER_NAME;
+    self.title = RRCONSTANTS_SEARCH_CONTROLLER_NAME;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     // style search bar
-    self.searchDisplayController.searchBar.placeholder = SEARCH_BAR_DEFAULT_TEXT;
+    self.searchDisplayController.searchBar.placeholder = RRCONSTANTS_SEARCH_BAR_DEFAULT_TEXT;
     
     // set up data source
     self.tableView.delegate = self;
@@ -51,11 +51,11 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SEARCH_CELL_REUSE_IDENTIFIER];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RRCONSTANTS_SEARCH_CELL_REUSE_IDENTIFIER];
     
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SEARCH_CELL_REUSE_IDENTIFIER];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RRCONSTANTS_SEARCH_CELL_REUSE_IDENTIFIER];
     }
     
     cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
@@ -73,18 +73,18 @@
     {
         if (error)
         {
-            SPPresentAlertViewWithErrorAndTitle(error, SEARCH_ERROR_PLACE_NOT_FOUND);
+            SPPresentAlertViewWithErrorAndTitle(error, RRCONSTANTS_SEARCH_ERROR_PLACE_NOT_FOUND);
         }
         else if (placemark)
         {
             // notify delegate of placemark selected
-            [self.delegate mapSearchPlacemarkSelected:placemark];
+            [self.delegate mapSearchPlacemarkSelected:placemark cellName:[self tableView:tableView cellForRowAtIndexPath:indexPath].textLabel.text];
             
             // deselect row
             [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
             
             // segue to map
-            [self performSegueWithIdentifier:@"UnwindToMap" sender:self];
+            [self performSegueWithIdentifier:RRCONSTANTS_UNWIND_NAME_MAP_VIEW sender:self];
         }
     }];
 }
@@ -128,7 +128,7 @@
     {
         if (error)
         {
-            SPPresentAlertViewWithErrorAndTitle(error, SEARCH_ERROR_COULD_NOT_FETCH_PLACES);
+            SPPresentAlertViewWithErrorAndTitle(error, RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES);
         }
         else
         {
