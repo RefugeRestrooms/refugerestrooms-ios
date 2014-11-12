@@ -37,7 +37,7 @@
     
     // set details
     self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
-    self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% Positive", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : @"Not yet rated";
+    self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% Positive", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : RRCONSTANTS_NO_RATING_TEXT;
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
 }

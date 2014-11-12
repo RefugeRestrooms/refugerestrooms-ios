@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73988BB1FF8DF40A5A87829A"
-               BuildableName = "libPods-RRiOSApp-Reachability.a"
-               BlueprintName = "Pods-RRiOSApp-Reachability"
+               BlueprintIdentifier = "20308B5DBBF1919B8486B4EB"
+               BuildableName = "libPods-RRiOSApp-SPGooglePlacesAutocomplete.a"
+               BlueprintName = "Pods-RRiOSApp-SPGooglePlacesAutocomplete"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

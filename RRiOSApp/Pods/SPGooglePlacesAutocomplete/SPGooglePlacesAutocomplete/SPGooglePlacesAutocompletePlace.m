@@ -10,29 +10,28 @@
 #import "SPGooglePlacesPlaceDetailQuery.h"
 
 @interface SPGooglePlacesAutocompletePlace()
-@property (nonatomic, retain, readwrite) NSString *name;
-@property (nonatomic, retain, readwrite) NSString *reference;
-@property (nonatomic, retain, readwrite) NSString *identifier;
-@property (nonatomic, readwrite) SPGooglePlacesAutocompletePlaceType type;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *reference;
+@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic) SPGooglePlacesAutocompletePlaceType type;
 @end
 
 @implementation SPGooglePlacesAutocompletePlace
 
-@synthesize name, reference, identifier, type;
-
-+ (SPGooglePlacesAutocompletePlace *)placeFromDictionary:(NSDictionary *)placeDictionary {
-//    SPGooglePlacesAutocompletePlace *place = [[[self alloc] init] autorelease];
++ (SPGooglePlacesAutocompletePlace *)placeFromDictionary:(NSDictionary *)placeDictionary apiKey:(NSString *)apiKey
+{
     SPGooglePlacesAutocompletePlace *place = [[self alloc] init];
-    place.name = [placeDictionary objectForKey:@"description"];
-    place.reference = [placeDictionary objectForKey:@"reference"];
-    place.identifier = [placeDictionary objectForKey:@"id"];
+    place.name = placeDictionary[@"description"];
+    place.reference = placeDictionary[@"reference"];
+    place.identifier = placeDictionary[@"id"];
     place.type = SPPlaceTypeFromDictionary(placeDictionary);
+    place.key = apiKey;
     return place;
 }
 
 - (NSString *)description {
     return [NSString stringWithFormat:@"Name: %@, Reference: %@, Identifier: %@, Type: %@",
-            name, reference, identifier, SPPlaceTypeStringForPlaceType(type)];
+            self.name, self.reference, self.identifier, SPPlaceTypeStringForPlaceType(self.type)];
 }
 
 - (CLGeocoder *)geocoder {
@@ -43,16 +42,18 @@
 }
 
 - (void)resolveEstablishmentPlaceToPlacemark:(SPGooglePlacesPlacemarkResultBlock)block {
-    SPGooglePlacesPlaceDetailQuery *query = [SPGooglePlacesPlaceDetailQuery query];
+    SPGooglePlacesPlaceDetailQuery *query = [[SPGooglePlacesPlaceDetailQuery alloc] initWithApiKey:self.key];
     query.reference = self.reference;
     [query fetchPlaceDetail:^(NSDictionary *placeDictionary, NSError *error) {
         if (error) {
             block(nil, nil, error);
         } else {
-            NSString *addressString = [placeDictionary objectForKey:@"formatted_address"];
+            NSString *addressString = placeDictionary[@"formatted_address"];
             [[self geocoder] geocodeAddressString:addressString completionHandler:^(NSArray *placemarks, NSError *error) {
                 if (error) {
-                    block(nil, nil, error);
+                    // Sometimes establishment has address, which location cannot be retrieved
+                    // ref: https://github.com/chenyuan/SPGooglePlacesAutocomplete/issues/9
+                    [self resolveGecodePlaceToPlacemark:block];
                 } else {
                     CLPlacemark *placemark = [placemarks onlyObject];
                     block(placemark, self.name, error);
@@ -74,7 +75,7 @@
 }
 
 - (void)resolveToPlacemark:(SPGooglePlacesPlacemarkResultBlock)block {
-    if (type == SPPlaceTypeGeocode) {
+    if (self.type == SPPlaceTypeGeocode) {
         // Geocode places already have their address stored in the 'name' field.
         [self resolveGecodePlaceToPlacemark:block];
     } else {
@@ -82,12 +83,5 @@
     }
 }
 
-//- (void)dealloc {
-//    [name release];
-//    [reference release];
-//    [identifier release];
-//    [geocoder release];
-//    [super dealloc];
-//}
 
 @end

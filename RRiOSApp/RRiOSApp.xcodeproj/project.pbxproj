@@ -19,14 +19,6 @@
 		CE2EE00D1A0959AE00BE1912 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CE2EE00B1A0959AC00BE1912 /* Images */; };
 		CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
 		CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
-		CE31C6521A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */; };
-		CE31C6531A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */; };
-		CE31C6541A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */; };
-		CE31C6551A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */; };
-		CE31C6561A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */; };
-		CE31C6571A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */; };
-		CE31C6581A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */; };
-		CE31C6591A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */; };
 		CE31C65E1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE31C65F1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE4AB6571A11DA6D002C559D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4AB6561A11DA6D002C559D /* CoreLocation.framework */; };
@@ -87,14 +79,6 @@
 		CE2EE00B1A0959AC00BE1912 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapSearchViewController.h; sourceTree = "<group>"; };
 		CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapSearchViewController.m; sourceTree = "<group>"; };
-		CE31C64A1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
-		CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
-		CE31C64C1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
-		CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteQuery.m; sourceTree = "<group>"; };
-		CE31C64E1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteUtilities.h; sourceTree = "<group>"; };
-		CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompleteUtilities.m; sourceTree = "<group>"; };
-		CE31C6501A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesPlaceDetailQuery.h; sourceTree = "<group>"; };
-		CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesPlaceDetailQuery.m; sourceTree = "<group>"; };
 		CE31C65C1A0C0D7500682429 /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		CE31C65D1A0C0D7500682429 /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
 		CE4AB6561A11DA6D002C559D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -238,14 +222,6 @@
 				CE6CB6C11A1140A600B90B52 /* ADMapCluster.m */,
 				CE6CB6C21A1140A600B90B52 /* ADMapPointAnnotation.h */,
 				CE6CB6C31A1140A600B90B52 /* ADMapPointAnnotation.m */,
-				CE31C64A1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.h */,
-				CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */,
-				CE31C64C1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.h */,
-				CE31C64D1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m */,
-				CE31C64E1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.h */,
-				CE31C64F1A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m */,
-				CE31C6501A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.h */,
-				CE31C6511A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
@@ -431,19 +407,15 @@
 				CE6CB6CA1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
 				CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
-				CE31C6541A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
 				CE787FA41A003A69008C4E1A /* Restroom.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
 				CE787FC51A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
-				CE31C6561A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
 				CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */,
-				CE31C6581A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
 				CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
-				CE31C6521A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,16 +428,12 @@
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
 				CE6CB6CB1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
 				CE6CB6C51A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
-				CE31C6591A0AEF3F00682429 /* SPGooglePlacesPlaceDetailQuery.m in Sources */,
-				CE31C6531A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
-				CE31C6571A0AEF3F00682429 /* SPGooglePlacesAutocompleteUtilities.m in Sources */,
 				CE31C65F1A0C0D7500682429 /* AppState.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE6CB6C91A1140A600B90B52 /* ADMapCluster.m in Sources */,
 				CE787FC61A02C930008C4E1A /* Constants.m in Sources */,
-				CE31C6551A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A93819EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
 				CE787FA51A003A69008C4E1A /* Restroom.m in Sources */,

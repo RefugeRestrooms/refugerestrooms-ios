@@ -12,7 +12,9 @@
 
 const NSString *RRCONSTANTS_APP_NAME = @"Refuge Restrooms";
 
-const NSString *RRCONSTANTS_ALERT_TITLE = @"Info";
+const NSString *RRCONSTANTS_API_KEY_GOOGLE_PLACES = @"KEY";
+const NSString *RRCONSTANTS_ALERT_TITLE_ERROR = @"Error";
+const NSString *RRCONSTANTS_ALERT_TITLE_INFO = @"Info";
 const NSString *RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT = @"OK";
 const NSString *RRCONSTANTS_ENTITY_NAME_RESTROOM = @"Restroom";
 const NSString *RRCONSTANTS_TRANSITION_NAME_MAP_SEARCH = @"ShowMapSearch";
@@ -32,6 +34,7 @@ const NSInteger RRCONSTANTS_MAX_NUM_PIN_CLUSTERS = 100;
 const NSString *RRCONSTANTS_ALERT_NO_INTERNET_TEXT = @"Internet unavailable\nCertain features may be disabled";
 const NSString *RRCONSTANTS_NO_LOCATION_TEXT = @"Could not find your location";
 const NSString *RRCONSTANTS_NO_NAME_TEXT = @"Details";
+const NSString *RRCONSTANTS_NO_RATING_TEXT = @"No rating yet";
 const NSString *RRCONSTANTS_PIN_GRAPHIC = @"Images/pin.png";
 const NSString *RRCONSTANTS_PIN_CLUSTER_GRAPHIC = @"Images/pin.png";
 const NSString *RRCONSTANTS_SYNC_TEXT = @"Syncing";

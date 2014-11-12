@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-RRiOSApp-SPGooglePlacesAutocomplete.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RRiOSApp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F0C446F866ED525E3B4D290</key>
+		<key>20308B5DBBF1919B8486B4EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8D2D0125A512DC7CD5A904D</key>
+		<key>6E255FD19208BF22BB6F4CE4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF4E740DC7781DA2DD2D9549</key>
+		<key>73988BB1FF8DF40A5A87829A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B20B1FE700D286801B20E8B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

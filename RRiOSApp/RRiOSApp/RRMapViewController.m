@@ -136,7 +136,7 @@ BOOL syncComplete = NO;
                     {
                         strongSelf->internetIsAccessible = NO;
                         
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE message:RRCONSTANTS_ALERT_NO_INTERNET_TEXT delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_INFO message:RRCONSTANTS_ALERT_NO_INTERNET_TEXT delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
                         [alert show];
                     }
                 }

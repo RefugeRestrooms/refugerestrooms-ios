@@ -9,25 +9,18 @@
 #import "SPGooglePlacesPlaceDetailQuery.h"
 
 @interface SPGooglePlacesPlaceDetailQuery()
-@property (nonatomic, copy, readwrite) SPGooglePlacesPlaceDetailResultBlock resultBlock;
+@property (nonatomic, copy) SPGooglePlacesPlaceDetailResultBlock resultBlock;
 @end
 
 @implementation SPGooglePlacesPlaceDetailQuery
 
-@synthesize reference, sensor, key, language, resultBlock;
-
-+ (SPGooglePlacesPlaceDetailQuery *)query {
-//    return [[[self alloc] init] autorelease];
-
-    return [[self alloc] init];
-}
-
-- (id)init {
+- (id)initWithApiKey:(NSString *)apiKey
+{
     self = [super init];
     if (self) {
         // Setup default property values.
         self.sensor = YES;
-        self.key = kGoogleAPIKey;
+        self.key = apiKey;
     }
     return self;
 }
@@ -36,27 +29,17 @@
     return [NSString stringWithFormat:@"Query URL: %@", [self googleURLString]];
 }
 
-//- (void)dealloc {
-//    [googleConnection release];
-//    [responseData release];
-//    [reference release];
-//    [key release];
-//    [language release];
-//    [super dealloc];
-//}
 
 - (NSString *)googleURLString {
     NSMutableString *url = [NSMutableString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/details/json?reference=%@&sensor=%@&key=%@",
-                            reference, SPBooleanStringForBool(sensor), key];
-    if (language) {
-        [url appendFormat:@"&language=%@", language];
+                            self.reference, SPBooleanStringForBool(self.sensor), self.key];
+    if (self.language) {
+        [url appendFormat:@"&language=%@", self.language];
     }
     return url;
 }
 
 - (void)cleanup {
-//    [googleConnection release];
-//    [responseData release];
     googleConnection = nil;
     responseData = nil;
     self.resultBlock = nil;
@@ -68,7 +51,7 @@
 }
 
 - (void)fetchPlaceDetail:(SPGooglePlacesPlaceDetailResultBlock)block {
-    if (!SPEnsureGoogleAPIKey()) {
+    if (!self.key) {
         return;
     }
     
@@ -123,12 +106,12 @@
             [self failWithError:error];
             return;
         }
-        if ([[response objectForKey:@"status"] isEqualToString:@"OK"]) {
-            [self succeedWithPlace:[response objectForKey:@"result"]];
+        if ([response[@"status"] isEqualToString:@"OK"]) {
+            [self succeedWithPlace:response[@"result"]];
         }
-                
+        
         // Must have received a status of UNKNOWN_ERROR, ZERO_RESULTS, OVER_QUERY_LIMIT, REQUEST_DENIED or INVALID_REQUEST.
-        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:[response objectForKey:@"status"] forKey:NSLocalizedDescriptionKey];
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: response[@"status"]};
         [self failWithError:[NSError errorWithDomain:@"com.spoletto.googleplaces" code:kGoogleAPINSErrorCode userInfo:userInfo]];
     }
 }

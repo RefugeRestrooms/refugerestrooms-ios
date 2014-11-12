@@ -27,6 +27,7 @@
     
     // set up search
     searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
+    searchQuery.key = RRCONSTANTS_API_KEY_GOOGLE_PLACES;
     searchQuery.radius = RRCONSTANTS_SEARCH_QUERY_RADIUS;
     shouldBeginEditing = YES;
     
@@ -73,7 +74,9 @@
     {
         if (error)
         {
-            SPPresentAlertViewWithErrorAndTitle(error, RRCONSTANTS_SEARCH_ERROR_PLACE_NOT_FOUND);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:[error localizedDescription] delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+            
+            [alert show];
         }
         else if (placemark)
         {
@@ -128,7 +131,9 @@
     {
         if (error)
         {
-            SPPresentAlertViewWithErrorAndTitle(error, RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:[error localizedDescription] delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+            
+            [alert show];
         }
         else
         {
