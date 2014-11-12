@@ -4,4 +4,4 @@ install:
   - brew install xctool --HEAD
 
 script:
-  - xctool test -project RRiOSApp/RRiOSApp.xcodeproj -scheme RRiOSApp -sdk iphonesimulator8.0
+  - xctool test -workspace RRiOSApp/RRiOSApp.xcworkspace -scheme RRiOSApp -sdk iphonesimulator8.0
