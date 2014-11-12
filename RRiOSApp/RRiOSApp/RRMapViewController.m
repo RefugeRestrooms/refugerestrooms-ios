@@ -64,8 +64,6 @@ BOOL syncComplete = NO;
         restroomManager.delegate = self;
         
         context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-        
-        internetIsAccessible = YES;
     }
 }
 
@@ -137,9 +135,9 @@ BOOL syncComplete = NO;
                     if(strongSelf)
                     {
                         strongSelf->internetIsAccessible = NO;
-                    
-                        strongSelf->hud.mode = MBProgressHUDModeText;
-                        strongSelf->hud.labelText = RRCONSTANTS_NO_INTERNET_TEXT;
+                        
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Title" message:@"Internet unavailable - searching disabled" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alert show];
                     }
                 }
              );
@@ -158,6 +156,8 @@ BOOL syncComplete = NO;
     }
     
     NSMutableArray *annotations = [NSMutableArray array];
+    
+    NSLog(@"Num Restrooms to plot: %i", [restrooms count]);
     
     // add all annotations
     for (Restroom *restroom in restrooms)

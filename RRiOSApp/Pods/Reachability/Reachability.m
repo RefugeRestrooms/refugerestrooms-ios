@@ -217,7 +217,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
     // First, we need to create a serial queue.
     // We allocate this once for the lifetime of the notifier.
     self.reachabilitySerialQueue = dispatch_queue_create("com.tonymillion.reachability", NULL);
-    if(self.reachabilitySerialQueue == nil)
+    if(!self.reachabilitySerialQueue)
     {
         return NO;
     }
@@ -517,7 +517,7 @@ static void TMReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkRea
 
 #pragma mark - Debug Description
 
-- (NSString *) description
+- (NSString *) description;
 {
     NSString *description = [NSString stringWithFormat:@"<%@: %#x>",
                              NSStringFromClass([self class]), (unsigned int) self];
