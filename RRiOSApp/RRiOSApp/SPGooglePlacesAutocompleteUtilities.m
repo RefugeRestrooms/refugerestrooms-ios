@@ -32,7 +32,7 @@ BOOL SPEnsureGoogleAPIKey() {
     BOOL userHasProvidedAPIKey = YES;
     if ([kGoogleAPIKey isEqualToString:@"YOUR_API_KEY"]) {
         userHasProvidedAPIKey = NO;
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Info" message:@"Internet unavailable\nCould not fetch address suggestions" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not fetch address suggestions" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
 //        [alert release];
     }

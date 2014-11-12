@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		857845D772C8B3E62C133943 /* libPods-RRiOSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC2B806E53A8C5444183327 /* libPods-RRiOSApp.a */; };
 		CE04B67019F5AE8A003D19EE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE04B66F19F5AE8A003D19EE /* SystemConfiguration.framework */; };
-		CE095AD019F9C8C4008F3EDB /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE095ACF19F9C8C4008F3EDB /* MBProgressHUD.m */; };
 		CE1F5E4C19D9DCB0005F3B04 /* RestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */; };
 		CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */; };
 		CE1F5E5F19DA0055005F3B04 /* RestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E5E19DA0055005F3B04 /* RestroomCommunicator.m */; };
@@ -65,20 +64,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CE31C6461A0AEE1D00682429 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE70CF8419D5F92D004E34F9;
-			remoteInfo = RRiOSApp;
-		};
-		CE31C6481A0AEE1D00682429 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CE70CFA019D5F92D004E34F9;
-			remoteInfo = RRiOSAppTests;
-		};
 		CE70CFA119D5F92D004E34F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE70CF7C19D5F92C004E34F9 /* Project object */;
@@ -92,8 +77,6 @@
 		9E6DADBE02A631D7E11FFA27 /* Pods-RRiOSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRiOSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RRiOSApp/Pods-RRiOSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AEC2B806E53A8C5444183327 /* libPods-RRiOSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RRiOSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE04B66F19F5AE8A003D19EE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		CE095ACF19F9C8C4008F3EDB /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomManager.h; sourceTree = "<group>"; };
 		CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomManager.m; sourceTree = "<group>"; };
 		CE1F5E5C19D9FD9D005F3B04 /* RestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomManagerDelegate.h; sourceTree = "<group>"; };
@@ -104,7 +87,6 @@
 		CE2EE00B1A0959AC00BE1912 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapSearchViewController.h; sourceTree = "<group>"; };
 		CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapSearchViewController.m; sourceTree = "<group>"; };
-		CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RRiOSApp.xcodeproj; sourceTree = "<group>"; };
 		CE31C64A1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompletePlace.h; sourceTree = "<group>"; };
 		CE31C64B1A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGooglePlacesAutocompletePlace.m; sourceTree = "<group>"; };
 		CE31C64C1A0AEF3F00682429 /* SPGooglePlacesAutocompleteQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGooglePlacesAutocompleteQuery.h; sourceTree = "<group>"; };
@@ -196,15 +178,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CE31C63A1A0AEE1D00682429 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CE31C6471A0AEE1D00682429 /* RRiOSApp.app */,
-				CE31C6491A0AEE1D00682429 /* RRiOSAppTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CE70CF7B19D5F92C004E34F9 = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +212,6 @@
 				CE31C65D1A0C0D7500682429 /* AppState.m */,
 				CE787FC71A02C958008C4E1A /* Constants.h */,
 				CE787FC41A02C92F008C4E1A /* Constants.m */,
-				CE095ACE19F9C8C4008F3EDB /* MBProgressHUD.h */,
-				CE095ACF19F9C8C4008F3EDB /* MBProgressHUD.m */,
 				CE787FA21A003A69008C4E1A /* Restroom.h */,
 				CE787FA31A003A69008C4E1A /* Restroom.m */,
 				CE1F5E6F19DA1AA1005F3B04 /* RestroomBuilder.h */,
@@ -279,7 +250,6 @@
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
 				CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */,
-				CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */,
 				CEE0A93919EDC70C00B5846B /* AddressBook.framework */,
 				CEE0A92719EDB08400B5846B /* MapKit.framework */,
 				CE70CF8719D5F92D004E34F9 /* Supporting Files */,
@@ -381,12 +351,6 @@
 			mainGroup = CE70CF7B19D5F92C004E34F9;
 			productRefGroup = CE70CF8519D5F92D004E34F9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CE31C63A1A0AEE1D00682429 /* Products */;
-					ProjectRef = CE31C6391A0AEE1D00682429 /* RRiOSApp.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				CE70CF8319D5F92D004E34F9 /* RRiOSApp */,
@@ -394,23 +358,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CE31C6471A0AEE1D00682429 /* RRiOSApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RRiOSApp.app;
-			remoteRef = CE31C6461A0AEE1D00682429 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CE31C6491A0AEE1D00682429 /* RRiOSAppTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RRiOSAppTests.xctest;
-			remoteRef = CE31C6481A0AEE1D00682429 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CE70CF8219D5F92D004E34F9 /* Resources */ = {
@@ -496,7 +443,6 @@
 				CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
 				CE1F5E7119DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CE70CF8A19D5F92D004E34F9 /* main.m in Sources */,
-				CE095AD019F9C8C4008F3EDB /* MBProgressHUD.m in Sources */,
 				CE31C6521A0AEF3F00682429 /* SPGooglePlacesAutocompletePlace.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +539,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -627,6 +574,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -642,7 +590,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3b960706-5aa9-4d23-acf8-8b09e7f4f064";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"";
 			};
 			name = Debug;
@@ -657,7 +605,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3b960706-5aa9-4d23-acf8-8b09e7f4f064";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"";
 			};
 			name = Release;
@@ -678,6 +626,7 @@
 				INFOPLIST_FILE = RRiOSAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RRiOSApp.app/RRiOSApp";
 			};
 			name = Debug;
@@ -694,6 +643,7 @@
 				INFOPLIST_FILE = RRiOSAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RRiOSApp.app/RRiOSApp";
 			};
 			name = Release;

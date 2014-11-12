@@ -5,6 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'RRiOSApp' do
 
+pod 'MBProgressHUD', '0.9'
 pod 'Reachability', '3.1.1'
 
 end

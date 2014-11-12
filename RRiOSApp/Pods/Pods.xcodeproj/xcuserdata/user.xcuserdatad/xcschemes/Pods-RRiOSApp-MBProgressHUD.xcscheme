@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D8D2D0125A512DC7CD5A904D"
-               BuildableName = "libPods-RRiOSApp-Reachability.a"
-               BlueprintName = "Pods-RRiOSApp-Reachability"
+               BlueprintIdentifier = "3F0C446F866ED525E3B4D290"
+               BuildableName = "libPods-RRiOSApp-MBProgressHUD.a"
+               BlueprintName = "Pods-RRiOSApp-MBProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
