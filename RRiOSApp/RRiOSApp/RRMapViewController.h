@@ -14,11 +14,17 @@
 #import "RestroomManagerDelegate.h"
 #import "RRMapSearchViewController.h"
 
-@interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate>
+@interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate, UISearchBarDelegate
+, UITableViewDataSource, UITableViewDelegate>
 
+// ADClusterMapView
 @property (weak, nonatomic) IBOutlet ADClusterMapView *mapView;
 @property (strong, readonly, nonatomic) NSString *seedFileName; // abstract
 @property (strong, readonly, nonatomic) NSString *pictoName; // abstract
 @property (strong, readonly, nonatomic) NSString *clusterPictoName; // abstract
+
+
+@property (weak, nonatomic) IBOutlet UISearchBar *search;
+@property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 
 @end

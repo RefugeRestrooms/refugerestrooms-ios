@@ -29,14 +29,15 @@
     searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
     searchQuery.key = RRCONSTANTS_API_KEY_GOOGLE_PLACES;
     searchQuery.radius = RRCONSTANTS_SEARCH_QUERY_RADIUS;
+    
+    // style search bar
+    self.searchDisplayController.searchBar.placeholder = RRCONSTANTS_SEARCH_BAR_DEFAULT_TEXT;
+    
     shouldBeginEditing = YES;
     
     // style navigation bar
     self.title = RRCONSTANTS_SEARCH_CONTROLLER_NAME;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-    // style search bar
-    self.searchDisplayController.searchBar.placeholder = RRCONSTANTS_SEARCH_BAR_DEFAULT_TEXT;
     
     // set up data source
     self.tableView.delegate = self;

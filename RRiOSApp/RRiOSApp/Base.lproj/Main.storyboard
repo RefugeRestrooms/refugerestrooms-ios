@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8Y4-yB-MKN">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="button_unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Wc-XI-OEA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Wc-XI-OEA">
                                 <rect key="frame" x="534" y="110" width="50" height="51"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
@@ -33,13 +34,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="button_accessibility.png" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-qi-TmF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_accessibility.png" translatesAutoresizingMaskIntoConstraints="NO" id="XG9-qi-TmF">
                                 <rect key="frame" x="534" y="169" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GB6-p9-2nJ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abG-H3-zL8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abG-H3-zL8">
                                 <rect key="frame" x="26" y="72" width="499" height="31"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
@@ -51,7 +52,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Directions" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t34-aw-B9R">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t34-aw-B9R">
                                 <rect key="frame" x="27" y="248" width="548" height="168"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
@@ -63,7 +64,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comments" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-wA-QLB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFZ-wA-QLB">
                                 <rect key="frame" x="26" y="424" width="548" height="156"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
@@ -80,7 +81,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="85% Positive" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-dt-Bnj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="85% Positive" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-dt-Bnj">
                                 <rect key="frame" x="26" y="169" width="499" height="50"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
@@ -172,16 +173,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
+                                <rect key="frame" x="0.0" y="152" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="MKc-Dc-edm"/>
+                                </constraints>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-g7-TDA">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="eh7-1O-dRH" id="nIW-d8-eVG"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
+                                <rect key="frame" x="0.0" y="152" width="600" height="448"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eh7-1O-dRH" id="AN8-vh-Eh1"/>
+                                    <outlet property="delegate" destination="eh7-1O-dRH" id="hFF-nd-QKY"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cgS-PL-hUi" firstAttribute="centerY" secondItem="xTJ-MC-Jka" secondAttribute="centerY" id="L4e-og-i9u"/>
-                            <constraint firstItem="cgS-PL-hUi" firstAttribute="top" secondItem="xTJ-MC-Jka" secondAttribute="topMargin" id="bvA-jq-p3K"/>
-                            <constraint firstAttribute="trailing" secondItem="cgS-PL-hUi" secondAttribute="trailing" id="cMI-qT-QSL"/>
-                            <constraint firstItem="cgS-PL-hUi" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="nIP-vZ-Lza"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="TEP-2o-8LX"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="top" secondItem="cgS-PL-hUi" secondAttribute="top" id="WFg-OA-nYO"/>
+                            <constraint firstItem="jbc-g7-TDA" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="YdG-aj-yVT"/>
+                            <constraint firstAttribute="trailing" secondItem="cgS-PL-hUi" secondAttribute="trailing" id="Zrs-rA-3cp"/>
+                            <constraint firstAttribute="trailing" secondItem="jbc-g7-TDA" secondAttribute="trailing" id="bSt-BY-eaY"/>
+                            <constraint firstItem="jbc-g7-TDA" firstAttribute="top" secondItem="M4n-xW-fhZ" secondAttribute="bottom" id="bh2-s1-vBH"/>
+                            <constraint firstAttribute="trailing" secondItem="7Zn-Im-lof" secondAttribute="trailing" id="bt9-MV-5CG"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="top" secondItem="jbc-g7-TDA" secondAttribute="bottom" id="esh-HE-WOO"/>
+                            <constraint firstItem="1lE-Ni-B0m" firstAttribute="top" secondItem="7Zn-Im-lof" secondAttribute="bottom" id="scs-62-I8W"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="yAm-gj-AzI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HeF-Xt-TPL">
@@ -196,7 +225,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="cgS-PL-hUi" id="eyt-eS-pri"/>
+                        <outlet property="mapView" destination="cgS-PL-hUi" id="FvE-yl-WVy"/>
+                        <outlet property="search" destination="jbc-g7-TDA" id="F9I-pc-dx4"/>
+                        <outlet property="searchTableView" destination="7Zn-Im-lof" id="SXm-Vr-2va"/>
                         <segue destination="2dB-tB-w3A" kind="show" identifier="ShowRestroomDetails" id="7KC-tj-H2A"/>
                     </connections>
                 </viewController>

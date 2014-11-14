@@ -21,9 +21,12 @@
 #import "RRMapKitAnnotation.h"
 #import "RRMapSearchViewController.h"
 #import "Reachability.h"
+#import "SPGooglePlacesAutocompletePlace.h"
+#import "SPGooglePlacesAutocompleteQuery.h"
 
 BOOL initialZoomComplete = NO;
 BOOL syncComplete = NO;
+BOOL internetIsAccessible = NO;
 
 @implementation RRMapViewController
 {
@@ -31,7 +34,11 @@ BOOL syncComplete = NO;
     CLLocationManager *locationManager;
     MBProgressHUD *hud;
     NSManagedObjectContext *context;
-    BOOL internetIsAccessible;
+    
+    // search
+    NSArray *searchResultPlaces;
+    SPGooglePlacesAutocompleteQuery *searchQuery;
+    BOOL shouldBeginEditing;
 }
 
 - (void)viewDidLoad
@@ -46,7 +53,39 @@ BOOL syncComplete = NO;
         self.mapView.delegate = self;
         self.mapView.mapType = MKMapTypeStandard;
         self.mapView.showsUserLocation = YES;
-    
+        
+        // set up search
+        searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
+        searchQuery.key = RRCONSTANTS_API_KEY_GOOGLE_PLACES;
+        searchQuery.radius = RRCONSTANTS_SEARCH_QUERY_RADIUS;
+        self.search.delegate = self;
+        self.search.placeholder = RRCONSTANTS_SEARCH_BAR_DEFAULT_TEXT;
+        self.searchTableView.delegate = self;
+        self.searchTableView.dataSource = self;
+        self.searchTableView.hidden = YES;
+        shouldBeginEditing = YES;
+        
+        // style keyboard
+        for(UIView *searchSubView in [self.search subviews])
+        {
+            if([searchSubView conformsToProtocol:@protocol(UITextInputTraits)])
+            {
+                [(UITextField *)searchSubView setReturnKeyType: UIReturnKeyDone];
+                [(UITextField *)searchSubView setEnablesReturnKeyAutomatically:NO];
+            }
+            else
+            {
+                for(UIView *searchSubSubView in [searchSubView subviews])
+                {
+                    if([searchSubSubView conformsToProtocol:@protocol(UITextInputTraits)])
+                    {
+                        [(UITextField *)searchSubSubView setReturnKeyType: UIReturnKeyDone];
+                        [(UITextField *)searchSubSubView setEnablesReturnKeyAutomatically:NO];
+                    }
+                }
+            }
+        }
+        
         // set up HUD
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode = MBProgressHUDAnimationFade;
@@ -63,6 +102,7 @@ BOOL syncComplete = NO;
         RestroomManager *restroomManager = (RestroomManager *)[RestroomManager sharedInstance];
         restroomManager.delegate = self;
         
+        // set up NSManagedObjectContext
         context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     }
 }
@@ -105,7 +145,7 @@ BOOL syncComplete = NO;
                 
                     if(strongSelf)
                     {
-                        strongSelf->internetIsAccessible = YES;
+                        internetIsAccessible = YES;
                     
                         // if not synced yet, fetch restrooms newly created and updated
                         if(!syncComplete)
@@ -134,7 +174,7 @@ BOOL syncComplete = NO;
                 
                     if(strongSelf)
                     {
-                        strongSelf->internetIsAccessible = NO;
+                        internetIsAccessible = NO;
                         
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_INFO message:RRCONSTANTS_ALERT_NO_INTERNET_TEXT delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
                         [alert show];
@@ -203,7 +243,7 @@ BOOL syncComplete = NO;
 - (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
 {
     // default : @"%d elements"
-    return @"%d Restrooms";
+    return RRCONSTANTS_PIN_CLUSTER_TITLE;
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
@@ -353,6 +393,79 @@ BOOL syncComplete = NO;
     [self recenterMapToPlacemark:placemark];
 }
 
+#pragma mark - UITableViewDataSource methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [searchResultPlaces count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.searchTableView dequeueReusableCellWithIdentifier:RRCONSTANTS_SEARCH_CELL_REUSE_IDENTIFIER];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:RRCONSTANTS_SEARCH_CELL_REUSE_IDENTIFIER];
+    }
+    
+    cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
+    
+    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error)
+     {
+         if (error)
+         {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_PLACE_NOT_FOUND delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+             
+             [alert show];
+         }
+         else if (placemark)
+         {
+             // placemark selected
+             [self mapSearchPlacemarkSelected:placemark cellName:[self tableView:tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+             
+             // dismiss search
+             [self.searchTableView deselectRowAtIndexPath:indexPath animated:NO];
+             [self dismissSearch];
+         }
+     }];
+}
+
+#pragma mark - UISearchBar Delegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    // if search text is cleared
+    if([searchText length] == 0)
+    {
+        [self dismissSearch];
+        self.searchTableView.hidden = YES;
+    }
+    else // search being made
+    {
+        if(self.searchTableView.hidden)
+        {
+            self.searchTableView.hidden = NO;
+        }
+        
+        [self handleSearchForSearchString:searchText];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissSearch];
+}
+
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -375,7 +488,55 @@ BOOL syncComplete = NO;
     }
 }
 
-# pragma mark - Helper methods
+#pragma mark - Helper methods
+
+
+- (SPGooglePlacesAutocompletePlace *)placeAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [searchResultPlaces objectAtIndex:indexPath.row];
+}
+
+- (void)handleSearchForSearchString:(NSString *)searchString
+{
+    //    searchQuery.location = self.mapView.userLocation.coordinate;
+    searchQuery.input = searchString;
+    
+    [searchQuery fetchPlaces:^(NSArray *places, NSError *error)
+     {
+         if (error)
+         {
+             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+             
+             [alert show];
+         }
+         else
+         {
+             searchResultPlaces = places;
+             //[self.searchDisplayController.searchResultsTableView reloadData];
+             [self.searchTableView reloadData];
+         }
+     }];
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+//    if (shouldBeginEditing)
+//    {
+//        // Animate in the table view.
+//        NSTimeInterval animationDuration = 0.3;
+//        [UIView beginAnimations:nil context:NULL];
+//        [UIView setAnimationDuration:animationDuration];
+//        self.searchDisplayController.searchResultsTableView.alpha = 1.0;
+//        [UIView commitAnimations];
+//        
+//        [self.searchDisplayController.searchBar setShowsCancelButton:YES animated:YES];
+//    }
+    
+    BOOL boolToReturn = shouldBeginEditing;
+    shouldBeginEditing = YES;
+    
+    return boolToReturn;
+}
 
 - (IBAction)unwindToMapViewController:(UIStoryboardSegue *)unwindSegue
 {
@@ -414,19 +575,6 @@ BOOL syncComplete = NO;
     [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
 }
 
-//- (void)dismissSearchControllerWhileStayingActive
-//{
-//    // Animate out the table view.
-//    NSTimeInterval animationDuration = 0.3;
-//    [UIView beginAnimations:nil context:NULL];
-//    [UIView setAnimationDuration:animationDuration];
-//    self.searchDisplayController.searchResultsTableView.alpha = 0.0;
-//    [UIView commitAnimations];
-//
-//    [self.searchDisplayController.searchBar setShowsCancelButton:NO animated:YES];
-//    [self.searchDisplayController.searchBar resignFirstResponder];
-//}
-
 - (UIImage *)resizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height
 {
     CGSize newSize = CGSizeMake(width, height);
@@ -437,6 +585,17 @@ BOOL syncComplete = NO;
     UIGraphicsEndImageContext();
     
     return resizedImage;
+}
+
+- (void)dismissSearch
+{
+    self.search.text = @"";
+    
+    [self.search performSelector: @selector(resignFirstResponder)
+                    withObject: nil
+                    afterDelay: 0.1];
+    
+    self.searchTableView.hidden = YES;
 }
 
 @end
