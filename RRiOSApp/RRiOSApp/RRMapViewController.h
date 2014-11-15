@@ -25,5 +25,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
+@property (weak, nonatomic) IBOutlet UIButton *currentLocationButton;
+
 
 @end

@@ -442,6 +442,20 @@ BOOL plotComplete = NO;
     }
 }
 
+#pragma mark - Touch
+
+- (IBAction)currentLocationButtonPressed:(id)sender
+{
+    NSLog(@"Button pressed!");
+    
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    // zoom to initial location
+    [self zoomToLatitude:coordinate.latitude longitude:coordinate.longitude];
+}
+
+
 #pragma mark - Helper methods
 
 

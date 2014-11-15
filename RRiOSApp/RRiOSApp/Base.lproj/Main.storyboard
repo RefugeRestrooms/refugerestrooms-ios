@@ -200,6 +200,9 @@
                                     <color key="titleColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="currentLocationButtonPressed:" destination="eh7-1O-dRH" eventType="touchUpInside" id="taw-dS-Rhi"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
@@ -260,6 +263,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="currentLocationButton" destination="Nvr-1r-G8S" id="0UZ-5c-HAV"/>
                         <outlet property="mapView" destination="cgS-PL-hUi" id="FvE-yl-WVy"/>
                         <outlet property="search" destination="jbc-g7-TDA" id="F9I-pc-dx4"/>
                         <outlet property="searchTableView" destination="7Zn-Im-lof" id="SXm-Vr-2va"/>
