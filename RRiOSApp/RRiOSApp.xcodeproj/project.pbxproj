@@ -17,8 +17,6 @@
 		CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */; };
 		CE2EE00C1A0959AD00BE1912 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CE2EE00B1A0959AC00BE1912 /* Images */; };
 		CE2EE00D1A0959AE00BE1912 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = CE2EE00B1A0959AC00BE1912 /* Images */; };
-		CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
-		CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */; };
 		CE31C65E1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE31C65F1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE4AB6571A11DA6D002C559D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4AB6561A11DA6D002C559D /* CoreLocation.framework */; };
@@ -43,6 +41,14 @@
 		CE79545919F857600004179B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE79545819F857600004179B /* CoreGraphics.framework */; };
 		CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
 		CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */; };
+		CED01C161A16CB25006D6E89 /* filter-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C151A16CB25006D6E89 /* filter-25.png */; };
+		CED01C171A16CB25006D6E89 /* filter-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C151A16CB25006D6E89 /* filter-25.png */; };
+		CED01C1C1A16CCF9006D6E89 /* plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1B1A16CCF9006D6E89 /* plus-25.png */; };
+		CED01C1D1A16CCF9006D6E89 /* plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1B1A16CCF9006D6E89 /* plus-25.png */; };
+		CED01C1F1A16CDE2006D6E89 /* center_direction-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */; };
+		CED01C201A16CDE2006D6E89 /* center_direction-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */; };
+		CED01C231A16CE56006D6E89 /* RRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED01C221A16CE56006D6E89 /* RRFilterViewController.m */; };
+		CED01C241A16CE56006D6E89 /* RRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED01C221A16CE56006D6E89 /* RRFilterViewController.m */; };
 		CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */; };
@@ -77,8 +83,6 @@
 		CE1F5E6F19DA1AA1005F3B04 /* RestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomBuilder.h; sourceTree = "<group>"; };
 		CE1F5E7019DA1AA1005F3B04 /* RestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomBuilder.m; sourceTree = "<group>"; };
 		CE2EE00B1A0959AC00BE1912 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapSearchViewController.h; sourceTree = "<group>"; };
-		CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapSearchViewController.m; sourceTree = "<group>"; };
 		CE31C65C1A0C0D7500682429 /* AppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		CE31C65D1A0C0D7500682429 /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
 		CE4AB6561A11DA6D002C559D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -109,6 +113,11 @@
 		CE79545819F857600004179B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CEA950CD19E3236900D8553D /* RestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA950CE19E3236900D8553D /* RestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestroomDetailsViewController.m; sourceTree = "<group>"; };
+		CED01C151A16CB25006D6E89 /* filter-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-25.png"; sourceTree = "<group>"; };
+		CED01C1B1A16CCF9006D6E89 /* plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-25.png"; sourceTree = "<group>"; };
+		CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_direction-25.png"; sourceTree = "<group>"; };
+		CED01C211A16CE56006D6E89 /* RRFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRFilterViewController.h; sourceTree = "<group>"; };
+		CED01C221A16CE56006D6E89 /* RRFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRFilterViewController.m; sourceTree = "<group>"; };
 		CEE0A92719EDB08400B5846B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEE0A92919EDBB5700B5846B /* RRMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapViewController.h; sourceTree = "<group>"; };
 		CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapViewController.m; sourceTree = "<group>"; };
@@ -190,6 +199,9 @@
 				CE2EE00B1A0959AC00BE1912 /* Images */,
 				CEECCCB21A044CE300A6CA11 /* button_unisex.png */,
 				CEECCCB31A044CE300A6CA11 /* button_accessibility.png */,
+				CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */,
+				CED01C151A16CB25006D6E89 /* filter-25.png */,
+				CED01C1B1A16CCF9006D6E89 /* plus-25.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
 				CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */,
 				CE31C65C1A0C0D7500682429 /* AppState.h */,
@@ -208,12 +220,12 @@
 				CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */,
 				CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */,
 				CE1F5E5C19D9FD9D005F3B04 /* RestroomManagerDelegate.h */,
+				CED01C211A16CE56006D6E89 /* RRFilterViewController.h */,
+				CED01C221A16CE56006D6E89 /* RRFilterViewController.m */,
 				CEE0A93519EDC68600B5846B /* RRMapKitAnnotation.h */,
 				CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */,
 				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
 				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
-				CE2EE0121A095BE300BE1912 /* RRMapSearchViewController.h */,
-				CE2EE0131A095BE300BE1912 /* RRMapSearchViewController.m */,
 				CE6CB6BC1A1140A600B90B52 /* ADClusterAnnotation.h */,
 				CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */,
 				CE6CB6BE1A1140A600B90B52 /* ADClusterMapView.h */,
@@ -343,8 +355,11 @@
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
 				CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */,
+				CED01C161A16CB25006D6E89 /* filter-25.png in Resources */,
 				CE2EE00C1A0959AD00BE1912 /* Images in Resources */,
+				CED01C1F1A16CDE2006D6E89 /* center_direction-25.png in Resources */,
 				CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */,
+				CED01C1C1A16CCF9006D6E89 /* plus-25.png in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,9 +368,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED01C1D1A16CCF9006D6E89 /* plus-25.png in Resources */,
 				CE2EE00D1A0959AE00BE1912 /* Images in Resources */,
 				CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */,
+				CED01C171A16CB25006D6E89 /* filter-25.png in Resources */,
 				CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */,
+				CED01C201A16CDE2006D6E89 /* center_direction-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,11 +420,11 @@
 				CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
 				CE6CB6C61A1140A600B90B52 /* ADClusterMapView.m in Sources */,
 				CE6CB6C81A1140A600B90B52 /* ADMapCluster.m in Sources */,
+				CED01C231A16CE56006D6E89 /* RRFilterViewController.m in Sources */,
 				CE31C65E1A0C0D7500682429 /* AppState.m in Sources */,
 				CE6CB6C41A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
 				CE6CB6CA1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
-				CE2EE0141A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
 				CE787FA41A003A69008C4E1A /* Restroom.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
 				CE787FC51A02C930008C4E1A /* Constants.m in Sources */,
@@ -423,13 +441,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED01C241A16CE56006D6E89 /* RRFilterViewController.m in Sources */,
 				CE6CB6C71A1140A600B90B52 /* ADClusterMapView.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
 				CE6CB6CB1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
 				CE6CB6C51A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
 				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
-				CE2EE0151A095BE300BE1912 /* RRMapSearchViewController.m in Sources */,
 				CE31C65F1A0C0D7500682429 /* AppState.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
 				CE6CB6C91A1140A600B90B52 /* ADMapCluster.m in Sources */,

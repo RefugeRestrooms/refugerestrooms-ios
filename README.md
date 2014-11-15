@@ -16,3 +16,7 @@ MBProgressHUD [![Reference Status](https://www.versioneye.com/objective-c/mbprog
 Reachability [![Reference Status](https://www.versioneye.com/objective-c/reachability/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/reachability/references)
 <br>
 SPGooglePlacesAutocomplete [![Reference Status](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/references)
+
+#### Other
+
+Icons http://icons8.com/license/

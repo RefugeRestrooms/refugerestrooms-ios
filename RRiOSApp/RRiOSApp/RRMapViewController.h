@@ -12,9 +12,8 @@
 
 #import "ADClusterMapView.h"
 #import "RestroomManagerDelegate.h"
-#import "RRMapSearchViewController.h"
 
-@interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, RRMapSearchDelegate, UISearchBarDelegate
+@interface RRMapViewController : UIViewController <ADClusterMapViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate, RestroomManagerDelegate, UISearchBarDelegate
 , UITableViewDataSource, UITableViewDelegate>
 
 // ADClusterMapView

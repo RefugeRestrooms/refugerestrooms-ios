@@ -19,14 +19,14 @@
 #import "RestroomManager.h"
 #import "RestroomDetailsViewController.h"
 #import "RRMapKitAnnotation.h"
-#import "RRMapSearchViewController.h"
 #import "Reachability.h"
 #import "SPGooglePlacesAutocompletePlace.h"
 #import "SPGooglePlacesAutocompleteQuery.h"
 
 BOOL initialZoomComplete = NO;
-BOOL syncComplete = NO;
 BOOL internetIsAccessible = NO;
+BOOL syncComplete = NO;
+BOOL plotComplete = NO;
 
 @implementation RRMapViewController
 {
@@ -176,8 +176,17 @@ BOOL internetIsAccessible = NO;
                     {
                         internetIsAccessible = NO;
                         
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_INFO message:RRCONSTANTS_ALERT_NO_INTERNET_TEXT delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
-                        [alert show];
+                        strongSelf->hud.hidden = YES;
+                        
+                        if(!plotComplete)
+                        {
+                            // alert user
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_INFO message:RRCONSTANTS_ALERT_NO_INTERNET_TEXT delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+                            [alert show];
+                            
+                            // plot restrooms saved to Core Data
+                            [strongSelf fetchAndPlotRestrooms];
+                        }
                     }
                 }
              );
@@ -185,37 +194,6 @@ BOOL internetIsAccessible = NO;
     
         [internetReachability startNotifier];
     }
-}
-
-- (void)plotRestrooms:(NSArray *)restrooms
-{
-    // remove existing annotations
-    for (id<MKAnnotation> annotation in self.mapView.annotations)
-    {
-        [self.mapView removeAnnotation:annotation];
-    }
-    
-    NSMutableArray *annotations = [NSMutableArray array];
-    
-    NSLog(@"Num Restrooms to plot: %i", [restrooms count]);
-    
-    // add all annotations
-    for (Restroom *restroom in restrooms)
-    {
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = [restroom.latitude doubleValue];
-        coordinate.longitude = [restroom.longitude doubleValue];
-    
-        // create map location object
-        RRMapKitAnnotation *annotation = [[RRMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
-        annotation.restroom = restroom;
-        
-        // add annotation
-        [annotations addObject:annotation];
-    }
-    
-    // set annotations
-    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
 }
 
 #pragma mark - ADClusterMapView methods
@@ -353,24 +331,7 @@ BOOL internetIsAccessible = NO;
 
 - (void)didBuildRestrooms
 {
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
-    
-    NSError *error = nil;
-    NSArray *allRestrooms = [context executeFetchRequest:fetchRequest error:&error];
-    
-    if(error)
-    {
-        // TODO: Handle error fetching Restrooms from Core Data
-    }
-    else
-    {
-        [self plotRestrooms:allRestrooms];
-        
-        hud.mode = MBProgressHUDModeCustomView;
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:RRCONSTANTS_COMPLETION_GRAPHIC]];
-        hud.labelText = RRCONSTANTS_COMPLETION_TEXT;
-        [hud hide:YES afterDelay:1];
-    }
+    [self fetchAndPlotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
@@ -479,13 +440,6 @@ BOOL internetIsAccessible = NO;
         
         destinationController.restroom = originalAnnotation.restroom;
     }
-    
-    if([[segue identifier] isEqualToString:RRCONSTANTS_TRANSITION_NAME_MAP_SEARCH])
-    {
-        RRMapSearchViewController *destinationController = [segue destinationViewController];
-        
-        destinationController.delegate = self;
-    }
 }
 
 #pragma mark - Helper methods
@@ -508,6 +462,8 @@ BOOL internetIsAccessible = NO;
              UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
              
              [alert show];
+             
+             [self dismissSearch];
          }
          else
          {
@@ -542,10 +498,10 @@ BOOL internetIsAccessible = NO;
 {
     UIViewController* sourceViewController = unwindSegue.sourceViewController;
     
-    if ([sourceViewController isKindOfClass:[RRMapSearchViewController class]])
-    {
-        // handle unwinds coming from Search
-    }
+//    if ([sourceViewController isKindOfClass:[RRMapSearchViewController class]])
+//    {
+//        // handle unwinds coming from Search
+//    }
 }
 
 - (void)zoomToLatitude:(float)latitude longitude:(float)longitude
@@ -596,6 +552,61 @@ BOOL internetIsAccessible = NO;
                     afterDelay: 0.1];
     
     self.searchTableView.hidden = YES;
+}
+
+- (void)fetchAndPlotRestrooms
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
+    
+    NSError *error = nil;
+    NSArray *allRestrooms = [context executeFetchRequest:fetchRequest error:&error];
+    
+    if(error)
+    {
+        // TODO: Handle error fetching Restrooms from Core Data
+    }
+    else
+    {
+        [self plotRestrooms:allRestrooms];
+        
+        hud.mode = MBProgressHUDModeCustomView;
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:RRCONSTANTS_COMPLETION_GRAPHIC]];
+        hud.labelText = RRCONSTANTS_COMPLETION_TEXT;
+        [hud hide:YES afterDelay:1];
+        
+        plotComplete = YES;
+    }
+}
+
+- (void)plotRestrooms:(NSArray *)restrooms
+{
+    // remove existing annotations
+    for (id<MKAnnotation> annotation in self.mapView.annotations)
+    {
+        [self.mapView removeAnnotation:annotation];
+    }
+    
+    NSMutableArray *annotations = [NSMutableArray array];
+    
+    NSLog(@"Num Restrooms to plot: %i", [restrooms count]);
+    
+    // add all annotations
+    for (Restroom *restroom in restrooms)
+    {
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = [restroom.latitude doubleValue];
+        coordinate.longitude = [restroom.longitude doubleValue];
+        
+        // create map location object
+        RRMapKitAnnotation *annotation = [[RRMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
+        annotation.restroom = restroom;
+        
+        // add annotation
+        [annotations addObject:annotation];
+    }
+    
+    // set annotations
+    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
 }
 
 @end
