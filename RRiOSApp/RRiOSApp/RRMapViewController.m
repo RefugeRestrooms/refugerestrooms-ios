@@ -23,10 +23,12 @@
 #import "SPGooglePlacesAutocompletePlace.h"
 #import "SPGooglePlacesAutocompleteQuery.h"
 
-BOOL initialZoomComplete = NO;
-BOOL internetIsAccessible = NO;
-BOOL syncComplete = NO;
-BOOL plotComplete = NO;
+static BOOL initialZoomComplete = NO;
+static BOOL internetIsAccessible = NO;
+static BOOL syncComplete = NO;
+static BOOL plotComplete = NO;
+static BOOL isFilteredByUnisex = NO;
+static BOOL isFilteredByAccessibility = NO;
 
 @implementation RRMapViewController
 {
@@ -34,6 +36,10 @@ BOOL plotComplete = NO;
     CLLocationManager *locationManager;
     MBProgressHUD *hud;
     NSManagedObjectContext *context;
+    
+    // navigation
+    UIBarButtonItem *unisexFilterButton;
+    UIBarButtonItem *accessibilityFilterButton;
     
     // search
     NSArray *searchResultPlaces;
@@ -45,7 +51,22 @@ BOOL plotComplete = NO;
 {
     [super viewDidLoad];
     
+    // set upnavigation bar
     self.navigationController.navigationBar.topItem.title = RRCONSTANTS_APP_NAME;
+    
+    // navigation bar items
+    unisexFilterButton = [[UIBarButtonItem alloc] init];
+    accessibilityFilterButton = [[UIBarButtonItem alloc] init];
+    unisexFilterButton.image = [UIImage imageNamed:RRCONSTANTS_NAVIGATION_BAR_UNISEX_IMAGE_NAME];
+    accessibilityFilterButton.image = [UIImage imageNamed:RRCONSTANTS_NAVIGATION_BAR_ACCESSIBILITY_IMAGE_NAME];
+    unisexFilterButton.tintColor = [self colorForFilterState:isFilteredByUnisex];
+    accessibilityFilterButton.tintColor = [self colorForFilterState:isFilteredByAccessibility];
+    unisexFilterButton.target = self;
+    unisexFilterButton.action = @selector(unisexFilterButtonTouched);
+    accessibilityFilterButton.target = self;
+    accessibilityFilterButton.action = @selector(accessibilityFilterButtonTouched);
+    
+    self.navigationController.navigationBar.topItem.leftBarButtonItems = @[unisexFilterButton, accessibilityFilterButton];
     
     if(!initialZoomComplete)
     {
@@ -185,7 +206,11 @@ BOOL plotComplete = NO;
                             [alert show];
                             
                             // plot restrooms saved to Core Data
-                            [strongSelf fetchAndPlotRestrooms];
+                            NSArray *restrooms = [strongSelf fetchRestrooms];
+                            if(restrooms)
+                            {
+                                [strongSelf plotRestrooms:restrooms];
+                            }
                         }
                     }
                 }
@@ -331,7 +356,12 @@ BOOL plotComplete = NO;
 
 - (void)didBuildRestrooms
 {
-    [self fetchAndPlotRestrooms];
+    NSArray *restrooms = [self fetchRestrooms];
+    
+    if(restrooms)
+    {
+        [self plotRestrooms:restrooms];
+    }
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
@@ -446,8 +476,6 @@ BOOL plotComplete = NO;
 
 - (IBAction)currentLocationButtonPressed:(id)sender
 {
-    NSLog(@"Button pressed!");
-    
     CLLocation *location = [locationManager location];
     CLLocationCoordinate2D coordinate = [location coordinate];
     
@@ -455,6 +483,27 @@ BOOL plotComplete = NO;
     [self zoomToLatitude:coordinate.latitude longitude:coordinate.longitude];
 }
 
+- (void)unisexFilterButtonTouched
+{
+    NSLog(@"Unisex filter touched!");
+    
+    isFilteredByUnisex = !isFilteredByUnisex;
+    
+    unisexFilterButton.tintColor = [self colorForFilterState:isFilteredByUnisex];
+    
+    // TODO: re-plot
+}
+
+- (void)accessibilityFilterButtonTouched
+{
+        NSLog(@"Accessibility filter touched!");
+    
+    isFilteredByAccessibility = !isFilteredByAccessibility;
+    
+    accessibilityFilterButton.tintColor = [self colorForFilterState:isFilteredByAccessibility];
+    
+    // TODO: re-plot
+}
 
 #pragma mark - Helper methods
 
@@ -568,7 +617,7 @@ BOOL plotComplete = NO;
     self.searchTableView.hidden = YES;
 }
 
-- (void)fetchAndPlotRestrooms
+- (NSArray *)fetchRestrooms
 {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
     
@@ -578,18 +627,11 @@ BOOL plotComplete = NO;
     if(error)
     {
         // TODO: Handle error fetching Restrooms from Core Data
-    }
-    else
-    {
-        [self plotRestrooms:allRestrooms];
         
-        hud.mode = MBProgressHUDModeCustomView;
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:RRCONSTANTS_COMPLETION_GRAPHIC]];
-        hud.labelText = RRCONSTANTS_COMPLETION_TEXT;
-        [hud hide:YES afterDelay:1];
-        
-        plotComplete = YES;
+        return nil;
     }
+    
+    return allRestrooms;
 }
 
 - (void)plotRestrooms:(NSArray *)restrooms
@@ -621,6 +663,31 @@ BOOL plotComplete = NO;
     
     // set annotations
     [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
+    
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:RRCONSTANTS_COMPLETION_GRAPHIC]];
+    hud.labelText = RRCONSTANTS_COMPLETION_TEXT;
+    [hud hide:YES afterDelay:1];
+    
+    plotComplete = YES;
+}
+
+- (UIColor *)colorForFilterState:(BOOL)isFiltered
+{
+    if(isFiltered)
+    {
+        // light purple
+        return [UIColor
+                colorWithRed:RRCONSTANTS_COLOR_LIGHTPURPLE_RED
+                green:RRCONSTANTS_COLOR_LIGHTPURPLE_GREEN
+                blue:RRCONSTANTS_COLOR_LIGHTPURPLE_BLUE
+                alpha:1.0
+        ];
+    }
+    else
+    {
+        return [UIColor whiteColor];
+    }
 }
 
 @end

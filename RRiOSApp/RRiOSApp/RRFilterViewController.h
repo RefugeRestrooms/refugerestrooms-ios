@@ -10,4 +10,10 @@
 
 @interface RRFilterViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *unisexFilterLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *unisexFilterSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *accessibilityFilterLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *accessibilityFilterSwitch;
+
+
 @end

@@ -20,12 +20,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // change navigation style
-    [[UINavigationBar appearance] setBarTintColor:[UIColor
-                                                   colorWithRed: RRCONSTANTS_COLOR_DARKPURPLE_RED
-                                                   green:RRCONSTANTS_COLOR_DARKPURPLE_GREEN
-                                                   blue:RRCONSTANTS_COLOR_DARKPURPLE_BLUE
-                                                   alpha:1.0]];
+    UIColor *themeColor = [UIColor
+                           colorWithRed: RRCONSTANTS_COLOR_DARKPURPLE_RED
+                           green:RRCONSTANTS_COLOR_DARKPURPLE_GREEN
+                           blue:RRCONSTANTS_COLOR_DARKPURPLE_BLUE
+                           alpha:1.0];
+    
+    // navigation style
+    [[UINavigationBar appearance] setBarTintColor:themeColor];
     [[UINavigationBar appearance] setTranslucent:NO];
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor whiteColor], NSForegroundColorAttributeName,

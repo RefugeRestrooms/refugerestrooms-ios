@@ -252,12 +252,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="HeF-Xt-TPL">
-                        <barButtonItem key="leftBarButtonItem" image="filter-25.png" style="plain" id="jCh-jN-vYg" userLabel="Filter">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="hSC-yC-TkM" kind="show" id="3mJ-R6-jNI"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus-25.png" style="plain" id="UFP-VT-ydX">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -293,10 +287,10 @@
             </objects>
             <point key="canvasLocation" x="181" y="933"/>
         </scene>
-        <!--View Controller - Filter Scene-->
+        <!--View Controller - Filter-->
         <scene sceneID="BFS-Jp-hkC">
             <objects>
-                <viewController id="hSC-yC-TkM" userLabel="View Controller - Filter Scene" customClass="RRFilterViewController" sceneMemberID="viewController">
+                <viewController id="hSC-yC-TkM" userLabel="View Controller - Filter" customClass="RRFilterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oxM-29-rsC"/>
                         <viewControllerLayoutGuide type="bottom" id="YfW-sl-0lC"/>
@@ -304,8 +298,55 @@
                     <view key="view" contentMode="scaleToFill" id="II5-nf-heC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L40-T4-mH5" userLabel="Label - Unisex">
+                                <rect key="frame" x="16" y="121" width="252" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynX-26-PR4" userLabel="Label - Accessibility">
+                                <rect key="frame" x="17" y="193" width="252" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dqh-1g-uur" userLabel="Switch - Unisex">
+                                <rect key="frame" x="276" y="116" width="51" height="31"/>
+                                <color key="onTintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="unisexFilterSwitchTouched:" destination="hSC-yC-TkM" eventType="touchUpInside" id="ckU-cx-Nfb"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y0c-3C-dAc" userLabel="Switch - Accessibility">
+                                <rect key="frame" x="276" y="188" width="51" height="31"/>
+                                <color key="onTintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="accessibilityFilterSwitchTouched:" destination="hSC-yC-TkM" eventType="touchUpInside" id="q5K-cL-yza"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YfW-sl-0lC" firstAttribute="top" secondItem="Y0c-3C-dAc" secondAttribute="bottom" constant="381" id="6fb-Zd-nMU"/>
+                            <constraint firstItem="Dqh-1g-uur" firstAttribute="centerX" secondItem="II5-nf-heC" secondAttribute="centerX" id="8dI-Sv-Vim"/>
+                            <constraint firstItem="L40-T4-mH5" firstAttribute="centerY" secondItem="Dqh-1g-uur" secondAttribute="centerY" id="A4g-Rk-aJj"/>
+                            <constraint firstItem="L40-T4-mH5" firstAttribute="leading" secondItem="ynX-26-PR4" secondAttribute="leading" id="Dxd-8g-h5d"/>
+                            <constraint firstItem="Dqh-1g-uur" firstAttribute="leading" secondItem="L40-T4-mH5" secondAttribute="trailing" constant="8" symbolic="YES" id="HOm-Pb-jCk"/>
+                            <constraint firstItem="L40-T4-mH5" firstAttribute="trailing" secondItem="ynX-26-PR4" secondAttribute="trailing" id="XCU-li-x5m"/>
+                            <constraint firstItem="Y0c-3C-dAc" firstAttribute="centerY" secondItem="ynX-26-PR4" secondAttribute="centerY" id="XEB-fx-eai"/>
+                            <constraint firstItem="ynX-26-PR4" firstAttribute="top" secondItem="L40-T4-mH5" secondAttribute="bottom" constant="51" id="fxU-I7-gwo"/>
+                            <constraint firstItem="ynX-26-PR4" firstAttribute="leading" secondItem="II5-nf-heC" secondAttribute="leadingMargin" id="uJI-oC-ujk"/>
+                            <constraint firstItem="ynX-26-PR4" firstAttribute="leading" secondItem="II5-nf-heC" secondAttribute="leadingMargin" id="utt-fQ-S9q"/>
+                            <constraint firstItem="Y0c-3C-dAc" firstAttribute="leading" secondItem="Dqh-1g-uur" secondAttribute="leading" id="zji-kx-W9y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessibilityFilterLabel" destination="ynX-26-PR4" id="ZsM-8B-9v9"/>
+                        <outlet property="accessibilityFilterSwitch" destination="Y0c-3C-dAc" id="Reg-66-tCL"/>
+                        <outlet property="unisexFilterLabel" destination="L40-T4-mH5" id="iSQ-bi-0dt"/>
+                        <outlet property="unisexFilterSwitch" destination="Dqh-1g-uur" id="uiU-Zo-TpF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cva-9a-7LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -316,7 +357,6 @@
         <image name="button_accessibility.png" width="52" height="52"/>
         <image name="button_unisex.png" width="51" height="52"/>
         <image name="center_direction-25.png" width="25" height="25"/>
-        <image name="filter-25.png" width="25" height="25"/>
         <image name="plus-25.png" width="25" height="25"/>
     </resources>
     <color key="tintColor" red="0.51372549019607838" green="0.46666666666666667" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
