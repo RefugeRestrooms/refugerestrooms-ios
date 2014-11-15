@@ -173,10 +173,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
-                                <rect key="frame" x="0.0" y="152" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-PL-hUi" customClass="ADClusterMapView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="600"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="MKc-Dc-edm"/>
+                                    <constraint firstAttribute="height" constant="600" id="l7a-we-yZh"/>
                                 </constraints>
                             </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-g7-TDA">
@@ -190,8 +190,19 @@
                                     <outlet property="delegate" destination="eh7-1O-dRH" id="nIW-d8-eVG"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
-                                <rect key="frame" x="0.0" y="152" width="600" height="448"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvr-1r-G8S">
+                                <rect key="frame" x="8" y="112" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="VMm-ym-lyO"/>
+                                    <constraint firstAttribute="height" constant="32" id="lvj-rD-cxh"/>
+                                </constraints>
+                                <state key="normal" image="center_direction-25.png">
+                                    <color key="titleColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="eh7-1O-dRH" id="AN8-vh-Eh1"/>
@@ -201,17 +212,41 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Zn-Im-lof" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="TEP-2o-8LX"/>
-                            <constraint firstItem="7Zn-Im-lof" firstAttribute="top" secondItem="cgS-PL-hUi" secondAttribute="top" id="WFg-OA-nYO"/>
-                            <constraint firstItem="jbc-g7-TDA" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="YdG-aj-yVT"/>
-                            <constraint firstAttribute="trailing" secondItem="cgS-PL-hUi" secondAttribute="trailing" id="Zrs-rA-3cp"/>
-                            <constraint firstAttribute="trailing" secondItem="jbc-g7-TDA" secondAttribute="trailing" id="bSt-BY-eaY"/>
-                            <constraint firstItem="jbc-g7-TDA" firstAttribute="top" secondItem="M4n-xW-fhZ" secondAttribute="bottom" id="bh2-s1-vBH"/>
-                            <constraint firstAttribute="trailing" secondItem="7Zn-Im-lof" secondAttribute="trailing" id="bt9-MV-5CG"/>
-                            <constraint firstItem="cgS-PL-hUi" firstAttribute="top" secondItem="jbc-g7-TDA" secondAttribute="bottom" id="esh-HE-WOO"/>
-                            <constraint firstItem="1lE-Ni-B0m" firstAttribute="top" secondItem="7Zn-Im-lof" secondAttribute="bottom" id="scs-62-I8W"/>
-                            <constraint firstItem="cgS-PL-hUi" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="yAm-gj-AzI"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="top" secondItem="7Zn-Im-lof" secondAttribute="top" id="0Uz-eO-tGK"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="leading" secondItem="jbc-g7-TDA" secondAttribute="leading" id="3aF-cX-2fH"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="top" secondItem="7Zn-Im-lof" secondAttribute="top" id="3w2-dT-gy4"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" id="446-hE-zFE"/>
+                            <constraint firstItem="jbc-g7-TDA" firstAttribute="top" secondItem="M4n-xW-fhZ" secondAttribute="bottom" id="HVV-8j-wlr"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="top" secondItem="cgS-PL-hUi" secondAttribute="top" id="KGj-sv-715"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="leading" secondItem="Nvr-1r-G8S" secondAttribute="trailing" constant="44" id="May-VR-GbN"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="top" secondItem="jbc-g7-TDA" secondAttribute="bottom" constant="4" id="N8P-JT-6Tv"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" id="NGk-Jc-PQ3"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" constant="16" id="NMb-VK-aP0"/>
+                            <constraint firstItem="jbc-g7-TDA" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leading" id="QVs-W5-jcb"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="top" secondItem="7Zn-Im-lof" secondAttribute="top" id="Wed-sT-Z5K"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="bottom" secondItem="1lE-Ni-B0m" secondAttribute="top" id="avR-ss-Aal"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="trailing" secondItem="7Zn-Im-lof" secondAttribute="trailing" id="d1t-DA-A47"/>
+                            <constraint firstAttribute="trailing" secondItem="jbc-g7-TDA" secondAttribute="trailing" id="g2D-1L-Z6f"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" id="gJ6-ki-iC4"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="top" secondItem="jbc-g7-TDA" secondAttribute="bottom" id="hfa-8I-KbG"/>
+                            <constraint firstItem="cgS-PL-hUi" firstAttribute="leading" secondItem="7Zn-Im-lof" secondAttribute="leading" id="jl3-PS-rTF"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" constant="-8" id="lSR-LX-3GI"/>
+                            <constraint firstItem="Nvr-1r-G8S" firstAttribute="leading" secondItem="xTJ-MC-Jka" secondAttribute="leadingMargin" id="pDW-BR-pHa"/>
+                            <constraint firstItem="7Zn-Im-lof" firstAttribute="trailing" secondItem="jbc-g7-TDA" secondAttribute="trailing" id="tLV-Id-Gah"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="May-VR-GbN"/>
+                                <exclude reference="3w2-dT-gy4"/>
+                                <exclude reference="446-hE-zFE"/>
+                                <exclude reference="KGj-sv-715"/>
+                                <exclude reference="NGk-Jc-PQ3"/>
+                                <exclude reference="NMb-VK-aP0"/>
+                                <exclude reference="Wed-sT-Z5K"/>
+                                <exclude reference="gJ6-ki-iC4"/>
+                                <exclude reference="pDW-BR-pHa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="HeF-Xt-TPL">
                         <barButtonItem key="leftBarButtonItem" image="filter-25.png" style="plain" id="jCh-jN-vYg" userLabel="Filter">
@@ -276,6 +311,7 @@
     <resources>
         <image name="button_accessibility.png" width="52" height="52"/>
         <image name="button_unisex.png" width="51" height="52"/>
+        <image name="center_direction-25.png" width="25" height="25"/>
         <image name="filter-25.png" width="25" height="25"/>
         <image name="plus-25.png" width="25" height="25"/>
     </resources>
