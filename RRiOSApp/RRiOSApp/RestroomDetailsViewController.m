@@ -15,7 +15,9 @@
 @interface RestroomDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
-@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *address1Label;
+@property (weak, nonatomic) IBOutlet UILabel *address2Label;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
@@ -29,7 +31,7 @@
     [super viewWillAppear:animated];
     
     // navigation bar styling
-    self.title = self.restroom.name;
+    self.title = RRCONSTANTS_DETAILS_VIEW_NAME;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     int numUpvotes = [self.restroom.numUpvotes intValue];
@@ -37,7 +39,13 @@
     int numVotes = numUpvotes + numDownvotes;
     
     // set details
-    self.addressLabel.text = [NSString stringWithFormat:@"%@", self.restroom.street];
+    self.nameLabel.text = self.restroom.name;
+    self.address1Label.text = [NSString stringWithFormat:@"%@", self.restroom.street];
+    self.address2Label.text = [NSString stringWithFormat:@"%@, %@ %@",
+                                                            self.restroom.city,
+                                                            self.restroom.state,
+                                                            self.restroom.country
+                               ];
     self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% Positive", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : RRCONSTANTS_NO_RATING_TEXT;
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
@@ -52,9 +60,7 @@
     CGFloat screenWidth = screenRect.size.width;
 
     UIImage *backgroundImage = [self scaleWithAspectRatioImageNamed:RRCONSTANTS_DETAILS_BACKGROUND_IMAGE_NAME scaledToWidth:screenWidth];
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
-    
-    [self.view addSubview: backgroundImageView];
+    self.backgroundView.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
 }
 
 #pragma mark - Helper methods

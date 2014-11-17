@@ -50,11 +50,7 @@ extern NSInteger const RRCONSTANTS_MAX_RESTROOMS_TO_FETCH;
 #pragma mark - Details constants
 
 extern NSString *const RRCONSTANTS_DETAILS_BACKGROUND_IMAGE_NAME;
-
-#pragma mark - Filter constants
-
-extern NSString *const RRCONSTANTS_UNISEX_FILTER_TEXT;
-extern NSString *const RRCONSTANTS_ACCESSIBILITY_FILTER_TEXT;
+extern NSString *const RRCONSTANTS_DETAILS_VIEW_NAME;
 
 #pragma mark - Map constants
 

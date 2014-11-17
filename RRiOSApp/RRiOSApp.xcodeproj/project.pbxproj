@@ -47,20 +47,14 @@
 		CED01C1D1A16CCF9006D6E89 /* plus-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1B1A16CCF9006D6E89 /* plus-25.png */; };
 		CED01C1F1A16CDE2006D6E89 /* center_direction-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */; };
 		CED01C201A16CDE2006D6E89 /* center_direction-25.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */; };
-		CED01C231A16CE56006D6E89 /* RRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED01C221A16CE56006D6E89 /* RRFilterViewController.m */; };
-		CED01C241A16CE56006D6E89 /* RRFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED01C221A16CE56006D6E89 /* RRFilterViewController.m */; };
-		CED01C2C1A197881006D6E89 /* background_restroom_details.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C2B1A197881006D6E89 /* background_restroom_details.png */; };
-		CED01C2D1A197881006D6E89 /* background_restroom_details.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C2B1A197881006D6E89 /* background_restroom_details.png */; };
+		CED01C2F1A198A01006D6E89 /* background_restroom_name.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C2E1A198A01006D6E89 /* background_restroom_name.png */; };
+		CED01C301A198A01006D6E89 /* background_restroom_name.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C2E1A198A01006D6E89 /* background_restroom_name.png */; };
 		CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */; };
 		CEE0A93819EDC68600B5846B /* RRMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */; };
 		CEE0A93B19EDC75600B5846B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A92719EDB08400B5846B /* MapKit.framework */; };
 		CEE0A93C19EDC75D00B5846B /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE0A93919EDC70C00B5846B /* AddressBook.framework */; };
-		CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB21A044CE300A6CA11 /* button_unisex.png */; };
-		CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB21A044CE300A6CA11 /* button_unisex.png */; };
-		CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB31A044CE300A6CA11 /* button_accessibility.png */; };
-		CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */ = {isa = PBXBuildFile; fileRef = CEECCCB31A044CE300A6CA11 /* button_accessibility.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,17 +112,13 @@
 		CED01C151A16CB25006D6E89 /* filter-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filter-25.png"; sourceTree = "<group>"; };
 		CED01C1B1A16CCF9006D6E89 /* plus-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-25.png"; sourceTree = "<group>"; };
 		CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_direction-25.png"; sourceTree = "<group>"; };
-		CED01C211A16CE56006D6E89 /* RRFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRFilterViewController.h; sourceTree = "<group>"; };
-		CED01C221A16CE56006D6E89 /* RRFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRFilterViewController.m; sourceTree = "<group>"; };
-		CED01C2B1A197881006D6E89 /* background_restroom_details.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_restroom_details.png; sourceTree = "<group>"; };
+		CED01C2E1A198A01006D6E89 /* background_restroom_name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_restroom_name.png; sourceTree = "<group>"; };
 		CEE0A92719EDB08400B5846B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEE0A92919EDBB5700B5846B /* RRMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapViewController.h; sourceTree = "<group>"; };
 		CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapViewController.m; sourceTree = "<group>"; };
 		CEE0A93519EDC68600B5846B /* RRMapKitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapKitAnnotation.h; sourceTree = "<group>"; };
 		CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapKitAnnotation.m; sourceTree = "<group>"; };
 		CEE0A93919EDC70C00B5846B /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		CEECCCB21A044CE300A6CA11 /* button_unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_unisex.png; sourceTree = "<group>"; };
-		CEECCCB31A044CE300A6CA11 /* button_accessibility.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_accessibility.png; sourceTree = "<group>"; };
 		FF14F8075881BC97C9E57C8A /* Pods-RRiOSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRiOSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-RRiOSApp/Pods-RRiOSApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,9 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				CE2EE00B1A0959AC00BE1912 /* Images */,
-				CED01C2B1A197881006D6E89 /* background_restroom_details.png */,
-				CEECCCB21A044CE300A6CA11 /* button_unisex.png */,
-				CEECCCB31A044CE300A6CA11 /* button_accessibility.png */,
+				CED01C2E1A198A01006D6E89 /* background_restroom_name.png */,
 				CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */,
 				CED01C151A16CB25006D6E89 /* filter-25.png */,
 				CED01C1B1A16CCF9006D6E89 /* plus-25.png */,
@@ -224,8 +212,6 @@
 				CE1F5E4A19D9DCB0005F3B04 /* RestroomManager.h */,
 				CE1F5E4B19D9DCB0005F3B04 /* RestroomManager.m */,
 				CE1F5E5C19D9FD9D005F3B04 /* RestroomManagerDelegate.h */,
-				CED01C211A16CE56006D6E89 /* RRFilterViewController.h */,
-				CED01C221A16CE56006D6E89 /* RRFilterViewController.m */,
 				CEE0A93519EDC68600B5846B /* RRMapKitAnnotation.h */,
 				CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */,
 				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
@@ -358,12 +344,10 @@
 			files = (
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
-				CEECCCB41A044CE300A6CA11 /* button_unisex.png in Resources */,
 				CED01C161A16CB25006D6E89 /* filter-25.png in Resources */,
 				CE2EE00C1A0959AD00BE1912 /* Images in Resources */,
-				CED01C2C1A197881006D6E89 /* background_restroom_details.png in Resources */,
+				CED01C2F1A198A01006D6E89 /* background_restroom_name.png in Resources */,
 				CED01C1F1A16CDE2006D6E89 /* center_direction-25.png in Resources */,
-				CEECCCB61A044CE300A6CA11 /* button_accessibility.png in Resources */,
 				CED01C1C1A16CCF9006D6E89 /* plus-25.png in Resources */,
 				CE70CF9819D5F92D004E34F9 /* Images.xcassets in Resources */,
 			);
@@ -375,10 +359,8 @@
 			files = (
 				CED01C1D1A16CCF9006D6E89 /* plus-25.png in Resources */,
 				CE2EE00D1A0959AE00BE1912 /* Images in Resources */,
-				CED01C2D1A197881006D6E89 /* background_restroom_details.png in Resources */,
-				CEECCCB71A044CE300A6CA11 /* button_accessibility.png in Resources */,
+				CED01C301A198A01006D6E89 /* background_restroom_name.png in Resources */,
 				CED01C171A16CB25006D6E89 /* filter-25.png in Resources */,
-				CEECCCB51A044CE300A6CA11 /* button_unisex.png in Resources */,
 				CED01C201A16CDE2006D6E89 /* center_direction-25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +408,6 @@
 				CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
 				CE6CB6C61A1140A600B90B52 /* ADClusterMapView.m in Sources */,
 				CE6CB6C81A1140A600B90B52 /* ADMapCluster.m in Sources */,
-				CED01C231A16CE56006D6E89 /* RRFilterViewController.m in Sources */,
 				CE31C65E1A0C0D7500682429 /* AppState.m in Sources */,
 				CE6CB6C41A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
 				CE6CB6CA1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
@@ -447,7 +428,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED01C241A16CE56006D6E89 /* RRFilterViewController.m in Sources */,
 				CE6CB6C71A1140A600B90B52 /* ADClusterMapView.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
