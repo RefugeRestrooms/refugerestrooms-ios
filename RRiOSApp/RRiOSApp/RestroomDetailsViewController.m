@@ -46,7 +46,7 @@
                                                             self.restroom.state,
                                                             self.restroom.country
                                ];
-    self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% Positive", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : RRCONSTANTS_NO_RATING_TEXT;
+    self.ratingLabel.text = (numVotes > 0) ? [NSString stringWithFormat:@"%i%% POSITIVE", (numUpvotes / (numUpvotes + numDownvotes)) * 100 ] : RRCONSTANTS_NO_RATING_TEXT;
     self.directionsLabel.text = self.restroom.directions;
     self.commentsLabel.text = self.restroom.comment;
 }

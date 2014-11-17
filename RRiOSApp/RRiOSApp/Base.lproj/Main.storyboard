@@ -25,6 +25,9 @@
                                     <accessibilityTraits key="traits" none="YES" image="YES"/>
                                 </accessibility>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_restroom_name.png" translatesAutoresizingMaskIntoConstraints="NO" id="wy4-nD-GX0" userLabel="Image - Name">
+                                <rect key="frame" x="16" y="72" width="568" height="101"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAH-qg-Oce">
                                 <rect key="frame" x="16" y="64" width="568" height="109"/>
                                 <constraints>
@@ -54,19 +57,40 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Address 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M1-Wi-wPI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7M1-Wi-wPI">
                                 <rect key="frame" x="262" y="195" width="76" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cVQ-5E-KnK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="16"/>
                                 <color key="textColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_restroom_rating.png" translatesAutoresizingMaskIntoConstraints="NO" id="Msr-7f-4LQ" userLabel="Image - Rating">
+                                <rect key="frame" x="209" y="275" width="182" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="182" id="UKb-FZ-cyd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNg-JP-VHe">
+                                <rect key="frame" x="245" y="260" width="110" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Aor-hZ-sJ8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="375" id="8em-pv-1OA"/>
+                            <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="DNg-JP-VHe" secondAttribute="bottom" constant="214" id="0dU-be-HWP"/>
+                            <constraint firstItem="DNg-JP-VHe" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="35" id="6cE-ft-3pX"/>
+                            <constraint firstItem="7M1-Wi-wPI" firstAttribute="centerX" secondItem="nDS-87-i8o" secondAttribute="centerX" id="9FU-A1-ojT"/>
                             <constraint firstItem="jRw-Uw-pMF" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="34" id="9wF-i2-21S"/>
                             <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="k81-26-WtO" secondAttribute="bottom" id="BBh-r7-1HH"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="nDS-87-i8o" secondAttribute="bottom" id="BHd-4f-RuL"/>
                             <constraint firstItem="qAH-qg-Oce" firstAttribute="trailing" secondItem="nDS-87-i8o" secondAttribute="trailing" id="CX5-ZC-HtI"/>
+                            <constraint firstItem="Msr-7f-4LQ" firstAttribute="centerY" secondItem="DNg-JP-VHe" secondAttribute="centerY" id="HG9-d3-T82"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="nDS-87-i8o" secondAttribute="bottom" constant="10" id="JVq-Fl-smJ"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="qAH-qg-Oce" secondAttribute="bottom" constant="26" id="K87-GJ-AYO"/>
                             <constraint firstItem="qAH-qg-Oce" firstAttribute="leading" secondItem="nDS-87-i8o" secondAttribute="leading" id="KHV-rH-KVj"/>
@@ -79,14 +103,22 @@
                             <constraint firstItem="qAH-qg-Oce" firstAttribute="top" secondItem="k81-26-WtO" secondAttribute="top" id="WrL-Px-B4t"/>
                             <constraint firstItem="nDS-87-i8o" firstAttribute="top" secondItem="jRw-Uw-pMF" secondAttribute="bottom" constant="100" id="Z6E-Eb-Wla"/>
                             <constraint firstItem="k81-26-WtO" firstAttribute="top" secondItem="jRw-Uw-pMF" secondAttribute="bottom" id="Za9-Hl-D24"/>
+                            <constraint firstAttribute="centerX" secondItem="wy4-nD-GX0" secondAttribute="centerX" id="bQL-AC-geQ"/>
+                            <constraint firstAttribute="centerX" secondItem="DNg-JP-VHe" secondAttribute="centerX" id="cZI-IQ-tYv"/>
                             <constraint firstItem="nDS-87-i8o" firstAttribute="top" secondItem="qAH-qg-Oce" secondAttribute="bottom" constant="80" id="clI-wn-rZX"/>
+                            <constraint firstItem="Msr-7f-4LQ" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="50" id="eMO-7M-VPV"/>
                             <constraint firstItem="k81-26-WtO" firstAttribute="top" secondItem="jRw-Uw-pMF" secondAttribute="bottom" id="etS-xr-ZHV"/>
-                            <constraint firstItem="7M1-Wi-wPI" firstAttribute="centerX" secondItem="nDS-87-i8o" secondAttribute="centerX" id="gaL-Ey-pdg"/>
+                            <constraint firstItem="Msr-7f-4LQ" firstAttribute="centerX" secondItem="DNg-JP-VHe" secondAttribute="centerX" id="f5t-lH-SlU"/>
+                            <constraint firstItem="wy4-nD-GX0" firstAttribute="top" secondItem="jRw-Uw-pMF" secondAttribute="bottom" constant="8" symbolic="YES" id="gNr-Eg-gK5"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="2vU-Re-rAK" secondAttribute="top" id="hiO-WP-Nc0"/>
                             <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="nDS-87-i8o" secondAttribute="bottom" constant="395" id="izK-Mz-dod"/>
                             <constraint firstItem="nDS-87-i8o" firstAttribute="centerX" secondItem="k81-26-WtO" secondAttribute="centerX" id="lKF-EA-mQG"/>
+                            <constraint firstItem="wy4-nD-GX0" firstAttribute="leading" secondItem="qAH-qg-Oce" secondAttribute="leading" id="lZf-Ns-xw4"/>
                             <constraint firstAttribute="centerX" secondItem="k81-26-WtO" secondAttribute="centerX" id="mPA-CN-bYm"/>
                             <constraint firstItem="k81-26-WtO" firstAttribute="leading" secondItem="2vU-Re-rAK" secondAttribute="leading" id="pW1-1f-rEI"/>
+                            <constraint firstItem="DNg-JP-VHe" firstAttribute="leading" secondItem="2vU-Re-rAK" secondAttribute="leading" constant="250" id="pcw-to-O3c"/>
+                            <constraint firstItem="wy4-nD-GX0" firstAttribute="bottom" secondItem="qAH-qg-Oce" secondAttribute="bottom" id="vDh-Ft-WNg"/>
+                            <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="qAH-qg-Oce" secondAttribute="bottom" constant="22" id="ynX-Es-fy6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -101,6 +133,7 @@
                                 <exclude reference="JVq-Fl-smJ"/>
                                 <exclude reference="K87-GJ-AYO"/>
                                 <exclude reference="hiO-WP-Nc0"/>
+                                <exclude reference="pcw-to-O3c"/>
                             </mask>
                         </variation>
                     </view>
@@ -109,6 +142,7 @@
                         <outlet property="address2Label" destination="7M1-Wi-wPI" id="Tyg-Dd-uwu"/>
                         <outlet property="backgroundView" destination="k81-26-WtO" id="NGj-54-gSg"/>
                         <outlet property="nameLabel" destination="qAH-qg-Oce" id="sDZ-9Q-DyY"/>
+                        <outlet property="ratingLabel" destination="DNg-JP-VHe" id="Hsa-Ye-afr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ajN-3Z-1Mo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,73 +275,10 @@
             </objects>
             <point key="canvasLocation" x="181" y="933"/>
         </scene>
-        <!--View Controller - Filter-->
-        <scene sceneID="BFS-Jp-hkC">
-            <objects>
-                <viewController id="hSC-yC-TkM" userLabel="View Controller - Filter" customClass="RRFilterViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oxM-29-rsC"/>
-                        <viewControllerLayoutGuide type="bottom" id="YfW-sl-0lC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="II5-nf-heC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L40-T4-mH5" userLabel="Label - Unisex">
-                                <rect key="frame" x="16" y="121" width="252" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynX-26-PR4" userLabel="Label - Accessibility">
-                                <rect key="frame" x="17" y="193" width="252" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Dqh-1g-uur" userLabel="Switch - Unisex">
-                                <rect key="frame" x="276" y="116" width="51" height="31"/>
-                                <color key="onTintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="unisexFilterSwitchTouched:" destination="hSC-yC-TkM" eventType="touchUpInside" id="ckU-cx-Nfb"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Y0c-3C-dAc" userLabel="Switch - Accessibility">
-                                <rect key="frame" x="276" y="188" width="51" height="31"/>
-                                <color key="onTintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="accessibilityFilterSwitchTouched:" destination="hSC-yC-TkM" eventType="touchUpInside" id="q5K-cL-yza"/>
-                                </connections>
-                            </switch>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="YfW-sl-0lC" firstAttribute="top" secondItem="Y0c-3C-dAc" secondAttribute="bottom" constant="381" id="6fb-Zd-nMU"/>
-                            <constraint firstItem="Dqh-1g-uur" firstAttribute="centerX" secondItem="II5-nf-heC" secondAttribute="centerX" id="8dI-Sv-Vim"/>
-                            <constraint firstItem="L40-T4-mH5" firstAttribute="centerY" secondItem="Dqh-1g-uur" secondAttribute="centerY" id="A4g-Rk-aJj"/>
-                            <constraint firstItem="L40-T4-mH5" firstAttribute="leading" secondItem="ynX-26-PR4" secondAttribute="leading" id="Dxd-8g-h5d"/>
-                            <constraint firstItem="Dqh-1g-uur" firstAttribute="leading" secondItem="L40-T4-mH5" secondAttribute="trailing" constant="8" symbolic="YES" id="HOm-Pb-jCk"/>
-                            <constraint firstItem="L40-T4-mH5" firstAttribute="trailing" secondItem="ynX-26-PR4" secondAttribute="trailing" id="XCU-li-x5m"/>
-                            <constraint firstItem="Y0c-3C-dAc" firstAttribute="centerY" secondItem="ynX-26-PR4" secondAttribute="centerY" id="XEB-fx-eai"/>
-                            <constraint firstItem="ynX-26-PR4" firstAttribute="top" secondItem="L40-T4-mH5" secondAttribute="bottom" constant="51" id="fxU-I7-gwo"/>
-                            <constraint firstItem="ynX-26-PR4" firstAttribute="leading" secondItem="II5-nf-heC" secondAttribute="leadingMargin" id="uJI-oC-ujk"/>
-                            <constraint firstItem="ynX-26-PR4" firstAttribute="leading" secondItem="II5-nf-heC" secondAttribute="leadingMargin" id="utt-fQ-S9q"/>
-                            <constraint firstItem="Y0c-3C-dAc" firstAttribute="leading" secondItem="Dqh-1g-uur" secondAttribute="leading" id="zji-kx-W9y"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="accessibilityFilterLabel" destination="ynX-26-PR4" id="ZsM-8B-9v9"/>
-                        <outlet property="accessibilityFilterSwitch" destination="Y0c-3C-dAc" id="Reg-66-tCL"/>
-                        <outlet property="unisexFilterLabel" destination="L40-T4-mH5" id="iSQ-bi-0dt"/>
-                        <outlet property="unisexFilterSwitch" destination="Dqh-1g-uur" id="uiU-Zo-TpF"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cva-9a-7LM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="181" y="1636"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="background_restroom_name.png" width="559" height="80"/>
+        <image name="background_restroom_rating.png" width="185" height="119"/>
         <image name="center_direction-25.png" width="25" height="25"/>
         <image name="plus-25.png" width="25" height="25"/>
     </resources>

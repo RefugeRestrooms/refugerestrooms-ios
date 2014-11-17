@@ -34,6 +34,7 @@ const NSInteger RRCONSTANTS_MAX_RESTROOMS_TO_FETCH = 10000;
 
 const NSString *RRCONSTANTS_DETAILS_BACKGROUND_IMAGE_NAME = @"Images/background_restroom_details.png";
 const NSString *RRCONSTANTS_DETAILS_VIEW_NAME = @"Details";
+const NSString *RRCONSTANTS_NO_RATING_TEXT = @"NO RATING";
 
 #pragma mark - Map constants
 
@@ -43,7 +44,6 @@ const NSInteger RRCONSTANTS_MAX_NUM_PIN_CLUSTERS = 100;
 const NSString *RRCONSTANTS_ALERT_NO_INTERNET_TEXT = @"Internet unavailable\nCertain features may be disabled";
 const NSString *RRCONSTANTS_NO_LOCATION_TEXT = @"Could not find your location";
 const NSString *RRCONSTANTS_NO_NAME_TEXT = @"Details";
-const NSString *RRCONSTANTS_NO_RATING_TEXT = @"No rating yet";
 const NSString *RRCONSTANTS_PIN_GRAPHIC = @"Images/pin.png";
 const NSString *RRCONSTANTS_PIN_CLUSTER_GRAPHIC = @"Images/pin.png";
 const NSString *RRCONSTANTS_PIN_CLUSTER_TITLE = @"%d Restrooms";

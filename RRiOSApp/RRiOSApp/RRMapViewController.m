@@ -369,7 +369,8 @@ static BOOL isFilteredByAccessibility = NO;
     // display error
     hud.mode = MBProgressHUDModeText;
     hud.labelText = RRCONSTANTS_SYNC_ERROR_TEXT;
-    hud.detailsLabelText = RRCONSTANTS_SYNC_ERROR_DETAILS_TEXT;
+//    hud.detailsLabelText = RRCONSTANTS_SYNC_ERROR_DETAILS_TEXT;
+    [hud hide:YES afterDelay:2];
     
     NSLog(@"Sync Error Description: %@", [error description]);
 }
