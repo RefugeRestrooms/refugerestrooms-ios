@@ -30,6 +30,10 @@ const NSString *RRCONSTANTS_API_KEY_GOOGLE_PLACES = @"KEY";
 const NSString *RRCONSTANTS_API_CALL_RESTROOMS_BY_DATE = @"http://www.refugerestrooms.org:80/api/v1/restrooms/by_date.json";
 const NSInteger RRCONSTANTS_MAX_RESTROOMS_TO_FETCH = 10000;
 
+#pragma mark - Details constants
+
+const NSString *RRCONSTANTS_DETAILS_BACKGROUND_IMAGE_NAME = @"background_restroom_details.png";
+
 #pragma mark - Filter constants
 
 const NSString *RRCONSTANTS_UNISEX_FILTER_TEXT = @"Unisex";

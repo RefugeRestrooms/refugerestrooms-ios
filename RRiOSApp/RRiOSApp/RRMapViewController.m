@@ -676,11 +676,11 @@ static BOOL isFilteredByAccessibility = NO;
 {
     if(isFiltered)
     {
-        // light purple
+        // if filtered, use color
         return [UIColor
-                colorWithRed:RRCONSTANTS_COLOR_LIGHTPURPLE_RED
-                green:RRCONSTANTS_COLOR_LIGHTPURPLE_GREEN
-                blue:RRCONSTANTS_COLOR_LIGHTPURPLE_BLUE
+                colorWithRed:RRCONSTANTS_COLOR_MEDIUMPURPLE_RED
+                green:RRCONSTANTS_COLOR_MEDIUMPURPLE_GREEN
+                blue:RRCONSTANTS_COLOR_MEDIUMPURPLE_BLUE
                 alpha:1.0
         ];
     }
