@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E0F5AC45A9C2AC989EFCC5EC"
-               BuildableName = "libPods-RRiOSApp.a"
-               BlueprintName = "Pods-RRiOSApp"
+               BlueprintIdentifier = "409D70E9E7B781F8793C4810"
+               BuildableName = "libPods-RRiOSApp-ADClusterMapView.a"
+               BlueprintName = "Pods-RRiOSApp-ADClusterMapView"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

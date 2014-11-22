@@ -1,6 +1,6 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/SPGooglePlacesAutocomplete"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MBProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/Reachability" -isystem "${PODS_ROOT}/Headers/Public/SPGooglePlacesAutocomplete"
-OTHER_LDFLAGS = -ObjC -l"Pods-RRiOSApp-MBProgressHUD" -l"Pods-RRiOSApp-Reachability" -l"Pods-RRiOSApp-SPGooglePlacesAutocomplete" -framework "CoreGraphics" -framework "CoreLocation" -framework "SystemConfiguration"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ADClusterMapView" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/SPGooglePlacesAutocomplete"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/ADClusterMapView" -isystem "${PODS_ROOT}/Headers/Public/MBProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/Reachability" -isystem "${PODS_ROOT}/Headers/Public/SPGooglePlacesAutocomplete"
+OTHER_LDFLAGS = -ObjC -l"Pods-RRiOSApp-ADClusterMapView" -l"Pods-RRiOSApp-MBProgressHUD" -l"Pods-RRiOSApp-Reachability" -l"Pods-RRiOSApp-SPGooglePlacesAutocomplete" -framework "CoreGraphics" -framework "CoreLocation" -framework "MapKit" -framework "SystemConfiguration"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

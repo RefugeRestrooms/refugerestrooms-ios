@@ -492,6 +492,39 @@ static BOOL isFilteredByAccessibility = NO;
     
     unisexFilterButton.tintColor = [self colorForFilterState:isFilteredByUnisex];
     
+    if(isFilteredByUnisex)
+    {
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"Filtering...";
+        hud.hidden = NO;
+    
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isUnisex == YES"];
+        [fetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        NSArray *unisexRestrooms = [context executeFetchRequest:fetchRequest error:&error];
+        
+        if(error)
+        {
+            // TODO: Handle error fetching Restrooms from Core Data
+
+        }
+        
+        [self plotRestrooms:unisexRestrooms];
+    
+        [hud hide:YES afterDelay:2];
+    }
+    else
+    {
+        NSArray *allRestrooms = [self fetchRestrooms];
+        
+        if(allRestrooms)
+        {
+            [self plotRestrooms:allRestrooms];
+        }
+    }
+    
     // TODO: re-plot
 }
 
@@ -677,17 +710,17 @@ static BOOL isFilteredByAccessibility = NO;
 {
     if(isFiltered)
     {
-        // if filtered, use color
+        return [UIColor whiteColor];
+    }
+    else
+    {
+        // if not filtered, use color
         return [UIColor
                 colorWithRed:RRCONSTANTS_COLOR_MEDIUMPURPLE_RED
                 green:RRCONSTANTS_COLOR_MEDIUMPURPLE_GREEN
                 blue:RRCONSTANTS_COLOR_MEDIUMPURPLE_BLUE
                 alpha:1.0
         ];
-    }
-    else
-    {
-        return [UIColor whiteColor];
     }
 }
 

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-RRiOSApp-ADClusterMapView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RRiOSApp-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>37AE7ADE83E217574F6EC976</key>
+		<key>409D70E9E7B781F8793C4810</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5893F5B6B7C921125BC2A3BA</key>
+		<key>4DC5BDDCBA49936670C37E69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95270F10E0E9AAE16AC71FC5</key>
+		<key>52C42767A807F50C1B839275</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6E3C7AFCE2FF8851BFE2EFC</key>
+		<key>C58F4C7622DFA34477F92A37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E0F5AC45A9C2AC989EFCC5EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

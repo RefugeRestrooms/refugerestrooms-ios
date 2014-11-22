@@ -87,8 +87,10 @@
                             <constraint firstItem="DNg-JP-VHe" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="35" id="6cE-ft-3pX"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="centerX" secondItem="nDS-87-i8o" secondAttribute="centerX" id="9FU-A1-ojT"/>
                             <constraint firstItem="jRw-Uw-pMF" firstAttribute="top" secondItem="7M1-Wi-wPI" secondAttribute="bottom" constant="34" id="9wF-i2-21S"/>
+                            <constraint firstAttribute="centerX" secondItem="k81-26-WtO" secondAttribute="centerX" id="AOK-aZ-zRU"/>
                             <constraint firstItem="L81-ic-8Uc" firstAttribute="top" secondItem="k81-26-WtO" secondAttribute="bottom" id="BBh-r7-1HH"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="nDS-87-i8o" secondAttribute="bottom" id="BHd-4f-RuL"/>
+                            <constraint firstAttribute="centerX" secondItem="k81-26-WtO" secondAttribute="centerX" id="ByI-sx-mic"/>
                             <constraint firstItem="qAH-qg-Oce" firstAttribute="trailing" secondItem="nDS-87-i8o" secondAttribute="trailing" id="CX5-ZC-HtI"/>
                             <constraint firstItem="Msr-7f-4LQ" firstAttribute="centerY" secondItem="DNg-JP-VHe" secondAttribute="centerY" id="HG9-d3-T82"/>
                             <constraint firstItem="7M1-Wi-wPI" firstAttribute="top" secondItem="nDS-87-i8o" secondAttribute="bottom" constant="10" id="JVq-Fl-smJ"/>
@@ -192,9 +194,9 @@
                                     <action selector="currentLocationButtonPressed:" destination="eh7-1O-dRH" eventType="touchUpInside" id="taw-dS-Rhi"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Zn-Im-lof">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="eh7-1O-dRH" id="AN8-vh-Eh1"/>
                                     <outlet property="delegate" destination="eh7-1O-dRH" id="hFF-nd-QKY"/>

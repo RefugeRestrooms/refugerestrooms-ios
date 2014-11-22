@@ -20,14 +20,6 @@
 		CE31C65E1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE31C65F1A0C0D7500682429 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CE31C65D1A0C0D7500682429 /* AppState.m */; };
 		CE4AB6571A11DA6D002C559D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4AB6561A11DA6D002C559D /* CoreLocation.framework */; };
-		CE6CB6C41A1140A600B90B52 /* ADClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */; };
-		CE6CB6C51A1140A600B90B52 /* ADClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */; };
-		CE6CB6C61A1140A600B90B52 /* ADClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BF1A1140A600B90B52 /* ADClusterMapView.m */; };
-		CE6CB6C71A1140A600B90B52 /* ADClusterMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6BF1A1140A600B90B52 /* ADClusterMapView.m */; };
-		CE6CB6C81A1140A600B90B52 /* ADMapCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6C11A1140A600B90B52 /* ADMapCluster.m */; };
-		CE6CB6C91A1140A600B90B52 /* ADMapCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6C11A1140A600B90B52 /* ADMapCluster.m */; };
-		CE6CB6CA1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6C31A1140A600B90B52 /* ADMapPointAnnotation.m */; };
-		CE6CB6CB1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6CB6C31A1140A600B90B52 /* ADMapPointAnnotation.m */; };
 		CE70CF8A19D5F92D004E34F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8919D5F92D004E34F9 /* main.m */; };
 		CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8C19D5F92D004E34F9 /* AppDelegate.m */; };
 		CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70CF8E19D5F92D004E34F9 /* RRiOSApp.xcdatamodeld */; };
@@ -51,6 +43,8 @@
 		CED01C301A198A01006D6E89 /* background_restroom_name.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C2E1A198A01006D6E89 /* background_restroom_name.png */; };
 		CED01C321A199F9A006D6E89 /* background_restroom_rating.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C311A199F9A006D6E89 /* background_restroom_rating.png */; };
 		CED01C331A199F9A006D6E89 /* background_restroom_rating.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C311A199F9A006D6E89 /* background_restroom_rating.png */; };
+		CED01C381A19B24F006D6E89 /* header_directions.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C371A19B24F006D6E89 /* header_directions.png */; };
+		CED01C391A19B24F006D6E89 /* header_directions.png in Resources */ = {isa = PBXBuildFile; fileRef = CED01C371A19B24F006D6E89 /* header_directions.png */; };
 		CEE0A92B19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */; };
 		CEE0A93719EDC68600B5846B /* RRMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */; };
@@ -85,14 +79,6 @@
 		CE31C65D1A0C0D7500682429 /* AppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
 		CE4AB6561A11DA6D002C559D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CE60F13919DCAD34003C5E57 /* RestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
-		CE6CB6BC1A1140A600B90B52 /* ADClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADClusterAnnotation.h; sourceTree = "<group>"; };
-		CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADClusterAnnotation.m; sourceTree = "<group>"; };
-		CE6CB6BE1A1140A600B90B52 /* ADClusterMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADClusterMapView.h; sourceTree = "<group>"; };
-		CE6CB6BF1A1140A600B90B52 /* ADClusterMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADClusterMapView.m; sourceTree = "<group>"; };
-		CE6CB6C01A1140A600B90B52 /* ADMapCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMapCluster.h; sourceTree = "<group>"; };
-		CE6CB6C11A1140A600B90B52 /* ADMapCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMapCluster.m; sourceTree = "<group>"; };
-		CE6CB6C21A1140A600B90B52 /* ADMapPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMapPointAnnotation.h; sourceTree = "<group>"; };
-		CE6CB6C31A1140A600B90B52 /* ADMapPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMapPointAnnotation.m; sourceTree = "<group>"; };
 		CE70CF8419D5F92D004E34F9 /* RRiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RRiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70CF8819D5F92D004E34F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE70CF8919D5F92D004E34F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +102,7 @@
 		CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "center_direction-25.png"; sourceTree = "<group>"; };
 		CED01C2E1A198A01006D6E89 /* background_restroom_name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_restroom_name.png; sourceTree = "<group>"; };
 		CED01C311A199F9A006D6E89 /* background_restroom_rating.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_restroom_rating.png; sourceTree = "<group>"; };
+		CED01C371A19B24F006D6E89 /* header_directions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_directions.png; sourceTree = "<group>"; };
 		CEE0A92719EDB08400B5846B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEE0A92919EDBB5700B5846B /* RRMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMapViewController.h; sourceTree = "<group>"; };
 		CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMapViewController.m; sourceTree = "<group>"; };
@@ -196,6 +183,7 @@
 				CED01C2E1A198A01006D6E89 /* background_restroom_name.png */,
 				CED01C311A199F9A006D6E89 /* background_restroom_rating.png */,
 				CED01C1E1A16CDE2006D6E89 /* center_direction-25.png */,
+				CED01C371A19B24F006D6E89 /* header_directions.png */,
 				CED01C151A16CB25006D6E89 /* filter-25.png */,
 				CED01C1B1A16CCF9006D6E89 /* plus-25.png */,
 				CE70CF8B19D5F92D004E34F9 /* AppDelegate.h */,
@@ -220,14 +208,6 @@
 				CEE0A93619EDC68600B5846B /* RRMapKitAnnotation.m */,
 				CEE0A92919EDBB5700B5846B /* RRMapViewController.h */,
 				CEE0A92A19EDBB5700B5846B /* RRMapViewController.m */,
-				CE6CB6BC1A1140A600B90B52 /* ADClusterAnnotation.h */,
-				CE6CB6BD1A1140A600B90B52 /* ADClusterAnnotation.m */,
-				CE6CB6BE1A1140A600B90B52 /* ADClusterMapView.h */,
-				CE6CB6BF1A1140A600B90B52 /* ADClusterMapView.m */,
-				CE6CB6C01A1140A600B90B52 /* ADMapCluster.h */,
-				CE6CB6C11A1140A600B90B52 /* ADMapCluster.m */,
-				CE6CB6C21A1140A600B90B52 /* ADMapPointAnnotation.h */,
-				CE6CB6C31A1140A600B90B52 /* ADMapPointAnnotation.m */,
 				CE70CF9419D5F92D004E34F9 /* Main.storyboard */,
 				CE70CF9719D5F92D004E34F9 /* Images.xcassets */,
 				CE70CF9919D5F92D004E34F9 /* LaunchScreen.xib */,
@@ -347,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE70CF9619D5F92D004E34F9 /* Main.storyboard in Resources */,
+				CED01C381A19B24F006D6E89 /* header_directions.png in Resources */,
 				CE70CF9B19D5F92D004E34F9 /* LaunchScreen.xib in Resources */,
 				CED01C161A16CB25006D6E89 /* filter-25.png in Resources */,
 				CE2EE00C1A0959AD00BE1912 /* Images in Resources */,
@@ -366,6 +347,7 @@
 				CE2EE00D1A0959AE00BE1912 /* Images in Resources */,
 				CED01C301A198A01006D6E89 /* background_restroom_name.png in Resources */,
 				CED01C171A16CB25006D6E89 /* filter-25.png in Resources */,
+				CED01C391A19B24F006D6E89 /* header_directions.png in Resources */,
 				CED01C201A16CDE2006D6E89 /* center_direction-25.png in Resources */,
 				CED01C331A199F9A006D6E89 /* background_restroom_rating.png in Resources */,
 			);
@@ -412,11 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA950CF19E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
-				CE6CB6C61A1140A600B90B52 /* ADClusterMapView.m in Sources */,
-				CE6CB6C81A1140A600B90B52 /* ADMapCluster.m in Sources */,
 				CE31C65E1A0C0D7500682429 /* AppState.m in Sources */,
-				CE6CB6C41A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
-				CE6CB6CA1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
 				CE70CF8D19D5F92D004E34F9 /* AppDelegate.m in Sources */,
 				CE787FA41A003A69008C4E1A /* Restroom.m in Sources */,
 				CE70CF9019D5F92D004E34F9 /* RRiOSApp.xcdatamodeld in Sources */,
@@ -434,15 +412,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE6CB6C71A1140A600B90B52 /* ADClusterMapView.m in Sources */,
 				CE1F5E7219DA1AA1005F3B04 /* RestroomBuilder.m in Sources */,
 				CEA950D019E3236900D8553D /* RestroomDetailsViewController.m in Sources */,
-				CE6CB6CB1A1140A600B90B52 /* ADMapPointAnnotation.m in Sources */,
-				CE6CB6C51A1140A600B90B52 /* ADClusterAnnotation.m in Sources */,
 				CEE0A92C19EDBB5700B5846B /* RRMapViewController.m in Sources */,
 				CE31C65F1A0C0D7500682429 /* AppState.m in Sources */,
 				CE1F5E6019DA0055005F3B04 /* RestroomCommunicator.m in Sources */,
-				CE6CB6C91A1140A600B90B52 /* ADMapCluster.m in Sources */,
 				CE787FC61A02C930008C4E1A /* Constants.m in Sources */,
 				CE1F5E4D19D9DCB0005F3B04 /* RestroomManager.m in Sources */,
 				CEE0A93819EDC68600B5846B /* RRMapKitAnnotation.m in Sources */,
