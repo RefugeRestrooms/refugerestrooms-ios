@@ -1,7 +1,8 @@
 language: objective-c
-install:
-  - brew remove --force xctool
-  - brew install xctool --HEAD
+before_install:
+  - brew unlink xctool
+  - brew update
+  - brew install xctool
 
 script:
   - xctool test -workspace RRiOSApp/RRiOSApp.xcworkspace -scheme RRiOSApp -sdk iphonesimulator8.1
