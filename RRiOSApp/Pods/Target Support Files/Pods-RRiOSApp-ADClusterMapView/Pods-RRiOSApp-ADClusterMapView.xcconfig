@@ -1,1 +1,0 @@
-PODS_RRIOSAPP_ADCLUSTERMAPVIEW_OTHER_LDFLAGS = -framework "CoreLocation" -framework "MapKit"
