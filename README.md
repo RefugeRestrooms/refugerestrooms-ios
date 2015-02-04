@@ -3,10 +3,6 @@ Refuge_iOS
 
 iOS client for refugerestrooms.org
 
-#### Build Status
-
-[![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge-ios.svg?branch=master)](https://travis-ci.org/RefugeRestrooms/refuge-ios)
-
 #### Dependencies
 
 ADClusterMapView [![Reference Status](https://www.versioneye.com/objective-c/adclustermapview/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/adclustermapview/references)
