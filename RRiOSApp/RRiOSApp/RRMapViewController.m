@@ -51,7 +51,7 @@ static BOOL isFilteredByAccessibility = NO;
 {
     [super viewDidLoad];
     
-    // set upnavigation bar
+    // set up navigation bar
     self.navigationController.navigationBar.topItem.title = RRCONSTANTS_APP_NAME;
     
     // navigation bar items
@@ -486,8 +486,6 @@ static BOOL isFilteredByAccessibility = NO;
 
 - (void)unisexFilterButtonTouched
 {
-    NSLog(@"Unisex filter touched!");
-    
     isFilteredByUnisex = !isFilteredByUnisex;
     
     unisexFilterButton.tintColor = [self colorForFilterState:isFilteredByUnisex];
@@ -513,7 +511,47 @@ static BOOL isFilteredByAccessibility = NO;
         
         [self plotRestrooms:unisexRestrooms];
     
-        [hud hide:YES afterDelay:2];
+        [hud hide:YES afterDelay:1];
+    }
+    else
+    {
+        NSArray *allRestrooms = [self fetchRestrooms];
+        
+        if(allRestrooms)
+        {
+            [self plotRestrooms:allRestrooms];
+        }
+    }
+}
+
+- (void)accessibilityFilterButtonTouched
+{
+    isFilteredByAccessibility = !isFilteredByAccessibility;
+    
+    accessibilityFilterButton.tintColor = [self colorForFilterState:isFilteredByAccessibility];
+    
+    if(isFilteredByAccessibility)
+    {
+        hud.mode = MBProgressHUDModeText;
+        hud.labelText = @"Filtering...";
+        hud.hidden = NO;
+        
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:RRCONSTANTS_ENTITY_NAME_RESTROOM];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isAccessible == YES"];
+        [fetchRequest setPredicate:predicate];
+        
+        NSError *error = nil;
+        NSArray *accessibleRestrooms = [context executeFetchRequest:fetchRequest error:&error];
+        
+        if(error)
+        {
+            // TODO: Handle error fetching Restrooms from Core Data
+            
+        }
+        
+        [self plotRestrooms:accessibleRestrooms];
+        
+        [hud hide:YES afterDelay:1];
     }
     else
     {
@@ -525,18 +563,6 @@ static BOOL isFilteredByAccessibility = NO;
         }
     }
     
-    // TODO: re-plot
-}
-
-- (void)accessibilityFilterButtonTouched
-{
-        NSLog(@"Accessibility filter touched!");
-    
-    isFilteredByAccessibility = !isFilteredByAccessibility;
-    
-    accessibilityFilterButton.tintColor = [self colorForFilterState:isFilteredByAccessibility];
-    
-    // TODO: re-plot
 }
 
 #pragma mark - Helper methods

@@ -25,7 +25,7 @@ const NSString *RRCONSTANTS_UNWIND_NAME_MAP_VIEW = @"UnwindToMap";
 
 #pragma mark - API constants
 
-const NSString *RRCONSTANTS_API_KEY_GOOGLE_PLACES = @"KEY";
+const NSString *RRCONSTANTS_API_KEY_GOOGLE_PLACES = @"AIzaSyAhMZbqVCMDNMPxwxx8TTyjAOwem66WBF4";
 
 const NSString *RRCONSTANTS_API_CALL_RESTROOMS_BY_DATE = @"http://www.refugerestrooms.org:80/api/v1/restrooms/by_date.json";
 const NSInteger RRCONSTANTS_MAX_RESTROOMS_TO_FETCH = 10000;

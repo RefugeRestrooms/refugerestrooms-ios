@@ -157,8 +157,6 @@ static NSString *RestroomBuilderErrorDomain = @"RestroomBuilderErrorDomain";
             }
         }
     }
-    
-//    return restrooms;
 }
 
 - (void)setRestroomProperties:(Restroom *)restroom fromDictionary:(NSDictionary *)dictionary
