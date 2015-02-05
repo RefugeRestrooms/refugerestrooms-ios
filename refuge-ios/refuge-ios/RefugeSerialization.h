@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *RefugeSerializationErrorDomain;
+
 typedef NS_ENUM(NSInteger, RefugeSerializationErrorCode)
 {
     RefugeSerializationErrorDeserializationFromJSONCode

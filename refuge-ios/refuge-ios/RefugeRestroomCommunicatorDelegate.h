@@ -10,4 +10,7 @@
 
 @protocol RefugeRestroomCommunicatorDelegate <NSObject>
 
+- (void)didReceiveRestroomsJsonObjects:(id)jsonObjects;
+- (void)searchingForRestroomsFailedWithError:(NSError *)error;
+
 @end

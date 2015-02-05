@@ -8,13 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RefugeRestroomCommunicatorDelegate.h"
 #import "RefugeRestroomManagerDelegate.h"
 
 @class RefugeRestroomBuilder;
+@class RefugeRestroomCommunicator;
 
-@interface RefugeRestroomManager : NSObject
+extern NSString *RefugeRestroomManagerErrorDomain;
+
+typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
+{
+    RefugeRestroomManagerErrorRestroomsBuildCode,
+    RefugeRestroomManagerErrorRestroomsFetchCode
+};
+
+@interface RefugeRestroomManager : NSObject <RefugeRestroomCommunicatorDelegate>
 
 @property (nonatomic, weak) id<RefugeRestroomManagerDelegate> delegate;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
+@property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
+
+- (void)fetchRestrooms;
 
 @end

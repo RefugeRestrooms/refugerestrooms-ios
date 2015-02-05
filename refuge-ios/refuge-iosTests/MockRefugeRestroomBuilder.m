@@ -10,4 +10,16 @@
 
 @implementation MockRefugeRestroomBuilder
 
+- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError **)error
+{
+    self.jsonObjects = jsonObjects;
+    
+    if(error != nil)
+    {
+        *error = self.errorToSet;
+    }
+    
+    return self.arrayToReturn;
+}
+
 @end

@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RefugeRestroomCommunicatorDelegate.h"
+
 @interface RefugeRestroomCommunicator : NSObject
+
+@property (nonatomic, weak) id<RefugeRestroomCommunicatorDelegate> delegate;
+
+- (void)searchForRestrooms;
 
 @end

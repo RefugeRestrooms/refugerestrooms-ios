@@ -47,7 +47,7 @@ NSString *RefugeSerializationErrorDomain = @"RefugeSerializationErrorDomain";
     return [restrooms count] > 0 ? [NSArray arrayWithArray:restrooms] : nil;
 }
 
-# pragma mark - Helper methods
+# pragma mark - Private methods
 
 + (RefugeRestroom *)deserializeRestroomFromJSON:(NSDictionary *)JSON error:(NSError **)error
 {

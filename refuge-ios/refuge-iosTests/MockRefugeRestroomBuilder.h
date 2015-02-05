@@ -10,4 +10,8 @@
 
 @interface MockRefugeRestroomBuilder : RefugeRestroomBuilder
 
+@property (nonatomic, copy) id jsonObjects;
+@property (nonatomic, copy) NSArray *arrayToReturn;
+@property (nonatomic, copy) NSError *errorToSet;
+
 @end

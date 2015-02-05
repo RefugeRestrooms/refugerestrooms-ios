@@ -10,4 +10,9 @@
 
 @implementation RefugeRestroomCommunicator
 
+- (void)searchForRestrooms
+{
+    
+}
+
 @end

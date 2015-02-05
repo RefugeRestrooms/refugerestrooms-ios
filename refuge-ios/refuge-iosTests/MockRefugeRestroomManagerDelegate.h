@@ -12,4 +12,7 @@
 
 @interface MockRefugeRestroomManagerDelegate : NSObject <RefugeRestroomManagerDelegate>
 
+@property (nonatomic, strong) NSArray *receivedRestrooms;
+@property (nonatomic, strong) NSError *fetchError;
+
 @end

@@ -10,4 +10,6 @@
 
 @interface MockRefugeRestroomCommunicator : RefugeRestroomCommunicator
 
+@property (nonatomic, assign) BOOL wasAskedToFetchRestrooms;
+
 @end

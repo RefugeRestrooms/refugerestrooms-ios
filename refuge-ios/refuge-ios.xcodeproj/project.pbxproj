@@ -62,6 +62,7 @@
 		CEA23FEF1A83DA2C0083510F /* RefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicator.m; sourceTree = "<group>"; };
 		CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicator.h; sourceTree = "<group>"; };
 		CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicator.m; sourceTree = "<group>"; };
+		CEA23FF51A83DF480083510F /* RefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 			children = (
 				CEA23FEE1A83DA2C0083510F /* RefugeRestroomCommunicator.h */,
 				CEA23FEF1A83DA2C0083510F /* RefugeRestroomCommunicator.m */,
+				CEA23FF51A83DF480083510F /* RefugeRestroomCommunicatorDelegate.h */,
 				CEA23FDD1A835C7B0083510F /* RefugeRestroomManager.h */,
 				CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */,
 				CEA23FE61A83D9480083510F /* RefugeRestroomManagerDelegate.h */,

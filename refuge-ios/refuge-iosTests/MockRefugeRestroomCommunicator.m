@@ -10,4 +10,9 @@
 
 @implementation MockRefugeRestroomCommunicator
 
+- (void)searchForRestrooms
+{
+    self.wasAskedToFetchRestrooms = YES;
+}
+
 @end

@@ -10,4 +10,7 @@
 
 @protocol RefugeRestroomManagerDelegate <NSObject>
 
+- (void)didReceiveRestrooms:(NSArray *)restrooms;
+- (void)fetchingRestroomsFailedWithError:(NSError *)error;
+
 @end
