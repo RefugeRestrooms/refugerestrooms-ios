@@ -6,13 +6,13 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "RefugeAppDelegate.h"
 
-@interface AppDelegate ()
+@interface RefugeAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation RefugeAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

@@ -20,7 +20,7 @@
 		CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */; };
 		CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
-		CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* AppDelegate.m */; };
+		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
 		CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */; };
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
@@ -71,8 +71,8 @@
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CED0CB571A82A6D400F7F3D8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CED0CB581A82A6D400F7F3D8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeAppDelegate.h; sourceTree = "<group>"; };
+		CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeAppDelegate.m; sourceTree = "<group>"; };
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
 		CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 				CEA23FDC1A835C5E0083510F /* Logic */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
 				CED0CBA61A83271B00F7F3D8 /* VCs */,
-				CED0CB571A82A6D400F7F3D8 /* AppDelegate.h */,
-				CED0CB581A82A6D400F7F3D8 /* AppDelegate.m */,
+				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
+				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
 				CED0CB631A82A6D400F7F3D8 /* Images.xcassets */,
 				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
@@ -415,7 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
-				CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */,
+				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
