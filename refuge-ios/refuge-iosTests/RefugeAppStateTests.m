@@ -10,7 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import <objc/runtime.h>
-#import "RefugeappState.h"
+#import "RefugeAppState.h"
 
 @interface RefugeAppStateTests : XCTestCase
 

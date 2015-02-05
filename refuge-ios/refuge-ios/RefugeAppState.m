@@ -58,7 +58,6 @@ static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppState
 {
     _dateLastSynced = dateLastSynced;
     
-    // store change
     [[NSUserDefaults standardUserDefaults] setObject:dateLastSynced forKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
