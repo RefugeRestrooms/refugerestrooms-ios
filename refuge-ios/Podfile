@@ -1,0 +1,16 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, '7.9'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'refuge-ios' do
+
+pod 'Mantle', '1.5.4'
+
+end
+
+target 'refuge-iosTests' do
+
+end
+
+link_with 'refuge-ios', 'refuge-iosTests'
