@@ -18,7 +18,7 @@
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
-             @"id" : @"id",
+             @"identifier" : @"id",
              @"name" : @"name",
              @"street" : @"street",
              @"city" : @"city",
@@ -26,8 +26,8 @@
              @"country" : @"country",
              @"isAccessible" : @"accessible",
              @"isUnisex" : @"unisex",
-             @"numUpvotes" : @"downvote",
-             @"numDownvotes" : @"upvote",
+             @"numUpvotes" : @"upvote",
+             @"numDownvotes" : @"downvote",
              @"directions" : @"directions",
              @"comment" : @"comment",
              @"createdDate" : @"created_at"

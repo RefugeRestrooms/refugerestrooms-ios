@@ -36,8 +36,8 @@
                           @"street" : @"7900 Old Wake Forest Rd",
                           @"city" : @"Raleigh",
                           @"state" : @"NC",
-                          @"accessible" : @NO,
-                          @"unisex" : @YES,
+                          @"accessible" : @"false",
+                          @"unisex" : @"true",
                           @"directions" : @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.",
                           @"comment" : @"This is the Target by Triangle Town Center.",
                           @"latitude" : @35.867321,
@@ -80,10 +80,12 @@
     XCTAssertEqualObjects(self.restroom.country, @"US", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertFalse(self.restroom.isAccessible, @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertTrue(self.restroom.isUnisex, @"Restroom created with Restroombuilder should have correct properties");
-    XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqual(self.restroom.numUpvotes, 1, @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:35.867321] decimalValue]], @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.longitude, [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:-78.567711] decimalValue]], @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom created with Restroombuilder should have correct properties");
 }
 

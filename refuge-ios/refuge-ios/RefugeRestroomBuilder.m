@@ -10,6 +10,7 @@
 
 #import "NSDate+Refuge.h"
 #import "RefugeRestroom.h"
+#import "RefugeSerialization.h"
 
 NSString *RefugeRestroomBuilderErrorDomain = @"RefugeRestroomBuilderErrorDomain";
 
@@ -17,25 +18,48 @@ NSString *RefugeRestroomBuilderErrorDomain = @"RefugeRestroomBuilderErrorDomain"
 
 - (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError **)error
 {
-    RefugeRestroom *restroom = [[RefugeRestroom alloc] init];
+    NSParameterAssert(jsonObjects != nil);
     
-    restroom.identifier = [NSNumber numberWithInt:4327];
-    restroom.name = @"Target";
-    restroom.street = @"7900 Old Wake Forest Rd";
-    restroom.city = @"Raleigh";
-    restroom.state = @"NC";
-    restroom.country = @"US";
-    restroom.isAccessible = NO;
-    restroom.isUnisex = YES;
-    restroom.numUpvotes = 1;
-    restroom.numDownvotes = 0;
-    restroom.directions = @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.";
-    restroom.comment = @"This is the Target by Triangle Town Center.";
-    restroom.createdDate = [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"];
+    NSError *errorWhileCreatingRestrooms;
+    id jsonArray = nil;
     
-    NSArray *restroomsArray = [NSArray arrayWithObject:restroom];
+    if(![jsonObjects isKindOfClass:[NSArray class]])
+    {
+        jsonArray = @[ jsonObjects ];
+    }
+    else
+    {
+        jsonArray = jsonObjects;
+    }
     
-    return restroomsArray;
+    if([jsonArray count] == 0)
+    {
+        return [NSArray array];
+    }
+    
+    NSArray *restrooms = [RefugeSerialization deserializeRestroomsFromJSON:jsonArray error:&errorWhileCreatingRestrooms];
+    
+    if(restrooms == nil || errorWhileCreatingRestrooms)
+    {
+        [self setErrorToReturn:error withUnderlyingError:errorWhileCreatingRestrooms];
+    }
+    
+    return restrooms;
+}
+
+- (void)setErrorToReturn:(NSError **)error withUnderlyingError:(NSError *)underlyingError
+{
+    if (error != NULL)
+    {
+        NSMutableDictionary *errorInfo = [NSMutableDictionary dictionaryWithCapacity:1];
+        
+        if (underlyingError != nil)
+        {
+            [errorInfo setObject:underlyingError forKey:NSUnderlyingErrorKey];
+        }
+        
+        *error = [NSError errorWithDomain:RefugeRestroomBuilderErrorDomain code:RefugeRestroomBuilderDeserializationErrorCode userInfo:errorInfo];
+    }
 }
 
 @end
