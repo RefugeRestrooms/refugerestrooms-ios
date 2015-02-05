@@ -37,6 +37,8 @@
     self.restroom.numDownvotes = 0;
     self.restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.";
     self.restroom.comment = @"No comment";
+    self.restroom.latitude = [NSDecimalNumber decimalNumberWithString:@"35.867321"];
+    self.restroom.longitude = [NSDecimalNumber decimalNumberWithString:@"-78.567711"];
     self.restroom.createdDate = [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"];
 }
 
@@ -55,14 +57,16 @@
 - (void)testThatRestroomPropertiesAreNotInvalid
 {
     XCTAssertNotNil(self.restroom.identifier, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.name, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.street, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.city, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.state, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.country, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.directions, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.comment, @"Restroom id should not be nil");
-    XCTAssertNotNil(self.restroom.createdDate, @"Restroom id should not be nil");
+    XCTAssertNotNil(self.restroom.name, @"Restroom name should not be nil");
+    XCTAssertNotNil(self.restroom.street, @"Restroom street should not be nil");
+    XCTAssertNotNil(self.restroom.city, @"Restroom city should not be nil");
+    XCTAssertNotNil(self.restroom.state, @"Restroom state should not be nil");
+    XCTAssertNotNil(self.restroom.country, @"Restroom country should not be nil");
+    XCTAssertNotNil(self.restroom.directions, @"Restroom directions should not be nil");
+    XCTAssertNotNil(self.restroom.comment, @"Restroom comment should not be nil");
+    XCTAssertNotNil(self.restroom.latitude, @"Restroom latitude should not be nil");
+    XCTAssertNotNil(self.restroom.longitude, @"Restroom longitude should not be nil");
+    XCTAssertNotNil(self.restroom.createdDate, @"Restroom created date should not be nil");
 }
 
 - (void)testThatRestroomPropertiesAreSetCorrectly
@@ -79,6 +83,8 @@
     XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.directions, @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.comment, @"No comment", @"Restroom properties should be set correctly");
+    XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithString:@"35.867321"], @"Restroom properties should be set correctly");
+    XCTAssertEqualObjects(self.restroom.longitude, [NSDecimalNumber decimalNumberWithString:@"-78.567711"], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom properties should be set correctly");
 }
 

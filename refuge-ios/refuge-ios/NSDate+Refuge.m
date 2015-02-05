@@ -22,6 +22,11 @@ static NSString * const kRefgueDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     return [self.dateFormatter dateFromString:dateString];
 }
 
++ (NSString *)stringFromDate:(NSDate *)date
+{
+    return [self.dateFormatter stringFromDate:date];
+}
+
 # pragma mark - Helper methods
 
 + (NSDateFormatter *)dateFormatter

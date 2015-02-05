@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RefugeRestroom : NSObject
+#import <MTLModel.h>
+#import <MTLJSONAdapter.h>
+
+@interface RefugeRestroom : MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *name;
@@ -22,6 +25,8 @@
 @property (nonatomic, assign) int numDownvotes;
 @property (nonatomic, strong) NSString *directions;
 @property (nonatomic, strong) NSString *comment;
+@property (nonatomic, strong) NSDecimalNumber *latitude;
+@property (nonatomic, strong) NSDecimalNumber *longitude;
 @property (nonatomic, strong) NSDate *createdDate;
 
 @end
