@@ -50,7 +50,7 @@
                           @"pg_search_rank" : @0.66872
                         };
     
-    self.restroomsFromBuilder= [self.restroomBuilder buildRestroomsFromJSON:self.restroomJSON error:NULL];
+    self.restroomsFromBuilder = [self.restroomBuilder buildRestroomsFromJSON:self.restroomJSON error:NULL];
     self.restroom = [self.restroomsFromBuilder objectAtIndex:0];
 }
 
@@ -85,6 +85,88 @@
     XCTAssertEqualObjects(self.restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom created with Restroombuilder should have correct properties");
+}
+
+- (void)testThatNilIsNotAnAcceptableJSONParameter
+{
+    XCTAssertThrows([self.restroomBuilder buildRestroomsFromJSON:nil error:NULL], @"RestroomBuilder should not accept nil for JSON parameter");
+}
+
+- (void)testInvalidJSONReturnsNilWithError
+{
+    NSString *invalidJSON = @"Not JSON";
+    NSError *error;
+    NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:invalidJSON error:&error];
+    
+    XCTAssertNil(restrooms, @"Nil should be returned when invalid JSON is passed in to RestroomBuilder");
+    XCTAssertEqual([error code], RefugeRestroomBuilderDeserializationErrorCode, @"Error should be set when invalid JSON is passed to RestroomBuilder");
+}
+
+- (void)testRealJSONWithoutRestroomPropertiesReturnsNilWithError
+{
+    NSArray *invalidJSON = @[ @"{ \"key\": \"value\" }" ];
+    NSError *error;
+    NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:invalidJSON error:&error];
+    
+    XCTAssertNil(restrooms, @"JSON should not be parsed without Restroom properties");
+    XCTAssertEqual([error code], RefugeRestroomBuilderDeserializationErrorCode, @"Error should be set for JSON without Restroom properties");
+}
+
+- (void)testThatJSONWithMissingValuesReturnsNilWithError
+{
+    NSString *jsonWithMissingProperties = @"{"
+    @"\"author\": \"\","
+    @"\"categories\": \"\","
+    @"\"lastCheckedOut\": \"\","
+    @"\"lastCheckedOutBy\": \"\","
+    @"\"publisher\": \"\","
+    @"\"title\": \"\","
+    @"\"url\": \"\""
+    @"}";
+    
+    NSArray *jsonObjects = @[ jsonWithMissingProperties ];
+    
+    NSError *error;
+    NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:jsonObjects error:&error];
+    
+    XCTAssertNil(restrooms, @"JSON should not be parsed if it is missing values");
+    XCTAssertEqual([error code], RefugeRestroomBuilderDeserializationErrorCode, @"Error should be set for JSON with missing values");
+}
+
+- (void)testThatJSONPassedToBuilderAsNonDictionaryOrArrayReturnsNilWithError
+{
+    NSString *invalidJSON = @"{"
+    @"\"author\": \"Jason Morris\","
+    @"\"categories\": \"android, ui, testing\","
+    @"\"lastCheckedOut\": \"2014-04-08 19:16:11\","
+    @"\"lastCheckedOutBy\": \"Harlan\","
+    @"\"publisher\": \"Packt Publishing\","
+    @"\"title\": \"Android User Interface Development: Beginner's Guide\","
+    @"\"url\": \"/books/1\""
+    @"}";
+    
+    NSError *error;
+    NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:invalidJSON error:&error];
+    
+    XCTAssertNil(restrooms, @"JSON should not be parsed if it is not an array or dictionary");
+    XCTAssertEqual([error code], RefugeRestroomBuilderDeserializationErrorCode, @"Error should be set for invalid JSON");
+    
+}
+
+- (void)testNoErrorReturnedWhenJSONHasZeroRestrooms
+{
+    id emptyJSON = [NSArray array];
+    
+    NSError *error;
+    NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:emptyJSON error:&error];
+    
+    XCTAssertEqualObjects(restrooms, [NSArray array], @"JSON with 0 Restrooms should not create Restroom array");
+    XCTAssertNil(error, @"JSON with 0 Restrooms should not produce an error");
+}
+
+- (void)testThatOneRestroomIsCreatedFromOneDictionary
+{
+    XCTAssertEqual([self.restroomsFromBuilder count], (NSUInteger)1, @"JSON with one Restroom should create one Restroom object");
 }
 
 @end

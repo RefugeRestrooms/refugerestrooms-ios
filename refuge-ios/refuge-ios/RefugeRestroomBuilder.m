@@ -11,9 +11,11 @@
 #import "NSDate+Refuge.h"
 #import "RefugeRestroom.h"
 
+NSString *RefugeRestroomBuilderErrorDomain = @"RefugeRestroomBuilderErrorDomain";
+
 @implementation RefugeRestroomBuilder
 
-- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError *)error
+- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError **)error
 {
     RefugeRestroom *restroom = [[RefugeRestroom alloc] init];
     

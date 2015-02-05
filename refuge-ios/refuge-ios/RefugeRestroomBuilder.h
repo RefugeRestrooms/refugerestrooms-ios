@@ -10,6 +10,11 @@
 
 @interface RefugeRestroomBuilder : NSObject
 
-- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError *)error;
+typedef NS_ENUM(NSInteger, RefugeRestroomBuilderErrorCode)
+{
+    RefugeRestroomBuilderDeserializationErrorCode
+};
+
+- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError **)error;
 
 @end
