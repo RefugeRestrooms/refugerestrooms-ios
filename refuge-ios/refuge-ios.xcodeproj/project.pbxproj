@@ -17,6 +17,11 @@
 		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
 		CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */; };
 		CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */; };
+		CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */; };
+		CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */; };
+		CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */; };
+		CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
+		CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 		CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomTests.m; sourceTree = "<group>"; };
 		CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroom.h; sourceTree = "<group>"; };
 		CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
+		CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilderTests.m; sourceTree = "<group>"; };
+		CED0CBAC1A8332B200F7F3D8 /* RefugeRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomBuilder.h; sourceTree = "<group>"; };
+		CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilder.m; sourceTree = "<group>"; };
+		CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
+		CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,8 @@
 		CED0CB521A82A6D300F7F3D8 /* refuge-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CED0CBB01A83340100F7F3D8 /* Categories */,
+				CED0CBAB1A83329D00F7F3D8 /* Data Translation */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
 				CED0CBA61A83271B00F7F3D8 /* VCs */,
 				CED0CB571A82A6D400F7F3D8 /* AppDelegate.h */,
@@ -112,6 +124,7 @@
 		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
 				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
 			);
@@ -142,6 +155,24 @@
 				CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */,
 			);
 			name = VCs;
+			sourceTree = "<group>";
+		};
+		CED0CBAB1A83329D00F7F3D8 /* Data Translation */ = {
+			isa = PBXGroup;
+			children = (
+				CED0CBAC1A8332B200F7F3D8 /* RefugeRestroomBuilder.h */,
+				CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */,
+			);
+			name = "Data Translation";
+			sourceTree = "<group>";
+		};
+		CED0CBB01A83340100F7F3D8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */,
+				CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,10 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
 				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
+				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,8 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
+				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
+				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
