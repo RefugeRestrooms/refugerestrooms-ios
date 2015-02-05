@@ -12,6 +12,8 @@ static NSString * const kRefgueDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
 @implementation NSDate (Refuge)
 
+# pragma mark - Public methods
+
 + (NSString *)dateFormat
 {
     return kRefgueDateFormat;

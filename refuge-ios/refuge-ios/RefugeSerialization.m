@@ -15,6 +15,8 @@ NSString *RefugeSerializationErrorDomain = @"RefugeSerializationErrorDomain";
 
 @implementation RefugeSerialization
 
+# pragma mark - Public methods
+
 + (NSArray *)deserializeRestroomsFromJSON:(NSArray *)JSON error:(NSError **)error
 {
     if (!JSON || ![JSON isKindOfClass:[NSArray class]] || [JSON count] == 0)

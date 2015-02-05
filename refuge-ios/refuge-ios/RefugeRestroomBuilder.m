@@ -16,6 +16,8 @@ NSString *RefugeRestroomBuilderErrorDomain = @"RefugeRestroomBuilderErrorDomain"
 
 @implementation RefugeRestroomBuilder
 
+# pragma mark - Public methods
+
 - (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError **)error
 {
     NSParameterAssert(jsonObjects != nil);
@@ -46,6 +48,8 @@ NSString *RefugeRestroomBuilderErrorDomain = @"RefugeRestroomBuilderErrorDomain"
     
     return restrooms;
 }
+
+# pragma mark - Private methods
 
 - (void)setErrorToReturn:(NSError **)error withUnderlyingError:(NSError *)underlyingError
 {

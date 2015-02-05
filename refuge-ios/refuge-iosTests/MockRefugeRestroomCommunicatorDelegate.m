@@ -10,4 +10,14 @@
 
 @implementation MockRefugeRestroomCommunicatorDelegate
 
+- (void)didReceiveRestroomsJsonObjects:(id)jsonObjects
+{
+    
+}
+
+- (void)searchingForRestroomsFailedWithError:(NSError *)error
+{
+    
+}
+
 @end

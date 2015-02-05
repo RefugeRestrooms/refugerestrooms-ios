@@ -53,7 +53,7 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
     return nil;
 }
 
-# pragma mark - Setters
+# pragma mark Setters
 
 - (void)setDelegate:(id<RefugeRestroomCommunicatorDelegate>)delegate
 {

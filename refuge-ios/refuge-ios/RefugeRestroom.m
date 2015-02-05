@@ -15,6 +15,8 @@
 
 @implementation RefugeRestroom
 
+# pragma mark 
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{

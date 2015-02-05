@@ -19,6 +19,9 @@
 		CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */; };
 		CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */; };
 		CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */; };
+		CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */; };
+		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
+		CEA240001A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -68,6 +71,9 @@
 		CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicatorTests.m; sourceTree = "<group>"; };
 		CEA23FF81A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
 		CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicatorDelegate.m; sourceTree = "<group>"; };
+		CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppStateTests.m; sourceTree = "<group>"; };
+		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
+		CEA23FFE1A84278B0083510F /* RefugeAppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppState.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +195,8 @@
 				CED0CBA61A83271B00F7F3D8 /* VCs */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
+				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
+				CEA23FFE1A84278B0083510F /* RefugeAppState.m */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
 				CED0CB631A82A6D400F7F3D8 /* Images.xcassets */,
 				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
@@ -213,6 +221,7 @@
 				CEA23FE71A83D9900083510F /* Mocks */,
 				CEA23FE31A83D7A60083510F /* Integration Tests */,
 				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
+				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
 				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
@@ -424,6 +433,7 @@
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
+				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,8 +450,10 @@
 				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
+				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
 				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
 				CEA23FE01A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
+				CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */,
 				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
 				CEA23FF11A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
