@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */; };
+		CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */; };
+		CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */; };
+		CEA23FE01A835C7B0083510F /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* AppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-refuge-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManagerTests.m; sourceTree = "<group>"; };
+		CEA23FDD1A835C7B0083510F /* RefugeRestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomManager.h; sourceTree = "<group>"; };
+		CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManager.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +101,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEA23FDC1A835C5E0083510F /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				CEA23FDD1A835C7B0083510F /* RefugeRestroomManager.h */,
+				CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */,
+			);
+			name = Logic;
+			sourceTree = "<group>";
+		};
 		CED0CB471A82A6D300F7F3D8 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +135,7 @@
 			children = (
 				CED0CBB01A83340100F7F3D8 /* Categories */,
 				CED0CBAB1A83329D00F7F3D8 /* Data Translation */,
+				CEA23FDC1A835C5E0083510F /* Logic */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
 				CED0CBA61A83271B00F7F3D8 /* VCs */,
 				CED0CB571A82A6D400F7F3D8 /* AppDelegate.h */,
@@ -147,6 +163,7 @@
 			children = (
 				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
+				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
 				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
 				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
 			);
@@ -352,6 +369,7 @@
 				CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
+				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +384,8 @@
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
+				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
+				CEA23FE01A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
