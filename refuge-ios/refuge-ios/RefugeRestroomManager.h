@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RefugeRestroomManagerDelegate.h"
+
+@class RefugeRestroomBuilder;
+
 @interface RefugeRestroomManager : NSObject
+
+@property (nonatomic, weak) id<RefugeRestroomManagerDelegate> delegate;
+@property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 
 @end
