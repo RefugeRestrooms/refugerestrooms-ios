@@ -87,17 +87,15 @@
 		CED0CB521A82A6D300F7F3D8 /* refuge-ios */ = {
 			isa = PBXGroup;
 			children = (
+				CED0CBA51A83270F00F7F3D8 /* Models */,
+				CED0CBA61A83271B00F7F3D8 /* VCs */,
 				CED0CB571A82A6D400F7F3D8 /* AppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* AppDelegate.m */,
-				CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */,
-				CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
 				CED0CB631A82A6D400F7F3D8 /* Images.xcassets */,
 				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
-				CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */,
-				CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */,
 			);
 			path = "refuge-ios";
 			sourceTree = "<group>";
@@ -126,6 +124,24 @@
 				CED0CB711A82A6D500F7F3D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CED0CBA51A83270F00F7F3D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */,
+				CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		CED0CBA61A83271B00F7F3D8 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */,
+				CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */,
+			);
+			name = VCs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
