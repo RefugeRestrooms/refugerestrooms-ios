@@ -10,10 +10,13 @@
 
 #import "RefugeRestroomCommunicatorDelegate.h"
 
+@class AFHTTPSessionManager;
+
 @interface RefugeRestroomCommunicator : NSObject
 
 @property (nonatomic, weak) id<RefugeRestroomCommunicatorDelegate> delegate;
 
+- (id)initWithHttpSessionManager:(AFHTTPSessionManager *)httpSessionManager;
 - (void)searchForRestrooms;
 
 @end
