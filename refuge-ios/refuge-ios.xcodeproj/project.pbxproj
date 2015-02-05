@@ -24,6 +24,8 @@
 		CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
 		CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
+		CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
+		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
 		CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
 		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
+		CED0CBBA1A83517D00F7F3D8 /* RefugeSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSerialization.h; sourceTree = "<group>"; };
+		CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +184,8 @@
 			children = (
 				CED0CBAC1A8332B200F7F3D8 /* RefugeRestroomBuilder.h */,
 				CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */,
+				CED0CBBA1A83517D00F7F3D8 /* RefugeSerialization.h */,
+				CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */,
 			);
 			name = "Data Translation";
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
+				CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
@@ -354,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
+				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
