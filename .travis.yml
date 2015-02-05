@@ -4,4 +4,4 @@ install:
   - brew install xctool --HEAD
 
 script:
-  - xctool test -workspace RefugeRestrooms/RefugeRestrooms.xcodeproj -scheme RefugeRestrooms -sdk iphonesimulator8.1
+  - xctool test -workspace refuge-ios/refuge-ios.xcodeproj -scheme refuge-ios -sdk iphonesimulator8.1

@@ -14,7 +14,9 @@
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB631A82A6D400F7F3D8 /* Images.xcassets */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
-		CED0CB731A82A6D500F7F3D8 /* refuge_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB721A82A6D500F7F3D8 /* refuge_iosTests.m */; };
+		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
+		CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */; };
+		CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +43,9 @@
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CED0CB6C1A82A6D500F7F3D8 /* refuge-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "refuge-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CED0CB721A82A6D500F7F3D8 /* refuge_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = refuge_iosTests.m; sourceTree = "<group>"; };
+		CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomTests.m; sourceTree = "<group>"; };
+		CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroom.h; sourceTree = "<group>"; };
+		CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
+				CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */,
+				CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */,
 			);
 			path = "refuge-ios";
 			sourceTree = "<group>";
@@ -108,7 +114,7 @@
 		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				CED0CB721A82A6D500F7F3D8 /* refuge_iosTests.m */,
+				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
 				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
 			);
 			path = "refuge-iosTests";
@@ -227,6 +233,7 @@
 				CED0CB591A82A6D400F7F3D8 /* AppDelegate.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
+				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,7 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED0CB731A82A6D500F7F3D8 /* refuge_iosTests.m in Sources */,
+				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
+				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +428,7 @@
 				CED0CB781A82A6D500F7F3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CED0CB791A82A6D500F7F3D8 /* Build configuration list for PBXNativeTarget "refuge-iosTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +437,7 @@
 				CED0CB7B1A82A6D500F7F3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
