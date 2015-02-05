@@ -10,4 +10,6 @@
 
 @interface RefugeRestroomBuilder : NSObject
 
+- (NSArray *)buildRestroomsFromJSON:(id)jsonObjects error:(NSError *)error;
+
 @end

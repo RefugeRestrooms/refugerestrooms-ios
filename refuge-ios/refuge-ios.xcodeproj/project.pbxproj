@@ -22,6 +22,7 @@
 		CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */; };
 		CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
 		CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */; };
+		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		CED0CBAD1A8332B200F7F3D8 /* RefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilder.m; sourceTree = "<group>"; };
 		CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
 		CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
+		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
 			isa = PBXGroup;
 			children = (
+				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
 				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
@@ -295,6 +298,7 @@
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
+				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,8 +33,8 @@
     self.restroom.country = @"United States";
     self.restroom.isAccessible = NO;
     self.restroom.isUnisex = YES;
-    self.restroom.numDownvotes = 0;
     self.restroom.numUpvotes = 1;
+    self.restroom.numDownvotes = 0;
     self.restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.";
     self.restroom.comment = @"No comment";
     self.restroom.createdDate = [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"];
@@ -67,7 +67,7 @@
 
 - (void)testThatRestroomPropertiesAreSetCorrectly
 {
-    XCTAssertEqual(self.restroom.identifier,[NSNumber numberWithInt:100], @"Restroom properties should be set correctly");
+    XCTAssertEqualObjects(self.restroom.identifier,[NSNumber numberWithInt:100], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.name, @"Target", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.street, @"7129 O'Kelly Chapel Road", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.city, @"Cary", @"Restroom properties should be set correctly");
@@ -75,8 +75,8 @@
     XCTAssertEqualObjects(self.restroom.country, @"United States", @"Restroom properties should be set correctly");
     XCTAssertFalse(self.restroom.isAccessible, @"Restroom properties should be set correctly");
     XCTAssertTrue(self.restroom.isUnisex, @"Restroom properties should be set correctly");
-    XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom properties should be set correctly");
     XCTAssertEqual(self.restroom.numUpvotes, 1, @"Restroom properties should be set correctly");
+    XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.directions, @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.comment, @"No comment", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom properties should be set correctly");
