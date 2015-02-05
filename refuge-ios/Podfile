@@ -5,6 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target 'refuge-ios' do
 
+pod 'AFNetworking', '2.5.0'
 pod 'Mantle', '1.5.4'
 
 end
