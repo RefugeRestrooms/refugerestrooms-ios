@@ -27,7 +27,7 @@
     [super setUp];
     
     self.restroom = [[RefugeRestroom alloc] init];
-    self.restroom.identifier = [NSNumber numberWithInt:100];
+    self.restroom.identifier = @"100";
     self.restroom.name = @"Target";
     self.restroom.street = @"7129 O'Kelly Chapel Road";
     self.restroom.city = @"Cary";
@@ -73,7 +73,7 @@
 
 - (void)testThatRestroomPropertiesAreSetCorrectly
 {
-    XCTAssertEqualObjects(self.restroom.identifier,[NSNumber numberWithInt:100], @"Restroom properties should be set correctly");
+    XCTAssertEqualObjects(self.restroom.identifier, @"100", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.name, @"Target", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.street, @"7129 O'Kelly Chapel Road", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.city, @"Cary", @"Restroom properties should be set correctly");

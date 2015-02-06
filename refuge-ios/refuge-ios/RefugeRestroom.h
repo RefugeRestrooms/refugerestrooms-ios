@@ -14,7 +14,7 @@
 
 @interface RefugeRestroom : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
-@property (nonatomic, strong) NSNumber *identifier;
+@property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *street;
 @property (nonatomic, strong) NSString *city;

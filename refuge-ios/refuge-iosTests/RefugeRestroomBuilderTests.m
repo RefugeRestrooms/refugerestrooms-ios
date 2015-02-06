@@ -72,7 +72,7 @@
 - (void)testRestroomCreatedFromJSONHasPropertiesPresentedInJSON
 {
     XCTAssertNotNil(self.restroom, @"Restroom created with RestroomBuilder should not be nil");
-    XCTAssertEqualObjects(self.restroom.identifier,[NSNumber numberWithInt:4327], @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.identifier, @"4327", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.name, @"Target", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.street, @"7900 Old Wake Forest Rd", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.city, @"Raleigh", @"Restroom created with Restroombuilder should have correct properties");
