@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "RefugeRestroomManagerDelegate.h"
+
+@interface ViewController : UIViewController <RefugeRestroomManagerDelegate>
 
 
 @end

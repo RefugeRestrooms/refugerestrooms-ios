@@ -9,15 +9,14 @@
 #import "RefugeRestroomCommunicator.h"
 
 #import <AFNetworking.h>
+#import "RefugeHTTPSessionManager.h"
 #import "RefugeRestroomCommunicatorDelegate.h"
 
-static NSInteger const kMaxRestroomsToFetch = 10000;
+static NSInteger const kMaxRestroomsToFetch = 100;
 static NSString * const kApiBaseURL = @"http://www.refugerestrooms.org:80/api/v1/restrooms";
 static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 
 @interface RefugeRestroomCommunicator ()
-
-@property (nonatomic, strong)  AFHTTPSessionManager *httpSessionManager;
 
 @end
 
@@ -25,15 +24,13 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 
 # pragma mark - Initializers
 
-- (id)initWithHttpSessionManager:(AFHTTPSessionManager *)httpSessionManager
+- (id)initWithHttpSessionManager:(RefugeHTTPSessionManager *)httpSessionManager
 {
     self = [super init];
     
     if(self)
     {
         _httpSessionManager = httpSessionManager;
-        _httpSessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
-        _httpSessionManager.requestSerializer = [AFHTTPRequestSerializer serializer];
     }
     
     return self;
@@ -45,7 +42,7 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
     
     if(self)
     {
-        AFHTTPSessionManager *httpSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kApiBaseURL]];
+        RefugeHTTPSessionManager *httpSessionManager = [[RefugeHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kApiBaseURL]];
         
         return [self initWithHttpSessionManager:httpSessionManager];
     }
@@ -74,7 +71,7 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 //    int year = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
     
     int day = 1;
-    int month = 1;
+    int month = 2;
     int year = 2015;
     
     NSString *endPoint = [NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", kApiEndPointRestroomsByDate, (long)kMaxRestroomsToFetch, day, month, year];

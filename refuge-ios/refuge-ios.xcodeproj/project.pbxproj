@@ -22,6 +22,8 @@
 		CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */; };
 		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CEA240001A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
+		CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */; };
+		CEA240071A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -74,6 +76,8 @@
 		CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppStateTests.m; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
 		CEA23FFE1A84278B0083510F /* RefugeAppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppState.m; sourceTree = "<group>"; };
+		CEA240041A8444A60083510F /* RefugeHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHTTPSessionManager.h; sourceTree = "<group>"; };
+		CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHTTPSessionManager.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		CEA23FDC1A835C5E0083510F /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				CEA240041A8444A60083510F /* RefugeHTTPSessionManager.h */,
+				CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */,
 				CEA23FEE1A83DA2C0083510F /* RefugeRestroomCommunicator.h */,
 				CEA23FEF1A83DA2C0083510F /* RefugeRestroomCommunicator.m */,
 				CEA23FF51A83DF480083510F /* RefugeRestroomCommunicatorDelegate.h */,
@@ -433,6 +439,7 @@
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
+				CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +456,7 @@
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
+				CEA240071A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
 				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
 				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,

@@ -35,7 +35,7 @@
     [super tearDown];
 }
 
-- (void)testThatRestroomBuilderExists
+- (void)testThatRestroomCommunicatorExists
 {
     XCTAssertNotNil(self.restroomCommunicator, @"Should be able to create a new Restroom Communicator instance");
 }
@@ -56,5 +56,15 @@
 {
     XCTAssertNoThrow(self.restroomCommunicator.delegate = nil, @"Communicator should accept nil as a delegate");
 }
+
+//- (void)testHttpSessionManagerHasResponseSerializerSetInInit
+//{
+//    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.responseSerializer, @"HttpSessionManager should have responseSerializer set in init");
+//}
+//
+//- (void)testHttpSessionManagerHasRequestSerializerSetInInit
+//{
+//    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.requestSerializer, @"HttpSessionManager should have requestSerializer set in init");
+//}
 
 @end

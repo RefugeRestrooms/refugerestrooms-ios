@@ -58,21 +58,6 @@
     [super tearDown];
 }
 
-- (void)testNonConformingObjectCannoBeDelegate
-{
-    XCTAssertThrows(restroomManager.delegate = (id<RefugeRestroomManagerDelegate>)[NSNull null], @"NSNull should not be used as the delegate as it doesn't conform to the delegate protocol");
-}
-
-- (void)testConformingObjectCanBeDelegate
-{
-    XCTAssertNoThrow(restroomManager.delegate = delegate, @"Object conforming to the delegate protocol shold be used as the delegate");
-}
-
-- (void)testManagerAcceptsNilAsADelegate
-{
-    XCTAssertNoThrow(restroomManager.delegate = nil, @"Manager should accept nil as a delegate");
-}
-
 - (void)testAskingForRestroomsMeansRequestingData
 {
     MockRefugeRestroomCommunicator *restroomCommunicator = [[MockRefugeRestroomCommunicator alloc] init];
