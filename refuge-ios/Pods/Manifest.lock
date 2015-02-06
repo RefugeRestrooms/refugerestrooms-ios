@@ -23,13 +23,22 @@ PODS:
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
+  - Overcoat (2.1.1):
+    - Overcoat/NSURLSession (= 2.1.1)
+  - Overcoat/Core (2.1.1):
+    - AFNetworking (~> 2.5)
+    - Mantle (~> 1.5)
+  - Overcoat/NSURLSession (2.1.1):
+    - Overcoat/Core
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.0)
   - Mantle (= 1.5.4)
+  - Overcoat (= 2.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
+  Overcoat: a4105827c4b4a358e769482b63328ab8be5f41c9
 
 COCOAPODS: 0.35.0

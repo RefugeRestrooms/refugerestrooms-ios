@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-refuge-ios-Overcoat.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-refuge-ios.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E7BEEBE67E3172D9BA179F6</key>
+		<key>2D783D6B266B495A5A7D0DF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5962195D35964B75796D559E</key>
+		<key>5EE4CE9E08B435AE33B5FDE2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C25FCA4E734F8A5B8FD01C2</key>
+		<key>685999BAE4649545A881588A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C2A901AA784C2C34D80DEFA8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FBBAE57622AAE7901D14C214</key>
+		<key>88EF51D2799D093F47AFC35B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -15,7 +15,9 @@
 
 @implementation RefugeRestroom
 
-# pragma mark 
+# pragma mark - Public methods
+
+# pragma mark MTLJSONSerializing methods
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
@@ -62,6 +64,23 @@
     } reverseBlock:^(NSDecimalNumber *decimalNumber) {
         return [NSNumber numberWithDouble:[decimalNumber doubleValue]];
     }];
+}
+
+# pragma mark MTLManagedObjectSerializing methods
+
++ (NSString *)managedObjectEntityName
+{
+    return @"RefugeRestroom";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey
+{
+    return @{};
+}
+
++ (NSSet *)propertyKeysForManagedObjectUniquing
+{
+    return [NSSet setWithObject:@"identifier"];
 }
 
 @end

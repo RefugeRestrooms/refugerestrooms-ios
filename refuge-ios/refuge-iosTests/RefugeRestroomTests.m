@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import <MTLJSONAdapter.h>
+#import <MTLManagedObjectAdapter.h>
 #import "NSDate+Refuge.h"
 #import "RefugeRestroom.h"
 
@@ -86,6 +88,16 @@
     XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithString:@"35.867321"], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.longitude, [NSDecimalNumber decimalNumberWithString:@"-78.567711"], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom properties should be set correctly");
+}
+
+- (void)testThatRestroomConformsToMTLJsonSerializingProtocol
+{
+    XCTAssertTrue([self.restroom conformsToProtocol:@protocol(MTLJSONSerializing)], @"Restroom should conform to MTLJSONSerializing protocol");
+}
+
+- (void)testThatRestroomConformsToMTLManagedObjectSerializingProtocol
+{
+    XCTAssertTrue([self.restroom conformsToProtocol:@protocol(MTLManagedObjectSerializing)], @"Restroom should conform to MTLManagedObjectSerializing protocol");
 }
 
 @end

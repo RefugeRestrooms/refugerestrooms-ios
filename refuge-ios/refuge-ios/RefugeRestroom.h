@@ -10,8 +10,9 @@
 
 #import <MTLModel.h>
 #import <MTLJSONAdapter.h>
+#import <MTLManagedObjectAdapter.h>
 
-@interface RefugeRestroom : MTLModel <MTLJSONSerializing>
+@interface RefugeRestroom : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 @property (nonatomic, strong) NSNumber *identifier;
 @property (nonatomic, strong) NSString *name;
