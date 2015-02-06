@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import "MockRefugeRestroomCommunicatorDelegate.h"
+#import "RefugeHTTpSessionManager.h"
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomCommunicatorDelegate.h"
 
@@ -57,14 +58,14 @@
     XCTAssertNoThrow(self.restroomCommunicator.delegate = nil, @"Communicator should accept nil as a delegate");
 }
 
-//- (void)testHttpSessionManagerHasResponseSerializerSetInInit
-//{
-//    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.responseSerializer, @"HttpSessionManager should have responseSerializer set in init");
-//}
-//
-//- (void)testHttpSessionManagerHasRequestSerializerSetInInit
-//{
-//    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.requestSerializer, @"HttpSessionManager should have requestSerializer set in init");
-//}
+- (void)testHttpSessionManagerHasResponseSerializerSetInInit
+{
+    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.responseSerializer, @"HttpSessionManager should have responseSerializer set in init");
+}
+
+- (void)testHttpSessionManagerHasRequestSerializerSetInInit
+{
+    XCTAssertNotNil(self.restroomCommunicator.httpSessionManager.requestSerializer, @"HttpSessionManager should have requestSerializer set in init");
+}
 
 @end

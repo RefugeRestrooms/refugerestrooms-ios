@@ -28,8 +28,8 @@
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
-    [self.restroomManager fetchRestrooms];
+//    [self configureRestroomManager];
+//    [self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods
