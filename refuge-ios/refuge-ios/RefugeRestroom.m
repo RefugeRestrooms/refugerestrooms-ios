@@ -75,7 +75,21 @@
 
 + (NSDictionary *)managedObjectKeysByPropertyKey
 {
-    return @{};
+    return @{
+             @"id" : @"identifier",
+             @"name" : @"name",
+             @"street" : @"street",
+             @"city" : @"city",
+             @"state" : @"state",
+             @"country" : @"country",
+             @"accessible" : @"isAccessible",
+             @"unisex" : @"isUnisex",
+             @"upvote" : @"numUpvotes",
+             @"downvote" : @"numDownvotes",
+             @"directions" : @"directions",
+             @"comment" : @"comment",
+             @"created_at" : @"createdDate"
+             };
 }
 
 + (NSSet *)propertyKeysForManagedObjectUniquing

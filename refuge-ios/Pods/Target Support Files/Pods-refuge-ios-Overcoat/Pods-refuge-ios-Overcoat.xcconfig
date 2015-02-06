@@ -1,1 +1,0 @@
-PODS_REFUGE_IOS_OVERCOAT_OTHER_LDFLAGS = -framework "Accounts" -framework "CoreData" -framework "Foundation" -framework "Social"
