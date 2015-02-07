@@ -9,12 +9,13 @@
 #import "RefugeCoreDataManager.h"
 
 #import "RefugeAppDelegate.h"
+#import "RefugeRestroom.h"
 
 @implementation RefugeCoreDataManager
 
 # pragma mark - Initializers
 
-+ (id)sharedInstance
++ (instancetype)sharedInstance
 {
     // structure used to test whether the block has completed or not
     static dispatch_once_t p = 0;
@@ -31,11 +32,26 @@
     return _sharedObject;
 }
 
-# pragma mark - Public methods
+# pragma mark Getters
 
-+ (NSManagedObjectContext *)mainManagedObjectContext
+- (NSManagedObjectContext *)mainManagedObjectContext
 {
     return ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+}
+
+# pragma mark - Public methods
+
+- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error
+{
+    NSManagedObjectContext *managedObjectContext = ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    
+    for(RefugeRestroom *restroom in restrooms)
+    {
+        [MTLManagedObjectAdapter managedObjectFromModel:restroom
+                                   insertingIntoContext:managedObjectContext
+                                                  error:&error];
+        [managedObjectContext save:&error];
+    }
 }
 
 @end

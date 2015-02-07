@@ -10,7 +10,7 @@
 
 @interface RefugeCoreDataManager : NSObject
 
-+ (id)sharedInstance;
-+ (NSManagedObjectContext *)mainManagedObjectContext;
++ (instancetype)sharedInstance;
+- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error;
 
 @end

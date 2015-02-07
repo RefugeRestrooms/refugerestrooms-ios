@@ -50,7 +50,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     if(restrooms != nil)
     {
         NSError *errorSavingToCoreData;
-        [self saveRestroomsToCoreData:restrooms error:errorSavingToCoreData];
+        [[RefugeCoreDataManager sharedInstance] saveRestroomsToCoreData:restrooms error:errorSavingToCoreData];
         
         if(errorSavingToCoreData)
         {
@@ -74,20 +74,6 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 }
 
 # pragma mark - Private methods
-
-- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error
-{
-    NSManagedObjectContext *managedObjectContext = [[RefugeCoreDataManager sharedInstance] mainManagedObjectContext];
-    
-    for(RefugeRestroom *restroom in restrooms)
-    {
-        
-        [MTLManagedObjectAdapter managedObjectFromModel:restroom
-                                   insertingIntoContext:managedObjectContext
-                                                  error:&error];
-        [managedObjectContext save:&error];
-    }
-}
 
 - (void)tellDelegateAboutFetchErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
 {
