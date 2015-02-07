@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
+#import "MockRefugeDataPersistenceManager.h"
 #import "MockRefugeRestroomBuilder.h"
 #import "MockRefugeRestroomCommunicator.h"
 #import "MockRefugeRestroomManagerDelegate.h"
@@ -24,6 +25,7 @@
     RefugeRestroomManager *restroomManager;
     MockRefugeRestroomManagerDelegate *delegate;
     MockRefugeRestroomBuilder *restroomBuilder;
+    MockRefugeDataPersistenceManager *dataPersistenceManager;
     NSError *underlyingError;
     NSArray *jsonObjects;
     NSArray *restrooms;
@@ -36,6 +38,7 @@
     restroomManager = [[RefugeRestroomManager alloc] init];
     delegate = [[MockRefugeRestroomManagerDelegate alloc] init];
     restroomBuilder = [[MockRefugeRestroomBuilder alloc] init];
+    dataPersistenceManager = [[MockRefugeDataPersistenceManager alloc] init];
     underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
     jsonObjects = [NSArray array];
     
@@ -44,6 +47,7 @@
     
     restroomManager.delegate = delegate;
     restroomManager.restroomBuilder = restroomBuilder;
+    restroomManager.dataPersistenceManager = dataPersistenceManager;
 }
 
 - (void)tearDown
@@ -51,6 +55,7 @@
     restroomManager = nil;
     delegate = nil;
     restroomBuilder = nil;
+    dataPersistenceManager = nil;
     underlyingError = nil;
     jsonObjects = nil;
     restrooms = nil;
@@ -134,6 +139,20 @@
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
     XCTAssertEqualObjects(delegate.receivedRestrooms, emptyArray, @"Delegate receiving an empty array of Restrooms should not be an error");
+}
+
+- (void)testErrorReturnedToDelegateWhenSyncFails
+{
+    
+}
+
+- (void)testDataPeristenceManagerToldToSaveWhenRestroomsBuildSuccessfully
+{
+    restroomBuilder.arrayToReturn = restrooms;
+    
+    [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
+    
+    XCTAssertTrue(dataPersistenceManager.wasAskedToSaveRestrooms, @"Data persistence manager should be asked to save Restrooms when restrooms are build successfully");
 }
 
 @end

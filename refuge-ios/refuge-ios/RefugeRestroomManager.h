@@ -11,6 +11,7 @@
 #import "RefugeRestroomCommunicatorDelegate.h"
 #import "RefugeRestroomManagerDelegate.h"
 
+@class RefugeDataPersistenceManager;
 @class RefugeRestroomBuilder;
 @class RefugeRestroomCommunicator;
 
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
 @interface RefugeRestroomManager : NSObject <RefugeRestroomCommunicatorDelegate>
 
 @property (nonatomic, weak) id<RefugeRestroomManagerDelegate> delegate;
+@property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 

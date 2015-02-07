@@ -8,9 +8,8 @@
 
 #import <CoreData/CoreData.h>
 
-@interface RefugeCoreDataManager : NSObject
+@interface RefugeDataPersistenceManager : NSObject
 
-+ (instancetype)sharedInstance;
-- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error;
+- (void)saveRestrooms:(NSArray *)restrooms error:(NSError *)error;
 
 @end

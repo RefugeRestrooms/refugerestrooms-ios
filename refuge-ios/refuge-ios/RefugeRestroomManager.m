@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 #import <MTLManagedObjectAdapter.h>
-#import "RefugeCoreDataManager.h"
+#import "RefugeDataPersistenceManager.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
@@ -50,7 +50,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     if(restrooms != nil)
     {
         NSError *errorSavingToCoreData;
-        [[RefugeCoreDataManager sharedInstance] saveRestroomsToCoreData:restrooms error:errorSavingToCoreData];
+        [self.dataPersistenceManager saveRestrooms:restrooms error:errorSavingToCoreData];
         
         if(errorSavingToCoreData)
         {

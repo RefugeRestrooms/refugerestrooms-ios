@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import "RefugeCoreDataManager.h"
+#import "RefugeDataPersistenceManager.h"
 
 #import "RefugeAppDelegate.h"
 #import "RefugeRestroom.h"
 
-@implementation RefugeCoreDataManager
+@implementation RefugeDataPersistenceManager
 
 # pragma mark - Initializers
 
@@ -41,7 +41,7 @@
 
 # pragma mark - Public methods
 
-- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error
+- (void)saveRestrooms:(NSArray *)restrooms error:(NSError *)error
 {
     NSManagedObjectContext *managedObjectContext = ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     
