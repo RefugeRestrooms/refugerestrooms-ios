@@ -24,6 +24,8 @@
 		CEA240001A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */; };
 		CEA240071A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */; };
+		CEA2400A1A86BB750083510F /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240091A86BB750083510F /* RefugeRestroomEntity.m */; };
+		CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240091A86BB750083510F /* RefugeRestroomEntity.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -78,6 +80,8 @@
 		CEA23FFE1A84278B0083510F /* RefugeAppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppState.m; sourceTree = "<group>"; };
 		CEA240041A8444A60083510F /* RefugeHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHTTPSessionManager.h; sourceTree = "<group>"; };
 		CEA240051A8444A60083510F /* RefugeHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHTTPSessionManager.m; sourceTree = "<group>"; };
+		CEA240081A86BB750083510F /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
+		CEA240091A86BB750083510F /* RefugeRestroomEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomEntity.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 			children = (
 				CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */,
 				CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */,
+				CEA240081A86BB750083510F /* RefugeRestroomEntity.h */,
+				CEA240091A86BB750083510F /* RefugeRestroomEntity.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 			files = (
 				CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
+				CEA2400A1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
@@ -467,6 +474,7 @@
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
+				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

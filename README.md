@@ -17,8 +17,6 @@ Mantle [![Reference Status](https://www.versioneye.com/objective-c/mantle/refere
 <br>
 MBProgressHUD [![Reference Status](https://www.versioneye.com/objective-c/mbprogresshud/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/mbprogresshud/references)
 <br>
-Overcoat [![Reference Status](https://www.versioneye.com/objective-c/overcoat/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/overcoat/references)
-<br>
 Reachability [![Reference Status](https://www.versioneye.com/objective-c/reachability/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/reachability/references)
 <br>
 SPGooglePlacesAutocomplete [![Reference Status](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/references)
