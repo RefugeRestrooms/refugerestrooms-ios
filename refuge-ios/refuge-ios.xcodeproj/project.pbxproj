@@ -133,7 +133,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEA23FDC1A835C5E0083510F /* Logic */ = {
+		CEA23FDC1A835C5E0083510F /* Data Fetching */ = {
 			isa = PBXGroup;
 			children = (
 				CEA240041A8444A60083510F /* RefugeHTTPSessionManager.h */,
@@ -145,7 +145,7 @@
 				CEA23FDE1A835C7B0083510F /* RefugeRestroomManager.m */,
 				CEA23FE61A83D9480083510F /* RefugeRestroomManagerDelegate.h */,
 			);
-			name = Logic;
+			name = "Data Fetching";
 			sourceTree = "<group>";
 		};
 		CEA23FE31A83D7A60083510F /* Integration Tests */ = {
@@ -195,10 +195,10 @@
 			isa = PBXGroup;
 			children = (
 				CED0CBB01A83340100F7F3D8 /* Categories */,
+				CEA23FDC1A835C5E0083510F /* Data Fetching */,
 				CED0CBAB1A83329D00F7F3D8 /* Data Translation */,
-				CEA23FDC1A835C5E0083510F /* Logic */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
-				CED0CBA61A83271B00F7F3D8 /* VCs */,
+				CED0CBA61A83271B00F7F3D8 /* ViewControllers */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
@@ -254,13 +254,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		CED0CBA61A83271B00F7F3D8 /* VCs */ = {
+		CED0CBA61A83271B00F7F3D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */,
 				CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */,
 			);
-			name = VCs;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		CED0CBAB1A83329D00F7F3D8 /* Data Translation */ = {
