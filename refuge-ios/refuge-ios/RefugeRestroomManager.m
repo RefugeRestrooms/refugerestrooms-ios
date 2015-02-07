@@ -49,14 +49,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     
     if(restrooms != nil)
     {
-        NSError *errorSavingToCoreData;
-        [self.dataPersistenceManager saveRestrooms:restrooms error:errorSavingToCoreData];
-        
-        if(errorSavingToCoreData)
-        {
-            [self tellDelegateAboutSyncErrorWithCode:RefugeRestroomManagerSaveToCoreDataCode underlyingError:errorSavingToCoreData];
-        }
-        
+        [self.dataPersistenceManager saveRestrooms:restrooms];
         [self.delegate didReceiveRestrooms:restrooms];
     }
     else
@@ -71,6 +64,13 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:RefugeRestroomManagerErrorRestroomsFetchCode userInfo:errorInfo];
     
     [self.delegate fetchingRestroomsFailedWithError:reportableError];
+}
+
+# pragma mark RefugeDataPeristenceManagerDelegate methods
+
+- (void)syncingRestroomsFailedWithError:(NSError *)error
+{
+    [self tellDelegateAboutSyncErrorWithCode:RefugeRestroomManagerErrorRestroomsSaveCode underlyingError:error];
 }
 
 # pragma mark - Private methods

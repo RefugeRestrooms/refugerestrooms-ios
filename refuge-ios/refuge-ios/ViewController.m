@@ -16,9 +16,9 @@
 @interface ViewController ()
 
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
+@property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
-@property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 
 @end
 
@@ -58,13 +58,13 @@
 - (void)configureRestroomManager
 {
     self.restroomManager = [[RefugeRestroomManager alloc] init];
+    self.dataPersistenceManager = [[RefugeDataPersistenceManager alloc] init];
     self.restroomBuilder = [[RefugeRestroomBuilder alloc] init];
     self.restroomCommunicator = [[RefugeRestroomCommunicator alloc] init];
-    self.dataPersistenceManager = [[RefugeDataPersistenceManager alloc] init];
     
+    self.restroomManager.dataPersistenceManager = self.dataPersistenceManager;
     self.restroomManager.restroomBuilder = self.restroomBuilder;
     self.restroomManager.restroomCommunicator = self.restroomCommunicator;
-    self.restroomManager.dataPersistenceManager = self.dataPersistenceManager;
     
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;

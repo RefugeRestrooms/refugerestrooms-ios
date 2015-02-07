@@ -41,16 +41,22 @@
 
 # pragma mark - Public methods
 
-- (void)saveRestrooms:(NSArray *)restrooms error:(NSError *)error
+- (void)saveRestrooms:(NSArray *)restrooms
 {
     NSManagedObjectContext *managedObjectContext = ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    NSError *errorSavingRestrooms;
     
     for(RefugeRestroom *restroom in restrooms)
     {
         [MTLManagedObjectAdapter managedObjectFromModel:restroom
                                    insertingIntoContext:managedObjectContext
-                                                  error:&error];
-        [managedObjectContext save:&error];
+                                                  error:&errorSavingRestrooms];
+        [managedObjectContext save:&errorSavingRestrooms];
+    }
+    
+    if(errorSavingRestrooms)
+    {
+        [self.delegate syncingRestroomsFailedWithError:errorSavingRestrooms];
     }
 }
 

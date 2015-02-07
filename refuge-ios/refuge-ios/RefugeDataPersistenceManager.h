@@ -8,8 +8,12 @@
 
 #import <CoreData/CoreData.h>
 
+#import "RefugeDataPeristenceManagerDelegate.h"
+
 @interface RefugeDataPersistenceManager : NSObject
 
-- (void)saveRestrooms:(NSArray *)restrooms error:(NSError *)error;
+@property (nonatomic, weak) id<RefugeDataPeristenceManagerDelegate> delegate;
+
+- (void)saveRestrooms:(NSArray *)restrooms;
 
 @end

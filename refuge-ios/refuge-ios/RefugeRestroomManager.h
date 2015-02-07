@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "RefugeDataPeristenceManagerDelegate.h"
 #import "RefugeRestroomCommunicatorDelegate.h"
 #import "RefugeRestroomManagerDelegate.h"
 
@@ -21,10 +22,10 @@ typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
 {
     RefugeRestroomManagerErrorRestroomsBuildCode,
     RefugeRestroomManagerErrorRestroomsFetchCode,
-    RefugeRestroomManagerSaveToCoreDataCode
+    RefugeRestroomManagerErrorRestroomsSaveCode
 };
 
-@interface RefugeRestroomManager : NSObject <RefugeRestroomCommunicatorDelegate>
+@interface RefugeRestroomManager : NSObject <RefugeDataPeristenceManagerDelegate, RefugeRestroomCommunicatorDelegate>
 
 @property (nonatomic, weak) id<RefugeRestroomManagerDelegate> delegate;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;

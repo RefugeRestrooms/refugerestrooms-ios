@@ -89,6 +89,7 @@
 		CEA2400D1A86BD110083510F /* RefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeDataPersistenceManager.m; sourceTree = "<group>"; };
 		CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeDataPersistenceManager.h; sourceTree = "<group>"; };
 		CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeDataPersistenceManager.m; sourceTree = "<group>"; };
+		CEA240141A86D18E0083510F /* RefugeDataPeristenceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPeristenceManagerDelegate.h; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 			children = (
 				CEA2400C1A86BD110083510F /* RefugeDataPersistenceManager.h */,
 				CEA2400D1A86BD110083510F /* RefugeDataPersistenceManager.m */,
+				CEA240141A86D18E0083510F /* RefugeDataPeristenceManagerDelegate.h */,
 			);
 			name = "Data Persistence";
 			sourceTree = "<group>";

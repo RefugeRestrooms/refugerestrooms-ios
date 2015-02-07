@@ -23,9 +23,9 @@
 @implementation RefugeRestroomCreationWorkflowTests
 {
     RefugeRestroomManager *restroomManager;
+    MockRefugeDataPersistenceManager *dataPersistenceManager;
     MockRefugeRestroomManagerDelegate *delegate;
     MockRefugeRestroomBuilder *restroomBuilder;
-    MockRefugeDataPersistenceManager *dataPersistenceManager;
     NSError *underlyingError;
     NSArray *jsonObjects;
     NSArray *restrooms;
@@ -36,9 +36,9 @@
     [super setUp];
     
     restroomManager = [[RefugeRestroomManager alloc] init];
+    dataPersistenceManager = [[MockRefugeDataPersistenceManager alloc] init];
     delegate = [[MockRefugeRestroomManagerDelegate alloc] init];
     restroomBuilder = [[MockRefugeRestroomBuilder alloc] init];
-    dataPersistenceManager = [[MockRefugeDataPersistenceManager alloc] init];
     underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
     jsonObjects = [NSArray array];
     
@@ -53,9 +53,9 @@
 - (void)tearDown
 {
     restroomManager = nil;
+    dataPersistenceManager = nil;
     delegate = nil;
     restroomBuilder = nil;
-    dataPersistenceManager = nil;
     underlyingError = nil;
     jsonObjects = nil;
     restrooms = nil;
@@ -141,11 +141,6 @@
     XCTAssertEqualObjects(delegate.receivedRestrooms, emptyArray, @"Delegate receiving an empty array of Restrooms should not be an error");
 }
 
-- (void)testErrorReturnedToDelegateWhenSyncFails
-{
-    
-}
-
 - (void)testDataPeristenceManagerToldToSaveWhenRestroomsBuildSuccessfully
 {
     restroomBuilder.arrayToReturn = restrooms;
@@ -153,6 +148,13 @@
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
     XCTAssertTrue(dataPersistenceManager.wasAskedToSaveRestrooms, @"Data persistence manager should be asked to save Restrooms when restrooms are build successfully");
+}
+
+- (void)testErrorReturnedToDelegateWhenSaveFails
+{
+    [restroomManager syncingRestroomsFailedWithError:underlyingError];
+    
+    XCTAssertNotNil([delegate syncError], @"Delegate should receive error when save fails");
 }
 
 @end
