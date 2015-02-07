@@ -46,6 +46,11 @@
     NSLog(@"Restrooms fetch error: %@", error);
 }
 
+- (void)syncingRestroomsFailedWithError:(NSError *)error
+{
+    NSLog(@"Restrooms sync error: %@", error);
+}
+
 # pragma mark - Private methods
 
 - (void)configureRestroomManager

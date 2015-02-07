@@ -8,8 +8,13 @@
 
 #import "RefugeRestroomManager.h"
 
+#import <CoreData/CoreData.h>
+#import <MTLManagedObjectAdapter.h>
+#import "RefugeCoreDataManager.h"
+#import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
+#import "RefugeRestroomEntity.h"
 #import "RefugeRestroomManagerDelegate.h"
 
 NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain";
@@ -42,13 +47,21 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     NSError *errorBuildingRestrooms;
     NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:jsonObjects error:&errorBuildingRestrooms];
     
-    if(restrooms == nil)
+    if(restrooms != nil)
     {
-        [self tellDelegateAboutErrorWithCode:RefugeRestroomManagerErrorRestroomsBuildCode underlyingError:errorBuildingRestrooms];
+        NSError *errorSavingToCoreData;
+        [self saveRestroomsToCoreData:restrooms error:errorSavingToCoreData];
+        
+        if(errorSavingToCoreData)
+        {
+            [self tellDelegateAboutSyncErrorWithCode:RefugeRestroomManagerSaveToCoreDataCode underlyingError:errorSavingToCoreData];
+        }
+        
+        [self.delegate didReceiveRestrooms:restrooms];
     }
     else
     {
-        [self.delegate didReceiveRestrooms:restrooms];
+        [self tellDelegateAboutFetchErrorWithCode:RefugeRestroomManagerErrorRestroomsBuildCode underlyingError:errorBuildingRestrooms];
     }
 }
 
@@ -62,7 +75,21 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark - Private methods
 
-- (void)tellDelegateAboutErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
+- (void)saveRestroomsToCoreData:(NSArray *)restrooms error:(NSError *)error
+{
+    NSManagedObjectContext *managedObjectContext = [[RefugeCoreDataManager sharedInstance] mainManagedObjectContext];
+    
+    for(RefugeRestroom *restroom in restrooms)
+    {
+        
+        [MTLManagedObjectAdapter managedObjectFromModel:restroom
+                                   insertingIntoContext:managedObjectContext
+                                                  error:&error];
+        [managedObjectContext save:&error];
+    }
+}
+
+- (void)tellDelegateAboutFetchErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
 {
     NSDictionary *errorInfo = nil;
     
@@ -74,6 +101,20 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
     
     [self.delegate fetchingRestroomsFailedWithError:reportableError];
+}
+
+- (void)tellDelegateAboutSyncErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
+{
+    NSDictionary *errorInfo = nil;
+    
+    if (underlyingError)
+    {
+        errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey: NSUnderlyingErrorKey];
+    }
+    
+    NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
+    
+    [self.delegate syncingRestroomsFailedWithError:reportableError];
 }
 
 @end

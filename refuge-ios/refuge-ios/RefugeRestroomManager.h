@@ -19,7 +19,8 @@ extern NSString *RefugeRestroomManagerErrorDomain;
 typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
 {
     RefugeRestroomManagerErrorRestroomsBuildCode,
-    RefugeRestroomManagerErrorRestroomsFetchCode
+    RefugeRestroomManagerErrorRestroomsFetchCode,
+    RefugeRestroomManagerSaveToCoreDataCode
 };
 
 @interface RefugeRestroomManager : NSObject <RefugeRestroomCommunicatorDelegate>

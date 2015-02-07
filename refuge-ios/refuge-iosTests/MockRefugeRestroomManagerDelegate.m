@@ -20,4 +20,9 @@
     self.fetchError = error;
 }
 
+- (void)syncingRestroomsFailedWithError:(NSError *)error
+{
+    self.syncError = error;
+}
+
 @end
