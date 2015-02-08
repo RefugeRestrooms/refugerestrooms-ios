@@ -29,6 +29,8 @@
 		CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2400D1A86BD110083510F /* RefugeDataPersistenceManager.m */; };
 		CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2400D1A86BD110083510F /* RefugeDataPersistenceManager.m */; };
 		CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */; };
+		CEA240171A86DEA90083510F /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240161A86DEA90083510F /* UIColor+Refuge.m */; };
+		CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240161A86DEA90083510F /* UIColor+Refuge.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -90,6 +92,8 @@
 		CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeDataPersistenceManager.h; sourceTree = "<group>"; };
 		CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeDataPersistenceManager.m; sourceTree = "<group>"; };
 		CEA240141A86D18E0083510F /* RefugeDataPeristenceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPeristenceManagerDelegate.h; sourceTree = "<group>"; };
+		CEA240151A86DEA90083510F /* UIColor+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Refuge.h"; sourceTree = "<group>"; };
+		CEA240161A86DEA90083510F /* UIColor+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Refuge.m"; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 			children = (
 				CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */,
 				CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */,
+				CEA240151A86DEA90083510F /* UIColor+Refuge.h */,
+				CEA240161A86DEA90083510F /* UIColor+Refuge.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
 				CEA2400A1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
+				CEA240171A86DEA90083510F /* UIColor+Refuge.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
@@ -496,6 +503,7 @@
 				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
 				CEA23FF11A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
+				CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,

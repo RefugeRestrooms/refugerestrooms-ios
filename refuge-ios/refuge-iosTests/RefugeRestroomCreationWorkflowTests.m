@@ -45,9 +45,9 @@
     RefugeRestroom *restroom = [[RefugeRestroom alloc] init];
     restrooms = [NSArray arrayWithObject:restroom];
     
+    restroomManager.dataPersistenceManager = dataPersistenceManager;
     restroomManager.delegate = delegate;
     restroomManager.restroomBuilder = restroomBuilder;
-    restroomManager.dataPersistenceManager = dataPersistenceManager;
 }
 
 - (void)tearDown
@@ -147,7 +147,7 @@
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertTrue(dataPersistenceManager.wasAskedToSaveRestrooms, @"Data persistence manager should be asked to save Restrooms when restrooms are build successfully");
+    XCTAssertTrue(dataPersistenceManager.wasAskedToSaveRestrooms, @"Data persistence manager should be asked to save Restrooms when restrooms are built successfully");
 }
 
 - (void)testErrorReturnedToDelegateWhenSaveFails

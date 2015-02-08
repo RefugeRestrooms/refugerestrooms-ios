@@ -10,7 +10,7 @@
 
 @implementation MockRefugeDataPersistenceManager
 
-- (void)saveRestrooms:(NSArray *)restrooms error:(NSError *)error
+- (void)saveRestrooms:(NSArray *)restrooms
 {
     self.wasAskedToSaveRestrooms = YES;
 }
