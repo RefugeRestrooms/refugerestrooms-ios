@@ -37,6 +37,8 @@
         self.hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
         self.hud.mode = MBProgressHUDAnimationFade;
         self.hud.color = [UIColor RefugePurpleDark];
+        
+        self.state = RefugeHUDStateSyncing;
     }
     
     return self;
@@ -53,7 +55,11 @@
 
 - (void)setText:(NSString *)text
 {
-//    self.hud.mode = MBProgressHUDModeText;
+    if(self.state != RefugeHUDStateSyncing)
+    {
+        self.hud.mode = MBProgressHUDModeText;
+    }
+    
     self.hud.labelText = text;
 }
 

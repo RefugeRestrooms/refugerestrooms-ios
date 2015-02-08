@@ -28,8 +28,6 @@ static NSString * const kHudTextSyncing = @"Syncing";
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 
-- (IBAction)showRestroomDetails:(id)sender;
-
 @end
 
 @implementation RefugeMapViewController
@@ -40,12 +38,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-//    [self configureRestroomManager];
+    [self configureRestroomManager];
+    [self configureHUD];
     
-    self.hud = [[RefugeHUD alloc] initWithView:self.view];
-    self.hud.text = kHudTextSyncing;
-    
-//    [self.restroomManager fetchRestrooms];
+    [self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods
@@ -54,16 +50,25 @@ static NSString * const kHudTextSyncing = @"Syncing";
 
 - (void)didReceiveRestrooms:(NSArray *)restrooms
 {
+    self.hud.state = RefugeHUDStateSyncingComplete;
+    self.hud.text = @"Sync complete!";
+    
     NSLog(@"Restrooms received: %@", restrooms);
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
+    self.hud.state = RefugeHUDStateSyncingComplete;
+    self.hud.text = @"Fetch error :(";
+    
     NSLog(@"Restrooms fetch error: %@", error);
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
+    self.hud.state = RefugeHUDStateSyncingComplete;
+    self.hud.text = @"Sync error :(";
+    
     NSLog(@"Restrooms save error: %@", error);
 }
 
@@ -85,9 +90,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.restroomCommunicator.delegate = self.restroomManager;
 }
 
-- (IBAction)showRestroomDetails:(id)sender
+- (void)configureHUD
 {
-    [self performSegueWithIdentifier:kRefugeRestroomDetailsShowSegue sender:self];
+    self.hud = [[RefugeHUD alloc] initWithView:self.view];
+    self.hud.text = kHudTextSyncing;
 }
 
 @end

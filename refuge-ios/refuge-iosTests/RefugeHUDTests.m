@@ -25,7 +25,7 @@
     [super setUp];
     
     self.view = [[UIView alloc] init];
-//    self.view.bounds = [[UIScreen mainScreen] bounds];
+    self.view.bounds = [[UIScreen mainScreen] bounds];
     
     self.hud = [[RefugeHUD alloc] initWithView:self.view];
 }
