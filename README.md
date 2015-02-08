@@ -6,6 +6,7 @@ iOS client for refugerestrooms.org
 #### Build Status
 
 Production Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge-ios.svg?branch=master)](https://travis-ci.org/RefugeRestrooms/refuge-ios)
+<br>
 Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge-ios.svg?branch=development)](https://travis-ci.org/RefugeRestrooms/refuge-ios)
 
 #### Dependencies

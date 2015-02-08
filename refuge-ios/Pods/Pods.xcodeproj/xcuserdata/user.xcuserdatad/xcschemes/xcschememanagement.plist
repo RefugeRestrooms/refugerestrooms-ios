@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-refuge-ios-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-refuge-ios-Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>442F5184B48DEDFEE38472D6</key>
+		<key>41344E367833C6816FA241E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7EAB9BF1CC96C89442B6C52B</key>
+		<key>63039CE4FA3632C352B2A9E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8C0510E8A530B23C35DCD6E1</key>
+		<key>7558FBA545C5931F79D5D8C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>98CA194BEE06E6BD4B8F73D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
