@@ -30,8 +30,8 @@
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
-    [self.restroomManager fetchRestrooms];
+    //[self configureRestroomManager];
+    //[self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods
@@ -48,9 +48,9 @@
     NSLog(@"Restrooms fetch error: %@", error);
 }
 
-- (void)syncingRestroomsFailedWithError:(NSError *)error
+- (void)savingRestroomsFailedWithError:(NSError *)error
 {
-    NSLog(@"Restrooms sync error: %@", error);
+    NSLog(@"Restrooms save error: %@", error);
 }
 
 # pragma mark - Private methods
@@ -66,6 +66,7 @@
     self.restroomManager.restroomBuilder = self.restroomBuilder;
     self.restroomManager.restroomCommunicator = self.restroomCommunicator;
     
+    self.dataPersistenceManager.delegate = self.restroomManager;
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;
 }

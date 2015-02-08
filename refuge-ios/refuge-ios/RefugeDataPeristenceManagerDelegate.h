@@ -10,6 +10,7 @@
 
 @protocol RefugeDataPeristenceManagerDelegate <NSObject>
 
-- (void)syncingRestroomsFailedWithError:(NSError *)error;
+- (void)didSaveRestrooms:(NSArray *)restrooms;
+- (void)savingRestroomsFailedWithError:(NSError *)error;
 
 @end

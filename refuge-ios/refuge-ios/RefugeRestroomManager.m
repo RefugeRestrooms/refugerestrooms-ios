@@ -42,6 +42,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark RefugeRestroomCommunicatorDelegate methods
 
+
 - (void)didReceiveRestroomsJsonObjects:(id)jsonObjects
 {
     NSError *errorBuildingRestrooms;
@@ -50,7 +51,6 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     if(restrooms != nil)
     {
         [self.dataPersistenceManager saveRestrooms:restrooms];
-        [self.delegate didReceiveRestrooms:restrooms];
     }
     else
     {
@@ -68,7 +68,12 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark RefugeDataPeristenceManagerDelegate methods
 
-- (void)syncingRestroomsFailedWithError:(NSError *)error
+- (void)didSaveRestrooms:(NSArray *)restrooms
+{
+    [self.delegate didReceiveRestrooms:restrooms];
+}
+
+- (void)savingRestroomsFailedWithError:(NSError *)error
 {
     [self tellDelegateAboutSyncErrorWithCode:RefugeRestroomManagerErrorRestroomsSaveCode underlyingError:error];
 }
@@ -100,7 +105,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
     
-    [self.delegate syncingRestroomsFailedWithError:reportableError];
+    [self.delegate savingRestroomsFailedWithError:reportableError];
 }
 
 @end

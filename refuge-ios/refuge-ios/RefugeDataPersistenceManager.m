@@ -11,52 +11,45 @@
 #import "RefugeAppDelegate.h"
 #import "RefugeRestroom.h"
 
+@interface RefugeDataPersistenceManager ()
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+@end
+
 @implementation RefugeDataPersistenceManager
 
 # pragma mark - Initializers
 
-+ (instancetype)sharedInstance
+- (id)init
 {
-    // structure used to test whether the block has completed or not
-    static dispatch_once_t p = 0;
+    self = [super init];
     
-    // initialize sharedObject as nil (first call only)
-    __strong static id _sharedObject = nil;
+    if(self)
+    {
+        self.managedObjectContext = ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    }
     
-    // executes a block object once and only once for the lifetime of an application
-    dispatch_once(&p, ^{
-        _sharedObject = [[self alloc] init];
-    });
-    
-    // returns the same object each time
-    return _sharedObject;
-}
-
-# pragma mark Getters
-
-- (NSManagedObjectContext *)mainManagedObjectContext
-{
-    return ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    return self;
 }
 
 # pragma mark - Public methods
 
 - (void)saveRestrooms:(NSArray *)restrooms
 {
-    NSManagedObjectContext *managedObjectContext = ((RefugeAppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     NSError *errorSavingRestrooms;
     
     for(RefugeRestroom *restroom in restrooms)
     {
         [MTLManagedObjectAdapter managedObjectFromModel:restroom
-                                   insertingIntoContext:managedObjectContext
+                                   insertingIntoContext:self.managedObjectContext
                                                   error:&errorSavingRestrooms];
-        [managedObjectContext save:&errorSavingRestrooms];
+        [self.managedObjectContext save:&errorSavingRestrooms];
     }
     
     if(errorSavingRestrooms)
     {
-        [self.delegate syncingRestroomsFailedWithError:errorSavingRestrooms];
+        [self.delegate savingRestroomsFailedWithError:errorSavingRestrooms];
     }
 }
 

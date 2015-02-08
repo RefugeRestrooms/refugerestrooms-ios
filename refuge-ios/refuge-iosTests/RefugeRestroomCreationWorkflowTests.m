@@ -45,6 +45,7 @@
     RefugeRestroom *restroom = [[RefugeRestroom alloc] init];
     restrooms = [NSArray arrayWithObject:restroom];
     
+    dataPersistenceManager.delegate = restroomManager;
     restroomManager.dataPersistenceManager = dataPersistenceManager;
     restroomManager.delegate = delegate;
     restroomManager.restroomBuilder = restroomBuilder;
@@ -152,9 +153,9 @@
 
 - (void)testErrorReturnedToDelegateWhenSaveFails
 {
-    [restroomManager syncingRestroomsFailedWithError:underlyingError];
+    [restroomManager savingRestroomsFailedWithError:underlyingError];
     
-    XCTAssertNotNil([delegate syncError], @"Delegate should receive error when save fails");
+    XCTAssertNotNil([delegate saveError], @"Delegate should receive error when save fails");
 }
 
 @end

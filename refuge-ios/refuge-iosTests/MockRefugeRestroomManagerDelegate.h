@@ -14,6 +14,6 @@
 
 @property (nonatomic, strong) NSArray *receivedRestrooms;
 @property (nonatomic, strong) NSError *fetchError;
-@property (nonatomic, strong) NSError *syncError;
+@property (nonatomic, strong) NSError *saveError;
 
 @end

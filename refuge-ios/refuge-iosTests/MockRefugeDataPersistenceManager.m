@@ -13,6 +13,8 @@
 - (void)saveRestrooms:(NSArray *)restrooms
 {
     self.wasAskedToSaveRestrooms = YES;
+    
+    [self.delegate didSaveRestrooms:restrooms];
 }
 
 @end

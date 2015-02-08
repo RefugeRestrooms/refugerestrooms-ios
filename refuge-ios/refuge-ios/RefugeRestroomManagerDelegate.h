@@ -12,6 +12,6 @@
 
 - (void)didReceiveRestrooms:(NSArray *)restrooms;
 - (void)fetchingRestroomsFailedWithError:(NSError *)error;
-- (void)syncingRestroomsFailedWithError:(NSError *)error;
+- (void)savingRestroomsFailedWithError:(NSError *)error;
 
 @end
