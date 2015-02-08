@@ -33,6 +33,8 @@
 		CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240161A86DEA90083510F /* UIColor+Refuge.m */; };
 		CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */; };
 		CEA2401C1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */; };
+		CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
+		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -98,6 +100,7 @@
 		CEA240161A86DEA90083510F /* UIColor+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Refuge.m"; sourceTree = "<group>"; };
 		CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
+		CEA2401E1A86F9410083510F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -131,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +152,7 @@
 		68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2401E1A86F9410083510F /* MapKit.framework */,
 				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
 			);
 			name = Frameworks;
@@ -425,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,23 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-L4-EHx">
-                                <rect key="frame" x="277" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="showRestroomDetails:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MB2-fX-rdg"/>
-                                </connections>
-                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZNi-N8-Nwa">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ayl-L4-EHx" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="WFg-ix-JtN"/>
-                            <constraint firstItem="ayl-L4-EHx" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ucd-Vo-q4f"/>
+                            <constraint firstAttribute="centerX" secondItem="ZNi-N8-Nwa" secondAttribute="centerX" id="6Rh-Sc-asB"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Ek1-Dv-7qq"/>
+                            <constraint firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" id="Kob-uN-uW8"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
+                            <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ek1-Dv-7qq"/>
+                                <exclude reference="xLg-Hr-Qcq"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Refuge" id="Ydu-IK-ptj">
+                    <navigationItem key="navigationItem" title="Refuge" id="Ydu-IK-ptj" userLabel="Navigation Item">
                         <barButtonItem key="backBarButtonItem" title="Map" id="0H8-xu-eow"/>
                     </navigationItem>
                     <connections>
@@ -57,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="eD9-IO-3Xk"/>
+                    <navigationItem key="navigationItem" title="Details" id="eD9-IO-3Xk" userLabel="Navigation Item"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Pz-eY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
