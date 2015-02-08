@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RefugeMapViewController.h
 //  refuge-ios
 //
 //  Created by Harlan Kellaway on 2/4/15.
@@ -10,7 +10,7 @@
 
 #import "RefugeRestroomManagerDelegate.h"
 
-@interface ViewController : UIViewController <RefugeRestroomManagerDelegate>
+@interface RefugeMapViewController : UIViewController <RefugeRestroomManagerDelegate>
 
 
 @end

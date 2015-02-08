@@ -1,19 +1,19 @@
 //
-//  ViewController.m
+//  RefugeMapViewController.m
 //  refuge-ios
 //
 //  Created by Harlan Kellaway on 2/4/15.
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "RefugeMapViewController.h"
 
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomManager.h"
 
-@interface ViewController ()
+@interface RefugeMapViewController ()
 
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
@@ -22,7 +22,7 @@
 
 @end
 
-@implementation ViewController
+@implementation RefugeMapViewController
 
 # pragma mark - View life-cycle
 
@@ -30,8 +30,8 @@
 {
     [super viewDidLoad];
     
-//    [self configureRestroomManager];
-//    [self.restroomManager fetchRestrooms];
+    [self configureRestroomManager];
+    [self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods

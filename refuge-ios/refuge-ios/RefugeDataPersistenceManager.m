@@ -1,5 +1,5 @@
 //
-//  RefugeCoreDataManager.m
+//  RefugeDataPersistenceManager.m
 //  refuge-ios
 //
 //  Created by Harlan Kellaway on 2/7/15.

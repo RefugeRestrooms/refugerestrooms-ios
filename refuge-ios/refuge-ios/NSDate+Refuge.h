@@ -10,7 +10,7 @@
 
 @interface NSDate (Refuge)
 
-+ (NSString *)dateFormat;
++ (NSString *)RefugeDateFormat;
 + (NSDate *)dateFromString:(NSString *)dateString;
 + (NSString *)stringFromDate:(NSDate *)date;
 

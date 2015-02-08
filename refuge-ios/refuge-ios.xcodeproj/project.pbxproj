@@ -34,7 +34,7 @@
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
-		CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */; };
+		CED0CB5F1A82A6D400F7F3D8 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */; };
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB631A82A6D400F7F3D8 /* Images.xcassets */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
@@ -100,8 +100,8 @@
 		CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeAppDelegate.h; sourceTree = "<group>"; };
 		CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeAppDelegate.m; sourceTree = "<group>"; };
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
-		CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeMapViewController.h; sourceTree = "<group>"; };
+		CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeMapViewController.m; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED0CB631A82A6D400F7F3D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -288,8 +288,8 @@
 		CED0CBA61A83271B00F7F3D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CED0CB5D1A82A6D400F7F3D8 /* ViewController.h */,
-				CED0CB5E1A82A6D400F7F3D8 /* ViewController.m */,
+				CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */,
+				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
-				CED0CB5F1A82A6D400F7F3D8 /* ViewController.m in Sources */,
+				CED0CB5F1A82A6D400F7F3D8 /* RefugeMapViewController.m in Sources */,
 				CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,

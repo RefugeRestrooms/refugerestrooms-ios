@@ -62,7 +62,4 @@ static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppState
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-# pragma mark - Private methods
-
-
 @end

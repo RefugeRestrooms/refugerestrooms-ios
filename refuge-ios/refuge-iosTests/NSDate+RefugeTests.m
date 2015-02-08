@@ -38,7 +38,7 @@
 
 - (void)testThatDateFormatExists
 {
-    XCTAssertNotNil([NSDate dateFormat], @"Date format should exist");
+    XCTAssertNotNil([NSDate RefugeDateFormat], @"Date format should exist");
 }
 
 - (void)testNSDateFromStringTranslatesDateCorrectly

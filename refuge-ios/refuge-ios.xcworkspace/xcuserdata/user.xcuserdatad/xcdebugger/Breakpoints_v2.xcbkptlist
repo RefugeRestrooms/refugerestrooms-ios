@@ -15,7 +15,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
             endingLineNumber = "15"
-            landmarkName = "-saveRestrooms:error:"
+            landmarkName = "-saveRestrooms:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -77,7 +77,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "-saveRestrooms:error:"
+            landmarkName = "-saveRestrooms:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -123,7 +123,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "16"
             endingLineNumber = "16"
-            landmarkName = "-saveRestrooms:error:"
+            landmarkName = "-saveRestrooms:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
