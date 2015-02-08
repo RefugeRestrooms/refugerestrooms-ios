@@ -6,12 +6,12 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface RefugeHUD : NSObject
+@interface RefugeHUD : UIView
 
-@property (nonatomic, strong) text;
+@property (nonatomic, strong) NSString *text;
 
-- (void)displayInView:(UIView *)view;
+- (id)initWithView:(UIView *)view;
 
 @end

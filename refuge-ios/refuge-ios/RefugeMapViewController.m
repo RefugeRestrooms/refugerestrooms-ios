@@ -8,15 +8,21 @@
 
 #import "RefugeMapViewController.h"
 
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 #import "RefugeDataPersistenceManager.h"
+#import "RefugeHUD.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomManager.h"
 
 static NSString * const kRefugeRestroomDetailsShowSegue = @"RefugeRestroomDetailsShowSegue";
 
+static NSString * const kHudTextSyncing = @"Syncing";
+
 @interface RefugeMapViewController ()
 
+@property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
@@ -35,6 +41,10 @@ static NSString * const kRefugeRestroomDetailsShowSegue = @"RefugeRestroomDetail
     [super viewDidLoad];
     
 //    [self configureRestroomManager];
+    
+    self.hud = [[RefugeHUD alloc] initWithView:self.view];
+    self.hud.text = kHudTextSyncing;
+    
 //    [self.restroomManager fetchRestrooms];
 }
 

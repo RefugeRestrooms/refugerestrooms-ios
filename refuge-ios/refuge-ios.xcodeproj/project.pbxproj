@@ -38,6 +38,7 @@
 		CEA240231A86FB6D0083510F /* RefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240221A86FB6D0083510F /* RefugeHUD.m */; };
 		CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240221A86FB6D0083510F /* RefugeHUD.m */; };
 		CEA240261A86FB850083510F /* RefugeHUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240251A86FB850083510F /* RefugeHUDTests.m */; };
+		CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA240271A8702E20083510F /* CoreLocation.framework */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -107,6 +108,7 @@
 		CEA240211A86FB6D0083510F /* RefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHUD.h; sourceTree = "<group>"; };
 		CEA240221A86FB6D0083510F /* RefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHUD.m; sourceTree = "<group>"; };
 		CEA240251A86FB850083510F /* RefugeHUDTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHUDTests.m; sourceTree = "<group>"; };
+		CEA240271A8702E20083510F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
 			);
@@ -158,6 +161,7 @@
 		68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEA240271A8702E20083510F /* CoreLocation.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
 				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
 			);
