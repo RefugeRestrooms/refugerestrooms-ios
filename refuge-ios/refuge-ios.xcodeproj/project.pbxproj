@@ -35,6 +35,9 @@
 		CEA2401C1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */; };
 		CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
+		CEA240231A86FB6D0083510F /* RefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240221A86FB6D0083510F /* RefugeHUD.m */; };
+		CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240221A86FB6D0083510F /* RefugeHUD.m */; };
+		CEA240261A86FB850083510F /* RefugeHUDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240251A86FB850083510F /* RefugeHUDTests.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -101,6 +104,9 @@
 		CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
 		CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
 		CEA2401E1A86F9410083510F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEA240211A86FB6D0083510F /* RefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHUD.h; sourceTree = "<group>"; };
+		CEA240221A86FB6D0083510F /* RefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHUD.m; sourceTree = "<group>"; };
+		CEA240251A86FB850083510F /* RefugeHUDTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHUDTests.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -208,6 +214,17 @@
 			name = "Data Persistence";
 			sourceTree = "<group>";
 		};
+		CEA240201A86FB2A0083510F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */,
+				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
+				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
+				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CED0CB471A82A6D300F7F3D8 = {
 			isa = PBXGroup;
 			children = (
@@ -236,7 +253,7 @@
 				CEA240101A86BD220083510F /* Data Persistence */,
 				CED0CBAB1A83329D00F7F3D8 /* Data Translation */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
-				CED0CBA61A83271B00F7F3D8 /* ViewControllers */,
+				CED0CBA61A83271B00F7F3D8 /* View */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
@@ -266,6 +283,7 @@
 				CEA23FE31A83D7A60083510F /* Integration Tests */,
 				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
 				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
+				CEA240251A86FB850083510F /* RefugeHUDTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
 				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
@@ -294,15 +312,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		CED0CBA61A83271B00F7F3D8 /* ViewControllers */ = {
+		CED0CBA61A83271B00F7F3D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */,
-				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
-				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
-				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
+				CEA240201A86FB2A0083510F /* ViewControllers */,
+				CEA240211A86FB6D0083510F /* RefugeHUD.h */,
+				CEA240221A86FB6D0083510F /* RefugeHUD.m */,
 			);
-			name = ViewControllers;
+			name = View;
 			sourceTree = "<group>";
 		};
 		CED0CBAB1A83329D00F7F3D8 /* Data Translation */ = {
@@ -487,6 +504,7 @@
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
+				CEA240231A86FB6D0083510F /* RefugeHUD.m in Sources */,
 				CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
@@ -508,6 +526,7 @@
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
 				CEA240071A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
+				CEA240261A86FB850083510F /* RefugeHUDTests.m in Sources */,
 				CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */,
 				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
 				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
@@ -519,6 +538,7 @@
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
 				CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
+				CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 			);
