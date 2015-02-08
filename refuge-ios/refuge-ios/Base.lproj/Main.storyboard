@@ -16,15 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayl-L4-EHx">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRestroomDetails:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MB2-fX-rdg"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayl-L4-EHx" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="WFg-ix-JtN"/>
+                            <constraint firstItem="ayl-L4-EHx" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ucd-Vo-q4f"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Refuge" id="Ydu-IK-ptj">
                         <barButtonItem key="backBarButtonItem" title="Map" id="0H8-xu-eow"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="203" y="385"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="VrP-sd-dM0">
+            <objects>
+                <viewController id="k6t-dv-9bB" customClass="RefugeRestroomDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Btn-wa-a94"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGf-jQ-YAt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J1p-Qb-QUp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="eD9-IO-3Xk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Pz-eY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="869" y="385"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bo0-Jb-tQI">

@@ -13,12 +13,16 @@
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomManager.h"
 
+static NSString * const kRefugeRestroomDetailsShowSegue = @"RefugeRestroomDetailsShowSegue";
+
 @interface RefugeMapViewController ()
 
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
+
+- (IBAction)showRestroomDetails:(id)sender;
 
 @end
 
@@ -30,8 +34,8 @@
 {
     [super viewDidLoad];
     
-    //[self configureRestroomManager];
-    //[self.restroomManager fetchRestrooms];
+    [self configureRestroomManager];
+    [self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods
@@ -69,6 +73,11 @@
     self.dataPersistenceManager.delegate = self.restroomManager;
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;
+}
+
+- (IBAction)showRestroomDetails:(id)sender
+{
+    [self performSegueWithIdentifier:kRefugeRestroomDetailsShowSegue sender:self];
 }
 
 @end

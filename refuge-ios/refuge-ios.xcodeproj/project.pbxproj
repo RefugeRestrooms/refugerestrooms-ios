@@ -31,6 +31,8 @@
 		CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */; };
 		CEA240171A86DEA90083510F /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240161A86DEA90083510F /* UIColor+Refuge.m */; };
 		CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240161A86DEA90083510F /* UIColor+Refuge.m */; };
+		CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */; };
+		CEA2401C1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
 		CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */; };
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
@@ -94,6 +96,8 @@
 		CEA240141A86D18E0083510F /* RefugeDataPeristenceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPeristenceManagerDelegate.h; sourceTree = "<group>"; };
 		CEA240151A86DEA90083510F /* UIColor+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Refuge.h"; sourceTree = "<group>"; };
 		CEA240161A86DEA90083510F /* UIColor+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Refuge.m"; sourceTree = "<group>"; };
+		CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
+		CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB541A82A6D400F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED0CB551A82A6D400F7F3D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -290,6 +294,8 @@
 			children = (
 				CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */,
 				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
+				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
+				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 				CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
+				CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +505,7 @@
 				CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */,
 				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
 				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
+				CEA2401C1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
 				CEA23FE01A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */,
 				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
