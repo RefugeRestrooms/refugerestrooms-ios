@@ -51,6 +51,10 @@
     {
         [self.delegate savingRestroomsFailedWithError:errorSavingRestrooms];
     }
+    else
+    {
+        [self.delegate didSaveRestrooms];
+    }
 }
 
 @end

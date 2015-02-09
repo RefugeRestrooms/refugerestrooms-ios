@@ -14,7 +14,7 @@
 {
     self.wasAskedToSaveRestrooms = YES;
     
-    [self.delegate didSaveRestrooms:restrooms];
+    [self.delegate didSaveRestrooms];
 }
 
 @end

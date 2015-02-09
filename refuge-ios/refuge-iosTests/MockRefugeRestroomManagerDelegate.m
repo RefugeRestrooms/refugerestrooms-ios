@@ -10,9 +10,9 @@
 
 @implementation MockRefugeRestroomManagerDelegate
 
-- (void)didReceiveRestrooms:(NSArray *)restrooms
+- (void)didFetchRestrooms
 {
-    self.receivedRestrooms = restrooms;
+    self.wasNotifiedOfFetchedRestrooms = YES;
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error

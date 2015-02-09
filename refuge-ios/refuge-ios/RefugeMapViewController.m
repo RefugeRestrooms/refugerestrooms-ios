@@ -38,22 +38,22 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
+//    [self configureRestroomManager];
     [self configureHUD];
     
-    [self.restroomManager fetchRestrooms];
+//    [self.restroomManager fetchRestrooms];
 }
 
 # pragma mark - Public methods
 
 # pragma mark RefugeRestroomManagerDelegate methods
 
-- (void)didReceiveRestrooms:(NSArray *)restrooms
+- (void)didFetchRestrooms
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Sync complete!";
     
-    NSLog(@"Restrooms received: %@", restrooms);
+    NSLog(@"Restrooms fetched");
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error

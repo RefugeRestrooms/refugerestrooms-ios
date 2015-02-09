@@ -123,13 +123,13 @@
     XCTAssertNil(delegate.fetchError, @"Error should not be received by delegate when fetching Books is successful");
 }
 
-- (void)testDelegateReceivesRestroomsFetchedByManager
+- (void)testDelegateNotifiedOfRestroomsFetchedByManager
 {
     restroomBuilder.arrayToReturn = restrooms;
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertEqualObjects(delegate.receivedRestrooms, restrooms, @"Delegate should receive Restrooms from Manager when fetch is successful");
+    XCTAssertTrue(delegate.wasNotifiedOfFetchedRestrooms, @"Delegate should receive Restrooms from Manager when fetch is successful");
 }
 
 - (void)testEmptyRestroomsArrayCanBePassedToDelegate
@@ -139,7 +139,7 @@
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertEqualObjects(delegate.receivedRestrooms, emptyArray, @"Delegate receiving an empty array of Restrooms should not be an error");
+    XCTAssertTrue(delegate.wasNotifiedOfFetchedRestrooms, @"Delegate receiving an empty array of Restrooms should not be an error");
 }
 
 - (void)testDataPeristenceManagerToldToSaveWhenRestroomsBuildSuccessfully

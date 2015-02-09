@@ -68,9 +68,9 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark RefugeDataPeristenceManagerDelegate methods
 
-- (void)didSaveRestrooms:(NSArray *)restrooms
+- (void)didSaveRestrooms
 {
-    [self.delegate didReceiveRestrooms:restrooms];
+    [self.delegate didFetchRestrooms];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
