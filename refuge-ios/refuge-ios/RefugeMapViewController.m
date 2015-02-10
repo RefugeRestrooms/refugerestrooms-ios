@@ -38,10 +38,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
+//    [self configureRestroomManager];
     [self configureHUD];
     
-    [self.restroomManager fetchRestroomsFromAPI];
+//    [self.restroomManager fetchRestroomsFromAPI];
 }
 
 # pragma mark - Public methods

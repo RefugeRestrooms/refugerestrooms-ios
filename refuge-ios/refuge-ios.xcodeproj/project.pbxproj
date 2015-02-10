@@ -58,6 +58,7 @@
 		CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
+		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,8 @@
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
+		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
+		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,8 @@
 			children = (
 				CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */,
 				CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */,
+				DCF866681A89985100C73806 /* MockRefugeHUD.h */,
+				DCF866691A89985100C73806 /* MockRefugeHUD.m */,
 				CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */,
 				CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */,
 				CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */,
@@ -545,6 +550,7 @@
 				CEA23FF11A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
 				CEA240181A86DEA90083510F /* UIColor+Refuge.m in Sources */,
+				DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
 				CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,

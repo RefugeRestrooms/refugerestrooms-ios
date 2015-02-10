@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import "MockRefugeDataPersistenceManager.h"
+#import "MockRefugeHUD.h"
 #import "MockRefugeRestroomBuilder.h"
 #import "MockRefugeRestroomCommunicator.h"
 #import "MockRefugeRestroomManagerDelegate.h"
@@ -26,6 +27,7 @@
     MockRefugeDataPersistenceManager *dataPersistenceManager;
     MockRefugeRestroomManagerDelegate *delegate;
     MockRefugeRestroomBuilder *restroomBuilder;
+//    MockRefugeHUD *hud;
     NSError *underlyingError;
     NSArray *jsonObjects;
     NSArray *restrooms;
@@ -39,6 +41,11 @@
     dataPersistenceManager = [[MockRefugeDataPersistenceManager alloc] init];
     delegate = [[MockRefugeRestroomManagerDelegate alloc] init];
     restroomBuilder = [[MockRefugeRestroomBuilder alloc] init];
+    
+//    UIView *view = [[UIView alloc] init];
+//    view.bounds = [[UIScreen mainScreen] bounds];
+//    hud = [[MockRefugeHUD alloc] initWithView:view];
+    
     underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
     jsonObjects = [NSArray array];
     
@@ -57,6 +64,7 @@
     dataPersistenceManager = nil;
     delegate = nil;
     restroomBuilder = nil;
+//    hud = nil;
     underlyingError = nil;
     jsonObjects = nil;
     restrooms = nil;
@@ -157,5 +165,19 @@
     
     XCTAssertNotNil([delegate saveError], @"Delegate should receive error when save fails");
 }
+
+//- (void)testHUDAskedToDisplayErrorWhenFetchingFails
+//{
+//    [restroomManager searchingForRestroomsFailedWithError:nil];
+//    
+//    XCTAssertTrue(hud.wasAskedToDisplayError, @"HUD should display error when fetch fails");
+//}
+//
+//- (void)testHUDAskedToDisplayErrorWhenSavingFails
+//{
+//    [restroomManager savingRestroomsFailedWithError:nil];
+//    
+//    XCTAssertTrue(hud.wasAskedToDisplayError, @"HUD should display error when fetch fails");
+//}
 
 @end

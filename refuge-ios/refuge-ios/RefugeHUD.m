@@ -27,12 +27,7 @@ static NSTimeInterval const kHideSpeedSlow = 5;
 
 - (id)initWithView:(UIView *)view
 {
-    if(view == nil)
-    {
-        [[NSException exceptionWithName:NSInvalidArgumentException reason:@"View argument cannot be nil for this class." userInfo:nil] raise];
-        
-        return nil;
-    }
+    NSParameterAssert(view != nil);
     
     self = [self initWithFrame:view.bounds];
     
@@ -95,11 +90,7 @@ static NSTimeInterval const kHideSpeedSlow = 5;
 {
     [self setText:errorText];
     
-    int errorCode = [error code];
-    NSString *errorDescription = [[[[error userInfo] objectForKey:NSUnderlyingErrorKey] userInfo] objectForKey:NSLocalizedDescriptionKey];
-    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %i\nError Description: %@", errorCode, errorDescription];
-    
-    NSLog(@"%@", self.hud.detailsLabelText);
+    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %i", [error code]];
 }
 
 @end
