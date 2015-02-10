@@ -10,6 +10,7 @@
 
 @interface MockRefugeDataPersistenceManager : RefugeDataPersistenceManager
 
+@property (nonatomic, assign) BOOL wasAskedForAllRestrooms;
 @property (nonatomic, assign) BOOL wasAskedToSaveRestrooms;
 
 @end

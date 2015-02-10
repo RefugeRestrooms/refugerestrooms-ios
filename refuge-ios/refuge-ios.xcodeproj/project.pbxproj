@@ -57,6 +57,7 @@
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 		CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
+		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
+		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */,
+				DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */,
 			);
 			name = "Integration Tests";
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			files = (
 				CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */,
 				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
+				DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */,
 				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
 				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,

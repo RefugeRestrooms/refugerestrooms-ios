@@ -10,6 +10,13 @@
 
 @implementation MockRefugeDataPersistenceManager
 
+- (NSArray *)allRestrooms
+{
+    self.wasAskedForAllRestrooms = YES;
+    
+    return [NSArray array];
+}
+
 - (void)saveRestrooms:(NSArray *)restrooms
 {
     self.wasAskedToSaveRestrooms = YES;
