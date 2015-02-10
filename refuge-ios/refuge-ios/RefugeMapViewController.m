@@ -18,8 +18,8 @@
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomManager.h"
 
+static float const kMetersPerMile = 1609.344;
 static NSString * const kRefugeRestroomDetailsShowSegue = @"RefugeRestroomDetailsShowSegue";
-
 static NSString * const kHudTextSyncing = @"Syncing";
 
 @interface RefugeMapViewController ()
@@ -30,7 +30,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
+
 @property (nonatomic, assign) BOOL isPlotComplete;
+@property (nonatomic, assign) BOOL isInitialZoomComplete;
+@property (nonatomic, assign) BOOL isInternetAccessible;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
@@ -49,14 +52,52 @@ static NSString * const kHudTextSyncing = @"Syncing";
     [self configureMap];
     [self configureRestroomManager];
     
+    self.isInternetAccessible = YES;
+    
     [self.restroomManager fetchRestroomsFromAPI];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if(!self.isInitialZoomComplete)
+    {
+        [self promptToAllowLocationServices];
+        [self.locationManager startUpdatingLocation];
+    }
 }
 
 # pragma mark - Public methods
 
 # pragma mark CLLocationManagerDelegate methods
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    [self.locationManager stopUpdatingLocation];
+    
+    if(!self.isInitialZoomComplete)
+    {
+        CLLocation *location = [self.locationManager location];
+        CLLocationCoordinate2D initialCoorindate = [location coordinate];
+        
+        [self zoomToCoordinate:initialCoorindate];
+        
+        [self.locationManager startUpdatingLocation];
+        
+        self.isInitialZoomComplete = YES;
+    }
+}
 
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [self.locationManager stopUpdatingLocation];
+    
+    if(self.isInternetAccessible)
+    {
+        self.hud.text = @"Could not find your location";
+    }
+    
+    [self.hud hide:RefugeHUDHideSpeedSlow];
+}
 
 # pragma mark RefugeRestroomManagerDelegate methods
 
@@ -125,6 +166,25 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+}
+
+- (void)promptToAllowLocationServices
+{
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+    {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    else
+    {
+        // TODO: Test prompting for location services on iOS 7 device
+    }
+}
+
+- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
+    
+    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)plotRestrooms

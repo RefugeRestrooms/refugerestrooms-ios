@@ -54,6 +54,11 @@ static NSTimeInterval const kHideSpeedSlow = 5;
 
 - (void)setText:(NSString *)text
 {
+    if(self.hud.hidden)
+    {
+        [self.hud show:YES];
+    }
+    
     if(self.state != RefugeHUDStateSyncing)
     {
         self.hud.mode = MBProgressHUDModeText;
