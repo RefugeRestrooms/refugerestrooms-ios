@@ -11,6 +11,10 @@
 #import <MBProgressHUD.h>
 #import "UIColor+Refuge.h"
 
+static NSTimeInterval const kHideSpeedFast = 1;
+static NSTimeInterval const kHideSpeedModerate = 2;
+static NSTimeInterval const kHideSpeedSlow = 5;
+
 @interface RefugeHUD ()
 
 @property (nonatomic, strong) MBProgressHUD *hud;
@@ -61,6 +65,30 @@
     }
     
     self.hud.labelText = text;
+}
+
+# pragma mark - Public methods
+
+- (void)hide:(RefugeHUDHideSpeed)speed
+{
+    NSTimeInterval hideSpeed;
+    
+    switch (speed) {
+        case RefugeHUDHideSpeedFast:
+            hideSpeed = kHideSpeedFast;
+            break;
+        case RefugeHUDHideSpeedModerate:
+            hideSpeed = kHideSpeedModerate;
+            break;
+        case RefugeHUDHideSpeedSlow:
+            hideSpeed = kHideSpeedSlow;
+            break;
+        default:
+            hideSpeed = RefugeHUDHideSpeedModerate;
+            break;
+    }
+    
+    [self.hud hide:YES afterDelay:hideSpeed];
 }
 
 @end

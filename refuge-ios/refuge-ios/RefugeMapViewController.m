@@ -38,10 +38,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-//    [self configureRestroomManager];
+    [self configureRestroomManager];
     [self configureHUD];
     
-//    [self.restroomManager fetchRestroomsFromAPI];
+    [self.restroomManager fetchRestroomsFromAPI];
 }
 
 # pragma mark - Public methods
@@ -54,12 +54,16 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.hud.text = @"Sync complete!";
     
     [self plotRestrooms];
+    
+    [self.hud hide:RefugeHUDHideSpeedFast];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Fetch error :(";
+    
+    [self.hud hide:RefugeHUDHideSpeedModerate];
     
     // TODO: handle fetch error
     
@@ -71,7 +75,11 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Sync error :(";
     
+    [self.hud hide:RefugeHUDHideSpeedModerate];
+    
     [self plotRestrooms];
+    
+    [self.hud hide:RefugeHUDHideSpeedFast];
 }
 
 # pragma mark - Private methods
