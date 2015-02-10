@@ -11,6 +11,10 @@
 #import <MBProgressHUD.h>
 #import "UIColor+Refuge.h"
 
+static NSTimeInterval const kHideSpeedFast = 1;
+static NSTimeInterval const kHideSpeedModerate = 2;
+static NSTimeInterval const kHideSpeedSlow = 5;
+
 @interface RefugeHUD ()
 
 @property (nonatomic, strong) MBProgressHUD *hud;
@@ -23,12 +27,7 @@
 
 - (id)initWithView:(UIView *)view
 {
-    if(view == nil)
-    {
-        [[NSException exceptionWithName:NSInvalidArgumentException reason:@"View argument cannot be nil for this class." userInfo:nil] raise];
-        
-        return nil;
-    }
+    NSParameterAssert(view != nil);
     
     self = [self initWithFrame:view.bounds];
     
@@ -61,6 +60,37 @@
     }
     
     self.hud.labelText = text;
+}
+
+# pragma mark - Public methods
+
+- (void)hide:(RefugeHUDHideSpeed)speed
+{
+    NSTimeInterval hideSpeed;
+    
+    switch (speed) {
+        case RefugeHUDHideSpeedFast:
+            hideSpeed = kHideSpeedFast;
+            break;
+        case RefugeHUDHideSpeedModerate:
+            hideSpeed = kHideSpeedModerate;
+            break;
+        case RefugeHUDHideSpeedSlow:
+            hideSpeed = kHideSpeedSlow;
+            break;
+        default:
+            hideSpeed = RefugeHUDHideSpeedModerate;
+            break;
+    }
+    
+    [self.hud hide:YES afterDelay:hideSpeed];
+}
+
+- (void)setErrorText:(NSString *)errorText forError:(NSError *)error
+{
+    [self setText:errorText];
+    
+    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %li", (long)[error code]];
 }
 
 @end

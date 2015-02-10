@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "98CA194BEE06E6BD4B8F73D2"
-               BuildableName = "libPods-refuge-ios-AFNetworking.a"
-               BlueprintName = "Pods-refuge-ios-AFNetworking"
+               BlueprintIdentifier = "7B4E0E97D5493B095946CAAB"
+               BuildableName = "libPods-refuge-ios.a"
+               BlueprintName = "Pods-refuge-ios"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "98CA194BEE06E6BD4B8F73D2"
-            BuildableName = "libPods-refuge-ios-AFNetworking.a"
-            BlueprintName = "Pods-refuge-ios-AFNetworking"
+            BlueprintIdentifier = "7B4E0E97D5493B095946CAAB"
+            BuildableName = "libPods-refuge-ios.a"
+            BlueprintName = "Pods-refuge-ios"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "98CA194BEE06E6BD4B8F73D2"
-            BuildableName = "libPods-refuge-ios-AFNetworking.a"
-            BlueprintName = "Pods-refuge-ios-AFNetworking"
+            BlueprintIdentifier = "7B4E0E97D5493B095946CAAB"
+            BuildableName = "libPods-refuge-ios.a"
+            BlueprintName = "Pods-refuge-ios"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

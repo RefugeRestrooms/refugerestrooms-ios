@@ -14,11 +14,20 @@ typedef NS_ENUM(NSInteger, RefugeHUDState)
     RefugeHUDStateSyncingComplete
 };
 
+typedef NS_ENUM(NSInteger, RefugeHUDHideSpeed)
+{
+    RefugeHUDHideSpeedFast,
+    RefugeHUDHideSpeedModerate,
+    RefugeHUDHideSpeedSlow
+};
+
 @interface RefugeHUD : UIView
 
 @property (nonatomic, assign) RefugeHUDState state;
 @property (nonatomic, strong) NSString *text;
 
 - (id)initWithView:(UIView *)view;
+- (void)hide:(RefugeHUDHideSpeed)speed;
+- (void)setErrorText:(NSString *)errorText forError:(NSError *)error;
 
 @end

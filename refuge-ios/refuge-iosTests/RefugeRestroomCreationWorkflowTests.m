@@ -10,6 +10,7 @@
 #import <XCTest/XCTest.h>
 
 #import "MockRefugeDataPersistenceManager.h"
+#import "MockRefugeHUD.h"
 #import "MockRefugeRestroomBuilder.h"
 #import "MockRefugeRestroomCommunicator.h"
 #import "MockRefugeRestroomManagerDelegate.h"
@@ -26,6 +27,7 @@
     MockRefugeDataPersistenceManager *dataPersistenceManager;
     MockRefugeRestroomManagerDelegate *delegate;
     MockRefugeRestroomBuilder *restroomBuilder;
+//    MockRefugeHUD *hud;
     NSError *underlyingError;
     NSArray *jsonObjects;
     NSArray *restrooms;
@@ -39,6 +41,11 @@
     dataPersistenceManager = [[MockRefugeDataPersistenceManager alloc] init];
     delegate = [[MockRefugeRestroomManagerDelegate alloc] init];
     restroomBuilder = [[MockRefugeRestroomBuilder alloc] init];
+    
+//    UIView *view = [[UIView alloc] init];
+//    view.bounds = [[UIScreen mainScreen] bounds];
+//    hud = [[MockRefugeHUD alloc] initWithView:view];
+    
     underlyingError = [NSError errorWithDomain:@"Test Domain" code:0 userInfo:nil];
     jsonObjects = [NSArray array];
     
@@ -57,6 +64,7 @@
     dataPersistenceManager = nil;
     delegate = nil;
     restroomBuilder = nil;
+//    hud = nil;
     underlyingError = nil;
     jsonObjects = nil;
     restrooms = nil;
@@ -70,7 +78,7 @@
     
     restroomManager.restroomCommunicator =  restroomCommunicator;
     
-    [restroomManager fetchRestrooms];
+    [restroomManager fetchRestroomsFromAPI];
     
     XCTAssertTrue(restroomCommunicator.wasAskedToFetchRestrooms, @"Communicator should register need to fetch data");
 }
@@ -123,13 +131,13 @@
     XCTAssertNil(delegate.fetchError, @"Error should not be received by delegate when fetching Books is successful");
 }
 
-- (void)testDelegateReceivesRestroomsFetchedByManager
+- (void)testDelegateNotifiedOfRestroomsFetchedByManager
 {
     restroomBuilder.arrayToReturn = restrooms;
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertEqualObjects(delegate.receivedRestrooms, restrooms, @"Delegate should receive Restrooms from Manager when fetch is successful");
+    XCTAssertTrue(delegate.wasNotifiedOfFetchedRestrooms, @"Delegate should receive Restrooms from Manager when fetch is successful");
 }
 
 - (void)testEmptyRestroomsArrayCanBePassedToDelegate
@@ -139,7 +147,7 @@
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertEqualObjects(delegate.receivedRestrooms, emptyArray, @"Delegate receiving an empty array of Restrooms should not be an error");
+    XCTAssertTrue(delegate.wasNotifiedOfFetchedRestrooms, @"Delegate receiving an empty array of Restrooms should not be an error");
 }
 
 - (void)testDataPeristenceManagerToldToSaveWhenRestroomsBuildSuccessfully
@@ -157,5 +165,19 @@
     
     XCTAssertNotNil([delegate saveError], @"Delegate should receive error when save fails");
 }
+
+//- (void)testHUDAskedToDisplayErrorWhenFetchingFails
+//{
+//    [restroomManager searchingForRestroomsFailedWithError:nil];
+//    
+//    XCTAssertTrue(hud.wasAskedToDisplayError, @"HUD should display error when fetch fails");
+//}
+//
+//- (void)testHUDAskedToDisplayErrorWhenSavingFails
+//{
+//    [restroomManager savingRestroomsFailedWithError:nil];
+//    
+//    XCTAssertTrue(hud.wasAskedToDisplayError, @"HUD should display error when fetch fails");
+//}
 
 @end

@@ -35,9 +35,14 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark - Public methods
 
-- (void)fetchRestrooms
+- (void)fetchRestroomsFromAPI
 {
     [self.restroomCommunicator searchForRestrooms];
+}
+
+- (NSArray *)restroomsFromLocalStore
+{
+    return [self.dataPersistenceManager allRestrooms];
 }
 
 # pragma mark RefugeRestroomCommunicatorDelegate methods
@@ -68,9 +73,9 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 
 # pragma mark RefugeDataPeristenceManagerDelegate methods
 
-- (void)didSaveRestrooms:(NSArray *)restrooms
+- (void)didSaveRestrooms
 {
-    [self.delegate didReceiveRestrooms:restrooms];
+    [self.delegate didFetchRestrooms];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error

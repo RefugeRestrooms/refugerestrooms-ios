@@ -8,6 +8,7 @@
 
 #import "RefugeDataPersistenceManager.h"
 
+#import <CoreData/CoreData.h>
 #import "RefugeAppDelegate.h"
 #import "RefugeRestroom.h"
 
@@ -35,6 +36,23 @@
 
 # pragma mark - Public methods
 
+- (NSArray *)allRestrooms
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[RefugeRestroom managedObjectEntityName]];
+    
+    NSError *error = nil;
+    NSArray *allRestrooms = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    if(error)
+    {
+        // TODO: Handle error fetching Restrooms from Core Data
+        
+        return nil;
+    }
+    
+    return allRestrooms;
+}
+
 - (void)saveRestrooms:(NSArray *)restrooms
 {
     NSError *errorSavingRestrooms;
@@ -50,6 +68,10 @@
     if(errorSavingRestrooms)
     {
         [self.delegate savingRestroomsFailedWithError:errorSavingRestrooms];
+    }
+    else
+    {
+        [self.delegate didSaveRestrooms];
     }
 }
 

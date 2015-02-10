@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "63039CE4FA3632C352B2A9E3"
-               BuildableName = "libPods-refuge-ios.a"
-               BlueprintName = "Pods-refuge-ios"
+               BlueprintIdentifier = "FB411425521BAEBAAFD3D3F8"
+               BuildableName = "libPods-refuge-ios-Mantle.a"
+               BlueprintName = "Pods-refuge-ios-Mantle"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "63039CE4FA3632C352B2A9E3"
-            BuildableName = "libPods-refuge-ios.a"
-            BlueprintName = "Pods-refuge-ios"
+            BlueprintIdentifier = "FB411425521BAEBAAFD3D3F8"
+            BuildableName = "libPods-refuge-ios-Mantle.a"
+            BlueprintName = "Pods-refuge-ios-Mantle"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "63039CE4FA3632C352B2A9E3"
-            BuildableName = "libPods-refuge-ios.a"
-            BlueprintName = "Pods-refuge-ios"
+            BlueprintIdentifier = "FB411425521BAEBAAFD3D3F8"
+            BuildableName = "libPods-refuge-ios-Mantle.a"
+            BlueprintName = "Pods-refuge-ios-Mantle"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

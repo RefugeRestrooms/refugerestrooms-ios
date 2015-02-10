@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 
-- (void)fetchRestrooms;
+- (void)fetchRestroomsFromAPI;
+- (NSArray *)restroomsFromLocalStore;
 
 @end

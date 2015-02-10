@@ -12,6 +12,8 @@
 #import <MapKit/MapKit.h>
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
+#import "RefugeMapKitAnnotation.h"
+#import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomManager.h"
@@ -27,6 +29,9 @@ static NSString * const kHudTextSyncing = @"Syncing";
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
+@property (nonatomic, assign) BOOL isPlotComplete;
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -38,38 +43,43 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
+//    [self configureRestroomManager];
     [self configureHUD];
+//    [self configureMap];
     
-    [self.restroomManager fetchRestrooms];
+    [self.restroomManager fetchRestroomsFromAPI];
 }
 
 # pragma mark - Public methods
 
 # pragma mark RefugeRestroomManagerDelegate methods
 
-- (void)didReceiveRestrooms:(NSArray *)restrooms
+- (void)didFetchRestrooms
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Sync complete!";
     
-    NSLog(@"Restrooms received: %@", restrooms);
+    [self.hud hide:RefugeHUDHideSpeedFast];
+    
+    [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
-    self.hud.text = @"Fetch error :(";
+    [self.hud setErrorText:@"Sync error :(" forError:error];
     
-    NSLog(@"Restrooms fetch error: %@", error);
+    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
-    self.hud.text = @"Sync error :(";
+    [self.hud setErrorText:@"Sync error :(" forError:error];
     
-    NSLog(@"Restrooms save error: %@", error);
+    [self.hud hide:RefugeHUDHideSpeedModerate];
+    
+    [self plotRestrooms];
 }
 
 # pragma mark - Private methods
@@ -94,6 +104,49 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     self.hud = [[RefugeHUD alloc] initWithView:self.view];
     self.hud.text = kHudTextSyncing;
+}
+
+- (void)configureMap
+{
+    self.mapView.delegate = self;
+    self.mapView.mapType = MKMapTypeStandard;
+    self.mapView.showsUserLocation = YES;
+}
+
+- (void)plotRestrooms
+{
+    NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
+    
+    [self removeAllAnnotationsFromMap];
+    
+    NSMutableArray *annotations = [NSMutableArray array];
+    
+    // add all annotations
+    for (RefugeRestroom *restroom in allRestrooms)
+    {
+        CLLocationCoordinate2D coordinate;
+        coordinate.latitude = [restroom.latitude doubleValue];
+        coordinate.longitude = [restroom.longitude doubleValue];
+        
+        // create map location object
+        RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:restroom];
+        
+        // add annotation
+        [annotations addObject:annotation];
+    }
+    
+    // set annotations
+//    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
+    [self.mapView addAnnotations:annotations];
+    self.isPlotComplete = YES;
+}
+
+- (void)removeAllAnnotationsFromMap
+{
+    for (id<MKAnnotation> annotation in self.mapView.annotations)
+    {
+        [self.mapView removeAnnotation:annotation];
+    }
 }
 
 @end

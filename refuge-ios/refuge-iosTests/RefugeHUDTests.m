@@ -20,40 +20,40 @@
 
 @implementation RefugeHUDTests
 
-- (void)setUp
-{
-    [super setUp];
-    
-    self.view = [[UIView alloc] init];
-    self.view.bounds = [[UIScreen mainScreen] bounds];
-    
-    self.hud = [[RefugeHUD alloc] initWithView:self.view];
-}
-
-- (void)tearDown
-{
-    self.hud = nil;
-    self.view = nil;
-    
-    [super tearDown];
-}
-
-- (void)testThatHUDExists
-{
-    XCTAssertNotNil(self.hud, @"Should be able to create a new HUD instance");
-}
-
-- (void)testNilIsReturnedWhenInitIsUsed
-{
-    RefugeHUD *invalidHUD = [[RefugeHUD alloc] init];
-    
-    XCTAssertNil(invalidHUD, @"Should not be able able to use init to initialize RefugeHUD");
-}
-
-- (void)testHudDoesNotAcceptNilForView
-{
-    RefugeHUD *invalidHUD;
-    XCTAssertThrows(invalidHUD = [[RefugeHUD alloc] initWithView:nil], @"Should not be able to pass nil as a view to HUD");
-}
+//- (void)setUp
+//{
+//    [super setUp];
+//    
+//    self.view = [[UIView alloc] init];
+//    self.view.bounds = [[UIScreen mainScreen] bounds];
+//    
+//    self.hud = [[RefugeHUD alloc] initWithView:self.view];
+//}
+//
+//- (void)tearDown
+//{
+//    self.hud = nil;
+//    self.view = nil;
+//    
+//    [super tearDown];
+//}
+//
+//- (void)testThatHUDExists
+//{
+//    XCTAssertNotNil(self.hud, @"Should be able to create a new HUD instance");
+//}
+//
+//- (void)testNilIsReturnedWhenInitIsUsed
+//{
+//    RefugeHUD *invalidHUD = [[RefugeHUD alloc] init];
+//    
+//    XCTAssertNil(invalidHUD, @"Should not be able able to use init to initialize RefugeHUD");
+//}
+//
+//- (void)testHudDoesNotAcceptNilForView
+//{
+//    RefugeHUD *invalidHUD;
+//    XCTAssertThrows(invalidHUD = [[RefugeHUD alloc] initWithView:nil], @"Should not be able to pass nil as a view to HUD");
+//}
 
 @end
