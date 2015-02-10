@@ -26,6 +26,9 @@
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="vq7-TL-G1d"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -54,6 +57,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="ZNi-N8-Nwa" id="mb7-Tl-33g"/>
+                        <outlet property="searchBar" destination="fFb-8a-ZZ4" id="XrI-Uv-6t7"/>
                         <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>
                     </connections>
                 </viewController>

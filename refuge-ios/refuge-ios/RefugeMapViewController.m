@@ -44,6 +44,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
