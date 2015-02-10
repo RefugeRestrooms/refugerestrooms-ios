@@ -30,18 +30,32 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="vq7-TL-G1d"/>
                                 </connections>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBI-kJ-mzV" userLabel="Search Results Table View">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="WgM-D5-5LT"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="8rF-qE-vyS"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="JBI-kJ-mzV" secondAttribute="centerX" id="1dP-5D-1Jw"/>
                             <constraint firstAttribute="centerX" secondItem="ZNi-N8-Nwa" secondAttribute="centerX" id="6Rh-Sc-asB"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="8Rz-Nq-Sy4"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8fH-60-nHn"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Ek1-Dv-7qq"/>
                             <constraint firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" id="Kob-uN-uW8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fFb-8a-ZZ4" secondAttribute="trailing" constant="-16" id="Ln4-RT-Itl"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JBI-kJ-mzV" secondAttribute="bottom" id="OwU-yJ-LK5"/>
+                            <constraint firstItem="JBI-kJ-mzV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ppb-1l-hHB"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
                             <constraint firstAttribute="centerX" secondItem="fFb-8a-ZZ4" secondAttribute="centerX" id="dXp-Yf-v8a"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
+                            <constraint firstItem="JBI-kJ-mzV" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="mWM-92-DA2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JBI-kJ-mzV" secondAttribute="trailing" constant="-16" id="o2D-Ng-pqQ"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
                             <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
                         </constraints>
@@ -58,6 +72,7 @@
                     <connections>
                         <outlet property="mapView" destination="ZNi-N8-Nwa" id="mb7-Tl-33g"/>
                         <outlet property="searchBar" destination="fFb-8a-ZZ4" id="XrI-Uv-6t7"/>
+                        <outlet property="searchResultsTableView" destination="JBI-kJ-mzV" id="UWj-Gr-PMB"/>
                         <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>
                     </connections>
                 </viewController>

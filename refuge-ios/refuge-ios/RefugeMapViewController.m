@@ -45,6 +45,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *searchResultsTableView;
 
 @end
 
@@ -155,23 +156,13 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
-# pragma mark - Private methods
+# pragma mark UISearchBarDelegate methods
 
-- (void)configureRestroomManager
-{
-    self.restroomManager = [[RefugeRestroomManager alloc] init];
-    self.dataPersistenceManager = [[RefugeDataPersistenceManager alloc] init];
-    self.restroomBuilder = [[RefugeRestroomBuilder alloc] init];
-    self.restroomCommunicator = [[RefugeRestroomCommunicator alloc] init];
-    
-    self.restroomManager.dataPersistenceManager = self.dataPersistenceManager;
-    self.restroomManager.restroomBuilder = self.restroomBuilder;
-    self.restroomManager.restroomCommunicator = self.restroomCommunicator;
-    
-    self.dataPersistenceManager.delegate = self.restroomManager;
-    self.restroomManager.delegate = self;
-    self.restroomCommunicator.delegate = self.restroomManager;
-}
+# pragma mark UITableViewDataSource methods
+
+# pragma mark UITableViewDelegate methods
+
+# pragma mark - Private methods
 
 - (void)configureHUD
 {
@@ -194,6 +185,22 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.mapView.showsUserLocation = YES;
 }
 
+- (void)configureRestroomManager
+{
+    self.restroomManager = [[RefugeRestroomManager alloc] init];
+    self.dataPersistenceManager = [[RefugeDataPersistenceManager alloc] init];
+    self.restroomBuilder = [[RefugeRestroomBuilder alloc] init];
+    self.restroomCommunicator = [[RefugeRestroomCommunicator alloc] init];
+    
+    self.restroomManager.dataPersistenceManager = self.dataPersistenceManager;
+    self.restroomManager.restroomBuilder = self.restroomBuilder;
+    self.restroomManager.restroomCommunicator = self.restroomCommunicator;
+    
+    self.dataPersistenceManager.delegate = self.restroomManager;
+    self.restroomManager.delegate = self;
+    self.restroomCommunicator.delegate = self.restroomManager;
+}
+
 - (void)promptToAllowLocationServices
 {
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
@@ -206,6 +213,13 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
+- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
+{
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
+    
+    [self.mapView setRegion:viewRegion animated:YES];
+}
+
 - (void)fetchRestroomsWithCompletion:(void (^)())completion
 {
     if(!self.isSyncComplete)
@@ -214,13 +228,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
     
     completion();
-}
-
-- (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
-{
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
-    
-    [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)plotRestrooms
