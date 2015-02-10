@@ -61,6 +61,7 @@
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 		DCF8666D1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */; };
 		DCF8666E1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */; };
+		DCF866761A89CAF700C73806 /* RefugeMapKitAnnotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866751A89CAF700C73806 /* RefugeMapKitAnnotationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
 		DCF8666B1A89BAD500C73806 /* RefugeMapKitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapKitAnnotation.h; sourceTree = "<group>"; };
 		DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapKitAnnotation.m; sourceTree = "<group>"; };
+		DCF866751A89CAF700C73806 /* RefugeMapKitAnnotationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapKitAnnotationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
 				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
 				CEA240251A86FB850083510F /* RefugeHUDTests.m */,
+				DCF866751A89CAF700C73806 /* RefugeMapKitAnnotationTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
 				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
@@ -562,6 +565,7 @@
 				CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				DCF8666E1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */,
+				DCF866761A89CAF700C73806 /* RefugeMapKitAnnotationTests.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

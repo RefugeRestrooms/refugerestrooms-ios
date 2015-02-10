@@ -29,8 +29,9 @@ static NSString * const kHudTextSyncing = @"Syncing";
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (nonatomic, assign) BOOL isPlotComplete;
+
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 @end
 
@@ -42,9 +43,9 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-    [self configureRestroomManager];
+//    [self configureRestroomManager];
     [self configureHUD];
-    [self configureMap];
+//    [self configureMap];
     
     [self.restroomManager fetchRestroomsFromAPI];
 }
