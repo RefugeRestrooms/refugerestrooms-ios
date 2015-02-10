@@ -12,11 +12,10 @@
 
 @interface RefugeMapKitAnnotation : NSObject <MKAnnotation>
 
-@property (nonatomic, strong) RefugeRestroom *restroom;
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
-@property (nonatomic, readonly, copy) NSString *title;
-@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, copy, readonly) NSString *subtitle;
 
-- (id)initWithName:(NSString*)name address:(NSString*)address coordinate:(CLLocationCoordinate2D)coordinate;
+- (id)initWithRestroom:(RefugeRestroom *)restroom;
 
 @end

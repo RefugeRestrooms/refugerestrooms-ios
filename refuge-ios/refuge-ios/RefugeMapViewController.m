@@ -128,8 +128,7 @@ static NSString * const kHudTextSyncing = @"Syncing";
         coordinate.longitude = [restroom.longitude doubleValue];
         
         // create map location object
-        RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithName:restroom.name address:restroom.street coordinate:coordinate];
-        annotation.restroom = restroom;
+        RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:restroom];
         
         // add annotation
         [annotations addObject:annotation];

@@ -8,27 +8,32 @@
 
 #import "RefugeMapKitAnnotation.h"
 
+#import <CoreLocation/CoreLocation.h>
+#import "RefugeRestroom.h"
+
 static NSString * const kNoName = @"No Name";
 
 @implementation RefugeMapKitAnnotation
 
-- (id)initWithName:(NSString *)name address:(NSString *)address coordinate:(CLLocationCoordinate2D)coordinate
+# pragma mark - Initializers
+
+- (id)initWithRestroom:(RefugeRestroom *)restroom
 {
     self = [super init];
     
     if (self)
     {
-        if ([name isKindOfClass:[NSString class]])
+        if (![restroom.name isEqualToString:@""])
         {
-            _title = name;
+            _title = restroom.name;
         }
         else
         {
             _title = kNoName;
         }
         
-        _subtitle = address;
-        _coordinate = coordinate;
+        _subtitle = [self addressForRestroom:restroom];
+        _coordinate = [self coordinateForRestroom:restroom];
     }
     
     return self;
@@ -39,6 +44,22 @@ static NSString * const kNoName = @"No Name";
     NSAssert(false, @"Use initWitName:address:coordinate: to initialize this class.");
     
     return nil;
+}
+
+# pragma mark - Private methods
+
+- (NSString *)addressForRestroom:(RefugeRestroom *)restroom
+{
+    return [NSString stringWithFormat:@"%@, %@, %@", restroom.street, restroom.city, restroom.state];
+}
+
+- (CLLocationCoordinate2D)coordinateForRestroom:(RefugeRestroom *)restroom
+{
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [restroom.latitude doubleValue];
+    coordinate.longitude = [restroom.longitude doubleValue];
+    
+    return coordinate;
 }
 
 @end
