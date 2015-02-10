@@ -25,6 +25,7 @@ static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsS
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
 static NSString * const kHudTextSyncError = @"Sync error :(";
+static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
 
@@ -62,21 +63,38 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if(!self.isInitialZoomComplete)
+    [self promptToAllowLocationServices];
+    [self.locationManager startUpdatingLocation];
+    
+    self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
+    
+    if(self.internetReachability.isReachable)
     {
-        [self promptToAllowLocationServices];
-        [self.locationManager startUpdatingLocation];
-        
-        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
-        
-        if(self.internetReachability.isReachable)
+        [self fetchRestroomsWithCompletion:^
         {
-            [self fetchRestroomsCreatedSinceLastSync];
-        }
-        else
-        {
-            NSLog(@"Internet unreachable");
-        }
+            [self plotRestrooms];
+        }];
+    }
+    else
+    {
+        self.hud.text = kHudTextNoInternet;
+        
+        self.isSyncComplete = YES;
+        [self.hud hide:RefugeHUDHideSpeedModerate];
+        
+        [self plotRestrooms];
+    }
+}
+
+# pragma mark - Setters
+
+- (void)setIsSyncComplete:(BOOL)isSyncComplete
+{
+    _isSyncComplete = isSyncComplete;
+    
+    if(isSyncComplete)
+    {
+        self.hud.state = RefugeHUDStateSyncingComplete;
     }
 }
 
@@ -111,7 +129,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)didFetchRestrooms
 {
     self.isSyncComplete = YES;
-    self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = kHudTextSyncComplete;
     
     [self.hud hide:RefugeHUDHideSpeedFast];
@@ -124,23 +141,17 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-    self.hud.state = RefugeHUDStateSyncingComplete;
     [self.hud setErrorText:kHudTextSyncError forError:error];
     
     [self.hud hide:RefugeHUDHideSpeedModerate];
-    
-    [self plotRestrooms];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-    self.hud.state = RefugeHUDStateSyncingComplete;
     [self.hud setErrorText:kHudTextSyncError forError:error];
     
     [self.hud hide:RefugeHUDHideSpeedModerate];
-    
-    [self plotRestrooms];
 }
 
 # pragma mark - Private methods
@@ -194,12 +205,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
-- (void)fetchRestroomsCreatedSinceLastSync
+- (void)fetchRestroomsWithCompletion:(void (^)())completion
 {
     if(!self.isSyncComplete)
     {
         [self.restroomManager fetchRestroomsFromAPI];
     }
+    
+    completion();
 }
 
 - (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
