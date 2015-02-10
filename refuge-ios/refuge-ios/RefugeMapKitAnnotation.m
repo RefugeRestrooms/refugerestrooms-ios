@@ -23,13 +23,13 @@ static NSString * const kNoName = @"No Name";
     
     if (self)
     {
-        if (![restroom.name isEqualToString:@""])
+        if ([restroom.name isEqualToString:@""])
         {
-            _title = restroom.name;
+            _title = kNoName;
         }
         else
         {
-            _title = kNoName;
+            _title = restroom.name;
         }
         
         _subtitle = [self addressForRestroom:restroom];
@@ -41,7 +41,7 @@ static NSString * const kNoName = @"No Name";
 
 - (id)init
 {
-    NSAssert(false, @"Use initWitName:address:coordinate: to initialize this class.");
+    NSAssert(false, @"Use initWitRestroom: to initialize this class.");
     
     return nil;
 }

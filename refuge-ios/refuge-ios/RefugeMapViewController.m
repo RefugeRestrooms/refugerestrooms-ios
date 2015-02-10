@@ -25,6 +25,7 @@ static NSString * const kHudTextSyncing = @"Syncing";
 @interface RefugeMapViewController ()
 
 @property (nonatomic, strong) RefugeHUD *hud;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
@@ -43,14 +44,19 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-//    [self configureRestroomManager];
     [self configureHUD];
-//    [self configureMap];
+    [self configureLocationManager];
+    [self configureMap];
+    [self configureRestroomManager];
     
     [self.restroomManager fetchRestroomsFromAPI];
 }
 
 # pragma mark - Public methods
+
+# pragma mark CLLocationManagerDelegate methods
+
+
 
 # pragma mark RefugeRestroomManagerDelegate methods
 
@@ -104,6 +110,14 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     self.hud = [[RefugeHUD alloc] initWithView:self.view];
     self.hud.text = kHudTextSyncing;
+}
+
+- (void)configureLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 }
 
 - (void)configureMap
