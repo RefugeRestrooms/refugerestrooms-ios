@@ -91,4 +91,15 @@ static NSTimeInterval const kHideSpeedSlow = 5;
     [self.hud hide:YES afterDelay:hideSpeed];
 }
 
+- (void)setErrorText:(NSString *)errorText forError:(NSError *)error
+{
+    [self setText:errorText];
+    
+    int errorCode = [error code];
+    NSString *errorDescription = [[[[error userInfo] objectForKey:NSUnderlyingErrorKey] userInfo] objectForKey:NSLocalizedDescriptionKey];
+    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %i\nError Description: %@", errorCode, errorDescription];
+    
+    NSLog(@"%@", self.hud.detailsLabelText);
+}
+
 @end

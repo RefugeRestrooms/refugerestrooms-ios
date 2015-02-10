@@ -61,7 +61,7 @@ static NSString * const kHudTextSyncing = @"Syncing";
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
-    self.hud.text = @"Fetch error :(";
+    [self.hud setErrorText:@"Sync error :(" forError:error];
     
     [self.hud hide:RefugeHUDHideSpeedModerate];
     
@@ -73,13 +73,11 @@ static NSString * const kHudTextSyncing = @"Syncing";
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
-    self.hud.text = @"Sync error :(";
-    
-    [self.hud hide:RefugeHUDHideSpeedModerate];
+    [self.hud setErrorText:@"Sync error :(" forError:error];
     
     [self plotRestrooms];
     
-    [self.hud hide:RefugeHUDHideSpeedFast];
+    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 # pragma mark - Private methods

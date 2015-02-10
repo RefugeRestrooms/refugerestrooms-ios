@@ -28,5 +28,6 @@ typedef NS_ENUM(NSInteger, RefugeHUDHideSpeed)
 
 - (id)initWithView:(UIView *)view;
 - (void)hide:(RefugeHUDHideSpeed)speed;
+- (void)setErrorText:(NSString *)errorText forError:(NSError *)error;
 
 @end
