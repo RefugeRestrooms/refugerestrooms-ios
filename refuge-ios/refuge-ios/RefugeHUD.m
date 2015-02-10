@@ -12,7 +12,7 @@
 #import "UIColor+Refuge.h"
 
 static NSTimeInterval const kHideSpeedFast = 1;
-static NSTimeInterval const kHideSpeedModerate = 2;
+static NSTimeInterval const kHideSpeedModerate = 3;
 static NSTimeInterval const kHideSpeedSlow = 5;
 
 @interface RefugeHUD ()
