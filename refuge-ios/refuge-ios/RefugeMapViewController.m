@@ -21,7 +21,9 @@
 #import "RefugeRestroomManager.h"
 
 static float const kMetersPerMile = 1609.344;
+static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
+
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
 static NSString * const kHudTextSyncError = @"Sync error :(";
@@ -61,6 +63,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureLocationManager];
     [self configureMap];
     [self configureRestroomManager];
+    self.searchResultsTableView.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -160,7 +163,56 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 # pragma mark UITableViewDataSource methods
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+//    return [searchResultPlaces count];
+    
+    return 5;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self.searchResultsTableView dequeueReusableCellWithIdentifier:kSearchResultsTableCellReuseIdentifier];
+    
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSearchResultsTableCellReuseIdentifier];
+    }
+    
+//    cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
+    
+    cell.textLabel.text = @"Search Result";
+    
+    return cell;
+}
+
 # pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
+//    
+//    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error)
+//     {
+//         if (error)
+//         {
+//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_PLACE_NOT_FOUND delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+//             
+//             [alert show];
+//         }
+//         else if (placemark)
+//         {
+//             // placemark selected
+//             [self mapSearchPlacemarkSelected:placemark cellName:[self tableView:tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+//             
+//             // dismiss search
+//             [self.searchTableView deselectRowAtIndexPath:indexPath animated:NO];
+//             [self dismissSearch];
+//         }
+//     }];
+    
+    [self dismissSearch];
+}
 
 # pragma mark - Private methods
 
@@ -258,5 +310,17 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
         [self.mapView removeAnnotation:annotation];
     }
 }
+
+- (void)dismissSearch
+{
+    self.searchBar.text = @"";
+    
+    [self.searchBar performSelector: @selector(resignFirstResponder)
+                      withObject: nil
+                      afterDelay: 0.1];
+    
+    self.searchResultsTableView.hidden = YES;
+}
+
 
 @end
