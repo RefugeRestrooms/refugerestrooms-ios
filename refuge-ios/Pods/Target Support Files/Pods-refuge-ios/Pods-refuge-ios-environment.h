@@ -72,3 +72,9 @@
 #define COCOAPODS_VERSION_MINOR_Reachability 2
 #define COCOAPODS_VERSION_PATCH_Reachability 0
 
+// SPGooglePlacesAutocomplete
+#define COCOAPODS_POD_AVAILABLE_SPGooglePlacesAutocomplete
+#define COCOAPODS_VERSION_MAJOR_SPGooglePlacesAutocomplete 1
+#define COCOAPODS_VERSION_MINOR_SPGooglePlacesAutocomplete 0
+#define COCOAPODS_VERSION_PATCH_SPGooglePlacesAutocomplete 4
+

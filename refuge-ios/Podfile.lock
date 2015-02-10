@@ -25,17 +25,20 @@ PODS:
   - Mantle/extobjc (1.5.4)
   - MBProgressHUD (0.9)
   - Reachability (3.2)
+  - SPGooglePlacesAutocomplete (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (= 2.5.1)
   - Mantle (= 1.5.4)
   - MBProgressHUD (= 0.9)
   - Reachability (= 3.2)
+  - SPGooglePlacesAutocomplete (= 1.0.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
+  SPGooglePlacesAutocomplete: 6352d38dedf40ccac6d728fa50c50fd370d183b9
 
 COCOAPODS: 0.35.0
