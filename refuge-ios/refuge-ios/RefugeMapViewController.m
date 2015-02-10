@@ -10,6 +10,8 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import <Reachability/Reachability.h>
+#import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
 #import "RefugeMapKitAnnotation.h"
@@ -19,21 +21,26 @@
 #import "RefugeRestroomManager.h"
 
 static float const kMetersPerMile = 1609.344;
-static NSString * const kRefugeRestroomDetailsShowSegue = @"RefugeRestroomDetailsShowSegue";
+static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 static NSString * const kHudTextSyncing = @"Syncing";
+static NSString * const kHudTextSyncComplete = @"Sync complete!";
+static NSString * const kHudTextSyncError = @"Sync error :(";
+static NSString * const kHudTextLocationNotFound = @"Location not found";
+static NSString * const kReachabilityTestURL = @"www.google.com";
 
 @interface RefugeMapViewController ()
 
 @property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) Reachability *internetReachability;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 
+@property (nonatomic, assign) BOOL isSyncComplete;
 @property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
-@property (nonatomic, assign) BOOL isInternetAccessible;
 
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
@@ -51,10 +58,6 @@ static NSString * const kHudTextSyncing = @"Syncing";
     [self configureLocationManager];
     [self configureMap];
     [self configureRestroomManager];
-    
-    self.isInternetAccessible = YES;
-    
-    [self.restroomManager fetchRestroomsFromAPI];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -63,6 +66,17 @@ static NSString * const kHudTextSyncing = @"Syncing";
     {
         [self promptToAllowLocationServices];
         [self.locationManager startUpdatingLocation];
+        
+        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
+        
+        if(self.internetReachability.isReachable)
+        {
+            [self fetchRestroomsCreatedSinceLastSync];
+        }
+        else
+        {
+            NSLog(@"Internet unreachable");
+        }
     }
 }
 
@@ -90,39 +104,39 @@ static NSString * const kHudTextSyncing = @"Syncing";
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     [self.locationManager stopUpdatingLocation];
-    
-    if(self.isInternetAccessible)
-    {
-        self.hud.text = @"Could not find your location";
-    }
-    
-    [self.hud hide:RefugeHUDHideSpeedSlow];
 }
 
 # pragma mark RefugeRestroomManagerDelegate methods
 
 - (void)didFetchRestrooms
 {
+    self.isSyncComplete = YES;
     self.hud.state = RefugeHUDStateSyncingComplete;
-    self.hud.text = @"Sync complete!";
+    self.hud.text = kHudTextSyncComplete;
     
     [self.hud hide:RefugeHUDHideSpeedFast];
+    
+    [RefugeAppState sharedInstance].dateLastSynced = [NSDate date];
     
     [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
+    self.isSyncComplete = YES;
     self.hud.state = RefugeHUDStateSyncingComplete;
-    [self.hud setErrorText:@"Sync error :(" forError:error];
+    [self.hud setErrorText:kHudTextSyncError forError:error];
     
     [self.hud hide:RefugeHUDHideSpeedModerate];
+    
+    [self plotRestrooms];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
+    self.isSyncComplete = YES;
     self.hud.state = RefugeHUDStateSyncingComplete;
-    [self.hud setErrorText:@"Sync error :(" forError:error];
+    [self.hud setErrorText:kHudTextSyncError forError:error];
     
     [self.hud hide:RefugeHUDHideSpeedModerate];
     
@@ -180,6 +194,14 @@ static NSString * const kHudTextSyncing = @"Syncing";
     }
 }
 
+- (void)fetchRestroomsCreatedSinceLastSync
+{
+    if(!self.isSyncComplete)
+    {
+        [self.restroomManager fetchRestroomsFromAPI];
+    }
+}
+
 - (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
 {
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
@@ -195,21 +217,14 @@ static NSString * const kHudTextSyncing = @"Syncing";
     
     NSMutableArray *annotations = [NSMutableArray array];
     
-    // add all annotations
     for (RefugeRestroom *restroom in allRestrooms)
     {
-        CLLocationCoordinate2D coordinate;
-        coordinate.latitude = [restroom.latitude doubleValue];
-        coordinate.longitude = [restroom.longitude doubleValue];
-        
-        // create map location object
         RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:restroom];
         
-        // add annotation
         [annotations addObject:annotation];
     }
     
-    // set annotations
+    // TODO: update to setAnnotations when ADCluster added
 //    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
     [self.mapView addAnnotations:annotations];
     self.isPlotComplete = YES;

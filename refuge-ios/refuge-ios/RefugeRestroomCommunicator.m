@@ -72,7 +72,7 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
     
     int day = 1;
     int month = 2;
-    int year = 2015;
+    int year = 2014;
     
     NSString *endPoint = [NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", kApiEndPointRestroomsByDate, (long)kMaxRestroomsToFetch, day, month, year];
     NSDictionary *httpSessionParameters =  @{ @"format": @"json" };
