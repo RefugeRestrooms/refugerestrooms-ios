@@ -70,7 +70,7 @@
     
     restroomManager.restroomCommunicator =  restroomCommunicator;
     
-    [restroomManager fetchRestrooms];
+    [restroomManager fetchRestroomsFromAPI];
     
     XCTAssertTrue(restroomCommunicator.wasAskedToFetchRestrooms, @"Communicator should register need to fetch data");
 }

@@ -38,10 +38,10 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     [super viewDidLoad];
     
-//    [self configureRestroomManager];
+    [self configureRestroomManager];
     [self configureHUD];
     
-//    [self.restroomManager fetchRestrooms];
+    [self.restroomManager fetchRestroomsFromAPI];
 }
 
 # pragma mark - Public methods
@@ -53,13 +53,15 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Sync complete!";
     
-    NSLog(@"Restrooms fetched");
+    [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Fetch error :(";
+    
+    // TODO: handle fetch error
     
     NSLog(@"Restrooms fetch error: %@", error);
 }
@@ -69,7 +71,7 @@ static NSString * const kHudTextSyncing = @"Syncing";
     self.hud.state = RefugeHUDStateSyncingComplete;
     self.hud.text = @"Sync error :(";
     
-    NSLog(@"Restrooms save error: %@", error);
+    [self plotRestrooms];
 }
 
 # pragma mark - Private methods
@@ -94,6 +96,13 @@ static NSString * const kHudTextSyncing = @"Syncing";
 {
     self.hud = [[RefugeHUD alloc] initWithView:self.view];
     self.hud.text = kHudTextSyncing;
+}
+
+- (void)plotRestrooms
+{
+    NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
+    
+    NSLog(@"%@", allRestrooms);
 }
 
 @end
