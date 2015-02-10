@@ -8,6 +8,7 @@ target 'refuge-ios' do
 pod 'AFNetworking', '2.5.1'
 pod 'Mantle', '1.5.4'
 pod 'MBProgressHUD', '0.9'
+pod 'Reachability', '3.2'
 
 end
 
