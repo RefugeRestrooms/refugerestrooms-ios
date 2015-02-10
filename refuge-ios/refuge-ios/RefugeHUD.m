@@ -90,7 +90,7 @@ static NSTimeInterval const kHideSpeedSlow = 5;
 {
     [self setText:errorText];
     
-    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %i", [error code]];
+    self.hud.detailsLabelText = [NSString stringWithFormat:@"Error Code: %li", (long)[error code]];
 }
 
 @end

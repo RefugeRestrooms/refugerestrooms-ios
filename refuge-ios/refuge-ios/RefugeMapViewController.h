@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 #import "RefugeRestroomManagerDelegate.h"
 
-@interface RefugeMapViewController : UIViewController <RefugeRestroomManagerDelegate>
+@interface RefugeMapViewController : UIViewController <MKMapViewDelegate, RefugeRestroomManagerDelegate>
 
 
 @end
