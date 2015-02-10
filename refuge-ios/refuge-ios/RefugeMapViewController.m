@@ -161,6 +161,27 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 # pragma mark UISearchBarDelegate methods
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    BOOL shouldHideSearchResults = ([searchText length] == 0);
+    
+    if(shouldHideSearchResults)
+    {
+        self.searchResultsTableView.hidden = YES;
+        [self dismissSearch];
+    }
+    else
+    {
+        self.searchResultsTableView.hidden = NO;
+        [self handleSearchForString:searchText];
+    }
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissSearch];
+}
+
 # pragma mark UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -309,6 +330,31 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     {
         [self.mapView removeAnnotation:annotation];
     }
+}
+
+
+- (void)handleSearchForString:(NSString *)searchString
+{
+//    //    searchQuery.location = self.mapView.userLocation.coordinate;
+//    searchQuery.input = searchString;
+//    
+//    [searchQuery fetchPlaces:^(NSArray *places, NSError *error)
+//     {
+//         if (error)
+//         {
+//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
+//             
+//             [alert show];
+//             
+//             [self dismissSearch];
+//         }
+//         else
+//         {
+//             searchResultPlaces = places;
+//             //[self.searchDisplayController.searchResultsTableView reloadData];
+//             [self.searchTableView reloadData];
+//         }
+//     }];
 }
 
 - (void)dismissSearch
