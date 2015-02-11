@@ -12,7 +12,7 @@
 #import "UIColor+Refuge.h"
 
 static NSTimeInterval const kHideSpeedFast = 1;
-static NSTimeInterval const kHideSpeedModerate = 2;
+static NSTimeInterval const kHideSpeedModerate = 3;
 static NSTimeInterval const kHideSpeedSlow = 5;
 
 @interface RefugeHUD ()
@@ -54,6 +54,11 @@ static NSTimeInterval const kHideSpeedSlow = 5;
 
 - (void)setText:(NSString *)text
 {
+    if(self.hud.hidden)
+    {
+        [self.hud show:YES];
+    }
+    
     if(self.state != RefugeHUDStateSyncing)
     {
         self.hud.mode = MBProgressHUDModeText;

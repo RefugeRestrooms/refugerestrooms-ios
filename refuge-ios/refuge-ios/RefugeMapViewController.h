@@ -10,7 +10,7 @@
 
 #import "RefugeRestroomManagerDelegate.h"
 
-@interface RefugeMapViewController : UIViewController <MKMapViewDelegate, RefugeRestroomManagerDelegate>
+@interface RefugeMapViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, RefugeRestroomManagerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate>
 
 
 @end
