@@ -9,6 +9,7 @@
 #import "RefugeMapSearchQuery.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import "RefugeMapPlace.h"
 #import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
 
 static NSString * const kApiKey = @"AIzaSyAKV9gg_l1jNL8Pep7FIwwI6FQ84ldsEKI";
@@ -52,7 +53,30 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
          }
          else
          {
-             searchSuccess(places);
+             NSMutableArray *refugeMapPlaces = [NSMutableArray array];
+             
+             for(SPGooglePlacesAutocompletePlace *place in places)
+             {
+                 RefugeMapPlace *refugeMapPlace = [[RefugeMapPlace alloc] init];
+                 
+                 refugeMapPlace.name = place.name;
+                 refugeMapPlace.reference = place.reference;
+                 refugeMapPlace.identifier = place.identifier;
+                 refugeMapPlace.key = place.key;
+                 
+                 if(place.type == SPPlaceTypeGeocode)
+                 {
+                     refugeMapPlace.type = RefugeMapPlaceTypeGeocode;
+                 }
+                 else
+                 {
+                     refugeMapPlace.type = RefugeMapPlaceTypeEstablishment;
+                 }
+                 
+                 [refugeMapPlaces addObject:refugeMapPlace];
+             }
+             
+             searchSuccess(refugeMapPlaces);
          }
      }];
 }

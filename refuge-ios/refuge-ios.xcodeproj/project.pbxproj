@@ -57,6 +57,8 @@
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 		CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
+		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
+		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 		DCF8666D1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */; };
@@ -143,6 +145,8 @@
 		CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
+		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
+		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
@@ -375,6 +379,8 @@
 			children = (
 				DCF8667A1A8AD1C100C73806 /* RefugeMapSearchQuery.h */,
 				DCF8667B1A8AD1C100C73806 /* RefugeMapSearchQuery.m */,
+				DCB079751A8AE95600945880 /* RefugeMapPlace.h */,
+				DCB079761A8AE95600945880 /* RefugeMapPlace.m */,
 			);
 			name = "Map Logic";
 			sourceTree = "<group>";
@@ -545,6 +551,7 @@
 				CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* RefugeMapViewController.m in Sources */,
+				DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */,
 				CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAE1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
@@ -567,6 +574,7 @@
 				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
 				DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */,
 				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
+				DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */,
 				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,

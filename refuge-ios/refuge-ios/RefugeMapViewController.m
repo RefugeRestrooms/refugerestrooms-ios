@@ -46,8 +46,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
-@property (nonatomic, strong) RefugeMapSearchQuery *mapSearchQuery;
-@property (nonatomic, strong) NSArray *mapSearchResults;
+@property (nonatomic, strong) RefugeMapSearchQuery *searchQuery;
+@property (nonatomic, strong) NSArray *searchResults;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTableView;
@@ -190,9 +190,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    return [searchResultPlaces count];
-    
-    return 5;
+    return [self.searchResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -264,7 +262,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureSearch
 {
-    self.mapSearchQuery = [[RefugeMapSearchQuery alloc] init];
+    self.searchQuery = [[RefugeMapSearchQuery alloc] init];
 }
 
 - (void)configureRestroomManager
@@ -344,9 +342,9 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)handleSearchForString:(NSString *)searchString
 {
-    [self.mapSearchQuery searchForPlaces:searchString
+    [self.searchQuery searchForPlaces:searchString
                                  success:^(NSArray *places) {
-                                     self.mapSearchResults = places;
+                                     self.searchResults = places;
                                  }
                                  failure:^(NSError *error) {
                                      [self displayAlertForSearchFailure];
