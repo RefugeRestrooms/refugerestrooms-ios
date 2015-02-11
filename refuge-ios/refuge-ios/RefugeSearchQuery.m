@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import "RefugeMapSearchQuery.h"
+#import "RefugeSearchQuery.h"
 
 #import <CoreLocation/CoreLocation.h>
 #import "RefugeMapPlace.h"
@@ -15,13 +15,13 @@
 static NSString * const kApiKey = @"AIzaSyAKV9gg_l1jNL8Pep7FIwwI6FQ84ldsEKI";
 static CLLocationDistance const kSearchQueryRadius = 100.0;
 
-@interface RefugeMapSearchQuery ()
+@interface RefugeSearchQuery ()
 
 @property (nonatomic, strong) SPGooglePlacesAutocompleteQuery *searchQuery;
 
 @end
 
-@implementation RefugeMapSearchQuery
+@implementation RefugeSearchQuery
 
 # pragma mark - Initializers
 

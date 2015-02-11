@@ -16,7 +16,7 @@
 #import "RefugeHUD.h"
 #import "RefugeMapKitAnnotation.h"
 #import "RefugeMapPlace.h"
-#import "RefugeMapSearchQuery.h"
+#import "RefugeSearchQuery.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
@@ -47,7 +47,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
-@property (nonatomic, strong) RefugeMapSearchQuery *searchQuery;
+@property (nonatomic, strong) RefugeSearchQuery *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -266,7 +266,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureSearch
 {
-    self.searchQuery = [[RefugeMapSearchQuery alloc] init];
+    self.searchQuery = [[RefugeSearchQuery alloc] init];
 }
 
 - (void)configureRestroomManager
