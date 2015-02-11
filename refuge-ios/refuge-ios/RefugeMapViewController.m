@@ -51,7 +51,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, strong) NSArray *searchResults;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *searchResultsTableView;
+@property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
+
 
 @end
 
@@ -68,7 +69,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
-    self.searchResultsTableView.hidden = YES;
+    self.searchResultsTable.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -172,12 +173,12 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     
     if(shouldHideSearchResults)
     {
-        self.searchResultsTableView.hidden = YES;
+        self.searchResultsTable.hidden = YES;
         [self dismissSearch];
     }
     else
     {
-        self.searchResultsTableView.hidden = NO;
+        self.searchResultsTable.hidden = NO;
         [self handleSearchForString:searchText];
     }
 }
@@ -196,7 +197,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.searchResultsTableView dequeueReusableCellWithIdentifier:kSearchResultsTableCellReuseIdentifier];
+    UITableViewCell *cell = [self.searchResultsTable dequeueReusableCellWithIdentifier:kSearchResultsTableCellReuseIdentifier];
     
     if (!cell)
     {
@@ -218,13 +219,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
         
                                     [self placemarkSelected:placemark];
         
-                                    [self.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
-                                    [self dismissSearch];
+                                    [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
                                 }
                                 failure:^(NSError *error) {
-                                    [self displayAlertForWithMessage:@"Could not fetch addresses for autocomplete"];
+                                    [self displayAlertForWithMessage:@"Could not map selected location"];
                                 }
      ];
+    
+    [self dismissSearch];
 }
 
 # pragma mark - Private methods
@@ -334,10 +336,10 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.searchQuery searchForPlaces:searchString
                                  success:^(NSArray *places) {
                                      self.searchResults = places;
-                                     [self.searchResultsTableView reloadData];
+                                     [self.searchResultsTable reloadData];
                                  }
                                  failure:^(NSError *error) {
-                                     [self displayAlertForWithMessage:@"Could not map selected location"];
+                                     [self displayAlertForWithMessage:@"Could not fetch addresses for autocomplete"];
                                      [self dismissSearch];
                                  }
     ];
@@ -358,7 +360,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
                       withObject: nil
                       afterDelay: 0.1];
     
-    self.searchResultsTableView.hidden = YES;
+    self.searchResultsTable.hidden = YES;
 }
 
 - (RefugeMapPlace *)placeAtIndexPath:(NSIndexPath *)indexPath
@@ -368,7 +370,30 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)placemarkSelected:(CLPlacemark *)placemark
 {
+    NSDictionary *addressInfo = placemark.addressDictionary;
+    NSString *address = [NSString stringWithFormat:@"%@, %@, %@",
+                         [addressInfo objectForKey:@"Street"],
+                         [addressInfo objectForKey:@"City"],
+                         [addressInfo objectForKey:@"State"]];
     
+    [self addPlacemarkToMap:placemark withTitle:[NSString stringWithFormat:@"Search: %@", address]];
+    [self recenterMapToPlacemark:placemark];
+}
+
+-(void) addPlacemarkToMap:(CLPlacemark *)placemark withTitle:(NSString *)title
+{
+    MKPointAnnotation *annotationFromPlacemark = [[MKPointAnnotation alloc] init];
+    annotationFromPlacemark.coordinate = placemark.location.coordinate;
+    annotationFromPlacemark.title = title;
+    
+    // TODO: Update to addNonClusteredAnnotation when ADCluster added
+//    [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
+    [self.mapView addAnnotation:annotationFromPlacemark];
+}
+
+- (void)recenterMapToPlacemark:(CLPlacemark  *)placemark
+{
+    [self zoomToCoordinate:placemark.location.coordinate];
 }
 
 @end

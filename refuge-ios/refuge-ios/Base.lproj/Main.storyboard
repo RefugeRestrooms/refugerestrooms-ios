@@ -72,7 +72,7 @@
                     <connections>
                         <outlet property="mapView" destination="ZNi-N8-Nwa" id="mb7-Tl-33g"/>
                         <outlet property="searchBar" destination="fFb-8a-ZZ4" id="XrI-Uv-6t7"/>
-                        <outlet property="searchResultsTableView" destination="JBI-kJ-mzV" id="UWj-Gr-PMB"/>
+                        <outlet property="searchResultsTable" destination="JBI-kJ-mzV" id="g8L-zj-UC5"/>
                         <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>
                     </connections>
                 </viewController>
