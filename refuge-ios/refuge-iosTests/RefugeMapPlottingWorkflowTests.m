@@ -11,6 +11,7 @@
 
 #import "RefugeRestroomManager.h"
 #import "MockRefugeDataPersistenceManager.h"
+//#import "MockRefugeSearchQuery.h"
 
 @interface RefugeMapPlottingWorkflowTests : XCTestCase
 

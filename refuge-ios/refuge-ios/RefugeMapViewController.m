@@ -16,7 +16,7 @@
 #import "RefugeHUD.h"
 #import "RefugeMapPin.h"
 #import "RefugeMapPlace.h"
-#import "RefugeSearchQuery.h"
+#import "RefugeSearch.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
@@ -47,7 +47,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
-@property (nonatomic, strong) RefugeSearchQuery *searchQuery;
+@property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -169,19 +169,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-//    BOOL shouldHideSearchResults = ([searchText length] == 0);
-//    
-//    if(shouldHideSearchResults)
-//    {
-//        self.searchResultsTable.hidden = YES;
-//        [self dismissSearch];
-//    }
-//    else
-//    {
-//        self.searchResultsTable.hidden = NO;
-//        [self handleSearchForString:searchText];
-//    }
-    
     if([searchText length] > 0)
     {
         self.searchResultsTable.hidden = NO;
@@ -266,7 +253,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureSearch
 {
-    self.searchQuery = [[RefugeSearchQuery alloc] init];
+    self.searchQuery = [[RefugeSearch alloc] init];
 }
 
 - (void)configureRestroomManager
