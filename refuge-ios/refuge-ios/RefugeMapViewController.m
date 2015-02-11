@@ -169,14 +169,20 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    BOOL shouldHideSearchResults = ([searchText length] == 0);
+//    BOOL shouldHideSearchResults = ([searchText length] == 0);
+//    
+//    if(shouldHideSearchResults)
+//    {
+//        self.searchResultsTable.hidden = YES;
+//        [self dismissSearch];
+//    }
+//    else
+//    {
+//        self.searchResultsTable.hidden = NO;
+//        [self handleSearchForString:searchText];
+//    }
     
-    if(shouldHideSearchResults)
-    {
-        self.searchResultsTable.hidden = YES;
-        [self dismissSearch];
-    }
-    else
+    if([searchText length] > 0)
     {
         self.searchResultsTable.hidden = NO;
         [self handleSearchForString:searchText];
@@ -250,6 +256,12 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+    
+    UITapGestureRecognizer *mapTouched = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissSearch)];
+    
+    [self.mapView addGestureRecognizer:mapTouched];
 }
 
 - (void)configureSearch
@@ -372,7 +384,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     NSDictionary *addressInfo = placemark.addressDictionary;
     NSString *address = [NSString stringWithFormat:@"%@, %@, %@",
-                         [addressInfo objectForKey:@"Street"],
+                         [addressInfo objectForKey:@"Name"],
                          [addressInfo objectForKey:@"City"],
                          [addressInfo objectForKey:@"State"]];
     
