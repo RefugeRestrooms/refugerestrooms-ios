@@ -212,30 +212,10 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    SPGooglePlacesAutocompletePlace *place = [self placeAtIndexPath:indexPath];
-//    
-//    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error)
-//     {
-//         if (error)
-//         {
-//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_PLACE_NOT_FOUND delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
-//             
-//             [alert show];
-//         }
-//         else if (placemark)
-//         {
-//             // placemark selected
-//             [self mapSearchPlacemarkSelected:placemark cellName:[self tableView:tableView cellForRowAtIndexPath:indexPath].textLabel.text];
-//             
-//             // dismiss search
-//             [self.searchTableView deselectRowAtIndexPath:indexPath animated:NO];
-//             [self dismissSearch];
-//         }
-//     }];
-    
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
     
     [place toPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
+        
                                     [self placemarkSelected:placemark];
         
                                     [self.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];

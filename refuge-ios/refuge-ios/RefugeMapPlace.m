@@ -61,7 +61,7 @@
                                  @"description" : self.name,
                                  @"reference" : self.reference,
                                  @"id" : self.identifier,
-                                 @"types" : typeString
+                                 @"types" : [NSArray arrayWithObject:typeString]
                                  };
     
     SPGooglePlacesAutocompletePlace *place = [SPGooglePlacesAutocompletePlace placeFromDictionary:dictionary apiKey:self.key];
