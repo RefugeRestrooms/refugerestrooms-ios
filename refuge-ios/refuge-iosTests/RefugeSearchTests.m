@@ -38,22 +38,22 @@
     XCTAssertNotNil(self.searchQuery, @"Should be able to create a new Search instance");
 }
 
-- (void)testThatValidSearchProducesSearchResults
-{
-    __block NSArray *searchResults;
-    __block NSError *searchError;
-    
-    [self.searchQuery searchForPlaces:@"The White House"
-                              success:^(NSArray *places) {
-                                  searchResults = places;
-                              }
-                              failure:^(NSError *error) {
-                                  searchError = error;
-                              }
-     ];
-    
-    XCTAssertNotNil(searchResults, @"Valid search should return search results.");
-    XCTAssertNil(searchError, @"Valid search should not return an error.");
-}
+//- (void)testThatValidSearchProducesSearchResults
+//{
+//    __block NSArray *searchResults;
+//    __block NSError *searchError;
+//    
+//    [self.searchQuery searchForPlaces:@"The White House"
+//                              success:^(NSArray *places) {
+//                                  searchResults = places;
+//                              }
+//                              failure:^(NSError *error) {
+//                                  searchError = error;
+//                              }
+//     ];
+//    
+//    XCTAssertNotNil(searchResults, @"Valid search should return search results.");
+//    XCTAssertNil(searchError, @"Valid search should not return an error.");
+//}
 
 @end

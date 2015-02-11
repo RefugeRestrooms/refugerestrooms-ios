@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSDate *dateLastSynced;
 
-+ (instancetype)sharedInstance;
+- (id)initWithUserDefaults:(NSUserDefaults *)userDefaults;
 
 @end

@@ -35,6 +35,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 @interface RefugeMapViewController ()
 
+@property (nonatomic, strong) RefugeAppState *appState;
 @property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Reachability *internetReachability;
@@ -64,6 +65,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     [super viewDidLoad];
     
+    self.appState = [[RefugeAppState alloc] init];
     [self configureHUD];
     [self configureLocationManager];
     [self configureMap];
@@ -144,7 +146,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     
     [self.hud hide:RefugeHUDHideSpeedFast];
     
-    [RefugeAppState sharedInstance].dateLastSynced = [NSDate date];
+    self.appState.dateLastSynced = [NSDate date];
     
     [self plotRestrooms];
 }

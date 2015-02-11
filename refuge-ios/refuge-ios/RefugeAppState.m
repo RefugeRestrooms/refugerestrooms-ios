@@ -8,39 +8,28 @@
 
 #import "RefugeAppState.h"
 
+@interface RefugeAppState ()
+
+@property (nonatomic, strong) NSUserDefaults *userDefaults;
+
+@end
+
 @implementation RefugeAppState
 
 static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppStateDateLastSyncedKey";
 
 # pragma mark - Initializers
 
-+(instancetype)sharedInstance
-{
-    // structure used to test whether the block has completed or not
-    static dispatch_once_t p = 0;
-    
-    // initialize sharedObject as nil (first call only)
-    __strong static id _sharedObject = nil;
-    
-    // executes a block object once and only once for the lifetime of an application
-    dispatch_once(&p, ^{
-        _sharedObject = [[self alloc] init];
-    });
-    
-    // returns the same object each time
-    return _sharedObject;
-}
-
-- (instancetype)init
+- (id)initWithUserDefaults:(NSUserDefaults *)userDefaults
 {
     self = [super init];
     
     if(self)
     {
-        // sync date
-        NSDate *dateLastSynced = [[NSUserDefaults standardUserDefaults] objectForKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
+        self.userDefaults = userDefaults;
         
-        // if never synced before, set date in far past
+        NSDate *dateLastSynced = [userDefaults objectForKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
+        
         if(dateLastSynced == nil)
         {
             dateLastSynced = [NSDate dateWithTimeIntervalSince1970:0];
@@ -52,14 +41,19 @@ static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppState
     return self;
 }
 
+- (instancetype)init
+{
+    return [self initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
+}
+
 # pragma mark Setters
 
 - (void)setDateLastSynced:(NSDate *)dateLastSynced
 {
     _dateLastSynced = dateLastSynced;
     
-    [[NSUserDefaults standardUserDefaults] setObject:dateLastSynced forKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.userDefaults setObject:dateLastSynced forKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
+    [self.userDefaults synchronize];
 }
 
 @end
