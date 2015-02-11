@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import "RefugeMapKitAnnotation.h"
+#import "RefugeMapPin.h"
 
 #import <CoreLocation/CoreLocation.h>
 #import "RefugeRestroom.h"
 
 static NSString * const kNoName = @"No Name";
 
-@implementation RefugeMapKitAnnotation
+@implementation RefugeMapPin
 
 # pragma mark - Initializers
 

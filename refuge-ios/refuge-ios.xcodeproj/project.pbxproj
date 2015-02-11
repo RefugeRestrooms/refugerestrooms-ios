@@ -61,8 +61,8 @@
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
-		DCF8666D1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */; };
-		DCF8666E1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */; };
+		DCF8666D1A89BAD600C73806 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */; };
+		DCF8666E1A89BAD600C73806 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */; };
 		DCF866761A89CAF700C73806 /* RefugeMapKitAnnotationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866751A89CAF700C73806 /* RefugeMapKitAnnotationTests.m */; };
 		DCF8667C1A8AD1C100C73806 /* RefugeSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8667B1A8AD1C100C73806 /* RefugeSearchQuery.m */; };
 		DCF8667D1A8AD1C100C73806 /* RefugeSearchQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8667B1A8AD1C100C73806 /* RefugeSearchQuery.m */; };
@@ -150,8 +150,8 @@
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
-		DCF8666B1A89BAD500C73806 /* RefugeMapKitAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapKitAnnotation.h; sourceTree = "<group>"; };
-		DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapKitAnnotation.m; sourceTree = "<group>"; };
+		DCF8666B1A89BAD500C73806 /* RefugeMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPin.h; sourceTree = "<group>"; };
+		DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPin.m; sourceTree = "<group>"; };
 		DCF866751A89CAF700C73806 /* RefugeMapKitAnnotationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapKitAnnotationTests.m; sourceTree = "<group>"; };
 		DCF8667A1A8AD1C100C73806 /* RefugeSearchQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearchQuery.h; sourceTree = "<group>"; };
 		DCF8667B1A8AD1C100C73806 /* RefugeSearchQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchQuery.m; sourceTree = "<group>"; };
@@ -398,8 +398,8 @@
 			children = (
 				CEA240211A86FB6D0083510F /* RefugeHUD.h */,
 				CEA240221A86FB6D0083510F /* RefugeHUD.m */,
-				DCF8666B1A89BAD500C73806 /* RefugeMapKitAnnotation.h */,
-				DCF8666C1A89BAD500C73806 /* RefugeMapKitAnnotation.m */,
+				DCF8666B1A89BAD500C73806 /* RefugeMapPin.h */,
+				DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -569,7 +569,7 @@
 				CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				DCF8667C1A8AD1C100C73806 /* RefugeSearchQuery.m in Sources */,
 				CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
-				DCF8666D1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */,
+				DCF8666D1A89BAD600C73806 /* RefugeMapPin.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,7 +607,7 @@
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
 				CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
-				DCF8666E1A89BAD600C73806 /* RefugeMapKitAnnotation.m in Sources */,
+				DCF8666E1A89BAD600C73806 /* RefugeMapPin.m in Sources */,
 				DCF866761A89CAF700C73806 /* RefugeMapKitAnnotationTests.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				DCF8667D1A8AD1C100C73806 /* RefugeSearchQuery.m in Sources */,

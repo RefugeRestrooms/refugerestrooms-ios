@@ -14,7 +14,7 @@
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
-#import "RefugeMapKitAnnotation.h"
+#import "RefugeMapPin.h"
 #import "RefugeMapPlace.h"
 #import "RefugeSearchQuery.h"
 #import "RefugeRestroom.h"
@@ -324,7 +324,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     
     for (RefugeRestroom *restroom in allRestrooms)
     {
-        RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:restroom];
+        RefugeMapPin *annotation = [[RefugeMapPin alloc] initWithRestroom:restroom];
         
         [annotations addObject:annotation];
     }

@@ -10,13 +10,13 @@
 #import <XCTest/XCTest.h>
 
 #import <CoreLocation/CoreLocation.h>
-#import "RefugeMapKitAnnotation.h"
+#import "RefugeMapPin.h"
 #import "RefugeRestroom.h"
 
 @interface RefugeMapKitAnnotationTests : XCTestCase
 
 @property (nonatomic, strong) RefugeRestroom *restroom;
-@property (nonatomic, strong) RefugeMapKitAnnotation *annotation;
+@property (nonatomic, strong) RefugeMapPin *annotation;
 
 @end
 
@@ -32,7 +32,7 @@
     self.restroom.city = @"Cary";
     self.restroom.state = @"North Carolina";
     
-    self.annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:self.restroom];
+    self.annotation = [[RefugeMapPin alloc] initWithRestroom:self.restroom];
 }
 
 - (void)tearDown
@@ -50,9 +50,9 @@
 
 - (void)testThatAnnotationCannotBeCreatedFromInit
 {
-    RefugeMapKitAnnotation *invalidAnnotation;
+    RefugeMapPin *invalidAnnotation;
     
-    XCTAssertThrows(invalidAnnotation = [[RefugeMapKitAnnotation alloc] init], @"Should not be able to use init to create a MapKitAnnotation");
+    XCTAssertThrows(invalidAnnotation = [[RefugeMapPin alloc] init], @"Should not be able to use init to create a MapKitAnnotation");
 }
 
 - (void)testThatAnnotationHasPropertiesProperlyAssignedGivenRestroom
