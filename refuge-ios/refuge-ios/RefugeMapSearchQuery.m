@@ -11,7 +11,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
 
-static NSString * const kApiKey = @"API_KEY";
+static NSString * const kApiKey = @"AIzaSyAKV9gg_l1jNL8Pep7FIwwI6FQ84ldsEKI";
 static CLLocationDistance const kSearchQueryRadius = 100.0;
 
 @interface RefugeMapSearchQuery ()
@@ -21,6 +21,8 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
 @end
 
 @implementation RefugeMapSearchQuery
+
+# pragma mark - Initializers
 
 - (instancetype)init
 {
@@ -34,6 +36,25 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
     }
     
     return self;
+}
+
+# pragma mark - Public methods
+
+- (void)searchForPlaces:(NSString *)searchString success:(void (^)(NSArray *))searchSuccess failure:(void (^)(NSError *))searchError
+{
+    self.searchQuery.input = searchString;
+    
+    [self.searchQuery fetchPlaces:^(NSArray *places, NSError *error)
+     {
+         if (error)
+         {
+             searchError(error);
+         }
+         else
+         {
+             searchSuccess(places);
+         }
+     }];
 }
 
 @end

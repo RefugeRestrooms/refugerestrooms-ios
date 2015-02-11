@@ -37,7 +37,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Reachability *internetReachability;
-@property (nonatomic, strong) RefugeMapSearchQuery *mapSearchQuery;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
@@ -47,6 +46,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
+@property (nonatomic, strong) RefugeMapSearchQuery *mapSearchQuery;
+@property (nonatomic, strong) NSArray *mapSearchResults;
 @property (nonatomic, weak) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTableView;
@@ -343,26 +344,22 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)handleSearchForString:(NSString *)searchString
 {
-//    //    searchQuery.location = self.mapView.userLocation.coordinate;
-//    searchQuery.input = searchString;
-//    
-//    [searchQuery fetchPlaces:^(NSArray *places, NSError *error)
-//     {
-//         if (error)
-//         {
-//             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:RRCONSTANTS_ALERT_TITLE_ERROR message:RRCONSTANTS_SEARCH_ERROR_COULD_NOT_FETCH_PLACES delegate:nil cancelButtonTitle:RRCONSTANTS_ALERT_DISMISS_BUTTON_TEXT otherButtonTitles:nil];
-//             
-//             [alert show];
-//             
-//             [self dismissSearch];
-//         }
-//         else
-//         {
-//             searchResultPlaces = places;
-//             //[self.searchDisplayController.searchResultsTableView reloadData];
-//             [self.searchTableView reloadData];
-//         }
-//     }];
+    [self.mapSearchQuery searchForPlaces:searchString
+                                 success:^(NSArray *places) {
+                                     self.mapSearchResults = places;
+                                 }
+                                 failure:^(NSError *error) {
+                                     [self displayAlertForSearchFailure];
+                                     [self dismissSearch];
+                                 }
+    ];
+}
+
+- (void)displayAlertForSearchFailure
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not fetch addresses for autocomplete" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)dismissSearch
