@@ -15,6 +15,7 @@
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
 #import "RefugeMapKitAnnotation.h"
+#import "RefugeMapSearchQuery.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
@@ -36,6 +37,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Reachability *internetReachability;
+@property (nonatomic, strong) RefugeMapSearchQuery *mapSearchQuery;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
 @property (nonatomic, strong) RefugeDataPersistenceManager *dataPersistenceManager;
 @property (nonatomic, strong) RefugeRestroomBuilder *restroomBuilder;
@@ -62,6 +64,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureHUD];
     [self configureLocationManager];
     [self configureMap];
+    [self configureSearch];
     [self configureRestroomManager];
     self.searchResultsTableView.hidden = YES;
 }
@@ -256,6 +259,11 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.mapView.delegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
+}
+
+- (void)configureSearch
+{
+    self.mapSearchQuery = [[RefugeMapSearchQuery alloc] init];
 }
 
 - (void)configureRestroomManager
