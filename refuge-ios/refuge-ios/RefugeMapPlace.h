@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface RefugeMapPlace : NSObject
 
@@ -21,5 +21,8 @@ typedef NS_ENUM(NSInteger, RefugeMapPlaceType)
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, assign) RefugeMapPlaceType type;
 @property (nonatomic, strong) NSString *key;
+
+- (void)toPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *placemark))placemarkSuccess
+                            failure:(void (^)(NSError *error))placemarkError;
 
 @end

@@ -16,6 +16,8 @@
 
 @end
 
+#pragma mark - Initializers
+
 @implementation RefugeMapPlace
 
 - (instancetype)init
@@ -28,6 +30,55 @@
     }
     
     return self;
+}
+
+# pragma mark - Public methods
+
+- (void)toPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *))placemarkSuccess failure:(void (^)(NSError *))placemarkError
+{
+    SPGooglePlacesAutocompletePlace *place = [self translateToSPPlace];
+    
+    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
+        if(error)
+        {
+            placemarkError(error);
+        }
+        else
+        {
+            placemarkSuccess(placemark);
+        }
+    }];
+    
+}
+
+# pragma mark - Private methods
+
+- (SPGooglePlacesAutocompletePlace *)translateToSPPlace
+{
+    NSString *typeString = [self typeToString];
+    
+    NSDictionary *dictionary = @{
+                                 @"description" : self.name,
+                                 @"reference" : self.reference,
+                                 @"id" : self.identifier,
+                                 @"types" : typeString
+                                 };
+    
+    SPGooglePlacesAutocompletePlace *place = [SPGooglePlacesAutocompletePlace placeFromDictionary:dictionary apiKey:self.key];
+    
+    return place;
+}
+
+- (NSString *)typeToString
+{
+    if(self.type == RefugeMapPlaceTypeGeocode)
+    {
+        return @"geocode";
+    }
+    else
+    {
+        return @"establishment";
+    }
 }
 
 @end

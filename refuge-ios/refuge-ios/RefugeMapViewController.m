@@ -15,6 +15,7 @@
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
 #import "RefugeMapKitAnnotation.h"
+#import "RefugeMapPlace.h"
 #import "RefugeMapSearchQuery.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
@@ -202,9 +203,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSearchResultsTableCellReuseIdentifier];
     }
     
-//    cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
-    
-    cell.textLabel.text = @"Search Result";
+    cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
     
     return cell;
 }
@@ -234,7 +233,18 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 //         }
 //     }];
     
-    [self dismissSearch];
+    RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
+    
+    [place toPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
+                                    [self placemarkSelected:placemark];
+        
+                                    [self.searchResultsTableView deselectRowAtIndexPath:indexPath animated:NO];
+                                    [self dismissSearch];
+                                }
+                                failure:^(NSError *error) {
+                                    [self displayAlertForWithMessage:@"Could not fetch addresses for autocomplete"];
+                                }
+     ];
 }
 
 # pragma mark - Private methods
@@ -326,7 +336,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
     
     // TODO: update to setAnnotations when ADCluster added
-//    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
+    //    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
     [self.mapView addAnnotations:annotations];
     self.isPlotComplete = YES;
 }
@@ -339,23 +349,23 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
-
 - (void)handleSearchForString:(NSString *)searchString
 {
     [self.searchQuery searchForPlaces:searchString
                                  success:^(NSArray *places) {
                                      self.searchResults = places;
+                                     [self.searchResultsTableView reloadData];
                                  }
                                  failure:^(NSError *error) {
-                                     [self displayAlertForSearchFailure];
+                                     [self displayAlertForWithMessage:@"Could not map selected location"];
                                      [self dismissSearch];
                                  }
     ];
 }
 
-- (void)displayAlertForSearchFailure
+- (void)displayAlertForWithMessage:(NSString *)message
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not fetch addresses for autocomplete" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
     [alert show];
 }
@@ -371,5 +381,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.searchResultsTableView.hidden = YES;
 }
 
+- (RefugeMapPlace *)placeAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.searchResults objectAtIndex:indexPath.row];
+}
+
+- (void)placemarkSelected:(CLPlacemark *)placemark
+{
+    
+}
 
 @end
