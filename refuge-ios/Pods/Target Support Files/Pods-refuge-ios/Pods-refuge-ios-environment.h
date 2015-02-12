@@ -6,6 +6,12 @@
 // project.
 
 
+// ADClusterMapView
+#define COCOAPODS_POD_AVAILABLE_ADClusterMapView
+#define COCOAPODS_VERSION_MAJOR_ADClusterMapView 1
+#define COCOAPODS_VERSION_MINOR_ADClusterMapView 1
+#define COCOAPODS_VERSION_PATCH_ADClusterMapView 0
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2
