@@ -10,12 +10,23 @@
 
 @implementation RefugeMap
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+# pragma mark - Public methods
+
+# pragma mark MKMapView methods
+
+- (void)addAnnotation:(id<MKAnnotation>)annotation
+{
+    [self addNonClusteredAnnotation:annotation];
 }
-*/
+
+- (void)addAnnotations:(NSArray *)annotations
+{
+    NSMutableArray *newAnnotationsList = [NSMutableArray array];
+
+    [newAnnotationsList addObjectsFromArray:self.annotations];
+    [newAnnotationsList addObjectsFromArray:annotations];
+    
+    [self setAnnotations:[newAnnotationsList copy]];
+}
 
 @end

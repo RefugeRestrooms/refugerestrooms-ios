@@ -323,8 +323,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
         [annotations addObject:annotation];
     }
     
-    // TODO: update to setAnnotations when ADCluster added
-    //    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
     [self.mapView addAnnotations:annotations];
     self.isPlotComplete = YES;
 }
@@ -392,8 +390,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     annotationFromPlacemark.coordinate = placemark.location.coordinate;
     annotationFromPlacemark.title = title;
     
-    // TODO: Update to addNonClusteredAnnotation when ADCluster added
-//    [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
     [self.mapView addAnnotation:annotationFromPlacemark];
 }
 

@@ -8,6 +8,8 @@
 
 #import <MapKit/MapKit.h>
 
-@interface RefugeMap : MKMapView
+#import <ADClusterMapView/ADClusterMapView.h>
+
+@interface RefugeMap : ADClusterMapView
 
 @end
