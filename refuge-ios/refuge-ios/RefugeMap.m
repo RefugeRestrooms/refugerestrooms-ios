@@ -19,6 +19,18 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
 
 @implementation RefugeMap
 
+# pragma mark - Setters
+
+- (void)setMapDelegate:(id<RefugeMapDelegate>)mapDelegate
+{
+    if((mapDelegate != nil) && !([mapDelegate conformsToProtocol:@protocol(RefugeMapDelegate)]))
+    {
+        [[NSException exceptionWithName:NSInvalidArgumentException reason:@"Delegate object does not conform to the delgate protocol" userInfo:nil] raise];
+    }
+    
+    _mapDelegate = mapDelegate;
+}
+
 # pragma mark - Public methods
 
 # pragma mark ADClusterMapView methods

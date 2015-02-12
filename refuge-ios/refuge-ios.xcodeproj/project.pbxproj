@@ -69,7 +69,6 @@
 		DCA3555B1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
-		DCA355611A8C59D100E3EDF8 /* RefugeMapDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */; };
 		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
@@ -170,7 +169,6 @@
 		DCA355591A8C566500E3EDF8 /* UIImage+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Refuge.h"; sourceTree = "<group>"; };
 		DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Refuge.m"; sourceTree = "<group>"; };
 		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
-		DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapDelegateTests.m; sourceTree = "<group>"; };
 		DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
@@ -344,7 +342,6 @@
 				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
 				CEA240251A86FB850083510F /* RefugeHUDTests.m */,
 				DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */,
-				DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */,
 				DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
@@ -678,7 +675,6 @@
 				DCF8666E1A89BAD600C73806 /* RefugeMapPin.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				DCF8667D1A8AD1C100C73806 /* RefugeSearch.m in Sources */,
-				DCA355611A8C59D100E3EDF8 /* RefugeMapDelegateTests.m in Sources */,
 				DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */,
 				DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */,
 			);

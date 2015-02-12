@@ -83,7 +83,7 @@
                   symbolName = "-[RefugeMapPlace translateToSPPlace]"
                   moduleName = "refuge-ios"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMapPlace.m"
-                  timestampString = "445407860.211791"
+                  timestampString = "445408290.372235"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -97,7 +97,7 @@
                   symbolName = "-[RefugeMapPlace translateToSPPlace]"
                   moduleName = "refuge-iosTests"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMapPlace.m"
-                  timestampString = "445407863.667269"
+                  timestampString = "445408292.373567"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "69"
@@ -258,11 +258,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMap.m"
-            timestampString = "445407838.262561"
+            timestampString = "445408269.925809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "-clusterTitleForMapView:"
             landmarkType = "5">
             <Locations>
@@ -273,11 +273,11 @@
                   symbolName = "-[RefugeMap clusterTitleForMapView:]"
                   moduleName = "refuge-ios"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMap.m"
-                  timestampString = "445407860.213079"
+                  timestampString = "445408290.373404"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
                   offsetFromSymbolStart = "28">
                </Location>
                <Location
@@ -287,11 +287,11 @@
                   symbolName = "-[RefugeMap clusterTitleForMapView:]"
                   moduleName = "refuge-iosTests"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMap.m"
-                  timestampString = "445407863.672708"
+                  timestampString = "445408292.373871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
@@ -434,26 +434,26 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMap.m"
-            timestampString = "445407838.262561"
+            timestampString = "445408269.925809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "-mapView:annotationView:calloutAccessoryControlTapped:"
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[RefugeMap mapView:annotationView:calloutAccessoryControlTapped:]"
                   moduleName = "refuge-ios"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMap.m"
-                  timestampString = "445407860.214079"
+                  timestampString = "445408083.289752"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
@@ -461,13 +461,13 @@
                   offsetFromSymbolStart = "98">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "-[RefugeMap mapView:annotationView:calloutAccessoryControlTapped:]"
                   moduleName = "refuge-iosTests"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/RefugeMap.m"
-                  timestampString = "445407863.673057"
+                  timestampString = "445408085.520722"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "60"
