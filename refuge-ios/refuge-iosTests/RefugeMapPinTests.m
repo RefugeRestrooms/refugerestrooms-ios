@@ -43,27 +43,32 @@
     [super tearDown];
 }
 
-- (void)testThatAnnotationExists
+- (void)testThatMapPinExists
 {
-    XCTAssertNotNil(self.annotation, @"Should be able to create a new MapKitAnnotation instance");
+    XCTAssertNotNil(self.annotation, @"Should be able to create a new MapPin instance");
 }
 
-- (void)testThatAnnotationCannotBeCreatedFromInit
+- (void)testThatMapPinCannotBeCreatedFromInit
 {
     RefugeMapPin *invalidAnnotation;
     
-    XCTAssertThrows(invalidAnnotation = [[RefugeMapPin alloc] init], @"Should not be able to use init to create a MapKitAnnotation");
+    XCTAssertThrows(invalidAnnotation = [[RefugeMapPin alloc] init], @"Should not be able to use init to create a MapPin");
 }
 
-- (void)testThatAnnotationHasPropertiesProperlyAssignedGivenRestroom
+- (void)testThatMapPinPropertyIsRestroomEnteredViaInitializer
 {
-    XCTAssertEqualObjects(self.annotation.title, self.restroom.name, @"Annotation title should be Restroom's name");
+    XCTAssertEqualObjects(self.annotation.restroom, self.restroom, @"MapPin's Restroom should be Restroom entered via initializer.");
+}
+
+- (void)testThatMapPinHasPropertiesProperlyAssignedGivenRestroom
+{
+    XCTAssertEqualObjects(self.annotation.title, self.restroom.name, @"MapPin's title should be Restroom's name");
     
     NSString *address = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.street, self.restroom.city, self.restroom.state];
-    XCTAssertEqualObjects(self.annotation.subtitle, address, @"Annotation subtitle should be Restroom's address");
+    XCTAssertEqualObjects(self.annotation.subtitle, address, @"MapPin's subtitle should be Restroom's address");
     
-    XCTAssertEqual(self.annotation.coordinate.latitude, [self.restroom.latitude doubleValue], @"Annotation's coordianate should have Restroom's latitude");
-    XCTAssertEqual(self.annotation.coordinate.longitude, [self.restroom.longitude doubleValue], @"Annotation's coordianate should have Restroom's longitude");
+    XCTAssertEqual(self.annotation.coordinate.latitude, [self.restroom.latitude doubleValue], @"MapPin's coordianate should have Restroom's latitude");
+    XCTAssertEqual(self.annotation.coordinate.longitude, [self.restroom.longitude doubleValue], @"MapPin's coordianate should have Restroom's longitude");
 }
 
 @end
