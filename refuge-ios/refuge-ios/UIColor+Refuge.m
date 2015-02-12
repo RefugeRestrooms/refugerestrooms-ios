@@ -12,19 +12,34 @@
 
 # pragma mark - Public methods
 
-+ (UIColor *)RefugePurpleDark
++ (UIColor *)RefugePurpleDarkColor
 {
     return [UIColor colorWithRed:65.0/255.0 green:60.0/255.0 blue:107.0/255.0 alpha:1.0];
 }
 
-+ (UIColor *)RefugePurpleMedium
++ (UIColor *)RefugePurpleMediumColor
 {
     return [UIColor colorWithRed:131.0/255.0 green:119.0/255.0 blue:175.0/255.0 alpha:1.0];
 }
 
-+ (UIColor *)REfugePurpleLight
++ (UIColor *)RefugePurpleLightColor
 {
     return [UIColor colorWithRed:231.0/255.0 green:226.0/255.0 blue:237.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)RefugeRatingNegativeColor
+{
+    return [UIColor colorWithRed:220.0/255.0 green:129.0/255.0 blue:137.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)RefugeRatingNoneColor
+{
+    return [UIColor clearColor];
+}
+
++ (UIColor *)RefugeRatingPositiveColor
+{
+    return [UIColor colorWithRed:162.0/255.0 green:210.0/255.0 blue:147.0/255.0 alpha:1.0];
 }
 
 @end

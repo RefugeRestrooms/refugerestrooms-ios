@@ -10,8 +10,11 @@
 
 @interface UIColor (Refuge)
 
-+ (UIColor *)RefugePurpleDark;
-+ (UIColor *)RefugePurpleMedium;
-+ (UIColor *)REfugePurpleLight;
++ (UIColor *)RefugePurpleDarkColor;
++ (UIColor *)RefugePurpleMediumColor;
++ (UIColor *)RefugePurpleLightColor;
++ (UIColor *)RefugeRatingNegativeColor;
++ (UIColor *)RefugeRatingNoneColor;
++ (UIColor *)RefugeRatingPositiveColor;
 
 @end
