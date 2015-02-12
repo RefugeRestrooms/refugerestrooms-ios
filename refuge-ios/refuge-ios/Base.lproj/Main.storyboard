@@ -110,7 +110,7 @@
                                         <color key="textColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Street Address" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-kN-kjI" userLabel="Street Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Street Address" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-kN-kjI" userLabel="Street Label">
                                         <rect key="frame" x="20" y="79" width="560" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.23529411759999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,11 +124,24 @@
                                     </label>
                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
                                         <rect key="frame" x="250" y="218" width="100" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% POSITIVE" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-4A-GCQ" userLabel="Rating Label">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.63529411759999999" green="0.82352941180000006" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jtR-4A-GCQ" secondAttribute="trailing" id="39f-e4-SpW"/>
+                                            <constraint firstAttribute="centerX" secondItem="jtR-4A-GCQ" secondAttribute="centerX" id="BkO-rm-fTT"/>
                                             <constraint firstAttribute="height" constant="100" id="HeI-fX-32n"/>
+                                            <constraint firstAttribute="bottom" secondItem="jtR-4A-GCQ" secondAttribute="bottom" id="JJd-of-5Ob"/>
+                                            <constraint firstItem="jtR-4A-GCQ" firstAttribute="top" secondItem="U1v-97-ERN" secondAttribute="top" id="NRo-Ri-l3a"/>
                                             <constraint firstAttribute="width" secondItem="U1v-97-ERN" secondAttribute="height" multiplier="1:1" id="eFN-fe-nTc"/>
+                                            <constraint firstItem="jtR-4A-GCQ" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="leading" id="gtP-bj-mhn"/>
                                             <constraint firstAttribute="width" constant="100" id="l4O-yO-KLh"/>
                                         </constraints>
                                     </view>
@@ -186,6 +199,7 @@
                     <connections>
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
+                        <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>
                         <outlet property="streetLabel" destination="m3W-kN-kjI" id="jI5-Ds-Jrs"/>
                     </connections>

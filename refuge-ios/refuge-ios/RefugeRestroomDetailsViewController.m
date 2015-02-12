@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *streetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 
 @end
 
@@ -39,6 +40,7 @@
     self.streetLabel.text = self.restroom.street;
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
+    self.ratingLabel.text = @"RATING TEXT";
 }
 
 - (UIColor *)ratingColor
@@ -63,7 +65,7 @@
     }
     else
     {
-        return [UIColor RefugeRatingNegativeColor];
+        return [UIColor RefugeRatingPositiveColor];
     }
 }
 
