@@ -12,6 +12,14 @@
 #import <MTLJSONAdapter.h>
 #import <MTLManagedObjectAdapter.h>
 
+typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
+{
+    RefugeRestroomRatingTypeNegative = 0,
+    RefugeRestroomRatingTypeNeutral = 1,
+    RefugeRestroomRatingTypeNone = 2,
+    RefugeRestroomRatingTypePositive = 3
+};
+
 @interface RefugeRestroom : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 @property (nonatomic, strong) NSString *identifier;
@@ -24,6 +32,7 @@
 @property (nonatomic, assign) BOOL isUnisex;
 @property (nonatomic, assign) NSNumber *numUpvotes;
 @property (nonatomic, assign) NSNumber *numDownvotes;
+@property (nonatomic, assign) NSNumber *rating;
 @property (nonatomic, strong) NSString *directions;
 @property (nonatomic, strong) NSString *comment;
 @property (nonatomic, strong) NSDecimalNumber *latitude;

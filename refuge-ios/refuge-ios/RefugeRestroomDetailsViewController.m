@@ -8,7 +8,8 @@
 
 #import "RefugeRestroomDetailsViewController.h"
 
-# import "RefugeRestroom.h"
+#import <Mantle/Mantle.h>
+#import "RefugeRestroom.h"
 #import "UIColor+Refuge.h"
 
 @interface RefugeRestroomDetailsViewController ()
@@ -45,27 +46,24 @@
 
 - (UIColor *)ratingColor
 {
-    int numUpvotes = [self.restroom.numUpvotes intValue];
-    int numDownvotes = [self.restroom.numDownvotes intValue];
+    int rating = [self.restroom.rating intValue];
     
-    if((numUpvotes == 0) && (numDownvotes == 0))
-    {
-        return [UIColor RefugeRatingNoneColor];
-    }
-    
-    int percentPositive = (numUpvotes / (numUpvotes + numDownvotes)) * 100;
-    
-    if(percentPositive < 50)
-    {
-        return [UIColor RefugeRatingNegativeColor];
-    }
-    else if(percentPositive > 50 && percentPositive < 70)
-    {
-        return [UIColor RefugeRatingNeutralColor];
-    }
-    else
-    {
-        return [UIColor RefugeRatingPositiveColor];
+    switch (rating) {
+        case 0:
+            return [UIColor RefugeRatingNegativeColor];
+            break;
+        case 1:
+            return [UIColor RefugeRatingNeutralColor];
+            break;
+        case 2:
+            return [UIColor RefugeRatingNoneColor];
+            break;
+        case 3:
+            return [UIColor RefugeRatingPositiveColor];
+            break;
+        default:
+            return [UIColor RefugeRatingNoneColor];
+            break;
     }
 }
 

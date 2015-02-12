@@ -15,7 +15,33 @@
 
 @implementation RefugeRestroom
 
-# pragma mark - Public methods
+# pragma mark - Getters
+
+- (NSNumber *)rating
+{
+    int numUpvotes = [self.numUpvotes intValue];
+    int numDownvotes = [self.numDownvotes intValue];
+    
+    if((numUpvotes == 0) && (numDownvotes == 0))
+    {
+        return [NSNumber numberWithInteger:RefugeRestroomRatingTypeNone];
+    }
+    
+    int percentPositive = (numUpvotes / (numUpvotes + numDownvotes)) * 100;
+    
+    if(percentPositive < 50)
+    {
+        return [NSNumber numberWithInteger:RefugeRestroomRatingTypeNegative];
+    }
+    else if(percentPositive > 50 && percentPositive < 70)
+    {
+        return [NSNumber numberWithInteger:RefugeRestroomRatingTypeNeutral];
+    }
+    else
+    {
+        return [NSNumber numberWithInteger:RefugeRestroomRatingTypePositive];
+    }
+}
 
 # pragma mark MTLJSONSerializing methods
 
@@ -32,6 +58,7 @@
              @"isUnisex" : @"unisex",
              @"numUpvotes" : @"upvote",
              @"numDownvotes" : @"downvote",
+             @"rating" : [NSNull null],
              @"directions" : @"directions",
              @"comment" : @"comment",
              @"createdDate" : @"created_at"
