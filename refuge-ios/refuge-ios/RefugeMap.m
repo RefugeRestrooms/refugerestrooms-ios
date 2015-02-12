@@ -12,6 +12,7 @@
 #import "UIImage+Refuge.h"
 
 static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
+static NSString * const kMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
 static NSString * const kImageNamePin = @"refuge-pin.png";
 static float const kImageHeightPin = 39.5;
 static float const kImageWidthPin = 31.0;
@@ -19,6 +20,20 @@ static NSInteger const kMaxNumPinClusters = 1000;
 static NSString * const kTitlePinCluster = @"%d Restrooms";
 
 @implementation RefugeMap
+
+# pragma mark - Initializers
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if(self)
+    {
+        self.delegate = self;
+    }
+    
+    return self;
+}
 
 # pragma mark - Setters
 
@@ -34,38 +49,26 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
 
 # pragma mark - Public methods
 
-# pragma mark ADClusterMapView methods
+# pragma mark ADClusterMapViewDelegate methods
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    if(![annotation isKindOfClass:[ADClusterAnnotation class]])
+    if([self isCurrentUserLocation:annotation])
     {
         return nil;
     }
-    else
+    
+    if([annotation isKindOfClass:[ADClusterAnnotation class]])
     {
-        return [self clusterAnnotationViewForMapView:mapView withAnnotation:annotation];
+        return [self annotationViewForMapView:mapView withAnnotation:annotation];
     }
+    
+    return nil;
 }
 
-- (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
+- (MKAnnotationView *)mapView:(ADClusterMapView *)mapView viewForClusterAnnotation:(id<MKAnnotation>)annotation
 {
-    return kMaxNumPinClusters;
-}
-
-- (NSString *)pictoName
-{
-    return kImageNamePin;
-}
-
-- (NSString *)clusterPictoName
-{
-    return kImageNamePin;
-}
-
-- (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
-{
-    return kTitlePinCluster;
+    return [self clusterAnnotationViewForMapView:mapView withAnnotation:annotation];
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
@@ -96,11 +99,26 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     }
 }
 
+- (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
+{
+    return kTitlePinCluster;
+}
+
+- (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
+{
+    return kMaxNumPinClusters;
+}
+
+- (NSString *)pictoName
+{
+    return kImageNamePin;
+}
+
 # pragma mark MKMapView methods
 
 - (void)addAnnotation:(id<MKAnnotation>)annotation
 {
-    [self addNonClusteredAnnotation:annotation];
+    [super addNonClusteredAnnotation:annotation];
 }
 
 - (void)addAnnotations:(NSArray *)annotations
@@ -110,26 +128,51 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     [newAnnotationsList addObjectsFromArray:self.annotations];
     [newAnnotationsList addObjectsFromArray:annotations];
     
-    [self setAnnotations:[newAnnotationsList copy]];
+    [super setAnnotations:[newAnnotationsList copy]];
 }
 
 # pragma mark - Private methods
 
-- (MKAnnotationView *)clusterAnnotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
+- (BOOL)isCurrentUserLocation:(id<MKAnnotation>)annotation
+{
+    return [annotation isKindOfClass:[MKUserLocation class]];
+}
+
+- (MKAnnotationView *)annotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
 {
     MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kMapAnnotationReuseIdentifier];
-        
+    
     if (!annotationView)
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                          reuseIdentifier:kMapAnnotationReuseIdentifier];
+                                                      reuseIdentifier:kMapAnnotationReuseIdentifier];
         UIImage *resizedImage = [UIImage resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
-            
+        
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;
-            
+        
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
+    }
+    else
+    {
+        annotationView.annotation = annotation;
+    }
+    
+    return annotationView;
+}
+
+- (MKAnnotationView *)clusterAnnotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
+{
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kMapClusterAnnotationReuseIdentifier];
+    
+    if (!annotationView)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                      reuseIdentifier:kMapClusterAnnotationReuseIdentifier];
+        UIImage *resizedImage = [UIImage resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
+        
+        annotationView.image = resizedImage;
     }
     else
     {

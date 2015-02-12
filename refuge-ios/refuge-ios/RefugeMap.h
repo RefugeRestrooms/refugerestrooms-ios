@@ -6,12 +6,10 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
-#import <MapKit/MapKit.h>
-
-#import <ADClusterMapView/ADClusterMapView.h>
+#import "ADClusterMapView.h"
 #import "RefugeMapDelegate.h"
 
-@interface RefugeMap : ADClusterMapView
+@interface RefugeMap : ADClusterMapView <ADClusterMapViewDelegate>
 
 @property (nonatomic, weak) id<RefugeMapDelegate> mapDelegate;
 

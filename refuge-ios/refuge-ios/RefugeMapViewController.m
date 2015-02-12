@@ -273,7 +273,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureMap
 {
-    self.mapView.delegate = self;
     self.mapView.mapDelegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
