@@ -21,6 +21,7 @@
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
+#import "RefugeRestroomDetailsViewController.h"
 #import "RefugeRestroomManager.h"
 
 static float const kMetersPerMile = 1609.344;
@@ -140,9 +141,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 # pragma mark RefugeMapDelegate methods
 
-- (void)calloutAccessoryWasTappedForAnnotation:(id<MKAnnotation>)annotation
+- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin
 {
-    NSLog(@"Callout tapped");
+    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
+}
+
+- (void)retrievingAnnotationFromCalloutAccessoryFailed
+{
+    [self displayAlertForWithMessage:@"Could not display Restroom"];
 }
 
 # pragma mark RefugeRestroomManagerDelegate methods
@@ -236,6 +242,19 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self dismissSearch];
 }
 
+# pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:kSegueNameShowRestroomDetails])
+    {
+        RefugeRestroomDetailsViewController *destinationController = [segue destinationViewController];
+        RefugeMapPin *mapPin = (RefugeMapPin *)sender;
+        
+        destinationController.restroom = mapPin.restroom;
+    }
+}
+
 # pragma mark - Private methods
 
 - (void)configureHUD
@@ -255,6 +274,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)configureMap
 {
     self.mapView.delegate = self;
+    self.mapView.mapDelegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     

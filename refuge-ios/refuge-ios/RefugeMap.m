@@ -8,6 +8,7 @@
 
 #import "RefugeMap.h"
 #import "RefugeMapDelegate.h"
+#import "RefugeMapPin.h"
 #import "UIImage+Refuge.h"
 
 static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
@@ -69,16 +70,30 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    [self.mapDelegate calloutAccessoryWasTappedForAnnotation:[view annotation]];
-    
-//    id <MKAnnotation> annotation = [view annotation];
-//    
-//    if ([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
-//    {
-//        // segue to details controller
-//        [self performSegueWithIdentifier:RRCONSTANTS_TRANSITION_NAME_RESTROOM_DETAILS sender:annotation];
-//        
-//    }
+    if([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
+    {
+        ADClusterAnnotation *clusterAnnotation = (ADClusterAnnotation *)[view annotation];
+        int numMapPins = 0;
+        RefugeMapPin *lastMapPin;
+        
+        for(id<MKAnnotation> annotation in clusterAnnotation.originalAnnotations)
+        {
+            if([annotation isKindOfClass:[RefugeMapPin class]])
+            {
+                lastMapPin = (RefugeMapPin *)annotation;
+                numMapPins++;
+            }
+        }
+        
+        if(numMapPins == 1)
+        {
+            [self.mapDelegate tappingCalloutAccessoryDidRetrieveMapPin:lastMapPin];
+        }
+        else
+        {
+            [self.mapDelegate retrievingAnnotationFromCalloutAccessoryFailed];
+        }
+    }
 }
 
 # pragma mark MKMapView methods

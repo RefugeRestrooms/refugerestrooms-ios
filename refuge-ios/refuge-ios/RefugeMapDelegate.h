@@ -8,8 +8,11 @@
 
 #import <MapKit/MapKit.h>
 
+@class RefugeMapPin;
+
 @protocol RefugeMapDelegate <NSObject>
 
-- (void)calloutAccessoryWasTappedForAnnotation:(id<MKAnnotation>)annotation;
+- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin;
+- (void)retrievingAnnotationFromCalloutAccessoryFailed;
 
 @end

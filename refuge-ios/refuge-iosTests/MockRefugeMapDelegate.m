@@ -10,9 +10,14 @@
 
 @implementation MockRefugeMapDelegate
 
-- (void)calloutAccessoryWasTappedForAnnotation:(id<MKAnnotation>)annotation
+- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin
 {
     self.wasNotifiedOfCalloutBeingTapped = YES;
+}
+
+- (void)retrievingAnnotationFromCalloutAccessoryFailed
+{
+    
 }
 
 @end

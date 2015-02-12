@@ -23,6 +23,8 @@ static NSString * const kNoName = @"No Name";
     
     if (self)
     {
+        _restroom = restroom;
+        
         if ([restroom.name isEqualToString:@""])
         {
             _title = kNoName;
