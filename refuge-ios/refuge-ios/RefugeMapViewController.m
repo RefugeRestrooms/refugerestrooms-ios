@@ -171,7 +171,11 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    if([searchText length] > 0)
+    if([searchText length] == 0)
+    {
+        [self dismissSearch];
+    }
+    else
     {
         self.searchResultsTable.hidden = NO;
         [self handleSearchForString:searchText];
@@ -210,7 +214,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
     
-    [place toPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
+    [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
         
                                     [self placemarkSelected:placemark];
         
