@@ -69,6 +69,8 @@
 		DCA3555B1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
+		DCA355611A8C59D100E3EDF8 /* RefugeMapDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */; };
+		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
@@ -168,6 +170,10 @@
 		DCA355591A8C566500E3EDF8 /* UIImage+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Refuge.h"; sourceTree = "<group>"; };
 		DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Refuge.m"; sourceTree = "<group>"; };
 		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
+		DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapDelegateTests.m; sourceTree = "<group>"; };
+		DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
+		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
+		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
 		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
@@ -243,6 +249,8 @@
 				CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */,
 				DCF866681A89985100C73806 /* MockRefugeHUD.h */,
 				DCF866691A89985100C73806 /* MockRefugeHUD.m */,
+				DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */,
+				DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */,
 				CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */,
 				CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */,
 				CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */,
@@ -336,6 +344,7 @@
 				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
 				CEA240251A86FB850083510F /* RefugeHUDTests.m */,
 				DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */,
+				DCA355601A8C59D100E3EDF8 /* RefugeMapDelegateTests.m */,
 				DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */,
 				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
 				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
@@ -409,6 +418,7 @@
 				CEA23FDC1A835C5E0083510F /* Data Fetching */,
 				CEA240101A86BD220083510F /* Data Persistence */,
 				CED0CBAB1A83329D00F7F3D8 /* Data Translation */,
+				DCA3555F1A8C597C00E3EDF8 /* Map Logic */,
 				DCA355241A8B1D5C00E3EDF8 /* Search Logic */,
 			);
 			name = Logic;
@@ -431,13 +441,21 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		DCA3555F1A8C597C00E3EDF8 /* Map Logic */ = {
+			isa = PBXGroup;
+			children = (
+				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
+				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
+				DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */,
+			);
+			name = "Map Logic";
+			sourceTree = "<group>";
+		};
 		DCF866791A8AD0D100C73806 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
 				CEA240211A86FB6D0083510F /* RefugeHUD.h */,
 				CEA240221A86FB6D0083510F /* RefugeHUD.m */,
-				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
-				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
 				DCF8666B1A89BAD500C73806 /* RefugeMapPin.h */,
 				DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */,
 			);
@@ -628,6 +646,7 @@
 				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
 				DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */,
 				DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */,
+				DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */,
 				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
@@ -659,6 +678,7 @@
 				DCF8666E1A89BAD600C73806 /* RefugeMapPin.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				DCF8667D1A8AD1C100C73806 /* RefugeSearch.m in Sources */,
+				DCA355611A8C59D100E3EDF8 /* RefugeMapDelegateTests.m in Sources */,
 				DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */,
 				DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */,
 			);

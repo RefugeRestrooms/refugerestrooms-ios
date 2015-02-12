@@ -138,6 +138,13 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.locationManager stopUpdatingLocation];
 }
 
+# pragma mark RefugeMapDelegate methods
+
+- (void)calloutAccessoryWasTappedForAnnotation:(id<MKAnnotation>)annotation
+{
+    NSLog(@"Callout tapped");
+}
+
 # pragma mark RefugeRestroomManagerDelegate methods
 
 - (void)didFetchRestrooms
