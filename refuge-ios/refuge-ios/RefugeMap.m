@@ -7,6 +7,7 @@
 //
 
 #import "RefugeMap.h"
+#import "UIImage+Refuge.h"
 
 static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
 static NSString * const kImageNamePin = @"refuge-pin.png";
@@ -92,7 +93,7 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                           reuseIdentifier:kMapAnnotationReuseIdentifier];
-        UIImage *resizedImage = [self resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
+        UIImage *resizedImage = [UIImage resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
             
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;
@@ -107,18 +108,5 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     
     return annotationView;
 }
-
-- (UIImage *)resizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height
-{
-    CGSize newSize = CGSizeMake(width, height);
-    UIGraphicsBeginImageContext(newSize);
-    [[UIImage imageNamed:imageName] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-    
-    UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return resizedImage;
-}
-
 
 @end
