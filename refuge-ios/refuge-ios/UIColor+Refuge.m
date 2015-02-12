@@ -32,6 +32,11 @@
     return [UIColor colorWithRed:220.0/255.0 green:129.0/255.0 blue:137.0/255.0 alpha:1.0];
 }
 
++ (UIColor *)RefugeRatingNeutralColor
+{
+    return [UIColor colorWithRed:226.0/255.0 green:224.0/255.0 blue:155.0/255.0 alpha:1.0];
+}
+
 + (UIColor *)RefugeRatingNoneColor
 {
     return [UIColor clearColor];

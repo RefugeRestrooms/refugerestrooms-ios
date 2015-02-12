@@ -22,8 +22,8 @@
 @property (nonatomic, strong) NSString *country;
 @property (nonatomic, assign) BOOL isAccessible;
 @property (nonatomic, assign) BOOL isUnisex;
-@property (nonatomic, assign) int numUpvotes;
-@property (nonatomic, assign) int numDownvotes;
+@property (nonatomic, assign) NSNumber *numUpvotes;
+@property (nonatomic, assign) NSNumber *numDownvotes;
 @property (nonatomic, strong) NSString *directions;
 @property (nonatomic, strong) NSString *comment;
 @property (nonatomic, strong) NSDecimalNumber *latitude;

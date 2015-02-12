@@ -43,19 +43,23 @@
 
 - (UIColor *)ratingColor
 {
-    int numUpvotes = self.restroom.numUpvotes;
-    int numDownvotes = self.restroom.numDownvotes;
+    int numUpvotes = [self.restroom.numUpvotes intValue];
+    int numDownvotes = [self.restroom.numDownvotes intValue];
     
     if((numUpvotes == 0) && (numDownvotes == 0))
     {
         return [UIColor RefugeRatingNoneColor];
     }
     
-    int percentPositive = (self.restroom.numUpvotes / (self.restroom.numUpvotes + self.restroom.numDownvotes)) * 100;
+    int percentPositive = (numUpvotes / (numUpvotes + numDownvotes)) * 100;
     
-    if(percentPositive > 50)
+    if(percentPositive < 50)
     {
-        return [UIColor RefugeRatingPositiveColor];
+        return [UIColor RefugeRatingNegativeColor];
+    }
+    else if(percentPositive > 50 && percentPositive < 70)
+    {
+        return [UIColor RefugeRatingNeutralColor];
     }
     else
     {

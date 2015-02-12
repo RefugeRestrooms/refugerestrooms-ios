@@ -14,6 +14,7 @@
 + (UIColor *)RefugePurpleMediumColor;
 + (UIColor *)RefugePurpleLightColor;
 + (UIColor *)RefugeRatingNegativeColor;
++ (UIColor *)RefugeRatingNeutralColor;
 + (UIColor *)RefugeRatingNoneColor;
 + (UIColor *)RefugeRatingPositiveColor;
 

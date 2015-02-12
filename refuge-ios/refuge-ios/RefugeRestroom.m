@@ -38,6 +38,16 @@
              };
 }
 
++ (NSValueTransformer *)createdDateJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
+        NSDate *date = [NSDate dateFromString:str];
+        return date;
+    } reverseBlock:^(NSDate *date) {
+        return [NSDate stringFromDate:date];
+    }];
+}
+
 + (NSValueTransformer *)identifierJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSNumber *number) {
@@ -64,16 +74,6 @@
         return [NSDecimalNumber decimalNumberWithDecimal:[number decimalValue]];
     } reverseBlock:^(NSDecimalNumber *decimalNumber) {
         return [NSNumber numberWithDouble:[decimalNumber doubleValue]];
-    }];
-}
-
-+ (NSValueTransformer *)createdDateJSONTransformer
-{
-    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        NSDate *date = [NSDate dateFromString:str];
-        return date;
-    } reverseBlock:^(NSDate *date) {
-        return [NSDate stringFromDate:date];
     }];
 }
 

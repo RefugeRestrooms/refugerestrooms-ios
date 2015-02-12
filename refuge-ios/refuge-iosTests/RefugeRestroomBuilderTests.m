@@ -80,8 +80,8 @@
     XCTAssertEqualObjects(self.restroom.country, @"US", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertFalse(self.restroom.isAccessible, @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertTrue(self.restroom.isUnisex, @"Restroom created with Restroombuilder should have correct properties");
-    XCTAssertEqual(self.restroom.numUpvotes, 1, @"Restroom created with Restroombuilder should have correct properties");
-    XCTAssertEqual(self.restroom.numDownvotes, 0, @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.numUpvotes, [NSNumber numberWithInt:1], @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.numDownvotes, [NSNumber numberWithInt:0], @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.directions, @"There are single-stall bathrooms by the pharmacy, next to the deodorant aisle.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:35.867321] decimalValue]], @"Restroom created with Restroombuilder should have correct properties");
