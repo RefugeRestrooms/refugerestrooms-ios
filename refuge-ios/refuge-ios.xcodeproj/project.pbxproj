@@ -61,6 +61,8 @@
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
 		DCA355431A8C210300E3EDF8 /* MockNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */; };
+		DCA355511A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
+		DCA355521A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
@@ -153,6 +155,8 @@
 		DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPinTests.m; sourceTree = "<group>"; };
 		DCA355411A8C210300E3EDF8 /* MockNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockNSUserDefaults.h; sourceTree = "<group>"; };
 		DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNSUserDefaults.m; sourceTree = "<group>"; };
+		DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMap.h; sourceTree = "<group>"; };
+		DCA355501A8C458300E3EDF8 /* RefugeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMap.m; sourceTree = "<group>"; };
 		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
@@ -410,6 +414,8 @@
 				CEA240221A86FB6D0083510F /* RefugeHUD.m */,
 				DCF8666B1A89BAD500C73806 /* RefugeMapPin.h */,
 				DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */,
+				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
+				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -576,6 +582,7 @@
 				CEA23FDF1A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 				CEA240231A86FB6D0083510F /* RefugeHUD.m in Sources */,
+				DCA355511A8C458300E3EDF8 /* RefugeMap.m in Sources */,
 				CEA240061A8444A60083510F /* RefugeHTTPSessionManager.m in Sources */,
 				DCF8667C1A8AD1C100C73806 /* RefugeSearch.m in Sources */,
 				CEA2401B1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
@@ -618,6 +625,7 @@
 				DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
 				CEA240241A86FB6D0083510F /* RefugeHUD.m in Sources */,
+				DCA355521A8C458300E3EDF8 /* RefugeMap.m in Sources */,
 				CED0CBB41A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				DCF8666E1A89BAD600C73806 /* RefugeMapPin.m in Sources */,
 				CEA2400B1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,

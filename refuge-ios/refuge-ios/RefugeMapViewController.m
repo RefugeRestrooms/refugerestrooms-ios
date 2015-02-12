@@ -14,6 +14,7 @@
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
+#import "RefugeMap.h"
 #import "RefugeMapPin.h"
 #import "RefugeMapPlace.h"
 #import "RefugeSearch.h"
@@ -50,7 +51,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 @property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
+@property (nonatomic, weak) IBOutlet RefugeMap *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
 
