@@ -64,6 +64,8 @@
 		DCA355511A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
 		DCA355521A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
 		DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */; };
+		DCA355571A8C514200E3EDF8 /* refuge-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA355561A8C514200E3EDF8 /* refuge-pin.png */; };
+		DCA355581A8C514200E3EDF8 /* refuge-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA355561A8C514200E3EDF8 /* refuge-pin.png */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
@@ -159,6 +161,7 @@
 		DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMap.h; sourceTree = "<group>"; };
 		DCA355501A8C458300E3EDF8 /* RefugeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMap.m; sourceTree = "<group>"; };
 		DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapTests.m; sourceTree = "<group>"; };
+		DCA355561A8C514200E3EDF8 /* refuge-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-pin.png"; sourceTree = "<group>"; };
 		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
@@ -362,6 +365,7 @@
 		CED0CBA61A83271B00F7F3D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DCA355551A8C512C00E3EDF8 /* Resources */,
 				DCF866791A8AD0D100C73806 /* UI Elements */,
 				CEA240201A86FB2A0083510F /* View Controllers */,
 			);
@@ -408,6 +412,14 @@
 				DCF8667B1A8AD1C100C73806 /* RefugeSearch.m */,
 			);
 			name = "Search Logic";
+			sourceTree = "<group>";
+		};
+		DCA355551A8C512C00E3EDF8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DCA355561A8C514200E3EDF8 /* refuge-pin.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		DCF866791A8AD0D100C73806 /* UI Elements */ = {
@@ -519,6 +531,7 @@
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
 				CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */,
+				DCA355571A8C514200E3EDF8 /* refuge-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +540,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
+				DCA355581A8C514200E3EDF8 /* refuge-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

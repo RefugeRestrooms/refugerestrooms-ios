@@ -23,6 +23,6 @@ typedef NS_ENUM(NSInteger, RefugeMapPlaceType)
 @property (nonatomic, strong) NSString *key;
 
 - (void)resolveToPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *placemark))placemarkSuccess
-                            failure:(void (^)(NSError *error))placemarkError;
+                                   failure:(void (^)(NSError *error))placemarkError;
 
 @end
