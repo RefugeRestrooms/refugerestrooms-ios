@@ -76,10 +76,11 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     if([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
     {
         ADClusterAnnotation *clusterAnnotation = (ADClusterAnnotation *)[view annotation];
+        NSArray *originalAnnotations = clusterAnnotation.originalAnnotations;
         int numMapPins = 0;
         RefugeMapPin *lastMapPin;
         
-        for(id<MKAnnotation> annotation in clusterAnnotation.originalAnnotations)
+        for(id<MKAnnotation> annotation in originalAnnotations)
         {
             if([annotation isKindOfClass:[RefugeMapPin class]])
             {
