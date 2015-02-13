@@ -10,12 +10,12 @@
 
 @implementation MockRefugeMapDelegate
 
-- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin
+- (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
 {
     self.wasNotifiedOfCalloutBeingTapped = YES;
 }
 
-- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)lastPinRetrieved
+- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
     
 }
