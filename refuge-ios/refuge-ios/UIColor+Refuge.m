@@ -14,7 +14,7 @@
 
 + (UIColor *)RefugePurpleDarkColor
 {
-    return [UIColor colorWithRed:65.0/255.0 green:60.0/255.0 blue:107.0/255.0 alpha:1.0];
+    return [UIColor colorWithRed:65.0/255.0 green:50.0/255.0 blue:107.0/255.0 alpha:1.0];
 }
 
 + (UIColor *)RefugePurpleMediumColor
