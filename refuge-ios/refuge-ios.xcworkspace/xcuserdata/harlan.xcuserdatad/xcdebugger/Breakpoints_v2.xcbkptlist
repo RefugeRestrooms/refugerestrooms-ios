@@ -17,6 +17,36 @@
             endingLineNumber = "200"
             landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ADClusterMapView mapView:viewForAnnotation:]"
+                  moduleName = "refuge-ios"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/Pods/ADClusterMapView/ADClusterMapView/ADClusterMapView.m"
+                  timestampString = "445562917.057318"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ADClusterMapView mapView:viewForAnnotation:]"
+                  moduleName = "refuge-iosTests"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/Pods/ADClusterMapView/ADClusterMapView/ADClusterMapView.m"
+                  timestampString = "445562918.674451"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "200"
+                  endingLineNumber = "200"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,6 +72,22 @@
             startingLineNumber = "333"
             endingLineNumber = "333"
             landmarkName = "-_clusterInMapRect:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-iosTests/RefugeRestroomBuilderTests.m"
+            timestampString = "445562906.137088"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "-testRestroomCreatedFromJSONHasPropertiesPresentedInJSON"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
