@@ -15,7 +15,7 @@
     self.wasNotifiedOfCalloutBeingTapped = YES;
 }
 
-- (void)retrievingAnnotationFromCalloutAccessoryFailed
+- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)lastPinRetrieved
 {
     
 }

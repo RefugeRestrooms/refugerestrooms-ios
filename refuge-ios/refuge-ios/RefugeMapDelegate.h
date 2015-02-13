@@ -12,7 +12,7 @@
 
 @protocol RefugeMapDelegate <NSObject>
 
-- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin;
-- (void)retrievingAnnotationFromCalloutAccessoryFailed;
+- (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin;
+- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved;
 
 @end

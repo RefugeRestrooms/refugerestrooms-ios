@@ -52,10 +52,9 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 @property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
-@property (nonatomic, weak) IBOutlet RefugeMap *mapView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
-
+@property (nonatomic, weak) IBOutlet RefugeMap *mapView;
 
 @end
 
@@ -78,30 +77,31 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self promptToAllowLocationServices];
-    [self.locationManager startUpdatingLocation];
-    
     if(!self.isSyncComplete)
     {
-    self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
+        [self promptToAllowLocationServices];
+        
+        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
     
-    if(self.internetReachability.isReachable)
-    {
-        [self fetchRestroomsWithCompletion:^
+        if(self.internetReachability.isReachable)
         {
+            [self fetchRestroomsWithCompletion:^
+             {
+                 [self plotRestrooms];
+             }];
+        }
+        else
+        {
+            self.hud.text = kHudTextNoInternet;
+        
+            self.isSyncComplete = YES;
+            [self.hud hide:RefugeHUDHideSpeedModerate];
+        
             [self plotRestrooms];
-        }];
+        }
     }
-    else
-    {
-        self.hud.text = kHudTextNoInternet;
-        
-        self.isSyncComplete = YES;
-        [self.hud hide:RefugeHUDHideSpeedModerate];
-        
-        [self plotRestrooms];
-    }
-    }
+    
+    [self.locationManager startUpdatingLocation];
 }
 
 # pragma mark - Setters
@@ -144,14 +144,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 # pragma mark RefugeMapDelegate methods
 
-- (void)tappingCalloutAccessoryDidRetrieveMapPin:(RefugeMapPin *)mapPin
+- (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
 {
     [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
 }
 
-- (void)retrievingAnnotationFromCalloutAccessoryFailed
+- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
-    [self displayAlertForWithMessage:@"Could not display Restroom"];
+    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:firstPinRetrieved];
 }
 
 # pragma mark RefugeRestroomManagerDelegate methods

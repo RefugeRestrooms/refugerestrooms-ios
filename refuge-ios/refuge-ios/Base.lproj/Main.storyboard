@@ -74,7 +74,7 @@
                         <barButtonItem key="backBarButtonItem" title="Map" id="0H8-xu-eow" userLabel="Back Button on Destination VC"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="mapView" destination="ZNi-N8-Nwa" id="mb7-Tl-33g"/>
+                        <outlet property="mapView" destination="ZNi-N8-Nwa" id="PSo-7g-xPU"/>
                         <outlet property="searchBar" destination="fFb-8a-ZZ4" id="XrI-Uv-6t7"/>
                         <outlet property="searchResultsTable" destination="JBI-kJ-mzV" id="g8L-zj-UC5"/>
                         <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>

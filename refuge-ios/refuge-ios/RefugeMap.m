@@ -78,24 +78,27 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
         ADClusterAnnotation *clusterAnnotation = (ADClusterAnnotation *)[view annotation];
         NSArray *originalAnnotations = clusterAnnotation.originalAnnotations;
         int numMapPins = 0;
-        RefugeMapPin *lastMapPin;
+        RefugeMapPin *firstMapPin;
         
         for(id<MKAnnotation> annotation in originalAnnotations)
         {
             if([annotation isKindOfClass:[RefugeMapPin class]])
             {
-                lastMapPin = (RefugeMapPin *)annotation;
+                if(numMapPins == 0)
+                {
+                    firstMapPin = (RefugeMapPin *)annotation;
+                }
                 numMapPins++;
             }
         }
         
         if(numMapPins == 1)
         {
-            [self.mapDelegate tappingCalloutAccessoryDidRetrieveMapPin:lastMapPin];
+            [self.mapDelegate tappingCalloutAccessoryDidRetrievedSingleMapPin:firstMapPin];
         }
         else
         {
-            [self.mapDelegate retrievingAnnotationFromCalloutAccessoryFailed];
+            [self.mapDelegate retrievingSingleMapPinFromCalloutAccessoryFailed:firstMapPin];
         }
     }
 }
