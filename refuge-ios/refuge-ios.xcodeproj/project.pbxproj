@@ -57,9 +57,8 @@
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 		CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
-		DC0CFC581A8EAC61000AA09D /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC551A8EAC61000AA09D /* refuge-details-unisex.png */; };
-		DC0CFC591A8EAC61000AA09D /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC561A8EAC61000AA09D /* refuge-details-accessible.png */; };
-		DC0CFC5A1A8EAC61000AA09D /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC571A8EAC61000AA09D /* refuge-map-pin.png */; };
+		DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */; };
+		DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -67,6 +66,8 @@
 		DCA355511A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
 		DCA355521A8C458300E3EDF8 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355501A8C458300E3EDF8 /* RefugeMap.m */; };
 		DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */; };
+		DCA355571A8C514200E3EDF8 /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA355561A8C514200E3EDF8 /* refuge-map-pin.png */; };
+		DCA355581A8C514200E3EDF8 /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA355561A8C514200E3EDF8 /* refuge-map-pin.png */; };
 		DCA3555B1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
@@ -158,9 +159,8 @@
 		CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
-		DC0CFC551A8EAC61000AA09D /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
-		DC0CFC561A8EAC61000AA09D /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
-		DC0CFC571A8EAC61000AA09D /* refuge-map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-pin.png"; sourceTree = "<group>"; };
+		DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
+		DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -170,6 +170,7 @@
 		DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMap.h; sourceTree = "<group>"; };
 		DCA355501A8C458300E3EDF8 /* RefugeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMap.m; sourceTree = "<group>"; };
 		DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapTests.m; sourceTree = "<group>"; };
+		DCA355561A8C514200E3EDF8 /* refuge-map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-pin.png"; sourceTree = "<group>"; };
 		DCA355591A8C566500E3EDF8 /* UIImage+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Refuge.h"; sourceTree = "<group>"; };
 		DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Refuge.m"; sourceTree = "<group>"; };
 		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
@@ -437,9 +438,9 @@
 			isa = PBXGroup;
 			children = (
 				DCA355661A8D3A7500E3EDF8 /* refuge-background-bathroom.png */,
-				DC0CFC551A8EAC61000AA09D /* refuge-details-unisex.png */,
-				DC0CFC561A8EAC61000AA09D /* refuge-details-accessible.png */,
-				DC0CFC571A8EAC61000AA09D /* refuge-map-pin.png */,
+				DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */,
+				DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */,
+				DCA355561A8C514200E3EDF8 /* refuge-map-pin.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -560,13 +561,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC0CFC591A8EAC61000AA09D /* refuge-details-accessible.png in Resources */,
+				DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */,
+				DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */,
 				DCA355671A8D3A7500E3EDF8 /* refuge-background-bathroom.png in Resources */,
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
-				DC0CFC581A8EAC61000AA09D /* refuge-details-unisex.png in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
-				DC0CFC5A1A8EAC61000AA09D /* refuge-map-pin.png in Resources */,
 				CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */,
+				DCA355571A8C514200E3EDF8 /* refuge-map-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +576,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
+				DCA355581A8C514200E3EDF8 /* refuge-map-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
