@@ -220,101 +220,32 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="zO2-CU-U5n" userLabel="Directions Scroll View">
-                                                <rect key="frame" x="0.0" y="32" width="560" height="100"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uM0-7g-wB3" userLabel="Content View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
-                                                        <subviews>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-Pe-dSa" userLabel="Directions Text View">
-                                                                <rect key="frame" x="0.0" y="0.0" width="560" height="100"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            </textView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" secondItem="czX-Pe-dSa" secondAttribute="height" id="2Mq-TC-JWz"/>
-                                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="uM0-7g-wB3" secondAttribute="top" id="BTa-mw-If7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="czX-Pe-dSa" secondAttribute="trailing" id="C8f-X9-mml"/>
-                                                            <constraint firstAttribute="trailing" secondItem="czX-Pe-dSa" secondAttribute="trailing" id="KTt-VB-peT"/>
-                                                            <constraint firstAttribute="height" constant="100" id="Ksj-IT-2E6"/>
-                                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="leading" secondItem="uM0-7g-wB3" secondAttribute="leading" id="NHb-rh-XN3"/>
-                                                            <constraint firstAttribute="height" constant="100" id="TgJ-JS-u5Z"/>
-                                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="uM0-7g-wB3" secondAttribute="top" id="Uyg-dF-K8F"/>
-                                                            <constraint firstAttribute="height" secondItem="czX-Pe-dSa" secondAttribute="height" id="VDj-yi-eno"/>
-                                                            <constraint firstAttribute="bottom" secondItem="czX-Pe-dSa" secondAttribute="bottom" id="g6S-aw-stw"/>
-                                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="leading" secondItem="uM0-7g-wB3" secondAttribute="leading" id="kU5-zX-TG6"/>
-                                                            <constraint firstAttribute="bottom" secondItem="czX-Pe-dSa" secondAttribute="bottom" id="nC2-yH-EPR"/>
-                                                            <constraint firstAttribute="height" id="pBj-jc-hh4"/>
-                                                            <constraint firstAttribute="centerX" secondItem="czX-Pe-dSa" secondAttribute="centerX" id="qre-eX-dXo"/>
-                                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="uM0-7g-wB3" secondAttribute="top" id="toP-dr-O8Q"/>
-                                                            <constraint firstAttribute="height" secondItem="czX-Pe-dSa" secondAttribute="height" id="z1G-bm-kN9"/>
-                                                        </constraints>
-                                                        <variation key="default">
-                                                            <mask key="constraints">
-                                                                <exclude reference="Ksj-IT-2E6"/>
-                                                                <exclude reference="TgJ-JS-u5Z"/>
-                                                                <exclude reference="pBj-jc-hh4"/>
-                                                                <exclude reference="2Mq-TC-JWz"/>
-                                                                <exclude reference="KTt-VB-peT"/>
-                                                                <exclude reference="NHb-rh-XN3"/>
-                                                                <exclude reference="Uyg-dF-K8F"/>
-                                                                <exclude reference="nC2-yH-EPR"/>
-                                                                <exclude reference="toP-dr-O8Q"/>
-                                                                <exclude reference="z1G-bm-kN9"/>
-                                                            </mask>
-                                                        </variation>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="uM0-7g-wB3" firstAttribute="top" secondItem="zO2-CU-U5n" secondAttribute="top" id="7Ox-NA-AAw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="uM0-7g-wB3" secondAttribute="bottom" id="8Iq-Zf-Xpt"/>
-                                                    <constraint firstAttribute="height" constant="100" id="C3l-Ii-eHb"/>
-                                                    <constraint firstAttribute="height" secondItem="uM0-7g-wB3" secondAttribute="height" id="GW9-zO-MAY"/>
-                                                    <constraint firstItem="uM0-7g-wB3" firstAttribute="leading" secondItem="zO2-CU-U5n" secondAttribute="leading" id="HWd-u9-NQa"/>
-                                                    <constraint firstAttribute="centerX" secondItem="uM0-7g-wB3" secondAttribute="centerX" id="IUJ-IH-BUa"/>
-                                                    <constraint firstAttribute="bottom" secondItem="uM0-7g-wB3" secondAttribute="bottom" id="Lrw-xd-BYX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uM0-7g-wB3" secondAttribute="trailing" id="Yae-Na-BkX"/>
-                                                    <constraint firstAttribute="centerX" secondItem="uM0-7g-wB3" secondAttribute="centerX" id="Yum-9M-dUh"/>
-                                                    <constraint firstAttribute="height" secondItem="uM0-7g-wB3" secondAttribute="height" id="eJy-UM-IrP"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uM0-7g-wB3" secondAttribute="trailing" id="hWM-gL-5Wh"/>
-                                                    <constraint firstItem="uM0-7g-wB3" firstAttribute="top" secondItem="zO2-CU-U5n" secondAttribute="top" id="heC-ak-YW4"/>
-                                                    <constraint firstItem="uM0-7g-wB3" firstAttribute="leading" secondItem="zO2-CU-U5n" secondAttribute="leading" id="rRq-Vj-foL"/>
-                                                </constraints>
-                                                <variation key="default">
-                                                    <mask key="constraints">
-                                                        <exclude reference="7Ox-NA-AAw"/>
-                                                        <exclude reference="Lrw-xd-BYX"/>
-                                                        <exclude reference="Yae-Na-BkX"/>
-                                                        <exclude reference="Yum-9M-dUh"/>
-                                                        <exclude reference="eJy-UM-IrP"/>
-                                                        <exclude reference="rRq-Vj-foL"/>
-                                                    </mask>
-                                                </variation>
-                                            </scrollView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-Pe-dSa" userLabel="Directions Text View">
+                                                <rect key="frame" x="0.0" y="28" width="560" height="102"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="zO2-CU-U5n" firstAttribute="top" secondItem="F8f-V2-dtw" secondAttribute="bottom" constant="8" id="6OZ-rm-ykI"/>
-                                            <constraint firstItem="F8f-V2-dtw" firstAttribute="top" secondItem="zO2-CU-U5n" secondAttribute="bottom" constant="8" symbolic="YES" id="8OX-Fs-wo9"/>
-                                            <constraint firstAttribute="trailing" secondItem="zO2-CU-U5n" secondAttribute="trailing" id="Anq-EP-bye"/>
-                                            <constraint firstItem="F8f-V2-dtw" firstAttribute="top" secondItem="zO2-CU-U5n" secondAttribute="top" constant="8" id="CQQ-6f-q19"/>
+                                            <constraint firstAttribute="trailing" secondItem="czX-Pe-dSa" secondAttribute="trailing" id="6IF-Qg-mfE"/>
+                                            <constraint firstAttribute="centerX" secondItem="czX-Pe-dSa" secondAttribute="centerX" id="INM-hN-lcI"/>
                                             <constraint firstItem="F8f-V2-dtw" firstAttribute="leading" secondItem="KrP-pZ-wwk" secondAttribute="leading" id="K4s-th-Drq"/>
+                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="leading" secondItem="KrP-pZ-wwk" secondAttribute="leading" id="LNW-FF-ymR"/>
                                             <constraint firstItem="F8f-V2-dtw" firstAttribute="top" secondItem="KrP-pZ-wwk" secondAttribute="top" id="MYh-bh-Kbc"/>
                                             <constraint firstAttribute="centerX" secondItem="F8f-V2-dtw" secondAttribute="centerX" id="Rhf-ra-uS6"/>
+                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="F8f-V2-dtw" secondAttribute="bottom" constant="4" id="U75-92-jib"/>
+                                            <constraint firstAttribute="bottom" secondItem="czX-Pe-dSa" secondAttribute="bottom" id="ajN-1g-RXm"/>
                                             <constraint firstAttribute="trailing" secondItem="F8f-V2-dtw" secondAttribute="trailing" id="eh3-ZT-Bag"/>
-                                            <constraint firstItem="zO2-CU-U5n" firstAttribute="leading" secondItem="KrP-pZ-wwk" secondAttribute="leading" id="kLw-ah-dGn"/>
+                                            <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="KrP-pZ-wwk" secondAttribute="top" constant="15" id="gQB-Hi-zXP"/>
                                             <constraint firstAttribute="height" priority="750" constant="130" id="pqO-83-8im"/>
-                                            <constraint firstItem="zO2-CU-U5n" firstAttribute="width" secondItem="KrP-pZ-wwk" secondAttribute="width" id="tiF-Vd-yAT"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="8OX-Fs-wo9"/>
-                                                <exclude reference="CQQ-6f-q19"/>
+                                                <exclude reference="gQB-Hi-zXP"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -382,7 +313,6 @@
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
                         <outlet property="characteristicImage1" destination="Ztb-h9-kAf" id="vEH-YA-KgA"/>
                         <outlet property="characteristicImage2" destination="sob-jP-kLl" id="Nds-GP-iGv"/>
-                        <outlet property="directionsTextField" destination="czX-Pe-dSa" id="TCX-J2-XzW"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>
