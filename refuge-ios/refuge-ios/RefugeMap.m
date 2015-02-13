@@ -13,7 +13,7 @@
 
 static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
 static NSString * const kMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
-static NSString * const kImageNamePin = @"refuge-pin.png";
+static NSString * const kImageNamePin = @"refuge-map-pin.png";
 static float const kImageHeightPin = 39.5;
 static float const kImageWidthPin = 31.0;
 static NSInteger const kMaxNumPinClusters = 1000;

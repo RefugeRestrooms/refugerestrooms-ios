@@ -31,7 +31,7 @@
 {
     CGFloat desiredWith = 10.0;
     CGFloat desiredHeight = 20.0;
-    NSString *imageName = @"refuge-pin.png";
+    NSString *imageName = @"refuge-map-pin.png";
     
     UIImage *resizedImage = [UIImage resizeImageNamed:imageName width:desiredWith height:desiredHeight];
     

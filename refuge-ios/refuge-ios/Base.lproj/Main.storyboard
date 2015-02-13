@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Refuge-->
@@ -102,6 +103,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-background-bathroom.png" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-ne-BNM" userLabel="Background Image">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="XWc-QW-brV" userLabel="Name Label Background">
                                                 <rect key="frame" x="20" y="20" width="560" height="43"/>
@@ -126,13 +128,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-cN-gom" userLabel="Characteristics View">
-                                                <rect key="frame" x="150" y="218" width="300" height="100"/>
+                                                <rect key="frame" x="200" y="213" width="200" height="110"/>
                                                 <subviews>
                                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
-                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% POSITIVE" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-4A-GCQ" userLabel="Rating Label">
-                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -148,7 +150,7 @@
                                                             <constraint firstItem="jtR-4A-GCQ" firstAttribute="top" secondItem="U1v-97-ERN" secondAttribute="top" id="NRo-Ri-l3a"/>
                                                             <constraint firstAttribute="width" secondItem="U1v-97-ERN" secondAttribute="height" multiplier="1:1" id="eFN-fe-nTc"/>
                                                             <constraint firstItem="jtR-4A-GCQ" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="leading" id="gtP-bj-mhn"/>
-                                                            <constraint firstAttribute="width" constant="100" id="l4O-yO-KLh"/>
+                                                            <constraint firstAttribute="width" constant="110" id="l4O-yO-KLh"/>
                                                         </constraints>
                                                         <variation key="default">
                                                             <mask key="constraints">
@@ -156,12 +158,48 @@
                                                             </mask>
                                                         </variation>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLu-QH-mi8" userLabel="Images View">
+                                                        <rect key="frame" x="110" y="0.0" width="90" height="110"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-details-unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-h9-kAf" userLabel="Image 1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="55"/>
+                                                            </imageView>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-detail-accessible.png" translatesAutoresizingMaskIntoConstraints="NO" id="sob-jP-kLl" userLabel="Image 2">
+                                                                <rect key="frame" x="0.0" y="63" width="90" height="55"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Ztb-h9-kAf" firstAttribute="leading" secondItem="RLu-QH-mi8" secondAttribute="leading" id="5mh-dE-bcH"/>
+                                                            <constraint firstItem="sob-jP-kLl" firstAttribute="leading" secondItem="Ztb-h9-kAf" secondAttribute="leading" id="Mza-kI-XWj"/>
+                                                            <constraint firstItem="sob-jP-kLl" firstAttribute="height" secondItem="Ztb-h9-kAf" secondAttribute="height" id="Q5T-23-MBm"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Ztb-h9-kAf" secondAttribute="trailing" id="cje-Fk-MxY"/>
+                                                            <constraint firstItem="Ztb-h9-kAf" firstAttribute="top" secondItem="RLu-QH-mi8" secondAttribute="top" id="f6f-xP-DqU"/>
+                                                            <constraint firstItem="sob-jP-kLl" firstAttribute="top" secondItem="Ztb-h9-kAf" secondAttribute="bottom" constant="8" symbolic="YES" id="tjW-Yz-ahz"/>
+                                                            <constraint firstItem="sob-jP-kLl" firstAttribute="trailing" secondItem="Ztb-h9-kAf" secondAttribute="trailing" id="zMa-KR-yGL"/>
+                                                            <constraint firstItem="Ztb-h9-kAf" firstAttribute="height" secondItem="RLu-QH-mi8" secondAttribute="height" multiplier="1:2" id="zUx-1b-T79"/>
+                                                        </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="5mh-dE-bcH"/>
+                                                            </mask>
+                                                        </variation>
+                                                    </view>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="CQO-Uo-V08"/>
+                                                    <constraint firstItem="Ztb-h9-kAf" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="trailing" id="3X9-ZU-hzD"/>
+                                                    <constraint firstItem="RLu-QH-mi8" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="trailing" id="6Fo-UK-rsm"/>
+                                                    <constraint firstAttribute="bottom" secondItem="RLu-QH-mi8" secondAttribute="bottom" id="9wm-2X-wUn"/>
+                                                    <constraint firstAttribute="width" constant="200" id="CQO-Uo-V08"/>
+                                                    <constraint firstAttribute="centerY" secondItem="RLu-QH-mi8" secondAttribute="centerY" id="H8Q-Ko-Row"/>
+                                                    <constraint firstItem="RLu-QH-mi8" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="top" id="R6X-XK-xnM"/>
                                                     <constraint firstAttribute="centerY" secondItem="U1v-97-ERN" secondAttribute="centerY" id="SHU-4u-a0i"/>
                                                     <constraint firstItem="U1v-97-ERN" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="top" id="kQM-z7-5jl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="RLu-QH-mi8" secondAttribute="trailing" id="qlu-6M-LpR"/>
                                                     <constraint firstItem="U1v-97-ERN" firstAttribute="leading" secondItem="wl1-cN-gom" secondAttribute="leading" id="yWE-5h-Vxd"/>
                                                 </constraints>
                                             </view>
@@ -229,11 +267,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="eD9-IO-3Xk" userLabel="Navigation Item"/>
                     <connections>
+                        <outlet property="accessibleImage" destination="sob-jP-kLl" id="C6O-6S-B9N"/>
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>
                         <outlet property="streetLabel" destination="m3W-kN-kjI" id="jI5-Ds-Jrs"/>
+                        <outlet property="unisexImage" destination="Ztb-h9-kAf" id="mAr-yz-DQq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Pz-eY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,5 +308,7 @@
     </scenes>
     <resources>
         <image name="refuge-background-bathroom.png" width="640" height="1136"/>
+        <image name="refuge-detail-accessible.png" width="44" height="47"/>
+        <image name="refuge-details-unisex.png" width="45" height="43"/>
     </resources>
 </document>

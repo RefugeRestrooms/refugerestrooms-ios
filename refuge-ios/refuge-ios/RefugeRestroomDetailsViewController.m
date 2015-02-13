@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *unisexImage;
+@property (weak, nonatomic) IBOutlet UIImageView *accessibleImage;
 
 @end
 
@@ -46,6 +48,8 @@
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
+    self.unisexImage.hidden = !self.restroom.isUnisex;
+    self.accessibleImage.hidden = !self.restroom.isAccessible;
 }
 
 - (UIColor *)ratingColor
