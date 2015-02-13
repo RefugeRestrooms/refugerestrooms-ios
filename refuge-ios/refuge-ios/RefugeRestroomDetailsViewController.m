@@ -26,6 +26,7 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
+@property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
 
 @end
 
@@ -51,6 +52,8 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
+    self.directionsTextField.backgroundColor = [UIColor clearColor];
+    self.directionsTextField.text = self.restroom.directions;
     
     [self createCharacteristicsImages];
 }
