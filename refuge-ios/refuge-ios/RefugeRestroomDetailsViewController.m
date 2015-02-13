@@ -14,6 +14,8 @@
 
 @interface RefugeRestroomDetailsViewController ()
 
+@property (nonatomic, assign) RefugeRestroomRatingType restroomRatingType;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *streetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
@@ -30,6 +32,8 @@
 {
     [super viewDidLoad];
     
+    self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
+    
     [self setDetails];
 }
 
@@ -41,19 +45,19 @@
     self.streetLabel.text = self.restroom.street;
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
-    self.ratingLabel.text = @"RATING TEXT";
+    self.ratingLabel.text = [[self ratingString] uppercaseString];
 }
 
 - (UIColor *)ratingColor
 {
-    RefugeRestroomRatingType ratingType = [RefugeRestroom ratingTypeForRating:self.restroom.rating];
+    UIColor *noRatingColor = [UIColor RefugeRatingNoneColor];
     
-    switch (ratingType) {
+    switch (self.restroomRatingType) {
         case RefugeRestroomRatingTypeNegative:
             return [UIColor RefugeRatingNegativeColor];
             break;
         case RefugeRestroomRatingTypeNeutral:
-            return [UIColor RefugeRatingNeutralColor];
+            return noRatingColor;
             break;
         case RefugeRestroomRatingTypeNone:
             return [UIColor RefugeRatingNoneColor];
@@ -62,7 +66,23 @@
             return [UIColor RefugeRatingPositiveColor];
             break;
         default:
-            return [UIColor RefugeRatingNoneColor];
+            return noRatingColor;
+            break;
+    }
+}
+
+- (NSString *)ratingString
+{
+    int numUpvotes = [self.restroom.numUpvotes intValue];
+    int numDownvotes = [self.restroom.numDownvotes intValue];
+    int percentPositive = (numUpvotes / (numUpvotes + numDownvotes)) * 100;
+    
+    switch (self.restroomRatingType) {
+        case RefugeRestroomRatingTypeNone:
+            return @"Not Yet Rated";
+            break;
+        default:
+            return [NSString stringWithFormat:@"%i%% positive", percentPositive];
             break;
     }
 }

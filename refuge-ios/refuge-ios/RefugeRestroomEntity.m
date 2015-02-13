@@ -20,7 +20,7 @@
 @dynamic isUnisex;
 @dynamic numUpvotes;
 @dynamic numDownvotes;
-@dynamic rating;
+@dynamic ratingNumber;
 @dynamic directions;
 @dynamic comment;
 @dynamic latitude;

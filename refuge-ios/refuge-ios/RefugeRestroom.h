@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
 @property (nonatomic, assign) BOOL isUnisex;
 @property (nonatomic, assign) NSNumber *numUpvotes;
 @property (nonatomic, assign) NSNumber *numDownvotes;
-@property (nonatomic, assign) NSNumber *rating;
+@property (nonatomic, assign) NSNumber *ratingNumber;
 @property (nonatomic, strong) NSString *directions;
 @property (nonatomic, strong) NSString *comment;
 @property (nonatomic, strong) NSDecimalNumber *latitude;

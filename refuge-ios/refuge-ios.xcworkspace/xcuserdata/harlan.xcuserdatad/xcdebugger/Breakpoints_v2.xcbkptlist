@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445477440.586104"
+            timestampString = "445480523.213339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74">
+            startingLineNumber = "94"
+            endingLineNumber = "94">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -648,11 +648,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445477440.586104"
+            timestampString = "445480523.213339"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78">
+            startingLineNumber = "98"
+            endingLineNumber = "98">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -710,12 +710,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445477885.330682"
+            timestampString = "445479584.096001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-ratingColor"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -726,12 +726,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445478611.801981"
+            timestampString = "445480578.256495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-ratingColor"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-ratingString"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

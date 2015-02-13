@@ -14,7 +14,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="numDownvotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="numUpvotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <attribute name="rating" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="ratingNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
     </entity>

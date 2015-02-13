@@ -17,7 +17,7 @@
 
 # pragma mark - Getters
 
-- (NSNumber *)rating
+- (NSNumber *)ratingNumber
 {
     int numUpvotes = [self.numUpvotes intValue];
     int numDownvotes = [self.numDownvotes intValue];
@@ -83,7 +83,7 @@
              @"isUnisex" : @"unisex",
              @"numUpvotes" : @"upvote",
              @"numDownvotes" : @"downvote",
-             @"rating" : [NSNull null],
+             @"ratingNumber" : [NSNull null],
              @"directions" : @"directions",
              @"comment" : @"comment",
              @"createdDate" : @"created_at"

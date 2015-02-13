@@ -367,8 +367,6 @@
 		CED0CBA51A83270F00F7F3D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DCB079751A8AE95600945880 /* RefugeMapPlace.h */,
-				DCB079761A8AE95600945880 /* RefugeMapPlace.m */,
 				CED0CBA11A83261E00F7F3D8 /* RefugeRestroom.h */,
 				CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */,
 				CEA240081A86BB750083510F /* RefugeRestroomEntity.h */,
@@ -447,6 +445,8 @@
 				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
 				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
 				DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */,
+				DCB079751A8AE95600945880 /* RefugeMapPlace.h */,
+				DCB079761A8AE95600945880 /* RefugeMapPlace.m */,
 			);
 			name = "Map Logic";
 			sourceTree = "<group>";

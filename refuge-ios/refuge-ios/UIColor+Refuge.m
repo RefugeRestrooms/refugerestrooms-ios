@@ -39,7 +39,7 @@
 
 + (UIColor *)RefugeRatingNoneColor
 {
-    return [UIColor clearColor];
+    return [self RefugePurpleMediumColor];
 }
 
 + (UIColor *)RefugeRatingPositiveColor
