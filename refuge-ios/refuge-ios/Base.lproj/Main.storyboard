@@ -122,50 +122,69 @@
                                         <color key="textColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
-                                        <rect key="frame" x="250" y="218" width="100" height="100"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-cN-gom" userLabel="Characteristics View">
+                                        <rect key="frame" x="150" y="218" width="300" height="100"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% POSITIVE" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-4A-GCQ" userLabel="Rating Label">
+                                            <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% POSITIVE" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jtR-4A-GCQ" userLabel="Rating Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.63529411759999999" green="0.82352941180000006" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="jtR-4A-GCQ" secondAttribute="trailing" id="39f-e4-SpW"/>
+                                                    <constraint firstAttribute="centerX" secondItem="jtR-4A-GCQ" secondAttribute="centerX" id="BkO-rm-fTT"/>
+                                                    <constraint firstAttribute="height" constant="100" id="HeI-fX-32n"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jtR-4A-GCQ" secondAttribute="bottom" id="JJd-of-5Ob"/>
+                                                    <constraint firstItem="jtR-4A-GCQ" firstAttribute="top" secondItem="U1v-97-ERN" secondAttribute="top" id="NRo-Ri-l3a"/>
+                                                    <constraint firstAttribute="width" secondItem="U1v-97-ERN" secondAttribute="height" multiplier="1:1" id="eFN-fe-nTc"/>
+                                                    <constraint firstItem="jtR-4A-GCQ" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="leading" id="gtP-bj-mhn"/>
+                                                    <constraint firstAttribute="width" constant="100" id="l4O-yO-KLh"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="HeI-fX-32n"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.63529411759999999" green="0.82352941180000006" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="jtR-4A-GCQ" secondAttribute="trailing" id="39f-e4-SpW"/>
-                                            <constraint firstAttribute="centerX" secondItem="jtR-4A-GCQ" secondAttribute="centerX" id="BkO-rm-fTT"/>
-                                            <constraint firstAttribute="height" constant="100" id="HeI-fX-32n"/>
-                                            <constraint firstAttribute="bottom" secondItem="jtR-4A-GCQ" secondAttribute="bottom" id="JJd-of-5Ob"/>
-                                            <constraint firstItem="jtR-4A-GCQ" firstAttribute="top" secondItem="U1v-97-ERN" secondAttribute="top" id="NRo-Ri-l3a"/>
-                                            <constraint firstAttribute="width" secondItem="U1v-97-ERN" secondAttribute="height" multiplier="1:1" id="eFN-fe-nTc"/>
-                                            <constraint firstItem="jtR-4A-GCQ" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="leading" id="gtP-bj-mhn"/>
-                                            <constraint firstAttribute="width" constant="100" id="l4O-yO-KLh"/>
+                                            <constraint firstAttribute="centerY" secondItem="U1v-97-ERN" secondAttribute="centerY" id="SHU-4u-a0i"/>
+                                            <constraint firstItem="U1v-97-ERN" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="top" id="kQM-z7-5jl"/>
+                                            <constraint firstItem="U1v-97-ERN" firstAttribute="leading" secondItem="wl1-cN-gom" secondAttribute="leading" id="yWE-5h-Vxd"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="leading" secondItem="oC3-eQ-lS0" secondAttribute="leading" id="04P-6m-p7W"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="trailing" secondItem="m3W-kN-kjI" secondAttribute="trailing" id="2TO-WQ-gYp"/>
-                                    <constraint firstItem="U1v-97-ERN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oC3-eQ-lS0" secondAttribute="bottom" constant="8" symbolic="YES" id="3fq-KH-yXH"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="centerY" secondItem="m3W-kN-kjI" secondAttribute="centerY" id="4aT-jL-EQu"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="height" secondItem="XWc-QW-brV" secondAttribute="height" id="4dc-MS-3yK"/>
                                     <constraint firstItem="oC3-eQ-lS0" firstAttribute="top" secondItem="m3W-kN-kjI" secondAttribute="bottom" constant="8" symbolic="YES" id="7dJ-ho-OST"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="leading" secondItem="m3W-kN-kjI" secondAttribute="leading" id="APF-ai-NVG"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="centerY" secondItem="XWc-QW-brV" secondAttribute="centerY" id="Fa4-Z4-QPb"/>
+                                    <constraint firstItem="wl1-cN-gom" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oC3-eQ-lS0" secondAttribute="bottom" constant="8" symbolic="YES" id="K84-P8-How"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="width" secondItem="XWc-QW-brV" secondAttribute="width" id="Lpn-Cv-PLy"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="trailing" secondItem="XWc-QW-brV" secondAttribute="trailing" id="RU1-7Q-mgj"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="leading" secondItem="UZS-g8-A6u" secondAttribute="leading" constant="20" symbolic="YES" id="Tk6-GZ-DoG"/>
+                                    <constraint firstItem="wl1-cN-gom" firstAttribute="leading" secondItem="UZS-g8-A6u" secondAttribute="leading" constant="150" id="Zfo-M7-ZoA"/>
                                     <constraint firstAttribute="centerX" secondItem="oC3-eQ-lS0" secondAttribute="centerX" id="aEI-Xd-enu"/>
-                                    <constraint firstAttribute="centerX" secondItem="U1v-97-ERN" secondAttribute="centerX" id="b9h-Op-cV4"/>
+                                    <constraint firstAttribute="centerY" secondItem="wl1-cN-gom" secondAttribute="centerY" id="aZz-IZ-7kF"/>
+                                    <constraint firstAttribute="centerY" secondItem="wl1-cN-gom" secondAttribute="centerY" id="b3f-az-Gft"/>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="trailing" secondItem="oC3-eQ-lS0" secondAttribute="trailing" id="hSj-cv-tp1"/>
+                                    <constraint firstAttribute="trailing" secondItem="wl1-cN-gom" secondAttribute="trailing" constant="150" id="jOJ-86-aSh"/>
                                     <constraint firstAttribute="trailing" secondItem="cRe-Pf-iPF" secondAttribute="trailing" constant="20" symbolic="YES" id="kkH-kO-faz"/>
                                     <constraint firstAttribute="centerX" secondItem="m3W-kN-kjI" secondAttribute="centerX" id="oDn-C7-f51"/>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="top" secondItem="cRe-Pf-iPF" secondAttribute="bottom" constant="16" id="qbb-9K-kSE"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="top" secondItem="UZS-g8-A6u" secondAttribute="top" constant="20" symbolic="YES" id="rca-h3-TZA"/>
-                                    <constraint firstAttribute="centerY" secondItem="U1v-97-ERN" secondAttribute="centerY" priority="749" id="wXN-8v-dzV"/>
+                                    <constraint firstAttribute="centerX" secondItem="wl1-cN-gom" secondAttribute="centerX" priority="749" id="vcK-mY-5da"/>
                                     <constraint firstAttribute="centerX" secondItem="cRe-Pf-iPF" secondAttribute="centerX" id="xtS-qZ-Xpf"/>
                                 </constraints>
                                 <variation key="default">
