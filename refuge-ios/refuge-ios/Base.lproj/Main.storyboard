@@ -128,7 +128,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-cN-gom" userLabel="Characteristics View">
-                                                <rect key="frame" x="200" y="213" width="200" height="110"/>
+                                                <rect key="frame" x="250" y="213" width="200" height="110"/>
                                                 <subviews>
                                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -164,7 +164,7 @@
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-details-unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-h9-kAf" userLabel="Image 1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="90" height="55"/>
                                                             </imageView>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-detail-accessible.png" translatesAutoresizingMaskIntoConstraints="NO" id="sob-jP-kLl" userLabel="Image 2">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-details-accessible.png" translatesAutoresizingMaskIntoConstraints="NO" id="sob-jP-kLl" userLabel="Image 2">
                                                                 <rect key="frame" x="0.0" y="63" width="90" height="55"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </imageView>
@@ -195,6 +195,7 @@
                                                     <constraint firstItem="RLu-QH-mi8" firstAttribute="leading" secondItem="U1v-97-ERN" secondAttribute="trailing" id="6Fo-UK-rsm"/>
                                                     <constraint firstAttribute="bottom" secondItem="RLu-QH-mi8" secondAttribute="bottom" id="9wm-2X-wUn"/>
                                                     <constraint firstAttribute="width" constant="200" id="CQO-Uo-V08"/>
+                                                    <constraint firstAttribute="centerX" secondItem="U1v-97-ERN" secondAttribute="centerX" priority="750" id="GlB-Uq-kwV"/>
                                                     <constraint firstAttribute="centerY" secondItem="RLu-QH-mi8" secondAttribute="centerY" id="H8Q-Ko-Row"/>
                                                     <constraint firstItem="RLu-QH-mi8" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="top" id="R6X-XK-xnM"/>
                                                     <constraint firstAttribute="centerY" secondItem="U1v-97-ERN" secondAttribute="centerY" id="SHU-4u-a0i"/>
@@ -222,12 +223,14 @@
                                             <constraint firstItem="XWc-QW-brV" firstAttribute="width" secondItem="cRe-Pf-iPF" secondAttribute="width" id="grE-7l-h0W"/>
                                             <constraint firstItem="XWc-QW-brV" firstAttribute="top" secondItem="cRe-Pf-iPF" secondAttribute="top" id="huL-e7-uyc"/>
                                             <constraint firstItem="oC3-eQ-lS0" firstAttribute="leading" secondItem="m3W-kN-kjI" secondAttribute="leading" id="iHZ-rI-zee"/>
+                                            <constraint firstItem="wl1-cN-gom" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YNf-7v-LYA" secondAttribute="leading" constant="20" symbolic="YES" id="jQk-sd-9gG"/>
                                             <constraint firstItem="vxa-ne-BNM" firstAttribute="centerX" secondItem="XWc-QW-brV" secondAttribute="centerX" id="lJw-6d-1mz"/>
-                                            <constraint firstAttribute="centerX" secondItem="wl1-cN-gom" secondAttribute="centerX" id="oWc-On-Oet"/>
+                                            <constraint firstAttribute="centerX" secondItem="wl1-cN-gom" secondAttribute="centerX" constant="-50" id="oWc-On-Oet"/>
                                             <constraint firstItem="m3W-kN-kjI" firstAttribute="trailing" secondItem="cRe-Pf-iPF" secondAttribute="trailing" id="qzj-iJ-ZVj"/>
                                             <constraint firstItem="m3W-kN-kjI" firstAttribute="top" secondItem="XWc-QW-brV" secondAttribute="bottom" constant="16" id="rtV-hU-TDF"/>
                                             <constraint firstItem="oC3-eQ-lS0" firstAttribute="top" secondItem="m3W-kN-kjI" secondAttribute="bottom" constant="8" symbolic="YES" id="tjz-oz-V8Y"/>
                                             <constraint firstItem="cRe-Pf-iPF" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leading" constant="20" symbolic="YES" id="u1V-59-smn"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wl1-cN-gom" secondAttribute="trailing" constant="20" symbolic="YES" id="uhP-s9-Oz0"/>
                                             <constraint firstAttribute="trailing" secondItem="cRe-Pf-iPF" secondAttribute="trailing" constant="20" symbolic="YES" id="vCC-Fk-VVb"/>
                                             <constraint firstItem="cRe-Pf-iPF" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" constant="20" symbolic="YES" id="vF6-4M-tVY"/>
                                         </constraints>
@@ -267,13 +270,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="eD9-IO-3Xk" userLabel="Navigation Item"/>
                     <connections>
-                        <outlet property="accessibleImage" destination="sob-jP-kLl" id="C6O-6S-B9N"/>
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
+                        <outlet property="characteristicImage1" destination="Ztb-h9-kAf" id="vEH-YA-KgA"/>
+                        <outlet property="characteristicImage2" destination="sob-jP-kLl" id="Nds-GP-iGv"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>
                         <outlet property="streetLabel" destination="m3W-kN-kjI" id="jI5-Ds-Jrs"/>
-                        <outlet property="unisexImage" destination="Ztb-h9-kAf" id="mAr-yz-DQq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Pz-eY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -308,7 +311,7 @@
     </scenes>
     <resources>
         <image name="refuge-background-bathroom.png" width="640" height="1136"/>
-        <image name="refuge-detail-accessible.png" width="44" height="47"/>
+        <image name="refuge-details-accessible.png" width="44" height="47"/>
         <image name="refuge-details-unisex.png" width="45" height="43"/>
     </resources>
 </document>

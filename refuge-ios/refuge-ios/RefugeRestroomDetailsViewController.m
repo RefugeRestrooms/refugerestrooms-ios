@@ -12,6 +12,9 @@
 #import "RefugeRestroom.h"
 #import "UIColor+Refuge.h"
 
+static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
+static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
+
 @interface RefugeRestroomDetailsViewController ()
 
 @property (nonatomic, assign) RefugeRestroomRatingType restroomRatingType;
@@ -21,8 +24,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *unisexImage;
-@property (weak, nonatomic) IBOutlet UIImageView *accessibleImage;
+@property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
+@property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
 
 @end
 
@@ -48,8 +51,8 @@
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
-    self.unisexImage.hidden = !self.restroom.isUnisex;
-    self.accessibleImage.hidden = !self.restroom.isAccessible;
+    
+    [self createCharacteristicsImages];
 }
 
 - (UIColor *)ratingColor
@@ -89,6 +92,36 @@
             return [NSString stringWithFormat:@"%i%% positive", percentPositive];
             break;
     }
+}
+
+- (void)createCharacteristicsImages
+{
+    BOOL isUnisex = [self.restroom.isUnisex boolValue];
+    BOOL isAccessible = [self.restroom.isAccessible boolValue];
+    UIImage *imageUnisex = [UIImage imageNamed:kImageNameCharacteristicUnisex];
+    UIImage *imageAccessible = [UIImage imageNamed:kImageNameCharacteristicAccessible];
+    
+    if(isUnisex && isAccessible)
+    {
+        self.characteristicImage1.image = imageUnisex;
+        self.characteristicImage2.image = imageAccessible;
+    }
+    else if(isUnisex && !isAccessible)
+    {
+        self.characteristicImage1.image = imageUnisex;
+        self.characteristicImage2.image = nil;
+    }
+    else if(!isUnisex && isAccessible)
+    {
+        self.characteristicImage1.image = imageAccessible;
+        self.characteristicImage2.image = nil;
+    }
+    else
+    {
+        self.characteristicImage1.image = nil;
+        self.characteristicImage2.image = nil;
+    }
+    
 }
 
 @end

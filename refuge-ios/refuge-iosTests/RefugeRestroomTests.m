@@ -33,8 +33,8 @@
     self.restroom.city = @"Cary";
     self.restroom.state = @"North Carolina";
     self.restroom.country = @"United States";
-    self.restroom.isAccessible = NO;
-    self.restroom.isUnisex = YES;
+    self.restroom.isAccessible = [NSNumber numberWithBool:NO];
+    self.restroom.isUnisex = [NSNumber numberWithBool:YES];
     self.restroom.numUpvotes = [NSNumber numberWithInt:1];
     self.restroom.numDownvotes = [NSNumber numberWithInt:0];
     self.restroom.directions = @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.";
@@ -79,8 +79,8 @@
     XCTAssertEqualObjects(self.restroom.city, @"Cary", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.state, @"North Carolina", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.country, @"United States", @"Restroom properties should be set correctly");
-    XCTAssertFalse(self.restroom.isAccessible, @"Restroom properties should be set correctly");
-    XCTAssertTrue(self.restroom.isUnisex, @"Restroom properties should be set correctly");
+    XCTAssertFalse([self.restroom.isAccessible boolValue], @"Restroom properties should be set correctly");
+    XCTAssertTrue([self.restroom.isUnisex boolValue], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.numUpvotes, [NSNumber numberWithInt:1], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.numDownvotes, [NSNumber numberWithInt:0], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.directions, @"Labeled \"Family Restroom,\" right around the corner to the left when you walk in.", @"Restroom properties should be set correctly");

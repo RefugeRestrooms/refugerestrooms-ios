@@ -28,8 +28,8 @@ typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
 @property (nonatomic, strong) NSString *city;
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *country;
-@property (nonatomic, assign) BOOL isAccessible;
-@property (nonatomic, assign) BOOL isUnisex;
+@property (nonatomic, assign) NSNumber *isAccessible;
+@property (nonatomic, assign) NSNumber *isUnisex;
 @property (nonatomic, assign) NSNumber *numUpvotes;
 @property (nonatomic, assign) NSNumber *numDownvotes;
 @property (nonatomic, assign) NSNumber *ratingNumber;
