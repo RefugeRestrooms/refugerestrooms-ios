@@ -28,7 +28,6 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
 @property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
 @property (weak, nonatomic) IBOutlet UIView *scrollContentView;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -43,7 +42,6 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
     
     [self setDetails];
-    [self resizeScrollView];
 }
 
 # pragma mark - Private methods
@@ -65,7 +63,8 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 {
     UIColor *noRatingColor = [UIColor RefugeRatingNoneColor];
     
-    switch (self.restroomRatingType) {
+    switch (self.restroomRatingType)
+    {
         case RefugeRestroomRatingTypeNegative:
             return [UIColor RefugeRatingNegativeColor];
             break;
@@ -127,15 +126,6 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
         self.characteristicImage1.image = nil;
         self.characteristicImage2.image = nil;
     }
-    
-}
-
-- (void)resizeScrollView
-{
-    CGFloat width = self.scrollContentView.frame.size.width;
-    CGFloat height = self.scrollContentView.frame.size.height;
-    
-    self.scrollView.contentSize = CGSizeMake(width, height);
 }
 
 @end
