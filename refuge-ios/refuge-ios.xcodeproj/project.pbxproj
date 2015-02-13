@@ -59,6 +59,7 @@
 		CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBBB1A83517D00F7F3D8 /* RefugeSerialization.m */; };
 		DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */; };
 		DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */; };
+		DC0CFC601A8EC3B1000AA09D /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -72,7 +73,6 @@
 		DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555A1A8C566500E3EDF8 /* UIImage+Refuge.m */; };
 		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
 		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
-		DCA355671A8D3A7500E3EDF8 /* refuge-background-bathroom.png in Resources */ = {isa = PBXBuildFile; fileRef = DCA355661A8D3A7500E3EDF8 /* refuge-background-bathroom.png */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
@@ -161,6 +161,7 @@
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
 		DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
+		DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -177,7 +178,6 @@
 		DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
-		DCA355661A8D3A7500E3EDF8 /* refuge-background-bathroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-background-bathroom.png"; sourceTree = "<group>"; };
 		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
@@ -437,7 +437,7 @@
 		DCA355551A8C512C00E3EDF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DCA355661A8D3A7500E3EDF8 /* refuge-background-bathroom.png */,
+				DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */,
 				DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */,
 				DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */,
 				DCA355561A8C514200E3EDF8 /* refuge-map-pin.png */,
@@ -563,9 +563,9 @@
 			files = (
 				DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */,
 				DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */,
-				DCA355671A8D3A7500E3EDF8 /* refuge-background-bathroom.png in Resources */,
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
+				DC0CFC601A8EC3B1000AA09D /* refuge-background-bathroom.jpg in Resources */,
 				CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */,
 				DCA355571A8C514200E3EDF8 /* refuge-map-pin.png in Resources */,
 			);
