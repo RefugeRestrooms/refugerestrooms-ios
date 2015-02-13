@@ -46,19 +46,19 @@
 
 - (UIColor *)ratingColor
 {
-    int rating = [self.restroom.rating intValue];
+    RefugeRestroomRatingType ratingType = [RefugeRestroom ratingTypeForRating:self.restroom.rating];
     
-    switch (rating) {
-        case 0:
+    switch (ratingType) {
+        case RefugeRestroomRatingTypeNegative:
             return [UIColor RefugeRatingNegativeColor];
             break;
-        case 1:
+        case RefugeRestroomRatingTypeNeutral:
             return [UIColor RefugeRatingNeutralColor];
             break;
-        case 2:
+        case RefugeRestroomRatingTypeNone:
             return [UIColor RefugeRatingNoneColor];
             break;
-        case 3:
+        case RefugeRestroomRatingTypePositive:
             return [UIColor RefugeRatingPositiveColor];
             break;
         default:

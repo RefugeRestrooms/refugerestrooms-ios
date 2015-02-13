@@ -39,4 +39,6 @@ typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
 @property (nonatomic, strong) NSDecimalNumber *longitude;
 @property (nonatomic, strong) NSDate *createdDate;
 
++(RefugeRestroomRatingType)ratingTypeForRating:(NSNumber *)rating; // Core Data object uses NSNumber
+
 @end

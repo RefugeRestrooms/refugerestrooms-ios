@@ -43,6 +43,31 @@
     }
 }
 
+# pragma mark - Public methods
+
++ (RefugeRestroomRatingType)ratingTypeForRating:(NSNumber *)rating
+{
+    int ratingValue = [rating intValue];
+    
+    switch (ratingValue) {
+        case 0:
+            return RefugeRestroomRatingTypeNegative;
+            break;
+        case 1:
+            return RefugeRestroomRatingTypeNeutral;
+            break;
+        case 2:
+            return RefugeRestroomRatingTypeNone;
+            break;
+        case 3:
+            return RefugeRestroomRatingTypePositive;
+            break;
+        default:
+            return RefugeRestroomRatingTypeNone;
+            break;
+    }
+}
+
 # pragma mark MTLJSONSerializing methods
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey
