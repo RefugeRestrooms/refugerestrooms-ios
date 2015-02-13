@@ -81,6 +81,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self promptToAllowLocationServices];
     [self.locationManager startUpdatingLocation];
     
+    if(!self.isSyncComplete)
+    {
     self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
     
     if(self.internetReachability.isReachable)
@@ -98,6 +100,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
         [self.hud hide:RefugeHUDHideSpeedModerate];
         
         [self plotRestrooms];
+    }
     }
 }
 
@@ -161,8 +164,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.hud hide:RefugeHUDHideSpeedFast];
     
     self.appState.dateLastSynced = [NSDate date];
-    
-    [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
