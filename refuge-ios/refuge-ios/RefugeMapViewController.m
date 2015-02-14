@@ -24,6 +24,7 @@
 #import "RefugeRestroomDetailsViewController.h"
 #import "RefugeRestroomManager.h"
 #import "UIColor+Refuge.h"
+#import "UIImage+Refuge.h"
 
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
@@ -279,13 +280,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)styleNavigationBar
 {
     self.unisexFilterButton = [[UIBarButtonItem alloc] init];
-    self.accessibilityFilterButton = [[UIBarButtonItem alloc] init];
-    self.unisexFilterButton.image = [UIImage imageNamed:kImageNameUnisexFilterButton];
-    self.accessibilityFilterButton.image = [UIImage imageNamed:kImageNameAccessibilityFilterButton];
+    self.unisexFilterButton.image = [UIImage resizeImageNamed:kImageNameUnisexFilterButton width:30 height:30];
     self.unisexFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
-    self.accessibilityFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
     self.unisexFilterButton.target = self;
     self.unisexFilterButton.action = @selector(unisexFilterButtonTouched);
+    
+    self.accessibilityFilterButton = [[UIBarButtonItem alloc] init];
+    self.accessibilityFilterButton.image = [UIImage resizeImageNamed:kImageNameAccessibilityFilterButton width:30 height:30];
+    self.accessibilityFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
     self.accessibilityFilterButton.target = self;
     self.accessibilityFilterButton.action = @selector(accessibilityFilterButtonTouched);
     
