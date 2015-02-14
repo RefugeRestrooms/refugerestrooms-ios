@@ -31,6 +31,8 @@ static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResults
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 static NSString * const kImageNameUnisexFilterButton = @"refuge-button-unisex.png";
 static NSString * const kImageNameAccessibilityFilterButton = @"refuge-button-accessible.png";
+static CGFloat const kFilterButtonWidth = 30;
+static CGFloat const kFilterButtonHeight =  kFilterButtonWidth;
 
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
@@ -280,13 +282,13 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)styleNavigationBar
 {
     self.unisexFilterButton = [[UIBarButtonItem alloc] init];
-    self.unisexFilterButton.image = [UIImage resizeImageNamed:kImageNameUnisexFilterButton width:30 height:30];
+    self.unisexFilterButton.image = [UIImage resizeImageNamed:kImageNameUnisexFilterButton width:kFilterButtonWidth height:kFilterButtonHeight];
     self.unisexFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
     self.unisexFilterButton.target = self;
     self.unisexFilterButton.action = @selector(unisexFilterButtonTouched);
     
     self.accessibilityFilterButton = [[UIBarButtonItem alloc] init];
-    self.accessibilityFilterButton.image = [UIImage resizeImageNamed:kImageNameAccessibilityFilterButton width:30 height:30];
+    self.accessibilityFilterButton.image = [UIImage resizeImageNamed:kImageNameAccessibilityFilterButton width:kFilterButtonWidth height:kFilterButtonHeight];
     self.accessibilityFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
     self.accessibilityFilterButton.target = self;
     self.accessibilityFilterButton.action = @selector(accessibilityFilterButtonTouched);
