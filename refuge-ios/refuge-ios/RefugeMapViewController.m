@@ -28,8 +28,8 @@
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
-static NSString * const kImageNameUnisexFilterButton = @"refuge-icon-unisex.png";
-static NSString * const kImageNameAccessibilityFilterButton = @"refuge-icon-accessible.png";
+static NSString * const kImageNameUnisexFilterButton = @"refuge-button-unisex.png";
+static NSString * const kImageNameAccessibilityFilterButton = @"refuge-button-accessible.png";
 
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
@@ -262,6 +262,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 }
 
 # pragma mark Touch
+
 
 - (void)unisexFilterButtonTouched
 {
