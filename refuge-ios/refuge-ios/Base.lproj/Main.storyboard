@@ -381,50 +381,9 @@
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>
-                        <outlet property="scrollContentView" destination="YNf-7v-LYA" id="GDu-NF-I01"/>
                         <outlet property="streetLabel" destination="m3W-kN-kjI" id="jI5-Ds-Jrs"/>
                     </connections>
                 </viewController>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1FW-bI-bNV">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZY-U6-c68" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                            <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NE4-kS-o6e">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="NE4-kS-o6e" firstAttribute="top" secondItem="nZY-U6-c68" secondAttribute="top" id="1gG-DP-0XJ"/>
-                                <constraint firstItem="NE4-kS-o6e" firstAttribute="leading" secondItem="nZY-U6-c68" secondAttribute="leading" id="F5G-YM-OMN"/>
-                                <constraint firstAttribute="trailing" secondItem="NE4-kS-o6e" secondAttribute="trailing" id="M6b-NG-p0g"/>
-                                <constraint firstAttribute="height" secondItem="NE4-kS-o6e" secondAttribute="height" id="jmb-SC-f6v"/>
-                                <constraint firstAttribute="height" secondItem="NE4-kS-o6e" secondAttribute="height" id="mAm-zS-4HX"/>
-                                <constraint firstAttribute="height" constant="100" id="sMC-mp-E4x"/>
-                            </constraints>
-                            <variation key="default">
-                                <mask key="constraints">
-                                    <exclude reference="sMC-mp-E4x"/>
-                                </mask>
-                            </variation>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="nZY-U6-c68" firstAttribute="leading" secondItem="1FW-bI-bNV" secondAttribute="leading" id="4XL-b1-UUL"/>
-                        <constraint firstAttribute="height" constant="100" id="9ah-lq-TQe"/>
-                        <constraint firstAttribute="height" secondItem="nZY-U6-c68" secondAttribute="height" id="Ca5-ek-F72"/>
-                        <constraint firstAttribute="centerX" secondItem="nZY-U6-c68" secondAttribute="centerX" id="G51-c5-Vmb"/>
-                        <constraint firstAttribute="trailing" secondItem="nZY-U6-c68" secondAttribute="trailing" id="YJY-gE-yf9"/>
-                        <constraint firstAttribute="bottom" secondItem="nZY-U6-c68" secondAttribute="bottom" id="dgx-To-iS1"/>
-                        <constraint firstItem="nZY-U6-c68" firstAttribute="top" secondItem="1FW-bI-bNV" secondAttribute="top" id="wDU-3G-LMr"/>
-                    </constraints>
-                </scrollView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOP-Pz-eY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="869" y="385"/>

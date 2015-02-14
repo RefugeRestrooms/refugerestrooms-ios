@@ -23,10 +23,13 @@
 #import "RefugeRestroomCommunicator.h"
 #import "RefugeRestroomDetailsViewController.h"
 #import "RefugeRestroomManager.h"
+#import "UIColor+Refuge.h"
 
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
+static NSString * const kImageNameUnisexFilterButton = @"refuge-icon-unisex.png";
+static NSString * const kImageNameAccessibilityFilterButton = @"refuge-icon-accessible.png";
 
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
@@ -47,14 +50,15 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 
 @property (nonatomic, assign) BOOL isSyncComplete;
-@property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
 @property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
+@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UITableView *searchResultsTable;
 @property (nonatomic, weak) IBOutlet RefugeMap *mapView;
+@property (nonatomic, strong) UIBarButtonItem *unisexFilterButton;
+@property (nonatomic, strong) UIBarButtonItem *accessibilityFilterButton;
 
 @end
 
@@ -66,6 +70,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     [super viewDidLoad];
     
+    [self styleNavigationBar];
     self.appState = [[RefugeAppState alloc] init];
     [self configureHUD];
     [self configureLocationManager];
@@ -243,7 +248,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self dismissSearch];
 }
 
-# pragma mark - Navigation
+# pragma mark Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -256,7 +261,35 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
+# pragma mark Touch
+
+- (void)unisexFilterButtonTouched
+{
+    NSLog(@"Unisex filter button touched!");
+}
+
+- (void)accessibilityFilterButtonTouched
+{
+    NSLog(@"Accessibility filter button touched!");
+}
+
 # pragma mark - Private methods
+
+- (void)styleNavigationBar
+{
+    self.unisexFilterButton = [[UIBarButtonItem alloc] init];
+    self.accessibilityFilterButton = [[UIBarButtonItem alloc] init];
+    self.unisexFilterButton.image = [UIImage imageNamed:kImageNameUnisexFilterButton];
+    self.accessibilityFilterButton.image = [UIImage imageNamed:kImageNameAccessibilityFilterButton];
+    self.unisexFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
+    self.accessibilityFilterButton.tintColor = [UIColor RefugePurpleMediumColor];
+    self.unisexFilterButton.target = self;
+    self.unisexFilterButton.action = @selector(unisexFilterButtonTouched);
+    self.accessibilityFilterButton.target = self;
+    self.accessibilityFilterButton.action = @selector(accessibilityFilterButtonTouched);
+    
+    self.navigationController.navigationBar.topItem.leftBarButtonItems = @[self.unisexFilterButton, self.accessibilityFilterButton];
+}
 
 - (void)configureHUD
 {
@@ -351,7 +384,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
     
     [self.mapView addAnnotations:annotations];
-    self.isPlotComplete = YES;
 }
 
 - (void)removeAllAnnotationsFromMap

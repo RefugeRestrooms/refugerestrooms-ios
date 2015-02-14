@@ -27,7 +27,6 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
 @property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
-@property (weak, nonatomic) IBOutlet UIView *scrollContentView;
 
 @end
 
