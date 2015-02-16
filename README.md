@@ -25,5 +25,4 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 
 #### Other
 
-Icons http://icons8.com/license/
 Images: http://retrorenovation.com/wp-content/uploads/2013/12/gerber-bahama-pink-toilet.jpg
