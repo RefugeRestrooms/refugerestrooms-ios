@@ -15,6 +15,9 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 @interface RefugeOnboardingViewController ()
 
 @property (nonatomic, strong) EAIntroView *onboardingView;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+
+- (IBAction)startButtonTouched:(id)sender;
 
 @end
 
@@ -37,25 +40,20 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 
 #pragma mark EAIntroViewDelegate methods
 
-- (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex
-{
-    if(pageIndex == 3)
-    {
-        [self.onboardingView hideWithFadeOutDuration:0.3];
-        [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
-    }
-}
+//- (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex
+//{
+//    if(pageIndex == 3)
+//    {
+//        [self.onboardingView hideWithFadeOutDuration:0.3];
+//        [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
+//    }
+//}
 
 #pragma mark Touch
 
-- (IBAction)buttonTouched:(id)sender
+- (IBAction)startButtonTouched:(id)sender
 {
     [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
-}
-
-- (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
-{
-    // Add code here to take place before unwind completes
 }
 
 #pragma mark - Private methods

@@ -259,6 +259,14 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
+#pragma mark - Touch
+
+- (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
+{
+    // Add code here to take place before unwind completes
+    NSLog(@"Unwinding");
+}
+
 # pragma mark - Private methods
 
 - (void)configureHUD
