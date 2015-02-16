@@ -28,6 +28,7 @@
 
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
+static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
 static NSString * const kHudTextSyncing = @"Syncing";
@@ -73,6 +74,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
+    
+    [self displayOnboarding];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -256,19 +259,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
-# pragma mark Touch
-
-
-- (void)unisexFilterButtonTouched
-{
-    NSLog(@"Unisex filter button touched!");
-}
-
-- (void)accessibilityFilterButtonTouched
-{
-    NSLog(@"Accessibility filter button touched!");
-}
-
 # pragma mark - Private methods
 
 - (void)configureHUD
@@ -318,6 +308,11 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.dataPersistenceManager.delegate = self.restroomManager;
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;
+}
+
+- (void)displayOnboarding
+{
+    [self performSegueWithIdentifier:kSegueNameModalOnboarding sender:self];
 }
 
 - (void)promptToAllowLocationServices

@@ -61,6 +61,8 @@
 		DC0CFC601A8EC3B1000AA09D /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC3A1CB71A927FCA00445D33 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB61A927FCA00445D33 /* refuge-banner.png */; };
+		DC3A1CBE1A92959B00445D33 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3A1CBD1A92959B00445D33 /* RefugeOnboardingViewController.m */; };
+		DC3A1CBF1A92959B00445D33 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3A1CBD1A92959B00445D33 /* RefugeOnboardingViewController.m */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -164,6 +166,8 @@
 		DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC3A1CB61A927FCA00445D33 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
+		DC3A1CBC1A92959B00445D33 /* RefugeOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeOnboardingViewController.h; sourceTree = "<group>"; };
+		DC3A1CBD1A92959B00445D33 /* RefugeOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeOnboardingViewController.m; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -288,6 +292,8 @@
 				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
 				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
 				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
+				DC3A1CBC1A92959B00445D33 /* RefugeOnboardingViewController.h */,
+				DC3A1CBD1A92959B00445D33 /* RefugeOnboardingViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -632,6 +638,7 @@
 				CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				DCA3555B1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */,
+				DC3A1CBE1A92959B00445D33 /* RefugeOnboardingViewController.m in Sources */,
 				CED0CB5F1A82A6D400F7F3D8 /* RefugeMapViewController.m in Sources */,
 				DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */,
 				CED0CBBC1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
@@ -679,6 +686,7 @@
 				CEA2401C1A86ED190083510F /* RefugeRestroomDetailsViewController.m in Sources */,
 				CEA23FE01A835C7B0083510F /* RefugeRestroomManager.m in Sources */,
 				CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */,
+				DC3A1CBF1A92959B00445D33 /* RefugeOnboardingViewController.m in Sources */,
 				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
 				CEA23FF11A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,

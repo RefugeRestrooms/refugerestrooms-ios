@@ -80,11 +80,34 @@
                         <outlet property="searchBar" destination="fFb-8a-ZZ4" id="XrI-Uv-6t7"/>
                         <outlet property="searchResultsTable" destination="JBI-kJ-mzV" id="g8L-zj-UC5"/>
                         <segue destination="k6t-dv-9bB" kind="show" identifier="RefugeRestroomDetailsShowSegue" id="wcE-fL-Kf9"/>
+                        <segue destination="6wI-fM-XDU" kind="presentation" identifier="RefugeRestroomOnboardingModalSegue" id="xir-b9-fbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="203" y="385"/>
+        </scene>
+        <!--Refuge Onboarding View Controller-->
+        <scene sceneID="uNJ-Eo-30K">
+            <objects>
+                <viewController id="6wI-fM-XDU" customClass="RefugeOnboardingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HKL-u4-TNV"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVY-Kf-L9x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YKe-64-8E4">
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="5Y6-9D-yX7" kind="unwind" identifier="RefugeRestroomDissmissOnboardingSegue" unwindAction="unwindFromOnboardingView:" id="A6h-8y-tvF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewh-cg-Fk2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5Y6-9D-yX7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="203" y="1103"/>
         </scene>
         <!--DETAILS-->
         <scene sceneID="VrP-sd-dM0">
