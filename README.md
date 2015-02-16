@@ -15,6 +15,8 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 <br>
 [AFNetworking] (https://github.com/AFNetworking/AFNetworking)
 <br>
+[EAIntroView] (https://github.com/ealeksandrov/EAIntroView)
+<br>
 [Mantle] (https://github.com/Mantle/Mantle)
 <br>
 [MBProgressHUD] (https://github.com/jdg/MBProgressHUD)

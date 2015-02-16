@@ -73,7 +73,6 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
-    self.searchResultsTable.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -302,6 +301,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 - (void)configureSearch
 {
     self.searchQuery = [[RefugeSearch alloc] init];
+    self.searchResultsTable.hidden = YES;
 }
 
 - (void)configureRestroomManager
@@ -433,7 +433,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.mapView addAnnotation:annotationFromPlacemark];
 }
 
-- (void)recenterMapToPlacemark:(CLPlacemark  *)placemark
+- (void)recenterMapToPlacemark:(CLPlacemark *)placemark
 {
     [self zoomToCoordinate:placemark.location.coordinate];
 }
