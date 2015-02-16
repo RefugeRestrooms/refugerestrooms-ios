@@ -44,7 +44,6 @@
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
 		CED0CB5F1A82A6D400F7F3D8 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */; };
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
-		CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB631A82A6D400F7F3D8 /* Images.xcassets */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
 		CED0CBA31A83261E00F7F3D8 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA21A83261E00F7F3D8 /* RefugeRestroom.m */; };
@@ -60,6 +59,8 @@
 		DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */; };
 		DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */; };
 		DC0CFC601A8EC3B1000AA09D /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */; };
+		DC3A1CB11A927D3E00445D33 /* Refuge-Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB01A927D3E00445D33 /* Refuge-Images.xcassets */; };
+		DC3A1CB31A927D8300445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB21A927D8300445D33 /* Images.xcassets */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -142,7 +143,6 @@
 		CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeMapViewController.h; sourceTree = "<group>"; };
 		CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeMapViewController.m; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CED0CB631A82A6D400F7F3D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CED0CB6C1A82A6D500F7F3D8 /* refuge-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "refuge-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 		DC0CFC5B1A8EAEF9000AA09D /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
 		DC0CFC5C1A8EAEF9000AA09D /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
 		DC0CFC5F1A8EC3B1000AA09D /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
+		DC3A1CB01A927D3E00445D33 /* Refuge-Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Refuge-Images.xcassets"; sourceTree = "<group>"; };
+		DC3A1CB21A927D8300445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -322,9 +324,10 @@
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
 				CEA23FFE1A84278B0083510F /* RefugeAppState.m */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
-				CED0CB631A82A6D400F7F3D8 /* Images.xcassets */,
 				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
+				DC3A1CB01A927D3E00445D33 /* Refuge-Images.xcassets */,
+				DC3A1CB21A927D8300445D33 /* Images.xcassets */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
 			);
 			path = "refuge-ios";
@@ -562,11 +565,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0CFC5D1A8EAEF9000AA09D /* refuge-details-unisex.png in Resources */,
+				DC3A1CB31A927D8300445D33 /* Images.xcassets in Resources */,
 				DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */,
+				DC3A1CB11A927D3E00445D33 /* Refuge-Images.xcassets in Resources */,
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
 				DC0CFC601A8EC3B1000AA09D /* refuge-background-bathroom.jpg in Resources */,
-				CED0CB641A82A6D400F7F3D8 /* Images.xcassets in Resources */,
 				DCA355571A8C514200E3EDF8 /* refuge-map-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,6 +807,7 @@
 			baseConfigurationReference = D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
@@ -817,6 +822,7 @@
 			baseConfigurationReference = D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
