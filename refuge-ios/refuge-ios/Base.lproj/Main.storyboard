@@ -102,41 +102,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="AA5-rW-pW3" userLabel="Refuge Banner Image">
                                 <rect key="frame" x="16" y="20" width="568" height="438"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyV-B7-siD" userLabel="Start Button">
-                                <rect key="frame" x="224" y="490" width="152" height="50"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
-                                <state key="normal" title="LET'S GO!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonTouched:" destination="6wI-fM-XDU" eventType="touchUpInside" id="kqX-qe-e5W"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xVY-Kf-L9x" firstAttribute="top" secondItem="AA5-rW-pW3" secondAttribute="bottom" id="2Ke-uI-Jer"/>
-                            <constraint firstAttribute="centerX" secondItem="nyV-B7-siD" secondAttribute="centerX" id="9Jt-Ps-cfG"/>
-                            <constraint firstItem="nyV-B7-siD" firstAttribute="top" secondItem="AA5-rW-pW3" secondAttribute="bottom" constant="32" id="JeU-Z0-hQ0"/>
                             <constraint firstItem="AA5-rW-pW3" firstAttribute="leading" secondItem="YKe-64-8E4" secondAttribute="leadingMargin" id="beN-5i-YIf"/>
                             <constraint firstAttribute="centerX" secondItem="AA5-rW-pW3" secondAttribute="centerX" id="bvN-tK-6jv"/>
                             <constraint firstItem="AA5-rW-pW3" firstAttribute="top" secondItem="HKL-u4-TNV" secondAttribute="bottom" id="dtM-Us-g9Y"/>
-                            <constraint firstItem="xVY-Kf-L9x" firstAttribute="top" relation="greaterThanOrEqual" secondItem="nyV-B7-siD" secondAttribute="bottom" constant="8" symbolic="YES" id="e9j-0y-QeR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="AA5-rW-pW3" secondAttribute="trailing" id="f47-t3-OZa"/>
                             <constraint firstAttribute="centerY" secondItem="AA5-rW-pW3" secondAttribute="centerY" id="ppg-ec-y7r"/>
-                            <constraint firstItem="nyV-B7-siD" firstAttribute="top" secondItem="AA5-rW-pW3" secondAttribute="bottom" constant="-107" id="sSZ-EZ-bl5"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="ppg-ec-y7r"/>
                                 <exclude reference="2Ke-uI-Jer"/>
-                                <exclude reference="sSZ-EZ-bl5"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="startButton" destination="nyV-B7-siD" id="oNw-7y-g8T"/>
                         <segue destination="5Y6-9D-yX7" kind="unwind" identifier="RefugeRestroomDissmissOnboardingSegue" unwindAction="unwindFromOnboardingView:" id="a1d-wK-2UP"/>
                     </connections>
                 </viewController>

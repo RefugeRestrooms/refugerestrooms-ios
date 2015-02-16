@@ -15,9 +15,6 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 @interface RefugeOnboardingViewController ()
 
 @property (nonatomic, strong) EAIntroView *onboardingView;
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
-
-- (IBAction)startButtonTouched:(id)sender;
 
 @end
 
@@ -40,18 +37,7 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 
 #pragma mark EAIntroViewDelegate methods
 
-//- (void)intro:(EAIntroView *)introView pageAppeared:(EAIntroPage *)page withIndex:(NSInteger)pageIndex
-//{
-//    if(pageIndex == 3)
-//    {
-//        [self.onboardingView hideWithFadeOutDuration:0.3];
-//        [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
-//    }
-//}
-
-#pragma mark Touch
-
-- (IBAction)startButtonTouched:(id)sender
+- (void)introDidFinish:(EAIntroView *)introView
 {
     [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
 }
@@ -63,25 +49,22 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
     EAIntroPage *page1 = [EAIntroPage page];
     page1.title = @"Hello world";
     page1.desc = @"Description";
-    page1.bgImage = [UIImage imageNamed:@"refuge-banner.png"];
-    page1.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refuge-map-pin.png"]];
+    page1.bgImage = [UIImage imageNamed:@"refuge-onboard-image1.png"];
     
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"This is page 2";
     page2.desc = @"Description";
-    page2.bgImage = [UIImage imageNamed:@"refuge-banner.png"];
-    page2.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refuge-map-pin.png"]];
+    page2.bgImage = [UIImage imageNamed:@"refuge-onboard-image2.png"];
     
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"This is page 3";
     page3.desc = @"Description";
-    page3.bgImage = [UIImage imageNamed:@"refuge-banner.png"];
-    page3.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refuge-map-pin.png"]];
+    page3.bgImage = [UIImage imageNamed:@"refuge-onboard-image3.png"];
     
     EAIntroPage *page4 = [EAIntroPage page];
     page4.title = @"This is page 4";
     page4.desc = @"Description";
-    page4.bgImage = [UIImage imageNamed:@"refuge-banner.png"];
+    page4.bgImage = [UIImage imageNamed:@"refuge-onboard-image4.png"];
     page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refuge-map-pin.png"]];
     
     return @[page1, page2, page3, page4];
