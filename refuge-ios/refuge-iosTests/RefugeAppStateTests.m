@@ -45,7 +45,7 @@
     XCTAssertTrue(dateLastSyncedProperty != NULL, @"AppState should have dateLastSynced property");
 }
 
-- (void)testUpdatingDateLastSyncedUpdatesDateInUserDefaults
+- (void)testUpdatingDateLastSyncedUpdatesUserDefaults
 {
     NSDate *now = [NSDate date];
     self.appState.dateLastSynced = now;

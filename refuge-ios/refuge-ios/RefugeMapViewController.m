@@ -75,7 +75,10 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self configureSearch];
     [self configureRestroomManager];
     
-    [self displayOnboarding];
+    if(!self.appState.hasViewedOnboarding)
+    {
+        [self displayOnboarding];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -259,12 +262,9 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     }
 }
 
-#pragma mark - Touch
-
 - (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
 {
-    // Add code here to take place before unwind completes
-    NSLog(@"Unwinding");
+    self.appState.hasViewedOnboarding = YES;
 }
 
 # pragma mark - Private methods

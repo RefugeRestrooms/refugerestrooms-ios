@@ -17,6 +17,7 @@
 @implementation RefugeAppState
 
 static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppStateDateLastSyncedKey";
+static NSString * const REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY = @"RefugeAppStateHasViewedOnboardingKey";
 
 # pragma mark - Initializers
 
@@ -27,6 +28,8 @@ static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppState
     if(self)
     {
         self.userDefaults = userDefaults;
+        
+        self.hasViewedOnboarding = [[userDefaults objectForKey:REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY] boolValue];
         
         NSDate *dateLastSynced = [userDefaults objectForKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
         
@@ -47,6 +50,14 @@ static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppState
 }
 
 # pragma mark Setters
+
+- (void)setHasViewedOnboarding:(BOOL)hasViewedOnboarding
+{
+    _hasViewedOnboarding = hasViewedOnboarding;
+    
+    [self.userDefaults setObject:@(hasViewedOnboarding) forKey:REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY];
+    [self.userDefaults synchronize];
+}
 
 - (void)setDateLastSynced:(NSDate *)dateLastSynced
 {
