@@ -94,10 +94,12 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
         if(self.internetReachability.isReachable)
         {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+                
                 if(self.isSyncComplete == NO)
                 {
                     [self.restroomManager fetchRestroomsFromAPI];
                 }
+                
             });
         }
         else

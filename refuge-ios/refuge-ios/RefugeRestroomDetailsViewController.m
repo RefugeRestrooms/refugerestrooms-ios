@@ -13,6 +13,9 @@
 
 static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
 static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
+static NSString * const kTextFieldFontName = @"HelveticaNeue";
+static NSString * const kTextFieldPlaceholderNoDirections = @"No directions";
+static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 @interface RefugeRestroomDetailsViewController ()
 
@@ -25,7 +28,9 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
+@property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
 @property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
+@property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
 
 @end
@@ -62,8 +67,8 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextField.backgroundColor = [UIColor clearColor];
-    self.directionsTextField.text = self.restroom.directions;
-    self.commentsTextField.text = self.restroom.comment;
+    self.directionsTextField.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: self.restroom.directions;
+    self.commentsTextField.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : self.restroom.comment;
     
     [self createCharacteristicsImages];
 }
@@ -100,7 +105,7 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     
     switch (self.restroomRatingType) {
         case RefugeRestroomRatingTypeNone:
-            return @"Not Yet Rated";
+            return @"Not yet rated";
             break;
         default:
             return [NSString stringWithFormat:@"%i%% positive", percentPositive];
@@ -139,7 +144,7 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 
 - (void)styleTextFields
 {
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+    UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
     
     self.directionsTextField.font = font;
     self.directionsTextField.textColor = [UIColor RefugePurpleDarkColor];

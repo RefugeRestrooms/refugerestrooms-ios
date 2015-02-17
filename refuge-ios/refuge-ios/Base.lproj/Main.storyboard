@@ -316,10 +316,10 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-7B-kid" userLabel="Comments View">
-                                        <rect key="frame" x="8" y="411" width="592" height="80"/>
+                                        <rect key="frame" x="8" y="411" width="572" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6PL-nq-GM7" userLabel="Comments Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="592" height="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="572" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="3bt-1A-dmV"/>
                                                 </constraints>
@@ -333,7 +333,7 @@
                                                 </variation>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsy-ut-Jtj" userLabel="Comments Text View">
-                                                <rect key="frame" x="10" y="28" width="572" height="52"/>
+                                                <rect key="frame" x="10" y="28" width="562" height="52"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,7 +352,7 @@
                                             <constraint firstAttribute="centerX" secondItem="6PL-nq-GM7" secondAttribute="centerX" id="qCp-fn-ubn"/>
                                             <constraint firstAttribute="centerX" secondItem="Wsy-ut-Jtj" secondAttribute="centerX" id="qrp-yb-cR2"/>
                                             <constraint firstAttribute="height" priority="750" constant="120" id="rRC-rY-gfI"/>
-                                            <constraint firstAttribute="trailing" secondItem="Wsy-ut-Jtj" secondAttribute="trailing" constant="10" id="x9p-YE-McQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wsy-ut-Jtj" secondAttribute="trailing" id="x9p-YE-McQ"/>
                                             <constraint firstItem="Wsy-ut-Jtj" firstAttribute="top" secondItem="6PL-nq-GM7" secondAttribute="bottom" constant="4" id="zvN-4B-P2L"/>
                                         </constraints>
                                         <variation key="default">
@@ -386,7 +386,7 @@
                                     <constraint firstAttribute="bottom" secondItem="vxa-ne-BNM" secondAttribute="bottom" id="d0N-KC-hh8"/>
                                     <constraint firstItem="P4I-7B-kid" firstAttribute="height" secondItem="KrP-pZ-wwk" secondAttribute="height" id="eXU-4B-fMR"/>
                                     <constraint firstItem="oC3-eQ-lS0" firstAttribute="centerX" secondItem="wl1-cN-gom" secondAttribute="centerX" id="f5P-od-CAz"/>
-                                    <constraint firstAttribute="trailing" secondItem="P4I-7B-kid" secondAttribute="trailing" id="fJT-R6-R5Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="P4I-7B-kid" secondAttribute="trailing" constant="20" symbolic="YES" id="fJT-R6-R5Y"/>
                                     <constraint firstItem="wl1-cN-gom" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leading" constant="150" id="fpJ-0q-OfF"/>
                                     <constraint firstItem="vxa-ne-BNM" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leading" id="gBM-tP-g0r"/>
                                     <constraint firstItem="wl1-cN-gom" firstAttribute="centerY" secondItem="vxa-ne-BNM" secondAttribute="centerY" priority="749" id="gqg-85-Bc6"/>
@@ -434,7 +434,9 @@
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
                         <outlet property="characteristicImage1" destination="Ztb-h9-kAf" id="vEH-YA-KgA"/>
                         <outlet property="characteristicImage2" destination="sob-jP-kLl" id="Nds-GP-iGv"/>
+                        <outlet property="commentsLabel" destination="6PL-nq-GM7" id="1pd-Vd-zGw"/>
                         <outlet property="commentsTextField" destination="Wsy-ut-Jtj" id="EYe-W8-Rcc"/>
+                        <outlet property="directionsLabel" destination="F8f-V2-dtw" id="FHp-vM-HJt"/>
                         <outlet property="directionsTextField" destination="czX-Pe-dSa" id="cza-M8-Kfp"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
