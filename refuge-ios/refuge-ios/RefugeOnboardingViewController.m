@@ -54,18 +54,10 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
 {
     EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName1];
     EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName2];
+    EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName3];
+    EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName4];
     
-    EAIntroPage *page3 = [EAIntroPage page];
-    page3.title = @"This is page 3";
-    page3.desc = @"Description";
-    page3.bgImage = [UIImage imageNamed:@"refuge-onboard3.png"];
-    
-    EAIntroPage *page4 = [EAIntroPage page];
-    page4.title = @"This is page 4";
-    page4.desc = @"Description";
-    page4.bgImage = [UIImage imageNamed:@"refuge-onboard4.png"];
-    
-    return @[page1, page2, page3, page4];
+    return @[ page1, page2, page3, page4 ];
 }
 
 // makes status bar white

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -9,7 +12,34 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-onboard3.png" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-Lx-LJO" userLabel="Image">
+                    <rect key="frame" x="100" y="150" width="400" height="600"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NKI-Lx-LJO" secondAttribute="height" multiplier="1:1.5" id="QKn-2E-RBW"/>
+                        <constraint firstAttribute="width" constant="400" id="z9S-by-1E7"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search allows you to look for restrooms around specific locations, great for everyday use or travel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="086-bu-bVy" userLabel="Description Label">
+                    <rect key="frame" x="8" y="20" width="584" height="122"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="086-bu-bVy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="MB2-CU-kNd"/>
+                <constraint firstItem="086-bu-bVy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="MHs-Rx-rYe"/>
+                <constraint firstAttribute="centerX" secondItem="NKI-Lx-LJO" secondAttribute="centerX" id="cvp-bl-MOF"/>
+                <constraint firstItem="086-bu-bVy" firstAttribute="centerX" secondItem="NKI-Lx-LJO" secondAttribute="centerX" id="l2g-gk-kwH"/>
+                <constraint firstItem="NKI-Lx-LJO" firstAttribute="top" secondItem="086-bu-bVy" secondAttribute="bottom" constant="8" symbolic="YES" id="tvD-ek-jPg"/>
+                <constraint firstAttribute="centerY" secondItem="NKI-Lx-LJO" secondAttribute="centerY" constant="-150" id="wA9-hC-rs5"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="refuge-onboard3.png" width="510" height="1039"/>
+    </resources>
 </document>
