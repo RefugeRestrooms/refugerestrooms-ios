@@ -253,7 +253,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)configureHUD
 {
     self.hud = [[RefugeHUD alloc] initWithView:self.view];
-    self.hud.text = kHudTextSyncing;
 }
 
 - (void)configureLocationManager

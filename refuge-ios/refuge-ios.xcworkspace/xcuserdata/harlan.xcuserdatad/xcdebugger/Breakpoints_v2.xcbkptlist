@@ -66,12 +66,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "-prepareForSegue:sender:"
+            startingLineNumber = "273"
+            endingLineNumber = "273"
+            landmarkName = "-configureMap"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -82,13 +82,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "266"
-            endingLineNumber = "266"
-            landmarkName = "@implementation RefugeMapViewController"
-            landmarkType = "3">
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "-configureMap"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463">
+            startingLineNumber = "462"
+            endingLineNumber = "462">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -165,7 +165,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
             endingLineNumber = "121"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -176,12 +176,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "-configureLocationManager"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -197,7 +197,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "-viewWillAppear:"
+            landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445824957.512942"
+            timestampString = "445891696.762116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "-createCharacteristicsImages"
             landmarkType = "5">
          </BreakpointContent>
@@ -483,7 +483,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
             endingLineNumber = "211"
-            landmarkName = "-searchBar:textDidChange:"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -494,12 +494,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
-            landmarkName = "-handleSearchForString:"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "-placemarkSelected:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -510,12 +510,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "396"
-            endingLineNumber = "396"
-            landmarkName = "-handleSearchForString:"
+            startingLineNumber = "395"
+            endingLineNumber = "395"
+            landmarkName = "-placemarkSelected:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -526,12 +526,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "400"
-            endingLineNumber = "400"
-            landmarkName = "-displayAlertForWithMessage:"
+            startingLineNumber = "399"
+            endingLineNumber = "399"
+            landmarkName = "-addPlacemarkToMap:withTitle:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -547,8 +547,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "-searchBar:textDidChange:"
-            landmarkType = "5">
+            landmarkName = "@implementation RefugeMapViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -558,12 +558,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
-            landmarkName = "-displayOnboarding"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
+            landmarkName = "-plotRestrooms"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -590,12 +590,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "-unwindFromOnboardingView:"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "-configureSearch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -606,11 +606,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445824832.199968"
+            timestampString = "445891696.762116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "-setDetails"
             landmarkType = "5">
          </BreakpointContent>
@@ -622,12 +622,26 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
-            landmarkName = "-recenterMapToPlacemark:"
+            startingLineNumber = "444"
+            endingLineNumber = "444">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-ios/RefugeMapViewController.m"
+            timestampString = "445891656.114471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "373"
+            endingLineNumber = "373"
+            landmarkName = "-dismissSearch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -638,28 +652,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "374"
-            endingLineNumber = "374"
-            landmarkName = "-plotRestrooms"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
-            landmarkName = "-plotRestrooms"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
+            landmarkName = "-handleSearchForString:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -675,7 +673,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "-didFetchRestrooms"
+            landmarkName = "-searchBar:textDidChange:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -686,12 +684,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
-            timestampString = "445890262.941415"
+            timestampString = "445891656.114471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "-plotRestrooms"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
+            landmarkName = "-dismissSearch"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

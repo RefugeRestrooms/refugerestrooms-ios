@@ -8,7 +8,6 @@
 
 #import "RefugeRestroomDetailsViewController.h"
 
-#import <Mantle/Mantle.h>
 #import "RefugeRestroom.h"
 #import "UIColor+Refuge.h"
 
@@ -40,6 +39,8 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     [super viewDidLoad];
     
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self setDetails];
 }
