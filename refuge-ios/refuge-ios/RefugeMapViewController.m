@@ -76,11 +76,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
-    
-    if(!self.appState.hasViewedOnboarding)
-    {
-        [self displayOnboarding];
-    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -89,14 +84,19 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     {
         [self promptToAllowLocationServices];
         
+        if(self.appState.hasViewedOnboarding == NO)
+        {
+            [self displayOnboarding];
+        }
+        
         self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
     
         if(self.internetReachability.isReachable)
         {
-            [self fetchRestroomsWithCompletion:^
-             {
-                 [self plotRestrooms];
-             }];
+            if(!self.isSyncComplete)
+            {
+                [self.restroomManager fetchRestroomsFromAPI];
+            }
         }
         else
         {
@@ -172,6 +172,8 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self.hud hide:RefugeHUDHideSpeedFast];
     
     self.appState.dateLastSynced = [NSDate date];
+    
+    [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
@@ -344,32 +346,22 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self.mapView setRegion:viewRegion animated:YES];
 }
 
-- (void)fetchRestroomsWithCompletion:(void (^)())completion
-{
-    if(!self.isSyncComplete)
-    {
-        [self.restroomManager fetchRestroomsFromAPI];
-    }
-    
-    completion();
-}
-
 - (void)plotRestrooms
 {
     NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
     
     [self removeAllAnnotationsFromMap];
     
-    NSMutableArray *annotations = [NSMutableArray array];
+    NSMutableArray *mapPins = [NSMutableArray array];
     
     for (RefugeRestroom *restroom in allRestrooms)
     {
-        RefugeMapPin *annotation = [[RefugeMapPin alloc] initWithRestroom:restroom];
+        RefugeMapPin *mapPin = [[RefugeMapPin alloc] initWithRestroom:restroom];
         
-        [annotations addObject:annotation];
+        [mapPins addObject:mapPin];
     }
     
-    [self.mapView addAnnotations:annotations];
+    [self.mapView addAnnotations:mapPins];
 }
 
 - (void)removeAllAnnotationsFromMap

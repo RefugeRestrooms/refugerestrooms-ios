@@ -70,4 +70,9 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
     return @[page1, page2, page3, page4];
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 @end
