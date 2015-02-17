@@ -35,7 +35,7 @@ static NSTimeInterval const kHideSpeedSlow = 5;
     {
         self.hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
         self.hud.mode = MBProgressHUDAnimationFade;
-        self.hud.color = [UIColor RefugePurpleDark];
+        self.hud.color = [UIColor RefugePurpleDarkColor];
         
         self.state = RefugeHUDStateSyncing;
     }

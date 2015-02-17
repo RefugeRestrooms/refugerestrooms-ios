@@ -6,6 +6,12 @@
 // project.
 
 
+// ADClusterMapView
+#define COCOAPODS_POD_AVAILABLE_ADClusterMapView
+#define COCOAPODS_VERSION_MAJOR_ADClusterMapView 1
+#define COCOAPODS_VERSION_MINOR_ADClusterMapView 1
+#define COCOAPODS_VERSION_PATCH_ADClusterMapView 0
+
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2
@@ -47,6 +53,12 @@
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
+
+// EAIntroView
+#define COCOAPODS_POD_AVAILABLE_EAIntroView
+#define COCOAPODS_VERSION_MAJOR_EAIntroView 2
+#define COCOAPODS_VERSION_MINOR_EAIntroView 6
+#define COCOAPODS_VERSION_PATCH_EAIntroView 4
 
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD

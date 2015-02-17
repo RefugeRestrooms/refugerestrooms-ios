@@ -10,10 +10,12 @@
 #import <XCTest/XCTest.h>
 
 #import <objc/runtime.h>
+#import "MockNSUserDefaults.h"
 #import "RefugeAppState.h"
 
 @interface RefugeAppStateTests : XCTestCase
 
+@property (nonatomic, strong) MockNSUserDefaults *userDefaults;
 @property (nonatomic, strong) RefugeAppState *appState;
 
 @end
@@ -24,11 +26,13 @@
 {
     [super setUp];
     
-    self.appState = [RefugeAppState sharedInstance];
+    self.userDefaults = [[MockNSUserDefaults alloc] init];
+    self.appState = [[RefugeAppState alloc] initWithUserDefaults:self.userDefaults];
 }
 
 - (void)tearDown
 {
+    self.userDefaults = nil;
     self.appState = nil;
     
     [super tearDown];
@@ -39,6 +43,14 @@
     objc_property_t dateLastSyncedProperty = class_getProperty([self.appState class], "dateLastSynced");
     
     XCTAssertTrue(dateLastSyncedProperty != NULL, @"AppState should have dateLastSynced property");
+}
+
+- (void)testUpdatingDateLastSyncedUpdatesUserDefaults
+{
+    NSDate *now = [NSDate date];
+    self.appState.dateLastSynced = now;
+    
+    XCTAssertEqualObjects(self.userDefaults.date, now, @"Updating lastDateSynced in AppState should update date in User Defaults");
 }
 
 @end

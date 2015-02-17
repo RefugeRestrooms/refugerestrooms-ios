@@ -34,7 +34,7 @@
 
 # pragma mark - Public methods
 
-- (void)toPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *))placemarkSuccess failure:(void (^)(NSError *))placemarkError
+- (void)resolveToPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *))placemarkSuccess failure:(void (^)(NSError *))placemarkError
 {
     SPGooglePlacesAutocompletePlace *place = [self translateToSPPlace];
     

@@ -11,18 +11,20 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 
 #### Dependencies
 
-ADClusterMapView [![Reference Status](https://www.versioneye.com/objective-c/adclustermapview/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/adclustermapview/references)
+[ADClusterMapView] (https://github.com/applidium/ADClusterMapView)
 <br>
-AFNetworking [![Reference Status](https://www.versioneye.com/objective-c/afnetworking/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/afnetworking/references)
+[AFNetworking] (https://github.com/AFNetworking/AFNetworking)
 <br>
-Mantle [![Reference Status](https://www.versioneye.com/objective-c/mantle/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/mantle/references)
+[EAIntroView] (https://github.com/ealeksandrov/EAIntroView)
 <br>
-MBProgressHUD [![Reference Status](https://www.versioneye.com/objective-c/mbprogresshud/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/mbprogresshud/references)
+[Mantle] (https://github.com/Mantle/Mantle)
 <br>
-Reachability [![Reference Status](https://www.versioneye.com/objective-c/reachability/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/reachability/references)
+[MBProgressHUD] (https://github.com/jdg/MBProgressHUD)
 <br>
-SPGooglePlacesAutocomplete [![Reference Status](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/reference_badge.svg?style=flat)](https://www.versioneye.com/objective-c/spgoogleplacesautocomplete/references)
+[Reachability] (https://github.com/tonymillion/Reachability)
+<br>
+[SPGooglePlacesAutocomplete] (https://github.com/spoletto/SPGooglePlacesAutocomplete)
 
 #### Other
 
-Icons http://icons8.com/license/
+Images: http://retrorenovation.com/wp-content/uploads/2013/12/gerber-bahama-pink-toilet.jpg

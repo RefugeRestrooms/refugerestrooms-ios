@@ -14,16 +14,21 @@
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
 #import "RefugeHUD.h"
-#import "RefugeMapKitAnnotation.h"
+#import "RefugeMap.h"
+#import "RefugeMapPin.h"
 #import "RefugeMapPlace.h"
-#import "RefugeSearchQuery.h"
+#import "RefugeSearch.h"
 #import "RefugeRestroom.h"
 #import "RefugeRestroomBuilder.h"
 #import "RefugeRestroomCommunicator.h"
+#import "RefugeRestroomDetailsViewController.h"
 #import "RefugeRestroomManager.h"
+#import "UIColor+Refuge.h"
+#import "UIImage+Refuge.h"
 
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
+static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
 static NSString * const kHudTextSyncing = @"Syncing";
@@ -32,9 +37,12 @@ static NSString * const kHudTextSyncError = @"Sync error :(";
 static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
+static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search. Please check your Internet connection.";
+static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
 
 @interface RefugeMapViewController ()
 
+@property (nonatomic, strong) RefugeAppState *appState;
 @property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Reachability *internetReachability;
@@ -44,15 +52,13 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 @property (nonatomic, strong) RefugeRestroomCommunicator *restroomCommunicator;
 
 @property (nonatomic, assign) BOOL isSyncComplete;
-@property (nonatomic, assign) BOOL isPlotComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
 
-@property (nonatomic, strong) RefugeSearchQuery *searchQuery;
+@property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
-@property (nonatomic, weak) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UITableView *searchResultsTable;
-
+@property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, weak) IBOutlet UITableView *searchResultsTable;
+@property (nonatomic, weak) IBOutlet RefugeMap *mapView;
 
 @end
 
@@ -64,37 +70,46 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     [super viewDidLoad];
     
+    self.appState = [[RefugeAppState alloc] init];
     [self configureHUD];
     [self configureLocationManager];
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
-    self.searchResultsTable.hidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self promptToAllowLocationServices];
-    [self.locationManager startUpdatingLocation];
-    
-    self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
-    
-    if(self.internetReachability.isReachable)
+    if(!self.isSyncComplete)
     {
-        [self fetchRestroomsWithCompletion:^
+        [self promptToAllowLocationServices];
+        
+        if(self.appState.hasViewedOnboarding == NO)
         {
+            [self displayOnboarding];
+        }
+        
+        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
+    
+        if(self.internetReachability.isReachable)
+        {
+            if(!self.isSyncComplete)
+            {
+                [self.restroomManager fetchRestroomsFromAPI];
+            }
+        }
+        else
+        {
+            self.hud.text = kHudTextNoInternet;
+        
+            self.isSyncComplete = YES;
+            [self.hud hide:RefugeHUDHideSpeedModerate];
+        
             [self plotRestrooms];
-        }];
+        }
     }
-    else
-    {
-        self.hud.text = kHudTextNoInternet;
-        
-        self.isSyncComplete = YES;
-        [self.hud hide:RefugeHUDHideSpeedModerate];
-        
-        [self plotRestrooms];
-    }
+    
+    [self.locationManager startUpdatingLocation];
 }
 
 # pragma mark - Setters
@@ -135,6 +150,18 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.locationManager stopUpdatingLocation];
 }
 
+# pragma mark RefugeMapDelegate methods
+
+- (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
+{
+    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
+}
+
+- (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
+{
+    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:firstPinRetrieved];
+}
+
 # pragma mark RefugeRestroomManagerDelegate methods
 
 - (void)didFetchRestrooms
@@ -144,7 +171,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     
     [self.hud hide:RefugeHUDHideSpeedFast];
     
-    [RefugeAppState sharedInstance].dateLastSynced = [NSDate date];
+    self.appState.dateLastSynced = [NSDate date];
     
     [self plotRestrooms];
 }
@@ -169,20 +196,11 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-//    BOOL shouldHideSearchResults = ([searchText length] == 0);
-//    
-//    if(shouldHideSearchResults)
-//    {
-//        self.searchResultsTable.hidden = YES;
-//        [self dismissSearch];
-//    }
-//    else
-//    {
-//        self.searchResultsTable.hidden = NO;
-//        [self handleSearchForString:searchText];
-//    }
-    
-    if([searchText length] > 0)
+    if([searchText length] == 0)
+    {
+        [self dismissSearch];
+    }
+    else
     {
         self.searchResultsTable.hidden = NO;
         [self handleSearchForString:searchText];
@@ -221,18 +239,36 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 {
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
     
-    [place toPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
+    [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
         
                                     [self placemarkSelected:placemark];
         
                                     [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
                                 }
                                 failure:^(NSError *error) {
-                                    [self displayAlertForWithMessage:@"Could not map selected location"];
+                                    [self displayAlertForWithMessage:kErrorTextPlacemarkCreationFail];
                                 }
      ];
     
     [self dismissSearch];
+}
+
+# pragma mark Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:kSegueNameShowRestroomDetails])
+    {
+        RefugeRestroomDetailsViewController *destinationController = [segue destinationViewController];
+        RefugeMapPin *mapPin = (RefugeMapPin *)sender;
+        
+        destinationController.restroom = mapPin.restroom;
+    }
+}
+
+- (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
+{
+    self.appState.hasViewedOnboarding = YES;
 }
 
 # pragma mark - Private methods
@@ -253,7 +289,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureMap
 {
-    self.mapView.delegate = self;
+    self.mapView.mapDelegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     
@@ -266,7 +302,8 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
 
 - (void)configureSearch
 {
-    self.searchQuery = [[RefugeSearchQuery alloc] init];
+    self.searchQuery = [[RefugeSearch alloc] init];
+    self.searchResultsTable.hidden = YES;
 }
 
 - (void)configureRestroomManager
@@ -283,6 +320,11 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     self.dataPersistenceManager.delegate = self.restroomManager;
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;
+}
+
+- (void)displayOnboarding
+{
+    [self performSegueWithIdentifier:kSegueNameModalOnboarding sender:self];
 }
 
 - (void)promptToAllowLocationServices
@@ -304,35 +346,22 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     [self.mapView setRegion:viewRegion animated:YES];
 }
 
-- (void)fetchRestroomsWithCompletion:(void (^)())completion
-{
-    if(!self.isSyncComplete)
-    {
-        [self.restroomManager fetchRestroomsFromAPI];
-    }
-    
-    completion();
-}
-
 - (void)plotRestrooms
 {
     NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
     
     [self removeAllAnnotationsFromMap];
     
-    NSMutableArray *annotations = [NSMutableArray array];
+    NSMutableArray *mapPins = [NSMutableArray array];
     
     for (RefugeRestroom *restroom in allRestrooms)
     {
-        RefugeMapKitAnnotation *annotation = [[RefugeMapKitAnnotation alloc] initWithRestroom:restroom];
+        RefugeMapPin *mapPin = [[RefugeMapPin alloc] initWithRestroom:restroom];
         
-        [annotations addObject:annotation];
+        [mapPins addObject:mapPin];
     }
     
-    // TODO: update to setAnnotations when ADCluster added
-    //    [self.mapView setAnnotations:[NSMutableArray arrayWithArray:annotations]];
-    [self.mapView addAnnotations:annotations];
-    self.isPlotComplete = YES;
+    [self.mapView addAnnotations:mapPins];
 }
 
 - (void)removeAllAnnotationsFromMap
@@ -351,7 +380,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
                                      [self.searchResultsTable reloadData];
                                  }
                                  failure:^(NSError *error) {
-                                     [self displayAlertForWithMessage:@"Could not fetch addresses for autocomplete"];
+                                     [self displayAlertForWithMessage:kErrorTextAutocompleteFail];
                                      [self dismissSearch];
                                  }
     ];
@@ -398,12 +427,10 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
     annotationFromPlacemark.coordinate = placemark.location.coordinate;
     annotationFromPlacemark.title = title;
     
-    // TODO: Update to addNonClusteredAnnotation when ADCluster added
-//    [self.mapView addNonClusteredAnnotation:selectedPlaceAnnotation];
     [self.mapView addAnnotation:annotationFromPlacemark];
 }
 
-- (void)recenterMapToPlacemark:(CLPlacemark  *)placemark
+- (void)recenterMapToPlacemark:(CLPlacemark *)placemark
 {
     [self zoomToCoordinate:placemark.location.coordinate];
 }

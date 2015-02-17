@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RefugeSearchQuery : NSObject
+@interface RefugeSearch : NSObject
 
 - (void)searchForPlaces:(NSString *)searchString
                 success:(void (^)(NSArray *places))searchSuccess

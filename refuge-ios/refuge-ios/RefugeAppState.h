@@ -11,7 +11,8 @@
 @interface RefugeAppState : NSObject
 
 @property (nonatomic, strong) NSDate *dateLastSynced;
+@property (nonatomic, assign) BOOL hasViewedOnboarding;
 
-+ (instancetype)sharedInstance;
+- (id)initWithUserDefaults:(NSUserDefaults *)userDefaults;
 
 @end
