@@ -71,7 +71,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [super viewDidLoad];
     
     self.appState = [[RefugeAppState alloc] init];
-    [self configureHUD];
+//    [self configureHUD];
     [self configureLocationManager];
     [self configureMap];
     [self configureSearch];
@@ -93,17 +93,27 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     
         if(self.internetReachability.isReachable)
         {
-            if(!self.isSyncComplete)
-            {
-                [self.restroomManager fetchRestroomsFromAPI];
-            }
+//            dispatch_async(dispatch_get_main_queue(), ^
+//            {
+//                if(self.isSyncComplete == NO)
+//                {
+//                    [self.restroomManager fetchRestroomsFromAPI];
+//                }
+//            });
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+                if(self.isSyncComplete == NO)
+                {
+                    [self.restroomManager fetchRestroomsFromAPI];
+                }
+            });
         }
         else
         {
-            self.hud.text = kHudTextNoInternet;
+//            self.hud.text = kHudTextNoInternet;
         
             self.isSyncComplete = YES;
-            [self.hud hide:RefugeHUDHideSpeedModerate];
+//            [self.hud hide:RefugeHUDHideSpeedModerate];
         
             [self plotRestrooms];
         }
@@ -120,7 +130,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     
     if(isSyncComplete)
     {
-        self.hud.state = RefugeHUDStateSyncingComplete;
+//        self.hud.state = RefugeHUDStateSyncingComplete;
     }
 }
 
@@ -167,9 +177,9 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)didFetchRestrooms
 {
     self.isSyncComplete = YES;
-    self.hud.text = kHudTextSyncComplete;
+//    self.hud.text = kHudTextSyncComplete;
     
-    [self.hud hide:RefugeHUDHideSpeedFast];
+//    [self.hud hide:RefugeHUDHideSpeedFast];
     
     self.appState.dateLastSynced = [NSDate date];
     
@@ -179,17 +189,17 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-    [self.hud setErrorText:kHudTextSyncError forError:error];
+//    [self.hud setErrorText:kHudTextSyncError forError:error];
     
-    [self.hud hide:RefugeHUDHideSpeedModerate];
+//    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-    [self.hud setErrorText:kHudTextSyncError forError:error];
+//    [self.hud setErrorText:kHudTextSyncError forError:error];
     
-    [self.hud hide:RefugeHUDHideSpeedModerate];
+//    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 # pragma mark UISearchBarDelegate methods
