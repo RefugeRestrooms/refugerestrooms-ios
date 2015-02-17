@@ -9,6 +9,7 @@
 #import "RefugeOnboardingViewController.h"
 
 #import <EAIntroView/EAIntroView.h>
+#import "UIColor+Refuge.h"
 
 static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
 
@@ -28,6 +29,7 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
     
     NSArray *pages = [self createPages];
     self.onboardingView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
+    self.onboardingView.skipButton.hidden = YES;
     self.onboardingView.delegate = self;
     
     [self.onboardingView showInView:self.view animateDuration:0.3];
@@ -46,10 +48,7 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 
 - (NSArray *)createPages
 {
-    EAIntroPage *page1 = [EAIntroPage page];
-    page1.title = @"Hello world";
-    page1.desc = @"Description";
-    page1.bgImage = [UIImage imageNamed:@"refuge-onboard1.png"];
+    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:@"RefugeOnboardPage1"];
     
     EAIntroPage *page2 = [EAIntroPage page];
     page2.title = @"This is page 2";
@@ -65,11 +64,11 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
     page4.title = @"This is page 4";
     page4.desc = @"Description";
     page4.bgImage = [UIImage imageNamed:@"refuge-onboard4.png"];
-    page4.titleIconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"refuge-map-pin.png"]];
     
     return @[page1, page2, page3, page4];
 }
 
+// makes status bar white
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;

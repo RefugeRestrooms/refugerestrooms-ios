@@ -334,11 +334,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445894461.954327"
+            timestampString = "445894874.438169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-createCharacteristicsImages"
             landmarkType = "5">
          </BreakpointContent>
@@ -606,11 +606,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445894114.961047"
+            timestampString = "445894874.438169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-setDetails"
             landmarkType = "5">
          </BreakpointContent>
@@ -732,11 +732,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeRestroomDetailsViewController.m"
-            timestampString = "445894461.954327"
+            timestampString = "445894874.438169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-setDetails"
             landmarkType = "5">
          </BreakpointContent>
