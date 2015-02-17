@@ -9,6 +9,7 @@
 #import "RefugeRestroomCommunicator.h"
 
 #import <AFNetworking.h>
+#import "AFNetworkActivityIndicatorManager.h"
 #import "RefugeHTTPSessionManager.h"
 #import "RefugeRestroomCommunicatorDelegate.h"
 
@@ -31,6 +32,8 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
     if(self)
     {
         _httpSessionManager = httpSessionManager;
+        
+        [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     }
     
     return self;

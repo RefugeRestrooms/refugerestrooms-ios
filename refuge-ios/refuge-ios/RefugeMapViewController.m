@@ -93,14 +93,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     
         if(self.internetReachability.isReachable)
         {
-//            dispatch_async(dispatch_get_main_queue(), ^
-//            {
-//                if(self.isSyncComplete == NO)
-//                {
-//                    [self.restroomManager fetchRestroomsFromAPI];
-//                }
-//            });
-            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
                 if(self.isSyncComplete == NO)
                 {
@@ -110,28 +102,13 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
         }
         else
         {
-//            self.hud.text = kHudTextNoInternet;
-        
             self.isSyncComplete = YES;
-//            [self.hud hide:RefugeHUDHideSpeedModerate];
         
             [self plotRestrooms];
         }
     }
     
     [self.locationManager startUpdatingLocation];
-}
-
-# pragma mark - Setters
-
-- (void)setIsSyncComplete:(BOOL)isSyncComplete
-{
-    _isSyncComplete = isSyncComplete;
-    
-    if(isSyncComplete)
-    {
-//        self.hud.state = RefugeHUDStateSyncingComplete;
-    }
 }
 
 # pragma mark - Public methods
@@ -177,10 +154,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)didFetchRestrooms
 {
     self.isSyncComplete = YES;
-//    self.hud.text = kHudTextSyncComplete;
-    
-//    [self.hud hide:RefugeHUDHideSpeedFast];
-    
     self.appState.dateLastSynced = [NSDate date];
     
     [self plotRestrooms];
@@ -189,17 +162,11 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-//    [self.hud setErrorText:kHudTextSyncError forError:error];
-    
-//    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     self.isSyncComplete = YES;
-//    [self.hud setErrorText:kHudTextSyncError forError:error];
-    
-//    [self.hud hide:RefugeHUDHideSpeedModerate];
 }
 
 # pragma mark UISearchBarDelegate methods
