@@ -37,6 +37,8 @@ static NSString * const kHudTextSyncError = @"Sync error :(";
 static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
+static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search. Please check your Internet connection.";
+static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
 
 @interface RefugeMapViewController ()
 
@@ -242,7 +244,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
                                     [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
                                 }
                                 failure:^(NSError *error) {
-                                    [self displayAlertForWithMessage:@"Could not map selected location"];
+                                    [self displayAlertForWithMessage:kErrorTextPlacemarkCreationFail];
                                 }
      ];
     
@@ -386,7 +388,7 @@ static NSString * const kReachabilityTestURL = @"www.google.com";
                                      [self.searchResultsTable reloadData];
                                  }
                                  failure:^(NSError *error) {
-                                     [self displayAlertForWithMessage:@"Could not fetch addresses for autocomplete"];
+                                     [self displayAlertForWithMessage:kErrorTextAutocompleteFail];
                                      [self dismissSearch];
                                  }
     ];
