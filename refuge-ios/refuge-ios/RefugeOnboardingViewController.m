@@ -12,6 +12,10 @@
 #import "UIColor+Refuge.h"
 
 static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
+static NSString * const kOnboardPageName1 = @"RefugeOnboardPage1";
+static NSString * const kOnboardPageName2 = @"RefugeOnboardPage2";
+static NSString * const kOnboardPageName3 = @"RefugeOnboardPage3";
+static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
 
 @interface RefugeOnboardingViewController ()
 
@@ -48,12 +52,8 @@ static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOn
 
 - (NSArray *)createPages
 {
-    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:@"RefugeOnboardPage1"];
-    
-    EAIntroPage *page2 = [EAIntroPage page];
-    page2.title = @"This is page 2";
-    page2.desc = @"Description";
-    page2.bgImage = [UIImage imageNamed:@"refuge-onboard2.png"];
+    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName1];
+    EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName2];
     
     EAIntroPage *page3 = [EAIntroPage page];
     page3.title = @"This is page 3";
