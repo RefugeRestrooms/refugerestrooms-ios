@@ -276,12 +276,19 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-Pe-dSa" userLabel="Directions Text View">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-Pe-dSa" userLabel="Directions Text View">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="52"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="16" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -323,9 +330,9 @@
                                                 </variation>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsy-ut-Jtj" userLabel="Comments Text View">
-                                                <rect key="frame" x="0.0" y="28" width="592" height="52"/>
+                                                <rect key="frame" x="10" y="28" width="572" height="52"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                 <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -333,7 +340,7 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Wsy-ut-Jtj" firstAttribute="leading" secondItem="P4I-7B-kid" secondAttribute="leading" id="3b3-87-1OS"/>
+                                            <constraint firstItem="Wsy-ut-Jtj" firstAttribute="leading" secondItem="P4I-7B-kid" secondAttribute="leading" constant="10" id="3b3-87-1OS"/>
                                             <constraint firstAttribute="trailing" secondItem="6PL-nq-GM7" secondAttribute="trailing" id="EN8-kU-l3U"/>
                                             <constraint firstItem="Wsy-ut-Jtj" firstAttribute="top" secondItem="P4I-7B-kid" secondAttribute="top" constant="15" id="MeK-FG-cOk"/>
                                             <constraint firstItem="6PL-nq-GM7" firstAttribute="top" secondItem="P4I-7B-kid" secondAttribute="top" id="PFY-Je-Hju"/>
@@ -342,13 +349,14 @@
                                             <constraint firstAttribute="centerX" secondItem="6PL-nq-GM7" secondAttribute="centerX" id="qCp-fn-ubn"/>
                                             <constraint firstAttribute="centerX" secondItem="Wsy-ut-Jtj" secondAttribute="centerX" id="qrp-yb-cR2"/>
                                             <constraint firstAttribute="height" priority="750" constant="120" id="rRC-rY-gfI"/>
-                                            <constraint firstAttribute="trailing" secondItem="Wsy-ut-Jtj" secondAttribute="trailing" id="x9p-YE-McQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wsy-ut-Jtj" secondAttribute="trailing" constant="10" id="x9p-YE-McQ"/>
                                             <constraint firstItem="Wsy-ut-Jtj" firstAttribute="top" secondItem="6PL-nq-GM7" secondAttribute="bottom" constant="4" id="zvN-4B-P2L"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="rRC-rY-gfI"/>
                                                 <exclude reference="MeK-FG-cOk"/>
+                                                <exclude reference="qrp-yb-cR2"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -365,6 +373,7 @@
                                     <constraint firstItem="P4I-7B-kid" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leadingMargin" id="GWN-36-ESO"/>
                                     <constraint firstItem="wl1-cN-gom" firstAttribute="top" secondItem="oC3-eQ-lS0" secondAttribute="bottom" constant="16" id="H8F-2i-ESo"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wl1-cN-gom" secondAttribute="bottom" constant="20" symbolic="YES" id="IWK-2a-e4x"/>
+                                    <constraint firstItem="czX-Pe-dSa" firstAttribute="leading" secondItem="Wsy-ut-Jtj" secondAttribute="leading" constant="2" id="LCV-d6-733"/>
                                     <constraint firstItem="vxa-ne-BNM" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" id="PBz-CV-pfA"/>
                                     <constraint firstItem="U1v-97-ERN" firstAttribute="centerX" secondItem="YNf-7v-LYA" secondAttribute="centerX" constant="-22" id="QBa-fq-Jmj"/>
                                     <constraint firstAttribute="bottom" secondItem="vxa-ne-BNM" secondAttribute="bottom" id="T9A-iv-R3w"/>
@@ -422,6 +431,8 @@
                         <outlet property="addressDetailsLabel" destination="oC3-eQ-lS0" id="AY8-Uc-USq"/>
                         <outlet property="characteristicImage1" destination="Ztb-h9-kAf" id="vEH-YA-KgA"/>
                         <outlet property="characteristicImage2" destination="sob-jP-kLl" id="Nds-GP-iGv"/>
+                        <outlet property="commentsTextField" destination="Wsy-ut-Jtj" id="EYe-W8-Rcc"/>
+                        <outlet property="directionsTextField" destination="czX-Pe-dSa" id="cza-M8-Kfp"/>
                         <outlet property="nameLabel" destination="cRe-Pf-iPF" id="tlE-IM-QEM"/>
                         <outlet property="ratingLabel" destination="jtR-4A-GCQ" id="ZnE-JB-02V"/>
                         <outlet property="ratingView" destination="U1v-97-ERN" id="0zv-sB-BLO"/>

@@ -27,6 +27,7 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
 @property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
+@property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
 
 @end
 
@@ -43,6 +44,13 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     [self setDetails];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self styleTextFields];
+}
+
 # pragma mark - Private methods
 
 - (void)setDetails
@@ -54,6 +62,7 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextField.backgroundColor = [UIColor clearColor];
     self.directionsTextField.text = self.restroom.directions;
+    self.commentsTextField.text = self.restroom.comment;
     
     [self createCharacteristicsImages];
 }
@@ -125,6 +134,17 @@ static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-ac
         self.characteristicImage1.image = nil;
         self.characteristicImage2.image = nil;
     }
+}
+
+- (void)styleTextFields
+{
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:16.0];
+    
+    self.directionsTextField.font = font;
+    self.directionsTextField.textColor = [UIColor RefugePurpleDarkColor];
+    
+    self.commentsTextField.font = font;
+    self.commentsTextField.textColor = [UIColor RefugePurpleDarkColor];
 }
 
 @end
