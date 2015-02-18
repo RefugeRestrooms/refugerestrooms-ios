@@ -59,6 +59,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *searchResultsTable;
 @property (nonatomic, weak) IBOutlet RefugeMap *mapView;
+@property (nonatomic, assign) CLLocationCoordinate2D defaultLocation;
 - (IBAction)currentLocationButtonTouched:(id)sender;
 
 @end
@@ -257,6 +258,11 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 {
     CLLocationCoordinate2D currentLocation = [[self.locationManager location] coordinate];
     
+    if((currentLocation.latitude == 0) && (currentLocation.longitude == 0))
+    {
+        currentLocation = self.defaultLocation;
+    }
+    
     [self zoomToCoordinate:currentLocation];
 }
 
@@ -281,9 +287,21 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
     
+    [self configureDefaultLocation];
+    [self addTouchRecognizerToMap];
+}
+
+- (void)configureDefaultLocation
+{
+    CLLocationCoordinate2D oneEmbarcaderoCenterSF = CLLocationCoordinate2DMake(37.7945, -122.3997); // same as default in web app
+    self.defaultLocation = oneEmbarcaderoCenterSF;
+}
+
+- (void)addTouchRecognizerToMap
+{
     UITapGestureRecognizer *mapTouched = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissSearch)];
+                                          initWithTarget:self
+                                          action:@selector(dismissSearch)];
     
     [self.mapView addGestureRecognizer:mapTouched];
 }
