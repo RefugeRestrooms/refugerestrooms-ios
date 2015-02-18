@@ -30,7 +30,6 @@ static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
-static NSString * const kSegueNameShowAddRestroom = @"RefugeRestroomAddRestroomShowSegue";
 
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";
@@ -60,7 +59,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *searchResultsTable;
 @property (nonatomic, weak) IBOutlet RefugeMap *mapView;
-- (IBAction)addButtonTouched:(id)sender;
+- (IBAction)currentLocationButtonTouched:(id)sender;
 
 @end
 
@@ -252,6 +251,16 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     self.appState.hasViewedOnboarding = YES;
 }
 
+#pragma mark Touch
+
+- (IBAction)currentLocationButtonTouched:(id)sender
+{
+    CLLocation *currentLocation = [self.locationManager location];
+    CLLocationCoordinate2D currentCoordinate = [currentLocation coordinate];
+    
+    [self zoomToCoordinate:currentCoordinate];
+}
+
 # pragma mark - Private methods
 
 - (void)configureHUD
@@ -415,8 +424,4 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self zoomToCoordinate:placemark.location.coordinate];
 }
 
-- (IBAction)addButtonTouchd:(id)sender {
-}
-- (IBAction)addButtonTouched:(id)sender {
-}
 @end

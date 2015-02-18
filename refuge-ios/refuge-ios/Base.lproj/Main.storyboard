@@ -23,6 +23,19 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="492"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-Bp-mXj" userLabel="Current Location Button">
+                                <rect key="frame" x="8" y="52" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SMa-Bp-mXj" secondAttribute="height" multiplier="1:1" id="3OE-Gd-YD2"/>
+                                    <constraint firstAttribute="height" constant="25" id="Xzb-OK-eW8"/>
+                                </constraints>
+                                <state key="normal" image="refuge-map-crosshair.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="currentLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V3K-ln-hUK"/>
+                                </connections>
+                            </button>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-8a-ZZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -42,16 +55,6 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="8rF-qE-vyS"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-Bp-mXj">
-                                <rect key="frame" x="8" y="52" width="25" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="SMa-Bp-mXj" secondAttribute="height" multiplier="1:1" id="3OE-Gd-YD2"/>
-                                    <constraint firstAttribute="height" constant="25" id="Xzb-OK-eW8"/>
-                                </constraints>
-                                <state key="normal" image="refuge-map-crosshair.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -91,10 +94,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="REFUGE" id="Ydu-IK-ptj" userLabel="Navigation Item">
                         <barButtonItem key="backBarButtonItem" title="Map" id="0H8-xu-eow" userLabel="Back Button on Destination VC"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iai-rN-Oc6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="iai-rN-Oc6" userLabel="New Restroom Button">
                             <connections>
-                                <action selector="addButtonTouched:" destination="vXZ-lx-hvc" id="eqe-Yq-fve"/>
-                                <segue destination="bFL-E7-2iK" kind="show" identifier="RefugeRestroomAddRestroomShowSegue" id="01L-BJ-MLk"/>
+                                <segue destination="bFL-E7-2iK" kind="show" identifier="RefugeRestroomNewRestroomShowSegue" id="Rqq-UB-GmX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
