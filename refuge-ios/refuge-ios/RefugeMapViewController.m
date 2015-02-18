@@ -30,6 +30,7 @@ static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
+static NSString * const kSegueNameShowAddRestroom = @"RefugeRestroomAddRestroomShowSegue";
 
 static NSString * const kHudTextSyncing = @"Syncing";
 static NSString * const kHudTextSyncComplete = @"Sync complete!";

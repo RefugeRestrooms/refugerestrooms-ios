@@ -86,6 +86,8 @@
 		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
 		DCB079771A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
+		DCDC5D131A94178600381664 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */; };
+		DCDC5D141A94178600381664 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 		DCF8666D1A89BAD600C73806 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */; };
@@ -202,6 +204,8 @@
 		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
 		DCB079751A8AE95600945880 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
+		DCDC5D111A94178600381664 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
+		DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
@@ -306,10 +310,12 @@
 			children = (
 				CED0CB5D1A82A6D400F7F3D8 /* RefugeMapViewController.h */,
 				CED0CB5E1A82A6D400F7F3D8 /* RefugeMapViewController.m */,
-				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
-				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
+				DCDC5D111A94178600381664 /* RefugeNewRestroomViewController.h */,
+				DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */,
 				DC3A1CBC1A92959B00445D33 /* RefugeOnboardingViewController.h */,
 				DC3A1CBD1A92959B00445D33 /* RefugeOnboardingViewController.m */,
+				CEA240191A86ED190083510F /* RefugeRestroomDetailsViewController.h */,
+				CEA2401A1A86ED190083510F /* RefugeRestroomDetailsViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -664,6 +670,7 @@
 			files = (
 				CED0CBB31A83342F00F7F3D8 /* NSDate+Refuge.m in Sources */,
 				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
+				DCDC5D131A94178600381664 /* RefugeNewRestroomViewController.m in Sources */,
 				CEA2400A1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				CEA240171A86DEA90083510F /* UIColor+Refuge.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
@@ -700,6 +707,7 @@
 				DCA3555C1A8C566500E3EDF8 /* UIImage+Refuge.m in Sources */,
 				DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */,
 				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
+				DCDC5D141A94178600381664 /* RefugeNewRestroomViewController.m in Sources */,
 				CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
