@@ -10,6 +10,7 @@
 
 #import <AFNetworking.h>
 #import "AFNetworkActivityIndicatorManager.h"
+#import "RefugeAppState.h"
 #import "RefugeHTTPSessionManager.h"
 #import "RefugeRestroomCommunicatorDelegate.h"
 
@@ -18,6 +19,8 @@ static NSString * const kApiBaseURL = @"http://www.refugerestrooms.org:80/api/v1
 static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 
 @interface RefugeRestroomCommunicator ()
+
+@property (nonatomic, strong) RefugeAppState *appState;
 
 @end
 
@@ -32,6 +35,8 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
     if(self)
     {
         _httpSessionManager = httpSessionManager;
+        
+        self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
         
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     }
@@ -69,13 +74,11 @@ static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 
 - (void)searchForRestrooms
 {
-//    int day = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:date] day];
-//    int month = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:date] month];
-//    int year = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:date] year];
+    NSDate *dateLastSynced = self.appState.dateLastSynced;
     
-    int day = 1;
-    int month = 2;
-    int year = 2014;
+    int day = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitDay fromDate:dateLastSynced] day];
+    int month = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitMonth fromDate:dateLastSynced] month];
+    int year = (int)[[[NSCalendar currentCalendar] components:NSCalendarUnitYear fromDate:dateLastSynced] year];
     
     NSString *endPoint = [NSString stringWithFormat:@"%@?per_page=%li&day=%i&month=%i&year=%i", kApiEndPointRestroomsByDate, (long)kMaxRestroomsToFetch, day, month, year];
     NSDictionary *httpSessionParameters =  @{ @"format": @"json" };
