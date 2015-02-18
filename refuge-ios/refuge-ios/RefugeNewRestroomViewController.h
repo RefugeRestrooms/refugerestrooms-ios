@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RefugeNewRestroomViewController : UIViewController
+@interface RefugeNewRestroomViewController : UIViewController <UIWebViewDelegate>
 
 @end

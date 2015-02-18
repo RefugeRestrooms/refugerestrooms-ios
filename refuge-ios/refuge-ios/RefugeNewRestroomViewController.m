@@ -8,30 +8,37 @@
 
 #import "RefugeNewRestroomViewController.h"
 
+static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new";
+
 @interface RefugeNewRestroomViewController ()
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIView *loadingView;
 
 @end
 
 @implementation RefugeNewRestroomViewController
 
-- (void)viewDidLoad {
+#pragma mark - View life-cycle
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.webView.delegate = self;
+    
+    NSURL *url = [NSURL URLWithString:kUrlNewRestroom];
+    NSURLRequest *urlResquest = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:urlResquest];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Public methods
 
-/*
-#pragma mark - Navigation
+#pragma mark UIWebViewDelegate methods
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    self.loadingView.hidden = YES;
 }
-*/
 
 @end
