@@ -175,10 +175,47 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfv-Ac-9r6" userLabel="Error View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Loading :(" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1V-1F-1SX" userLabel="Error Label">
+                                        <rect key="frame" x="231" y="227" width="138" height="24"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your Internet connection" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJq-QP-qfD" userLabel="Details Label">
+                                        <rect key="frame" x="163" y="259" width="275" height="19"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="AJq-QP-qfD" secondAttribute="centerY" id="7cV-lM-0uR"/>
+                                    <constraint firstItem="AJq-QP-qfD" firstAttribute="top" secondItem="C1V-1F-1SX" secondAttribute="bottom" constant="8" id="NA2-uo-FqP"/>
+                                    <constraint firstItem="C1V-1F-1SX" firstAttribute="centerX" secondItem="AJq-QP-qfD" secondAttribute="centerX" id="OfG-Xu-HSO"/>
+                                    <constraint firstAttribute="centerX" secondItem="C1V-1F-1SX" secondAttribute="centerX" id="WtL-TQ-dyq"/>
+                                    <constraint firstAttribute="centerY" secondItem="C1V-1F-1SX" secondAttribute="centerY" id="alX-XE-Qa9"/>
+                                    <constraint firstAttribute="centerX" secondItem="AJq-QP-qfD" secondAttribute="centerX" id="pp0-nh-XzA"/>
+                                    <constraint firstItem="AJq-QP-qfD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cfv-Ac-9r6" secondAttribute="leading" constant="20" symbolic="YES" id="rw6-iW-dcj"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AJq-QP-qfD" secondAttribute="trailing" constant="20" symbolic="YES" id="uEJ-tt-nHx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WtL-TQ-dyq"/>
+                                        <exclude reference="alX-XE-Qa9"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="ktX-Xq-Peu" secondAttribute="centerX" id="0Ob-G5-pPS"/>
+                            <constraint firstItem="cfv-Ac-9r6" firstAttribute="width" secondItem="ktX-Xq-Peu" secondAttribute="width" id="2ZE-Il-jgB"/>
+                            <constraint firstItem="cfv-Ac-9r6" firstAttribute="centerX" secondItem="ktX-Xq-Peu" secondAttribute="centerX" id="AN3-Zh-Hjd"/>
                             <constraint firstItem="ktX-Xq-Peu" firstAttribute="width" secondItem="NWi-Vd-alb" secondAttribute="width" id="FCV-5j-gmu"/>
                             <constraint firstItem="ktX-Xq-Peu" firstAttribute="bottom" secondItem="NWi-Vd-alb" secondAttribute="bottom" id="IUR-qj-ZMF"/>
                             <constraint firstItem="ktX-Xq-Peu" firstAttribute="trailing" secondItem="NWi-Vd-alb" secondAttribute="trailing" id="KDR-dE-RO3"/>
@@ -189,6 +226,8 @@
                             <constraint firstAttribute="centerY" secondItem="ktX-Xq-Peu" secondAttribute="centerY" id="bBd-nW-AhB"/>
                             <constraint firstItem="ktX-Xq-Peu" firstAttribute="top" secondItem="NWi-Vd-alb" secondAttribute="top" id="etb-qw-vVw"/>
                             <constraint firstItem="NWi-Vd-alb" firstAttribute="bottom" secondItem="i9c-gn-Vtj" secondAttribute="top" id="fnn-KX-zjL"/>
+                            <constraint firstItem="cfv-Ac-9r6" firstAttribute="height" secondItem="ktX-Xq-Peu" secondAttribute="height" id="hTt-cI-c2U"/>
+                            <constraint firstItem="cfv-Ac-9r6" firstAttribute="centerY" secondItem="ktX-Xq-Peu" secondAttribute="centerY" id="iJK-6h-43N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ktX-Xq-Peu" secondAttribute="trailing" id="lJ5-Ha-ou4"/>
                             <constraint firstAttribute="trailing" secondItem="NWi-Vd-alb" secondAttribute="trailing" id="omL-wO-JqP"/>
                             <constraint firstItem="NWi-Vd-alb" firstAttribute="leading" secondItem="QnS-ab-6Qn" secondAttribute="leading" id="qTk-n8-PZ2"/>
@@ -210,6 +249,7 @@
                         <barButtonItem key="backBarButtonItem" title="New" id="rr7-FI-QZY" userLabel="Add Button"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="errorView" destination="cfv-Ac-9r6" id="5jU-WH-jFW"/>
                         <outlet property="loadingView" destination="ktX-Xq-Peu" id="fbl-AA-GhA"/>
                         <outlet property="webView" destination="NWi-Vd-alb" id="3h5-PO-tj7"/>
                     </connections>

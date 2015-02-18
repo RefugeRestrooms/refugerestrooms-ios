@@ -14,6 +14,7 @@ static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restr
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIView *loadingView;
+@property (weak, nonatomic) IBOutlet UIView *errorView;
 
 @end
 
@@ -26,6 +27,8 @@ static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restr
     [super viewDidLoad];
     
     self.webView.delegate = self;
+    
+    self.errorView.hidden = YES;
     
     NSURL *url = [NSURL URLWithString:kUrlNewRestroom];
     NSURLRequest *urlResquest = [NSURLRequest requestWithURL:url];
@@ -43,10 +46,8 @@ static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restr
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not display New Restroom form. Please check your Internet connection." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    
-    
+    self.loadingView.hidden = YES;
+    self.errorView.hidden = NO;
 }
 
 @end
