@@ -59,6 +59,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 @property (nonatomic, weak) IBOutlet UITableView *searchResultsTable;
 @property (nonatomic, weak) IBOutlet RefugeMap *mapView;
+- (IBAction)addButtonTouched:(id)sender;
 
 @end
 
@@ -413,4 +414,8 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self zoomToCoordinate:placemark.location.coordinate];
 }
 
+- (IBAction)addButtonTouchd:(id)sender {
+}
+- (IBAction)addButtonTouched:(id)sender {
+}
 @end

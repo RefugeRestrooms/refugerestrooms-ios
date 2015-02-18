@@ -33,7 +33,7 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
     
     NSArray *pages = [self createPages];
     self.onboardingView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
-    self.onboardingView.skipButton.hidden = YES;
+    [self styleOnboardingView];
     self.onboardingView.delegate = self;
     
     [self.onboardingView showInView:self.view animateDuration:0.3];
@@ -58,6 +58,13 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
     EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName4];
     
     return @[ page1, page2, page3, page4 ];
+}
+
+- (void)styleOnboardingView
+{
+    self.onboardingView.pageControl.currentPageIndicatorTintColor = [UIColor RefugePurpleDarkColor];
+    self.onboardingView.pageControl.pageIndicatorTintColor = [UIColor RefugePurpleMediumColor];
+    self.onboardingView.skipButton.hidden = YES;
 }
 
 // makes status bar white
