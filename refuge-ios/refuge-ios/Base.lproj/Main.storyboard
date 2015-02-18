@@ -42,30 +42,48 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="8rF-qE-vyS"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-Bp-mXj">
+                                <rect key="frame" x="8" y="52" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SMa-Bp-mXj" secondAttribute="height" multiplier="1:1" id="3OE-Gd-YD2"/>
+                                    <constraint firstAttribute="height" constant="25" id="Xzb-OK-eW8"/>
+                                </constraints>
+                                <state key="normal" image="refuge-map-crosshair.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="JBI-kJ-mzV" secondAttribute="centerX" id="1dP-5D-1Jw"/>
+                            <constraint firstItem="fFb-8a-ZZ4" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="8" id="2zp-y1-Ozi"/>
                             <constraint firstAttribute="centerX" secondItem="ZNi-N8-Nwa" secondAttribute="centerX" id="6Rh-Sc-asB"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="8Rz-Nq-Sy4"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8fH-60-nHn"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="9fS-DE-3vU"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="-8" id="CTl-iA-luN"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Ek1-Dv-7qq"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="SMa-Bp-mXj" secondAttribute="leading" constant="8" id="JZ2-Bv-M7p"/>
                             <constraint firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" id="Kob-uN-uW8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fFb-8a-ZZ4" secondAttribute="trailing" constant="-16" id="Ln4-RT-Itl"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JBI-kJ-mzV" secondAttribute="bottom" id="OwU-yJ-LK5"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ppb-1l-hHB"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
+                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="8" id="aGZ-cJ-Hhc"/>
                             <constraint firstAttribute="centerX" secondItem="fFb-8a-ZZ4" secondAttribute="centerX" id="dXp-Yf-v8a"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="mWM-92-DA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JBI-kJ-mzV" secondAttribute="trailing" constant="-16" id="o2D-Ng-pqQ"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
                             <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
+                            <constraint firstItem="SMa-Bp-mXj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-8" id="yhr-4Z-wcI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="2zp-y1-Ozi"/>
                                 <exclude reference="Ek1-Dv-7qq"/>
+                                <exclude reference="JZ2-Bv-M7p"/>
+                                <exclude reference="aGZ-cJ-Hhc"/>
                                 <exclude reference="vat-vO-PSD"/>
                                 <exclude reference="xLg-Hr-Qcq"/>
                             </mask>
@@ -568,6 +586,7 @@
         <image name="refuge-banner.png" width="1138" height="438"/>
         <image name="refuge-details-accessible.png" width="91" height="104"/>
         <image name="refuge-details-unisex.png" width="89" height="104"/>
+        <image name="refuge-map-crosshair.png" width="258" height="258"/>
     </resources>
     <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
 </document>
