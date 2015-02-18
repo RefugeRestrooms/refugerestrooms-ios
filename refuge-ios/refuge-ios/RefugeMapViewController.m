@@ -255,10 +255,9 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (IBAction)currentLocationButtonTouched:(id)sender
 {
-    CLLocation *currentLocation = [self.locationManager location];
-    CLLocationCoordinate2D currentCoordinate = [currentLocation coordinate];
+    CLLocationCoordinate2D currentLocation = [[self.locationManager location] coordinate];
     
-    [self zoomToCoordinate:currentCoordinate];
+    [self zoomToCoordinate:currentLocation];
 }
 
 # pragma mark - Private methods

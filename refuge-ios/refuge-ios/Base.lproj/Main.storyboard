@@ -23,20 +23,49 @@
                                 <rect key="frame" x="0.0" y="44" width="600" height="492"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-Bp-mXj" userLabel="Current Location Button">
-                                <rect key="frame" x="8" y="52" width="25" height="25"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aop-yh-Fzl" userLabel="Current Location View">
+                                <rect key="frame" x="8" y="52" width="44" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-map-crosshair.png" translatesAutoresizingMaskIntoConstraints="NO" id="XgQ-kC-e9Y" userLabel="Current Location Image">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="5yX-6G-xIL"/>
+                                            <constraint firstAttribute="width" secondItem="XgQ-kC-e9Y" secondAttribute="height" multiplier="1:1" id="CrL-rH-3pB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ll-WN-6Fw" userLabel="Current Location Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="currentLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iuH-J7-J2w"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="SMa-Bp-mXj" secondAttribute="height" multiplier="1:1" id="3OE-Gd-YD2"/>
-                                    <constraint firstAttribute="height" constant="25" id="Xzb-OK-eW8"/>
+                                    <constraint firstItem="1Ll-WN-6Fw" firstAttribute="height" secondItem="aop-yh-Fzl" secondAttribute="height" id="5eL-8D-ycy"/>
+                                    <constraint firstAttribute="height" constant="44" id="8So-Dm-VHI"/>
+                                    <constraint firstAttribute="centerY" secondItem="XgQ-kC-e9Y" secondAttribute="centerY" id="E2W-gT-qix"/>
+                                    <constraint firstItem="1Ll-WN-6Fw" firstAttribute="width" secondItem="aop-yh-Fzl" secondAttribute="width" id="L1O-VQ-edq"/>
+                                    <constraint firstAttribute="width" constant="44" id="QX7-fx-8i4"/>
+                                    <constraint firstItem="XgQ-kC-e9Y" firstAttribute="top" secondItem="aop-yh-Fzl" secondAttribute="top" id="QkN-0M-88w"/>
+                                    <constraint firstAttribute="centerX" secondItem="1Ll-WN-6Fw" secondAttribute="centerX" id="eJX-xM-zqp"/>
+                                    <constraint firstAttribute="centerY" secondItem="1Ll-WN-6Fw" secondAttribute="centerY" id="eML-m0-qoN"/>
+                                    <constraint firstAttribute="centerX" secondItem="XgQ-kC-e9Y" secondAttribute="centerX" id="tbJ-BR-WSS"/>
+                                    <constraint firstItem="XgQ-kC-e9Y" firstAttribute="leading" secondItem="aop-yh-Fzl" secondAttribute="leading" id="zkK-vo-Cm0"/>
                                 </constraints>
-                                <state key="normal" image="refuge-map-crosshair.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="currentLocationButtonTouched:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V3K-ln-hUK"/>
-                                </connections>
-                            </button>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-8a-ZZ4">
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="E2W-gT-qix"/>
+                                        <exclude reference="tbJ-BR-WSS"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <searchBar contentMode="redraw" placeholder="Search Address" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-8a-ZZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,34 +88,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="JBI-kJ-mzV" secondAttribute="centerX" id="1dP-5D-1Jw"/>
-                            <constraint firstItem="fFb-8a-ZZ4" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="8" id="2zp-y1-Ozi"/>
                             <constraint firstAttribute="centerX" secondItem="ZNi-N8-Nwa" secondAttribute="centerX" id="6Rh-Sc-asB"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="8Rz-Nq-Sy4"/>
                             <constraint firstItem="fFb-8a-ZZ4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8fH-60-nHn"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="9fS-DE-3vU"/>
-                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="-8" id="CTl-iA-luN"/>
+                            <constraint firstItem="aop-yh-Fzl" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="top" constant="8" id="Bnh-Hy-9xc"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Ek1-Dv-7qq"/>
-                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="SMa-Bp-mXj" secondAttribute="leading" constant="8" id="JZ2-Bv-M7p"/>
                             <constraint firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" id="Kob-uN-uW8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fFb-8a-ZZ4" secondAttribute="trailing" constant="-16" id="Ln4-RT-Itl"/>
+                            <constraint firstItem="aop-yh-Fzl" firstAttribute="leading" secondItem="ZNi-N8-Nwa" secondAttribute="leading" constant="8" id="O4E-5e-pfa"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JBI-kJ-mzV" secondAttribute="bottom" id="OwU-yJ-LK5"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ppb-1l-hHB"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
-                            <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="SMa-Bp-mXj" secondAttribute="top" constant="8" id="aGZ-cJ-Hhc"/>
                             <constraint firstAttribute="centerX" secondItem="fFb-8a-ZZ4" secondAttribute="centerX" id="dXp-Yf-v8a"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="mWM-92-DA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JBI-kJ-mzV" secondAttribute="trailing" constant="-16" id="o2D-Ng-pqQ"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
                             <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
-                            <constraint firstItem="SMa-Bp-mXj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-8" id="yhr-4Z-wcI"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="2zp-y1-Ozi"/>
                                 <exclude reference="Ek1-Dv-7qq"/>
-                                <exclude reference="JZ2-Bv-M7p"/>
-                                <exclude reference="aGZ-cJ-Hhc"/>
                                 <exclude reference="vat-vO-PSD"/>
                                 <exclude reference="xLg-Hr-Qcq"/>
                             </mask>
