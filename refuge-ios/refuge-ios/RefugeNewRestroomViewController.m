@@ -41,4 +41,12 @@ static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restr
     self.loadingView.hidden = YES;
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Could not display New Restroom form. Please check your Internet connection." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+    
+}
+
 @end
