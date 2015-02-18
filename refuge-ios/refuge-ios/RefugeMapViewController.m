@@ -38,6 +38,7 @@ static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
 static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search. Please check your Internet connection.";
+static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled.";
 static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
 
 @interface RefugeMapViewController ()
@@ -95,18 +96,20 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     
         if(self.internetReachability.isReachable)
         {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+            if(self.isSyncComplete == NO)
+            {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
                 
-                if(self.isSyncComplete == NO)
-                {
-                    [self.restroomManager fetchRestroomsFromAPI];
-                }
-                
-            });
+                        [self.restroomManager fetchRestroomsFromAPI];
+            
+                });
+            }
         }
         else
         {
             self.isSyncComplete = YES;
+            
+            [self displayAlertForWithMessage:kErrorTextNoInternet];
         
             [self plotRestrooms];
         }
