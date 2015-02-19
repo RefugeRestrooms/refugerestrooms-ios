@@ -91,6 +91,8 @@
 		DCB079781A8AE95600945880 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DCB079761A8AE95600945880 /* RefugeMapPlace.m */; };
 		DCDC5D131A94178600381664 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */; };
 		DCDC5D141A94178600381664 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */; };
+		DCE6BB881A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */; };
+		DCE6BB891A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 		DCF8666D1A89BAD600C73806 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */; };
@@ -212,6 +214,8 @@
 		DCB079761A8AE95600945880 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DCDC5D111A94178600381664 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
 		DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
+		DCE6BB861A968C0A006B9B8A /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
+		DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
@@ -441,6 +445,8 @@
 			children = (
 				DC4D6FE01A967F9100F1698E /* iRate+Refuge.h */,
 				DC4D6FE11A967F9100F1698E /* iRate+Refuge.m */,
+				DCE6BB861A968C0A006B9B8A /* Mixpanel+Refuge.h */,
+				DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */,
 				CED0CBB11A83342F00F7F3D8 /* NSDate+Refuge.h */,
 				CED0CBB21A83342F00F7F3D8 /* NSDate+Refuge.m */,
 				CEA240151A86DEA90083510F /* UIColor+Refuge.h */,
@@ -683,6 +689,7 @@
 				DCDC5D131A94178600381664 /* RefugeNewRestroomViewController.m in Sources */,
 				CEA2400A1A86BB750083510F /* RefugeRestroomEntity.m in Sources */,
 				CEA240171A86DEA90083510F /* UIColor+Refuge.m in Sources */,
+				DCE6BB881A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				CEA2400E1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FF01A83DA2C0083510F /* RefugeRestroomCommunicator.m in Sources */,
@@ -721,6 +728,7 @@
 				CED0CBBD1A83517D00F7F3D8 /* RefugeSerialization.m in Sources */,
 				DCDC5D141A94178600381664 /* RefugeNewRestroomViewController.m in Sources */,
 				CEA2400F1A86BD110083510F /* RefugeDataPersistenceManager.m in Sources */,
+				DCE6BB891A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */,
 				CED0CBA41A83261E00F7F3D8 /* RefugeRestroom.m in Sources */,
 				CED0CBAF1A8332B200F7F3D8 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,

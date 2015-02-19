@@ -10,8 +10,9 @@
 
 #import "iRate+Refuge.h"
 #import <Mixpanel.h>
+#import "Mixpanel+Refuge.h"
 
-#define REFUGE_MIXPANEL_TOKEN @"3ff1f8729aeba3312a29c4f056ab35b7"
+#define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
 
 @interface RefugeAppDelegate ()
 
@@ -25,19 +26,8 @@
     [[iRate sharedInstance] refugeSetup];
     
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
-    
-    if([self hasEverLaunchedApp])
-    {
-        [[Mixpanel sharedInstance] track:@"Test-App Launched"
-                              properties:@{
-                                           @"Date First Launched" : [iRate sharedInstance].firstUsed,
-                                           @"Number of Launches" : [NSNumber numberWithInteger:[iRate sharedInstance].usesCount],
-                                           @"Had Declines to Rate" : ([iRate sharedInstance].declinedAnyVersion) ? @"Yes" : @"No",
-                                           @"Has Rated" : ([iRate sharedInstance].ratedAnyVersion) ? @"Yes" : @"No"
-                                           }
-         ];
-    }
-    
+    [[Mixpanel sharedInstance] refugeTrackAppLaunch];
+
     return YES;
 }
 
