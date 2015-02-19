@@ -90,3 +90,9 @@
 #define COCOAPODS_VERSION_MINOR_SPGooglePlacesAutocomplete 0
 #define COCOAPODS_VERSION_PATCH_SPGooglePlacesAutocomplete 4
 
+// iRate
+#define COCOAPODS_POD_AVAILABLE_iRate
+#define COCOAPODS_VERSION_MAJOR_iRate 1
+#define COCOAPODS_VERSION_MINOR_iRate 11
+#define COCOAPODS_VERSION_PATCH_iRate 3
+

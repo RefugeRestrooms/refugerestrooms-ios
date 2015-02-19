@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AD38423A9D3DE25BCA9B59C"
+               BlueprintIdentifier = "474FF8F15FA88550C3CBDF15"
                BuildableName = "libPods-refuge-ios-SPGooglePlacesAutocomplete.a"
                BlueprintName = "Pods-refuge-ios-SPGooglePlacesAutocomplete"
                ReferencedContainer = "container:Pods.xcodeproj">

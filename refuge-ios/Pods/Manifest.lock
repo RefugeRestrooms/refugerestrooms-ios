@@ -22,6 +22,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
+  - iRate (1.11.3)
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - ADClusterMapView (= 1.1.0)
   - AFNetworking (= 2.5.1)
   - EAIntroView (= 2.6.4)
+  - iRate (= 1.11.3)
   - Mantle (= 1.5.4)
   - MBProgressHUD (= 0.9)
   - Reachability (= 3.2)
@@ -42,6 +44,7 @@ SPEC CHECKSUMS:
   ADClusterMapView: df4a281903998377943d74b6d321fbc9eced9353
   AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
   EAIntroView: 8f66dc6b79f2d52db26af8fc5476a05ffc549d4c
+  iRate: 5e1978bac8b3f3f0296dbeccc0dd7b50e6e50657
   Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D2C6C4CEB20DDA8C968ED9E"
-               BuildableName = "libPods-refuge-ios-Mantle.a"
-               BlueprintName = "Pods-refuge-ios-Mantle"
+               BlueprintIdentifier = "A28C8CBAD788F16C6AD0756B"
+               BuildableName = "libPods-refuge-ios-iRate.a"
+               BlueprintName = "Pods-refuge-ios-iRate"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB411425521BAEBAAFD3D3F8"
-            BuildableName = "libPods-refuge-ios-Mantle.a"
-            BlueprintName = "Pods-refuge-ios-Mantle"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FB411425521BAEBAAFD3D3F8"
-            BuildableName = "libPods-refuge-ios-Mantle.a"
-            BlueprintName = "Pods-refuge-ios-Mantle"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

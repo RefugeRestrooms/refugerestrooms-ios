@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FB21FA68989CE8BD71181AA3"
-               BuildableName = "libPods-refuge-ios-AFNetworking.a"
-               BlueprintName = "Pods-refuge-ios-AFNetworking"
+               BlueprintIdentifier = "DA926D3E89DA0AE827E8E03C"
+               BuildableName = "libPods-refuge-ios-Mantle.a"
+               BlueprintName = "Pods-refuge-ios-Mantle"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -39,15 +39,6 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2943B930C7709C0C6BCDFA18"
-            BuildableName = "libPods-refuge-ios-AFNetworking.a"
-            BlueprintName = "Pods-refuge-ios-AFNetworking"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -57,15 +48,6 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2943B930C7709C0C6BCDFA18"
-            BuildableName = "libPods-refuge-ios-AFNetworking.a"
-            BlueprintName = "Pods-refuge-ios-AFNetworking"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
