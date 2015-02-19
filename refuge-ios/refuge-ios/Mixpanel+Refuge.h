@@ -6,10 +6,14 @@
 //  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
 //
 
+@class RefugeMapPin;
+
 #import "Mixpanel.h"
 
 @interface Mixpanel (Refuge)
 
+- (void)refugeRegisterSuperProperties;
 - (void)refugeTrackAppLaunch;
+- (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
 
 @end

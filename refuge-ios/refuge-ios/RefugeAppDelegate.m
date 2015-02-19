@@ -26,6 +26,7 @@
     [[iRate sharedInstance] refugeSetup];
     
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
+    [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
     [[Mixpanel sharedInstance] refugeTrackAppLaunch];
 
     return YES;
@@ -133,13 +134,6 @@
             abort();
         }
     }
-}
-
-#pragma mark - Private methods
-
-- (BOOL)hasEverLaunchedApp
-{
-    return [iRate sharedInstance].usesCount > 0;
 }
 
 @end

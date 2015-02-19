@@ -10,6 +10,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "Mixpanel+Refuge.h"
 #import <Reachability/Reachability.h>
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
@@ -148,11 +149,15 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
 {
+    [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:mapPin];
+    
     [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
 }
 
 - (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
+    [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:firstPinRetrieved];
+    
     [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:firstPinRetrieved];
 }
 
