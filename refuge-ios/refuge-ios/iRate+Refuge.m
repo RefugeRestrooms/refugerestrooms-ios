@@ -19,7 +19,7 @@ static NSUInteger const kAppID = 968531953;
     BOOL hasDeclinedToRate = [iRate sharedInstance].declinedAnyVersion;
     BOOL hasRated = [iRate sharedInstance].ratedAnyVersion;
     NSLog(@"Date first used: %@", dateAppFirstUsed);
-    NSLog(@"Num times current app version launched: %i", numTimesAppLaunched);
+    NSLog(@"Num times current app version launched: %lu", (unsigned long)numTimesAppLaunched);
     NSLog(@"Has declined to rate: %i", hasDeclinedToRate);
     NSLog(@"Has rated: %i", hasRated);
     
@@ -38,7 +38,6 @@ static NSUInteger const kAppID = 968531953;
     [iRate sharedInstance].promptForNewVersionIfUserRated = YES; // because ratings are version-specific
     [iRate sharedInstance].onlyPromptIfLatestVersion = YES; // whether rating prompt to be displayed if the user is not running the latest version of the app
     [iRate sharedInstance].previewMode = NO; // whether rating prompt will always displayed on launch (for testing purposes)
-    
 }
 
 @end
