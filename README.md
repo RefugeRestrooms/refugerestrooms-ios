@@ -17,6 +17,8 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 <br>
 [EAIntroView] (https://github.com/ealeksandrov/EAIntroView)
 <br>
+[iRate](https://github.com/nicklockwood/iRate)
+<br>
 [Mantle] (https://github.com/Mantle/Mantle)
 <br>
 [MBProgressHUD] (https://github.com/jdg/MBProgressHUD)
