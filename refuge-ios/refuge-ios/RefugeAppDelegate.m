@@ -9,6 +9,9 @@
 #import "RefugeAppDelegate.h"
 
 #import "iRate+Refuge.h"
+#import <Mixpanel.h>
+
+#define REFUGE_MIXPANEL_TOKEN @"3ff1f8729aeba3312a29c4f056ab35b7"
 
 @interface RefugeAppDelegate ()
 
@@ -20,6 +23,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [[iRate sharedInstance] refugeSetup];
+    
+    [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
+    
+    if([self hasEverLaunchedApp])
+    {
+        [[Mixpanel sharedInstance] track:@"Test-App Launched"
+                              properties:@{
+                                           @"Date First Launched" : [iRate sharedInstance].firstUsed,
+                                           @"Number of Launches" : [NSNumber numberWithInteger:[iRate sharedInstance].usesCount],
+                                           @"Had Declines to Rate" : ([iRate sharedInstance].declinedAnyVersion) ? @"Yes" : @"No",
+                                           @"Has Rated" : ([iRate sharedInstance].ratedAnyVersion) ? @"Yes" : @"No"
+                                           }
+         ];
+    }
     
     return YES;
 }
@@ -126,6 +143,13 @@
             abort();
         }
     }
+}
+
+#pragma mark - Private methods
+
+- (BOOL)hasEverLaunchedApp
+{
+    return [iRate sharedInstance].usesCount > 0;
 }
 
 @end
