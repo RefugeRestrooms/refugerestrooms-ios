@@ -115,22 +115,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "refuge-ios/Mixpanel+Refuge.m"
-            timestampString = "446079563.330868"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-refugeTrackRestroomDetailsViewed:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "refuge-ios/RefugeMapViewController.m"
             timestampString = "446078433.06198"
             startingColumnNumber = "9223372036854775807"
@@ -208,16 +192,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/Mixpanel+Refuge.m"
-            timestampString = "446079563.330868"
+            timestampString = "446081258.899041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "-refugeTrackRestroomDetailsViewed:"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-refugeTrackOnboardingCompleted"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

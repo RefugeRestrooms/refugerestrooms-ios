@@ -257,6 +257,8 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
 {
+    [[Mixpanel sharedInstance] refugeTrackOnboardingCompleted];
+    
     self.appState.hasViewedOnboarding = YES;
 }
 

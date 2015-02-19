@@ -37,11 +37,9 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ App Launched", kRefugePrefix]];
 }
 
-#pragma mark - Private methods
-
-- (BOOL)hasEverLaunchedApp
+- (void)refugeTrackOnboardingCompleted
 {
-    return [iRate sharedInstance].usesCount > 0;
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Onboarding Completed", kRefugePrefix]];
 }
 
 - (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin
@@ -56,6 +54,13 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
                                        [NSString stringWithFormat:@"%@ Restroom Country", kRefugePrefix] : restroom.country
                                        }
      ];
+}
+
+#pragma mark - Private methods
+
+- (BOOL)hasEverLaunchedApp
+{
+    return [iRate sharedInstance].usesCount > 0;
 }
 
 @end

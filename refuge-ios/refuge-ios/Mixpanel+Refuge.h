@@ -14,6 +14,7 @@
 
 - (void)refugeRegisterSuperProperties;
 - (void)refugeTrackAppLaunch;
+- (void)refugeTrackOnboardingCompleted;
 - (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
 
 @end
