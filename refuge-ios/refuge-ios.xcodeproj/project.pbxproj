@@ -93,6 +93,7 @@
 		DCDC5D141A94178600381664 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */; };
 		DCE6BB881A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */; };
 		DCE6BB891A968C0A006B9B8A /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */; };
+		DCE6BB8C1A96CD08006B9B8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 		DCF8666A1A89985100C73806 /* MockRefugeHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866691A89985100C73806 /* MockRefugeHUD.m */; };
 		DCF8666D1A89BAD600C73806 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */; };
@@ -216,6 +217,7 @@
 		DCDC5D121A94178600381664 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
 		DCE6BB861A968C0A006B9B8A /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
 		DCE6BB871A968C0A006B9B8A /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
+		DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 		DCF866681A89985100C73806 /* MockRefugeHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeHUD.h; sourceTree = "<group>"; };
 		DCF866691A89985100C73806 /* MockRefugeHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeHUD.m; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			files = (
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
+				DCE6BB8C1A96CD08006B9B8A /* Crashlytics.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA240271A8702E20083510F /* CoreLocation.framework */,
+				DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
 				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
 			);
@@ -543,6 +547,7 @@
 				CED0CB4D1A82A6D300F7F3D8 /* Frameworks */,
 				CED0CB4E1A82A6D300F7F3D8 /* Resources */,
 				1D69CA609FF701E4D138D1E9 /* Copy Pods Resources */,
+				DCE6BB8A1A96CCCB006B9B8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -676,6 +681,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DCE6BB8A1A96CCCB006B9B8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 55973203d8a92c52515240df5e712184276733b6 f43afcc2f2d159ed7651cb0630e0afbaa839d7853b8eae2bee864413ab2dfd14";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -876,6 +894,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
@@ -896,6 +918,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

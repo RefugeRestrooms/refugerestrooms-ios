@@ -8,6 +8,7 @@
 
 #import "RefugeAppDelegate.h"
 
+#import <Crashlytics/Crashlytics.h>
 #import "iRate+Refuge.h"
 #import <Mixpanel.h>
 #import "Mixpanel+Refuge.h"
@@ -28,6 +29,8 @@
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
     [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
     [[Mixpanel sharedInstance] refugeTrackAppLaunch];
+    
+    [Crashlytics startWithAPIKey:@"55973203d8a92c52515240df5e712184276733b6"];
 
     return YES;
 }
