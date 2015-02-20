@@ -143,6 +143,8 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
+    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLocationManagerFailed];
+    
     [self.locationManager stopUpdatingLocation];
 }
 
@@ -174,11 +176,15 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (void)fetchingRestroomsFailedWithError:(NSError *)error
 {
+    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeFetchingRestroomsFailed];
+    
     self.isSyncComplete = YES;
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
+    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSavingRestroomsFailed];
+    
     self.isSyncComplete = YES;
 }
 

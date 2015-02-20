@@ -37,6 +37,19 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ App Launched", kRefugePrefix]];
 }
 
+- (void)refugeTrackError:(NSError *)error ofType:(RefugeMixpanelErrorType)errorType
+{
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Error Occurred", kRefugePrefix]
+                          properties:@{
+                                       [NSString stringWithFormat:@"%@ Error Type", kRefugePrefix] : [self stringForErrorType:errorType],
+                                       [NSString stringWithFormat:@"%@ Error Domain", kRefugePrefix] : [error domain],
+                                       [NSString stringWithFormat:@"%@ Error Code", kRefugePrefix] : [NSNumber numberWithInteger:[error code]],
+                                       [NSString stringWithFormat:@"%@ Error Reason", kRefugePrefix] : [error localizedFailureReason],
+                                       [NSString stringWithFormat:@"%@ Error Description", kRefugePrefix] : [error localizedDescription]
+                                       }
+     ];
+}
+
 - (void)refugeTrackNewRestroomButtonTouched
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ New Restroom Button Touched", kRefugePrefix]];
@@ -66,6 +79,24 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
 - (BOOL)hasEverLaunchedApp
 {
     return [iRate sharedInstance].usesCount > 0;
+}
+
+- (NSString *)stringForErrorType:(RefugeMixpanelErrorType)errorType
+{
+    switch (errorType) {
+        case RefugeMixpanelErrorTypeLocationManagerFailed:
+            return @"Location Manager Failed";
+            break;
+        case RefugeMixpanelErrorTypeFetchingRestroomsFailed:
+            return @"Fetching Restrooms Failed";
+            break;
+        case RefugeMixpanelErrorTypeSavingRestroomsFailed:
+            return @"Saving Restrooms Failed";
+            break;
+        default:
+            return @"Error Type Not Found";
+            break;
+    }
 }
 
 @end
