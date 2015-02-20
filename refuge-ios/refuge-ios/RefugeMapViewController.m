@@ -234,10 +234,11 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
+    NSString *cellText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     
     [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
         
-                                    [[Mixpanel sharedInstance] refugeTrackSearchExecuted:placemark];
+                                    [[Mixpanel sharedInstance] refugeTrackSearchExecuted:cellText placemark:placemark];
         
                                     [self placemarkSelected:placemark];
         

@@ -13,7 +13,11 @@
 #import "RefugeMapPin.h"
 #import "RefugeRestroom.h"
 
-static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name prefix before launch
+#if DEBUG
+static NSString * const kRefugePrefix = @"Test";
+#else
+static NSString * const kRefugePrefix = @"Refuge";
+#endif
 
 @implementation Mixpanel (Refuge)
 
@@ -75,13 +79,13 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
      ];
 }
 
-- (void)refugeTrackSearchExecuted:(CLPlacemark *)placemark
+- (void)refugeTrackSearchExecuted:(NSString *)searchResultText placemark:(CLPlacemark *)placemark
 {
     NSDictionary *addressInfo = placemark.addressDictionary;
     
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Executed", kRefugePrefix]
                           properties:@{
-                                       [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : [addressInfo objectForKey:@"Name"],
+                                       [NSString stringWithFormat:@"%@ Search Text", kRefugePrefix] : searchResultText,
                                        [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : [addressInfo objectForKey:@"City"],
                                        [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : [addressInfo objectForKey:@"State"],
                                        [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : [addressInfo objectForKey:@"Country"]

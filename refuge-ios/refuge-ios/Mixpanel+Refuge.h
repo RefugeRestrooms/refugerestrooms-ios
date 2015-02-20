@@ -28,6 +28,6 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
 - (void)refugeTrackNewRestroomButtonTouched;
 - (void)refugeTrackOnboardingCompleted;
 - (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
-- (void)refugeTrackSearchExecuted:(CLPlacemark *)placemark;
+- (void)refugeTrackSearchExecuted:(NSString *)searchResultText placemark:(CLPlacemark *)placemark;
 
 @end
