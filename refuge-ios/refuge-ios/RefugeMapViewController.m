@@ -30,6 +30,7 @@
 static float const kMetersPerMile = 1609.344;
 static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
 static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
+static NSString * const kSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
 static NSString * const kHudTextSyncing = @"Syncing";
@@ -252,6 +253,11 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
         RefugeMapPin *mapPin = (RefugeMapPin *)sender;
         
         destinationController.restroom = mapPin.restroom;
+    }
+    
+    if([[segue identifier] isEqualToString:kSegueNameShowNewRestroomForm])
+    {
+        [[Mixpanel sharedInstance] refugeTrackNewRestroomButtonTouched];
     }
 }
 

@@ -37,6 +37,11 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ App Launched", kRefugePrefix]];
 }
 
+- (void)refugeTrackNewRestroomButtonTouched
+{
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ New Restroom Button Touched", kRefugePrefix]];
+}
+
 - (void)refugeTrackOnboardingCompleted
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Onboarding Completed", kRefugePrefix]];
