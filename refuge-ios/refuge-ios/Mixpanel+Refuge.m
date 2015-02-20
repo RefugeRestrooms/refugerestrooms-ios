@@ -79,13 +79,22 @@ static NSString * const kRefugePrefix = @"Refuge";
      ];
 }
 
-- (void)refugeTrackSearchExecuted:(NSString *)searchResultText placemark:(CLPlacemark *)placemark
+- (void)refugeTrackSearchAttempted:(NSString *)searchString
+{
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Attempted", kRefugePrefix]
+                          properties:@{
+                                       [NSString stringWithFormat:@"%@ Search String", kRefugePrefix] : searchString
+                                       }
+     ];
+}
+
+- (void)refugeTrackSearchSuccessful:(CLPlacemark *)placemark
 {
     NSDictionary *addressInfo = placemark.addressDictionary;
     
-    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Executed", kRefugePrefix]
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Successfully Executed", kRefugePrefix]
                           properties:@{
-                                       [NSString stringWithFormat:@"%@ Search Text", kRefugePrefix] : searchResultText,
+                                       [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : [addressInfo objectForKey:@"Name"],
                                        [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : [addressInfo objectForKey:@"City"],
                                        [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : [addressInfo objectForKey:@"State"],
                                        [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : [addressInfo objectForKey:@"Country"]
@@ -114,6 +123,9 @@ static NSString * const kRefugePrefix = @"Refuge";
             break;
         case RefugeMixpanelErrorTypeResolvingPlacemarkFailed:
             return @"Resolving Placemark Failed";
+            break;
+        case RefugeMixpanelErrorTypeSearchAttemptFailed:
+            return @"Search Attempt Failed";
             break;
         default:
             return @"Error Type Not Found";
