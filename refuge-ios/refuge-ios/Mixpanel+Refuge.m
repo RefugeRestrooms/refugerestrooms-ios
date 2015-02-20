@@ -8,6 +8,7 @@
 
 #import "Mixpanel+Refuge.h"
 
+#import <CoreLocation/CoreLocation.h>
 #import "iRate+Refuge.h"
 #import "RefugeMapPin.h"
 #import "RefugeRestroom.h"
@@ -74,6 +75,20 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
      ];
 }
 
+- (void)refugeTrackSearchExecuted:(CLPlacemark *)placemark
+{
+    NSDictionary *addressInfo = placemark.addressDictionary;
+    
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Executed", kRefugePrefix]
+                          properties:@{
+                                       [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : [addressInfo objectForKey:@"Name"],
+                                       [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : [addressInfo objectForKey:@"City"],
+                                       [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : [addressInfo objectForKey:@"State"],
+                                       [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : [addressInfo objectForKey:@"Country"]
+                                       }
+     ];
+}
+
 #pragma mark - Private methods
 
 - (BOOL)hasEverLaunchedApp
@@ -92,6 +107,9 @@ static NSString * const kRefugePrefix = @"Test"; // TODO: Change event name pref
             break;
         case RefugeMixpanelErrorTypeSavingRestroomsFailed:
             return @"Saving Restrooms Failed";
+            break;
+        case RefugeMixpanelErrorTypeResolvingPlacemarkFailed:
+            return @"Resolving Placemark Failed";
             break;
         default:
             return @"Error Type Not Found";

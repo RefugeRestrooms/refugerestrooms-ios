@@ -8,11 +8,14 @@
 
 #import "Mixpanel.h"
 
+@class CLPlacemark;
+
 typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
 {
     RefugeMixpanelErrorTypeLocationManagerFailed,
     RefugeMixpanelErrorTypeFetchingRestroomsFailed,
     RefugeMixpanelErrorTypeSavingRestroomsFailed,
+    RefugeMixpanelErrorTypeResolvingPlacemarkFailed
 };
 
 @class RefugeMapPin;
@@ -25,5 +28,6 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
 - (void)refugeTrackNewRestroomButtonTouched;
 - (void)refugeTrackOnboardingCompleted;
 - (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
+- (void)refugeTrackSearchExecuted:(CLPlacemark *)placemark;
 
 @end

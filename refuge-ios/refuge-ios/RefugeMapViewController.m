@@ -237,11 +237,16 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     
     [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
         
+                                    [[Mixpanel sharedInstance] refugeTrackSearchExecuted:placemark];
+        
                                     [self placemarkSelected:placemark];
         
                                     [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
                                 }
                                 failure:^(NSError *error) {
+                                    
+                                    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeResolvingPlacemarkFailed];
+                                    
                                     [self displayAlertForWithMessage:kErrorTextPlacemarkCreationFail];
                                 }
      ];
@@ -408,6 +413,7 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
                                      [self.searchResultsTable reloadData];
                                  }
                                  failure:^(NSError *error) {
+                                     
                                      [self displayAlertForWithMessage:kErrorTextAutocompleteFail];
                                      [self dismissSearch];
                                  }
