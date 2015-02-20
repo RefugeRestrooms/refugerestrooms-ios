@@ -16,9 +16,6 @@ static NSString * const kMapClusterAnnotationReuseIdentifier = @"MapClusterAnnot
 static NSString * const kImageNamePin = @"refuge-map-pin.png";
 static float const kImageHeightPin = 39.5;
 static float const kImageWidthPin = 31.0;
-static NSInteger const kMaxNumPinClusters = 1000;
-static NSString * const kTitlePinCluster = @"%d Restrooms";
-
 @implementation RefugeMap
 
 # pragma mark - Initializers
@@ -66,11 +63,6 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     return nil;
 }
 
-- (MKAnnotationView *)mapView:(ADClusterMapView *)mapView viewForClusterAnnotation:(id<MKAnnotation>)annotation
-{
-    return [self clusterAnnotationViewForMapView:mapView withAnnotation:annotation];
-}
-
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     if([[view annotation] isKindOfClass:[ADClusterAnnotation class]])
@@ -101,21 +93,6 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
             [self.mapDelegate retrievingSingleMapPinFromCalloutAccessoryFailed:firstMapPin];
         }
     }
-}
-
-- (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
-{
-    return kTitlePinCluster;
-}
-
-- (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView
-{
-    return kMaxNumPinClusters;
-}
-
-- (NSString *)pictoName
-{
-    return kImageNamePin;
 }
 
 # pragma mark MKMapView methods
@@ -150,33 +127,13 @@ static NSString * const kTitlePinCluster = @"%d Restrooms";
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:kMapAnnotationReuseIdentifier];
-        UIImage *resizedImage = [UIImage resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
+        UIImage *resizedImage = [UIImage resizeImageNamed:kImageNamePin width:kImageWidthPin height:kImageHeightPin];
         
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;
         
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
-    }
-    else
-    {
-        annotationView.annotation = annotation;
-    }
-    
-    return annotationView;
-}
-
-- (MKAnnotationView *)clusterAnnotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
-{
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kMapClusterAnnotationReuseIdentifier];
-    
-    if (!annotationView)
-    {
-        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:kMapClusterAnnotationReuseIdentifier];
-        UIImage *resizedImage = [UIImage resizeImageNamed:self.pictoName width:kImageWidthPin height:kImageHeightPin];
-        
-        annotationView.image = resizedImage;
     }
     else
     {

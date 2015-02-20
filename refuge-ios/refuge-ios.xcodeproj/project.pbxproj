@@ -74,6 +74,7 @@
 		DC8C79D21A93EA3300BBED77 /* RefugeOnboardPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8C79D11A93EA3300BBED77 /* RefugeOnboardPage2.xib */; };
 		DC8C79D41A93EC6C00BBED77 /* RefugeOnboardPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8C79D31A93EC6C00BBED77 /* RefugeOnboardPage3.xib */; };
 		DC8C79D61A93EC7800BBED77 /* RefugeOnboardPage4.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8C79D51A93EC7800BBED77 /* RefugeOnboardPage4.xib */; };
+		DC8F394C1A97FC8100A90B13 /* refuge_ios.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* refuge_ios.sqlite */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -195,6 +196,7 @@
 		DC8C79D11A93EA3300BBED77 /* RefugeOnboardPage2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage2.xib; sourceTree = "<group>"; };
 		DC8C79D31A93EC6C00BBED77 /* RefugeOnboardPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage3.xib; sourceTree = "<group>"; };
 		DC8C79D51A93EC7800BBED77 /* RefugeOnboardPage4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage4.xib; sourceTree = "<group>"; };
+		DC8F394B1A97FC8000A90B13 /* refuge_ios.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = refuge_ios.sqlite; path = ../../refuge_ios.sqlite; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 				DCA355231A8B1D2900E3EDF8 /* Logic */,
 				CED0CBA51A83270F00F7F3D8 /* Models */,
 				CED0CBA61A83271B00F7F3D8 /* View */,
+				DC8F394B1A97FC8000A90B13 /* refuge_ios.sqlite */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
@@ -502,8 +505,6 @@
 		DCA3555F1A8C597C00E3EDF8 /* Map Logic */ = {
 			isa = PBXGroup;
 			children = (
-				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
-				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
 				DCA355621A8C59E700E3EDF8 /* RefugeMapDelegate.h */,
 				DCB079751A8AE95600945880 /* RefugeMapPlace.h */,
 				DCB079761A8AE95600945880 /* RefugeMapPlace.m */,
@@ -516,6 +517,8 @@
 			children = (
 				CEA240211A86FB6D0083510F /* RefugeHUD.h */,
 				CEA240221A86FB6D0083510F /* RefugeHUD.m */,
+				DCA3554F1A8C458300E3EDF8 /* RefugeMap.h */,
+				DCA355501A8C458300E3EDF8 /* RefugeMap.m */,
 				DCF8666B1A89BAD500C73806 /* RefugeMapPin.h */,
 				DCF8666C1A89BAD500C73806 /* RefugeMapPin.m */,
 				DC8C79CF1A93D21200BBED77 /* RefugeOnboardPage1.xib */,
@@ -625,6 +628,7 @@
 				DC18859D1A92C9B200F72222 /* refuge-onboard3.png in Resources */,
 				DC0CFC5E1A8EAEF9000AA09D /* refuge-details-accessible.png in Resources */,
 				DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */,
+				DC8F394C1A97FC8100A90B13 /* refuge_ios.sqlite in Resources */,
 				DC18859B1A92C9B200F72222 /* refuge-onboard1.png in Resources */,
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
 				DC18859E1A92C9B200F72222 /* refuge-onboard4.png in Resources */,
