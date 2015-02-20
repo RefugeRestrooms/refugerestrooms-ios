@@ -44,13 +44,18 @@ static NSString * const kRefugePrefix = @"Refuge";
 
 - (void)refugeTrackError:(NSError *)error ofType:(RefugeMixpanelErrorType)errorType
 {
+    NSString *errorDomain = [error domain];
+    NSInteger errorCode = [error code];
+    NSString *errorReason = [error localizedFailureReason];
+    NSString *errorDescription = [error localizedDescription];
+    
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Error Occurred", kRefugePrefix]
                           properties:@{
                                        [NSString stringWithFormat:@"%@ Error Type", kRefugePrefix] : [self stringForErrorType:errorType],
-                                       [NSString stringWithFormat:@"%@ Error Domain", kRefugePrefix] : [error domain],
-                                       [NSString stringWithFormat:@"%@ Error Code", kRefugePrefix] : [NSNumber numberWithInteger:[error code]],
-                                       [NSString stringWithFormat:@"%@ Error Reason", kRefugePrefix] : [error localizedFailureReason],
-                                       [NSString stringWithFormat:@"%@ Error Description", kRefugePrefix] : [error localizedDescription]
+                                       [NSString stringWithFormat:@"%@ Error Domain", kRefugePrefix] : (errorDomain == nil) ? @"" : errorDomain,
+                                       [NSString stringWithFormat:@"%@ Error Code", kRefugePrefix] : (!errorCode) ? [NSNumber numberWithInteger:-1] : [NSNumber numberWithInteger:[error code]],
+                                       [NSString stringWithFormat:@"%@ Error Reason", kRefugePrefix] : (!errorReason) ? @"" : errorReason,
+                                       [NSString stringWithFormat:@"%@ Error Description", kRefugePrefix] : (!errorDescription) ? @"" : errorDescription
                                        }
      ];
 }

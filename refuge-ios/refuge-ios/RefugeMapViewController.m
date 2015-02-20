@@ -9,6 +9,7 @@
 #import "RefugeMapViewController.h"
 
 #import <CoreLocation/CoreLocation.h>
+#import <Crashlytics/Crashlytics.h>
 #import <MapKit/MapKit.h>
 #import "Mixpanel+Refuge.h"
 #import <Reachability/Reachability.h>

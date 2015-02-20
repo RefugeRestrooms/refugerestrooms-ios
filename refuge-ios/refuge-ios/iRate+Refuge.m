@@ -14,15 +14,6 @@ static NSUInteger const kAppID = 968531953;
 
 - (void)refugeSetup
 {
-    NSDate *dateAppFirstUsed = [iRate sharedInstance].firstUsed;
-    NSUInteger numTimesAppLaunched = [iRate sharedInstance].usesCount;
-    BOOL hasDeclinedToRate = [iRate sharedInstance].declinedAnyVersion;
-    BOOL hasRated = [iRate sharedInstance].ratedAnyVersion;
-    NSLog(@"Date first used: %@", dateAppFirstUsed);
-    NSLog(@"Num times current app version launched: %lu", (unsigned long)numTimesAppLaunched);
-    NSLog(@"Has declined to rate: %i", hasDeclinedToRate);
-    NSLog(@"Has rated: %i", hasRated);
-    
     // TODO: Set appropriate iRate values before launch
     [iRate sharedInstance].appStoreID = kAppID;
     [iRate sharedInstance].daysUntilPrompt = 1; // number of days the user must have had the app installed before they are prompted to rate it
