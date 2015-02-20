@@ -45,17 +45,25 @@ static NSString * const kRefugePrefix = @"Refuge";
 - (void)refugeTrackError:(NSError *)error ofType:(RefugeMixpanelErrorType)errorType
 {
     NSString *errorDomain = [error domain];
-    NSInteger errorCode = [error code];
-    NSString *errorReason = [error localizedFailureReason];
     NSString *errorDescription = [error localizedDescription];
+    NSError *underlyingError = [[error userInfo] objectForKey:NSUnderlyingErrorKey];
+    
+    NSString *underlyingErrorDomain = @"";
+    NSString *underlyingErrorCode = @"";
+    
+    if(underlyingError)
+    {
+        underlyingErrorDomain = [underlyingError domain];
+        underlyingErrorCode = [NSString stringWithFormat:@"%li", (long)[underlyingError code] ];
+    }
     
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Error Occurred", kRefugePrefix]
                           properties:@{
                                        [NSString stringWithFormat:@"%@ Error Type", kRefugePrefix] : [self stringForErrorType:errorType],
                                        [NSString stringWithFormat:@"%@ Error Domain", kRefugePrefix] : (errorDomain == nil) ? @"" : errorDomain,
-                                       [NSString stringWithFormat:@"%@ Error Code", kRefugePrefix] : (!errorCode) ? [NSNumber numberWithInteger:-1] : [NSNumber numberWithInteger:[error code]],
-                                       [NSString stringWithFormat:@"%@ Error Reason", kRefugePrefix] : (!errorReason) ? @"" : errorReason,
-                                       [NSString stringWithFormat:@"%@ Error Description", kRefugePrefix] : (!errorDescription) ? @"" : errorDescription
+                                       [NSString stringWithFormat:@"%@ Error Description", kRefugePrefix] : (!errorDescription) ? @"" : errorDescription,
+                                       [NSString stringWithFormat:@"%@ Underlying Error Domain", kRefugePrefix] : underlyingErrorDomain,
+                                       [NSString stringWithFormat:@"%@ Underlying Error Code", kRefugePrefix] : underlyingErrorCode
                                        }
      ];
 }
