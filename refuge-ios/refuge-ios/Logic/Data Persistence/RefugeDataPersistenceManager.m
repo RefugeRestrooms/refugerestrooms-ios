@@ -45,7 +45,7 @@
     
     if(error)
     {
-        // TODO: Handle error fetching Restrooms from Core Data
+        [self.delegate retrievingAllRestroomsFailedWithError:error];
         
         return nil;
     }

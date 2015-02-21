@@ -172,11 +172,16 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     [self plotRestrooms];
 }
 
-- (void)fetchingRestroomsFailedWithError:(NSError *)error
+- (void)fetchingRestroomsFromApiFailedWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeFetchingRestroomsFailed];
     
     self.isSyncComplete = YES;
+}
+
+- (void)fetchingRestroomsFromLocalStoreFailedWithError:(NSError *)error
+{
+    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLocalStoreFetchFailed];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
@@ -379,20 +384,23 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 {
     NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
     
-    [self removeAllAnnotationsFromMap];
-    
-    NSMutableArray *mapPins = [NSMutableArray array];
-    
-    for (RefugeRestroom *restroom in allRestrooms)
+    if(allRestrooms != nil)
     {
-        RefugeMapPin *mapPin = [[RefugeMapPin alloc] initWithRestroom:restroom];
+        [self removeAllAnnotationsFromMap];
+    
+        NSMutableArray *mapPins = [NSMutableArray array];
+    
+        for (RefugeRestroom *restroom in allRestrooms)
+        {
+            RefugeMapPin *mapPin = [[RefugeMapPin alloc] initWithRestroom:restroom];
         
-        [mapPins addObject:mapPin];
+            [mapPins addObject:mapPin];
+        }
+    
+        [self.mapView addAnnotations:mapPins];
+    
+        [[Mixpanel sharedInstance] refugeTrackRestroomsPlotted:[allRestrooms count]];
     }
-    
-    [self.mapView addAnnotations:mapPins];
-    
-    [[Mixpanel sharedInstance] refugeTrackRestroomsPlotted:[allRestrooms count]];
 }
 
 - (void)removeAllAnnotationsFromMap

@@ -13,7 +13,8 @@
 @interface MockRefugeRestroomManagerDelegate : NSObject <RefugeRestroomManagerDelegate>
 
 @property (nonatomic, assign) BOOL wasNotifiedOfFetchedRestrooms;
-@property (nonatomic, strong) NSError *fetchError;
+@property (nonatomic, strong) NSError *fetchFromApiError;
+@property (nonatomic, strong) NSError *fetchFromLocalStoreError;
 @property (nonatomic, strong) NSError *saveError;
 
 @end

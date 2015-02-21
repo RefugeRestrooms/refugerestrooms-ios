@@ -138,7 +138,7 @@ static NSString * const kRefugePrefix = @"Refuge";
             return @"Location Manager Failed";
             break;
         case RefugeMixpanelErrorTypeFetchingRestroomsFailed:
-            return @"Fetching Restrooms Failed";
+            return @"Fetching Restrooms From API Failed";
             break;
         case RefugeMixpanelErrorTypeSavingRestroomsFailed:
             return @"Saving Restrooms Failed";
@@ -151,6 +151,9 @@ static NSString * const kRefugePrefix = @"Refuge";
             break;
         case RefugeMixpanelErrorTypePreloadingRestrooms:
             return @"Pre-loading Restrooms Failed";
+            break;
+        case RefugeMixpanelErrorTypeLocalStoreFetchFailed:
+            return @"Fetching Restrooms From Local Store Failed";
             break;
         default:
             return @"Error Type Not Found";

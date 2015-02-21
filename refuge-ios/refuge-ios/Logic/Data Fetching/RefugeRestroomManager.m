@@ -63,12 +63,17 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     }
 }
 
+- (void)retrievingAllRestroomsFailedWithError:(NSError *)error
+{
+    [self.delegate fetchingRestroomsFromLocalStoreFailedWithError:error];
+}
+
 - (void)searchingForRestroomsFailedWithError:(NSError *)error
 {
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:RefugeRestroomManagerErrorRestroomsFetchCode userInfo:errorInfo];
     
-    [self.delegate fetchingRestroomsFailedWithError:reportableError];
+    [self.delegate fetchingRestroomsFromApiFailedWithError:reportableError];
 }
 
 # pragma mark RefugeDataPeristenceManagerDelegate methods
@@ -96,7 +101,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
     
-    [self.delegate fetchingRestroomsFailedWithError:reportableError];
+    [self.delegate fetchingRestroomsFromApiFailedWithError:reportableError];
 }
 
 - (void)tellDelegateAboutSyncErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError

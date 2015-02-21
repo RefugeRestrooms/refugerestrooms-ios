@@ -11,7 +11,8 @@
 @protocol RefugeRestroomManagerDelegate <NSObject>
 
 - (void)didFetchRestrooms;
-- (void)fetchingRestroomsFailedWithError:(NSError *)error;
+- (void)fetchingRestroomsFromApiFailedWithError:(NSError *)error;
+- (void)fetchingRestroomsFromLocalStoreFailedWithError:(NSError *)error;
 - (void)savingRestroomsFailedWithError:(NSError *)error;
 
 @end

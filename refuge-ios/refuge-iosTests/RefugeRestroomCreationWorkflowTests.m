@@ -80,21 +80,21 @@
 {
     [restroomManager searchingForRestroomsFailedWithError:underlyingError];
     
-    XCTAssertNotNil([delegate fetchError], @"Delegate should receive error when Communicator fails");
+    XCTAssertNotNil([delegate fetchFromApiError], @"Delegate should receive error when Communicator fails");
 }
 
 - (void)testErrorReturnedToDelegateIsNotNotifiedByCommunicator
 {
     [restroomManager searchingForRestroomsFailedWithError:underlyingError];
     
-    XCTAssertFalse(underlyingError == delegate.fetchError, @"Error passed to delegate should be at the correct level of abstraction");
+    XCTAssertFalse(underlyingError == delegate.fetchFromApiError, @"Error passed to delegate should be at the correct level of abstraction");
 }
 
 - (void)testErrorReturnedToelegateDocumentsUnderlyingError
 {
     [restroomManager searchingForRestroomsFailedWithError:underlyingError];
     
-    XCTAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"Error passed to delegate should document underlying error");
+    XCTAssertEqualObjects([[[delegate fetchFromApiError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"Error passed to delegate should document underlying error");
 }
 
 - (void)testRestroomJSONIsPassedToRestroomBuilder
@@ -111,8 +111,8 @@
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertNotNil(delegate.fetchError, @"Delegate should receive error when Builder fails");
-    XCTAssertEqualObjects([[delegate.fetchError userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"Delegate should receive error when Builder fails");
+    XCTAssertNotNil(delegate.fetchFromApiError, @"Delegate should receive error when Builder fails");
+    XCTAssertEqualObjects([[delegate.fetchFromApiError userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError, @"Delegate should receive error when Builder fails");
 }
 
 - (void)testErrorNotReturnedToDelegateWhenRestroomsReceived
@@ -121,7 +121,7 @@
     
     [restroomManager didReceiveRestroomsJsonObjects:jsonObjects];
     
-    XCTAssertNil(delegate.fetchError, @"Error should not be received by delegate when fetching Books is successful");
+    XCTAssertNil(delegate.fetchFromApiError, @"Error should not be received by delegate when fetching Books is successful");
 }
 
 - (void)testDelegateNotifiedOfRestroomsFetchedByManager

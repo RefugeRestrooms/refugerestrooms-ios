@@ -15,9 +15,14 @@
     self.wasNotifiedOfFetchedRestrooms = YES;
 }
 
-- (void)fetchingRestroomsFailedWithError:(NSError *)error
+- (void)fetchingRestroomsFromApiFailedWithError:(NSError *)error
 {
-    self.fetchError = error;
+    self.fetchFromApiError = error;
+}
+
+- (void)fetchingRestroomsFromLocalStoreFailedWithError:(NSError *)error
+{
+    self.fetchFromLocalStoreError = error;
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
