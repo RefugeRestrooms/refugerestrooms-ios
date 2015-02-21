@@ -112,6 +112,7 @@ static NSString * const kRefugePrefix = @"Refuge";
 
 - (void)refugeTrackSearchSuccessful:(CLPlacemark *)placemark
 {
+    // TODO: Fix nil-insertion error
     NSDictionary *addressInfo = placemark.addressDictionary;
     
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Successfully Executed", kRefugePrefix]
