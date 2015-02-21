@@ -14,7 +14,6 @@
 #import <Reachability/Reachability.h>
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
-#import "RefugeHUD.h"
 #import "RefugeMap.h"
 #import "RefugeMapPin.h"
 #import "RefugeMapPlace.h"
@@ -46,7 +45,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 @interface RefugeMapViewController ()
 
 @property (nonatomic, strong) RefugeAppState *appState;
-@property (nonatomic, strong) RefugeHUD *hud;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Reachability *internetReachability;
 @property (nonatomic, strong) RefugeRestroomManager *restroomManager;
@@ -297,11 +295,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 }
 
 # pragma mark - Private methods
-
-- (void)configureHUD
-{
-    self.hud = [[RefugeHUD alloc] initWithView:self.view];
-}
 
 - (void)configureLocationManager
 {

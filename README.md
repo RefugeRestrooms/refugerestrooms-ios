@@ -21,8 +21,6 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 <br>
 [Mantle] (https://github.com/Mantle/Mantle)
 <br>
-[MBProgressHUD] (https://github.com/jdg/MBProgressHUD)
-<br>
 [Reachability] (https://github.com/tonymillion/Reachability)
 <br>
 [SPGooglePlacesAutocomplete] (https://github.com/spoletto/SPGooglePlacesAutocomplete)

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D737D34D9D7F401F13CE9C3B"
+               BlueprintIdentifier = "15016B5FD4D1B4CDB978C489"
                BuildableName = "libPods-refuge-ios-ADClusterMapView.a"
                BlueprintName = "Pods-refuge-ios-ADClusterMapView"
                ReferencedContainer = "container:Pods.xcodeproj">
