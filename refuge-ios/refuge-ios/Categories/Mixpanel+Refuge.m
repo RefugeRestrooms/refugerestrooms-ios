@@ -96,23 +96,26 @@ static NSString * const kRefugePrefix = @"Refuge";
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Restrooms Plotted", kRefugePrefix]
                           properties:@{
-                                       [NSString stringWithFormat:@"%@ Number Restrooms Plotted", kRefugePrefix] : [NSNumber numberWithInteger:numRestroomsPlotted]
+                                       [NSString stringWithFormat:@"%@ # Restrooms Plotted", kRefugePrefix] : [NSNumber numberWithInteger:numRestroomsPlotted]
                                        }
      ];
 }
 
 - (void)refugeTrackSearchWithString:(NSString *)searchString placemark:(CLPlacemark *)placemark
 {
-    // TODO: Fix nil-insertion error
     NSDictionary *addressInfo = placemark.addressDictionary;
+    NSString *searchName = [addressInfo objectForKey:@"Name"];
+    NSString *searchCity = [addressInfo objectForKey:@"City"];
+    NSString *searchState = [addressInfo objectForKey:@"State"];
+    NSString *searchCountry = [addressInfo objectForKey:@"Country"];
     
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Successfully Executed", kRefugePrefix]
                           properties:@{
                                        [NSString stringWithFormat:@"%@ Search String", kRefugePrefix] : searchString,
-                                       [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : [addressInfo objectForKey:@"Name"],
-                                       [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : [addressInfo objectForKey:@"City"],
-                                       [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : [addressInfo objectForKey:@"State"],
-                                       [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : [addressInfo objectForKey:@"Country"]
+                                       [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : (!searchName) ? @"" : searchName,
+                                       [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : (!searchCity) ? @"" : searchCity,
+                                       [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : (!searchState) ? @"" : searchState,
+                                       [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : (!searchCountry) ? @"" : searchCountry
                                        }
      ];
 }
