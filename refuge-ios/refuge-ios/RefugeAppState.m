@@ -17,6 +17,7 @@
 @implementation RefugeAppState
 
 static NSString * const REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY = @"RefugeAppStateDateLastSyncedKey";
+static NSString * const REFUGE_APP_STATE_HAS_PRELOADED_RESTROOMS_KEY = @"RefugeAppStateHasPreloadedRestroomsKey";
 static NSString * const REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY = @"RefugeAppStateHasViewedOnboardingKey";
 
 # pragma mark - Initializers
@@ -29,9 +30,10 @@ static NSString * const REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY = @"RefugeApp
     {
         self.userDefaults = userDefaults;
         
-        self.hasViewedOnboarding = [[userDefaults objectForKey:REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY] boolValue];
+        self.hasPreloadedRestrooms = [[self.userDefaults objectForKey:REFUGE_APP_STATE_HAS_PRELOADED_RESTROOMS_KEY ] boolValue];
+        self.hasViewedOnboarding = [[self.userDefaults objectForKey:REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY] boolValue];
         
-        NSDate *dateLastSynced = [userDefaults objectForKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
+        NSDate *dateLastSynced = [self.userDefaults objectForKey:REFUGE_APP_STATE_DATE_LAST_SYNCED_KEY];
         
         if(dateLastSynced == nil)
         {
@@ -50,6 +52,14 @@ static NSString * const REFUGE_APP_STATE_HAS_VIEWED_ONBOARDING_KEY = @"RefugeApp
 }
 
 # pragma mark Setters
+
+- (void)setHasPreloadedRestrooms:(BOOL)hasPreloadedRestrooms
+{
+    _hasPreloadedRestrooms = hasPreloadedRestrooms;
+    
+    [self.userDefaults setObject:@(hasPreloadedRestrooms) forKey:REFUGE_APP_STATE_HAS_PRELOADED_RESTROOMS_KEY];
+    [self.userDefaults synchronize];
+}
 
 - (void)setHasViewedOnboarding:(BOOL)hasViewedOnboarding
 {

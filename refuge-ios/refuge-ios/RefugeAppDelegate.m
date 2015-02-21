@@ -12,10 +12,13 @@
 #import "iRate+Refuge.h"
 #import <Mixpanel.h>
 #import "Mixpanel+Refuge.h"
+#import "RefugeAppState.h"
 
 #define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
 
 @interface RefugeAppDelegate ()
+
+@property (nonatomic, strong) RefugeAppState *appState;
 
 @end
 
@@ -23,6 +26,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
     
     [[iRate sharedInstance] refugeSetup];
     
@@ -92,7 +97,10 @@
     
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"refuge_ios.sqlite"];
     
-    [self preloadRestroomData:storeURL];
+    if(self.appState.hasPreloadedRestrooms == NO)
+    {
+        [self preloadRestroomData:storeURL];
+    }
     
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
@@ -155,6 +163,10 @@
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&error])
         {
             [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypePreloadingRestrooms];
+        }
+        else
+        {
+            self.appState.hasPreloadedRestrooms = YES;
         }
     }
 }
