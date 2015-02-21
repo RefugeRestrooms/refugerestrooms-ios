@@ -92,6 +92,15 @@ static NSString * const kRefugePrefix = @"Refuge";
      ];
 }
 
+- (void)refugeTrackRestroomsPlotted:(NSUInteger)numRestroomsPlotted
+{
+    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Restrooms Plotted", kRefugePrefix]
+                          properties:@{
+                                       [NSString stringWithFormat:@"%@ Number Restrooms Plotted", kRefugePrefix] : [NSNumber numberWithInteger:numRestroomsPlotted]
+                                       }
+     ];
+}
+
 - (void)refugeTrackSearchAttempted:(NSString *)searchString
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Attempted", kRefugePrefix]
@@ -139,6 +148,9 @@ static NSString * const kRefugePrefix = @"Refuge";
             break;
         case RefugeMixpanelErrorTypeSearchAttemptFailed:
             return @"Search Attempt Failed";
+            break;
+        case RefugeMixpanelErrorTypePreloadingRestrooms:
+            return @"Pre-loading Restrooms Failed";
             break;
         default:
             return @"Error Type Not Found";

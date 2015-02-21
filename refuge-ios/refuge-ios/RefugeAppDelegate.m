@@ -149,12 +149,12 @@
 {
     if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]])
     {
-        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"refuge_ios" ofType:@"sqlite"]];
-        NSError* err = nil;
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"RefugeRestroomsSeed" ofType:@"sqlite"]];
+        NSError* error = nil;
         
-        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err])
+        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&error])
         {
-            NSLog(@"Oops, could copy preloaded data");
+            [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypePreloadingRestrooms];
         }
     }
 }

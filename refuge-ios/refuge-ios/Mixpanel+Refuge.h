@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
     RefugeMixpanelErrorTypeFetchingRestroomsFailed,
     RefugeMixpanelErrorTypeSavingRestroomsFailed,
     RefugeMixpanelErrorTypeResolvingPlacemarkFailed,
-    RefugeMixpanelErrorTypeSearchAttemptFailed
+    RefugeMixpanelErrorTypeSearchAttemptFailed,
+    RefugeMixpanelErrorTypePreloadingRestrooms
 };
 
 @class RefugeMapPin;
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
 - (void)refugeTrackNewRestroomButtonTouched;
 - (void)refugeTrackOnboardingCompleted;
 - (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
+- (void)refugeTrackRestroomsPlotted:(NSUInteger)numRestroomsPlotted;
 - (void)refugeTrackSearchAttempted:(NSString *)searchString;
 - (void)refugeTrackSearchSuccessful:(CLPlacemark *)placemark;
 

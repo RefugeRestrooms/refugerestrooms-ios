@@ -409,7 +409,9 @@
 }
 
 - (NSInteger)_numberOfClusters {
-    NSInteger numberOfClusters = 32; // default value
+// REFUGE EDIT
+//    NSInteger numberOfClusters = 32; // default value
+    NSInteger numberOfClusters = 50;
     if ([_secondaryDelegate respondsToSelector:@selector(numberOfClustersInMapView:)]) {
         numberOfClusters = [_secondaryDelegate numberOfClustersInMapView:self];
     }

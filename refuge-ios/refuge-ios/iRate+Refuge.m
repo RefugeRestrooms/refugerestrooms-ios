@@ -16,10 +16,10 @@ static NSUInteger const kAppID = 968531953;
 {
     // TODO: Set appropriate iRate values before launch
     [iRate sharedInstance].appStoreID = kAppID;
-    [iRate sharedInstance].daysUntilPrompt = 1; // number of days the user must have had the app installed before they are prompted to rate it
-    [iRate sharedInstance].usesUntilPrompt = 2; // minimum number of times the user must launch the app before they are prompted to rate it
+    [iRate sharedInstance].daysUntilPrompt = 0; // number of days the user must have had the app installed before they are prompted to rate it
+    [iRate sharedInstance].usesUntilPrompt = 1; // minimum number of times the user must launch the app before they are prompted to rate it
     [iRate sharedInstance].usesPerWeekForPrompt = 0; // average number of times the user must launch the app per week for the prompt to be shown
-    [iRate sharedInstance].remindPeriod = 7; // how long in days the app should wait before reminding a user to rate after selcting "remind me later"
+    [iRate sharedInstance].remindPeriod = 1; // how long in days the app should wait before reminding a user to rate after selcting "remind me later"
     [iRate sharedInstance].messageTitle = @"Enjoying REFUGE?"; // title displayed for the rating prompt
     [iRate sharedInstance].message = @"Rating REFUGE positively encourages others to use it. Leaving constructive comments helps improve it.";
     [iRate sharedInstance].updateMessage = @"REFUGE was updated! If you're still enjoying it or the improvements, please take a minute to rate."; // message to be used for users who have previously rated the app

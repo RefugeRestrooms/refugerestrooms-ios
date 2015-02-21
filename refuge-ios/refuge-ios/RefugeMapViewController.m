@@ -399,6 +399,8 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     }
     
     [self.mapView addAnnotations:mapPins];
+    
+    [[Mixpanel sharedInstance] refugeTrackRestroomsPlotted:[allRestrooms count]];
 }
 
 - (void)removeAllAnnotationsFromMap
