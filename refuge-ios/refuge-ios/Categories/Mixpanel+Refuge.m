@@ -101,22 +101,14 @@ static NSString * const kRefugePrefix = @"Refuge";
      ];
 }
 
-- (void)refugeTrackSearchAttempted:(NSString *)searchString
-{
-    [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Attempted", kRefugePrefix]
-                          properties:@{
-                                       [NSString stringWithFormat:@"%@ Search String", kRefugePrefix] : searchString
-                                       }
-     ];
-}
-
-- (void)refugeTrackSearchSuccessful:(CLPlacemark *)placemark
+- (void)refugeTrackSearchWithString:(NSString *)searchString placemark:(CLPlacemark *)placemark
 {
     // TODO: Fix nil-insertion error
     NSDictionary *addressInfo = placemark.addressDictionary;
     
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Successfully Executed", kRefugePrefix]
                           properties:@{
+                                       [NSString stringWithFormat:@"%@ Search String", kRefugePrefix] : searchString,
                                        [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : [addressInfo objectForKey:@"Name"],
                                        [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : [addressInfo objectForKey:@"City"],
                                        [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : [addressInfo objectForKey:@"State"],

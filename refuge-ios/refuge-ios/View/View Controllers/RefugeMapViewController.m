@@ -239,11 +239,9 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
     NSString *cellText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     
-    [[Mixpanel sharedInstance] refugeTrackSearchAttempted:cellText];
-    
     [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
         
-                                    [[Mixpanel sharedInstance] refugeTrackSearchSuccessful:placemark];
+                                    [[Mixpanel sharedInstance] refugeTrackSearchWithString:cellText placemark:placemark];
         
                                     [self placemarkSelected:placemark];
         
