@@ -34,6 +34,7 @@
 		DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */; };
 		DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */; };
 		DC28E0CB1A99349900FEAAE6 /* refuge-onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */; };
+		DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39581A980C5F00A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
@@ -66,8 +67,6 @@
 		DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
 		DC8F39BA1A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
-		DC8F39C71A9810B300A90B13 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BD1A9810B300A90B13 /* refuge-background-bathroom.jpg */; };
-		DC8F39C81A9810B300A90B13 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BD1A9810B300A90B13 /* refuge-background-bathroom.jpg */; };
 		DC8F39C91A9810B300A90B13 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BE1A9810B300A90B13 /* refuge-banner.png */; };
 		DC8F39CA1A9810B300A90B13 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BE1A9810B300A90B13 /* refuge-banner.png */; };
 		DC8F39CB1A9810B300A90B13 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */; };
@@ -158,6 +157,7 @@
 		DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard3.png"; sourceTree = "<group>"; };
 		DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard2.png"; sourceTree = "<group>"; };
 		DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard1.png"; sourceTree = "<group>"; };
+		DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
 		DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
@@ -194,7 +194,6 @@
 		DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 		DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
 		DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomEntity.m; sourceTree = "<group>"; };
-		DC8F39BD1A9810B300A90B13 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC8F39BE1A9810B300A90B13 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
 		DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
 		DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
@@ -481,7 +480,7 @@
 		DC8F39BC1A9810B300A90B13 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39BD1A9810B300A90B13 /* refuge-background-bathroom.jpg */,
+				DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */,
 				DC8F39BE1A9810B300A90B13 /* refuge-banner.png */,
 				DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */,
 				DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */,
@@ -626,13 +625,13 @@
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
 				DC8F39C91A9810B300A90B13 /* refuge-banner.png in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
+				DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */,
 				DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */,
 				DC8F39F01A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */,
 				DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */,
 				DC8F39CD1A9810B300A90B13 /* refuge-details-unisex.png in Resources */,
 				DC8F39EE1A9810F800A90B13 /* RefugeOnboardPage2.xib in Resources */,
 				DC28E0CB1A99349900FEAAE6 /* refuge-onboard1.png in Resources */,
-				DC8F39C71A9810B300A90B13 /* refuge-background-bathroom.jpg in Resources */,
 				DC8F39CB1A9810B300A90B13 /* refuge-details-accessible.png in Resources */,
 				DC28E0C81A99349900FEAAE6 /* refuge-onboard4.png in Resources */,
 				DC8F39F21A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */,
@@ -654,7 +653,6 @@
 				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
 				DC8F39F11A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */,
 				DC8F39D21A9810B300A90B13 /* refuge-map-pin.png in Resources */,
-				DC8F39C81A9810B300A90B13 /* refuge-background-bathroom.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

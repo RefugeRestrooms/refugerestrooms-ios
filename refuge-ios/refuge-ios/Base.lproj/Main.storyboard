@@ -65,6 +65,14 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-Lj-wcm" userLabel="Credits View">
+                                <rect key="frame" x="548" y="484" width="44" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="gh9-SN-1Lr"/>
+                                    <constraint firstAttribute="height" constant="44" id="tbl-5g-beo"/>
+                                </constraints>
+                            </view>
                             <searchBar contentMode="redraw" placeholder="Search Address" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-8a-ZZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -99,11 +107,13 @@
                             <constraint firstItem="aop-yh-Fzl" firstAttribute="leading" secondItem="ZNi-N8-Nwa" secondAttribute="leading" constant="8" id="O4E-5e-pfa"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JBI-kJ-mzV" secondAttribute="bottom" id="OwU-yJ-LK5"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ppb-1l-hHB"/>
+                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" constant="-8" id="RL7-j9-NWa"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
                             <constraint firstAttribute="centerX" secondItem="fFb-8a-ZZ4" secondAttribute="centerX" id="dXp-Yf-v8a"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="mWM-92-DA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JBI-kJ-mzV" secondAttribute="trailing" constant="-16" id="o2D-Ng-pqQ"/>
+                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="bottom" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" constant="-8" id="td4-CL-Abw"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
                             <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
                         </constraints>
@@ -314,7 +324,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNf-7v-LYA" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-background-bathroom.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-ne-BNM" userLabel="Background Image">
+                                    <imageView userInteractionEnabled="NO" alpha="0.59999999999999964" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-background-bathroom.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="vxa-ne-BNM" userLabel="Background Image">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -647,7 +657,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="refuge-background-bathroom.jpg" width="640" height="1075"/>
+        <image name="refuge-background-bathroom.jpg" width="600" height="1000"/>
         <image name="refuge-banner.png" width="1138" height="438"/>
         <image name="refuge-details-accessible.png" width="91" height="104"/>
         <image name="refuge-details-unisex.png" width="89" height="104"/>
