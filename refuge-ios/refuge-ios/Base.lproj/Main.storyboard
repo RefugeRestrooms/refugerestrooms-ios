@@ -66,10 +66,22 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Be4-Lj-wcm" userLabel="Credits View">
-                                <rect key="frame" x="548" y="484" width="44" height="44"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="556" y="492" width="44" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTE-Li-Tjh">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="rTE-Li-Tjh" firstAttribute="height" secondItem="Be4-Lj-wcm" secondAttribute="height" id="K4g-yM-H3i"/>
+                                    <constraint firstAttribute="trailing" secondItem="rTE-Li-Tjh" secondAttribute="trailing" id="LSI-oc-NnE"/>
+                                    <constraint firstAttribute="bottom" secondItem="rTE-Li-Tjh" secondAttribute="bottom" id="fcA-iP-Icb"/>
                                     <constraint firstAttribute="width" constant="44" id="gh9-SN-1Lr"/>
+                                    <constraint firstItem="rTE-Li-Tjh" firstAttribute="width" secondItem="Be4-Lj-wcm" secondAttribute="width" id="iNK-t3-tD4"/>
                                     <constraint firstAttribute="height" constant="44" id="tbl-5g-beo"/>
                                 </constraints>
                             </view>
@@ -82,8 +94,8 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="vq7-TL-G1d"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBI-kJ-mzV" userLabel="Search Results Table">
-                                <rect key="frame" x="0.0" y="44" width="600" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JBI-kJ-mzV" userLabel="Search Results Table">
+                                <rect key="frame" x="0.0" y="52" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,13 +119,13 @@
                             <constraint firstItem="aop-yh-Fzl" firstAttribute="leading" secondItem="ZNi-N8-Nwa" secondAttribute="leading" constant="8" id="O4E-5e-pfa"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="JBI-kJ-mzV" secondAttribute="bottom" id="OwU-yJ-LK5"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ppb-1l-hHB"/>
-                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" constant="-8" id="RL7-j9-NWa"/>
+                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="trailing" secondItem="ZNi-N8-Nwa" secondAttribute="trailing" id="RL7-j9-NWa"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="TPL-kS-El0"/>
                             <constraint firstAttribute="centerX" secondItem="fFb-8a-ZZ4" secondAttribute="centerX" id="dXp-Yf-v8a"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="kok-u6-trN"/>
                             <constraint firstItem="JBI-kJ-mzV" firstAttribute="top" secondItem="fFb-8a-ZZ4" secondAttribute="bottom" id="mWM-92-DA2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JBI-kJ-mzV" secondAttribute="trailing" constant="-16" id="o2D-Ng-pqQ"/>
-                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="bottom" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" constant="-8" id="td4-CL-Abw"/>
+                            <constraint firstItem="Be4-Lj-wcm" firstAttribute="bottom" secondItem="ZNi-N8-Nwa" secondAttribute="bottom" id="td4-CL-Abw"/>
                             <constraint firstItem="ZNi-N8-Nwa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="vat-vO-PSD"/>
                             <constraint firstAttribute="centerY" secondItem="ZNi-N8-Nwa" secondAttribute="centerY" id="xLg-Hr-Qcq"/>
                         </constraints>

@@ -24,7 +24,3 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 [Reachability] (https://github.com/tonymillion/Reachability)
 <br>
 [SPGooglePlacesAutocomplete] (https://github.com/spoletto/SPGooglePlacesAutocomplete)
-
-#### Other
-
-Images: http://retrorenovation.com/wp-content/uploads/2013/12/gerber-bahama-pink-toilet.jpg
