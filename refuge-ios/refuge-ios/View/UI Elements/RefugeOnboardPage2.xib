@@ -13,14 +13,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-onboard2.png" translatesAutoresizingMaskIntoConstraints="NO" id="tgl-sF-ERj" userLabel="Image">
-                    <rect key="frame" x="100" y="150" width="400" height="600"/>
+                    <rect key="frame" x="100" y="200" width="400" height="600"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="400" id="5Vt-5i-jkh"/>
                         <constraint firstAttribute="width" secondItem="tgl-sF-ERj" secondAttribute="height" multiplier="1:1.5" id="8Yv-bK-QOz"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap a map pin to see more information, including whether the restroom is unisex and/or accessible" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-do-Fff" userLabel="Description Label">
-                    <rect key="frame" x="8" y="20" width="584" height="122"/>
+                    <rect key="frame" x="8" y="20" width="584" height="148"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -31,9 +31,9 @@
             <constraints>
                 <constraint firstItem="oeV-do-Fff" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" symbolic="YES" id="1Qz-r8-yJP"/>
                 <constraint firstAttribute="centerX" secondItem="tgl-sF-ERj" secondAttribute="centerX" id="4pc-nM-ZPi"/>
-                <constraint firstItem="tgl-sF-ERj" firstAttribute="top" secondItem="oeV-do-Fff" secondAttribute="bottom" constant="8" symbolic="YES" id="IXi-RU-hfS"/>
+                <constraint firstItem="tgl-sF-ERj" firstAttribute="top" secondItem="oeV-do-Fff" secondAttribute="bottom" constant="32" id="IXi-RU-hfS"/>
                 <constraint firstItem="oeV-do-Fff" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="h2P-fi-42a"/>
-                <constraint firstAttribute="centerY" secondItem="tgl-sF-ERj" secondAttribute="centerY" constant="-150" id="lrS-ua-Y4G"/>
+                <constraint firstAttribute="centerY" secondItem="tgl-sF-ERj" secondAttribute="centerY" constant="-200" id="lrS-ua-Y4G"/>
                 <constraint firstItem="oeV-do-Fff" firstAttribute="centerX" secondItem="tgl-sF-ERj" secondAttribute="centerX" id="sTL-u3-TSF"/>
             </constraints>
         </view>

@@ -13,14 +13,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-onboard3.png" translatesAutoresizingMaskIntoConstraints="NO" id="NKI-Lx-LJO" userLabel="Image">
-                    <rect key="frame" x="100" y="150" width="400" height="600"/>
+                    <rect key="frame" x="100" y="200" width="400" height="600"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="NKI-Lx-LJO" secondAttribute="height" multiplier="1:1.5" id="QKn-2E-RBW"/>
                         <constraint firstAttribute="width" constant="400" id="z9S-by-1E7"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search allows you to look for restrooms around specific locations, great for everyday use or travel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="086-bu-bVy" userLabel="Description Label">
-                    <rect key="frame" x="8" y="20" width="584" height="122"/>
+                    <rect key="frame" x="8" y="20" width="584" height="148"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -33,8 +33,8 @@
                 <constraint firstItem="086-bu-bVy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="MHs-Rx-rYe"/>
                 <constraint firstAttribute="centerX" secondItem="NKI-Lx-LJO" secondAttribute="centerX" id="cvp-bl-MOF"/>
                 <constraint firstItem="086-bu-bVy" firstAttribute="centerX" secondItem="NKI-Lx-LJO" secondAttribute="centerX" id="l2g-gk-kwH"/>
-                <constraint firstItem="NKI-Lx-LJO" firstAttribute="top" secondItem="086-bu-bVy" secondAttribute="bottom" constant="8" symbolic="YES" id="tvD-ek-jPg"/>
-                <constraint firstAttribute="centerY" secondItem="NKI-Lx-LJO" secondAttribute="centerY" constant="-150" id="wA9-hC-rs5"/>
+                <constraint firstItem="NKI-Lx-LJO" firstAttribute="top" secondItem="086-bu-bVy" secondAttribute="bottom" constant="32" id="tvD-ek-jPg"/>
+                <constraint firstAttribute="centerY" secondItem="NKI-Lx-LJO" secondAttribute="centerY" constant="-200" id="wA9-hC-rs5"/>
             </constraints>
         </view>
     </objects>
