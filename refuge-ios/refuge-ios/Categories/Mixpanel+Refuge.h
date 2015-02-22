@@ -18,7 +18,8 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
     RefugeMixpanelErrorTypeResolvingPlacemarkFailed,
     RefugeMixpanelErrorTypeSearchAttemptFailed,
     RefugeMixpanelErrorTypePreloadingRestrooms,
-    RefugeMixpanelErrorTypeLocalStoreFetchFailed
+    RefugeMixpanelErrorTypeLocalStoreFetchFailed,
+    RefugeMixpanelErrorTypeOpeningLinkFailed
 };
 
 @class RefugeMapPin;

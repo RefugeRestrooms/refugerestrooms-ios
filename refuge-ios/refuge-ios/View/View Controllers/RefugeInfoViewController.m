@@ -8,6 +8,15 @@
 
 #import "RefugeInfoViewController.h"
 
+#import "Mixpanel+Refuge.h"
+
+NSString *RefugeInfoViewErrorDomain = @"RefugeInfoViewErrorDomain";
+static NSInteger const kRefugeInfoErrorCode = 0;
+
+static NSString * const kGithubLinkName = @"https://github.com/RefugeRestrooms/refugerestrooms";
+static NSString * const kFacebookLinkName = @"https://www.facebook.com/refugerestrooms";
+static NSString * const kTwitterLinkName = @"https://twitter.com/refugerestrooms";
+
 @interface RefugeInfoViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *githubImage;
@@ -31,17 +40,17 @@
 
 - (void)didTouchGithubImage
 {
-    NSLog(@"Github");
+    [self openLinkWithName:kGithubLinkName];
 }
 
 - (void)didTouchFacebookImage
 {
-    NSLog(@"Facebook");
+    [self openLinkWithName:kFacebookLinkName];
 }
 
 - (void)didTouchTwitterImage
 {
-    NSLog(@"Twitter");
+    [self openLinkWithName:kTwitterLinkName];
 }
 
 #pragma mark - Private methods
@@ -56,6 +65,26 @@
     
     UITapGestureRecognizer *twitterGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchTwitterImage)];
     [self.twitterImage addGestureRecognizer:twitterGestureRecognizer];
+}
+
+- (void)openLinkWithName:(NSString *)linkName
+{
+    NSURL *url = [NSURL URLWithString:linkName];
+    
+    if (![[UIApplication sharedApplication] openURL:url])
+    {
+        [self reportErrorOpeningLinkWithName:linkName];
+    }
+}
+
+- (void)reportErrorOpeningLinkWithName:(NSString *)linkName
+{
+    NSDictionary *userInfo = @{
+                               NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Could not open link: %@", linkName]
+                               };
+    NSError *error = [NSError errorWithDomain:RefugeInfoViewErrorDomain code:kRefugeInfoErrorCode userInfo:userInfo];
+    
+    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeOpeningLinkFailed];
 }
 
 @end

@@ -376,10 +376,11 @@
                                             <constraint firstAttribute="width" constant="32" id="bUU-jS-LoY"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-github.png" translatesAutoresizingMaskIntoConstraints="NO" id="Amh-Sf-qjK" userLabel="Facebook Image">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="Amh-Sf-qjK" userLabel="Facebook Image">
                                         <rect key="frame" x="268" y="0.0" width="32" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="4NB-ax-wOD"/>
+                                            <constraint firstAttribute="width" secondItem="Amh-Sf-qjK" secondAttribute="height" multiplier="1:1" id="I7p-wS-06L"/>
                                             <constraint firstAttribute="width" constant="44" id="a6q-9L-zBG"/>
                                         </constraints>
                                         <variation key="default">
@@ -389,9 +390,10 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-github.png" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-yK-m2K" userLabel="Twitter Image">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-twitter.png" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-yK-m2K" userLabel="Twitter Image">
                                         <rect key="frame" x="536" y="0.0" width="32" height="32"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="y4o-yK-m2K" secondAttribute="height" multiplier="1:1" id="9sy-kF-7rK"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="OLA-xh-lCS"/>
                                             <constraint firstAttribute="width" constant="44" id="gx0-ph-Qag"/>
                                         </constraints>
@@ -425,11 +427,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="K6P-Nf-nsG"/>
+                                        <exclude reference="h3u-L8-CqQ"/>
+                                        <exclude reference="FLQ-Wz-JVL"/>
                                     </mask>
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.84313725490196079" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="pme-wP-Qq8" firstAttribute="leading" secondItem="lC0-Av-zjc" secondAttribute="leading" id="61b-7r-9vQ"/>
                             <constraint firstItem="bcd-NL-tcl" firstAttribute="top" relation="lessThanOrEqual" secondItem="pme-wP-Qq8" secondAttribute="bottom" constant="8" symbolic="YES" id="AAL-Jk-nMh"/>
@@ -865,7 +869,9 @@
         <image name="refuge-banner.png" width="1138" height="438"/>
         <image name="refuge-details-accessible.png" width="91" height="104"/>
         <image name="refuge-details-unisex.png" width="89" height="104"/>
+        <image name="refuge-icon-facebook.png" width="556" height="556"/>
         <image name="refuge-icon-github.png" width="68" height="66"/>
+        <image name="refuge-icon-twitter.png" width="550" height="550"/>
         <image name="refuge-map-crosshair.png" width="258" height="258"/>
     </resources>
     <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>

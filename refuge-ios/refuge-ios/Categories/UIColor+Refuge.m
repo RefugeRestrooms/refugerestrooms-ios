@@ -24,7 +24,7 @@
 
 + (UIColor *)RefugePurpleLightColor
 {
-    return [UIColor colorWithRed:231.0/255.0 green:226.0/255.0 blue:237.0/255.0 alpha:1.0];
+    return [UIColor colorWithRed:229.0/255.0 green:215.0/255.0 blue:236.0/255.0 alpha:1.0];
 }
 
 + (UIColor *)RefugeRatingNegativeColor

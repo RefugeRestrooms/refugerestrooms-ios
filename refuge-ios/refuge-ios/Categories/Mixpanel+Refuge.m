@@ -151,6 +151,9 @@ static NSString * const kRefugePrefix = @"Refuge";
         case RefugeMixpanelErrorTypeLocalStoreFetchFailed:
             return @"Fetching Restrooms From Local Store Failed";
             break;
+        case RefugeMixpanelErrorTypeOpeningLinkFailed:
+            return @"Opening Link Failed";
+            break;
         default:
             return @"Error Type Not Found";
             break;
