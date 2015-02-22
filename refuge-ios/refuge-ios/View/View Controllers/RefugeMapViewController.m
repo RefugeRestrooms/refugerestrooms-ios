@@ -365,10 +365,6 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
     {
         [self.locationManager requestWhenInUseAuthorization];
     }
-    else
-    {
-        // TODO: Test prompting for location services on iOS 7 device
-    }
 }
 
 - (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate

@@ -12,7 +12,7 @@
 #import "RefugeMapPlace.h"
 #import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
 
-static NSString * const kApiKey = @"AIzaSyAKV9gg_l1jNL8Pep7FIwwI6FQ84ldsEKI";
+static NSString * const kApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
 static CLLocationDistance const kSearchQueryRadius = 100.0;
 
 @interface RefugeSearch ()
