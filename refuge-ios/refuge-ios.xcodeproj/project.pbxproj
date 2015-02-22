@@ -30,6 +30,7 @@
 		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
 		CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */; };
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
+		DC0964FE1A9A7115006D5B76 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */; };
 		DC28E0C81A99349900FEAAE6 /* refuge-onboard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */; };
 		DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */; };
 		DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */; };
@@ -158,6 +159,7 @@
 		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
+		DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
 		DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard4.png"; sourceTree = "<group>"; };
 		DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard3.png"; sourceTree = "<group>"; };
 		DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard2.png"; sourceTree = "<group>"; };
@@ -337,7 +339,6 @@
 				CEA23FFE1A84278B0083510F /* RefugeAppState.m */,
 				DC3A1CB41A927F5100445D33 /* Images.xcassets */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
-				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
 				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
@@ -492,6 +493,7 @@
 			children = (
 				DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */,
 				DC8F39BE1A9810B300A90B13 /* refuge-banner.png */,
+				DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */,
 				DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */,
 				DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */,
 				DC6284641A9978E60038E604 /* refuge-icon-facebook.png */,
@@ -510,6 +512,7 @@
 		DC8F39DB1A9810F800A90B13 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				DC8F39DE1A9810F800A90B13 /* RefugeMap.h */,
 				DC8F39DF1A9810F800A90B13 /* RefugeMap.m */,
 				DC8F39E01A9810F800A90B13 /* RefugeMapPin.h */,
@@ -654,6 +657,7 @@
 				DC8F39F21A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */,
 				DC8F39D11A9810B300A90B13 /* refuge-map-pin.png in Resources */,
 				DC62845F1A996BD90038E604 /* refuge-icon-github.png in Resources */,
+				DC0964FE1A9A7115006D5B76 /* refuge-credit-google.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +835,7 @@
 				CED0CB661A82A6D400F7F3D8 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -918,6 +923,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -933,6 +939,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -942,6 +950,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -951,6 +960,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

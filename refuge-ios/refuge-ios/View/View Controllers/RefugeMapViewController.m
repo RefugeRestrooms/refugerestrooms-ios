@@ -38,7 +38,7 @@ static NSString * const kHudTextSyncError = @"Sync error :(";
 static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
-static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search. Please check your Internet connection.";
+static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search.";
 static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled.";
 static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
 
