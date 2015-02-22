@@ -542,6 +542,7 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Qvd-Xb-ezC"/>
+                                                <exclude reference="YAx-iu-vRl"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -783,6 +784,7 @@
                                     <constraint firstItem="oC3-eQ-lS0" firstAttribute="leading" secondItem="m3W-kN-kjI" secondAttribute="leading" id="iHZ-rI-zee"/>
                                     <constraint firstItem="wl1-cN-gom" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YNf-7v-LYA" secondAttribute="leading" constant="20" symbolic="YES" id="jQk-sd-9gG"/>
                                     <constraint firstItem="U1v-97-ERN" firstAttribute="centerX" secondItem="YNf-7v-LYA" secondAttribute="centerX" id="llW-mk-vZs"/>
+                                    <constraint firstAttribute="bottom" secondItem="vxa-ne-BNM" secondAttribute="bottom" id="m8g-XV-ojZ"/>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="top" secondItem="cRe-Pf-iPF" secondAttribute="bottom" id="mdG-21-xHS"/>
                                     <constraint firstAttribute="centerX" secondItem="wl1-cN-gom" secondAttribute="centerX" id="oWc-On-Oet"/>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="trailing" secondItem="cRe-Pf-iPF" secondAttribute="trailing" id="qzj-iJ-ZVj"/>
@@ -797,6 +799,7 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="9p7-DP-1RC"/>
+                                        <exclude reference="T9A-iv-R3w"/>
                                         <exclude reference="d0N-KC-hh8"/>
                                         <exclude reference="gBM-tP-g0r"/>
                                         <exclude reference="f5P-od-CAz"/>
@@ -808,9 +811,10 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.8980392157" green="0.84313725490000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YNf-7v-LYA" firstAttribute="height" secondItem="J1p-Qb-QUp" secondAttribute="height" id="95n-6B-Oys"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YNf-7v-LYA" secondAttribute="trailing" constant="-16" id="OuZ-va-AbL"/>
                             <constraint firstItem="YNf-7v-LYA" firstAttribute="top" secondItem="Btn-wa-a94" secondAttribute="bottom" id="WbF-zh-VlT"/>
                             <constraint firstItem="YNf-7v-LYA" firstAttribute="leading" secondItem="J1p-Qb-QUp" secondAttribute="leadingMargin" constant="-16" id="i6h-Kc-mxn"/>
