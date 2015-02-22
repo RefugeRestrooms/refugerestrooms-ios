@@ -296,16 +296,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="lC0-Av-zjc" userLabel="Summary View">
-                                <rect key="frame" x="16" y="0.0" width="568" height="138"/>
+                                <rect key="frame" x="16" y="0.0" width="568" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="What is REFUGE restrooms?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qft-lI-wde" userLabel="Summary Title">
-                                        <rect key="frame" x="20" y="20" width="548" height="29"/>
+                                        <rect key="frame" x="0.0" y="20" width="568" height="29"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3m2-uT-6NU" userLabel="Summary Text">
-                                        <rect key="frame" x="20" y="57" width="548" height="81"/>
+                                        <rect key="frame" x="0.0" y="57" width="568" height="173"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <string key="text">REFUGE is an application that seeks to facilitate safe restroom access for transgender, intersex, and gender nonconforming individuals.</string>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -316,7 +316,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="3m2-uT-6NU" secondAttribute="trailing" id="37h-WC-PJK"/>
-                                    <constraint firstItem="qft-lI-wde" firstAttribute="leading" secondItem="lC0-Av-zjc" secondAttribute="leading" constant="20" symbolic="YES" id="6qX-7X-7Ce"/>
+                                    <constraint firstItem="qft-lI-wde" firstAttribute="leading" secondItem="lC0-Av-zjc" secondAttribute="leading" id="6qX-7X-7Ce"/>
                                     <constraint firstAttribute="bottom" secondItem="3m2-uT-6NU" secondAttribute="bottom" id="B3q-el-iFU"/>
                                     <constraint firstItem="qft-lI-wde" firstAttribute="top" secondItem="lC0-Av-zjc" secondAttribute="top" constant="20" symbolic="YES" id="Bg3-BU-0Zu"/>
                                     <constraint firstAttribute="trailing" secondItem="qft-lI-wde" secondAttribute="trailing" id="Wm6-8b-374"/>
@@ -333,16 +333,16 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="pme-wP-Qq8" userLabel="Issues View">
-                                <rect key="frame" x="16" y="146" width="568" height="138"/>
+                                <rect key="frame" x="16" y="238" width="568" height="230"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Issues?" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-Sv-mpc" userLabel="Issues Title">
-                                        <rect key="frame" x="20" y="20" width="88" height="29"/>
+                                        <rect key="frame" x="0.0" y="20" width="88" height="29"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Contact REFUGE at http://refugerestrooms.com/contact or submit an issue on Github" translatesAutoresizingMaskIntoConstraints="NO" id="WkX-kD-FRO" userLabel="Issues Text">
-                                        <rect key="frame" x="20" y="57" width="548" height="81"/>
+                                        <rect key="frame" x="0.0" y="57" width="568" height="173"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -356,7 +356,7 @@
                                     <constraint firstAttribute="trailing" secondItem="WkX-kD-FRO" secondAttribute="trailing" id="Mxw-ap-dEx"/>
                                     <constraint firstItem="A1c-Sv-mpc" firstAttribute="top" secondItem="pme-wP-Qq8" secondAttribute="top" constant="20" symbolic="YES" id="hMY-uv-2iM"/>
                                     <constraint firstItem="WkX-kD-FRO" firstAttribute="top" secondItem="A1c-Sv-mpc" secondAttribute="top" constant="8" id="nrV-Vm-kM6"/>
-                                    <constraint firstItem="A1c-Sv-mpc" firstAttribute="leading" secondItem="pme-wP-Qq8" secondAttribute="leading" constant="20" symbolic="YES" id="qKJ-QN-hOw"/>
+                                    <constraint firstItem="A1c-Sv-mpc" firstAttribute="leading" secondItem="pme-wP-Qq8" secondAttribute="leading" id="qKJ-QN-hOw"/>
                                     <constraint firstItem="WkX-kD-FRO" firstAttribute="top" secondItem="A1c-Sv-mpc" secondAttribute="bottom" constant="8" symbolic="YES" id="skf-fT-Fmi"/>
                                     <constraint firstItem="A1c-Sv-mpc" firstAttribute="top" secondItem="pme-wP-Qq8" secondAttribute="top" constant="20" symbolic="YES" id="v4d-Lb-K0q"/>
                                     <constraint firstItem="WkX-kD-FRO" firstAttribute="leading" secondItem="A1c-Sv-mpc" secondAttribute="leading" id="vy7-Ce-uKJ"/>
@@ -368,11 +368,74 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bcd-NL-tcl" userLabel="Social Media View">
+                                <rect key="frame" x="16" y="476" width="568" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-github.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Hk-62-ZPJ" userLabel="Github Image">
+                                        <rect key="frame" x="8" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="bUU-jS-LoY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-github.png" translatesAutoresizingMaskIntoConstraints="NO" id="Amh-Sf-qjK" userLabel="Facebook Image">
+                                        <rect key="frame" x="262" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="4NB-ax-wOD"/>
+                                            <constraint firstAttribute="width" constant="44" id="a6q-9L-zBG"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4NB-ax-wOD"/>
+                                                <exclude reference="a6q-9L-zBG"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-icon-github.png" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-yK-m2K" userLabel="Twitter Image">
+                                        <rect key="frame" x="524" y="0.0" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="OLA-xh-lCS"/>
+                                            <constraint firstAttribute="width" constant="44" id="gx0-ph-Qag"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="OLA-xh-lCS"/>
+                                                <exclude reference="gx0-ph-Qag"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Amh-Sf-qjK" firstAttribute="width" secondItem="3Hk-62-ZPJ" secondAttribute="width" id="FLQ-Wz-JVL"/>
+                                    <constraint firstItem="y4o-yK-m2K" firstAttribute="top" secondItem="bcd-NL-tcl" secondAttribute="top" id="HB0-gx-pam"/>
+                                    <constraint firstAttribute="centerX" secondItem="Amh-Sf-qjK" secondAttribute="centerX" id="IIk-QP-uVn"/>
+                                    <constraint firstItem="3Hk-62-ZPJ" firstAttribute="leading" secondItem="bcd-NL-tcl" secondAttribute="leading" constant="-8" id="K6P-Nf-nsG"/>
+                                    <constraint firstItem="Amh-Sf-qjK" firstAttribute="bottom" secondItem="3Hk-62-ZPJ" secondAttribute="bottom" id="Np5-YJ-ywB"/>
+                                    <constraint firstItem="Amh-Sf-qjK" firstAttribute="top" secondItem="3Hk-62-ZPJ" secondAttribute="top" id="P8c-se-3NT"/>
+                                    <constraint firstItem="3Hk-62-ZPJ" firstAttribute="top" secondItem="bcd-NL-tcl" secondAttribute="top" id="Pg4-iB-i9l"/>
+                                    <constraint firstAttribute="centerY" secondItem="3Hk-62-ZPJ" secondAttribute="centerY" id="Uag-f1-tcR"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Hk-62-ZPJ" secondAttribute="bottom" id="dgL-s6-9Xo"/>
+                                    <constraint firstAttribute="trailing" secondItem="y4o-yK-m2K" secondAttribute="trailing" id="dzU-yO-era"/>
+                                    <constraint firstItem="3Hk-62-ZPJ" firstAttribute="width" secondItem="y4o-yK-m2K" secondAttribute="width" id="h3u-L8-CqQ"/>
+                                    <constraint firstAttribute="centerY" secondItem="y4o-yK-m2K" secondAttribute="centerY" id="hEh-BZ-LFt"/>
+                                    <constraint firstAttribute="height" constant="44" id="jpi-Uu-ySL"/>
+                                    <constraint firstAttribute="bottom" secondItem="y4o-yK-m2K" secondAttribute="bottom" id="kHm-IN-379"/>
+                                    <constraint firstItem="3Hk-62-ZPJ" firstAttribute="leading" secondItem="bcd-NL-tcl" secondAttribute="leadingMargin" id="sQH-Mf-3wq"/>
+                                    <constraint firstAttribute="centerY" secondItem="Amh-Sf-qjK" secondAttribute="centerY" id="tXW-gV-Zuj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K6P-Nf-nsG"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pme-wP-Qq8" firstAttribute="leading" secondItem="lC0-Av-zjc" secondAttribute="leading" id="61b-7r-9vQ"/>
+                            <constraint firstItem="bcd-NL-tcl" firstAttribute="top" relation="lessThanOrEqual" secondItem="pme-wP-Qq8" secondAttribute="bottom" constant="8" symbolic="YES" id="AAL-Jk-nMh"/>
                             <constraint firstItem="pme-wP-Qq8" firstAttribute="top" secondItem="lC0-Av-zjc" secondAttribute="bottom" constant="8" symbolic="YES" id="D9h-ex-gxC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bcd-NL-tcl" secondAttribute="trailing" id="Fcw-OU-TCg"/>
                             <constraint firstAttribute="height" secondItem="lC0-Av-zjc" secondAttribute="height" multiplier="3:1" priority="750" id="IMy-9q-63v"/>
                             <constraint firstItem="lC0-Av-zjc" firstAttribute="leading" secondItem="ght-5y-Dfj" secondAttribute="leadingMargin" id="Rkg-Ks-A8x"/>
                             <constraint firstAttribute="width" secondItem="lC0-Av-zjc" secondAttribute="width" id="SAB-s1-ByE"/>
@@ -380,7 +443,11 @@
                             <constraint firstItem="lC0-Av-zjc" firstAttribute="top" secondItem="LEb-H3-yFU" secondAttribute="bottom" id="Twu-hA-9TJ"/>
                             <constraint firstItem="s7e-6D-mo8" firstAttribute="top" secondItem="pme-wP-Qq8" secondAttribute="bottom" constant="179" id="Vv7-eC-psR"/>
                             <constraint firstItem="pme-wP-Qq8" firstAttribute="top" secondItem="LEb-H3-yFU" secondAttribute="bottom" constant="178" id="dCK-uJ-QFb"/>
+                            <constraint firstAttribute="centerX" secondItem="bcd-NL-tcl" secondAttribute="centerX" id="dVQ-kx-UKH"/>
+                            <constraint firstItem="bcd-NL-tcl" firstAttribute="leading" secondItem="ght-5y-Dfj" secondAttribute="leadingMargin" id="dnK-8Z-JME"/>
+                            <constraint firstItem="s7e-6D-mo8" firstAttribute="top" secondItem="bcd-NL-tcl" secondAttribute="bottom" constant="16" id="fM9-Od-TTk"/>
                             <constraint firstItem="pme-wP-Qq8" firstAttribute="trailing" secondItem="lC0-Av-zjc" secondAttribute="trailing" id="oOf-aY-dzV"/>
+                            <constraint firstItem="bcd-NL-tcl" firstAttribute="top" secondItem="pme-wP-Qq8" secondAttribute="bottom" constant="-150" id="p1B-vq-OOv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lC0-Av-zjc" secondAttribute="trailing" id="pmO-W4-fvj"/>
                         </constraints>
                         <variation key="default">
@@ -388,6 +455,7 @@
                                 <exclude reference="IMy-9q-63v"/>
                                 <exclude reference="SAB-s1-ByE"/>
                                 <exclude reference="dCK-uJ-QFb"/>
+                                <exclude reference="p1B-vq-OOv"/>
                                 <exclude reference="Vv7-eC-psR"/>
                             </mask>
                         </variation>
@@ -787,29 +855,13 @@
             </objects>
             <point key="canvasLocation" x="203" y="-354"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Zue-hY-U3d">
-            <objects>
-                <viewController id="Pie-Xg-PGf" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8U6-XF-Omv"/>
-                        <viewControllerLayoutGuide type="bottom" id="jhU-P2-FSh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RZt-JR-ypx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0vB-v8-day" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="refuge-background-bathroom.jpg" width="600" height="1000"/>
         <image name="refuge-banner.png" width="1138" height="438"/>
         <image name="refuge-details-accessible.png" width="91" height="104"/>
         <image name="refuge-details-unisex.png" width="89" height="104"/>
+        <image name="refuge-icon-github.png" width="68" height="66"/>
         <image name="refuge-map-crosshair.png" width="258" height="258"/>
     </resources>
     <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>

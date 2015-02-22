@@ -37,6 +37,8 @@
 		DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC62845F1A996BD90038E604 /* refuge-icon-github.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62845E1A996BD90038E604 /* refuge-icon-github.png */; };
+		DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
+		DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39581A980C5F00A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
 		DC8F39591A980C6000A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
@@ -161,6 +163,8 @@
 		DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC62845E1A996BD90038E604 /* refuge-icon-github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-github.png"; sourceTree = "<group>"; };
+		DC6284601A996D000038E604 /* RefugeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeInfoViewController.h; sourceTree = "<group>"; };
+		DC6284611A996D000038E604 /* RefugeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeInfoViewController.m; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
 		DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -515,6 +519,8 @@
 		DC8F39F41A98113A00A90B13 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC6284601A996D000038E604 /* RefugeInfoViewController.h */,
+				DC6284611A996D000038E604 /* RefugeInfoViewController.m */,
 				DC8F39F51A98113A00A90B13 /* RefugeMapViewController.h */,
 				DC8F39F61A98113A00A90B13 /* RefugeMapViewController.m */,
 				DC8F39F71A98113A00A90B13 /* RefugeNewRestroomViewController.h */,
@@ -723,6 +729,7 @@
 				DC8F399D1A980E5800A90B13 /* RefugeSerialization.m in Sources */,
 				DC8F395E1A980C6000A90B13 /* UIColor+Refuge.m in Sources */,
 				DC8F397F1A980D5E00A90B13 /* RefugeRestroomManager.m in Sources */,
+				DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */,
 				DC8F397B1A980D5E00A90B13 /* RefugeHTTPSessionManager.m in Sources */,
 				DC8F395C1A980C6000A90B13 /* NSDate+Refuge.m in Sources */,
 				DC8F397D1A980D5E00A90B13 /* RefugeRestroomCommunicator.m in Sources */,
@@ -765,6 +772,7 @@
 				DC8F39FE1A98113A00A90B13 /* RefugeMapViewController.m in Sources */,
 				DC8F39591A980C6000A90B13 /* iRate+Refuge.m in Sources */,
 				DC8F3A021A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */,
+				DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */,
 				DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
 				DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */,
