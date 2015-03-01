@@ -1,7 +1,7 @@
 Refuge_iOS
 ==========
 
-iOS client for refugerestrooms.org
+Download on the App Store: http://bit.ly/refuge-ios
 
 #### Build Status
 
