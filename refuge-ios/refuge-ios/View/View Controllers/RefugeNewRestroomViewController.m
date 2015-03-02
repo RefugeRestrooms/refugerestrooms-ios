@@ -8,7 +8,7 @@
 
 #import "RefugeNewRestroomViewController.h"
 
-static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new";
+static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new?mobile=true";
 
 @interface RefugeNewRestroomViewController ()
 
