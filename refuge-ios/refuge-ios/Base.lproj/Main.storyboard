@@ -779,7 +779,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Name Restroom Name Restroom Name Restroom Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pf-iPF" userLabel="Name Label">
                                         <rect key="frame" x="20" y="6" width="560" height="100"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="dll-TL-egy"/>
+                                            <constraint firstAttribute="height" constant="100" id="dll-TL-egy"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
