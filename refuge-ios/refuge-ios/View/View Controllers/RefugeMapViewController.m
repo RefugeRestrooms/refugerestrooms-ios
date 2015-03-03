@@ -38,9 +38,10 @@ static NSString * const kHudTextSyncError = @"Sync error :(";
 static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
-static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search.";
-static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled.";
+static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search";
+static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled";
 static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
+static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access is disabled. If you'd like to authorize it, please go to your device settings";
 
 @interface RefugeMapViewController ()
 
@@ -361,9 +362,22 @@ static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map select
 
 - (void)promptToAllowLocationServices
 {
+    CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
+    
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
     {
         [self.locationManager requestWhenInUseAuthorization];
+    }
+    else // iOS 7
+    {
+        if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorized)
+        {
+            [self.locationManager startUpdatingLocation];
+        }
+        else
+        {
+            [self displayAlertForWithMessage:kErrorTextLocationServicesFailiOS7];
+        }
     }
 }
 
