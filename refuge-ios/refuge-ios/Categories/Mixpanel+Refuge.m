@@ -154,6 +154,9 @@ static NSString * const kRefugePrefix = @"Refuge";
         case RefugeMixpanelErrorTypeOpeningLinkFailed:
             return @"Opening Link Failed";
             break;
+        case RefugeMixpanelErrorTypeLoadingNewRestroomWebViewFailed:
+            return @"Loading New Restroom Web View Failed";
+            break;
         default:
             return @"Error Type Not Found";
             break;
