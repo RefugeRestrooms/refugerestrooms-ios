@@ -32,9 +32,6 @@ static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingMo
 static NSString * const kSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
 static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
-static NSString * const kHudTextSyncing = @"Syncing";
-static NSString * const kHudTextSyncComplete = @"Sync complete!";
-static NSString * const kHudTextSyncError = @"Sync error :(";
 static NSString * const kHudTextNoInternet = @"Internet unavailable";
 static NSString * const kHudTextLocationNotFound = @"Location not found";
 static NSString * const kReachabilityTestURL = @"www.google.com";
