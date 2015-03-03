@@ -72,7 +72,6 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     [super viewDidLoad];
     
     self.appState = [[RefugeAppState alloc] init];
-//    [self configureHUD];
     [self configureLocationManager];
     [self configureMap];
     [self configureSearch];
