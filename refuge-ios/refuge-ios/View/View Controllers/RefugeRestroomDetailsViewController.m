@@ -101,7 +101,13 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 {
     int numUpvotes = [self.restroom.numUpvotes intValue];
     int numDownvotes = [self.restroom.numDownvotes intValue];
-    int percentPositive = (numUpvotes / (numUpvotes + numDownvotes)) * 100;
+    int sumVotes = numUpvotes + numDownvotes;
+    int percentPositive = 0;
+    
+    if(sumVotes > 0)
+    {
+        percentPositive = (numUpvotes / sumVotes) * 100;
+    }
     
     switch (self.restroomRatingType) {
         case RefugeRestroomRatingTypeNone:
