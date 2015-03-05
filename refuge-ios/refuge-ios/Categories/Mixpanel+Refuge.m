@@ -107,10 +107,10 @@ static NSString *const kRefugePrefix = @"Refuge";
 	[[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Search Successfully Executed", kRefugePrefix]
 	                      properties:@{
 	     [NSString stringWithFormat:@"%@ Search String", kRefugePrefix] : searchString,
-	     [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : (!searchName) ? @"" : searchName,
-	     [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : (!searchCity) ? @"" : searchCity,
-	     [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : (!searchState) ? @"" : searchState,
-	     [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : (!searchCountry) ? @"" : searchCountry
+	     [NSString stringWithFormat:@"%@ Search Name", kRefugePrefix] : (searchName == nil) ? @"" : searchName,
+	     [NSString stringWithFormat:@"%@ Search City", kRefugePrefix] : (searchCity == nil) ? @"" : searchCity,
+	     [NSString stringWithFormat:@"%@ Search State", kRefugePrefix] : (searchState == nil) ? @"" : searchState,
+	     [NSString stringWithFormat:@"%@ Search Country", kRefugePrefix] : (searchCountry == nil) ? @"" : searchCountry
 	 }
 	];
 }
