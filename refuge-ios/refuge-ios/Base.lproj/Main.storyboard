@@ -777,7 +777,7 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Name Restroom Name Restroom Name Restroom Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pf-iPF" userLabel="Name Label">
-                                        <rect key="frame" x="20" y="6" width="560" height="100"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="dll-TL-egy"/>
                                         </constraints>
@@ -786,7 +786,7 @@
                                         <color key="highlightedColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Street Address Restroom Street Address Restroom Street Address Restroom Street Address Restroom Street Address " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-kN-kjI" userLabel="Street Label">
-                                        <rect key="frame" x="20" y="106" width="560" height="50"/>
+                                        <rect key="frame" x="20" y="100" width="560" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="TN3-dM-3yw"/>
                                         </constraints>
@@ -795,13 +795,13 @@
                                         <color key="highlightedColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom City, State, Country" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-eQ-lS0" userLabel="City/State/Country Label">
-                                        <rect key="frame" x="20" y="164" width="560" height="19"/>
+                                        <rect key="frame" x="20" y="158" width="560" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-cN-gom" userLabel="Characteristics View">
-                                        <rect key="frame" x="245" y="199" width="201" height="110"/>
+                                        <rect key="frame" x="245" y="193" width="201" height="110"/>
                                         <subviews>
                                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -834,10 +834,10 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLu-QH-mi8" userLabel="Images View">
                                                 <rect key="frame" x="110" y="0.0" width="91" height="110"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="refuge-details-unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-h9-kAf" userLabel="Image 1">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" image="refuge-details-unisex.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ztb-h9-kAf" userLabel="Top Image">
                                                         <rect key="frame" x="0.0" y="0.0" width="91" height="55"/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-details-accessible.png" translatesAutoresizingMaskIntoConstraints="NO" id="sob-jP-kLl" userLabel="Image 2">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="refuge-details-accessible.png" translatesAutoresizingMaskIntoConstraints="NO" id="sob-jP-kLl" userLabel="Bottom Image">
                                                         <rect key="frame" x="0.0" y="63" width="91" height="55"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </imageView>
@@ -883,7 +883,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-pZ-wwk" userLabel="Directions View">
-                                        <rect key="frame" x="20" y="325" width="560" height="80"/>
+                                        <rect key="frame" x="20" y="319" width="560" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Directions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-V2-dtw" userLabel="Directions Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
@@ -936,7 +936,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-7B-kid" userLabel="Comments View">
-                                        <rect key="frame" x="8" y="413" width="572" height="80"/>
+                                        <rect key="frame" x="8" y="407" width="572" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="572" translatesAutoresizingMaskIntoConstraints="NO" id="6PL-nq-GM7" userLabel="Comments Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="572" height="24"/>
@@ -1022,7 +1022,7 @@
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leading" constant="20" symbolic="YES" id="u1V-59-smn"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wl1-cN-gom" secondAttribute="trailing" constant="20" symbolic="YES" id="uhP-s9-Oz0"/>
                                     <constraint firstAttribute="trailing" secondItem="cRe-Pf-iPF" secondAttribute="trailing" constant="20" symbolic="YES" id="vCC-Fk-VVb"/>
-                                    <constraint firstItem="cRe-Pf-iPF" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" constant="6" id="vF6-4M-tVY"/>
+                                    <constraint firstItem="cRe-Pf-iPF" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" id="vF6-4M-tVY"/>
                                     <constraint firstItem="cRe-Pf-iPF" firstAttribute="leading" secondItem="KrP-pZ-wwk" secondAttribute="leading" id="xFr-oK-SNj"/>
                                     <constraint firstAttribute="trailing" secondItem="vxa-ne-BNM" secondAttribute="trailing" id="zT0-C7-EzL"/>
                                 </constraints>
