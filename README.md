@@ -1,5 +1,5 @@
-Refuge_iOS
-==========
+Refuge Restrooms for iOS
+========================
 
 Download on the App Store: http://bit.ly/refuge-ios
 
@@ -13,7 +13,7 @@ Production Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge
 <br>
 Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge-ios.svg?branch=development)](https://travis-ci.org/RefugeRestrooms/refuge-ios)
 
-#### Dependencies
+#### Cocoapods
 
 [ADClusterMapView] (https://github.com/applidium/ADClusterMapView)
 <br>
