@@ -3,6 +3,7 @@ Refuge Restrooms for iOS - Contributors Guide
 
 #### Getting Started
 
+* If there isn't an Issue filed for what you're working on, first [create a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new)
 * Fork the repository
 * Create a branch specific to the work you're going to do [See: #branch-naming-conventions](#branch-naming-conventions)
 * When finished with changes, create a Pull Request against the `develoment` branch of the `refuge-ios` repository
@@ -11,11 +12,11 @@ Refuge Restrooms for iOS - Contributors Guide
 
 Check out the [list of open issues](https://github.com/RefugeRestrooms/refuge-ios/issues) for ideas of what to work on. The most pressing issues can be found in the [most current milestone](https://github.com/RefugeRestrooms/refuge-ios/milestones) that does not end in `x`. i.e. If there is a milestone named `Launch v1.1.1` and a milestone named `Launch v1.1.x`, the issues in `Launch v1.1.1` are more pressing.
 
-If you have an issue that is not listed, first [make a new issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new) so your effort can be tracked.
+If you are working on something that is not listed, first [make a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new) so your effort can be tracked.
 
 #### Branch naming conventions
 
-Make a new branch for each individual isse you are addressing. You should either named the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
+Make a new branch for each individual issue you are addressing. You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
 
 * `bugfix` - This branch is addressing a bug
 * `design` - This branch is introducing new design work (if fixing previous design work, use `bugfix`)
