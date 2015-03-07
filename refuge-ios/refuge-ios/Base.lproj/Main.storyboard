@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DoU-nR-cwu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DoU-nR-cwu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -777,31 +777,31 @@
                                         </variation>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Name Restroom Name Restroom Name Restroom Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-Pf-iPF" userLabel="Name Label">
-                                        <rect key="frame" x="20" y="0.0" width="560" height="100"/>
+                                        <rect key="frame" x="20" y="0.0" width="560" height="72"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="dll-TL-egy"/>
+                                            <constraint firstAttribute="height" constant="72" id="dll-TL-egy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom Street Address Restroom Street Address Restroom Street Address Restroom Street Address Restroom Street Address " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="m3W-kN-kjI" userLabel="Street Label">
-                                        <rect key="frame" x="20" y="100" width="560" height="50"/>
+                                        <rect key="frame" x="20" y="72" width="560" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="TN3-dM-3yw"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="TN3-dM-3yw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="highlightedColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Restroom City, State, Country" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="oC3-eQ-lS0" userLabel="City/State/Country Label">
-                                        <rect key="frame" x="20" y="158" width="560" height="19"/>
+                                        <rect key="frame" x="20" y="125" width="560" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-cN-gom" userLabel="Characteristics View">
-                                        <rect key="frame" x="245" y="193" width="201" height="110"/>
+                                        <rect key="frame" x="245" y="152" width="201" height="110"/>
                                         <subviews>
                                             <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-97-ERN" userLabel="Rating View">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
@@ -883,7 +883,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-pZ-wwk" userLabel="Directions View">
-                                        <rect key="frame" x="20" y="319" width="560" height="80"/>
+                                        <rect key="frame" x="20" y="270" width="560" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Directions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="560" translatesAutoresizingMaskIntoConstraints="NO" id="F8f-V2-dtw" userLabel="Directions Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="24"/>
@@ -900,7 +900,7 @@
                                                 </variation>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czX-Pe-dSa" userLabel="Directions Text View">
-                                                <rect key="frame" x="0.0" y="28" width="560" height="52"/>
+                                                <rect key="frame" x="0.0" y="28" width="560" height="47"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
@@ -927,7 +927,7 @@
                                             <constraint firstAttribute="bottom" secondItem="czX-Pe-dSa" secondAttribute="bottom" id="ajN-1g-RXm"/>
                                             <constraint firstAttribute="trailing" secondItem="F8f-V2-dtw" secondAttribute="trailing" id="eh3-ZT-Bag"/>
                                             <constraint firstItem="czX-Pe-dSa" firstAttribute="top" secondItem="KrP-pZ-wwk" secondAttribute="top" constant="15" id="gQB-Hi-zXP"/>
-                                            <constraint firstAttribute="height" priority="750" constant="80" id="pqO-83-8im"/>
+                                            <constraint firstAttribute="height" priority="750" constant="75" id="pqO-83-8im"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -936,7 +936,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4I-7B-kid" userLabel="Comments View">
-                                        <rect key="frame" x="8" y="407" width="572" height="80"/>
+                                        <rect key="frame" x="8" y="353" width="572" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="572" translatesAutoresizingMaskIntoConstraints="NO" id="6PL-nq-GM7" userLabel="Comments Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="572" height="24"/>
@@ -953,7 +953,7 @@
                                                 </variation>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsy-ut-Jtj" userLabel="Comments Text View">
-                                                <rect key="frame" x="10" y="28" width="562" height="52"/>
+                                                <rect key="frame" x="10" y="28" width="562" height="47"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -991,10 +991,10 @@
                                     <constraint firstItem="vxa-ne-BNM" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leading" id="2QK-l9-KTW"/>
                                     <constraint firstItem="oC3-eQ-lS0" firstAttribute="trailing" secondItem="m3W-kN-kjI" secondAttribute="trailing" id="4eD-h2-bRH"/>
                                     <constraint firstItem="m3W-kN-kjI" firstAttribute="leading" secondItem="cRe-Pf-iPF" secondAttribute="leading" id="7fp-oi-eJL"/>
-                                    <constraint firstItem="KrP-pZ-wwk" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="bottom" priority="750" constant="16" id="98z-5r-7eX"/>
+                                    <constraint firstItem="KrP-pZ-wwk" firstAttribute="top" secondItem="wl1-cN-gom" secondAttribute="bottom" priority="750" constant="8" symbolic="YES" id="98z-5r-7eX"/>
                                     <constraint firstItem="vxa-ne-BNM" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" id="9p7-DP-1RC"/>
                                     <constraint firstItem="P4I-7B-kid" firstAttribute="leading" secondItem="YNf-7v-LYA" secondAttribute="leadingMargin" id="GWN-36-ESO"/>
-                                    <constraint firstItem="wl1-cN-gom" firstAttribute="top" secondItem="oC3-eQ-lS0" secondAttribute="bottom" constant="16" id="H8F-2i-ESo"/>
+                                    <constraint firstItem="wl1-cN-gom" firstAttribute="top" secondItem="oC3-eQ-lS0" secondAttribute="bottom" constant="8" symbolic="YES" id="H8F-2i-ESo"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wl1-cN-gom" secondAttribute="bottom" constant="20" symbolic="YES" id="IWK-2a-e4x"/>
                                     <constraint firstItem="czX-Pe-dSa" firstAttribute="leading" secondItem="Wsy-ut-Jtj" secondAttribute="leading" constant="2" id="LCV-d6-733"/>
                                     <constraint firstItem="vxa-ne-BNM" firstAttribute="top" secondItem="YNf-7v-LYA" secondAttribute="top" id="PBz-CV-pfA"/>
