@@ -42,6 +42,7 @@
 		DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
 		DC6284651A9978E60038E604 /* refuge-icon-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6284641A9978E60038E604 /* refuge-icon-facebook.png */; };
 		DC62846D1A9984CA0038E604 /* refuge-icon-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */; };
+		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39581A980C5F00A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
 		DC8F39591A980C6000A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
@@ -171,6 +172,7 @@
 		DC6284611A996D000038E604 /* RefugeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeInfoViewController.m; sourceTree = "<group>"; };
 		DC6284641A9978E60038E604 /* refuge-icon-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-facebook.png"; sourceTree = "<group>"; };
 		DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-twitter.png"; sourceTree = "<group>"; };
+		DC8354221AABAED3009BEA58 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
 		DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
+				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
 				DCE6BB8C1A96CD08006B9B8A /* Crashlytics.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
@@ -268,6 +271,7 @@
 			children = (
 				CEA240271A8702E20083510F /* CoreLocation.framework */,
 				DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */,
+				DC8354221AABAED3009BEA58 /* Fabric.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
 				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
 			);
@@ -722,7 +726,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 55973203d8a92c52515240df5e712184276733b6 f43afcc2f2d159ed7651cb0630e0afbaa839d7853b8eae2bee864413ab2dfd14";
+			shellScript = "./Fabric.framework/run 55973203d8a92c52515240df5e712184276733b6 f43afcc2f2d159ed7651cb0630e0afbaa839d7853b8eae2bee864413ab2dfd14";
 		};
 /* End PBXShellScriptBuildPhase section */
 
