@@ -6,7 +6,7 @@ Refuge Restrooms for iOS - Contributors Guide
 * If there isn't an Issue filed for what you're working on, first [create a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new)
 * Fork the repository
 * Create a branch specific to the work you're going to do [See: #branch-naming-conventions](#branch-naming-conventions)
-* When finished with changes, create a Pull Request against the `develoment` branch of the `refuge-ios` repository
+* When finished with changes, create a Pull Request against the `development` branch of the `refuge-ios` repository
 
 #### What to Work On
 
@@ -16,7 +16,9 @@ If you are working on something that is not listed, first [make a new Issue](htt
 
 #### Branch naming conventions
 
-Make a new branch for each individual issue you are addressing. You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
+Make a new branch for each individual thing you are addressing. If you are working on an Issue with multiple bug fixes, there should be a new branch for each bug fix.
+
+You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
 
 * `bugfix` - This branch is addressing a bug
 * `design` - This branch is introducing new design work (if fixing previous design work, use `bugfix`)
@@ -30,4 +32,6 @@ Once done fixing that specific issue, make a pull request for that branch. If go
 
 #### Commit message conventions
 
-If your commit is addressing a specific issue, you can reference that issue in your commit message and a link to that commit will automatically be placed in the Issue. This is good for tracking purposes. You can see an example of this here: https://github.com/RefugeRestrooms/refuge-ios/issues/111
+Try and make your commit messages descritive. Two- to three-word commit messages are usually not descriptive enough.
+
+If your commit is addressing a specific Issue, you can reference that issue in your commit message and a link to that commit will automatically be placed in the Issue. This is good for tracking purposes. You can see an example of this here: https://github.com/RefugeRestrooms/refuge-ios/issues/111
