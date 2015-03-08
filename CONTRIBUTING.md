@@ -32,6 +32,10 @@ Once done fixing that specific issue, make a pull request for that branch. If go
 
 #### Commit Message Conventions
 
-Try and make your commit messages descripjtive. Two- to three-word commit messages are usually not descriptive enough.
+Try and make your commit messages descriptive. Two- to three-word commit messages are usually not descriptive enough.
 
 If your commit is addressing a specific Issue, you can reference that issue in your commit message with a pound sign then the number (e.g. #111). This will automatically create link to that commit in the Issue, which is good for tracking purposes. You can see an example of this here: https://github.com/RefugeRestrooms/refuge-ios/issues/111
+
+#### Code Style
+
+See the [Refuge Restrooms Objective-C Style Guide](https://github.com/RefugeRestrooms/objective-c-style-guide)
