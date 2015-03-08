@@ -5,7 +5,7 @@ Refuge Restrooms for iOS - Contributors Guide
 
 * If there isn't an Issue filed for what you're working on, first [create a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new)
 * Fork and clone the repository
-* Change to the `refuge-ios/refuge-ios` directory and install required Cocoapod by running `pod install`
+* Change to the `refuge-ios/refuge-ios` directory and install required Cocoapods by running `pod install`
 * Create a branch specific to the work you're going to do See: [Branch Naming Conventions](#branch-naming-conventions)
 * When finished with changes, create a Pull Request against the `development` branch of the `refuge-ios` repository
 
@@ -23,11 +23,11 @@ Make a new branch for each individual thing you are addressing. If you are worki
 
 You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
 
-* `bugfix` - This branch is addressing a bug
-* `design` - This branch is introducing new design work (if fixing previous design work, use `bugfix`)
-* `feature` - This branch is creating a new feature
-* `pod` - This branch is being used to udpdate Pods or Frameworks
-* `refactor` - This branch is used solely to refactor exisiting work
+* `bugfix` - This branch is for addressing bugs
+* `design` - This branch is for introducing *new* design work (if fixing previous design work, use `bugfix`)
+* `feature` - This branch is for creating a brand new feature (if working on previous features, use `bugfix`)
+* `pod` - This branch is for udpdating Pods or Frameworks
+* `refactor` - This branch is for refactoring existing work
 
 For example, if I wanted to work on addressing a bug - say I'm updating an expired API key - then I might name that branch `bugfix/update_expired_api_key`
 
