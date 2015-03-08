@@ -4,7 +4,8 @@ Refuge Restrooms for iOS - Contributors Guide
 #### Getting Started
 
 * If there isn't an Issue filed for what you're working on, first [create a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new)
-* Fork the repository
+* Fork and clone the repository
+* Change to the `refuge-ios/refuge-ios` directory and install required Cocoapod by running `pod install`
 * Create a branch specific to the work you're going to do See: [Branch Naming Conventions](#branch-naming-conventions)
 * When finished with changes, create a Pull Request against the `development` branch of the `refuge-ios` repository
 
@@ -36,7 +37,7 @@ Once done fixing that specific issue, make a pull request for that branch. If go
 
 Try and make your commit messages descriptive. Two- to three-word commit messages are usually not descriptive enough.
 
-If your commit is addressing a specific Issue, you can reference that issue in your commit message with a pound sign then the number (e.g. #111). This will automatically create link to that commit in the Issue, which is good for tracking purposes. You can see an example of this here: https://github.com/RefugeRestrooms/refuge-ios/issues/111
+If your commit is addressing a specific Issue, you can reference that issue in your commit message with a pound sign then the number (e.g. #111). This will automatically a create link to that commit in the Issue, which is good for tracking purposes. You can see an example of this here: https://github.com/RefugeRestrooms/refuge-ios/issues/111
 
 #### Code Style
 
