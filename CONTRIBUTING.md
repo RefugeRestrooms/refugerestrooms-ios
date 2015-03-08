@@ -10,7 +10,9 @@ Refuge Restrooms for iOS - Contributors Guide
 
 #### What to Work On
 
-Check out the [list of open issues](https://github.com/RefugeRestrooms/refuge-ios/issues) for ideas of what to work on. The most pressing issues can be found in the [most current milestone](https://github.com/RefugeRestrooms/refuge-ios/milestones) that does not end in `x`. i.e. If there is a milestone named `Launch v1.1.1` and a milestone named `Launch v1.1.x`, the issues in `Launch v1.1.1` are more pressing.
+Check out the [list of open issues](https://github.com/RefugeRestrooms/refuge-ios/issues) for ideas of what to work on. This includes [non-technical issues](https://github.com/RefugeRestrooms/refuge-ios/labels/non-technical) issues for those wishing to contribute without coding.
+
+The most pressing issues can be found in the [most current milestone](https://github.com/RefugeRestrooms/refuge-ios/milestones) that does not end in `x`. i.e. If there is a milestone named `Launch v1.1.1` and a milestone named `Launch v1.1.x`, the issues in `Launch v1.1.1` are more pressing.
 
 If you are working on something that is not listed, first [make a new Issue](https://github.com/RefugeRestrooms/refuge-ios/issues/new) so your effort can be tracked.
 
