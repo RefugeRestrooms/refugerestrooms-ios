@@ -62,10 +62,11 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 - (void)setupUI
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
+    
     CGFloat directionsHeight = self.directionsLabel.bounds.size.height + self.directionsTextView.bounds.size.height;
     CGFloat commentsHeight = self.commentsLabel.bounds.size.height + self.commentsTextField.bounds.size.height;
     
-    self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight));
+    self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight) + 100);
 }
 
 - (void)setDetails

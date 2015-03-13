@@ -92,7 +92,7 @@
                             <searchBar contentMode="redraw" placeholder="Search Address" translatesAutoresizingMaskIntoConstraints="NO" id="fFb-8a-ZZ4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="tintColor" red="0.51372549020000002" green="0.46666666670000001" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="barTintColor" red="0.90588235289999997" green="0.8862745098" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.94509803920000002" green="0.89019607840000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="vq7-TL-G1d"/>
@@ -761,7 +761,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="A3M-E9-S6K"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                                 <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -826,6 +826,13 @@
                                                     </mask>
                                                 </variation>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yS-QF-bK8" userLabel="Separator">
+                                                <rect key="frame" x="0.0" y="180" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="h4Z-aV-rcj"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.94509803921568625" green="0.8901960784313725" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -838,13 +845,16 @@
                                             <constraint firstItem="oSu-Iq-dm2" firstAttribute="leading" secondItem="YXz-e2-eC0" secondAttribute="leading" id="Bsk-DZ-r7w"/>
                                             <constraint firstItem="dsW-lO-X2U" firstAttribute="top" secondItem="ex0-9d-lCS" secondAttribute="top" id="HGG-xR-HR9"/>
                                             <constraint firstItem="dsW-lO-X2U" firstAttribute="leading" secondItem="YXz-e2-eC0" secondAttribute="trailing" constant="8" symbolic="YES" id="IrY-6p-R8q"/>
+                                            <constraint firstAttribute="trailing" secondItem="3yS-QF-bK8" secondAttribute="trailing" id="KsH-Ch-qnK"/>
                                             <constraint firstItem="dsW-lO-X2U" firstAttribute="top" secondItem="YXz-e2-eC0" secondAttribute="top" constant="-8" id="Mzb-h0-QTc"/>
                                             <constraint firstItem="YXz-e2-eC0" firstAttribute="leading" secondItem="ex0-9d-lCS" secondAttribute="leading" constant="4" id="Sih-0l-osT"/>
                                             <constraint firstItem="eym-nL-m4a" firstAttribute="top" secondItem="oSu-Iq-dm2" secondAttribute="bottom" constant="4" id="Tip-rG-RiL"/>
                                             <constraint firstItem="oSu-Iq-dm2" firstAttribute="top" secondItem="YXz-e2-eC0" secondAttribute="top" constant="85" id="Xlm-3v-HSw"/>
+                                            <constraint firstAttribute="bottom" secondItem="3yS-QF-bK8" secondAttribute="bottom" id="YjL-T6-fCD"/>
                                             <constraint firstAttribute="centerX" secondItem="YXz-e2-eC0" secondAttribute="centerX" constant="35" id="adi-TB-DDt"/>
                                             <constraint firstAttribute="centerY" secondItem="YXz-e2-eC0" secondAttribute="centerY" id="ags-1B-xKe"/>
                                             <constraint firstItem="oSu-Iq-dm2" firstAttribute="centerX" secondItem="eym-nL-m4a" secondAttribute="centerX" id="gNn-oL-EdU"/>
+                                            <constraint firstItem="3yS-QF-bK8" firstAttribute="leading" secondItem="ex0-9d-lCS" secondAttribute="leading" id="hUP-hx-NKx"/>
                                             <constraint firstItem="oSu-Iq-dm2" firstAttribute="leading" secondItem="eym-nL-m4a" secondAttribute="leading" id="htt-8S-Ad5"/>
                                             <constraint firstAttribute="bottom" secondItem="dsW-lO-X2U" secondAttribute="bottom" id="jIS-py-B9t"/>
                                             <constraint firstAttribute="trailing" secondItem="dsW-lO-X2U" secondAttribute="trailing" constant="20" symbolic="YES" id="kOS-40-Dsw"/>
@@ -885,14 +895,38 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKr-Az-3e5" userLabel="Comments">
+                                                        <rect key="frame" x="0.0" y="281" width="374" height="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                        <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-1l-dfz" userLabel="Comments Text">
+                                                        <rect key="frame" x="20" y="306" width="334" height="200"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="TmO-A6-e5q"/>
+                                                        </constraints>
+                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="u8r-ZE-bKU" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" id="2fe-QO-ywG"/>
+                                                    <constraint firstItem="ijU-JV-xzF" firstAttribute="trailing" secondItem="1aY-1l-dfz" secondAttribute="trailing" id="496-6F-rrE"/>
                                                     <constraint firstItem="u8r-ZE-bKU" firstAttribute="top" secondItem="o9a-5v-AMj" secondAttribute="top" constant="48" id="6AE-BH-btM"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="trailing" secondItem="u8r-ZE-bKU" secondAttribute="trailing" id="7g1-6I-rMv"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="top" secondItem="ijU-JV-xzF" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehm-zj-WjG"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" constant="20" symbolic="YES" id="GWb-pb-VfR"/>
+                                                    <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="1aY-1l-dfz" secondAttribute="leading" id="InB-Ub-lSQ"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="leading" secondItem="u8r-ZE-bKU" secondAttribute="leading" id="KMZ-O4-E8O"/>
+                                                    <constraint firstItem="ijU-JV-xzF" firstAttribute="centerX" secondItem="1aY-1l-dfz" secondAttribute="centerX" id="WKN-3q-XmD"/>
                                                     <constraint firstAttribute="trailing" secondItem="ijU-JV-xzF" secondAttribute="trailing" constant="20" symbolic="YES" id="YLM-48-kOn"/>
                                                     <constraint firstAttribute="trailing" secondItem="u8r-ZE-bKU" secondAttribute="trailing" id="e1A-02-cRY"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="top" secondItem="u8r-ZE-bKU" secondAttribute="bottom" constant="8" id="hlj-Tl-eHX"/>
+                                                    <constraint firstItem="1aY-1l-dfz" firstAttribute="top" secondItem="RKr-Az-3e5" secondAttribute="bottom" constant="8" id="i5R-j1-adS"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="centerX" secondItem="u8r-ZE-bKU" secondAttribute="centerX" id="pZv-bb-Kf3"/>
                                                 </constraints>
                                             </scrollView>
                                         </subviews>
@@ -988,6 +1022,8 @@
                         <outlet property="addressDetailsLabel" destination="eym-nL-m4a" id="Me6-c8-GCB"/>
                         <outlet property="characteristicImage1" destination="HP4-ED-R7b" id="gEU-wt-bCK"/>
                         <outlet property="characteristicImage2" destination="qf5-jo-PDM" id="zr3-NX-Atj"/>
+                        <outlet property="commentsLabel" destination="RKr-Az-3e5" id="q2n-vv-cq8"/>
+                        <outlet property="commentsTextField" destination="1aY-1l-dfz" id="W9C-L4-CYo"/>
                         <outlet property="directionsLabel" destination="u8r-ZE-bKU" id="hgg-Sa-CMX"/>
                         <outlet property="directionsTextView" destination="ijU-JV-xzF" id="wHv-wB-XpA"/>
                         <outlet property="nameLabel" destination="YXz-e2-eC0" id="2zO-Ik-cCa"/>
