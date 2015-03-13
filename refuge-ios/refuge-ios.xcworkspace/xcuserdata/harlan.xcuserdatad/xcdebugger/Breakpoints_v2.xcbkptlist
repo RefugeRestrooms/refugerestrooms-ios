@@ -173,5 +173,51 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
+            timestampString = "447907311.890966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "ratingLabel"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RefugeRestroomDetailsViewController ratingLabel]"
+                  moduleName = "refuge-ios"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
+                  timestampString = "447907311.927395"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RefugeRestroomDetailsViewController setRatingLabel:]"
+                  moduleName = "refuge-ios"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
+                  timestampString = "447907311.927844"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
