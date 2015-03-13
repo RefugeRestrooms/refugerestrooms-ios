@@ -28,8 +28,9 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage2;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *directionsLabel;
-@property (weak, nonatomic) IBOutlet UITextView *directionsTextField;
+@property (weak, nonatomic) IBOutlet UITextView *directionsTextView;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
 
@@ -45,8 +46,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
+    [self setupUI];
     [self setDetails];
 }
 
@@ -59,6 +59,15 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 # pragma mark - Private methods
 
+- (void)setupUI
+{
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    CGFloat directionsHeight = self.directionsLabel.bounds.size.height + self.directionsTextView.bounds.size.height;
+    CGFloat commentsHeight = self.commentsLabel.bounds.size.height + self.commentsTextField.bounds.size.height;
+    
+    self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight));
+}
+
 - (void)setDetails
 {
     self.nameLabel.text = self.restroom.name;
@@ -66,8 +75,8 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
-    self.directionsTextField.backgroundColor = [UIColor clearColor];
-    self.directionsTextField.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: self.restroom.directions;
+    self.directionsTextView.backgroundColor = [UIColor clearColor];
+    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: self.restroom.directions;
     self.commentsTextField.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : self.restroom.comment;
     
     [self createCharacteristicsImages];
@@ -152,8 +161,8 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 {
     UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
     
-    self.directionsTextField.font = font;
-    self.directionsTextField.textColor = [UIColor RefugePurpleDarkColor];
+    self.directionsTextView.font = font;
+    self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
     
     self.commentsTextField.font = font;
     self.commentsTextField.textColor = [UIColor RefugePurpleDarkColor];

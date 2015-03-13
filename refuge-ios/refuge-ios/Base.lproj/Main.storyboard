@@ -866,73 +866,44 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXd-1c-dU3" userLabel="Body View">
                                         <rect key="frame" x="0.0" y="181" width="375" height="422"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xCf-PL-zTq" userLabel="Directions View">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-5v-AMj">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIRECTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si9-61-pks" userLabel="Directions">
-                                                        <rect key="frame" x="0.0" y="31" width="375" height="18"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIRECTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-ZE-bKU" userLabel="Directions">
+                                                        <rect key="frame" x="0.0" y="48" width="374" height="17"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeu-jM-Qzt" userLabel="Directions Text">
-                                                        <rect key="frame" x="4" y="57" width="367" height="150"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijU-JV-xzF" userLabel="Directions Text">
+                                                        <rect key="frame" x="20" y="73" width="334" height="200"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="36x-sn-ubI"/>
+                                                        </constraints>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="eeu-jM-Qzt" firstAttribute="leading" secondItem="xCf-PL-zTq" secondAttribute="leading" constant="4" id="0Bs-2a-PWG"/>
-                                                    <constraint firstAttribute="trailing" secondItem="eeu-jM-Qzt" secondAttribute="trailing" constant="4" id="ICT-d0-kaz"/>
-                                                    <constraint firstItem="Si9-61-pks" firstAttribute="width" secondItem="xCf-PL-zTq" secondAttribute="width" id="QAo-be-6QX"/>
-                                                    <constraint firstItem="eeu-jM-Qzt" firstAttribute="top" secondItem="Si9-61-pks" secondAttribute="bottom" constant="8" symbolic="YES" id="cXs-HQ-2Fq"/>
-                                                    <constraint firstAttribute="bottom" secondItem="eeu-jM-Qzt" secondAttribute="bottom" constant="4" id="gw4-iD-rms"/>
+                                                    <constraint firstItem="u8r-ZE-bKU" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" id="2fe-QO-ywG"/>
+                                                    <constraint firstItem="u8r-ZE-bKU" firstAttribute="top" secondItem="o9a-5v-AMj" secondAttribute="top" constant="48" id="6AE-BH-btM"/>
+                                                    <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" constant="20" symbolic="YES" id="GWb-pb-VfR"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ijU-JV-xzF" secondAttribute="trailing" constant="20" symbolic="YES" id="YLM-48-kOn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="u8r-ZE-bKU" secondAttribute="trailing" id="e1A-02-cRY"/>
+                                                    <constraint firstItem="ijU-JV-xzF" firstAttribute="top" secondItem="u8r-ZE-bKU" secondAttribute="bottom" constant="8" id="hlj-Tl-eHX"/>
                                                 </constraints>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nj6-RX-Rot" userLabel="Comments View">
-                                                <rect key="frame" x="0.0" y="219" width="375" height="211"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz2-dM-HaO" userLabel="Comments">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="18"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                                        <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5c-Te-cD8" userLabel="Comments Text">
-                                                        <rect key="frame" x="4" y="26" width="367" height="169"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="Zz2-dM-HaO" firstAttribute="top" secondItem="nj6-RX-Rot" secondAttribute="top" id="7u9-X8-dgT"/>
-                                                    <constraint firstAttribute="bottom" secondItem="r5c-Te-cD8" secondAttribute="bottom" constant="16" id="drj-4k-arM"/>
-                                                    <constraint firstItem="r5c-Te-cD8" firstAttribute="leading" secondItem="nj6-RX-Rot" secondAttribute="leading" constant="4" id="eH5-y2-xul"/>
-                                                    <constraint firstItem="Zz2-dM-HaO" firstAttribute="centerX" secondItem="r5c-Te-cD8" secondAttribute="centerX" id="egG-Bv-Ww5"/>
-                                                    <constraint firstItem="r5c-Te-cD8" firstAttribute="top" secondItem="Zz2-dM-HaO" secondAttribute="bottom" constant="8" symbolic="YES" id="fkp-0T-prD"/>
-                                                    <constraint firstItem="Zz2-dM-HaO" firstAttribute="width" secondItem="nj6-RX-Rot" secondAttribute="width" id="o9W-eA-ZWV"/>
-                                                    <constraint firstAttribute="trailing" secondItem="r5c-Te-cD8" secondAttribute="trailing" constant="4" id="oaq-2A-WGk"/>
-                                                </constraints>
-                                            </view>
+                                            </scrollView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Si9-61-pks" firstAttribute="centerX" secondItem="wXd-1c-dU3" secondAttribute="centerX" id="7pO-4Z-Kfe"/>
-                                            <constraint firstAttribute="bottom" secondItem="nj6-RX-Rot" secondAttribute="bottom" constant="-8" id="D2a-PS-H2R"/>
-                                            <constraint firstItem="xCf-PL-zTq" firstAttribute="leading" secondItem="wXd-1c-dU3" secondAttribute="leading" id="FPt-6u-2CT"/>
-                                            <constraint firstItem="nj6-RX-Rot" firstAttribute="leading" secondItem="xCf-PL-zTq" secondAttribute="leading" id="Idg-Db-BwP"/>
-                                            <constraint firstAttribute="trailing" secondItem="xCf-PL-zTq" secondAttribute="trailing" id="KX4-Oy-yqv"/>
-                                            <constraint firstItem="nj6-RX-Rot" firstAttribute="top" secondItem="xCf-PL-zTq" secondAttribute="bottom" constant="8" symbolic="YES" id="NzK-Bc-ELj"/>
-                                            <constraint firstItem="xCf-PL-zTq" firstAttribute="top" secondItem="wXd-1c-dU3" secondAttribute="top" id="SBa-Rj-6md"/>
-                                            <constraint firstItem="nj6-RX-Rot" firstAttribute="height" secondItem="xCf-PL-zTq" secondAttribute="height" id="UqI-55-teW"/>
-                                            <constraint firstItem="nj6-RX-Rot" firstAttribute="trailing" secondItem="xCf-PL-zTq" secondAttribute="trailing" id="eny-tX-efg"/>
-                                            <constraint firstAttribute="height" secondItem="xCf-PL-zTq" secondAttribute="height" multiplier="2:1" id="vvb-QK-6lS"/>
+                                            <constraint firstAttribute="bottom" secondItem="o9a-5v-AMj" secondAttribute="bottom" id="5Ns-GS-DjY"/>
+                                            <constraint firstAttribute="trailing" secondItem="o9a-5v-AMj" secondAttribute="trailing" id="8mh-T7-M1B"/>
+                                            <constraint firstItem="o9a-5v-AMj" firstAttribute="top" secondItem="wXd-1c-dU3" secondAttribute="top" id="FUq-AX-k19"/>
+                                            <constraint firstItem="o9a-5v-AMj" firstAttribute="leading" secondItem="wXd-1c-dU3" secondAttribute="leading" id="WY1-dF-Xta"/>
+                                            <constraint firstItem="u8r-ZE-bKU" firstAttribute="centerX" secondItem="wXd-1c-dU3" secondAttribute="centerX" id="sR0-9o-014"/>
+                                            <constraint firstAttribute="centerX" secondItem="o9a-5v-AMj" secondAttribute="centerX" id="wfK-UF-7pU"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9U-lV-Rbf" userLabel="Rating View">
@@ -962,7 +933,6 @@
                                     <constraint firstItem="ex0-9d-lCS" firstAttribute="centerX" secondItem="r9U-lV-Rbf" secondAttribute="centerX" id="Kik-31-oWl"/>
                                     <constraint firstItem="r9U-lV-Rbf" firstAttribute="top" secondItem="ex0-9d-lCS" secondAttribute="bottom" constant="8" id="NIa-0V-YoC"/>
                                     <constraint firstAttribute="height" secondItem="ex0-9d-lCS" secondAttribute="height" multiplier="3:1" id="Pft-9E-GXy"/>
-                                    <constraint firstItem="Si9-61-pks" firstAttribute="top" secondItem="r9U-lV-Rbf" secondAttribute="bottom" constant="16" id="RBQ-0s-7Ad"/>
                                     <constraint firstAttribute="centerX" secondItem="wXd-1c-dU3" secondAttribute="centerX" id="S04-NU-XW3"/>
                                     <constraint firstAttribute="bottom" secondItem="wXd-1c-dU3" secondAttribute="bottom" id="UcY-GA-iy3"/>
                                     <constraint firstItem="ex0-9d-lCS" firstAttribute="trailing" secondItem="wXd-1c-dU3" secondAttribute="trailing" id="Yti-bl-JhO"/>
@@ -1018,13 +988,12 @@
                         <outlet property="addressDetailsLabel" destination="eym-nL-m4a" id="Me6-c8-GCB"/>
                         <outlet property="characteristicImage1" destination="HP4-ED-R7b" id="gEU-wt-bCK"/>
                         <outlet property="characteristicImage2" destination="qf5-jo-PDM" id="zr3-NX-Atj"/>
-                        <outlet property="commentsLabel" destination="Zz2-dM-HaO" id="edq-CN-sVS"/>
-                        <outlet property="commentsTextField" destination="r5c-Te-cD8" id="cs1-Sb-X5p"/>
-                        <outlet property="directionsLabel" destination="Si9-61-pks" id="ukC-y2-PQK"/>
-                        <outlet property="directionsTextField" destination="eeu-jM-Qzt" id="5Ac-vr-98P"/>
+                        <outlet property="directionsLabel" destination="u8r-ZE-bKU" id="hgg-Sa-CMX"/>
+                        <outlet property="directionsTextView" destination="ijU-JV-xzF" id="wHv-wB-XpA"/>
                         <outlet property="nameLabel" destination="YXz-e2-eC0" id="2zO-Ik-cCa"/>
                         <outlet property="ratingLabel" destination="p8a-zO-wKM" id="JZh-AI-21I"/>
                         <outlet property="ratingView" destination="r9U-lV-Rbf" id="1Jf-ww-ANr"/>
+                        <outlet property="scrollView" destination="o9a-5v-AMj" id="i8o-B3-7m6"/>
                         <outlet property="streetLabel" destination="oSu-Iq-dm2" id="WkQ-rb-XHd"/>
                     </connections>
                 </viewController>
