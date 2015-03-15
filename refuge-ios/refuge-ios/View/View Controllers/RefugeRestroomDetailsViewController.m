@@ -10,6 +10,7 @@
 
 #import "RefugeRestroom.h"
 #import "UIColor+Refuge.h"
+#import "UIDevice+Hardware.h"
 
 static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
 static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
@@ -33,6 +34,9 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 @property (weak, nonatomic) IBOutlet UITextView *directionsTextView;
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTextField;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *directionsTextViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentsTextViewHeightConstraint;
 
 @end
 
@@ -67,6 +71,13 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     CGFloat commentsHeight = self.commentsLabel.bounds.size.height + self.commentsTextField.bounds.size.height;
     
     self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight) + 100);
+    
+    UIDevicePlatform currentDevicePlatorm = [[UIDevice currentDevice] platformType];
+    if(currentDevicePlatorm == UIDevice4iPhone || currentDevicePlatorm == UIDevice4SiPhone)
+    {
+        self.directionsTextViewHeightConstraint.constant = 50;
+        self.commentsTextViewHeightConstraint.constant = 50;
+    }
 }
 
 - (void)setDetails

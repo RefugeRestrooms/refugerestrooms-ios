@@ -20,12 +20,98 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
-            timestampString = "447920473.502215"
+            timestampString = "448074545.685174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-createCharacteristicsImages"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-ios/Logic/Data Fetching/RefugeRestroomManager.h"
+            timestampString = "448055417.292542"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "2"
+            endingLineNumber = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
+            timestampString = "448074190.655215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "commentsTextField"
+            landmarkType = "19">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RefugeRestroomDetailsViewController directionsLabel]"
+                  moduleName = "refuge-ios"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
+                  timestampString = "448056029.545832"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[RefugeRestroomDetailsViewController setDirectionsLabel:]"
+                  moduleName = "refuge-ios"
+                  urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
+                  timestampString = "448056029.546459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "31">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            symbolName = "UIViewAlertForUnsatisfiableConstraints"
+            moduleName = "">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
+            timestampString = "448074545.685174"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "-ratingColor"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,44 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
-            timestampString = "447923386.169118"
+            timestampString = "448074545.685174"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-setupUI"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
-            timestampString = "447923386.169118"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-setupUI"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "refuge-ios/View/View Controllers/RefugeRestroomDetailsViewController.m"
-            timestampString = "447923386.169118"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "-setupUI"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-ratingString"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
