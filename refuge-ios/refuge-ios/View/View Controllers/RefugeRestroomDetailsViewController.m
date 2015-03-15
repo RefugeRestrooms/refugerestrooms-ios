@@ -25,6 +25,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *streetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
+@property (weak, nonatomic) IBOutlet UIView *imagesView;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
@@ -37,6 +38,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *directionsTextViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentsTextViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *restroomNameLabelLeadingAlignmentConstraint;
 
 @end
 
@@ -50,7 +52,6 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
     
-    [self setupUI];
     [self setDetails];
 }
 
@@ -59,6 +60,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     [super viewWillAppear:animated];
     
     [self styleTextFields];
+    [self setupUI];
 }
 
 # pragma mark - Private methods
@@ -66,13 +68,12 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 - (void)setupUI
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    CGFloat directionsHeight = self.directionsLabel.bounds.size.height + self.directionsTextView.bounds.size.height;
-    CGFloat commentsHeight = self.commentsLabel.bounds.size.height + self.commentsTextField.bounds.size.height;
-    
-    self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight) + 100);
-    
     self.ratingView.layer.cornerRadius = 5.0f;
+    
+    if(![self.restroom.isUnisex boolValue] && ![self.restroom.isAccessible boolValue])
+    {
+        self.restroomNameLabelLeadingAlignmentConstraint.constant += self.imagesView.bounds.size.width;
+    }
     
     [self adjustUIForDevice];
 }

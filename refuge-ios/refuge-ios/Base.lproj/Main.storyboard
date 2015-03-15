@@ -875,17 +875,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXd-1c-dU3" userLabel="Body View">
                                         <rect key="frame" x="0.0" y="160" width="375" height="443"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-5v-AMj">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9a-5v-AMj">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="443"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIRECTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-ZE-bKU" userLabel="Directions">
-                                                        <rect key="frame" x="0.0" y="48" width="374" height="17"/>
+                                                        <rect key="frame" x="0.0" y="32" width="374" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijU-JV-xzF" userLabel="Directions Text">
-                                                        <rect key="frame" x="20" y="73" width="334" height="100"/>
+                                                        <rect key="frame" x="20" y="57" width="334" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="36x-sn-ubI"/>
@@ -901,13 +901,13 @@
                                                         </variation>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKr-Az-3e5" userLabel="Comments">
-                                                        <rect key="frame" x="0.0" y="181" width="374" height="17"/>
+                                                        <rect key="frame" x="0.0" y="173" width="374" height="17"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-1l-dfz" userLabel="Comments Text">
-                                                        <rect key="frame" x="20" y="206" width="334" height="100"/>
+                                                        <rect key="frame" x="20" y="198" width="334" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="1BF-Mp-Blv"/>
@@ -926,9 +926,10 @@
                                                 <constraints>
                                                     <constraint firstItem="u8r-ZE-bKU" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" id="2fe-QO-ywG"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="trailing" secondItem="1aY-1l-dfz" secondAttribute="trailing" id="496-6F-rrE"/>
-                                                    <constraint firstItem="u8r-ZE-bKU" firstAttribute="top" secondItem="o9a-5v-AMj" secondAttribute="top" constant="48" id="6AE-BH-btM"/>
+                                                    <constraint firstItem="u8r-ZE-bKU" firstAttribute="top" secondItem="o9a-5v-AMj" secondAttribute="top" constant="32" id="6AE-BH-btM"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1aY-1l-dfz" secondAttribute="bottom" id="6RM-p3-ow3"/>
                                                     <constraint firstItem="RKr-Az-3e5" firstAttribute="trailing" secondItem="u8r-ZE-bKU" secondAttribute="trailing" id="7g1-6I-rMv"/>
-                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="top" secondItem="ijU-JV-xzF" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehm-zj-WjG"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="top" secondItem="ijU-JV-xzF" secondAttribute="bottom" constant="16" id="Ehm-zj-WjG"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" constant="20" symbolic="YES" id="GWb-pb-VfR"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="1aY-1l-dfz" secondAttribute="leading" id="InB-Ub-lSQ"/>
                                                     <constraint firstItem="RKr-Az-3e5" firstAttribute="leading" secondItem="u8r-ZE-bKU" secondAttribute="leading" id="KMZ-O4-E8O"/>
@@ -991,11 +992,13 @@
                                     <constraint firstItem="r9U-lV-Rbf" firstAttribute="top" secondItem="eym-nL-m4a" secondAttribute="bottom" constant="8" id="mM2-bR-7x6"/>
                                     <constraint firstItem="ex0-9d-lCS" firstAttribute="leading" secondItem="wXd-1c-dU3" secondAttribute="leading" id="qPG-Mq-Neg"/>
                                     <constraint firstAttribute="trailing" secondItem="ex0-9d-lCS" secondAttribute="trailing" id="v3P-l4-VFc"/>
+                                    <constraint firstAttribute="centerX" secondItem="r9U-lV-Rbf" secondAttribute="centerX" id="wrK-JV-Alv"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="3kJ-Mh-r9Y"/>
                                         <exclude reference="7Mi-Lg-2Ym"/>
+                                        <exclude reference="Kik-31-oWl"/>
                                         <exclude reference="Pft-9E-GXy"/>
                                         <exclude reference="gGX-Hk-vgl"/>
                                         <exclude reference="j6l-Q9-nOT"/>
@@ -1034,9 +1037,11 @@
                         <outlet property="directionsLabel" destination="u8r-ZE-bKU" id="hgg-Sa-CMX"/>
                         <outlet property="directionsTextView" destination="ijU-JV-xzF" id="isr-GK-hTG"/>
                         <outlet property="directionsTextViewHeightConstraint" destination="qNH-Jp-6hI" id="BlN-40-rAQ"/>
+                        <outlet property="imagesView" destination="dsW-lO-X2U" id="G22-Oo-r2u"/>
                         <outlet property="nameLabel" destination="YXz-e2-eC0" id="2zO-Ik-cCa"/>
                         <outlet property="ratingLabel" destination="p8a-zO-wKM" id="JZh-AI-21I"/>
                         <outlet property="ratingView" destination="r9U-lV-Rbf" id="1Jf-ww-ANr"/>
+                        <outlet property="restroomNameLabelLeadingAlignmentConstraint" destination="Sih-0l-osT" id="hCW-io-An8"/>
                         <outlet property="scrollView" destination="o9a-5v-AMj" id="i8o-B3-7m6"/>
                         <outlet property="streetLabel" destination="oSu-Iq-dm2" id="WkQ-rb-XHd"/>
                     </connections>
