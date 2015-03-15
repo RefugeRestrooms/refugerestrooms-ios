@@ -880,6 +880,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DIRECTIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8r-ZE-bKU" userLabel="Directions">
                                                         <rect key="frame" x="0.0" y="48" width="374" height="17"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -892,7 +893,8 @@
                                                             <constraint firstAttribute="height" constant="100" id="qNH-Jp-6hI"/>
                                                         </constraints>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
@@ -901,20 +903,22 @@
                                                         </variation>
                                                     </textView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMENTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKr-Az-3e5" userLabel="Comments">
-                                                        <rect key="frame" x="0.0" y="189" width="374" height="17"/>
+                                                        <rect key="frame" x="0.0" y="173" width="374" height="17"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
                                                         <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-1l-dfz" userLabel="Comments Text">
-                                                        <rect key="frame" x="20" y="214" width="334" height="100"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aY-1l-dfz" userLabel="Comments Text">
+                                                        <rect key="frame" x="20" y="198" width="334" height="100"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="1BF-Mp-Blv"/>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="TmO-A6-e5q"/>
                                                         </constraints>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <variation key="default">
                                                             <mask key="constraints">
@@ -923,13 +927,14 @@
                                                         </variation>
                                                     </textView>
                                                 </subviews>
+                                                <color key="tintColor" red="0.25490196079999999" green="0.1960784314" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="u8r-ZE-bKU" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" id="2fe-QO-ywG"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="trailing" secondItem="1aY-1l-dfz" secondAttribute="trailing" id="496-6F-rrE"/>
                                                     <constraint firstItem="u8r-ZE-bKU" firstAttribute="top" secondItem="o9a-5v-AMj" secondAttribute="top" constant="48" id="6AE-BH-btM"/>
                                                     <constraint firstAttribute="bottom" secondItem="1aY-1l-dfz" secondAttribute="bottom" id="6RM-p3-ow3"/>
                                                     <constraint firstItem="RKr-Az-3e5" firstAttribute="trailing" secondItem="u8r-ZE-bKU" secondAttribute="trailing" id="7g1-6I-rMv"/>
-                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="top" secondItem="ijU-JV-xzF" secondAttribute="bottom" constant="16" id="Ehm-zj-WjG"/>
+                                                    <constraint firstItem="RKr-Az-3e5" firstAttribute="top" secondItem="ijU-JV-xzF" secondAttribute="bottom" id="Ehm-zj-WjG"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="o9a-5v-AMj" secondAttribute="leading" constant="20" symbolic="YES" id="GWb-pb-VfR"/>
                                                     <constraint firstItem="ijU-JV-xzF" firstAttribute="leading" secondItem="1aY-1l-dfz" secondAttribute="leading" id="InB-Ub-lSQ"/>
                                                     <constraint firstItem="RKr-Az-3e5" firstAttribute="leading" secondItem="u8r-ZE-bKU" secondAttribute="leading" id="KMZ-O4-E8O"/>
@@ -955,8 +960,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r9U-lV-Rbf" userLabel="Rating View">
                                         <rect key="frame" x="94" y="145" width="187" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88% POSITIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8a-zO-wKM" userLabel="Rating Label">
-                                                <rect key="frame" x="32" y="4" width="124" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% POSITIVE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8a-zO-wKM" userLabel="Rating Label">
+                                                <rect key="frame" x="27" y="4" width="134" height="22"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>

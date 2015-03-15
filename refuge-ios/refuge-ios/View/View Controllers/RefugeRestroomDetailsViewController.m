@@ -82,18 +82,19 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     self.commentsTextField.font = font;
     self.commentsTextField.textColor = [UIColor RefugePurpleDarkColor];
     
-    CGSize maximumLabelSize = CGSizeMake(self.directionsTextView.bounds.size.width, CGFLOAT_MAX);
-    CGRect rectNeededForDirections = [self.directionsTextView.text boundingRectWithSize:maximumLabelSize
-                                                        options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                     attributes:@{ NSFontAttributeName : font }
-                                                        context:nil];
-    CGRect rectNeededForComments = [self.commentsTextField.text boundingRectWithSize:maximumLabelSize
+    CGSize maximumTextViewSize = CGSizeMake(self.directionsTextView.bounds.size.width, CGFLOAT_MAX);
+    CGRect rectNeededForDirections = [self.directionsTextView.text boundingRectWithSize:maximumTextViewSize
                                                                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                                                              attributes:@{ NSFontAttributeName : font }
                                                                                 context:nil];
+    CGRect rectNeededForComments = [self.commentsTextField.text boundingRectWithSize:maximumTextViewSize
+                                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                          attributes:@{ NSFontAttributeName : font }
+                                                                             context:nil];
+    CGFloat textPadding = font.lineHeight * 3; // Text can get cut-off without adjustment
     
-    self.directionsTextViewHeightConstraint.constant = rectNeededForDirections.size.height;
-    self.commentsTextViewHeightConstraint.constant = rectNeededForComments.size.height;
+    self.directionsTextViewHeightConstraint.constant = rectNeededForDirections.size.height + textPadding;
+    self.commentsTextViewHeightConstraint.constant = rectNeededForComments.size.height + textPadding;
 }
 
 - (void)centerHeaderTextIfNoImages
