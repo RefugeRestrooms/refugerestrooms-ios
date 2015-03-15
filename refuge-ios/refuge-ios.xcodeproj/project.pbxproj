@@ -394,6 +394,8 @@
 		DC8F394D1A980C5F00A90B13 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				DC1391C51AB50FFD00668AB4 /* UIDevice+Hardware.h */,
+				DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */,
 				DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */,
 				DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */,
 				DC8F39501A980C5F00A90B13 /* Mixpanel+Refuge.h */,
@@ -402,8 +404,6 @@
 				DC8F39531A980C5F00A90B13 /* NSDate+Refuge.m */,
 				DC8F39541A980C5F00A90B13 /* UIColor+Refuge.h */,
 				DC8F39551A980C5F00A90B13 /* UIColor+Refuge.m */,
-				DC1391C51AB50FFD00668AB4 /* UIDevice+Hardware.h */,
-				DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */,
 				DC8F39561A980C5F00A90B13 /* UIImage+Refuge.h */,
 				DC8F39571A980C5F00A90B13 /* UIImage+Refuge.m */,
 			);

@@ -72,14 +72,25 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     
     self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight) + 100);
     
-    // iPhone 4 screens cut-off content
+    self.ratingView.layer.cornerRadius = 5.0f;
     
-    UIDevicePlatform currentDevicePlatorm = [[UIDevice currentDevice] platformType];
-    if(currentDevicePlatorm == UIDevice4iPhone || currentDevicePlatorm == UIDevice4SiPhone)
+    [self adjustUIForDevice];
+}
+
+- (void)adjustUIForDevice
+{
+    if([self isDeviceiPhone4])
     {
         self.directionsTextViewHeightConstraint.constant = 50;
         self.commentsTextViewHeightConstraint.constant = 50;
     }
+}
+
+- (BOOL)isDeviceiPhone4
+{
+    UIDevicePlatform devicePlatform = [[UIDevice currentDevice] platformType];
+    
+    return (devicePlatform == UIDevice4iPhone || devicePlatform == UIDevice4SiPhone);
 }
 
 - (void)setDetails
