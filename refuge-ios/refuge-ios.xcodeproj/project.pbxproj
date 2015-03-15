@@ -31,8 +31,6 @@
 		CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */; };
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 		DC0964FE1A9A7115006D5B76 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */; };
-		DC1391C71AB50FFD00668AB4 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */; };
-		DC1391C81AB50FFD00668AB4 /* UIDevice+Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */; };
 		DC28E0C81A99349900FEAAE6 /* refuge-onboard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */; };
 		DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */; };
 		DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */; };
@@ -163,8 +161,6 @@
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
-		DC1391C51AB50FFD00668AB4 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
-		DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Hardware.m"; sourceTree = "<group>"; };
 		DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard4.png"; sourceTree = "<group>"; };
 		DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard3.png"; sourceTree = "<group>"; };
 		DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard2.png"; sourceTree = "<group>"; };
@@ -394,8 +390,6 @@
 		DC8F394D1A980C5F00A90B13 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				DC1391C51AB50FFD00668AB4 /* UIDevice+Hardware.h */,
-				DC1391C61AB50FFD00668AB4 /* UIDevice+Hardware.m */,
 				DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */,
 				DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */,
 				DC8F39501A980C5F00A90B13 /* Mixpanel+Refuge.h */,
@@ -759,7 +753,6 @@
 				DC8F3A031A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
 				DC8F39A31A980F0D00A90B13 /* RefugeMapPlace.m in Sources */,
-				DC1391C71AB50FFD00668AB4 /* UIDevice+Hardware.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 				DC8F39EA1A9810F800A90B13 /* RefugeMapPin.m in Sources */,
 				DC8F39A81A980F4800A90B13 /* RefugeSearch.m in Sources */,
@@ -776,7 +769,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */,
-				DC1391C81AB50FFD00668AB4 /* UIDevice+Hardware.m in Sources */,
 				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
 				DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */,
 				DC8F39E91A9810F800A90B13 /* RefugeMap.m in Sources */,

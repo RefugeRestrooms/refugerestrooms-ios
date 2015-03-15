@@ -10,7 +10,6 @@
 
 #import "RefugeRestroom.h"
 #import "UIColor+Refuge.h"
-#import "UIDevice+Hardware.h"
 
 static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
 static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
@@ -22,10 +21,10 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 @property (nonatomic, assign) RefugeRestroomRatingType restroomRatingType;
 
+@property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *streetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressDetailsLabel;
-@property (weak, nonatomic) IBOutlet UIView *imagesView;
 @property (weak, nonatomic) IBOutlet UIView *ratingView;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *characteristicImage1;
@@ -38,7 +37,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *directionsTextViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentsTextViewHeightConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *restroomNameLabelLeadingAlignmentConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nameLabelLeadingAlignmentConstraint;
 
 @end
 
@@ -59,7 +58,6 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 {
     [super viewWillAppear:animated];
     
-    [self styleTextFields];
     [self setupUI];
 }
 
@@ -70,28 +68,42 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.ratingView.layer.cornerRadius = 5.0f;
     
+    [self styleTextFields];
+    [self centerHeaderTextIfNoImages];
+}
+
+- (void)styleTextFields
+{
+    UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
+    
+    self.directionsTextView.font = font;
+    self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
+    
+    self.commentsTextField.font = font;
+    self.commentsTextField.textColor = [UIColor RefugePurpleDarkColor];
+    
+    CGSize maximumLabelSize = CGSizeMake(self.directionsTextView.bounds.size.width, CGFLOAT_MAX);
+    CGRect rectNeededForDirections = [self.directionsTextView.text boundingRectWithSize:maximumLabelSize
+                                                        options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                     attributes:@{ NSFontAttributeName : font }
+                                                        context:nil];
+    CGRect rectNeededForComments = [self.commentsTextField.text boundingRectWithSize:maximumLabelSize
+                                                                                options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                                                                             attributes:@{ NSFontAttributeName : font }
+                                                                                context:nil];
+    
+    self.directionsTextViewHeightConstraint.constant = rectNeededForDirections.size.height;
+    self.commentsTextViewHeightConstraint.constant = rectNeededForComments.size.height;
+}
+
+- (void)centerHeaderTextIfNoImages
+{
     if(![self.restroom.isUnisex boolValue] && ![self.restroom.isAccessible boolValue])
     {
-        self.restroomNameLabelLeadingAlignmentConstraint.constant += self.imagesView.bounds.size.width;
+        [self.nameLabel removeConstraint:self.nameLabelLeadingAlignmentConstraint];
+        
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:0 toItem:self.nameLabel attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     }
-    
-    [self adjustUIForDevice];
-}
-
-- (void)adjustUIForDevice
-{
-    if([self isDeviceiPhone4])
-    {
-        self.directionsTextViewHeightConstraint.constant = 50;
-        self.commentsTextViewHeightConstraint.constant = 50;
-    }
-}
-
-- (BOOL)isDeviceiPhone4
-{
-    UIDevicePlatform devicePlatform = [[UIDevice currentDevice] platformType];
-    
-    return (devicePlatform == UIDevice4iPhone || devicePlatform == UIDevice4SiPhone);
 }
 
 - (void)setDetails
@@ -181,17 +193,6 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
         self.characteristicImage1.image = nil;
         self.characteristicImage2.image = nil;
     }
-}
-
-- (void)styleTextFields
-{
-    UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
-    
-    self.directionsTextView.font = font;
-    self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
-    
-    self.commentsTextField.font = font;
-    self.commentsTextField.textColor = [UIColor RefugePurpleDarkColor];
 }
 
 @end
