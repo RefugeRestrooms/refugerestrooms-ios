@@ -1,4 +1,6 @@
 /*
+ Adapted from:
+ 
  Erica Sadun, http://ericasadun.com
  iPhone Developer's Cookbook, 6.x Edition
  BSD License, Use at your own risk
@@ -89,20 +91,8 @@ typedef enum {
 @interface UIDevice (Hardware)
 - (NSString *) platform;
 - (NSString *) hwmodel;
-- (NSUInteger) platformType;
+- (UIDevicePlatform) platformType;
 - (NSString *) platformString;
 
-- (NSUInteger) cpuFrequency;
-- (NSUInteger) busFrequency;
-- (NSUInteger) cpuCount;
-- (NSUInteger) totalMemory;
-- (NSUInteger) userMemory;
-
-- (NSNumber *) totalDiskSpace;
-- (NSNumber *) freeDiskSpace;
-
-- (NSString *) macaddress;
-
-- (BOOL) hasRetinaDisplay;
 - (UIDeviceFamily) deviceFamily;
 @end

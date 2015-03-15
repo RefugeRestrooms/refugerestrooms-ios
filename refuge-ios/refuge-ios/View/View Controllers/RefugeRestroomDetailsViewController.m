@@ -72,6 +72,8 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     
     self.scrollView.contentSize = CGSizeMake(self.directionsLabel.bounds.size.width, (directionsHeight + commentsHeight) + 100);
     
+    // iPhone 4 screens cut-off content
+    
     UIDevicePlatform currentDevicePlatorm = [[UIDevice currentDevice] platformType];
     if(currentDevicePlatorm == UIDevice4iPhone || currentDevicePlatorm == UIDevice4SiPhone)
     {
