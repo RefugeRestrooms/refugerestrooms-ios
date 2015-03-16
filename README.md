@@ -7,6 +7,8 @@ Download on the App Store: http://bit.ly/refuge-ios
 
 ![Refuge Onboarding Image](http://harlankellaway.com/img/apps/refuge-onboard-full1.jpg)
 
+Want to help out? Check out the [Contributors Guide](https://github.com/RefugeRestrooms/refuge-ios/blob/master/CONTRIBUTING.md)!
+
 #### Build Status
 
 Production Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refuge-ios.svg?branch=master)](https://travis-ci.org/RefugeRestrooms/refuge-ios)
