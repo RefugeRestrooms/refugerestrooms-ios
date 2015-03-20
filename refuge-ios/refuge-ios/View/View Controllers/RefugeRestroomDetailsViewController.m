@@ -9,6 +9,7 @@
 #import "RefugeRestroomDetailsViewController.h"
 
 #import "RefugeRestroom.h"
+#import "NSString+Refuge.h"
 #import "UIColor+Refuge.h"
 
 static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
@@ -108,14 +109,14 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 - (void)setDetails
 {
-    self.nameLabel.text = [self.restroom.name stringByReplacingOccurrencesOfString:@"\\'" withString:@"\'"];
-    self.streetLabel.text = self.restroom.street;
-    self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
+    self.nameLabel.text = [self.restroom.name prepareForDisplay];
+    self.streetLabel.text = [self.restroom.street prepareForDisplay];
+    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] prepareForDisplay];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextView.backgroundColor = [UIColor clearColor];
-    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: self.restroom.directions;
-    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : self.restroom.comment;
+    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: [self.restroom.directions prepareForDisplay];
+    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : [self.restroom.comment prepareForDisplay];
     
     [self createCharacteristicsImages];
 }
