@@ -108,7 +108,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 - (void)setDetails
 {
-    self.nameLabel.text = self.restroom.name;
+    self.nameLabel.text = [self.restroom.name stringByReplacingOccurrencesOfString:@"\\'" withString:@"\'"];
     self.streetLabel.text = self.restroom.street;
     self.addressDetailsLabel.text = [NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country];
     self.ratingView.backgroundColor = [self ratingColor];
