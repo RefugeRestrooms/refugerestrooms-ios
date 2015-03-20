@@ -10,6 +10,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import "RefugeRestroom.h"
+#import "NSString+Refuge.h"
 
 static NSString * const kNoName = @"No Name";
 
@@ -31,7 +32,7 @@ static NSString * const kNoName = @"No Name";
         }
         else
         {
-            _title = restroom.name;
+            _title = [restroom.name prepareForDisplay];
         }
         
         _subtitle = [self addressForRestroom:restroom];
