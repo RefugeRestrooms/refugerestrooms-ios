@@ -41,4 +41,4 @@ If your commit is addressing a specific Issue, you can reference that issue in y
 
 #### Code Style
 
-See the [Refuge Restrooms Objective-C Style Guide](https://github.com/RefugeRestrooms/refuge-objective-c-style-guide)
+See the [Refuge Restrooms Objective-C Style Guide](https://github.com/RefugeRestrooms/refuge-ios-objective-c-style-guide)
