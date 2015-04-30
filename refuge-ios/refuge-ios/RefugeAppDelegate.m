@@ -1,10 +1,20 @@
 //
-//  AppDelegate.m
-//  refuge-ios
+// RefugeAppDelegate.m
 //
-//  Created by Harlan Kellaway on 2/4/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeAppDelegate.h"
 
@@ -27,15 +37,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
-    
+
     [[iRate sharedInstance] refugeSetup];
-    
+
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
     [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
     [[Mixpanel sharedInstance] refugeTrackAppLaunch];
-    
+
     [Fabric with:@[ CrashlyticsKit ]];
 
     return YES;
@@ -91,18 +101,18 @@
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
+
     // Create the coordinator and store
-    
+
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    
+
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"refuge_ios.sqlite"];
-    
+
     if(self.appState.hasPreloadedRestrooms == NO)
     {
         [self preloadRestroomData:storeURL];
     }
-    
+
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
@@ -117,7 +127,7 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
+
     return _persistentStoreCoordinator;
 }
 
@@ -127,7 +137,7 @@
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
-    
+
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (!coordinator) {
         return nil;
@@ -160,7 +170,7 @@
     {
         NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"RefugeRestroomsSeed" ofType:@"sqlite"]];
         NSError* error = nil;
-        
+
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&error])
         {
             [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypePreloadingRestrooms];
