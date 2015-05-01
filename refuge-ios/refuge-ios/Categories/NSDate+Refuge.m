@@ -29,19 +29,19 @@ static NSString * const kRefugeDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     return kRefugeDateFormat;
 }
 
-+ (NSDate *)dateFromString:(NSString *)dateString
++ (NSDate *)RefugeDateFromString:(NSString *)dateString
 {
-    return [self.dateFormatter dateFromString:dateString];
+    return [self.RefugeDateFormatter dateFromString:dateString];
 }
 
-+ (NSString *)stringFromDate:(NSDate *)date
++ (NSString *)RefugeStringFromDate:(NSDate *)date
 {
-    return [self.dateFormatter stringFromDate:date];
+    return [self.RefugeDateFormatter stringFromDate:date];
 }
 
 # pragma mark - Private methods
 
-+ (NSDateFormatter *)dateFormatter
++ (NSDateFormatter *)RefugeDateFormatter
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = kRefugeDateFormat;

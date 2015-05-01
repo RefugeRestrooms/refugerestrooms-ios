@@ -42,7 +42,7 @@ static NSString * const kNoName = @"No Name";
         }
         else
         {
-            _title = [restroom.name prepareForDisplay];
+            _title = [restroom.name RefugePrepareForDisplay];
         }
 
         _subtitle = [self addressForRestroom:restroom];

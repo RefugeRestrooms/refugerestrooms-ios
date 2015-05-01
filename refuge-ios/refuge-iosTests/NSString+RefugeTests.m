@@ -35,7 +35,7 @@
 
 - (void)testStringCanBePreparedForDisplay
 {
-    XCTAssertEqualObjects([self.string prepareForDisplay], @"This string's not right", @"String should be properly prepared for display");
+    XCTAssertEqualObjects([self.string RefugePrepareForDisplay], @"This string's not right", @"String should be properly prepared for display");
 }
 
 @end

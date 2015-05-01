@@ -41,7 +41,7 @@
     self.restroom.comment = @"No comment";
     self.restroom.latitude = [NSDecimalNumber decimalNumberWithString:@"35.867321"];
     self.restroom.longitude = [NSDecimalNumber decimalNumberWithString:@"-78.567711"];
-    self.restroom.createdDate = [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"];
+    self.restroom.createdDate = [NSDate RefugeDateFromString:@"2014-02-02T20:55:31.555Z"];
 }
 
 - (void)tearDown
@@ -87,7 +87,7 @@
     XCTAssertEqualObjects(self.restroom.comment, @"No comment", @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithString:@"35.867321"], @"Restroom properties should be set correctly");
     XCTAssertEqualObjects(self.restroom.longitude, [NSDecimalNumber decimalNumberWithString:@"-78.567711"], @"Restroom properties should be set correctly");
-    XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom properties should be set correctly");
+    XCTAssertEqualObjects(self.restroom.createdDate, [NSDate RefugeDateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom properties should be set correctly");
 }
 
 - (void)testThatRestroomConformsToMTLJsonSerializingProtocol

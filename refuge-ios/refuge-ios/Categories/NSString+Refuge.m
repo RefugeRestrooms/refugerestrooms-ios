@@ -20,7 +20,7 @@
 
 @implementation NSString (Refuge)
 
-- (instancetype)prepareForDisplay
+- (instancetype)RefugePrepareForDisplay
 {
     return [self stringByReplacingOccurrencesOfString:@"\\'" withString:@"\'"];
 }

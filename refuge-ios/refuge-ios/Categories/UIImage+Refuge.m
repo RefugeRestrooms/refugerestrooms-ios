@@ -20,7 +20,7 @@
 
 @implementation UIImage (Refuge)
 
-+ (UIImage *)resizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height
++ (UIImage *)RefugeResizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height
 {
     CGSize newSize = CGSizeMake(width, height);
     UIGraphicsBeginImageContext(newSize);

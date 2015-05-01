@@ -103,10 +103,10 @@
 + (NSValueTransformer *)createdDateJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
-        NSDate *date = [NSDate dateFromString:str];
+        NSDate *date = [NSDate RefugeDateFromString:str];
         return date;
     } reverseBlock:^(NSDate *date) {
-        return [NSDate stringFromDate:date];
+        return [NSDate RefugeStringFromDate:date];
     }];
 }
 

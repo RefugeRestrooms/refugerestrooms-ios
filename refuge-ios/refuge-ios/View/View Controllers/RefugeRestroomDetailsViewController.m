@@ -119,14 +119,14 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 - (void)setDetails
 {
-    self.nameLabel.text = [self.restroom.name prepareForDisplay];
-    self.streetLabel.text = [self.restroom.street prepareForDisplay];
-    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] prepareForDisplay];
+    self.nameLabel.text = [self.restroom.name RefugePrepareForDisplay];
+    self.streetLabel.text = [self.restroom.street RefugePrepareForDisplay];
+    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] RefugePrepareForDisplay];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextView.backgroundColor = [UIColor clearColor];
-    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: [self.restroom.directions prepareForDisplay];
-    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : [self.restroom.comment prepareForDisplay];
+    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: [self.restroom.directions RefugePrepareForDisplay];
+    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : [self.restroom.comment RefugePrepareForDisplay];
 
     [self createCharacteristicsImages];
 }

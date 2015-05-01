@@ -137,7 +137,7 @@ static float const kImageWidthPin = 31.0;
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
                                                       reuseIdentifier:kMapAnnotationReuseIdentifier];
-        UIImage *resizedImage = [UIImage resizeImageNamed:kImageNamePin width:kImageWidthPin height:kImageHeightPin];
+        UIImage *resizedImage = [UIImage RefugeResizeImageNamed:kImageNamePin width:kImageWidthPin height:kImageHeightPin];
 
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;

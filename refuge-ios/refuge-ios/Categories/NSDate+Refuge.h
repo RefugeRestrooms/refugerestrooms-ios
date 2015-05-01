@@ -21,7 +21,7 @@
 @interface NSDate (Refuge)
 
 + (NSString *)RefugeDateFormat;
-+ (NSDate *)dateFromString:(NSString *)dateString;
-+ (NSString *)stringFromDate:(NSDate *)date;
++ (NSDate *)RefugeDateFromString:(NSString *)dateString;
++ (NSString *)RefugeStringFromDate:(NSDate *)date;
 
 @end
