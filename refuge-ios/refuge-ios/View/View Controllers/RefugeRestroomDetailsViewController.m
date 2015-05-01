@@ -22,11 +22,11 @@
 #import "NSString+Refuge.h"
 #import "UIColor+Refuge.h"
 
-static NSString * const kImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
-static NSString * const kImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
-static NSString * const kTextFieldFontName = @"HelveticaNeue";
-static NSString * const kTextFieldPlaceholderNoDirections = @"No directions";
-static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
+static NSString * const kRefugeImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
+static NSString * const kRefugeImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
+static NSString * const kRefugeTextFieldFontName = @"HelveticaNeue";
+static NSString * const kRefugeTextFieldPlaceholderNoDirections = @"No directions";
+static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
 
 @interface RefugeRestroomDetailsViewController ()
 
@@ -84,7 +84,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 - (void)styleTextFields
 {
-    UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
+    UIFont *font = [UIFont fontWithName:kRefugeTextFieldFontName size:16.0];
 
     self.directionsTextView.font = font;
     self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
@@ -119,14 +119,14 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 
 - (void)setDetails
 {
-    self.nameLabel.text = [self.restroom.name prepareForDisplay];
-    self.streetLabel.text = [self.restroom.street prepareForDisplay];
-    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] prepareForDisplay];
+    self.nameLabel.text = [self.restroom.name RefugePrepareForDisplay];
+    self.streetLabel.text = [self.restroom.street RefugePrepareForDisplay];
+    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] RefugePrepareForDisplay];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextView.backgroundColor = [UIColor clearColor];
-    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: [self.restroom.directions prepareForDisplay];
-    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : [self.restroom.comment prepareForDisplay];
+    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kRefugeTextFieldPlaceholderNoDirections: [self.restroom.directions RefugePrepareForDisplay];
+    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kRefugeTextFieldPlaceholderNoComments : [self.restroom.comment RefugePrepareForDisplay];
 
     [self createCharacteristicsImages];
 }
@@ -181,8 +181,8 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 {
     BOOL isUnisex = [self.restroom.isUnisex boolValue];
     BOOL isAccessible = [self.restroom.isAccessible boolValue];
-    UIImage *imageUnisex = [UIImage imageNamed:kImageNameCharacteristicUnisex];
-    UIImage *imageAccessible = [UIImage imageNamed:kImageNameCharacteristicAccessible];
+    UIImage *imageUnisex = [UIImage imageNamed:kRefugeImageNameCharacteristicUnisex];
+    UIImage *imageAccessible = [UIImage imageNamed:kRefugeImageNameCharacteristicAccessible];
 
     if(isUnisex && isAccessible)
     {

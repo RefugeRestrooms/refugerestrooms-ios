@@ -21,11 +21,11 @@
 #import "RefugeMapPin.h"
 #import "UIImage+Refuge.h"
 
-static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
-static NSString * const kMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
-static NSString * const kImageNamePin = @"refuge-map-pin.png";
-static float const kImageHeightPin = 39.5;
-static float const kImageWidthPin = 31.0;
+static NSString * const kRefugeMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
+static NSString * const kRefugeMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
+static NSString * const kRefugeImageNamePin = @"refuge-map-pin.png";
+static float const kRefugeImageHeightPin = 39.5;
+static float const kRefugeImageWidthPin = 31.0;
 @implementation RefugeMap
 
 # pragma mark - Initializers
@@ -131,13 +131,13 @@ static float const kImageWidthPin = 31.0;
 
 - (MKAnnotationView *)annotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
 {
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kMapAnnotationReuseIdentifier];
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kRefugeMapAnnotationReuseIdentifier];
 
     if (!annotationView)
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:kMapAnnotationReuseIdentifier];
-        UIImage *resizedImage = [UIImage resizeImageNamed:kImageNamePin width:kImageWidthPin height:kImageHeightPin];
+                                                      reuseIdentifier:kRefugeMapAnnotationReuseIdentifier];
+        UIImage *resizedImage = [UIImage RefugeResizeImageNamed:kRefugeImageNamePin width:kRefugeImageWidthPin height:kRefugeImageHeightPin];
 
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;

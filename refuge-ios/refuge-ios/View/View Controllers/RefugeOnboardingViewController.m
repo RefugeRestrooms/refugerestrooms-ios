@@ -21,11 +21,11 @@
 #import <EAIntroView/EAIntroView.h>
 #import "UIColor+Refuge.h"
 
-static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
-static NSString * const kOnboardPageName1 = @"RefugeOnboardPage1";
-static NSString * const kOnboardPageName2 = @"RefugeOnboardPage2";
-static NSString * const kOnboardPageName3 = @"RefugeOnboardPage3";
-static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
+static NSString * const kRefugeSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
+static NSString * const kRefugeOnboardPageName1 = @"RefugeOnboardPage1";
+static NSString * const kRefugeOnboardPageName2 = @"RefugeOnboardPage2";
+static NSString * const kRefugeOnboardPageName3 = @"RefugeOnboardPage3";
+static NSString * const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
 
 @interface RefugeOnboardingViewController ()
 
@@ -55,17 +55,17 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
 
 - (void)introDidFinish:(EAIntroView *)introView
 {
-    [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
+    [self performSegueWithIdentifier:kRefugeSegueNameDismissOnboarding sender:self];
 }
 
 #pragma mark - Private methods
 
 - (NSArray *)createPages
 {
-    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName1];
-    EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName2];
-    EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName3];
-    EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName4];
+    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName1];
+    EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName2];
+    EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName3];
+    EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName4];
 
     return @[ page1, page2, page3, page4 ];
 }

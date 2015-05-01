@@ -20,6 +20,6 @@
 
 @interface NSString (Refuge)
 
-- (instancetype)prepareForDisplay;
+- (instancetype)RefugePrepareForDisplay;
 
 @end

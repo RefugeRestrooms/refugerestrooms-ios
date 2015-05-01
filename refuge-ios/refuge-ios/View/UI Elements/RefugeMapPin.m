@@ -22,7 +22,7 @@
 #import "RefugeRestroom.h"
 #import "NSString+Refuge.h"
 
-static NSString * const kNoName = @"No Name";
+static NSString * const kRefugeRestroomNoName = @"No Name";
 
 @implementation RefugeMapPin
 
@@ -38,11 +38,11 @@ static NSString * const kNoName = @"No Name";
 
         if ([restroom.name isEqualToString:@""])
         {
-            _title = kNoName;
+            _title = kRefugeRestroomNoName;
         }
         else
         {
-            _title = [restroom.name prepareForDisplay];
+            _title = [restroom.name RefugePrepareForDisplay];
         }
 
         _subtitle = [self addressForRestroom:restroom];

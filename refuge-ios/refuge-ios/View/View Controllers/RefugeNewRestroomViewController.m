@@ -20,7 +20,7 @@
 
 #import "Mixpanel+Refuge.h"
 
-static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new?mobile=true";
+static NSString * const kRefugeUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new?mobile=true";
 
 @interface RefugeNewRestroomViewController ()
 
@@ -42,7 +42,7 @@ static NSString * const kUrlNewRestroom = @"http://www.refugerestrooms.org/restr
 
     self.errorView.hidden = YES;
 
-    NSURL *url = [NSURL URLWithString:kUrlNewRestroom];
+    NSURL *url = [NSURL URLWithString:kRefugeUrlNewRestroom];
     NSURLRequest *urlResquest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlResquest];
 }

@@ -33,7 +33,7 @@
     CGFloat desiredHeight = 20.0;
     NSString *imageName = @"refuge-map-pin.png";
     
-    UIImage *resizedImage = [UIImage resizeImageNamed:imageName width:desiredWith height:desiredHeight];
+    UIImage *resizedImage = [UIImage RefugeResizeImageNamed:imageName width:desiredWith height:desiredHeight];
     
     XCTAssertEqual(resizedImage.size.width, desiredWith, @"Resizing should change width");
     XCTAssertEqual(resizedImage.size.height, desiredHeight, @"Resizing should change height");

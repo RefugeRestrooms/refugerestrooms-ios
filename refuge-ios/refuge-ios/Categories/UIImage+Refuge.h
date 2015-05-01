@@ -20,6 +20,6 @@
 
 @interface UIImage (Refuge)
 
-+ (UIImage *)resizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height;
++ (UIImage *)RefugeResizeImageNamed:(NSString *)imageName width:(CGFloat)width height:(CGFloat)height;
 
 @end

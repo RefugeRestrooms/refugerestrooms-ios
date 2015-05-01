@@ -36,19 +36,17 @@
 #import "UIColor+Refuge.h"
 #import "UIImage+Refuge.h"
 
-static float const kMetersPerMile = 1609.344;
-static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
-static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
-static NSString * const kSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
-static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
+static float const kRefugeMetersPerMile = 1609.344;
+static NSString * const kRefugeSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
+static NSString * const kRefugeSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
+static NSString * const kRefugeSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
+static NSString * const kRefugeSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
-static NSString * const kHudTextNoInternet = @"Internet unavailable";
-static NSString * const kHudTextLocationNotFound = @"Location not found";
-static NSString * const kReachabilityTestURL = @"www.google.com";
-static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search";
-static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled";
-static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
-static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access is disabled. If you'd like to authorize it, please go to your device settings";
+static NSString * const kRefugeReachabilityTestURL = @"www.google.com";
+static NSString * const kRefugeErrorTextAutocompleteFail = @"Cound not fetch addresses for Search";
+static NSString * const kRefugeErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled";
+static NSString * const kRefugeErrorTextPlacemarkCreationFail = @"Could not map selected location";
+static NSString * const kRefugeErrorTextLocationServicesFailiOS7 = @"Location Access is disabled. If you'd like to authorize it, please go to your device settings";
 
 @interface RefugeMapViewController ()
 
@@ -99,7 +97,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
             [self displayOnboarding];
         }
 
-        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
+        self.internetReachability = [Reachability reachabilityWithHostname:kRefugeReachabilityTestURL];
 
         if(self.internetReachability.isReachable)
         {
@@ -116,7 +114,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
         {
             self.isSyncComplete = YES;
 
-            [self displayAlertForWithMessage:kErrorTextNoInternet];
+            [self displayAlertForWithMessage:kRefugeErrorTextNoInternet];
 
             [self plotRestrooms];
         }
@@ -159,14 +157,14 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 {
     [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:mapPin];
 
-    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
+    [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:mapPin];
 }
 
 - (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
     [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:firstPinRetrieved];
 
-    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:firstPinRetrieved];
+    [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:firstPinRetrieved];
 }
 
 # pragma mark RefugeRestroomManagerDelegate methods
@@ -227,11 +225,11 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.searchResultsTable dequeueReusableCellWithIdentifier:kSearchResultsTableCellReuseIdentifier];
+    UITableViewCell *cell = [self.searchResultsTable dequeueReusableCellWithIdentifier:kRefugeSearchResultsTableCellReuseIdentifier];
 
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSearchResultsTableCellReuseIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRefugeSearchResultsTableCellReuseIdentifier];
     }
 
     cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
@@ -258,7 +256,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
                                     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeResolvingPlacemarkFailed];
 
-                                    [self displayAlertForWithMessage:kErrorTextPlacemarkCreationFail];
+                                    [self displayAlertForWithMessage:kRefugeErrorTextPlacemarkCreationFail];
                                 }
      ];
 
@@ -269,7 +267,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:kSegueNameShowRestroomDetails])
+    if([[segue identifier] isEqualToString:kRefugeSegueNameShowRestroomDetails])
     {
         RefugeRestroomDetailsViewController *destinationController = [segue destinationViewController];
         RefugeMapPin *mapPin = (RefugeMapPin *)sender;
@@ -277,7 +275,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
         destinationController.restroom = mapPin.restroom;
     }
 
-    if([[segue identifier] isEqualToString:kSegueNameShowNewRestroomForm])
+    if([[segue identifier] isEqualToString:kRefugeSegueNameShowNewRestroomForm])
     {
         [[Mixpanel sharedInstance] refugeTrackNewRestroomButtonTouched];
     }
@@ -363,7 +361,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (void)displayOnboarding
 {
-    [self performSegueWithIdentifier:kSegueNameModalOnboarding sender:self];
+    [self performSegueWithIdentifier:kRefugeSegueNameModalOnboarding sender:self];
 }
 
 - (void)promptToAllowLocationServices
@@ -382,14 +380,14 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
         }
         else
         {
-            [self displayAlertForWithMessage:kErrorTextLocationServicesFailiOS7];
+            [self displayAlertForWithMessage:kRefugeErrorTextLocationServicesFailiOS7];
         }
     }
 }
 
 - (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kRefugeMetersPerMile), (0.5 * kRefugeMetersPerMile));
 
     [self.mapView setRegion:viewRegion animated:YES];
 }
@@ -440,7 +438,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
                                      [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSearchAttemptFailed];
 
-                                     [self displayAlertForWithMessage:kErrorTextAutocompleteFail];
+                                     [self displayAlertForWithMessage:kRefugeErrorTextAutocompleteFail];
                                      [self dismissSearch];
                                  }
     ];
