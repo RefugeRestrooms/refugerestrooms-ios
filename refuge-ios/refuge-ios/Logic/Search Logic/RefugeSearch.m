@@ -22,8 +22,8 @@
 #import "RefugeMapPlace.h"
 #import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
 
-static NSString * const kApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
-static CLLocationDistance const kSearchQueryRadius = 100.0;
+static NSString * const kRefugeSearchApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
+static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
 
 @interface RefugeSearch ()
 
@@ -42,8 +42,8 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
     if(self)
     {
         self.searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-        self.searchQuery.key = kApiKey;
-        self.searchQuery.radius = kSearchQueryRadius;
+        self.searchQuery.key = kRefugeSearchApiKey;
+        self.searchQuery.radius = kRefugeSearchQueryRadius;
     }
 
     return self;

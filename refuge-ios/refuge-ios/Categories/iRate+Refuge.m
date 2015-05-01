@@ -18,12 +18,12 @@
 
 #import "iRate+Refuge.h"
 
-static NSUInteger const kAppID = 968531953;
+static NSUInteger const kRefugeAppID = 968531953;
 
 @implementation iRate (Refuge)
 
 - (void)refugeSetup {
-	[iRate sharedInstance].appStoreID = kAppID;
+	[iRate sharedInstance].appStoreID = kRefugeAppID;
 	[iRate sharedInstance].daysUntilPrompt = 3; // number of days the user must have had the app installed before they are prompted to rate it
 	[iRate sharedInstance].usesUntilPrompt = 3; // minimum number of times the user must launch the app before they are prompted to rate it
 	[iRate sharedInstance].usesPerWeekForPrompt = 0; // average number of times the user must launch the app per week for the prompt to be shown
