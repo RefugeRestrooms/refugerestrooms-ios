@@ -60,9 +60,10 @@
             gamma = [_secondaryDelegate clusterDiscriminationPowerForMapView:self];
         }
 
-// REFUGE EDIT
-//        NSString * clusterTitle = @"%d elements";
+        // REFUGE EDIT
+        // NSString * clusterTitle = @"%d elements";
         NSString * clusterTitle = @"%d Restrooms";
+        
         if ([_secondaryDelegate respondsToSelector:@selector(clusterTitleForMapView:)]) {
             clusterTitle = [_secondaryDelegate clusterTitleForMapView:self];
         }
@@ -409,8 +410,8 @@
 }
 
 - (NSInteger)_numberOfClusters {
-// REFUGE EDIT
-//    NSInteger numberOfClusters = 32; // default value
+    // REFUGE EDIT
+    //NSInteger numberOfClusters = 32; // default value
     NSInteger numberOfClusters = 50;
     if ([_secondaryDelegate respondsToSelector:@selector(numberOfClustersInMapView:)]) {
         numberOfClusters = [_secondaryDelegate numberOfClustersInMapView:self];

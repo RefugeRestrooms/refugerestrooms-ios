@@ -1,10 +1,20 @@
 //
-//  RefugeRestroomDetailsViewController.m
-//  refuge-ios
+// RefugeRestroomDetailsViewController.m
 //
-//  Created by Harlan Kellaway on 2/7/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeRestroomDetailsViewController.h"
 
@@ -48,16 +58,16 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
-    
+
     [self setDetails];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     [self setupUI];
 }
 
@@ -67,7 +77,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.ratingView.layer.cornerRadius = 5.0f;
-    
+
     [self styleTextFields];
     [self centerHeaderTextIfNoImages];
 }
@@ -75,13 +85,13 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
 - (void)styleTextFields
 {
     UIFont *font = [UIFont fontWithName:kTextFieldFontName size:16.0];
-    
+
     self.directionsTextView.font = font;
     self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
-    
+
     self.commentsTextView.font = font;
     self.commentsTextView.textColor = [UIColor RefugePurpleDarkColor];
-    
+
     CGSize maximumTextViewSize = CGSizeMake(self.directionsTextView.bounds.size.width, CGFLOAT_MAX);
     CGRect rectNeededForDirections = [self.directionsTextView.text boundingRectWithSize:maximumTextViewSize
                                                                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
@@ -92,7 +102,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
                                                                           attributes:@{ NSFontAttributeName : font }
                                                                              context:nil];
     CGFloat textPadding = font.lineHeight * 3; // Text can get cut-off without adjustment
-    
+
     self.directionsTextViewHeightConstraint.constant = rectNeededForDirections.size.height + textPadding;
     self.commentsTextViewHeightConstraint.constant = rectNeededForComments.size.height + textPadding;
 }
@@ -102,7 +112,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     if(![self.restroom.isUnisex boolValue] && ![self.restroom.isAccessible boolValue])
     {
         [self.nameLabel removeConstraint:self.nameLabelLeadingAlignmentConstraint];
-        
+
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:0 toItem:self.nameLabel attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
     }
 }
@@ -117,14 +127,14 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     self.directionsTextView.backgroundColor = [UIColor clearColor];
     self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kTextFieldPlaceholderNoDirections: [self.restroom.directions prepareForDisplay];
     self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kTextFieldPlaceholderNoComments : [self.restroom.comment prepareForDisplay];
-    
+
     [self createCharacteristicsImages];
 }
 
 - (UIColor *)ratingColor
 {
     UIColor *noRatingColor = [UIColor RefugeRatingNoneColor];
-    
+
     switch (self.restroomRatingType)
     {
         case RefugeRestroomRatingTypeNegative:
@@ -151,12 +161,12 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     int numDownvotes = [self.restroom.numDownvotes intValue];
     int sumVotes = numUpvotes + numDownvotes;
     int percentPositive = 0;
-    
+
     if(sumVotes > 0)
     {
         percentPositive = (numUpvotes / sumVotes) * 100;
     }
-    
+
     switch (self.restroomRatingType) {
         case RefugeRestroomRatingTypeNone:
             return @"Not yet rated";
@@ -173,7 +183,7 @@ static NSString * const kTextFieldPlaceholderNoComments = @"No comments";
     BOOL isAccessible = [self.restroom.isAccessible boolValue];
     UIImage *imageUnisex = [UIImage imageNamed:kImageNameCharacteristicUnisex];
     UIImage *imageAccessible = [UIImage imageNamed:kImageNameCharacteristicAccessible];
-    
+
     if(isUnisex && isAccessible)
     {
         self.characteristicImage1.image = imageUnisex;

@@ -227,14 +227,11 @@
         }
     }
 
-// REFUGE EDIT
+//    REFUGE EDIT
 //    NSLog(@"Computing KD-tree...");
-  
     ADMapCluster * cluster = [[ADMapCluster alloc] initWithAnnotations:initialAnnotations atDepth:0 inMapRect:boundaries gamma:gamma clusterTitle:clusterTitle showSubtitle:showSubtitle];
-
-// REFUGE EDIT
+//    REFUGE EDIT
 //    NSLog(@"Computation done !");
-    
     return cluster;
 }
 
