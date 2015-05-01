@@ -86,7 +86,7 @@
     XCTAssertEqualObjects(self.restroom.comment, @"This is the Target by Triangle Town Center.", @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.latitude, [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:35.867321] decimalValue]], @"Restroom created with Restroombuilder should have correct properties");
     XCTAssertEqualObjects(self.restroom.longitude, [NSDecimalNumber decimalNumberWithDecimal:[[NSNumber numberWithDouble:-78.567711] decimalValue]], @"Restroom created with Restroombuilder should have correct properties");
-    XCTAssertEqualObjects(self.restroom.createdDate, [NSDate dateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom created with Restroombuilder should have correct properties");
+    XCTAssertEqualObjects(self.restroom.createdDate, [NSDate RefugeDateFromString:@"2014-02-02T20:55:31.555Z"], @"Restroom created with Restroombuilder should have correct properties");
 }
 
 - (void)testThatNilIsNotAnAcceptableJSONParameter

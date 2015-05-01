@@ -1,10 +1,20 @@
 //
-//  RefugeMapKitAnnotation.m
-//  refuge-ios
+// RefugeMapPin.m
 //
-//  Created by Harlan Kellaway on 2/9/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeMapPin.h"
 
@@ -12,7 +22,7 @@
 #import "RefugeRestroom.h"
 #import "NSString+Refuge.h"
 
-static NSString * const kNoName = @"No Name";
+static NSString * const kRefugeRestroomNoName = @"No Name";
 
 @implementation RefugeMapPin
 
@@ -21,31 +31,31 @@ static NSString * const kNoName = @"No Name";
 - (id)initWithRestroom:(RefugeRestroom *)restroom
 {
     self = [super init];
-    
+
     if (self)
     {
         _restroom = restroom;
-        
+
         if ([restroom.name isEqualToString:@""])
         {
-            _title = kNoName;
+            _title = kRefugeRestroomNoName;
         }
         else
         {
-            _title = [restroom.name prepareForDisplay];
+            _title = [restroom.name RefugePrepareForDisplay];
         }
-        
+
         _subtitle = [self addressForRestroom:restroom];
         _coordinate = [self coordinateForRestroom:restroom];
     }
-    
+
     return self;
 }
 
 - (id)init
 {
     NSAssert(false, @"Use initWitRestroom: to initialize this class.");
-    
+
     return nil;
 }
 
@@ -61,7 +71,7 @@ static NSString * const kNoName = @"No Name";
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = [restroom.latitude doubleValue];
     coordinate.longitude = [restroom.longitude doubleValue];
-    
+
     return coordinate;
 }
 

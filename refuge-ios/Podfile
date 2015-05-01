@@ -6,12 +6,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'refuge-ios' do
 
 pod 'ADClusterMapView', '1.1.0'
-pod 'AFNetworking', '2.5.1'
+pod 'AFNetworking', '~> 2.5'
 pod 'EAIntroView', '2.6.4'
-pod 'iRate', '1.11.3'
-pod 'Mantle', '1.5.4'
-pod 'Mixpanel', '2.7.2'
-pod 'Reachability', '3.2'
+pod 'iRate', '~> 1.11'
+pod 'Mantle', '~> 1.5'
+pod 'Mixpanel', '~> 2.7'
+pod 'Reachability', '~> 3.2'
 pod 'SPGooglePlacesAutocomplete', '1.0.4'
 
 end

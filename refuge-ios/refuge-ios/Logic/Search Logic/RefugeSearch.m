@@ -1,10 +1,20 @@
 //
-//  RefugeMapSearchQuery.m
-//  refuge-ios
+// RefugeSearch.m
 //
-//  Created by Harlan Kellaway on 2/10/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeSearch.h"
 
@@ -12,8 +22,8 @@
 #import "RefugeMapPlace.h"
 #import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
 
-static NSString * const kApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
-static CLLocationDistance const kSearchQueryRadius = 100.0;
+static NSString * const kRefugeSearchApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
+static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
 
 @interface RefugeSearch ()
 
@@ -28,14 +38,14 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
 - (instancetype)init
 {
     self = [super init];
-    
+
     if(self)
     {
         self.searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-        self.searchQuery.key = kApiKey;
-        self.searchQuery.radius = kSearchQueryRadius;
+        self.searchQuery.key = kRefugeSearchApiKey;
+        self.searchQuery.radius = kRefugeSearchQueryRadius;
     }
-    
+
     return self;
 }
 
@@ -44,7 +54,7 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
 - (void)searchForPlaces:(NSString *)searchString success:(void (^)(NSArray *))searchSuccess failure:(void (^)(NSError *))searchError
 {
     self.searchQuery.input = searchString;
-    
+
     [self.searchQuery fetchPlaces:^(NSArray *places, NSError *error)
      {
          if (error)
@@ -54,7 +64,7 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
          else
          {
              NSArray *refugeMapPlaces = [self translateToRefugePlaces:places];
-             
+
              searchSuccess(refugeMapPlaces);
          }
      }];
@@ -65,16 +75,16 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
 - (NSArray *)translateToRefugePlaces:(NSArray *)places
 {
     NSMutableArray *array = [NSMutableArray array];
-    
+
     for(SPGooglePlacesAutocompletePlace *place in places)
     {
         RefugeMapPlace *refugeMapPlace = [[RefugeMapPlace alloc] init];
-        
+
         refugeMapPlace.name = place.name;
         refugeMapPlace.reference = place.reference;
         refugeMapPlace.identifier = place.identifier;
         refugeMapPlace.key = place.key;
-        
+
         if(place.type == SPPlaceTypeGeocode)
         {
             refugeMapPlace.type = RefugeMapPlaceTypeGeocode;
@@ -83,10 +93,10 @@ static CLLocationDistance const kSearchQueryRadius = 100.0;
         {
             refugeMapPlace.type = RefugeMapPlaceTypeEstablishment;
         }
-        
+
         [array addObject:refugeMapPlace];
     }
-    
+
     return [array copy];
 }
 

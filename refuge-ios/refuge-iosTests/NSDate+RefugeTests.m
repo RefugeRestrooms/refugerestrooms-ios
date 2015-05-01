@@ -25,7 +25,7 @@
     [super setUp];
     
     self.dateString = @"2014-02-02T20:55:31.555Z";
-    self.dateFromString = [NSDate dateFromString:self.dateString];
+    self.dateFromString = [NSDate RefugeDateFromString:self.dateString];
 }
 
 - (void)tearDown
@@ -65,7 +65,7 @@
 
 - (void)testNSDateStringFromDateTranslatesCorrectly
 {
-    XCTAssertEqualObjects([NSDate stringFromDate:self.dateFromString], self.dateString, @"String from date should be correct");
+    XCTAssertEqualObjects([NSDate RefugeStringFromDate:self.dateFromString], self.dateString, @"String from date should be correct");
 }
 
 @end

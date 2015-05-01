@@ -1,21 +1,31 @@
 //
-//  RefugeOnboardingViewController.m
-//  refuge-ios
+// RefugeOnboardingViewController.m
 //
-//  Created by Harlan Kellaway on 2/16/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeOnboardingViewController.h"
 
 #import <EAIntroView/EAIntroView.h>
 #import "UIColor+Refuge.h"
 
-static NSString * const kSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
-static NSString * const kOnboardPageName1 = @"RefugeOnboardPage1";
-static NSString * const kOnboardPageName2 = @"RefugeOnboardPage2";
-static NSString * const kOnboardPageName3 = @"RefugeOnboardPage3";
-static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
+static NSString * const kRefugeSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
+static NSString * const kRefugeOnboardPageName1 = @"RefugeOnboardPage1";
+static NSString * const kRefugeOnboardPageName2 = @"RefugeOnboardPage2";
+static NSString * const kRefugeOnboardPageName3 = @"RefugeOnboardPage3";
+static NSString * const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
 
 @interface RefugeOnboardingViewController ()
 
@@ -30,12 +40,12 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     NSArray *pages = [self createPages];
     self.onboardingView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
     [self styleOnboardingView];
     self.onboardingView.delegate = self;
-    
+
     [self.onboardingView showInView:self.view animateDuration:0.3];
 }
 
@@ -45,18 +55,18 @@ static NSString * const kOnboardPageName4 = @"RefugeOnboardPage4";
 
 - (void)introDidFinish:(EAIntroView *)introView
 {
-    [self performSegueWithIdentifier:kSegueNameDismissOnboarding sender:self];
+    [self performSegueWithIdentifier:kRefugeSegueNameDismissOnboarding sender:self];
 }
 
 #pragma mark - Private methods
 
 - (NSArray *)createPages
 {
-    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName1];
-    EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName2];
-    EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName3];
-    EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kOnboardPageName4];
-    
+    EAIntroPage *page1 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName1];
+    EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName2];
+    EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName3];
+    EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName4];
+
     return @[ page1, page2, page3, page4 ];
 }
 

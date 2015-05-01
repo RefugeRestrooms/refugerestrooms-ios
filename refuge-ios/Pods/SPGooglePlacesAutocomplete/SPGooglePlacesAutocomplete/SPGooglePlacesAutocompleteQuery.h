@@ -6,9 +6,8 @@
 //  Copyright (c) 2012 Stephen Poletto. All rights reserved.
 //
 
-#import <CoreGraphics/CoreGraphics.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import <UIKit/UIKit.h>
 #import "SPGooglePlacesAutocompleteUtilities.h"
 
 @interface SPGooglePlacesAutocompleteQuery : NSObject {

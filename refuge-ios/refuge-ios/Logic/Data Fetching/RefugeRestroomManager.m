@@ -1,10 +1,20 @@
 //
-//  RefugeRestroomManager.m
-//  refuge-ios
+// RefugeRestroomManager.m
 //
-//  Created by Harlan Kellaway on 2/5/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeRestroomManager.h"
 
@@ -29,7 +39,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
     {
         [[NSException exceptionWithName:NSInvalidArgumentException reason:@"Delegate object does not conform to the delgate protocol" userInfo:nil] raise];
     }
-    
+
     _delegate = delegate;
 }
 
@@ -52,7 +62,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 {
     NSError *errorBuildingRestrooms;
     NSArray *restrooms = [self.restroomBuilder buildRestroomsFromJSON:jsonObjects error:&errorBuildingRestrooms];
-    
+
     if(restrooms != nil)
     {
         [self.dataPersistenceManager saveRestrooms:restrooms];
@@ -72,7 +82,7 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 {
     NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:RefugeRestroomManagerErrorRestroomsFetchCode userInfo:errorInfo];
-    
+
     [self.delegate fetchingRestroomsFromApiFailedWithError:reportableError];
 }
 
@@ -93,28 +103,28 @@ NSString *RefugeRestroomManagerErrorDomain = @"RefugeRestroomManagerErrorDomain"
 - (void)tellDelegateAboutFetchErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
 {
     NSDictionary *errorInfo = nil;
-    
+
     if (underlyingError)
     {
         errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey: NSUnderlyingErrorKey];
     }
-    
+
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
-    
+
     [self.delegate fetchingRestroomsFromApiFailedWithError:reportableError];
 }
 
 - (void)tellDelegateAboutSyncErrorWithCode:(NSInteger)errorCode underlyingError:(NSError *)underlyingError
 {
     NSDictionary *errorInfo = nil;
-    
+
     if (underlyingError)
     {
         errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey: NSUnderlyingErrorKey];
     }
-    
+
     NSError *reportableError = [NSError errorWithDomain:RefugeRestroomManagerErrorDomain code:errorCode userInfo:errorInfo];
-    
+
     [self.delegate savingRestroomsFailedWithError:reportableError];
 }
 

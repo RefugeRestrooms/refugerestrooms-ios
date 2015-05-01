@@ -1,21 +1,31 @@
 //
-//  RefugeMap.m
-//  refuge-ios
+// RefugeMap.m
 //
-//  Created by Harlan Kellaway on 2/11/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeMap.h"
 #import "RefugeMapDelegate.h"
 #import "RefugeMapPin.h"
 #import "UIImage+Refuge.h"
 
-static NSString * const kMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
-static NSString * const kMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
-static NSString * const kImageNamePin = @"refuge-map-pin.png";
-static float const kImageHeightPin = 39.5;
-static float const kImageWidthPin = 31.0;
+static NSString * const kRefugeMapAnnotationReuseIdentifier = @"MapAnnotationReuseIdentifier";
+static NSString * const kRefugeMapClusterAnnotationReuseIdentifier = @"MapClusterAnnotationReuseIdentifier";
+static NSString * const kRefugeImageNamePin = @"refuge-map-pin.png";
+static float const kRefugeImageHeightPin = 39.5;
+static float const kRefugeImageWidthPin = 31.0;
 @implementation RefugeMap
 
 # pragma mark - Initializers
@@ -23,12 +33,12 @@ static float const kImageWidthPin = 31.0;
 - (instancetype)init
 {
     self = [super init];
-    
+
     if(self)
     {
         self.delegate = self;
     }
-    
+
     return self;
 }
 
@@ -40,7 +50,7 @@ static float const kImageWidthPin = 31.0;
     {
         [[NSException exceptionWithName:NSInvalidArgumentException reason:@"Delegate object does not conform to the delgate protocol" userInfo:nil] raise];
     }
-    
+
     _mapDelegate = mapDelegate;
 }
 
@@ -54,12 +64,12 @@ static float const kImageWidthPin = 31.0;
     {
         return nil;
     }
-    
+
     if([annotation isKindOfClass:[ADClusterAnnotation class]])
     {
         return [self annotationViewForMapView:mapView withAnnotation:annotation];
     }
-    
+
     return nil;
 }
 
@@ -71,7 +81,7 @@ static float const kImageWidthPin = 31.0;
         NSArray *originalAnnotations = clusterAnnotation.originalAnnotations;
         int numMapPins = 0;
         RefugeMapPin *firstMapPin;
-        
+
         for(id<MKAnnotation> annotation in originalAnnotations)
         {
             if([annotation isKindOfClass:[RefugeMapPin class]])
@@ -83,7 +93,7 @@ static float const kImageWidthPin = 31.0;
                 numMapPins++;
             }
         }
-        
+
         if(numMapPins == 1)
         {
             [self.mapDelegate tappingCalloutAccessoryDidRetrievedSingleMapPin:firstMapPin];
@@ -108,7 +118,7 @@ static float const kImageWidthPin = 31.0;
 
     [newAnnotationsList addObjectsFromArray:self.annotations];
     [newAnnotationsList addObjectsFromArray:annotations];
-    
+
     [super setAnnotations:[newAnnotationsList copy]];
 }
 
@@ -121,17 +131,17 @@ static float const kImageWidthPin = 31.0;
 
 - (MKAnnotationView *)annotationViewForMapView:(MKMapView *)mapView withAnnotation:(id<MKAnnotation>)annotation
 {
-    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kMapAnnotationReuseIdentifier];
-    
+    MKAnnotationView *annotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:kRefugeMapAnnotationReuseIdentifier];
+
     if (!annotationView)
     {
         annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation
-                                                      reuseIdentifier:kMapAnnotationReuseIdentifier];
-        UIImage *resizedImage = [UIImage resizeImageNamed:kImageNamePin width:kImageWidthPin height:kImageHeightPin];
-        
+                                                      reuseIdentifier:kRefugeMapAnnotationReuseIdentifier];
+        UIImage *resizedImage = [UIImage RefugeResizeImageNamed:kRefugeImageNamePin width:kRefugeImageWidthPin height:kRefugeImageHeightPin];
+
         annotationView.image = resizedImage;
         annotationView.canShowCallout = YES;
-        
+
         UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         annotationView.rightCalloutAccessoryView = rightButton;
     }
@@ -139,7 +149,7 @@ static float const kImageWidthPin = 31.0;
     {
         annotationView.annotation = annotation;
     }
-    
+
     return annotationView;
 }
 

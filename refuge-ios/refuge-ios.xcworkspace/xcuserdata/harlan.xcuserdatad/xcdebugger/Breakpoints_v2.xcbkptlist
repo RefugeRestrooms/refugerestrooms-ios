@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "-createCharacteristicsImages"
+            landmarkName = "-ratingString"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -113,7 +113,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
             endingLineNumber = "35"
-            landmarkName = "commentsLabel"
+            landmarkName = "nameLabel"
             landmarkType = "19">
             <Locations>
                <Location
@@ -122,6 +122,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[RefugeRestroomDetailsViewController directionsTextView]"
                   moduleName = "refuge-ios"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
                   timestampString = "448075819.764401"
                   startingColumnNumber = "9223372036854775807"
@@ -136,6 +137,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "-[RefugeRestroomDetailsViewController setDirectionsTextView:]"
                   moduleName = "refuge-ios"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/harlan/Documents/Github/Projects/RefugeRestrooms/refuge-ios/refuge-ios/refuge-ios/View/View%20Controllers/RefugeRestroomDetailsViewController.m"
                   timestampString = "448075819.765068"
                   startingColumnNumber = "9223372036854775807"

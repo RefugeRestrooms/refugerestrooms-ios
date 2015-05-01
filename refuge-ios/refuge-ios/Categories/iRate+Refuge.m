@@ -1,19 +1,29 @@
 //
-//  iRate+Refuge.m
-//  refuge-ios
+// iRate+Refuge.m
 //
-//  Created by Harlan Kellaway on 2/19/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "iRate+Refuge.h"
 
-static NSUInteger const kAppID = 968531953;
+static NSUInteger const kRefugeAppID = 968531953;
 
 @implementation iRate (Refuge)
 
 - (void)refugeSetup {
-	[iRate sharedInstance].appStoreID = kAppID;
+	[iRate sharedInstance].appStoreID = kRefugeAppID;
 	[iRate sharedInstance].daysUntilPrompt = 3; // number of days the user must have had the app installed before they are prompted to rate it
 	[iRate sharedInstance].usesUntilPrompt = 3; // minimum number of times the user must launch the app before they are prompted to rate it
 	[iRate sharedInstance].usesPerWeekForPrompt = 0; // average number of times the user must launch the app per week for the prompt to be shown

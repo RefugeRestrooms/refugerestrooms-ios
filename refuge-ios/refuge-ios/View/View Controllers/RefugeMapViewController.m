@@ -1,10 +1,20 @@
 //
-//  RefugeMapViewController.m
-//  refuge-ios
+// RefugeMapViewController.m
 //
-//  Created by Harlan Kellaway on 2/4/15.
-//  Copyright (c) 2015 Refuge Restrooms. All rights reserved.
+// Copyleft (c) 2015 Refuge Restrooms
 //
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
+// Version 3, 19 November 2007
+//
+// This notice shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 #import "RefugeMapViewController.h"
 
@@ -26,19 +36,17 @@
 #import "UIColor+Refuge.h"
 #import "UIImage+Refuge.h"
 
-static float const kMetersPerMile = 1609.344;
-static NSString * const kSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
-static NSString * const kSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
-static NSString * const kSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
-static NSString * const kSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
+static float const kRefugeMetersPerMile = 1609.344;
+static NSString * const kRefugeSearchResultsTableCellReuseIdentifier = @"SearchResultsTableCellReuseIdentifier";
+static NSString * const kRefugeSegueNameModalOnboarding = @"RefugeRestroomOnboardingModalSegue";
+static NSString * const kRefugeSegueNameShowNewRestroomForm = @"RefugeRestroomNewRestroomShowSegue";
+static NSString * const kRefugeSegueNameShowRestroomDetails = @"RefugeRestroomDetailsShowSegue";
 
-static NSString * const kHudTextNoInternet = @"Internet unavailable";
-static NSString * const kHudTextLocationNotFound = @"Location not found";
-static NSString * const kReachabilityTestURL = @"www.google.com";
-static NSString * const kErrorTextAutocompleteFail = @"Cound not fetch addresses for Search";
-static NSString * const kErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled";
-static NSString * const kErrorTextPlacemarkCreationFail = @"Could not map selected location";
-static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access is disabled. If you'd like to authorize it, please go to your device settings";
+static NSString * const kRefugeReachabilityTestURL = @"www.google.com";
+static NSString * const kRefugeErrorTextAutocompleteFail = @"Cound not fetch addresses for Search";
+static NSString * const kRefugeErrorTextNoInternet = @"Internet is unavailable. Certain features may be disabled";
+static NSString * const kRefugeErrorTextPlacemarkCreationFail = @"Could not map selected location";
+static NSString * const kRefugeErrorTextLocationServicesFailiOS7 = @"Location Access is disabled. If you'd like to authorize it, please go to your device settings";
 
 @interface RefugeMapViewController ()
 
@@ -70,7 +78,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.appState = [[RefugeAppState alloc] init];
     [self configureLocationManager];
     [self configureMap];
@@ -83,35 +91,35 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     if(!self.isSyncComplete)
     {
         [self promptToAllowLocationServices];
-        
+
         if(self.appState.hasViewedOnboarding == NO)
         {
             [self displayOnboarding];
         }
-        
-        self.internetReachability = [Reachability reachabilityWithHostname:kReachabilityTestURL];
-    
+
+        self.internetReachability = [Reachability reachabilityWithHostname:kRefugeReachabilityTestURL];
+
         if(self.internetReachability.isReachable)
         {
             if(self.isSyncComplete == NO)
             {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-                
+
                         [self.restroomManager fetchRestroomsFromAPI];
-            
+
                 });
             }
         }
         else
         {
             self.isSyncComplete = YES;
-            
-            [self displayAlertForWithMessage:kErrorTextNoInternet];
-        
+
+            [self displayAlertForWithMessage:kRefugeErrorTextNoInternet];
+
             [self plotRestrooms];
         }
     }
-    
+
     [self.locationManager startUpdatingLocation];
 }
 
@@ -122,16 +130,16 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     [self.locationManager stopUpdatingLocation];
-    
+
     if(!self.isInitialZoomComplete)
     {
         CLLocation *location = [self.locationManager location];
         CLLocationCoordinate2D initialCoorindate = [location coordinate];
-        
+
         [self zoomToCoordinate:initialCoorindate];
-        
+
         [self.locationManager startUpdatingLocation];
-        
+
         self.isInitialZoomComplete = YES;
     }
 }
@@ -139,7 +147,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLocationManagerFailed];
-    
+
     [self.locationManager stopUpdatingLocation];
 }
 
@@ -148,15 +156,15 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
 {
     [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:mapPin];
-    
-    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:mapPin];
+
+    [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:mapPin];
 }
 
 - (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
     [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:firstPinRetrieved];
-    
-    [self performSegueWithIdentifier:kSegueNameShowRestroomDetails sender:firstPinRetrieved];
+
+    [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:firstPinRetrieved];
 }
 
 # pragma mark RefugeRestroomManagerDelegate methods
@@ -165,14 +173,14 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 {
     self.isSyncComplete = YES;
     self.appState.dateLastSynced = [NSDate date];
-    
+
     [self plotRestrooms];
 }
 
 - (void)fetchingRestroomsFromApiFailedWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeFetchingRestroomsFailed];
-    
+
     self.isSyncComplete = YES;
 }
 
@@ -184,7 +192,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSavingRestroomsFailed];
-    
+
     self.isSyncComplete = YES;
 }
 
@@ -217,15 +225,15 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [self.searchResultsTable dequeueReusableCellWithIdentifier:kSearchResultsTableCellReuseIdentifier];
-    
+    UITableViewCell *cell = [self.searchResultsTable dequeueReusableCellWithIdentifier:kRefugeSearchResultsTableCellReuseIdentifier];
+
     if (!cell)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSearchResultsTableCellReuseIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kRefugeSearchResultsTableCellReuseIdentifier];
     }
-    
+
     cell.textLabel.text = [self placeAtIndexPath:indexPath].name;
-    
+
     return cell;
 }
 
@@ -235,23 +243,23 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 {
     RefugeMapPlace *place = [self placeAtIndexPath:indexPath];
     NSString *cellText = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
-    
+
     [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
-        
+
                                     [[Mixpanel sharedInstance] refugeTrackSearchWithString:cellText placemark:placemark];
-        
+
                                     [self placemarkSelected:placemark];
-        
+
                                     [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
                                 }
                                 failure:^(NSError *error) {
-                                    
+
                                     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeResolvingPlacemarkFailed];
-                                    
-                                    [self displayAlertForWithMessage:kErrorTextPlacemarkCreationFail];
+
+                                    [self displayAlertForWithMessage:kRefugeErrorTextPlacemarkCreationFail];
                                 }
      ];
-    
+
     [self dismissSearch];
 }
 
@@ -259,15 +267,15 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([[segue identifier] isEqualToString:kSegueNameShowRestroomDetails])
+    if([[segue identifier] isEqualToString:kRefugeSegueNameShowRestroomDetails])
     {
         RefugeRestroomDetailsViewController *destinationController = [segue destinationViewController];
         RefugeMapPin *mapPin = (RefugeMapPin *)sender;
-        
+
         destinationController.restroom = mapPin.restroom;
     }
-    
-    if([[segue identifier] isEqualToString:kSegueNameShowNewRestroomForm])
+
+    if([[segue identifier] isEqualToString:kRefugeSegueNameShowNewRestroomForm])
     {
         [[Mixpanel sharedInstance] refugeTrackNewRestroomButtonTouched];
     }
@@ -276,7 +284,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
 {
     [[Mixpanel sharedInstance] refugeTrackOnboardingCompleted];
-    
+
     self.appState.hasViewedOnboarding = YES;
 }
 
@@ -285,12 +293,12 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (IBAction)currentLocationButtonTouched:(id)sender
 {
     CLLocationCoordinate2D currentLocation = [[self.locationManager location] coordinate];
-    
+
     if((currentLocation.latitude == 0) && (currentLocation.longitude == 0))
     {
         currentLocation = self.defaultLocation;
     }
-    
+
     [self zoomToCoordinate:currentLocation];
 }
 
@@ -309,7 +317,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     self.mapView.mapDelegate = self;
     self.mapView.mapType = MKMapTypeStandard;
     self.mapView.showsUserLocation = YES;
-    
+
     [self configureDefaultLocation];
     [self addTouchRecognizerToMap];
 }
@@ -325,7 +333,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     UITapGestureRecognizer *mapTouched = [[UITapGestureRecognizer alloc]
                                           initWithTarget:self
                                           action:@selector(dismissSearch)];
-    
+
     [self.mapView addGestureRecognizer:mapTouched];
 }
 
@@ -341,11 +349,11 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     self.dataPersistenceManager = [[RefugeDataPersistenceManager alloc] init];
     self.restroomBuilder = [[RefugeRestroomBuilder alloc] init];
     self.restroomCommunicator = [[RefugeRestroomCommunicator alloc] init];
-    
+
     self.restroomManager.dataPersistenceManager = self.dataPersistenceManager;
     self.restroomManager.restroomBuilder = self.restroomBuilder;
     self.restroomManager.restroomCommunicator = self.restroomCommunicator;
-    
+
     self.dataPersistenceManager.delegate = self.restroomManager;
     self.restroomManager.delegate = self;
     self.restroomCommunicator.delegate = self.restroomManager;
@@ -353,13 +361,13 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 
 - (void)displayOnboarding
 {
-    [self performSegueWithIdentifier:kSegueNameModalOnboarding sender:self];
+    [self performSegueWithIdentifier:kRefugeSegueNameModalOnboarding sender:self];
 }
 
 - (void)promptToAllowLocationServices
 {
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
-    
+
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
     {
         [self.locationManager requestWhenInUseAuthorization];
@@ -372,37 +380,37 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
         }
         else
         {
-            [self displayAlertForWithMessage:kErrorTextLocationServicesFailiOS7];
+            [self displayAlertForWithMessage:kRefugeErrorTextLocationServicesFailiOS7];
         }
     }
 }
 
 - (void)zoomToCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kMetersPerMile), (0.5 * kMetersPerMile));
-    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coordinate, (0.5 * kRefugeMetersPerMile), (0.5 * kRefugeMetersPerMile));
+
     [self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (void)plotRestrooms
 {
     NSArray *allRestrooms = [self.restroomManager restroomsFromLocalStore];
-    
+
     if(allRestrooms != nil)
     {
         [self removeAllAnnotationsFromMap];
-    
+
         NSMutableArray *mapPins = [NSMutableArray array];
-    
+
         for (RefugeRestroom *restroom in allRestrooms)
         {
             RefugeMapPin *mapPin = [[RefugeMapPin alloc] initWithRestroom:restroom];
-        
+
             [mapPins addObject:mapPin];
         }
-    
+
         [self.mapView addAnnotations:mapPins];
-    
+
         // only track initial plot
         if(self.appState.hasPreloadedRestrooms == NO)
         {
@@ -427,10 +435,10 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
                                      [self.searchResultsTable reloadData];
                                  }
                                  failure:^(NSError *error) {
-                                     
+
                                      [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSearchAttemptFailed];
-                                     
-                                     [self displayAlertForWithMessage:kErrorTextAutocompleteFail];
+
+                                     [self displayAlertForWithMessage:kRefugeErrorTextAutocompleteFail];
                                      [self dismissSearch];
                                  }
     ];
@@ -439,18 +447,18 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
 - (void)displayAlertForWithMessage:(NSString *)message
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    
+
     [alert show];
 }
 
 - (void)dismissSearch
 {
     self.searchBar.text = @"";
-    
+
     [self.searchBar performSelector: @selector(resignFirstResponder)
                       withObject: nil
                       afterDelay: 0.1];
-    
+
     self.searchResultsTable.hidden = YES;
 }
 
@@ -466,7 +474,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
                          [addressInfo objectForKey:@"Name"],
                          [addressInfo objectForKey:@"City"],
                          [addressInfo objectForKey:@"State"]];
-    
+
     [self addPlacemarkToMap:placemark withTitle:[NSString stringWithFormat:@"Search: %@", address]];
     [self recenterMapToPlacemark:placemark];
 }
@@ -476,7 +484,7 @@ static NSString * const kErrorTextLocationServicesFailiOS7 = @"Location Access i
     MKPointAnnotation *annotationFromPlacemark = [[MKPointAnnotation alloc] init];
     annotationFromPlacemark.coordinate = placemark.location.coordinate;
     annotationFromPlacemark.title = title;
-    
+
     [self.mapView addAnnotation:annotationFromPlacemark];
 }
 
