@@ -65,7 +65,7 @@
 
 - (void)testNSDateStringFromDateTranslatesCorrectly
 {
-    XCTAssertEqualObjects([NSDate RefugeDateFromString:self.dateFromString], self.dateString, @"String from date should be correct");
+    XCTAssertEqualObjects([NSDate RefugeStringFromDate:self.dateFromString], self.dateString, @"String from date should be correct");
 }
 
 @end
