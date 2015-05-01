@@ -1,24 +1,24 @@
 PODS:
   - ADClusterMapView (1.1.0)
-  - AFNetworking (2.5.1):
-    - AFNetworking/NSURLConnection (= 2.5.1)
-    - AFNetworking/NSURLSession (= 2.5.1)
-    - AFNetworking/Reachability (= 2.5.1)
-    - AFNetworking/Security (= 2.5.1)
-    - AFNetworking/Serialization (= 2.5.1)
-    - AFNetworking/UIKit (= 2.5.1)
-  - AFNetworking/NSURLConnection (2.5.1):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.1):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.1)
-  - AFNetworking/Security (2.5.1)
-  - AFNetworking/Serialization (2.5.1)
-  - AFNetworking/UIKit (2.5.1):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
@@ -26,29 +26,29 @@ PODS:
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
-  - Mixpanel (2.7.2):
-    - Mixpanel/MPCategoryHelpers (= 2.7.2)
-  - Mixpanel/MPCategoryHelpers (2.7.2)
+  - Mixpanel (2.7.3):
+    - Mixpanel/MPCategoryHelpers (= 2.7.3)
+  - Mixpanel/MPCategoryHelpers (2.7.3)
   - Reachability (3.2)
   - SPGooglePlacesAutocomplete (1.0.4)
 
 DEPENDENCIES:
   - ADClusterMapView (= 1.1.0)
-  - AFNetworking (= 2.5.1)
+  - AFNetworking (~> 2.5)
   - EAIntroView (= 2.6.4)
-  - iRate (= 1.11.3)
-  - Mantle (= 1.5.4)
-  - Mixpanel (= 2.7.2)
-  - Reachability (= 3.2)
+  - iRate (~> 1.11)
+  - Mantle (~> 1.5)
+  - Mixpanel (~> 2.7)
+  - Reachability (~> 3.2)
   - SPGooglePlacesAutocomplete (= 1.0.4)
 
 SPEC CHECKSUMS:
   ADClusterMapView: dfbaabc62ec929be8fbac1e86754af98baffb365
-  AFNetworking: 10e85a00bb0f475124e4ff2677bf15693b2c1523
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
   iRate: 09ef501c74ade02013348bc33225ea48f7aa4e55
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
-  Mixpanel: e9bcb16eb0e2a98fc330ceeb0d8b7f4aec4182ab
+  Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   SPGooglePlacesAutocomplete: ed6b50bec1ea0c3382a1812990d7c7e2551822f2
 

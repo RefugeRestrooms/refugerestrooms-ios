@@ -7,7 +7,7 @@ target 'refuge-ios' do
 
 pod 'ADClusterMapView', '1.1.0'
 pod 'AFNetworking', '~> 2.5'
-pod 'EAIntroView', '~> 2.6'
+pod 'EAIntroView', '2.6.4'
 pod 'iRate', '~> 1.11'
 pod 'Mantle', '~> 1.5'
 pod 'Mixpanel', '~> 2.7'
