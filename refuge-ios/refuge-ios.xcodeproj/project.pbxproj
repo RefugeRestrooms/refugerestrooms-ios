@@ -114,7 +114,6 @@
 		DCD8F8201ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */; };
 		DCD8F8211ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */; };
 		DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */; };
-		DCE6BB8C1A96CD08006B9B8A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 /* End PBXBuildFile section */
 
@@ -257,7 +256,6 @@
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
 				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
-				DCE6BB8C1A96CD08006B9B8A /* Crashlytics.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
