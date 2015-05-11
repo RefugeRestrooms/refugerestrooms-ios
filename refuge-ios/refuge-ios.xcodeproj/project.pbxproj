@@ -37,6 +37,20 @@
 		DC28E0CB1A99349900FEAAE6 /* refuge-onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */; };
 		DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
+		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
+		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
+		DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */; };
+		DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */; };
+		DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBE11B00F02D001B2B52 /* UIColor+Refuge.m */; };
+		DC45BBE91B00F02D001B2B52 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBE31B00F02D001B2B52 /* UIImage+Refuge.m */; };
+		DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBEC1B00F13E001B2B52 /* RefugeHTTPSessionManager.m */; };
+		DC45BBF11B00F13E001B2B52 /* RefugeRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBEE1B00F13E001B2B52 /* RefugeRestroomCommunicator.m */; };
+		DC45BBF71B00F1CE001B2B52 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBF41B00F1CE001B2B52 /* RefugeRestroomBuilder.m */; };
+		DC45BBF81B00F1CE001B2B52 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBF61B00F1CE001B2B52 /* RefugeSerialization.m */; };
+		DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */; };
+		DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */; };
+		DC45BC051B00F2C9001B2B52 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */; };
+		DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */; };
 		DC62845F1A996BD90038E604 /* refuge-icon-github.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62845E1A996BD90038E604 /* refuge-icon-github.png */; };
 		DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
 		DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
@@ -44,32 +58,6 @@
 		DC62846D1A9984CA0038E604 /* refuge-icon-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */; };
 		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
-		DC8F39581A980C5F00A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
-		DC8F39591A980C6000A90B13 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */; };
-		DC8F395A1A980C6000A90B13 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39511A980C5F00A90B13 /* Mixpanel+Refuge.m */; };
-		DC8F395B1A980C6000A90B13 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39511A980C5F00A90B13 /* Mixpanel+Refuge.m */; };
-		DC8F395C1A980C6000A90B13 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39531A980C5F00A90B13 /* NSDate+Refuge.m */; };
-		DC8F395D1A980C6000A90B13 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39531A980C5F00A90B13 /* NSDate+Refuge.m */; };
-		DC8F395E1A980C6000A90B13 /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39551A980C5F00A90B13 /* UIColor+Refuge.m */; };
-		DC8F395F1A980C6000A90B13 /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39551A980C5F00A90B13 /* UIColor+Refuge.m */; };
-		DC8F39601A980C6000A90B13 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39571A980C5F00A90B13 /* UIImage+Refuge.m */; };
-		DC8F39611A980C6000A90B13 /* UIImage+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39571A980C5F00A90B13 /* UIImage+Refuge.m */; };
-		DC8F397B1A980D5E00A90B13 /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39741A980D5E00A90B13 /* RefugeHTTPSessionManager.m */; };
-		DC8F397C1A980D5E00A90B13 /* RefugeHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39741A980D5E00A90B13 /* RefugeHTTPSessionManager.m */; };
-		DC8F397D1A980D5E00A90B13 /* RefugeRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39761A980D5E00A90B13 /* RefugeRestroomCommunicator.m */; };
-		DC8F397E1A980D5E00A90B13 /* RefugeRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39761A980D5E00A90B13 /* RefugeRestroomCommunicator.m */; };
-		DC8F397F1A980D5E00A90B13 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39791A980D5E00A90B13 /* RefugeRestroomManager.m */; };
-		DC8F39801A980D5E00A90B13 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39791A980D5E00A90B13 /* RefugeRestroomManager.m */; };
-		DC8F39941A980E4F00A90B13 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39931A980E4F00A90B13 /* RefugeDataPersistenceManager.m */; };
-		DC8F39951A980E4F00A90B13 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39931A980E4F00A90B13 /* RefugeDataPersistenceManager.m */; };
-		DC8F399B1A980E5800A90B13 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39981A980E5800A90B13 /* RefugeRestroomBuilder.m */; };
-		DC8F399C1A980E5800A90B13 /* RefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39981A980E5800A90B13 /* RefugeRestroomBuilder.m */; };
-		DC8F399D1A980E5800A90B13 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F399A1A980E5800A90B13 /* RefugeSerialization.m */; };
-		DC8F399E1A980E5800A90B13 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F399A1A980E5800A90B13 /* RefugeSerialization.m */; };
-		DC8F39A31A980F0D00A90B13 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39A21A980F0D00A90B13 /* RefugeMapPlace.m */; };
-		DC8F39A41A980F0D00A90B13 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39A21A980F0D00A90B13 /* RefugeMapPlace.m */; };
-		DC8F39A81A980F4800A90B13 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39A71A980F4800A90B13 /* RefugeSearch.m */; };
-		DC8F39A91A980F4800A90B13 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39A71A980F4800A90B13 /* RefugeSearch.m */; };
 		DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
@@ -111,8 +99,6 @@
 		DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */; };
 		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
 		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
-		DCD8F8201ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */; };
-		DCD8F8211ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */; };
 		DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */; };
 		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 /* End PBXBuildFile section */
@@ -169,6 +155,38 @@
 		DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard1.png"; sourceTree = "<group>"; };
 		DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBE01B00F02D001B2B52 /* UIColor+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBE11B00F02D001B2B52 /* UIColor+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBE21B00F02D001B2B52 /* UIImage+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Refuge.h"; sourceTree = "<group>"; };
+		DC45BBE31B00F02D001B2B52 /* UIImage+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Refuge.m"; sourceTree = "<group>"; };
+		DC45BBEB1B00F13E001B2B52 /* RefugeHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHTTPSessionManager.h; sourceTree = "<group>"; };
+		DC45BBEC1B00F13E001B2B52 /* RefugeHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHTTPSessionManager.m; sourceTree = "<group>"; };
+		DC45BBED1B00F13E001B2B52 /* RefugeRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomCommunicator.h; sourceTree = "<group>"; };
+		DC45BBEE1B00F13E001B2B52 /* RefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicator.m; sourceTree = "<group>"; };
+		DC45BBEF1B00F13E001B2B52 /* RefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
+		DC45BBF31B00F1CE001B2B52 /* RefugeRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomBuilder.h; sourceTree = "<group>"; };
+		DC45BBF41B00F1CE001B2B52 /* RefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilder.m; sourceTree = "<group>"; };
+		DC45BBF51B00F1CE001B2B52 /* RefugeSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSerialization.h; sourceTree = "<group>"; };
+		DC45BBF61B00F1CE001B2B52 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
+		DC45BBF91B00F23F001B2B52 /* RefugeRestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomManager.h; sourceTree = "<group>"; };
+		DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManager.m; sourceTree = "<group>"; };
+		DC45BBFB1B00F23F001B2B52 /* RefugeRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomManagerDelegate.h; sourceTree = "<group>"; };
+		DC45BBFD1B00F280001B2B52 /* RefugeDataPeristenceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPeristenceManagerDelegate.h; sourceTree = "<group>"; };
+		DC45BBFE1B00F280001B2B52 /* RefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPersistenceManager.h; sourceTree = "<group>"; };
+		DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeDataPersistenceManager.m; sourceTree = "<group>"; };
+		DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
+		DC45BC031B00F2C9001B2B52 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
+		DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
+		DC45BC071B00F2FA001B2B52 /* RefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearch.h; sourceTree = "<group>"; };
+		DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearch.m; sourceTree = "<group>"; };
 		DC62845E1A996BD90038E604 /* refuge-icon-github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-github.png"; sourceTree = "<group>"; };
 		DC6284601A996D000038E604 /* RefugeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeInfoViewController.h; sourceTree = "<group>"; };
 		DC6284611A996D000038E604 /* RefugeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeInfoViewController.m; sourceTree = "<group>"; };
@@ -176,36 +194,6 @@
 		DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-twitter.png"; sourceTree = "<group>"; };
 		DC8354221AABAED3009BEA58 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
-		DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
-		DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
-		DC8F39501A980C5F00A90B13 /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
-		DC8F39511A980C5F00A90B13 /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
-		DC8F39521A980C5F00A90B13 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
-		DC8F39531A980C5F00A90B13 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
-		DC8F39541A980C5F00A90B13 /* UIColor+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Refuge.h"; sourceTree = "<group>"; };
-		DC8F39551A980C5F00A90B13 /* UIColor+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Refuge.m"; sourceTree = "<group>"; };
-		DC8F39561A980C5F00A90B13 /* UIImage+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Refuge.h"; sourceTree = "<group>"; };
-		DC8F39571A980C5F00A90B13 /* UIImage+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Refuge.m"; sourceTree = "<group>"; };
-		DC8F39731A980D5E00A90B13 /* RefugeHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeHTTPSessionManager.h; sourceTree = "<group>"; };
-		DC8F39741A980D5E00A90B13 /* RefugeHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeHTTPSessionManager.m; sourceTree = "<group>"; };
-		DC8F39751A980D5E00A90B13 /* RefugeRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomCommunicator.h; sourceTree = "<group>"; };
-		DC8F39761A980D5E00A90B13 /* RefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicator.m; sourceTree = "<group>"; };
-		DC8F39771A980D5E00A90B13 /* RefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
-		DC8F39781A980D5E00A90B13 /* RefugeRestroomManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomManager.h; sourceTree = "<group>"; };
-		DC8F39791A980D5E00A90B13 /* RefugeRestroomManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManager.m; sourceTree = "<group>"; };
-		DC8F397A1A980D5E00A90B13 /* RefugeRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomManagerDelegate.h; sourceTree = "<group>"; };
-		DC8F39911A980E4F00A90B13 /* RefugeDataPeristenceManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPeristenceManagerDelegate.h; sourceTree = "<group>"; };
-		DC8F39921A980E4F00A90B13 /* RefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPersistenceManager.h; sourceTree = "<group>"; };
-		DC8F39931A980E4F00A90B13 /* RefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeDataPersistenceManager.m; sourceTree = "<group>"; };
-		DC8F39971A980E5800A90B13 /* RefugeRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomBuilder.h; sourceTree = "<group>"; };
-		DC8F39981A980E5800A90B13 /* RefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilder.m; sourceTree = "<group>"; };
-		DC8F39991A980E5800A90B13 /* RefugeSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSerialization.h; sourceTree = "<group>"; };
-		DC8F399A1A980E5800A90B13 /* RefugeSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSerialization.m; sourceTree = "<group>"; };
-		DC8F39A01A980F0D00A90B13 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
-		DC8F39A11A980F0D00A90B13 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
-		DC8F39A21A980F0D00A90B13 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
-		DC8F39A61A980F4800A90B13 /* RefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearch.h; sourceTree = "<group>"; };
-		DC8F39A71A980F4800A90B13 /* RefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearch.m; sourceTree = "<group>"; };
 		DC8F39B31A980FDE00A90B13 /* RefugeRestroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroom.h; sourceTree = "<group>"; };
 		DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 		DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
@@ -241,8 +229,6 @@
 		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
 		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
-		DCD8F81E1ABBC7F800E2E7E8 /* NSString+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Refuge.h"; sourceTree = "<group>"; };
-		DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Refuge.m"; sourceTree = "<group>"; };
 		DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RefugeTests.m"; sourceTree = "<group>"; };
 		DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
@@ -337,10 +323,10 @@
 		CED0CB521A82A6D300F7F3D8 /* refuge-ios */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F394D1A980C5F00A90B13 /* Categories */,
-				DC8F39621A980CDF00A90B13 /* Logic */,
+				DC45BBD61B00EFD9001B2B52 /* Features */,
 				DC8F39B21A980FDE00A90B13 /* Models */,
 				DC8F39BB1A9810B300A90B13 /* View */,
+				DC45BBD71B00F02D001B2B52 /* Utilities */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
@@ -348,7 +334,6 @@
 				DC3A1CB41A927F5100445D33 /* Images.xcassets */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
-				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
 			);
 			path = "refuge-ios";
@@ -359,6 +344,7 @@
 			children = (
 				CED0CB541A82A6D400F7F3D8 /* Info.plist */,
 				CED0CB551A82A6D400F7F3D8 /* main.m */,
+				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -392,95 +378,87 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DC8F394D1A980C5F00A90B13 /* Categories */ = {
+		DC45BBD61B00EFD9001B2B52 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F394E1A980C5F00A90B13 /* iRate+Refuge.h */,
-				DC8F394F1A980C5F00A90B13 /* iRate+Refuge.m */,
-				DC8F39501A980C5F00A90B13 /* Mixpanel+Refuge.h */,
-				DC8F39511A980C5F00A90B13 /* Mixpanel+Refuge.m */,
-				DC8F39521A980C5F00A90B13 /* NSDate+Refuge.h */,
-				DC8F39531A980C5F00A90B13 /* NSDate+Refuge.m */,
-				DCD8F81E1ABBC7F800E2E7E8 /* NSString+Refuge.h */,
-				DCD8F81F1ABBC7F800E2E7E8 /* NSString+Refuge.m */,
-				DC8F39541A980C5F00A90B13 /* UIColor+Refuge.h */,
-				DC8F39551A980C5F00A90B13 /* UIColor+Refuge.m */,
-				DC8F39561A980C5F00A90B13 /* UIImage+Refuge.h */,
-				DC8F39571A980C5F00A90B13 /* UIImage+Refuge.m */,
+				DC45BC011B00F2C9001B2B52 /* Map */,
+				DC45BC061B00F2FA001B2B52 /* Search */,
 			);
-			path = Categories;
+			path = Features;
 			sourceTree = "<group>";
 		};
-		DC8F39621A980CDF00A90B13 /* Logic */ = {
+		DC45BBD71B00F02D001B2B52 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39721A980D5E00A90B13 /* Data Fetching */,
-				DC8F39901A980E4F00A90B13 /* Data Persistence */,
-				DC8F39961A980E5800A90B13 /* Data Translation */,
-				DC8F399F1A980F0D00A90B13 /* Map Logic */,
-				DC8F39A51A980F4800A90B13 /* Search Logic */,
+				DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */,
+				DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */,
+				DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */,
+				DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */,
+				DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */,
+				DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */,
+				DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */,
+				DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */,
+				DC45BBE01B00F02D001B2B52 /* UIColor+Refuge.h */,
+				DC45BBE11B00F02D001B2B52 /* UIColor+Refuge.m */,
+				DC45BBE21B00F02D001B2B52 /* UIImage+Refuge.h */,
+				DC45BBE31B00F02D001B2B52 /* UIImage+Refuge.m */,
 			);
-			path = Logic;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
-		DC8F39721A980D5E00A90B13 /* Data Fetching */ = {
+		DC45BBEA1B00F0BA001B2B52 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39731A980D5E00A90B13 /* RefugeHTTPSessionManager.h */,
-				DC8F39741A980D5E00A90B13 /* RefugeHTTPSessionManager.m */,
-				DC8F39751A980D5E00A90B13 /* RefugeRestroomCommunicator.h */,
-				DC8F39761A980D5E00A90B13 /* RefugeRestroomCommunicator.m */,
-				DC8F39771A980D5E00A90B13 /* RefugeRestroomCommunicatorDelegate.h */,
-				DC8F39781A980D5E00A90B13 /* RefugeRestroomManager.h */,
-				DC8F39791A980D5E00A90B13 /* RefugeRestroomManager.m */,
-				DC8F397A1A980D5E00A90B13 /* RefugeRestroomManagerDelegate.h */,
+				DC45BBEB1B00F13E001B2B52 /* RefugeHTTPSessionManager.h */,
+				DC45BBEC1B00F13E001B2B52 /* RefugeHTTPSessionManager.m */,
+				DC45BBED1B00F13E001B2B52 /* RefugeRestroomCommunicator.h */,
+				DC45BBEE1B00F13E001B2B52 /* RefugeRestroomCommunicator.m */,
+				DC45BBEF1B00F13E001B2B52 /* RefugeRestroomCommunicatorDelegate.h */,
 			);
-			path = "Data Fetching";
+			path = Networking;
 			sourceTree = "<group>";
 		};
-		DC8F39901A980E4F00A90B13 /* Data Persistence */ = {
+		DC45BBF21B00F1AE001B2B52 /* Deserialization */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39911A980E4F00A90B13 /* RefugeDataPeristenceManagerDelegate.h */,
-				DC8F39921A980E4F00A90B13 /* RefugeDataPersistenceManager.h */,
-				DC8F39931A980E4F00A90B13 /* RefugeDataPersistenceManager.m */,
+				DC45BBF31B00F1CE001B2B52 /* RefugeRestroomBuilder.h */,
+				DC45BBF41B00F1CE001B2B52 /* RefugeRestroomBuilder.m */,
+				DC45BBF51B00F1CE001B2B52 /* RefugeSerialization.h */,
+				DC45BBF61B00F1CE001B2B52 /* RefugeSerialization.m */,
 			);
-			path = "Data Persistence";
+			path = Deserialization;
 			sourceTree = "<group>";
 		};
-		DC8F39961A980E5800A90B13 /* Data Translation */ = {
+		DC45BC011B00F2C9001B2B52 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39971A980E5800A90B13 /* RefugeRestroomBuilder.h */,
-				DC8F39981A980E5800A90B13 /* RefugeRestroomBuilder.m */,
-				DC8F39991A980E5800A90B13 /* RefugeSerialization.h */,
-				DC8F399A1A980E5800A90B13 /* RefugeSerialization.m */,
+				DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */,
+				DC45BC031B00F2C9001B2B52 /* RefugeMapPlace.h */,
+				DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */,
 			);
-			path = "Data Translation";
+			path = Map;
 			sourceTree = "<group>";
 		};
-		DC8F399F1A980F0D00A90B13 /* Map Logic */ = {
+		DC45BC061B00F2FA001B2B52 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				DC8F39A01A980F0D00A90B13 /* RefugeMapDelegate.h */,
-				DC8F39A11A980F0D00A90B13 /* RefugeMapPlace.h */,
-				DC8F39A21A980F0D00A90B13 /* RefugeMapPlace.m */,
+				DC45BC071B00F2FA001B2B52 /* RefugeSearch.h */,
+				DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */,
 			);
-			path = "Map Logic";
-			sourceTree = "<group>";
-		};
-		DC8F39A51A980F4800A90B13 /* Search Logic */ = {
-			isa = PBXGroup;
-			children = (
-				DC8F39A61A980F4800A90B13 /* RefugeSearch.h */,
-				DC8F39A71A980F4800A90B13 /* RefugeSearch.m */,
-			);
-			path = "Search Logic";
+			path = Search;
 			sourceTree = "<group>";
 		};
 		DC8F39B21A980FDE00A90B13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC45BBF21B00F1AE001B2B52 /* Deserialization */,
+				DC45BBEA1B00F0BA001B2B52 /* Networking */,
+				DC45BBFD1B00F280001B2B52 /* RefugeDataPeristenceManagerDelegate.h */,
+				DC45BBFE1B00F280001B2B52 /* RefugeDataPersistenceManager.h */,
+				DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */,
+				DC45BBF91B00F23F001B2B52 /* RefugeRestroomManager.h */,
+				DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */,
+				DC45BBFB1B00F23F001B2B52 /* RefugeRestroomManagerDelegate.h */,
 				DC8F39B31A980FDE00A90B13 /* RefugeRestroom.h */,
 				DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */,
 				DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */,
@@ -743,31 +721,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
-				DC8F395A1A980C6000A90B13 /* Mixpanel+Refuge.m in Sources */,
+				DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */,
 				DC8F39FF1A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */,
+				DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */,
+				DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */,
+				DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */,
 				DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
-				DC8F399B1A980E5800A90B13 /* RefugeRestroomBuilder.m in Sources */,
-				DCD8F8201ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */,
+				DC45BC051B00F2C9001B2B52 /* RefugeMapPlace.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
+				DC45BBF81B00F1CE001B2B52 /* RefugeSerialization.m in Sources */,
+				DC45BBF71B00F1CE001B2B52 /* RefugeRestroomBuilder.m in Sources */,
 				DC8F3A011A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */,
-				DC8F399D1A980E5800A90B13 /* RefugeSerialization.m in Sources */,
-				DC8F395E1A980C6000A90B13 /* UIColor+Refuge.m in Sources */,
-				DC8F397F1A980D5E00A90B13 /* RefugeRestroomManager.m in Sources */,
+				DC45BBF11B00F13E001B2B52 /* RefugeRestroomCommunicator.m in Sources */,
 				DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */,
-				DC8F397B1A980D5E00A90B13 /* RefugeHTTPSessionManager.m in Sources */,
-				DC8F395C1A980C6000A90B13 /* NSDate+Refuge.m in Sources */,
-				DC8F397D1A980D5E00A90B13 /* RefugeRestroomCommunicator.m in Sources */,
-				DC8F39581A980C5F00A90B13 /* iRate+Refuge.m in Sources */,
+				DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */,
+				DC45BBE91B00F02D001B2B52 /* UIImage+Refuge.m in Sources */,
+				DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */,
+				DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */,
 				DC8F3A031A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
-				DC8F39A31A980F0D00A90B13 /* RefugeMapPlace.m in Sources */,
+				DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 				DC8F39EA1A9810F800A90B13 /* RefugeMapPin.m in Sources */,
-				DC8F39A81A980F4800A90B13 /* RefugeSearch.m in Sources */,
 				DC8F39FD1A98113A00A90B13 /* RefugeMapViewController.m in Sources */,
-				DC8F39941A980E4F00A90B13 /* RefugeDataPersistenceManager.m in Sources */,
+				DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */,
 				DC8F39E81A9810F800A90B13 /* RefugeMap.m in Sources */,
-				DC8F39601A980C6000A90B13 /* UIImage+Refuge.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -782,21 +760,14 @@
 				DC8F39E91A9810F800A90B13 /* RefugeMap.m in Sources */,
 				DC8F39EB1A9810F800A90B13 /* RefugeMapPin.m in Sources */,
 				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
-				DC8F39A41A980F0D00A90B13 /* RefugeMapPlace.m in Sources */,
-				DC8F397C1A980D5E00A90B13 /* RefugeHTTPSessionManager.m in Sources */,
 				DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */,
 				DC8F3A001A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */,
-				DCD8F8211ABBC7F800E2E7E8 /* NSString+Refuge.m in Sources */,
 				DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */,
-				DC8F395B1A980C6000A90B13 /* Mixpanel+Refuge.m in Sources */,
 				DC8F3A041A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */,
-				DC8F399C1A980E5800A90B13 /* RefugeRestroomBuilder.m in Sources */,
 				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,
-				DC8F399E1A980E5800A90B13 /* RefugeSerialization.m in Sources */,
 				DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
 				DC8F39FE1A98113A00A90B13 /* RefugeMapViewController.m in Sources */,
-				DC8F39591A980C6000A90B13 /* iRate+Refuge.m in Sources */,
 				DC8F3A021A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */,
 				DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */,
 				DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
@@ -804,20 +775,13 @@
 				DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */,
 				CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */,
 				DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */,
-				DC8F39A91A980F4800A90B13 /* RefugeSearch.m in Sources */,
 				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
 				DCA355431A8C210300E3EDF8 /* MockNSUserDefaults.m in Sources */,
 				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
-				DC8F39951A980E4F00A90B13 /* RefugeDataPersistenceManager.m in Sources */,
 				CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */,
-				DC8F395D1A980C6000A90B13 /* NSDate+Refuge.m in Sources */,
-				DC8F39611A980C6000A90B13 /* UIImage+Refuge.m in Sources */,
 				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
-				DC8F397E1A980D5E00A90B13 /* RefugeRestroomCommunicator.m in Sources */,
 				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
-				DC8F39801A980D5E00A90B13 /* RefugeRestroomManager.m in Sources */,
 				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
-				DC8F395F1A980C6000A90B13 /* UIColor+Refuge.m in Sources */,
 				DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */,
 				DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */,
 				DC8F39BA1A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
