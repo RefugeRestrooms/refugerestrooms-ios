@@ -23,10 +23,10 @@ Development Build: [![Build Status] (https://travis-ci.org/RefugeRestrooms/refug
 <br>
 [EAIntroView] (https://github.com/ealeksandrov/EAIntroView)
 <br>
+[HNKGooglePlacesAutocomplete] (https://github.com/hkellaway/HNKGooglePlacesAutocomplete)
+<br>
 [iRate](https://github.com/nicklockwood/iRate)
 <br>
 [Mantle] (https://github.com/Mantle/Mantle)
 <br>
 [Reachability] (https://github.com/tonymillion/Reachability)
-<br>
-[SPGooglePlacesAutocomplete] (https://github.com/spoletto/SPGooglePlacesAutocomplete)
