@@ -20,14 +20,11 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import "RefugeMapPlace.h"
-#import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
-
-static NSString * const kRefugeSearchApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
-static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
+#import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.h>
 
 @interface RefugeSearch ()
 
-@property (nonatomic, strong) SPGooglePlacesAutocompleteQuery *searchQuery;
+@property (nonatomic, strong) HNKGooglePlacesAutocompleteQuery *searchQuery;
 
 @end
 
@@ -41,9 +38,7 @@ static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
 
     if(self)
     {
-        self.searchQuery = [[SPGooglePlacesAutocompleteQuery alloc] init];
-        self.searchQuery.key = kRefugeSearchApiKey;
-        self.searchQuery.radius = kRefugeSearchQueryRadius;
+        self.searchQuery = [HNKGooglePlacesAutocompleteQuery sharedQuery];
     }
 
     return self;
@@ -53,21 +48,20 @@ static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
 
 - (void)searchForPlaces:(NSString *)searchString success:(void (^)(NSArray *))searchSuccess failure:(void (^)(NSError *))searchError
 {
-    self.searchQuery.input = searchString;
-
-    [self.searchQuery fetchPlaces:^(NSArray *places, NSError *error)
-     {
-         if (error)
-         {
-             searchError(error);
-         }
-         else
-         {
-             NSArray *refugeMapPlaces = [self translateToRefugePlaces:places];
-
-             searchSuccess(refugeMapPlaces);
-         }
-     }];
+    [self.searchQuery fetchPlacesForSearchQuery:searchString completion:^(NSArray *places, NSError *error) {
+        
+        if(error)
+        {
+            searchError(error);
+        }
+        else
+        {
+            NSArray *refugeMapPlaces = [self translateToRefugePlaces:places];
+            
+            searchSuccess(refugeMapPlaces);
+        }
+        
+    }];
 }
 
 # pragma mark - Private methods
@@ -76,16 +70,16 @@ static CLLocationDistance const kRefugeSearchQueryRadius = 100.0;
 {
     NSMutableArray *array = [NSMutableArray array];
 
-    for(SPGooglePlacesAutocompletePlace *place in places)
+    for(HNKGooglePlacesAutocompletePlace *place in places)
     {
         RefugeMapPlace *refugeMapPlace = [[RefugeMapPlace alloc] init];
 
         refugeMapPlace.name = place.name;
-        refugeMapPlace.reference = place.reference;
-        refugeMapPlace.identifier = place.identifier;
-        refugeMapPlace.key = place.key;
+        refugeMapPlace.reference = @"N/A";
+        refugeMapPlace.identifier = place.placeId;
+        refugeMapPlace.key = self.searchQuery.apiKey;
 
-        if(place.type == SPPlaceTypeGeocode)
+        if(([place.types count] == 1) && [place isPlaceType:HNKGooglePlaceTypeGeocode])
         {
             refugeMapPlace.type = RefugeMapPlaceTypeGeocode;
         }

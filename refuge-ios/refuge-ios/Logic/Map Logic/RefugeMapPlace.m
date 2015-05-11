@@ -18,11 +18,12 @@
 
 #import "RefugeMapPlace.h"
 
-#import <SPGooglePlacesAutocomplete/SPGooglePlacesAutocomplete.h>
+#import "CLPlacemark+HNKAdditions.h"
+#import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.h>
 
 @interface RefugeMapPlace ()
 
-@property (nonatomic, strong) SPGooglePlacesAutocompletePlace *place;
+@property (nonatomic, strong) HNKGooglePlacesAutocompletePlace *place;
 
 @end
 
@@ -36,7 +37,7 @@
 
     if(self)
     {
-        self.place = [[SPGooglePlacesAutocompletePlace alloc] init];
+        self.place = [[HNKGooglePlacesAutocompletePlace alloc] init];
     }
 
     return self;
@@ -46,9 +47,9 @@
 
 - (void)resolveToPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *))placemarkSuccess failure:(void (^)(NSError *))placemarkError
 {
-    SPGooglePlacesAutocompletePlace *place = [self translateToSPPlace];
-
-    [place resolveToPlacemark:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
+    HNKGooglePlacesAutocompletePlace *place = [self translateToHNKPlace];
+    
+    [CLPlacemark hnk_placemarkFromGooglePlace:place apiKey:self.key completion:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
         if(error)
         {
             placemarkError(error);
@@ -63,18 +64,21 @@
 
 # pragma mark - Private methods
 
-- (SPGooglePlacesAutocompletePlace *)translateToSPPlace
+- (HNKGooglePlacesAutocompletePlace *)translateToHNKPlace
 {
     NSString *typeString = [self typeToString];
+    
+    NSDictionary *placeJSON = @{
+                                @"description" : self.name,
+                                @"id" : @"N/A",
+                                @"matched_substrings" : @[],
+                                @"place_id" : self.identifier,
+                                @"reference" : @"N/A",
+                                @"terms" : @[],
+                                @"types" : @[ typeString ]
+                                };
 
-    NSDictionary *dictionary = @{
-                                 @"description" : self.name,
-                                 @"reference" : self.reference,
-                                 @"id" : self.identifier,
-                                 @"types" : [NSArray arrayWithObject:typeString]
-                                 };
-
-    SPGooglePlacesAutocompletePlace *place = [SPGooglePlacesAutocompletePlace placeFromDictionary:dictionary apiKey:self.key];
+    HNKGooglePlacesAutocompletePlace *place = [HNKGooglePlacesAutocompletePlace modelFromJSONDictionary:placeJSON];
 
     return place;
 }

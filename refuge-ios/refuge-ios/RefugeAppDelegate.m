@@ -20,12 +20,16 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocompleteQuery.h>
 #import "iRate+Refuge.h"
 #import <Mixpanel.h>
 #import "Mixpanel+Refuge.h"
 #import "RefugeAppState.h"
 
 #define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
+
+static NSString * const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
+static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 
 @interface RefugeAppDelegate ()
 
@@ -39,6 +43,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
+    
+    [self setupSearch];
 
     [[iRate sharedInstance] refugeSetup];
 
@@ -180,6 +186,17 @@
             self.appState.hasPreloadedRestrooms = YES;
         }
     }
+}
+
+- (void)setupSearch
+{
+    struct HNKGooglePlacesAutocompleteLocation location;
+    location.latitude = NSNotFound;
+    location.longitude = NSNotFound;
+    
+    HNKGooglePlacesAutocompleteQueryConfig *searchConfig = [[HNKGooglePlacesAutocompleteQueryConfig alloc] initWithCountry:nil filter:HNKGooglePlaceTypeAutocompleteFilterAll language:nil location:location offset:NSNotFound searchRadius:kRefugeGooglePlacesAutocompleteSearchQueryRadius];
+    
+    [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey configuration:searchConfig];
 }
 
 @end
