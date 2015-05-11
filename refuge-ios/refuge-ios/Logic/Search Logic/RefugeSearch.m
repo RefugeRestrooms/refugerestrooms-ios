@@ -75,8 +75,7 @@
         RefugeMapPlace *refugeMapPlace = [[RefugeMapPlace alloc] init];
 
         refugeMapPlace.name = place.name;
-        refugeMapPlace.reference = @"N/A";
-        refugeMapPlace.identifier = place.placeId;
+        refugeMapPlace.placeId = place.placeId;
         refugeMapPlace.key = self.searchQuery.apiKey;
 
         if(([place.types count] == 1) && [place isPlaceType:HNKGooglePlaceTypeGeocode])

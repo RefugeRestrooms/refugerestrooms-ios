@@ -27,8 +27,7 @@ typedef NS_ENUM(NSInteger, RefugeMapPlaceType)
 };
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *reference;
-@property (nonatomic, strong) NSString *identifier;
+@property (nonatomic, strong) NSString *placeId;
 @property (nonatomic, assign) RefugeMapPlaceType type;
 @property (nonatomic, strong) NSString *key;
 

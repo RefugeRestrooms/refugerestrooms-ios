@@ -72,7 +72,7 @@
                                 @"description" : self.name,
                                 @"id" : @"N/A",
                                 @"matched_substrings" : @[],
-                                @"place_id" : self.identifier,
+                                @"place_id" : self.placeId,
                                 @"reference" : @"N/A",
                                 @"terms" : @[],
                                 @"types" : @[ typeString ]
