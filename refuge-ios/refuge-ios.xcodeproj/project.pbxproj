@@ -30,12 +30,6 @@
 		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
 		CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */; };
 		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
-		DC0964FE1A9A7115006D5B76 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */; };
-		DC28E0C81A99349900FEAAE6 /* refuge-onboard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */; };
-		DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */; };
-		DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */; };
-		DC28E0CB1A99349900FEAAE6 /* refuge-onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */; };
-		DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
 		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
@@ -49,49 +43,39 @@
 		DC45BBF81B00F1CE001B2B52 /* RefugeSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBF61B00F1CE001B2B52 /* RefugeSerialization.m */; };
 		DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */; };
 		DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */; };
-		DC45BC051B00F2C9001B2B52 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */; };
 		DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */; };
-		DC62845F1A996BD90038E604 /* refuge-icon-github.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62845E1A996BD90038E604 /* refuge-icon-github.png */; };
-		DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
-		DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6284611A996D000038E604 /* RefugeInfoViewController.m */; };
-		DC6284651A9978E60038E604 /* refuge-icon-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DC6284641A9978E60038E604 /* refuge-icon-facebook.png */; };
-		DC62846D1A9984CA0038E604 /* refuge-icon-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */; };
+		DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */; };
+		DC45BC3D1B00F4C0001B2B52 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */; };
+		DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */; };
+		DC45BC3F1B00F4C0001B2B52 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */; };
+		DC45BC401B00F4C0001B2B52 /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */; };
+		DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */; };
+		DC45BC421B00F4C0001B2B52 /* refuge-icon-github.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC341B00F4C0001B2B52 /* refuge-icon-github.png */; };
+		DC45BC431B00F4C0001B2B52 /* refuge-icon-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC351B00F4C0001B2B52 /* refuge-icon-twitter.png */; };
+		DC45BC441B00F4C0001B2B52 /* refuge-map-crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC361B00F4C0001B2B52 /* refuge-map-crosshair.png */; };
+		DC45BC451B00F4C0001B2B52 /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC371B00F4C0001B2B52 /* refuge-map-pin.png */; };
+		DC45BC461B00F4C0001B2B52 /* refuge-onboard1.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC381B00F4C0001B2B52 /* refuge-onboard1.png */; };
+		DC45BC471B00F4C0001B2B52 /* refuge-onboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC391B00F4C0001B2B52 /* refuge-onboard2.png */; };
+		DC45BC481B00F4C0001B2B52 /* refuge-onboard3.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC3A1B00F4C0001B2B52 /* refuge-onboard3.png */; };
+		DC45BC491B00F4C0001B2B52 /* refuge-onboard4.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC3B1B00F4C0001B2B52 /* refuge-onboard4.png */; };
+		DC45BC4F1B00F507001B2B52 /* RefugeMapPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC4D1B00F507001B2B52 /* RefugeMapPlace.m */; };
+		DC45BC511B00F53B001B2B52 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC501B00F53B001B2B52 /* RefugeMapPin.m */; };
+		DC45BC551B00F551001B2B52 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC541B00F551001B2B52 /* RefugeMap.m */; };
+		DC45BC5B1B00F60D001B2B52 /* RefugeOnboardPage1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC571B00F60D001B2B52 /* RefugeOnboardPage1.xib */; };
+		DC45BC5C1B00F60D001B2B52 /* RefugeOnboardPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC581B00F60D001B2B52 /* RefugeOnboardPage2.xib */; };
+		DC45BC5D1B00F60D001B2B52 /* RefugeOnboardPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC591B00F60D001B2B52 /* RefugeOnboardPage3.xib */; };
+		DC45BC5E1B00F60D001B2B52 /* RefugeOnboardPage4.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC5A1B00F60D001B2B52 /* RefugeOnboardPage4.xib */; };
+		DC45BC621B00F6A8001B2B52 /* RefugeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC611B00F6A8001B2B52 /* RefugeInfoViewController.m */; };
+		DC45BC691B00F72C001B2B52 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC681B00F72C001B2B52 /* RefugeOnboardingViewController.m */; };
+		DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */; };
+		DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */; };
+		DC45BC741B00F7C2001B2B52 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */; };
 		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
 		DC8F39BA1A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
-		DC8F39C91A9810B300A90B13 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BE1A9810B300A90B13 /* refuge-banner.png */; };
-		DC8F39CA1A9810B300A90B13 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BE1A9810B300A90B13 /* refuge-banner.png */; };
-		DC8F39CB1A9810B300A90B13 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */; };
-		DC8F39CC1A9810B300A90B13 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */; };
-		DC8F39CD1A9810B300A90B13 /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */; };
-		DC8F39CE1A9810B300A90B13 /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */; };
-		DC8F39CF1A9810B300A90B13 /* refuge-map-crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C11A9810B300A90B13 /* refuge-map-crosshair.png */; };
-		DC8F39D01A9810B300A90B13 /* refuge-map-crosshair.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C11A9810B300A90B13 /* refuge-map-crosshair.png */; };
-		DC8F39D11A9810B300A90B13 /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C21A9810B300A90B13 /* refuge-map-pin.png */; };
-		DC8F39D21A9810B300A90B13 /* refuge-map-pin.png in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39C21A9810B300A90B13 /* refuge-map-pin.png */; };
-		DC8F39E81A9810F800A90B13 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39DF1A9810F800A90B13 /* RefugeMap.m */; };
-		DC8F39E91A9810F800A90B13 /* RefugeMap.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39DF1A9810F800A90B13 /* RefugeMap.m */; };
-		DC8F39EA1A9810F800A90B13 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39E11A9810F800A90B13 /* RefugeMapPin.m */; };
-		DC8F39EB1A9810F800A90B13 /* RefugeMapPin.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39E11A9810F800A90B13 /* RefugeMapPin.m */; };
-		DC8F39EC1A9810F800A90B13 /* RefugeOnboardPage1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E21A9810F800A90B13 /* RefugeOnboardPage1.xib */; };
-		DC8F39ED1A9810F800A90B13 /* RefugeOnboardPage1.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E21A9810F800A90B13 /* RefugeOnboardPage1.xib */; };
-		DC8F39EE1A9810F800A90B13 /* RefugeOnboardPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E31A9810F800A90B13 /* RefugeOnboardPage2.xib */; };
-		DC8F39EF1A9810F800A90B13 /* RefugeOnboardPage2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E31A9810F800A90B13 /* RefugeOnboardPage2.xib */; };
-		DC8F39F01A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E41A9810F800A90B13 /* RefugeOnboardPage3.xib */; };
-		DC8F39F11A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E41A9810F800A90B13 /* RefugeOnboardPage3.xib */; };
-		DC8F39F21A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E51A9810F800A90B13 /* RefugeOnboardPage4.xib */; };
-		DC8F39F31A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8F39E51A9810F800A90B13 /* RefugeOnboardPage4.xib */; };
-		DC8F39FD1A98113A00A90B13 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39F61A98113A00A90B13 /* RefugeMapViewController.m */; };
-		DC8F39FE1A98113A00A90B13 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39F61A98113A00A90B13 /* RefugeMapViewController.m */; };
-		DC8F39FF1A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39F81A98113A00A90B13 /* RefugeNewRestroomViewController.m */; };
-		DC8F3A001A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39F81A98113A00A90B13 /* RefugeNewRestroomViewController.m */; };
-		DC8F3A011A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39FA1A98113A00A90B13 /* RefugeOnboardingViewController.m */; };
-		DC8F3A021A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39FA1A98113A00A90B13 /* RefugeOnboardingViewController.m */; };
-		DC8F3A031A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39FC1A98113A00A90B13 /* RefugeRestroomDetailsViewController.m */; };
-		DC8F3A041A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39FC1A98113A00A90B13 /* RefugeRestroomDetailsViewController.m */; };
 		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
 		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
 		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
@@ -148,12 +132,6 @@
 		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
-		DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
-		DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard4.png"; sourceTree = "<group>"; };
-		DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard3.png"; sourceTree = "<group>"; };
-		DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard2.png"; sourceTree = "<group>"; };
-		DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard1.png"; sourceTree = "<group>"; };
-		DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -183,42 +161,48 @@
 		DC45BBFE1B00F280001B2B52 /* RefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeDataPersistenceManager.h; sourceTree = "<group>"; };
 		DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeDataPersistenceManager.m; sourceTree = "<group>"; };
 		DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
-		DC45BC031B00F2C9001B2B52 /* RefugeMapPlace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
-		DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
 		DC45BC071B00F2FA001B2B52 /* RefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearch.h; sourceTree = "<group>"; };
 		DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearch.m; sourceTree = "<group>"; };
-		DC62845E1A996BD90038E604 /* refuge-icon-github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-github.png"; sourceTree = "<group>"; };
-		DC6284601A996D000038E604 /* RefugeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeInfoViewController.h; sourceTree = "<group>"; };
-		DC6284611A996D000038E604 /* RefugeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeInfoViewController.m; sourceTree = "<group>"; };
-		DC6284641A9978E60038E604 /* refuge-icon-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-facebook.png"; sourceTree = "<group>"; };
-		DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-twitter.png"; sourceTree = "<group>"; };
+		DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
+		DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
+		DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
+		DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
+		DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
+		DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-facebook.png"; sourceTree = "<group>"; };
+		DC45BC341B00F4C0001B2B52 /* refuge-icon-github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-github.png"; sourceTree = "<group>"; };
+		DC45BC351B00F4C0001B2B52 /* refuge-icon-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-twitter.png"; sourceTree = "<group>"; };
+		DC45BC361B00F4C0001B2B52 /* refuge-map-crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-crosshair.png"; sourceTree = "<group>"; };
+		DC45BC371B00F4C0001B2B52 /* refuge-map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-pin.png"; sourceTree = "<group>"; };
+		DC45BC381B00F4C0001B2B52 /* refuge-onboard1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard1.png"; sourceTree = "<group>"; };
+		DC45BC391B00F4C0001B2B52 /* refuge-onboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard2.png"; sourceTree = "<group>"; };
+		DC45BC3A1B00F4C0001B2B52 /* refuge-onboard3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard3.png"; sourceTree = "<group>"; };
+		DC45BC3B1B00F4C0001B2B52 /* refuge-onboard4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-onboard4.png"; sourceTree = "<group>"; };
+		DC45BC4A1B00F507001B2B52 /* RefugeMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPin.h; sourceTree = "<group>"; };
+		DC45BC4D1B00F507001B2B52 /* RefugeMapPlace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlace.m; sourceTree = "<group>"; };
+		DC45BC501B00F53B001B2B52 /* RefugeMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPin.m; sourceTree = "<group>"; };
+		DC45BC521B00F545001B2B52 /* RefugeMapPlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeMapPlace.h; sourceTree = "<group>"; };
+		DC45BC531B00F551001B2B52 /* RefugeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMap.h; sourceTree = "<group>"; };
+		DC45BC541B00F551001B2B52 /* RefugeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMap.m; sourceTree = "<group>"; };
+		DC45BC571B00F60D001B2B52 /* RefugeOnboardPage1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage1.xib; sourceTree = "<group>"; };
+		DC45BC581B00F60D001B2B52 /* RefugeOnboardPage2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage2.xib; sourceTree = "<group>"; };
+		DC45BC591B00F60D001B2B52 /* RefugeOnboardPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage3.xib; sourceTree = "<group>"; };
+		DC45BC5A1B00F60D001B2B52 /* RefugeOnboardPage4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage4.xib; sourceTree = "<group>"; };
+		DC45BC601B00F6A8001B2B52 /* RefugeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeInfoViewController.h; sourceTree = "<group>"; };
+		DC45BC611B00F6A8001B2B52 /* RefugeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeInfoViewController.m; sourceTree = "<group>"; };
+		DC45BC671B00F72C001B2B52 /* RefugeOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeOnboardingViewController.h; sourceTree = "<group>"; };
+		DC45BC681B00F72C001B2B52 /* RefugeOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeOnboardingViewController.m; sourceTree = "<group>"; };
+		DC45BC6A1B00F745001B2B52 /* RefugeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapViewController.h; sourceTree = "<group>"; };
+		DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapViewController.m; sourceTree = "<group>"; };
+		DC45BC6E1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
+		DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
+		DC45BC721B00F7C2001B2B52 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
+		DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
 		DC8354221AABAED3009BEA58 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
 		DC8F39B31A980FDE00A90B13 /* RefugeRestroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroom.h; sourceTree = "<group>"; };
 		DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 		DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
 		DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomEntity.m; sourceTree = "<group>"; };
-		DC8F39BE1A9810B300A90B13 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
-		DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
-		DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
-		DC8F39C11A9810B300A90B13 /* refuge-map-crosshair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-crosshair.png"; sourceTree = "<group>"; };
-		DC8F39C21A9810B300A90B13 /* refuge-map-pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-map-pin.png"; sourceTree = "<group>"; };
-		DC8F39DE1A9810F800A90B13 /* RefugeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMap.h; sourceTree = "<group>"; };
-		DC8F39DF1A9810F800A90B13 /* RefugeMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMap.m; sourceTree = "<group>"; };
-		DC8F39E01A9810F800A90B13 /* RefugeMapPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapPin.h; sourceTree = "<group>"; };
-		DC8F39E11A9810F800A90B13 /* RefugeMapPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPin.m; sourceTree = "<group>"; };
-		DC8F39E21A9810F800A90B13 /* RefugeOnboardPage1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage1.xib; sourceTree = "<group>"; };
-		DC8F39E31A9810F800A90B13 /* RefugeOnboardPage2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage2.xib; sourceTree = "<group>"; };
-		DC8F39E41A9810F800A90B13 /* RefugeOnboardPage3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage3.xib; sourceTree = "<group>"; };
-		DC8F39E51A9810F800A90B13 /* RefugeOnboardPage4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefugeOnboardPage4.xib; sourceTree = "<group>"; };
-		DC8F39F51A98113A00A90B13 /* RefugeMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapViewController.h; sourceTree = "<group>"; };
-		DC8F39F61A98113A00A90B13 /* RefugeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapViewController.m; sourceTree = "<group>"; };
-		DC8F39F71A98113A00A90B13 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
-		DC8F39F81A98113A00A90B13 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
-		DC8F39F91A98113A00A90B13 /* RefugeOnboardingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeOnboardingViewController.h; sourceTree = "<group>"; };
-		DC8F39FA1A98113A00A90B13 /* RefugeOnboardingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeOnboardingViewController.m; sourceTree = "<group>"; };
-		DC8F39FB1A98113A00A90B13 /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
-		DC8F39FC1A98113A00A90B13 /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
 		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
 		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
 		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
@@ -325,13 +309,14 @@
 			children = (
 				DC45BBD61B00EFD9001B2B52 /* Features */,
 				DC8F39B21A980FDE00A90B13 /* Models */,
-				DC8F39BB1A9810B300A90B13 /* View */,
+				DC45BC2D1B00F4C0001B2B52 /* Resources */,
 				DC45BBD71B00F02D001B2B52 /* Utilities */,
 				CED0CB571A82A6D400F7F3D8 /* RefugeAppDelegate.h */,
 				CED0CB581A82A6D400F7F3D8 /* RefugeAppDelegate.m */,
 				CEA23FFD1A84278B0083510F /* RefugeAppState.h */,
 				CEA23FFE1A84278B0083510F /* RefugeAppState.m */,
 				DC3A1CB41A927F5100445D33 /* Images.xcassets */,
+				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
 				CED0CB601A82A6D400F7F3D8 /* Main.storyboard */,
 				CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */,
 				CED0CB531A82A6D300F7F3D8 /* Supporting Files */,
@@ -381,7 +366,11 @@
 		DC45BBD61B00EFD9001B2B52 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				DC45BC5F1B00F63E001B2B52 /* Info */,
 				DC45BC011B00F2C9001B2B52 /* Map */,
+				DC45BC561B00F5E7001B2B52 /* Onboarding */,
+				DC45BC6D1B00F778001B2B52 /* Restroom Details */,
+				DC45BC711B00F7C2001B2B52 /* Restroom New */,
 				DC45BC061B00F2FA001B2B52 /* Search */,
 			);
 			path = Features;
@@ -432,9 +421,15 @@
 		DC45BC011B00F2C9001B2B52 /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				DC45BC531B00F551001B2B52 /* RefugeMap.h */,
+				DC45BC541B00F551001B2B52 /* RefugeMap.m */,
 				DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */,
-				DC45BC031B00F2C9001B2B52 /* RefugeMapPlace.h */,
-				DC45BC041B00F2C9001B2B52 /* RefugeMapPlace.m */,
+				DC45BC4A1B00F507001B2B52 /* RefugeMapPin.h */,
+				DC45BC501B00F53B001B2B52 /* RefugeMapPin.m */,
+				DC45BC521B00F545001B2B52 /* RefugeMapPlace.h */,
+				DC45BC4D1B00F507001B2B52 /* RefugeMapPlace.m */,
+				DC45BC6A1B00F745001B2B52 /* RefugeMapViewController.h */,
+				DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -446,6 +441,67 @@
 				DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		DC45BC2D1B00F4C0001B2B52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */,
+				DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */,
+				DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */,
+				DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */,
+				DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */,
+				DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */,
+				DC45BC341B00F4C0001B2B52 /* refuge-icon-github.png */,
+				DC45BC351B00F4C0001B2B52 /* refuge-icon-twitter.png */,
+				DC45BC361B00F4C0001B2B52 /* refuge-map-crosshair.png */,
+				DC45BC371B00F4C0001B2B52 /* refuge-map-pin.png */,
+				DC45BC381B00F4C0001B2B52 /* refuge-onboard1.png */,
+				DC45BC391B00F4C0001B2B52 /* refuge-onboard2.png */,
+				DC45BC3A1B00F4C0001B2B52 /* refuge-onboard3.png */,
+				DC45BC3B1B00F4C0001B2B52 /* refuge-onboard4.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DC45BC561B00F5E7001B2B52 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DC45BC671B00F72C001B2B52 /* RefugeOnboardingViewController.h */,
+				DC45BC681B00F72C001B2B52 /* RefugeOnboardingViewController.m */,
+				DC45BC571B00F60D001B2B52 /* RefugeOnboardPage1.xib */,
+				DC45BC581B00F60D001B2B52 /* RefugeOnboardPage2.xib */,
+				DC45BC591B00F60D001B2B52 /* RefugeOnboardPage3.xib */,
+				DC45BC5A1B00F60D001B2B52 /* RefugeOnboardPage4.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DC45BC5F1B00F63E001B2B52 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				DC45BC601B00F6A8001B2B52 /* RefugeInfoViewController.h */,
+				DC45BC611B00F6A8001B2B52 /* RefugeInfoViewController.m */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		DC45BC6D1B00F778001B2B52 /* Restroom Details */ = {
+			isa = PBXGroup;
+			children = (
+				DC45BC6E1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.h */,
+				DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */,
+			);
+			path = "Restroom Details";
+			sourceTree = "<group>";
+		};
+		DC45BC711B00F7C2001B2B52 /* Restroom New */ = {
+			isa = PBXGroup;
+			children = (
+				DC45BC721B00F7C2001B2B52 /* RefugeNewRestroomViewController.h */,
+				DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */,
+			);
+			path = "Restroom New";
 			sourceTree = "<group>";
 		};
 		DC8F39B21A980FDE00A90B13 /* Models */ = {
@@ -465,70 +521,6 @@
 				DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		DC8F39BB1A9810B300A90B13 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DC8F39BC1A9810B300A90B13 /* Resources */,
-				DC8F39DB1A9810F800A90B13 /* UI Elements */,
-				DC8F39F41A98113A00A90B13 /* View Controllers */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DC8F39BC1A9810B300A90B13 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DC28E0CC1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg */,
-				DC8F39BE1A9810B300A90B13 /* refuge-banner.png */,
-				DC0964FD1A9A7115006D5B76 /* refuge-credit-google.png */,
-				DC8F39BF1A9810B300A90B13 /* refuge-details-accessible.png */,
-				DC8F39C01A9810B300A90B13 /* refuge-details-unisex.png */,
-				DC6284641A9978E60038E604 /* refuge-icon-facebook.png */,
-				DC62845E1A996BD90038E604 /* refuge-icon-github.png */,
-				DC62846C1A9984CA0038E604 /* refuge-icon-twitter.png */,
-				DC8F39C11A9810B300A90B13 /* refuge-map-crosshair.png */,
-				DC8F39C21A9810B300A90B13 /* refuge-map-pin.png */,
-				DC28E0C71A99349900FEAAE6 /* refuge-onboard1.png */,
-				DC28E0C61A99349900FEAAE6 /* refuge-onboard2.png */,
-				DC28E0C51A99349900FEAAE6 /* refuge-onboard3.png */,
-				DC28E0C41A99349900FEAAE6 /* refuge-onboard4.png */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		DC8F39DB1A9810F800A90B13 /* UI Elements */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */,
-				DC8F39DE1A9810F800A90B13 /* RefugeMap.h */,
-				DC8F39DF1A9810F800A90B13 /* RefugeMap.m */,
-				DC8F39E01A9810F800A90B13 /* RefugeMapPin.h */,
-				DC8F39E11A9810F800A90B13 /* RefugeMapPin.m */,
-				DC8F39E21A9810F800A90B13 /* RefugeOnboardPage1.xib */,
-				DC8F39E31A9810F800A90B13 /* RefugeOnboardPage2.xib */,
-				DC8F39E41A9810F800A90B13 /* RefugeOnboardPage3.xib */,
-				DC8F39E51A9810F800A90B13 /* RefugeOnboardPage4.xib */,
-			);
-			path = "UI Elements";
-			sourceTree = "<group>";
-		};
-		DC8F39F41A98113A00A90B13 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DC6284601A996D000038E604 /* RefugeInfoViewController.h */,
-				DC6284611A996D000038E604 /* RefugeInfoViewController.m */,
-				DC8F39F51A98113A00A90B13 /* RefugeMapViewController.h */,
-				DC8F39F61A98113A00A90B13 /* RefugeMapViewController.m */,
-				DC8F39F71A98113A00A90B13 /* RefugeNewRestroomViewController.h */,
-				DC8F39F81A98113A00A90B13 /* RefugeNewRestroomViewController.m */,
-				DC8F39F91A98113A00A90B13 /* RefugeOnboardingViewController.h */,
-				DC8F39FA1A98113A00A90B13 /* RefugeOnboardingViewController.m */,
-				DC8F39FB1A98113A00A90B13 /* RefugeRestroomDetailsViewController.h */,
-				DC8F39FC1A98113A00A90B13 /* RefugeRestroomDetailsViewController.m */,
-			);
-			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		EA08CCE57F3C7FE32EA6AC15 /* Pods */ = {
@@ -625,28 +617,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45BC491B00F4C0001B2B52 /* refuge-onboard4.png in Resources */,
+				DC45BC5D1B00F60D001B2B52 /* RefugeOnboardPage3.xib in Resources */,
+				DC45BC461B00F4C0001B2B52 /* refuge-onboard1.png in Resources */,
+				DC45BC421B00F4C0001B2B52 /* refuge-icon-github.png in Resources */,
+				DC45BC441B00F4C0001B2B52 /* refuge-map-crosshair.png in Resources */,
+				DC45BC3F1B00F4C0001B2B52 /* refuge-details-accessible.png in Resources */,
 				DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */,
-				DC62846D1A9984CA0038E604 /* refuge-icon-twitter.png in Resources */,
-				DC8F39CF1A9810B300A90B13 /* refuge-map-crosshair.png in Resources */,
+				DC45BC5E1B00F60D001B2B52 /* RefugeOnboardPage4.xib in Resources */,
 				DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */,
-				DC8F39EC1A9810F800A90B13 /* RefugeOnboardPage1.xib in Resources */,
+				DC45BC451B00F4C0001B2B52 /* refuge-map-pin.png in Resources */,
+				DC45BC401B00F4C0001B2B52 /* refuge-details-unisex.png in Resources */,
+				DC45BC3D1B00F4C0001B2B52 /* refuge-banner.png in Resources */,
 				CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */,
-				DC8F39C91A9810B300A90B13 /* refuge-banner.png in Resources */,
 				CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */,
-				DC28E0CD1A9949ED00FEAAE6 /* refuge-background-bathroom.jpg in Resources */,
-				DC28E0CA1A99349900FEAAE6 /* refuge-onboard2.png in Resources */,
-				DC8F39F01A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */,
-				DC6284651A9978E60038E604 /* refuge-icon-facebook.png in Resources */,
-				DC28E0C91A99349900FEAAE6 /* refuge-onboard3.png in Resources */,
-				DC8F39CD1A9810B300A90B13 /* refuge-details-unisex.png in Resources */,
-				DC8F39EE1A9810F800A90B13 /* RefugeOnboardPage2.xib in Resources */,
-				DC28E0CB1A99349900FEAAE6 /* refuge-onboard1.png in Resources */,
-				DC8F39CB1A9810B300A90B13 /* refuge-details-accessible.png in Resources */,
-				DC28E0C81A99349900FEAAE6 /* refuge-onboard4.png in Resources */,
-				DC8F39F21A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */,
-				DC8F39D11A9810B300A90B13 /* refuge-map-pin.png in Resources */,
-				DC62845F1A996BD90038E604 /* refuge-icon-github.png in Resources */,
-				DC0964FE1A9A7115006D5B76 /* refuge-credit-google.png in Resources */,
+				DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */,
+				DC45BC5C1B00F60D001B2B52 /* RefugeOnboardPage2.xib in Resources */,
+				DC45BC5B1B00F60D001B2B52 /* RefugeOnboardPage1.xib in Resources */,
+				DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */,
+				DC45BC471B00F4C0001B2B52 /* refuge-onboard2.png in Resources */,
+				DC45BC481B00F4C0001B2B52 /* refuge-onboard3.png in Resources */,
+				DC45BC431B00F4C0001B2B52 /* refuge-icon-twitter.png in Resources */,
+				DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,16 +646,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC8F39ED1A9810F800A90B13 /* RefugeOnboardPage1.xib in Resources */,
-				DC8F39CC1A9810B300A90B13 /* refuge-details-accessible.png in Resources */,
-				DC8F39F31A9810F800A90B13 /* RefugeOnboardPage4.xib in Resources */,
-				DC8F39CA1A9810B300A90B13 /* refuge-banner.png in Resources */,
-				DC8F39EF1A9810F800A90B13 /* RefugeOnboardPage2.xib in Resources */,
-				DC8F39CE1A9810B300A90B13 /* refuge-details-unisex.png in Resources */,
-				DC8F39D01A9810B300A90B13 /* refuge-map-crosshair.png in Resources */,
 				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
-				DC8F39F11A9810F800A90B13 /* RefugeOnboardPage3.xib in Resources */,
-				DC8F39D21A9810B300A90B13 /* refuge-map-pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,32 +703,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC45BC511B00F53B001B2B52 /* RefugeMapPin.m in Sources */,
 				CED0CB591A82A6D400F7F3D8 /* RefugeAppDelegate.m in Sources */,
 				DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */,
-				DC8F39FF1A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */,
 				DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */,
+				DC45BC4F1B00F507001B2B52 /* RefugeMapPlace.m in Sources */,
+				DC45BC741B00F7C2001B2B52 /* RefugeNewRestroomViewController.m in Sources */,
+				DC45BC621B00F6A8001B2B52 /* RefugeInfoViewController.m in Sources */,
 				DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */,
 				DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */,
 				DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
-				DC45BC051B00F2C9001B2B52 /* RefugeMapPlace.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
+				DC45BC691B00F72C001B2B52 /* RefugeOnboardingViewController.m in Sources */,
 				DC45BBF81B00F1CE001B2B52 /* RefugeSerialization.m in Sources */,
 				DC45BBF71B00F1CE001B2B52 /* RefugeRestroomBuilder.m in Sources */,
-				DC8F3A011A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */,
+				DC45BC551B00F551001B2B52 /* RefugeMap.m in Sources */,
 				DC45BBF11B00F13E001B2B52 /* RefugeRestroomCommunicator.m in Sources */,
-				DC6284621A996D000038E604 /* RefugeInfoViewController.m in Sources */,
+				DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */,
 				DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */,
 				DC45BBE91B00F02D001B2B52 /* UIImage+Refuge.m in Sources */,
 				DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */,
 				DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */,
-				DC8F3A031A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
+				DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
-				DC8F39EA1A9810F800A90B13 /* RefugeMapPin.m in Sources */,
-				DC8F39FD1A98113A00A90B13 /* RefugeMapViewController.m in Sources */,
 				DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */,
-				DC8F39E81A9810F800A90B13 /* RefugeMap.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,19 +740,12 @@
 				CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */,
 				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
 				DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */,
-				DC8F39E91A9810F800A90B13 /* RefugeMap.m in Sources */,
-				DC8F39EB1A9810F800A90B13 /* RefugeMapPin.m in Sources */,
 				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
 				DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */,
-				DC8F3A001A98113A00A90B13 /* RefugeNewRestroomViewController.m in Sources */,
 				DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */,
-				DC8F3A041A98113A00A90B13 /* RefugeRestroomDetailsViewController.m in Sources */,
 				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,
 				DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */,
 				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
-				DC8F39FE1A98113A00A90B13 /* RefugeMapViewController.m in Sources */,
-				DC8F3A021A98113A00A90B13 /* RefugeOnboardingViewController.m in Sources */,
-				DC6284631A996D000038E604 /* RefugeInfoViewController.m in Sources */,
 				DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
 				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
 				DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */,
@@ -813,7 +789,6 @@
 				CED0CB661A82A6D400F7F3D8 /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
