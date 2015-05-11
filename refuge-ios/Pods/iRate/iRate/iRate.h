@@ -1,7 +1,7 @@
 //
 //  iRate.h
 //
-//  Version 1.11.3
+//  Version 1.11.4
 //
 //  Created by Nick Lockwood on 26/01/2011.
 //  Copyright 2011 Charcoal Design
@@ -104,7 +104,7 @@ typedef NS_ENUM(NSUInteger, iRateErrorCode)
 
 @interface iRate : NSObject
 
-+ (iRate *)sharedInstance;
++ (instancetype)sharedInstance;
 
 //app store ID - this is only needed if your
 //bundle ID is not unique between iOS and Mac app stores
