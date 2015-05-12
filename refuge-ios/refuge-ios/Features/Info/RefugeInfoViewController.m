@@ -23,9 +23,9 @@
 NSString *RefugeInfoViewErrorDomain = @"RefugeInfoViewErrorDomain";
 static NSInteger const kRefugeInfoErrorCode = 0;
 
-static NSString * const kGithubLinkName = @"https://github.com/RefugeRestrooms/refugerestrooms";
-static NSString * const kFacebookLinkName = @"https://www.facebook.com/refugerestrooms";
-static NSString * const kTwitterLinkName = @"https://twitter.com/refugerestrooms";
+static NSString *const kGithubLinkName = @"https://github.com/RefugeRestrooms/refugerestrooms";
+static NSString *const kFacebookLinkName = @"https://www.facebook.com/refugerestrooms";
+static NSString *const kTwitterLinkName = @"https://twitter.com/refugerestrooms";
 
 @interface RefugeInfoViewController ()
 
@@ -42,7 +42,7 @@ static NSString * const kTwitterLinkName = @"https://twitter.com/refugerestrooms
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     [self addGestureRecognizersToImages];
 }
 
@@ -67,33 +67,34 @@ static NSString * const kTwitterLinkName = @"https://twitter.com/refugerestrooms
 
 - (void)addGestureRecognizersToImages
 {
-    UITapGestureRecognizer *githubGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchGithubImage)];
+    UITapGestureRecognizer *githubGestureRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchGithubImage)];
     [self.githubImage addGestureRecognizer:githubGestureRecognizer];
-
-    UITapGestureRecognizer *facebookGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchFacebookImage)];
+    
+    UITapGestureRecognizer *facebookGestureRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchFacebookImage)];
     [self.facebookImage addGestureRecognizer:facebookGestureRecognizer];
-
-    UITapGestureRecognizer *twitterGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchTwitterImage)];
+    
+    UITapGestureRecognizer *twitterGestureRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTouchTwitterImage)];
     [self.twitterImage addGestureRecognizer:twitterGestureRecognizer];
 }
 
 - (void)openLinkWithName:(NSString *)linkName
 {
     NSURL *url = [NSURL URLWithString:linkName];
-
-    if (![[UIApplication sharedApplication] openURL:url])
-    {
+    
+    if (![[UIApplication sharedApplication] openURL:url]) {
         [self reportErrorOpeningLinkWithName:linkName];
     }
 }
 
 - (void)reportErrorOpeningLinkWithName:(NSString *)linkName
 {
-    NSDictionary *userInfo = @{
-                               NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Could not open link: %@", linkName]
-                               };
+    NSDictionary *userInfo =
+        @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Could not open link: %@", linkName] };
     NSError *error = [NSError errorWithDomain:RefugeInfoViewErrorDomain code:kRefugeInfoErrorCode userInfo:userInfo];
-
+    
     [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeOpeningLinkFailed];
 }
 

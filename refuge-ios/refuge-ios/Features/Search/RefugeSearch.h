@@ -23,5 +23,5 @@
 - (void)searchForPlaces:(NSString *)searchString
                 success:(void (^)(NSArray *places))searchSuccess
                 failure:(void (^)(NSError *error))searchError;
-
+                
 @end

@@ -3,7 +3,7 @@
 //
 // Copyleft (c) 2015 Refuge Restrooms
 //
-// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE 
+// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
 // Version 3, 19 November 2007
 //
 // This notice shall be included in all copies or substantial portions of the Software.
@@ -24,11 +24,11 @@
 {
     CGSize newSize = CGSizeMake(width, height);
     UIGraphicsBeginImageContext(newSize);
-    [[UIImage imageNamed:imageName] drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
-
+    [[UIImage imageNamed:imageName] drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    
     UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-
+    
     return resizedImage;
 }
 

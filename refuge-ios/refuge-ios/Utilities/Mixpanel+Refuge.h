@@ -20,8 +20,7 @@
 
 @class CLPlacemark;
 
-typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType)
-{
+typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType) {
     RefugeMixpanelErrorTypeLocationManagerFailed,
     RefugeMixpanelErrorTypeFetchingRestroomsFailed,
     RefugeMixpanelErrorTypeSavingRestroomsFailed,

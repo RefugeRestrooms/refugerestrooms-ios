@@ -20,10 +20,7 @@
 
 extern NSString *RefugeSerializationErrorDomain;
 
-typedef NS_ENUM(NSInteger, RefugeSerializationErrorCode)
-{
-    RefugeSerializationErrorDeserializationFromJSONCode
-};
+typedef NS_ENUM(NSInteger, RefugeSerializationErrorCode) { RefugeSerializationErrorDeserializationFromJSONCode };
 
 @interface RefugeSerialization : NSObject
 
