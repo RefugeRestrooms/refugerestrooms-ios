@@ -70,6 +70,7 @@
 		DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */; };
 		DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */; };
 		DC45BC741B00F7C2001B2B52 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */; };
+		DC45BC781B01A110001B2B52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC45BC771B01A110001B2B52 /* Crashlytics.framework */; };
 		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
@@ -197,6 +198,7 @@
 		DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
 		DC45BC721B00F7C2001B2B52 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
 		DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
+		DC45BC771B01A110001B2B52 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DC8354221AABAED3009BEA58 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = RefugeRestroomsSeed.sqlite; path = ../../RefugeRestroomsSeed.sqlite; sourceTree = "<group>"; };
 		DC8F39B31A980FDE00A90B13 /* RefugeRestroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroom.h; sourceTree = "<group>"; };
@@ -214,7 +216,6 @@
 		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
 		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
 		DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RefugeTests.m"; sourceTree = "<group>"; };
-		DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
+				DC45BC781B01A110001B2B52 /* Crashlytics.framework in Frameworks */,
 				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
 				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
@@ -243,8 +245,8 @@
 		68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC45BC771B01A110001B2B52 /* Crashlytics.framework */,
 				CEA240271A8702E20083510F /* CoreLocation.framework */,
-				DCE6BB8B1A96CD08006B9B8A /* Crashlytics.framework */,
 				DC8354221AABAED3009BEA58 /* Fabric.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
 				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
