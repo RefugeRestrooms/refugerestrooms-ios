@@ -21,27 +21,8 @@
 #import "CLPlacemark+HNKAdditions.h"
 #import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.h>
 
-@interface RefugeMapPlace ()
-
-@property (nonatomic, strong) HNKGooglePlacesAutocompletePlace *place;
-
-@end
-
-#pragma mark - Initializers
-
 @implementation RefugeMapPlace
 
-- (instancetype)init
-{
-    self = [super init];
-
-    if(self)
-    {
-        self.place = [[HNKGooglePlacesAutocompletePlace alloc] init];
-    }
-
-    return self;
-}
 
 # pragma mark - Public methods
 
