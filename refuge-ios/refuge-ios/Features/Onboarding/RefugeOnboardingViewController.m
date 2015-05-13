@@ -21,11 +21,11 @@
 #import <EAIntroView/EAIntroView.h>
 #import "UIColor+Refuge.h"
 
-static NSString * const kRefugeSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
-static NSString * const kRefugeOnboardPageName1 = @"RefugeOnboardPage1";
-static NSString * const kRefugeOnboardPageName2 = @"RefugeOnboardPage2";
-static NSString * const kRefugeOnboardPageName3 = @"RefugeOnboardPage3";
-static NSString * const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
+static NSString *const kRefugeSegueNameDismissOnboarding = @"RefugeRestroomDissmissOnboardingSegue";
+static NSString *const kRefugeOnboardPageName1 = @"RefugeOnboardPage1";
+static NSString *const kRefugeOnboardPageName2 = @"RefugeOnboardPage2";
+static NSString *const kRefugeOnboardPageName3 = @"RefugeOnboardPage3";
+static NSString *const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
 
 @interface RefugeOnboardingViewController ()
 
@@ -40,12 +40,12 @@ static NSString * const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     NSArray *pages = [self createPages];
     self.onboardingView = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:pages];
     [self styleOnboardingView];
     self.onboardingView.delegate = self;
-
+    
     [self.onboardingView showInView:self.view animateDuration:0.3];
 }
 
@@ -66,7 +66,7 @@ static NSString * const kRefugeOnboardPageName4 = @"RefugeOnboardPage4";
     EAIntroPage *page2 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName2];
     EAIntroPage *page3 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName3];
     EAIntroPage *page4 = [EAIntroPage pageWithCustomViewFromNibNamed:kRefugeOnboardPageName4];
-
+    
     return @[ page1, page2, page3, page4 ];
 }
 

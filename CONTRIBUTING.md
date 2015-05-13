@@ -23,7 +23,7 @@ Make a new branch for each individual thing you are addressing. If you are worki
 
 You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
 
-* `bugfix` - This branch is for addressing bugs
+* `fix` - This branch is for addressing bugs
 * `design` - This branch is for introducing *new* design work (if fixing previous design work, use `bugfix`)
 * `feature` - This branch is for creating a brand new feature (if working on previous features, use `bugfix`)
 * `pod` - This branch is for udpdating Pods or Frameworks
@@ -41,4 +41,4 @@ If your commit is addressing a specific Issue, you can reference that issue in y
 
 #### Code Style
 
-See the [Refuge Restrooms Objective-C Style Guide](https://github.com/RefugeRestrooms/refuge-ios-objective-c-style-guide)
+Refuge uses the [New York Times Objective-C Style Guide](https://github.com/NYTimes/objective-c-style-guide)

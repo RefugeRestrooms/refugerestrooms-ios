@@ -22,8 +22,7 @@
 #import <MTLJSONAdapter.h>
 #import <MTLManagedObjectAdapter.h>
 
-typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
-{
+typedef NS_ENUM(NSInteger, RefugeRestroomRatingType) {
     RefugeRestroomRatingTypeNegative = 0,
     RefugeRestroomRatingTypeNeutral = 1,
     RefugeRestroomRatingTypeNone = 2,
@@ -49,6 +48,6 @@ typedef NS_ENUM(NSInteger, RefugeRestroomRatingType)
 @property (nonatomic, strong) NSDecimalNumber *longitude;
 @property (nonatomic, strong) NSDate *createdDate;
 
-+(RefugeRestroomRatingType)ratingTypeForRating:(NSNumber *)rating; // Core Data object uses NSNumber
++ (RefugeRestroomRatingType)ratingTypeForRating:(NSNumber *)rating; // Core Data object uses NSNumber
 
 @end

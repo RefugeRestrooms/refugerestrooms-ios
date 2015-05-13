@@ -20,11 +20,7 @@
 
 @interface RefugeMapPlace : NSObject
 
-typedef NS_ENUM(NSInteger, RefugeMapPlaceType)
-{
-    RefugeMapPlaceTypeGeocode,
-    RefugeMapPlaceTypeEstablishment
-};
+typedef NS_ENUM(NSInteger, RefugeMapPlaceType) { RefugeMapPlaceTypeGeocode, RefugeMapPlaceTypeEstablishment };
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *placeId;
@@ -33,5 +29,5 @@ typedef NS_ENUM(NSInteger, RefugeMapPlaceType)
 
 - (void)resolveToPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *placemark))placemarkSuccess
                                    failure:(void (^)(NSError *error))placemarkError;
-
+                                   
 @end

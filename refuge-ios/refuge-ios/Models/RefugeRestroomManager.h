@@ -28,8 +28,7 @@
 
 extern NSString *RefugeRestroomManagerErrorDomain;
 
-typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode)
-{
+typedef NS_ENUM(NSInteger, RefugeRestroomManagerErrorCode) {
     RefugeRestroomManagerErrorRestroomsBuildCode,
     RefugeRestroomManagerErrorRestroomsFetchCode,
     RefugeRestroomManagerErrorRestroomsSaveCode

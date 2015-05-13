@@ -20,10 +20,7 @@
 
 extern NSString *RefugeRestroomBuilderErrorDomain;
 
-typedef NS_ENUM(NSInteger, RefugeRestroomBuilderErrorCode)
-{
-    RefugeRestroomBuilderDeserializationErrorCode
-};
+typedef NS_ENUM(NSInteger, RefugeRestroomBuilderErrorCode) { RefugeRestroomBuilderDeserializationErrorCode };
 
 @interface RefugeRestroomBuilder : NSObject
 

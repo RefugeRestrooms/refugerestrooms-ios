@@ -18,11 +18,11 @@
 
 #import "NSDate+Refuge.h"
 
-static NSString * const kRefugeDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+static NSString *const kRefugeDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
 
 @implementation NSDate (Refuge)
 
-# pragma mark - Public methods
+#pragma mark - Public methods
 
 + (NSString *)RefugeDateFormat
 {
@@ -39,13 +39,13 @@ static NSString * const kRefugeDateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     return [self.RefugeDateFormatter stringFromDate:date];
 }
 
-# pragma mark - Private methods
+#pragma mark - Private methods
 
 + (NSDateFormatter *)RefugeDateFormatter
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = kRefugeDateFormat;
-
+    
     return dateFormatter;
 }
 

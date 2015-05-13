@@ -22,11 +22,11 @@
 #import "NSString+Refuge.h"
 #import "UIColor+Refuge.h"
 
-static NSString * const kRefugeImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
-static NSString * const kRefugeImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
-static NSString * const kRefugeTextFieldFontName = @"HelveticaNeue";
-static NSString * const kRefugeTextFieldPlaceholderNoDirections = @"No directions";
-static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
+static NSString *const kRefugeImageNameCharacteristicUnisex = @"refuge-details-unisex.png";
+static NSString *const kRefugeImageNameCharacteristicAccessible = @"refuge-details-accessible.png";
+static NSString *const kRefugeTextFieldFontName = @"HelveticaNeue";
+static NSString *const kRefugeTextFieldPlaceholderNoDirections = @"No directions";
+static NSString *const kRefugeTextFieldPlaceholderNoComments = @"No comments";
 
 @interface RefugeRestroomDetailsViewController ()
 
@@ -51,33 +51,33 @@ static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
 
 @end
 
-# pragma mark - View life-cycle
+#pragma mark - View life-cycle
 
 @implementation RefugeRestroomDetailsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.restroomRatingType = [RefugeRestroom ratingTypeForRating:self.restroom.ratingNumber];
-
+    
     [self setDetails];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-
+    
     [self setupUI];
 }
 
-# pragma mark - Private methods
+#pragma mark - Private methods
 
 - (void)setupUI
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.ratingView.layer.cornerRadius = 5.0f;
-
+    
     [self styleTextFields];
     [self centerHeaderTextIfNoImages];
 }
@@ -85,35 +85,44 @@ static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
 - (void)styleTextFields
 {
     UIFont *font = [UIFont fontWithName:kRefugeTextFieldFontName size:16.0];
-
+    
     self.directionsTextView.font = font;
     self.directionsTextView.textColor = [UIColor RefugePurpleDarkColor];
-
+    
     self.commentsTextView.font = font;
     self.commentsTextView.textColor = [UIColor RefugePurpleDarkColor];
-
+    
     CGSize maximumTextViewSize = CGSizeMake(self.directionsTextView.bounds.size.width, CGFLOAT_MAX);
-    CGRect rectNeededForDirections = [self.directionsTextView.text boundingRectWithSize:maximumTextViewSize
-                                                                                options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                                             attributes:@{ NSFontAttributeName : font }
-                                                                                context:nil];
-    CGRect rectNeededForComments = [self.commentsTextView.text boundingRectWithSize:maximumTextViewSize
-                                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
-                                                                          attributes:@{ NSFontAttributeName : font }
-                                                                             context:nil];
+    CGRect rectNeededForDirections = [self.directionsTextView.text
+        boundingRectWithSize:maximumTextViewSize
+                     options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                  attributes:@{
+                      NSFontAttributeName : font
+                  } context:nil];
+    CGRect rectNeededForComments = [self.commentsTextView.text
+        boundingRectWithSize:maximumTextViewSize
+                     options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                  attributes:@{
+                      NSFontAttributeName : font
+                  } context:nil];
     CGFloat textPadding = font.lineHeight * 3; // Text can get cut-off without adjustment
-
+    
     self.directionsTextViewHeightConstraint.constant = rectNeededForDirections.size.height + textPadding;
     self.commentsTextViewHeightConstraint.constant = rectNeededForComments.size.height + textPadding;
 }
 
 - (void)centerHeaderTextIfNoImages
 {
-    if(![self.restroom.isUnisex boolValue] && ![self.restroom.isAccessible boolValue])
-    {
+    if (![self.restroom.isUnisex boolValue] && ![self.restroom.isAccessible boolValue]) {
         [self.nameLabel removeConstraint:self.nameLabelLeadingAlignmentConstraint];
-
-        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeCenterX relatedBy:0 toItem:self.nameLabel attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
+        
+        [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.view
+                                                              attribute:NSLayoutAttributeCenterX
+                                                              relatedBy:0
+                                                                 toItem:self.nameLabel
+                                                              attribute:NSLayoutAttributeCenterX
+                                                             multiplier:1
+                                                               constant:0]];
     }
 }
 
@@ -121,37 +130,43 @@ static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
 {
     self.nameLabel.text = [self.restroom.name RefugePrepareForDisplay];
     self.streetLabel.text = [self.restroom.street RefugePrepareForDisplay];
-    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@", self.restroom.city, self.restroom.state, self.restroom.country] RefugePrepareForDisplay];
+    self.addressDetailsLabel.text = [[NSString stringWithFormat:@"%@, %@, %@",
+                                                                self.restroom.city,
+                                                                self.restroom.state,
+                                                                self.restroom.country] RefugePrepareForDisplay];
     self.ratingView.backgroundColor = [self ratingColor];
     self.ratingLabel.text = [[self ratingString] uppercaseString];
     self.directionsTextView.backgroundColor = [UIColor clearColor];
-    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""] ? kRefugeTextFieldPlaceholderNoDirections: [self.restroom.directions RefugePrepareForDisplay];
-    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""] ? kRefugeTextFieldPlaceholderNoComments : [self.restroom.comment RefugePrepareForDisplay];
-
+    self.directionsTextView.text = [self.restroom.directions isEqualToString:@""]
+                                       ? kRefugeTextFieldPlaceholderNoDirections
+                                       : [self.restroom.directions RefugePrepareForDisplay];
+    self.commentsTextView.text = [self.restroom.comment isEqualToString:@""]
+                                     ? kRefugeTextFieldPlaceholderNoComments
+                                     : [self.restroom.comment RefugePrepareForDisplay];
+                                     
     [self createCharacteristicsImages];
 }
 
 - (UIColor *)ratingColor
 {
     UIColor *noRatingColor = [UIColor RefugeRatingNoneColor];
-
-    switch (self.restroomRatingType)
-    {
-        case RefugeRestroomRatingTypeNegative:
-            return [UIColor RefugeRatingNegativeColor];
-            break;
-        case RefugeRestroomRatingTypeNeutral:
-            return noRatingColor;
-            break;
-        case RefugeRestroomRatingTypeNone:
-            return [UIColor RefugeRatingNoneColor];
-            break;
-        case RefugeRestroomRatingTypePositive:
-            return [UIColor RefugeRatingPositiveColor];
-            break;
-        default:
-            return noRatingColor;
-            break;
+    
+    switch (self.restroomRatingType) {
+    case RefugeRestroomRatingTypeNegative:
+        return [UIColor RefugeRatingNegativeColor];
+        break;
+    case RefugeRestroomRatingTypeNeutral:
+        return noRatingColor;
+        break;
+    case RefugeRestroomRatingTypeNone:
+        return [UIColor RefugeRatingNoneColor];
+        break;
+    case RefugeRestroomRatingTypePositive:
+        return [UIColor RefugeRatingPositiveColor];
+        break;
+    default:
+        return noRatingColor;
+        break;
     }
 }
 
@@ -161,19 +176,18 @@ static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
     int numDownvotes = [self.restroom.numDownvotes intValue];
     int sumVotes = numUpvotes + numDownvotes;
     int percentPositive = 0;
-
-    if(sumVotes > 0)
-    {
+    
+    if (sumVotes > 0) {
         percentPositive = (numUpvotes / sumVotes) * 100;
     }
-
+    
     switch (self.restroomRatingType) {
-        case RefugeRestroomRatingTypeNone:
-            return @"Not yet rated";
-            break;
-        default:
-            return [NSString stringWithFormat:@"%i%% positive", percentPositive];
-            break;
+    case RefugeRestroomRatingTypeNone:
+        return @"Not yet rated";
+        break;
+    default:
+        return [NSString stringWithFormat:@"%i%% positive", percentPositive];
+        break;
     }
 }
 
@@ -183,24 +197,17 @@ static NSString * const kRefugeTextFieldPlaceholderNoComments = @"No comments";
     BOOL isAccessible = [self.restroom.isAccessible boolValue];
     UIImage *imageUnisex = [UIImage imageNamed:kRefugeImageNameCharacteristicUnisex];
     UIImage *imageAccessible = [UIImage imageNamed:kRefugeImageNameCharacteristicAccessible];
-
-    if(isUnisex && isAccessible)
-    {
+    
+    if (isUnisex && isAccessible) {
         self.characteristicImage1.image = imageUnisex;
         self.characteristicImage2.image = imageAccessible;
-    }
-    else if(isUnisex && !isAccessible)
-    {
+    } else if (isUnisex && !isAccessible) {
         self.characteristicImage1.image = imageUnisex;
         self.characteristicImage2.image = nil;
-    }
-    else if(!isUnisex && isAccessible)
-    {
+    } else if (!isUnisex && isAccessible) {
         self.characteristicImage1.image = imageAccessible;
         self.characteristicImage2.image = nil;
-    }
-    else
-    {
+    } else {
         self.characteristicImage1.image = nil;
         self.characteristicImage2.image = nil;
     }
