@@ -23,9 +23,9 @@
 NSString *RefugeInfoViewErrorDomain = @"RefugeInfoViewErrorDomain";
 static NSInteger const kRefugeInfoErrorCode = 0;
 
-static NSString *const kGithubLinkName = @"https://github.com/RefugeRestrooms/refugerestrooms";
-static NSString *const kFacebookLinkName = @"https://www.facebook.com/refugerestrooms";
-static NSString *const kTwitterLinkName = @"https://twitter.com/refugerestrooms";
+static NSString *const kRefugeGithubLinkName = @"https://github.com/RefugeRestrooms/refuge-iOS";
+static NSString *const kRefugeFacebookLinkName = @"https://www.facebook.com/refugerestrooms";
+static NSString *const kRefugeTwittetLinkName = @"https://twitter.com/refugerestrooms";
 
 @interface RefugeInfoViewController ()
 
@@ -50,17 +50,17 @@ static NSString *const kTwitterLinkName = @"https://twitter.com/refugerestrooms"
 
 - (void)didTouchGithubImage
 {
-    [self openLinkWithName:kGithubLinkName];
+    [self openLinkWithName:kRefugeGithubLinkName];
 }
 
 - (void)didTouchFacebookImage
 {
-    [self openLinkWithName:kFacebookLinkName];
+    [self openLinkWithName:kRefugeFacebookLinkName];
 }
 
 - (void)didTouchTwitterImage
 {
-    [self openLinkWithName:kTwitterLinkName];
+    [self openLinkWithName:kRefugeTwittetLinkName];
 }
 
 #pragma mark - Private methods
