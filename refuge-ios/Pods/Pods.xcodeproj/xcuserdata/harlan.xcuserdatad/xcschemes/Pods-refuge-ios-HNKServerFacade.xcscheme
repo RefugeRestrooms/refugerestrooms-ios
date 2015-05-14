@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "498AC19C92BD925805AABB04"
+               BlueprintIdentifier = "6BB54DC81C5CDFCD03522601"
                BuildableName = "libPods-refuge-ios-HNKServerFacade.a"
                BlueprintName = "Pods-refuge-ios-HNKServerFacade"
                ReferencedContainer = "container:Pods.xcodeproj">
