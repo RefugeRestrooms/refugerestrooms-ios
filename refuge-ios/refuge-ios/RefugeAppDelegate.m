@@ -44,12 +44,12 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 {
 
     self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
-    
+
     [self setupSearch];
     [self setupRatingPrompt];
     [self setupAnalytics];
     [self setupCrashReporting];
-    
+
     return YES;
 }
 
@@ -129,18 +129,18 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
     if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
-    
+
     // Create the coordinator and store
-    
+
     _persistentStoreCoordinator =
         [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-        
+
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"refuge_ios.sqlite"];
-    
+
     if (self.appState.hasPreloadedRestrooms == NO) {
         [self preloadRestroomData:storeURL];
     }
-    
+
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
@@ -161,7 +161,7 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
-    
+
     return _persistentStoreCoordinator;
 }
 
@@ -172,7 +172,7 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
     if (_managedObjectContext != nil) {
         return _managedObjectContext;
     }
-    
+
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (!coordinator) {
         return nil;
@@ -209,7 +209,7 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
         NSURL *preloadURL =
             [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"RefugeRestroomsSeed" ofType:@"sqlite"]];
         NSError *error = nil;
-        
+
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&error]) {
             [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypePreloadingRestrooms];
         } else {
@@ -220,18 +220,15 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 
 - (void)setupSearch
 {
-    struct HNKGooglePlacesAutocompleteLocation location;
-    location.latitude = NSNotFound;
-    location.longitude = NSNotFound;
-    
     HNKGooglePlacesAutocompleteQueryConfig *searchConfig = [[HNKGooglePlacesAutocompleteQueryConfig alloc]
         initWithCountry:nil
                  filter:HNKGooglePlaceTypeAutocompleteFilterAll
                language:nil
-               location:location
+               latitude:NSNotFound
+              longitude:NSNotFound
                  offset:NSNotFound
            searchRadius:kRefugeGooglePlacesAutocompleteSearchQueryRadius];
-           
+
     [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey
                                                    configuration:searchConfig];
 }
