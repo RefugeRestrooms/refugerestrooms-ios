@@ -514,9 +514,9 @@
 			children = (
 				DC45BBF21B00F1AE001B2B52 /* Deserialization */,
 				DC45BBEA1B00F0BA001B2B52 /* Networking */,
-				DC45BBFD1B00F280001B2B52 /* RefugeDataPeristenceManagerDelegate.h */,
 				DC45BBFE1B00F280001B2B52 /* RefugeDataPersistenceManager.h */,
 				DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */,
+				DC45BBFD1B00F280001B2B52 /* RefugeDataPeristenceManagerDelegate.h */,
 				DC45BBF91B00F23F001B2B52 /* RefugeRestroomManager.h */,
 				DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */,
 				DC45BBFB1B00F23F001B2B52 /* RefugeRestroomManagerDelegate.h */,
@@ -590,7 +590,6 @@
 				TargetAttributes = {
 					CED0CB4F1A82A6D300F7F3D8 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = G58XPAD97M;
 					};
 					CED0CB6B1A82A6D500F7F3D8 = {
 						CreatedOnToolsVersion = 6.1.1;

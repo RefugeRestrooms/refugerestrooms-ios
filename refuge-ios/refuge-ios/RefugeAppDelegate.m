@@ -220,17 +220,17 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 
 - (void)setupSearch
 {
-    HNKGooglePlacesAutocompleteQueryConfig *searchConfig = [[HNKGooglePlacesAutocompleteQueryConfig alloc]
-        initWithCountry:nil
-                 filter:HNKGooglePlaceTypeAutocompleteFilterAll
-               language:nil
-               latitude:NSNotFound
-              longitude:NSNotFound
-                 offset:NSNotFound
-           searchRadius:kRefugeGooglePlacesAutocompleteSearchQueryRadius];
-
     [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey
-                                                   configuration:searchConfig];
+                                              configurationBlock:^(HNKGooglePlacesAutocompleteQueryConfig *config) {
+                                                  config.country = nil;
+                                                  config.filter = HNKGooglePlaceTypeAutocompleteFilterAll;
+                                                  config.language = nil;
+                                                  config.latitude = 0;
+                                                  config.longitude = 0;
+                                                  config.offset = NSNotFound;
+                                                  config.searchRadius =
+                                                      kRefugeGooglePlacesAutocompleteSearchQueryRadius;
+                                              }];
 }
 
 - (void)setupRatingPrompt

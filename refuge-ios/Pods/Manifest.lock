@@ -1,24 +1,24 @@
 PODS:
   - ADClusterMapView (1.1.0)
-  - AFNetworking (2.5.3):
-    - AFNetworking/NSURLConnection (= 2.5.3)
-    - AFNetworking/NSURLSession (= 2.5.3)
-    - AFNetworking/Reachability (= 2.5.3)
-    - AFNetworking/Security (= 2.5.3)
-    - AFNetworking/Serialization (= 2.5.3)
-    - AFNetworking/UIKit (= 2.5.3)
-  - AFNetworking/NSURLConnection (2.5.3):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.3):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.3)
-  - AFNetworking/Security (2.5.3)
-  - AFNetworking/Serialization (2.5.3)
-  - AFNetworking/UIKit (2.5.3):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
@@ -51,7 +51,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - EAIntroView (= 2.6.4)
   - HNKGooglePlacesAutocomplete (from `https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git`,
-    branch `release/0.6.0`)
+    branch `develop`)
   - iRate (~> 1.11)
   - Mantle (~> 1.5)
   - Mixpanel (~> 2.7)
@@ -59,17 +59,17 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   HNKGooglePlacesAutocomplete:
-    :branch: release/0.6.0
+    :branch: develop
     :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
 
 CHECKOUT OPTIONS:
   HNKGooglePlacesAutocomplete:
-    :commit: 5bb3dd5c64a6a738f65589b4b2119ef57ebb1450
+    :commit: a8d63c1e0a21a994aa26df723cc5dc8d8ab4ef3f
     :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
 
 SPEC CHECKSUMS:
   ADClusterMapView: dfbaabc62ec929be8fbac1e86754af98baffb365
-  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
   HNKGooglePlacesAutocomplete: 0f2bbf220087f92704589dd1db1c4af93e004f15
   HNKServerFacade: 54102383a22b3aa61171574ad0b50ff24fd504cd
