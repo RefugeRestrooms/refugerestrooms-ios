@@ -30,7 +30,6 @@
 #define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
 
 static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
-static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 
 @interface RefugeAppDelegate ()
 
@@ -220,17 +219,7 @@ static NSInteger const kRefugeGooglePlacesAutocompleteSearchQueryRadius = 100;
 
 - (void)setupSearch
 {
-    [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey
-                                              configurationBlock:^(HNKGooglePlacesAutocompleteQueryConfig *config) {
-                                                  config.country = nil;
-                                                  config.filter = HNKGooglePlaceTypeAutocompleteFilterAll;
-                                                  config.language = nil;
-                                                  config.latitude = 0;
-                                                  config.longitude = 0;
-                                                  config.offset = NSNotFound;
-                                                  config.searchRadius =
-                                                      kRefugeGooglePlacesAutocompleteSearchQueryRadius;
-                                              }];
+    [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey];
 }
 
 - (void)setupRatingPrompt
