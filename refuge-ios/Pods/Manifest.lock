@@ -39,11 +39,11 @@ PODS:
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
-  - Mixpanel (2.8.0):
-    - Mixpanel/Mixpanel (= 2.8.0)
-  - Mixpanel/Mixpanel (2.8.0):
+  - Mixpanel (2.8.1):
+    - Mixpanel/Mixpanel (= 2.8.1)
+  - Mixpanel/Mixpanel (2.8.1):
     - Mixpanel/MPCategoryHelpers
-  - Mixpanel/MPCategoryHelpers (2.8.0)
+  - Mixpanel/MPCategoryHelpers (2.8.1)
   - Reachability (3.2)
 
 DEPENDENCIES:
@@ -75,7 +75,7 @@ SPEC CHECKSUMS:
   HNKServerFacade: 54102383a22b3aa61171574ad0b50ff24fd504cd
   iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
-  Mixpanel: 933b51dd0c7914c80866b3753ef407dce353ebc9
+  Mixpanel: 93c4825025e6380ced273ed7178496282e385077
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.36.4
