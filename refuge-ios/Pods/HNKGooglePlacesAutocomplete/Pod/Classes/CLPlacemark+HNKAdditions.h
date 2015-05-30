@@ -25,6 +25,34 @@
 
 #import <CoreLocation/CoreLocation.h>
 
+/**
+ *  Error domain for CLPlacemark+HNKAdditions
+ */
+extern NSString *const HNKGooglePlacesAutocompleteCLPlacemarkErrorDomain;
+
+/**
+ *  Error codes for CLPlacemark+HNKAdditions
+ */
+typedef NS_ENUM(NSInteger, HNKCLPlacemarkErrorCode) {
+    /**
+     *  Unknown error
+     */
+    HNKCLPlacemarkErrorCodeUnknown = 0,
+    /**
+     *  Error occurred during a Google Places Details request
+     */
+    HNKCLPlacemarkErrorCodeGoogleFailure,
+    /**
+     *  Error occurred during a CLGeocoder request
+     */
+    HNKCLPlacemarkErrorCodeCLGeocoderFailure
+};
+
+/**
+ *  Short description of error for provided error code
+ */
+extern NSString *HNKCLPlacemarkDescriptionForErrorCode(HNKCLPlacemarkErrorCode errorCode);
+
 @class HNKGooglePlacesAutocompletePlace;
 
 @interface CLPlacemark (HNKAdditions)
@@ -36,8 +64,7 @@
  */
 + (void)hnk_placemarkFromGooglePlace:(HNKGooglePlacesAutocompletePlace *)place
                               apiKey:(NSString *)apiKey
-                          completion:(void (^)(CLPlacemark *placemark,
-                                               NSString *addressString,
-                                               NSError *error))completion;
+                          completion:
+                              (void (^)(CLPlacemark *placemark, NSString *addressString, NSError *error))completion;
 
 @end

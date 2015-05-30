@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8F98C2EE734CFAD0B180308"
+               BlueprintIdentifier = "CE3215AEB0DF05BB49A85BCF"
                BuildableName = "libPods-refuge-ios-HNKGooglePlacesAutocomplete.a"
                BlueprintName = "Pods-refuge-ios-HNKGooglePlacesAutocomplete"
                ReferencedContainer = "container:Pods.xcodeproj">

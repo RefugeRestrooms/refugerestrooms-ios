@@ -22,15 +22,15 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
-  - HNKGooglePlacesAutocomplete (0.6.0):
-    - HNKGooglePlacesAutocomplete/Models (= 0.6.0)
+  - HNKGooglePlacesAutocomplete (0.7.1):
+    - HNKGooglePlacesAutocomplete/Models (= 0.7.1)
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
-  - HNKGooglePlacesAutocomplete/Models (0.6.0):
-    - HNKGooglePlacesAutocomplete/Models/Networking (= 0.6.0)
+  - HNKGooglePlacesAutocomplete/Models (0.7.1):
+    - HNKGooglePlacesAutocomplete/Models/Networking (= 0.7.1)
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
-  - HNKGooglePlacesAutocomplete/Models/Networking (0.6.0):
+  - HNKGooglePlacesAutocomplete/Models/Networking (0.7.1):
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
   - HNKServerFacade (0.2.1):
@@ -64,18 +64,18 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   HNKGooglePlacesAutocomplete:
-    :commit: a8d63c1e0a21a994aa26df723cc5dc8d8ab4ef3f
+    :commit: b354085701e61ffa57125bb4cb18180182b35598
     :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
 
 SPEC CHECKSUMS:
   ADClusterMapView: dfbaabc62ec929be8fbac1e86754af98baffb365
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
-  HNKGooglePlacesAutocomplete: 0f2bbf220087f92704589dd1db1c4af93e004f15
+  HNKGooglePlacesAutocomplete: c6b26045a8f87c7567a6362681362852cf32b959
   HNKServerFacade: 54102383a22b3aa61171574ad0b50ff24fd504cd
   iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Mixpanel: 93c4825025e6380ced273ed7178496282e385077
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.37.1
