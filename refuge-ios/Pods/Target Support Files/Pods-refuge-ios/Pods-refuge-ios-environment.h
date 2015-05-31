@@ -16,49 +16,73 @@
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
 // AFNetworking/NSURLConnection
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLConnection
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLConnection 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_NSURLConnection 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLConnection 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLConnection 4
 
 // AFNetworking/NSURLSession
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_NSURLSession
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_NSURLSession 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_NSURLSession 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLSession 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_NSURLSession 4
 
 // AFNetworking/Reachability
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_Reachability
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_Reachability 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_Reachability 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_Reachability 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Reachability 4
 
 // AFNetworking/Security
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_Security
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_Security 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_Security 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_Security 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Security 4
 
 // AFNetworking/Serialization
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_Serialization
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_Serialization 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_Serialization 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_Serialization 4
 
 // AFNetworking/UIKit
 #define COCOAPODS_POD_AVAILABLE_AFNetworking_UIKit
 #define COCOAPODS_VERSION_MAJOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 5
-#define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 4
 
 // EAIntroView
 #define COCOAPODS_POD_AVAILABLE_EAIntroView
 #define COCOAPODS_VERSION_MAJOR_EAIntroView 2
 #define COCOAPODS_VERSION_MINOR_EAIntroView 6
 #define COCOAPODS_VERSION_PATCH_EAIntroView 4
+
+// HNKGooglePlacesAutocomplete
+#define COCOAPODS_POD_AVAILABLE_HNKGooglePlacesAutocomplete
+#define COCOAPODS_VERSION_MAJOR_HNKGooglePlacesAutocomplete 1
+#define COCOAPODS_VERSION_MINOR_HNKGooglePlacesAutocomplete 0
+#define COCOAPODS_VERSION_PATCH_HNKGooglePlacesAutocomplete 0
+
+// HNKGooglePlacesAutocomplete/Models
+#define COCOAPODS_POD_AVAILABLE_HNKGooglePlacesAutocomplete_Models
+#define COCOAPODS_VERSION_MAJOR_HNKGooglePlacesAutocomplete_Models 1
+#define COCOAPODS_VERSION_MINOR_HNKGooglePlacesAutocomplete_Models 0
+#define COCOAPODS_VERSION_PATCH_HNKGooglePlacesAutocomplete_Models 0
+
+// HNKGooglePlacesAutocomplete/Models/Networking
+#define COCOAPODS_POD_AVAILABLE_HNKGooglePlacesAutocomplete_Models_Networking
+#define COCOAPODS_VERSION_MAJOR_HNKGooglePlacesAutocomplete_Models_Networking 1
+#define COCOAPODS_VERSION_MINOR_HNKGooglePlacesAutocomplete_Models_Networking 0
+#define COCOAPODS_VERSION_PATCH_HNKGooglePlacesAutocomplete_Models_Networking 0
+
+// HNKServerFacade
+#define COCOAPODS_POD_AVAILABLE_HNKServerFacade
+#define COCOAPODS_VERSION_MAJOR_HNKServerFacade 0
+#define COCOAPODS_VERSION_MINOR_HNKServerFacade 2
+#define COCOAPODS_VERSION_PATCH_HNKServerFacade 1
 
 // Mantle
 #define COCOAPODS_POD_AVAILABLE_Mantle
@@ -75,14 +99,20 @@
 // Mixpanel
 #define COCOAPODS_POD_AVAILABLE_Mixpanel
 #define COCOAPODS_VERSION_MAJOR_Mixpanel 2
-#define COCOAPODS_VERSION_MINOR_Mixpanel 7
-#define COCOAPODS_VERSION_PATCH_Mixpanel 3
+#define COCOAPODS_VERSION_MINOR_Mixpanel 8
+#define COCOAPODS_VERSION_PATCH_Mixpanel 1
 
 // Mixpanel/MPCategoryHelpers
 #define COCOAPODS_POD_AVAILABLE_Mixpanel_MPCategoryHelpers
 #define COCOAPODS_VERSION_MAJOR_Mixpanel_MPCategoryHelpers 2
-#define COCOAPODS_VERSION_MINOR_Mixpanel_MPCategoryHelpers 7
-#define COCOAPODS_VERSION_PATCH_Mixpanel_MPCategoryHelpers 3
+#define COCOAPODS_VERSION_MINOR_Mixpanel_MPCategoryHelpers 8
+#define COCOAPODS_VERSION_PATCH_Mixpanel_MPCategoryHelpers 1
+
+// Mixpanel/Mixpanel
+#define COCOAPODS_POD_AVAILABLE_Mixpanel_Mixpanel
+#define COCOAPODS_VERSION_MAJOR_Mixpanel_Mixpanel 2
+#define COCOAPODS_VERSION_MINOR_Mixpanel_Mixpanel 8
+#define COCOAPODS_VERSION_PATCH_Mixpanel_Mixpanel 1
 
 // Reachability
 #define COCOAPODS_POD_AVAILABLE_Reachability
@@ -90,15 +120,9 @@
 #define COCOAPODS_VERSION_MINOR_Reachability 2
 #define COCOAPODS_VERSION_PATCH_Reachability 0
 
-// SPGooglePlacesAutocomplete
-#define COCOAPODS_POD_AVAILABLE_SPGooglePlacesAutocomplete
-#define COCOAPODS_VERSION_MAJOR_SPGooglePlacesAutocomplete 1
-#define COCOAPODS_VERSION_MINOR_SPGooglePlacesAutocomplete 0
-#define COCOAPODS_VERSION_PATCH_SPGooglePlacesAutocomplete 4
-
 // iRate
 #define COCOAPODS_POD_AVAILABLE_iRate
 #define COCOAPODS_VERSION_MAJOR_iRate 1
 #define COCOAPODS_VERSION_MINOR_iRate 11
-#define COCOAPODS_VERSION_PATCH_iRate 3
+#define COCOAPODS_VERSION_PATCH_iRate 4
 

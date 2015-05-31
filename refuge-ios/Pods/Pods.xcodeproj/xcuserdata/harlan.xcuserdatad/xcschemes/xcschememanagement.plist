@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-refuge-ios-HNKGooglePlacesAutocomplete.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-refuge-ios-HNKServerFacade.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-refuge-ios-Mantle.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,11 +40,6 @@
 			<false/>
 		</dict>
 		<key>Pods-refuge-ios-Reachability.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-refuge-ios-SPGooglePlacesAutocomplete.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +57,52 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1ADAF4FC0F195AEE8E2CE5A0</key>
+		<key>1FBF74EA8BDCE7A42EC2D31D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C2977E5E2F6C4C075C91B06</key>
+		<key>2480BDE4BB8E1BC4B055E761</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1C9E0BBA027DB79413FEB2B1</key>
+		<key>41D2CFBBB8C3A7F5464C5786</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E24C8F9332EF5D6E727C4AE</key>
+		<key>47000A41BCAB3787ABC77DBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7AB3B9B350957945AA45E5CE</key>
+		<key>60FE3663053E5D7A19D4CCE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E60BCE8275EED726FAA5170</key>
+		<key>772DB0F68F74D39A52613F44</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E625E9190830AC7EE95C9B5</key>
+		<key>80FA18C6992CFDD5BFA3F20E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C6ECA3446D0967C036B95F67</key>
+		<key>AABF81FD7220149B816D5D69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DC0031414DAB3F7B4CB8BF38</key>
+		<key>BE2E28A97C10FA39D312009B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0E37FA1D0D94761F6FBCB83</key>
 		<dict>
 			<key>primary</key>
 			<true/>
