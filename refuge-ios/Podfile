@@ -12,7 +12,7 @@ pod 'iRate', '~> 1.11'
 pod 'Mantle', '~> 1.5'
 pod 'Mixpanel', '~> 2.7'
 pod 'Reachability', '~> 3.2'
-pod 'HNKGooglePlacesAutocomplete', :git => 'https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git', :branch => 'develop'
+pod 'HNKGooglePlacesAutocomplete', '~> 1.0'
 
 end
 
