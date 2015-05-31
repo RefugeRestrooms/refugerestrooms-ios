@@ -29,45 +29,34 @@
 
 #pragma mark Error Domain
 
-NSString *const HNKGooglePlacesAutocompleteQueryErrorDomain =
-    @"com.hnkgoogleplacesautocomplete.query.fetch.error";
+NSString *const HNKGooglePlacesAutocompleteQueryErrorDomain = @"com.hnkgoogleplacesautocomplete.query.fetch.error";
 
 #pragma mark Request Constants
 
-static NSString *const kHNKGooglePlacesServerRequestPathAutocomplete =
-    @"autocomplete/json";
-static NSInteger const kHNKGooglePlacesAutocompleteDefaultSearchRadius = 500;
+static NSString *const kHNKGooglePlacesServerRequestPathAutocomplete = @"autocomplete/json";
+static NSInteger const kHNKGooglePlacesAutocompleteWorldSearchRadius = 20000000;
 
 #pragma mark Status Constants
 
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown =
-        @"Status unknown";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionInvalidRequest =
-        @"Invalid request; the input parameter may be missing";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown = @"Status unknown";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionInvalidRequest =
+    @"Invalid request; the input parameter may be missing";
 static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionOK =
     @"No errors occurred and at least one result was returned";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionOverQueryLimit =
-        @"Query quota has been exceeded for provided API key";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionRequestDenied =
-        @"Request denied; the key parameter may be invalid";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionZeroResults =
-        @"No errors occurred but no results were returned";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionServerRequestFailed =
-        @"Non-API error occurred while making a request to the server";
-static NSString *const
-    HNKGooglePlacesAutocompleteQueryStatusDescriptionSearchQueryNil =
-        @"Search query cannot be nil";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionOverQueryLimit =
+    @"Query quota has been exceeded for provided API key";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionRequestDenied =
+    @"Request denied; the key parameter may be invalid";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionZeroResults =
+    @"No errors occurred but no results were returned";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionServerRequestFailed =
+    @"Non-API error occurred while making a request to the server";
+static NSString *const HNKGooglePlacesAutocompleteQueryStatusDescriptionSearchQueryNil = @"Search query cannot be nil";
 
 @interface HNKGooglePlacesAutocompleteQuery ()
 
-@property(nonatomic, copy, readwrite) NSString *apiKey;
-@property(nonatomic, strong, readwrite) HNKGooglePlacesAutocompleteQueryConfig *defaultConfiguration;
+@property (nonatomic, copy, readwrite) NSString *apiKey;
+@property (nonatomic, strong, readwrite) HNKGooglePlacesAutocompleteQueryConfig *configuration;
 
 @end
 
@@ -77,314 +66,344 @@ static NSString *const
 
 static HNKGooglePlacesAutocompleteQuery *sharedQuery = nil;
 
-+ (instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey {
-    return [self setupSharedQueryWithAPIKey:apiKey configuration:nil];
++ (instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey
+{
+    return [self setupSharedQueryWithAPIKey:apiKey configurationBlock:nil];
 }
 
-+(instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration
++ (instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey
+                        configurationBlock:(void (^)(HNKGooglePlacesAutocompleteQueryConfig *))configBlock
 {
     NSParameterAssert(apiKey);
-    NSParameterAssert(configuration);
-    
+
     static dispatch_once_t onceToken;
-    
-    dispatch_once(&onceToken, ^{
-        sharedQuery = [[self alloc] initWithAPIKey:apiKey configuration:configuration];
-    });
-    
+
+    dispatch_once(&onceToken,
+                  ^{
+                      sharedQuery = [[self alloc] initWithAPIKey:apiKey configurationBlock:configBlock];
+                  });
+
     return sharedQuery;
 }
 
-+ (instancetype)sharedQuery {
-    NSAssert(
-             sharedQuery != nil,
-             @"sharedQuery should not be called before setupSharedQueryWithAPIKey");
-    
++ (instancetype)sharedQuery
+{
+    NSAssert(sharedQuery != nil, @"sharedQuery should not be called before setupSharedQueryWithAPIKey");
+
     return sharedQuery;
 }
 
-- (instancetype)initWithAPIKey:(NSString *)apiKey configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration {
+- (instancetype)init
+{
+    NSAssert(FALSE, @"-init should not be called. Use -setupWithAPIKey");
+
+    return nil;
+}
+
+- (instancetype)initWithAPIKey:(NSString *)apiKey
+            configurationBlock:(void (^)(HNKGooglePlacesAutocompleteQueryConfig *))configBlock
+{
     self = [super init];
-    
+
     if (self) {
-        
+
         self.apiKey = apiKey;
-        self.defaultConfiguration = configuration;
-        
+
+        self.configuration = [self defaultConfiguration];
+
+        if (configBlock) {
+
+            configBlock(self.configuration);
+        }
     }
-    
+
     return self;
 }
 
-- (instancetype)init {
-    NSAssert(FALSE, @"init should not be called");
-    
-    return nil;
+- (HNKGooglePlacesAutocompleteQueryConfig *)defaultConfiguration
+{
+    HNKGooglePlacesAutocompleteQueryConfig *defaultConfiguration =
+        [[HNKGooglePlacesAutocompleteQueryConfig alloc] init];
+    defaultConfiguration.country = nil;
+    defaultConfiguration.filter = HNKGooglePlaceTypeAutocompleteFilterAll;
+    defaultConfiguration.language = nil;
+    defaultConfiguration.latitude = 0;
+    defaultConfiguration.longitude = 0;
+    defaultConfiguration.offset = NSNotFound;
+    defaultConfiguration.searchRadius = kHNKGooglePlacesAutocompleteWorldSearchRadius;
+
+    return defaultConfiguration;
 }
 
 #pragma mark - Getters
 
-- (NSString *)apiKey {
+- (NSString *)apiKey
+{
     return _apiKey;
-}
-
-- (HNKGooglePlacesAutocompleteQueryConfig *)defaultConfiguration {
-    
-    if(_defaultConfiguration != nil) {
-        return _defaultConfiguration;
-    } else {
-        struct HNKGooglePlacesAutocompleteLocation location;
-        location.latitude = NSNotFound;
-        location.longitude = NSNotFound;
-        
-        _defaultConfiguration = [[HNKGooglePlacesAutocompleteQueryConfig alloc] initWithCountry:nil filter:HNKGooglePlaceTypeAutocompleteFilterAll language:nil location:location offset:NSNotFound searchRadius:kHNKGooglePlacesAutocompleteDefaultSearchRadius];
-        
-        return _defaultConfiguration;
-    }
 }
 
 #pragma mark - Requests
 
-- (void)fetchPlacesForSearchQuery:(NSString *)searchQuery completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+- (void)fetchPlacesForSearchQuery:(NSString *)searchQuery
+                       completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
 {
-    [self fetchPlacesForSearchQuery:searchQuery configuration:[self defaultConfiguration] completion:completion];
+    [self fetchPlacesForSearchQuery:searchQuery
+                 configurationBlock:^(HNKGooglePlacesAutocompleteQueryConfig *config) {
+
+                     if (self.configuration == nil) {
+
+                         config = self.configuration;
+                     }
+
+                 } completion:completion];
 }
 
 - (void)fetchPlacesForSearchQuery:(NSString *)searchQuery
-                    configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration
-                       completion:(HNKGooglePlacesAutocompleteQueryCallback)completion {
-    HNKGooglePlacesAutocompleteQueryConfig *configForRequest = (configuration == nil) ? [self defaultConfiguration] : configuration;
-    
-    if ([self isValidSearchQuery:searchQuery]) {
-        
+               configurationBlock:(void (^)(HNKGooglePlacesAutocompleteQueryConfig *config))configBlock
+                       completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    HNKGooglePlacesAutocompleteQueryConfig *configForRequest =
+        [HNKGooglePlacesAutocompleteQueryConfig configWithConfig:self.configuration];
+
+    if (configBlock) {
+        configBlock(configForRequest);
+    }
+
+    BOOL isInvalidSearchQuery = [self isInvalidSearchQuery:searchQuery];
+
+    if ([self shouldMakeServerRequestForSearchQuery:searchQuery] && !isInvalidSearchQuery) {
+
         [self serverRequestWithSearchQuery:searchQuery configuration:configForRequest completion:completion];
-        
+
     } else {
-        
-        [self completeWithErrorForInvalidSearchQuery:searchQuery
-                                          completion:completion];
+
+        if (isInvalidSearchQuery) {
+
+            [self completeWithErrorForInvalidSearchQuery:searchQuery completion:completion];
+        }
     }
 }
 
 #pragma mark - Helpers
 
-- (BOOL)isValidSearchQuery:(NSString *)searchQuery {
-    return ((searchQuery != nil) && ![searchQuery isEqualToString:@""]);
+- (BOOL)shouldMakeServerRequestForSearchQuery:(NSString *)searchQuery
+{
+    BOOL hasNoOffset = (self.configuration.offset == NSNotFound);
+    BOOL doesMeetOffset = (searchQuery.length >= self.configuration.offset);
+
+    return hasNoOffset || doesMeetOffset;
+}
+
+- (BOOL)isInvalidSearchQuery:(NSString *)searchQuery
+{
+    BOOL isNil = searchQuery == nil;
+    BOOL isEmpty = [searchQuery isEqualToString:@""];
+
+    return (isNil || isEmpty);
 }
 
 - (void)serverRequestWithSearchQuery:(NSString *)searchQuery
                        configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration
-                          completion:(HNKGooglePlacesAutocompleteQueryCallback)completion {
+                          completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
     NSDictionary *parameters = [self serverRequestParametersForSearchQuery:searchQuery configuration:configuration];
-    
-    [HNKGooglePlacesServer
-     GET:kHNKGooglePlacesServerRequestPathAutocomplete
-     parameters:parameters
-     completion:^(NSDictionary *JSON, NSError *error) {
-         
-         if (completion) {
-             
-             if (error) {
-                 
-                 [self completeWithServerError:error completion:completion];
-                 
-             } else {
-                 
-                 [self completeWithServerResponse:JSON completion:completion];
-             }
-         }
-         
-     }];
+
+    [HNKGooglePlacesServer GET:kHNKGooglePlacesServerRequestPathAutocomplete
+                    parameters:parameters
+                    completion:^(NSDictionary *JSON, NSError *error) {
+
+                        if (completion) {
+
+                            if (error) {
+
+                                [self completeWithServerError:error completion:completion];
+
+                            } else {
+
+                                [self completeWithServerResponse:JSON completion:completion];
+                            }
+                        }
+
+                    }];
 }
 
-- (NSDictionary *)serverRequestParametersForSearchQuery:(NSString *)searchQuery configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration {
+- (NSDictionary *)serverRequestParametersForSearchQuery:(NSString *)searchQuery
+                                          configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration
+{
     NSMutableDictionary *parameters = [[configuration translateToServerRequestParameters] mutableCopy];
-    
-    [parameters addEntriesFromDictionary:@{
-                                           @"input" : searchQuery,
-                                           @"key" : self.apiKey
-                                           }];
-    
+
+    [parameters addEntriesFromDictionary:@{ @"input" : searchQuery, @"key" : self.apiKey }];
+
     return [parameters copy];
 }
 
-- (void)completeWithServerResponse:(NSDictionary *)JSON
-                        completion:(HNKGooglePlacesAutocompleteQueryCallback)
-                                       completion {
-  HNKGooglePlacesAutocompleteQueryResponse *queryResponse =
-      [HNKGooglePlacesAutocompleteQueryResponse modelFromJSONDictionary:JSON];
-  NSError *statusError = [self customErrorForStatus:queryResponse.status];
+- (void)completeWithServerResponse:(NSDictionary *)JSON completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    HNKGooglePlacesAutocompleteQueryResponse *queryResponse =
+        [HNKGooglePlacesAutocompleteQueryResponse modelFromJSONDictionary:JSON];
+    NSError *statusError = [self customErrorForStatus:queryResponse.status];
 
-  if (statusError) {
+    if (statusError) {
 
-    completion(nil, statusError);
+        completion(nil, statusError);
 
-  } else {
+    } else {
 
-    completion(queryResponse.places, nil);
-  }
+        completion(queryResponse.places, nil);
+    }
 }
 
-- (void)completeWithServerError:(NSError *)error
-                     completion:
-                         (HNKGooglePlacesAutocompleteQueryCallback)completion {
-  NSError *errorToReturn = [self
-      customErrorWithCode:
-          HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed
-              description:
-                  HNKGooglePlacesAutocompleteQueryStatusDescriptionServerRequestFailed
-              andUserInfo:@{
-                @"NSUnderlyingError" : error
-              }];
+- (void)completeWithServerError:(NSError *)error completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    HNKGooglePlacesAutocompleteQueryErrorCode errorCode = HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed;
 
-  completion(nil, errorToReturn);
+    NSError *errorToReturn =
+        [self customErrorWithCode:errorCode
+                      description:HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(errorCode)
+                      andUserInfo:@{
+                          @"NSUnderlyingError" : error
+                      }];
+
+    completion(nil, errorToReturn);
 }
 
-- (void)completeWithErrorForInvalidSearchQuery:
-            (NSString *)searchQuery completion:
-                (HNKGooglePlacesAutocompleteQueryCallback)completion {
-  if (searchQuery == nil) {
+- (void)completeWithErrorForInvalidSearchQuery:(NSString *)searchQuery
+                                    completion:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    if (searchQuery == nil) {
 
-    [self completeForSearchQueryNil:completion];
-    return;
-  }
+        [self completeForSearchQueryNil:completion];
+        return;
+    }
 
-  if ([searchQuery isEqualToString:@""]) {
+    if ([searchQuery isEqualToString:@""]) {
 
-    [self completeForSearchQueryEmpty:completion];
-    return;
-  }
+        [self completeForSearchQueryEmpty:completion];
+        return;
+    }
 }
 
-- (void)completeForSearchQueryNil:
-        (HNKGooglePlacesAutocompleteQueryCallback)completion {
-  NSError *error = [self
-      customErrorWithCode:
-          HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil
-           andDescription:
-               HNKGooglePlacesAutocompleteQueryStatusDescriptionSearchQueryNil];
+- (void)completeForSearchQueryNil:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    HNKGooglePlacesAutocompleteQueryErrorCode errorCode = HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil;
 
-  completion(nil, error);
+    NSError *error = [self customErrorWithCode:errorCode
+                                andDescription:HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(errorCode)];
+
+    completion(nil, error);
 }
 
-- (void)completeForSearchQueryEmpty:
-        (HNKGooglePlacesAutocompleteQueryCallback)completion {
-  NSError *error =
-      [self customErrorForStatus:
-                HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest];
+- (void)completeForSearchQueryEmpty:(HNKGooglePlacesAutocompleteQueryCallback)completion
+{
+    NSError *error = [self customErrorForStatus:HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest];
 
-  completion(nil, error);
+    completion(nil, error);
 }
 
-- (NSError *)customErrorForStatus:
-        (HNKGooglePlacesAutocompleteQueryResponseStatus)status {
-  if (status == HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest ||
-      status == HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit ||
-      status == HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied ||
-      status == HNKGooglePlacesAutocompleteQueryResponseStatusUnknown) {
+- (NSError *)customErrorForStatus:(HNKGooglePlacesAutocompleteQueryResponseStatus)status
+{
+    if (status == HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest ||
+        status == HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit ||
+        status == HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied ||
+        status == HNKGooglePlacesAutocompleteQueryResponseStatusUnknown) {
 
-    HNKGooglePlacesAutocompleteQueryErrorCode errorCode =
-        [self errorCodeForStatus:status];
-    NSString *description =
-        HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(errorCode);
+        HNKGooglePlacesAutocompleteQueryErrorCode errorCode = [self errorCodeForStatus:status];
+        NSString *description = HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(errorCode);
 
-    return [self customErrorWithCode:status andDescription:description];
-  }
+        return [self customErrorWithCode:status andDescription:description];
+    }
 
-  return nil;
+    return nil;
 }
 
-- (NSError *)customErrorWithCode:(NSInteger)errorCode
-                  andDescription:(NSString *)errorDescription {
-  return [self customErrorWithCode:errorCode
-                       description:errorDescription
-                       andUserInfo:nil];
+- (NSError *)customErrorWithCode:(NSInteger)errorCode andDescription:(NSString *)errorDescription
+{
+    return [self customErrorWithCode:errorCode description:errorDescription andUserInfo:nil];
 }
 - (NSError *)customErrorWithCode:(NSInteger)errorCode
                      description:(NSString *)errorDescription
-                     andUserInfo:(NSDictionary *)userInfo {
-  NSDictionary *userInfoToReturn = @{
-    @"NSLocalizedDescription" : errorDescription,
-    @"NSLocalizedFailureReasonError" : errorDescription
-  };
+                     andUserInfo:(NSDictionary *)userInfo
+{
+    NSDictionary *userInfoToReturn =
+        @{ @"NSLocalizedDescription" : errorDescription,
+           @"NSLocalizedFailureReason" : errorDescription };
 
-  if (userInfo != nil) {
-    NSMutableDictionary *mutableDictionary = [userInfoToReturn mutableCopy];
-    [mutableDictionary addEntriesFromDictionary:userInfo];
-    userInfoToReturn = [mutableDictionary copy];
-  }
+    if (userInfo != nil) {
+        NSMutableDictionary *mutableDictionary = [userInfoToReturn mutableCopy];
+        [mutableDictionary addEntriesFromDictionary:userInfo];
+        userInfoToReturn = [mutableDictionary copy];
+    }
 
-  return [NSError errorWithDomain:HNKGooglePlacesAutocompleteQueryErrorDomain
-                             code:errorCode
-                         userInfo:userInfoToReturn];
+    return
+        [NSError errorWithDomain:HNKGooglePlacesAutocompleteQueryErrorDomain code:errorCode userInfo:userInfoToReturn];
 }
 
-- (HNKGooglePlacesAutocompleteQueryErrorCode)errorCodeForStatus:
-        (HNKGooglePlacesAutocompleteQueryResponseStatus)status {
-  switch (status) {
-  case HNKGooglePlacesAutocompleteQueryResponseStatusUnknown: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryResponseStatusOK: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryResponseStatusZeroResults: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
-    break;
-  }
-  default: {
-    return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
-    break;
-  }
-  }
+- (HNKGooglePlacesAutocompleteQueryErrorCode)errorCodeForStatus:(HNKGooglePlacesAutocompleteQueryResponseStatus)status
+{
+    switch (status) {
+    case HNKGooglePlacesAutocompleteQueryResponseStatusUnknown: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryResponseStatusOK: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryResponseStatusZeroResults: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
+        break;
+    }
+    default: {
+        return HNKGooglePlacesAutocompleteQueryErrorCodeUnknown;
+        break;
+    }
+    }
 }
 
-NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(
-    HNKGooglePlacesAutocompleteQueryErrorCode errorCode) {
-  switch (errorCode) {
-  case HNKGooglePlacesAutocompleteQueryErrorCodeUnknown: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionInvalidRequest;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionOverQueryLimit;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionRequestDenied;
-    break;
-  }
-  case HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionServerRequestFailed;
-    break;
-  }
-  case HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionSearchQueryNil;
-    break;
-  }
-  default: {
-    return HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown;
-    break;
-  }
-  }
+NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(HNKGooglePlacesAutocompleteQueryErrorCode errorCode)
+{
+    switch (errorCode) {
+    case HNKGooglePlacesAutocompleteQueryErrorCodeUnknown: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionInvalidRequest;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionOverQueryLimit;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionRequestDenied;
+        break;
+    }
+    case HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionServerRequestFailed;
+        break;
+    }
+    case HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionSearchQueryNil;
+        break;
+    }
+    default: {
+        return HNKGooglePlacesAutocompleteQueryStatusDescriptionUnknown;
+        break;
+    }
+    }
 }
 
 @end

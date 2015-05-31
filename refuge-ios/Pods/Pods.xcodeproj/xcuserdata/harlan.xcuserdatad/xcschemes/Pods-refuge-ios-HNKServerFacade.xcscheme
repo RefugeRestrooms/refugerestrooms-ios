@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "498AC19C92BD925805AABB04"
+               BlueprintIdentifier = "11B230F78CDF8B37D418D787"
                BuildableName = "libPods-refuge-ios-HNKServerFacade.a"
                BlueprintName = "Pods-refuge-ios-HNKServerFacade"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -26,8 +26,7 @@
 #import "HNKGooglePlacesAutocompleteQueryConfig.h"
 #import "HNKGooglePlacesAutocompleteQueryResponse.h"
 
-typedef void (^HNKGooglePlacesAutocompleteQueryCallback)(NSArray *places,
-                                                         NSError *error);
+typedef void (^HNKGooglePlacesAutocompleteQueryCallback)(NSArray *places, NSError *error);
 
 /**
  *  Error domain for HNKGooglePlacesAutocompleteQuery
@@ -38,41 +37,40 @@ extern NSString *const HNKGooglePlacesAutocompleteQueryErrorDomain;
  *  Error codes for HNKGooglePlacesAutcompleteQuery requests
  */
 typedef NS_ENUM(NSInteger, HNKGooglePlacesAutocompleteQueryErrorCode) {
-  /**
-   *  Unknown status code returned
-   */
-  HNKGooglePlacesAutocompleteQueryErrorCodeUnknown =
-      HNKGooglePlacesAutocompleteQueryResponseStatusUnknown,
-  /**
-   *  Invalid request; the search query may have been missing
-   */
-  HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest =
-      HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest,
-  /**
-   *  Query quota has been exceeded for provided API key
-   */
-  HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit =
-      HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit,
-  /**
-   *  Request denied; the API key may be invalid
-   */
-  HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied =
-      HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied,
-  /**
-   *  Non-API error occurred while making a request to the server
-   */
-  HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed = 6,
-  /**
-   *  Search query was nil
-   */
-  HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil = 7
+    /**
+     *  Unknown status code returned
+     */
+    HNKGooglePlacesAutocompleteQueryErrorCodeUnknown = HNKGooglePlacesAutocompleteQueryResponseStatusUnknown,
+    /**
+     *  Invalid request; the search query may have been missing
+     */
+    HNKGooglePlacesAutocompleteQueryErrorCodeInvalidRequest =
+        HNKGooglePlacesAutocompleteQueryResponseStatusInvalidRequest,
+    /**
+     *  Query quota has been exceeded for provided API key
+     */
+    HNKGooglePlacesAutocompleteQueryErrorCodeOverQueryLimit =
+        HNKGooglePlacesAutocompleteQueryResponseStatusOverQueryLimit,
+    /**
+     *  Request denied; the API key may be invalid
+     */
+    HNKGooglePlacesAutocompleteQueryErrorCodeRequestDenied =
+        HNKGooglePlacesAutocompleteQueryResponseStatusRequestDenied,
+    /**
+     *  Non-API error occurred while making a request to the server
+     */
+    HNKGooglePlacesAutcompleteQueryErrorCodeServerRequestFailed = 6,
+    /**
+     *  Search query was nil
+     */
+    HNKGooglePlacesAutocompleteQueryErrorCodeSearchQueryNil = 7
 };
 
 /**
  *  Short description of error for provided error code
  */
-extern NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(
-    HNKGooglePlacesAutocompleteQueryErrorCode errorCode);
+extern NSString *
+HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(HNKGooglePlacesAutocompleteQueryErrorCode errorCode);
 
 /**
  *  Query used to fetch objects from the API
@@ -82,12 +80,19 @@ extern NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(
 /**
  *  API key used for all requests
  */
-@property(nonatomic, copy, readonly) NSString *apiKey;
+@property (nonatomic, copy, readonly) NSString *apiKey;
 
 /**
- *  Default configuration for requests
+ *  Configuration used for requests
+ *
+ *  Note: If no configuration is provided, a default is
+ *  set with the following values: country = nil,
+ *  filter = All, language = nil, latitude = 0,
+ *  longitude = 0, offset = NSNotFound,
+ *  searchRadius = 20000000 (entire world)
+ *
  */
-@property(nonatomic, strong, readonly) HNKGooglePlacesAutocompleteQueryConfig *defaultConfiguration;
+@property (nonatomic, strong, readonly) HNKGooglePlacesAutocompleteQueryConfig *configuration;
 
 #pragma mark - Initialization
 
@@ -105,13 +110,14 @@ extern NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(
  *  Sets up shared HNKGooglePlacesAutocompleteQuery instance with provided
  *  API key and configuration for all requests
  *
- *  @param apiKey        API key used for all requests
- *  @param configuration Default configuration used for requests
+ *  @param apiKey       API key used for all requests
+ *  @param configBlock  Block used to setup configuration
+ *                      for all requests
  *
  *  @warning The provided API key cannot be nil
- *  @warning The provided configration cannot be nil
  */
-+ (instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration;
++ (instancetype)setupSharedQueryWithAPIKey:(NSString *)apiKey
+                        configurationBlock:(void (^)(HNKGooglePlacesAutocompleteQueryConfig *config))configBlock;
 
 /**
  * Returns shared HNKGooglePlacesAutocompleteQuery instance
@@ -136,12 +142,12 @@ extern NSString *HNKGooglePlacesAutocompleteQueryDescriptionForErrorCode(
  *
  *  Note: If configuration is nil, the default configuration will be used
  *
- *  @param searchQuery   String to search for Places with
- *  @param configuration Configuration for the request (e.g. search raidus)
- *  @param completion    Block to be executed when the fetch finishes
+ *  @param searchQuery  String to search for Places with
+ *  @param configBlock  Block used to set up configuration for this request
+ *  @param completion   Block to be executed when the fetch finishes
  */
 - (void)fetchPlacesForSearchQuery:(NSString *)searchQuery
-                    configuration:(HNKGooglePlacesAutocompleteQueryConfig *)configuration
+               configurationBlock:(void (^)(HNKGooglePlacesAutocompleteQueryConfig *config))configBlock
                        completion:(HNKGooglePlacesAutocompleteQueryCallback)completion;
 
 @end

@@ -67,30 +67,117 @@ typedef NS_ENUM(NSInteger, HNKGooglePlaceTypeAutocompleteFilter) {
  */
 typedef NS_ENUM(NSInteger, HNKGooglePlaceType) {
     HNKGooglePlaceTypeUnknown = 0,
+    HNKGooglePlaceTypeAccounting,
     HNKGooglePlaceTypeAdministrativeAreaLevel1,
     HNKGooglePlaceTypeAdministrativeAreaLevel2,
     HNKGooglePlaceTypeAdministrativeAreaLevel3,
     HNKGooglePlaceTypeAdministrativeAreaLevel4,
     HNKGooglePlaceTypeAdministrativeAreaLevel5,
+    HNKGooglePlaceTypeAirport,
+    HNKGooglePlaceTypeAmusementPark,
+    HNKGooglePlaceTypeAquarium,
+    HNKGooglePlaceTypeArtGallery,
+    HNKGooglePlaceTypeATM,
+    HNKGooglePlaceTypeBakery,
+    HNKGooglePlaceTypeBank,
+    HNKGooglePlaceTypeBar,
+    HNKGooglePlaceTypeBeautySalon,
+    HNKGooglePlaceTypeBicycleStore,
+    HNKGooglePlaceTypeBookStore,
+    HNKGooglePlaceTypeBowlingAlley,
+    HNKGooglePlaceTypeBusStation,
+    HNKGooglePlaceTypeCafe,
+    HNKGooglePlaceTypeCampground,
+    HNKGooglePlaceTypeCarDealer,
+    HNKGooglePlaceTypeCarRental,
+    HNKGooglePlaceTypeCarRepair,
+    HNKGooglePlaceTypeCarWash,
+    HNKGooglePlaceTypeCasino,
+    HNKGooglePlaceTypeCemetery,
+    HNKGooglePlaceTypeChurch,
+    HNKGooglePlaceTypeCityHall,
+    HNKGooglePlaceTypeClothingStore,
     HNKGooglePlaceTypeColloquialArea,
+    HNKGooglePlaceTypeConvenienceStore,
     HNKGooglePlaceTypeCountry,
+    HNKGooglePlaceTypeCourthouse,
+    HNKGooglePlaceTypeDentist,
+    HNKGooglePlaceTypeDepartmentStore,
+    HNKGooglePlaceTypeDoctor,
+    HNKGooglePlaceTypeElectrician,
+    HNKGooglePlaceTypeElectronicsStore,
+    HNKGooglePlaceTypeEmbassy,
     HNKGooglePlaceTypeEstablishment,
+    HNKGooglePlaceTypeFinance,
+    HNKGooglePlaceTypeFireStation,
     HNKGooglePlaceTypeFloor,
+    HNKGooglePlaceTypeFlorist,
+    HNKGooglePlaceTypeFood,
+    HNKGooglePlaceTypeFuneralHome,
+    HNKGooglePlaceTypeFurnitureStore,
+    HNKGooglePlaceTypeGasStation,
+    HNKGooglePlaceTypeGeneralContractor,
     HNKGooglePlaceTypeGeocode,
+    HNKGooglePlaceTypeGroceryOrSupermarket,
+    HNKGooglePlaceTypeGym,
+    HNKGooglePlaceTypeHairCare,
+    HNKGooglePlaceTypeHardwareStore,
+    HNKGooglePlaceTypeHealth,
+    HNKGooglePlaceTypeHinduTemple,
+    HNKGooglePlaceTypeHomeGoodsStore,
+    HNKGooglePlaceTypeHospital,
+    HNKGooglePlaceTypeInsuranceAgency,
     HNKGooglePlaceTypeIntersection,
+    HNKGooglePlaceTypeJewelryStore,
+    HNKGooglePlaceTypeLaundry,
+    HNKGooglePlaceTypeLawyer,
+    HNKGooglePlaceTypeLibrary,
+    HNKGooglePlaceTypeLiquorStore,
+    HNKGooglePlaceTypeLocalGovernmentOffice,
     HNKGooglePlaceTypeLocality,
+    HNKGooglePlaceTypeLocksmith,
+    HNKGooglePlaceTypeLodging,
+    HNKGooglePlaceTypeMealDelivery,
+    HNKGooglePlaceTypeMealTakeaway,
+    HNKGooglePlaceTypeMosque,
+    HNKGooglePlaceTypeMovieRental,
+    HNKGooglePlaceTypeMovieTheater,
+    HNKGooglePlaceTypeMovingCompany,
+    HNKGooglePlaceTypeMuseum,
     HNKGooglePlaceTypeNaturalFeature,
     HNKGooglePlaceTypeNeighborhood,
-    HNKGooglePlaceTypePolitical,
+    HNKGooglePlaceTypeNightClub,
+    HNKGooglePlaceTypePainter,
+    HNKGooglePlaceTypePark,
+    HNKGooglePlaceTypeParking,
+    HNKGooglePlaceTypePetStore,
+    HNKGooglePlaceTypePharmacy,
+    HNKGooglePlaceTypePhysiotherapist,
+    HNKGooglePlaceTypePlaceOfWorship,
+    HNKGooglePlaceTypePlumber,
     HNKGooglePlaceTypePointOfInterest,
-    HNKGooglePlaceTypePostBox,
+    HNKGooglePlaceTypePolice,
+    HNKGooglePlaceTypePolitical,
     HNKGooglePlaceTypePostalCode,
     HNKGooglePlaceTypePostalCodePrefix,
     HNKGooglePlaceTypePostalCodeSuffix,
     HNKGooglePlaceTypePostalTown,
+    HNKGooglePlaceTypePostBox,
+    HNKGooglePlaceTypePostOffice,
     HNKGooglePlaceTypePremise,
+    HNKGooglePlaceTypeRealEstateAgency,
+    HNKGooglePlaceTypeRestaurant,
+    HNKGooglePlaceTypeRoofingContractor,
     HNKGooglePlaceTypeRoom,
     HNKGooglePlaceTypeRoute,
+    HNKGooglePlaceTypeRVPark,
+    HNKGooglePlaceTypeSchool,
+    HNKGooglePlaceTypeShoeStore,
+    HNKGooglePlaceTypeShoppingMall,
+    HNKGooglePlaceTypeSpa,
+    HNKGooglePlaceTypeStadium,
+    HNKGooglePlaceTypeStorage,
+    HNKGooglePlaceTypeStore,
     HNKGooglePlaceTypeStreetAddress,
     HNKGooglePlaceTypeStreetNumber,
     HNKGooglePlaceTypeSublocality,
@@ -100,7 +187,15 @@ typedef NS_ENUM(NSInteger, HNKGooglePlaceType) {
     HNKGooglePlaceTypeSublocalityLevel4,
     HNKGooglePlaceTypeSublocalityLevel5,
     HNKGooglePlaceTypeSubpremise,
-    HNKGooglePlaceTypeTransitStation
+    HNKGooglePlaceTypeSubwayStation,
+    HNKGooglePlaceTypeSynagogue,
+    HNKGooglePlaceTypeTaxiStand,
+    HNKGooglePlaceTypeTrainStation,
+    HNKGooglePlaceTypeTransitStation,
+    HNKGooglePlaceTypeTravelAgency,
+    HNKGooglePlaceTypeUniversity,
+    HNKGooglePlaceTypeVeterinaryCare,
+    HNKGooglePlaceTypeZoo
 };
 
 /**
@@ -113,29 +208,29 @@ typedef NS_ENUM(NSInteger, HNKGooglePlaceType) {
  *
  *  Note: For establishment type results, this is usually the business name
  */
-@property(nonatomic, strong, readonly) NSString *name;
+@property (nonatomic, strong, readonly) NSString *name;
 
 /**
  *  Collection of Substrings describe the location of the entered term in the
  *  prediction result text, so that the term can be highlighted if desired
  */
-@property(nonatomic, strong, readonly) NSArray *substrings;
+@property (nonatomic, strong, readonly) NSArray *substrings;
 
 /**
  *  A textual identifier that uniquely identifies a place
  */
-@property(nonatomic, strong, readonly) NSString *placeId;
+@property (nonatomic, strong, readonly) NSString *placeId;
 
 /**
  *  A collection of Terms identifying each section of the returned description
  */
-@property(nonatomic, strong, readonly) NSArray *terms;
+@property (nonatomic, strong, readonly) NSArray *terms;
 
 /**
  *  A collection of NSNumbers whose integerValues corresponse to
  *  HNKGooglePlaceTypes
  */
-@property(nonatomic, strong, readonly) NSArray *types;
+@property (nonatomic, strong, readonly) NSArray *types;
 
 /**
  *  Returns whether the provided placeType is included in this Place's types
