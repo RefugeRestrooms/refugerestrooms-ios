@@ -63,7 +63,6 @@
         // REFUGE EDIT
         // NSString * clusterTitle = @"%d elements";
         NSString * clusterTitle = @"%d Restrooms";
-        
         if ([_secondaryDelegate respondsToSelector:@selector(clusterTitleForMapView:)]) {
             clusterTitle = [_secondaryDelegate clusterTitleForMapView:self];
         }

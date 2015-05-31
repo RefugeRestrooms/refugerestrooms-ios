@@ -1,6 +1,0 @@
-#include "Pods-refuge-ios-SPGooglePlacesAutocomplete.xcconfig"
-GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SPGooglePlacesAutocomplete" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ADClusterMapView" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/EAIntroView" "${PODS_ROOT}/Headers/Public/Mantle" "${PODS_ROOT}/Headers/Public/Mixpanel" "${PODS_ROOT}/Headers/Public/Reachability" "${PODS_ROOT}/Headers/Public/SPGooglePlacesAutocomplete" "${PODS_ROOT}/Headers/Public/iRate"
-OTHER_LDFLAGS = ${PODS_REFUGE_IOS_SPGOOGLEPLACESAUTOCOMPLETE_OTHER_LDFLAGS} -ObjC
-PODS_ROOT = ${SRCROOT}
-SKIP_INSTALL = YES
