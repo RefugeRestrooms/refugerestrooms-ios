@@ -22,15 +22,15 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
-  - HNKGooglePlacesAutocomplete (0.7.1):
-    - HNKGooglePlacesAutocomplete/Models (= 0.7.1)
+  - HNKGooglePlacesAutocomplete (1.0.0):
+    - HNKGooglePlacesAutocomplete/Models (= 1.0.0)
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
-  - HNKGooglePlacesAutocomplete/Models (0.7.1):
-    - HNKGooglePlacesAutocomplete/Models/Networking (= 0.7.1)
+  - HNKGooglePlacesAutocomplete/Models (1.0.0):
+    - HNKGooglePlacesAutocomplete/Models/Networking (= 1.0.0)
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
-  - HNKGooglePlacesAutocomplete/Models/Networking (0.7.1):
+  - HNKGooglePlacesAutocomplete/Models/Networking (1.0.0):
     - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
   - HNKServerFacade (0.2.1):
@@ -50,28 +50,17 @@ DEPENDENCIES:
   - ADClusterMapView (= 1.1.0)
   - AFNetworking (~> 2.5)
   - EAIntroView (= 2.6.4)
-  - HNKGooglePlacesAutocomplete (from `https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git`,
-    branch `develop`)
+  - HNKGooglePlacesAutocomplete (~> 1.0)
   - iRate (~> 1.11)
   - Mantle (~> 1.5)
   - Mixpanel (~> 2.7)
   - Reachability (~> 3.2)
 
-EXTERNAL SOURCES:
-  HNKGooglePlacesAutocomplete:
-    :branch: develop
-    :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
-
-CHECKOUT OPTIONS:
-  HNKGooglePlacesAutocomplete:
-    :commit: b354085701e61ffa57125bb4cb18180182b35598
-    :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
-
 SPEC CHECKSUMS:
   ADClusterMapView: dfbaabc62ec929be8fbac1e86754af98baffb365
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
-  HNKGooglePlacesAutocomplete: c6b26045a8f87c7567a6362681362852cf32b959
+  HNKGooglePlacesAutocomplete: 68a110a52782ab1cf32ffba0ac25acb6fa3ae8d8
   HNKServerFacade: 54102383a22b3aa61171574ad0b50ff24fd504cd
   iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C0B8C92DDD1C3261AFC98CC9"
+               BlueprintIdentifier = "2480BDE4BB8E1BC4B055E761"
                BuildableName = "libPods-refuge-ios-Reachability.a"
                BlueprintName = "Pods-refuge-ios-Reachability"
                ReferencedContainer = "container:Pods.xcodeproj">
