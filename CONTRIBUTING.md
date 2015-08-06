@@ -7,7 +7,7 @@ Refuge Restrooms for iOS - Contributors Guide
 * Fork and clone the repository
 * Change to the `refuge-ios/refuge-ios` directory and install required Cocoapods by running `pod install`
 * Create a branch specific to the work you're going to do See: [Branch Naming Conventions](#branch-naming-conventions)
-* When finished with changes, create a Pull Request against the `develop` branch of the `refuge-ios` repository
+* When finished with changes, create a Pull Request against the `develop` branch of the repository
 
 #### What to Work On
 
