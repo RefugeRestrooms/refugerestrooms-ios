@@ -44,9 +44,7 @@
 		DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */; };
 		DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */; };
 		DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */; };
-		DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */; };
 		DC45BC3D1B00F4C0001B2B52 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */; };
-		DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */; };
 		DC45BC3F1B00F4C0001B2B52 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */; };
 		DC45BC401B00F4C0001B2B52 /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */; };
 		DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */; };
@@ -167,9 +165,7 @@
 		DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
 		DC45BC071B00F2FA001B2B52 /* RefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearch.h; sourceTree = "<group>"; };
 		DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearch.m; sourceTree = "<group>"; };
-		DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
-		DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
 		DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
 		DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
 		DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-facebook.png"; sourceTree = "<group>"; };
@@ -457,9 +453,7 @@
 			children = (
 				DC50B7F21BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png */,
 				DC50B7F31BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png */,
-				DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */,
 				DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */,
-				DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */,
 				DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */,
 				DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */,
 				DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */,
@@ -646,12 +640,10 @@
 				DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */,
 				DC45BC5C1B00F60D001B2B52 /* RefugeOnboardPage2.xib in Resources */,
 				DC45BC5B1B00F60D001B2B52 /* RefugeOnboardPage1.xib in Resources */,
-				DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */,
 				DC50B7F41BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png in Resources */,
 				DC45BC471B00F4C0001B2B52 /* refuge-onboard2.png in Resources */,
 				DC45BC481B00F4C0001B2B52 /* refuge-onboard3.png in Resources */,
 				DC45BC431B00F4C0001B2B52 /* refuge-icon-twitter.png in Resources */,
-				DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
