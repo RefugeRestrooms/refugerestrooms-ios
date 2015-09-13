@@ -24,12 +24,12 @@ Make a new branch for each individual thing you are addressing. If you are worki
 You should either name the branch after the issue number (e.g. `issue111`) or descriptively. If opting to name your branch descriptively, prefix it with the type of issue it is addressing, from the following list:
 
 * `fix` - This branch is for addressing bugs
-* `design` - This branch is for introducing *new* design work (if fixing previous design work, use `bugfix`)
-* `feature` - This branch is for creating a brand new feature (if working on previous features, use `bugfix`)
+* `design` - This branch is for introducing *new* design work (if fixing previous design work, use `fix`)
+* `feature` - This branch is for creating a brand new feature (if working on previous features, use `fix`)
 * `pod` - This branch is for udpdating Pods or Frameworks
 * `refactor` - This branch is for refactoring existing work
 
-For example, if I wanted to work on addressing a bug - say I'm updating an expired API key - then I might name that branch `bugfix/update_expired_api_key`
+For example, if I wanted to work on addressing a bug - say I'm updating an expired API key - then I might name that branch `fix/update_expired_api_key`
 
 Once done fixing that specific issue, make a pull request for that branch. If going on to work on another issue, do not work off of that branch, but rather branch off of the version of `refuge-ios` you originally forked.
 
