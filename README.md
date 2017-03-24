@@ -27,19 +27,19 @@ Refuge Restrooms uses the [Refuge Restrooms API](http://www.refugerestrooms.org/
 
 ### Cocoapods
 
-[ADClusterMapView] (https://github.com/applidium/ADClusterMapView)
+[ADClusterMapView](https://github.com/applidium/ADClusterMapView)
 <br>
-[AFNetworking] (https://github.com/AFNetworking/AFNetworking)
+[AFNetworking](https://github.com/AFNetworking/AFNetworking)
 <br>
-[EAIntroView] (https://github.com/ealeksandrov/EAIntroView)
+[EAIntroView](https://github.com/ealeksandrov/EAIntroView)
 <br>
-[HNKGooglePlacesAutocomplete] (https://github.com/hkellaway/HNKGooglePlacesAutocomplete)
+[HNKGooglePlacesAutocomplete](https://github.com/hkellaway/HNKGooglePlacesAutocomplete)
 <br>
 [iRate](https://github.com/nicklockwood/iRate)
 <br>
-[Mantle] (https://github.com/Mantle/Mantle)
+[Mantle](https://github.com/Mantle/Mantle)
 <br>
-[Reachability] (https://github.com/tonymillion/Reachability)
+[Reachability](https://github.com/tonymillion/Reachability)
 
 ## License
 
