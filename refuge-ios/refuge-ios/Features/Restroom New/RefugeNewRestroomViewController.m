@@ -20,7 +20,7 @@
 
 #import "Mixpanel+Refuge.h"
 
-static NSString *const kRefugeUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new?mobile=true";
+static NSString *const kRefugeUrlNewRestroom = @"https://www.refugerestrooms.org/restrooms/new?mobile=true";
 
 @interface RefugeNewRestroomViewController ()
 
