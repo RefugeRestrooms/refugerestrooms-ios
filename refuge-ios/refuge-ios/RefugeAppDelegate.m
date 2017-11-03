@@ -19,8 +19,6 @@
 
 #import "RefugeAppDelegate.h"
 
-#import <Crashlytics/Crashlytics.h>
-#import <Fabric/Fabric.h>
 #import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocompleteQuery.h>
 #import "iRate+Refuge.h"
 #import <Mixpanel.h>
@@ -47,7 +45,6 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     [self setupSearch];
     [self setupRatingPrompt];
     [self setupAnalytics];
-    [self setupCrashReporting];
 
     return YES;
 }
@@ -232,11 +229,6 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
     [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
     [[Mixpanel sharedInstance] refugeTrackAppLaunch];
-}
-
-- (void)setupCrashReporting
-{
-    [Fabric with:@[ CrashlyticsKit ]];
 }
 
 @end
