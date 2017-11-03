@@ -48,7 +48,7 @@
     return [[MPObjectSelector alloc] initWithString:string];
 }
 
-- (id)initWithString:(NSString *)string
+- (instancetype)initWithString:(NSString *)string
 {
     if (self = [super init]) {
         _string = string;
@@ -164,7 +164,7 @@
             NSString *predicateFormat;
             NSInteger index = 0;
             if ([_scanner scanInteger:&index] && [_scanner scanCharactersFromSet:_predicateEndChar intoString:nil]) {
-                filter.index = [NSNumber numberWithUnsignedInteger:(NSUInteger)index];
+                filter.index = @((NSUInteger)index);
             } else {
                 [_scanner scanUpToCharactersFromSet:_predicateEndChar intoString:&predicateFormat];
                 @try {
@@ -206,7 +206,7 @@
 
 @implementation MPObjectFilter
 
-- (id)init
+- (instancetype)init
 {
     if((self = [super init])) {
         self.unique = NO;
@@ -216,7 +216,7 @@
 }
 
 /*
- Apply this filter to the views, returning all of their chhildren
+ Apply this filter to the views, returning all of their children
  that match this filter's class / predicate pattern
  */
 - (NSArray *)apply:(NSArray *)views
@@ -329,23 +329,28 @@
 {
     NSMutableArray *result = [NSMutableArray array];
     if ([obj isKindOfClass:[UIView class]]) {
-        if ([(UIView *)obj superview]) {
-            [result addObject:[(UIView *)obj superview]];
+        UIView *superview = [(UIView *)obj superview];
+        if (superview) {
+            [result addObject:superview];
         }
+        UIResponder *nextResponder = [(UIView *)obj nextResponder];
         // For UIView, nextResponder should be its controller or its superview.
-        if ([(UIView *)obj nextResponder] && [(UIView *)obj nextResponder] != [(UIView *)obj superview]) {
-            [result addObject:[(UIView *)obj nextResponder]];
+        if (nextResponder && nextResponder != superview) {
+            [result addObject:nextResponder];
         }
     } else if ([obj isKindOfClass:[UIViewController class]]) {
-        if ([(UIViewController *)obj parentViewController]) {
-            [result addObject:[(UIViewController *)obj parentViewController]];
+        UIViewController *parentViewController = [(UIViewController *)obj parentViewController];
+        if (parentViewController) {
+            [result addObject:parentViewController];
         }
-        if ([(UIViewController *)obj presentingViewController]) {
-            [result addObject:[(UIViewController *)obj presentingViewController]];
+        UIViewController *presentingViewController = [(UIViewController *)obj presentingViewController];
+        if (presentingViewController) {
+            [result addObject:presentingViewController];
         }
-        if ([UIApplication sharedApplication].keyWindow.rootViewController == obj) {
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        if (keyWindow.rootViewController == obj) {
             //TODO is there a better way to get the actual window that has this VC
-            [result addObject:[UIApplication sharedApplication].keyWindow];
+            [result addObject:keyWindow];
         }
     }
     return [result copy];
@@ -356,8 +361,11 @@
     NSMutableArray *children = [NSMutableArray array];
     // A UIWindow is also a UIView, so we could in theory follow the subviews chain from UIWindow, but
     // for now we only follow rootViewController from UIView.
-    if ([obj isKindOfClass:[UIWindow class]] && [((UIWindow *)obj).rootViewController isKindOfClass:class]) {
-        [children addObject:((UIWindow *)obj).rootViewController];
+    if ([obj isKindOfClass:[UIWindow class]]) {
+        UIViewController *rootViewController = ((UIWindow *)obj).rootViewController;
+        if ([rootViewController isKindOfClass:class]) {
+            [children addObject:rootViewController];
+        }
     } else if ([obj isKindOfClass:[UIView class]]) {
         // NB. For UIViews, only add subviews, nothing else.
         // The ordering of this result is critical to being able to
@@ -368,16 +376,18 @@
             }
         }
     } else if ([obj isKindOfClass:[UIViewController class]]) {
-        for (NSObject *child in [(UIViewController *)obj childViewControllers]) {
+        UIViewController *viewController = (UIViewController *)obj;
+        for (NSObject *child in [viewController childViewControllers]) {
             if (!class || [child isKindOfClass:class]) {
                 [children addObject:child];
             }
         }
-        if (((UIViewController *)obj).presentedViewController && (!class || [((UIViewController *)obj).presentedViewController isKindOfClass:class])) {
-            [children addObject:((UIViewController *)obj).presentedViewController];
+        UIViewController *presentedViewController = viewController.presentedViewController;
+        if (presentedViewController && (!class || [presentedViewController isKindOfClass:class])) {
+            [children addObject:presentedViewController];
         }
-        if (!class || [((UIViewController *)obj).view isKindOfClass:class]) {
-            [children addObject:((UIViewController *)obj).view];
+        if (!class || (viewController.isViewLoaded && [viewController.view isKindOfClass:class])) {
+            [children addObject:viewController.view];
         }
     }
     NSArray *result;

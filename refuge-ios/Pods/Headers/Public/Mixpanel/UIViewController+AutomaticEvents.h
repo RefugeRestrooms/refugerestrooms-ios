@@ -1,0 +1,1 @@
+../../../Mixpanel/Mixpanel/UIViewController+AutomaticEvents.h

@@ -1,7 +1,5 @@
 iRate
 
-Version 1.11.4, May 5th, 2015
-
 Copyright (C) 2011 Charcoal Design
 
 This software is provided 'as-is', without any express or implied
