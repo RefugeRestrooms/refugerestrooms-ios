@@ -66,22 +66,8 @@
 
 /* Begin PBXFileReference section */
 		959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-refuge-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManagerTests.m; sourceTree = "<group>"; };
-		CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCreationWorkflowTests.m; sourceTree = "<group>"; };
-		CEA23FE81A83D9C00083510F /* MockRefugeRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomManagerDelegate.h; sourceTree = "<group>"; };
-		CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomManagerDelegate.m; sourceTree = "<group>"; };
-		CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomBuilder.h; sourceTree = "<group>"; };
-		CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomBuilder.m; sourceTree = "<group>"; };
-		CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicator.h; sourceTree = "<group>"; };
-		CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicator.m; sourceTree = "<group>"; };
-		CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicatorTests.m; sourceTree = "<group>"; };
-		CEA23FF81A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
-		CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicatorDelegate.m; sourceTree = "<group>"; };
-		CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppStateTests.m; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
 		CEA23FFE1A84278B0083510F /* RefugeAppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppState.m; sourceTree = "<group>"; };
-		CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeDataPersistenceManager.h; sourceTree = "<group>"; };
-		CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeDataPersistenceManager.m; sourceTree = "<group>"; };
 		CEA2401E1A86F9410083510F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEA240271A8702E20083510F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,10 +78,6 @@
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomTests.m; sourceTree = "<group>"; };
-		CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilderTests.m; sourceTree = "<group>"; };
-		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -171,18 +153,6 @@
 		DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 		DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
 		DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomEntity.m; sourceTree = "<group>"; };
-		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
-		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
-		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
-		DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPinTests.m; sourceTree = "<group>"; };
-		DCA355411A8C210300E3EDF8 /* MockNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockNSUserDefaults.h; sourceTree = "<group>"; };
-		DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNSUserDefaults.m; sourceTree = "<group>"; };
-		DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapTests.m; sourceTree = "<group>"; };
-		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
-		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
-		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
-		DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RefugeTests.m"; sourceTree = "<group>"; };
-		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,43 +183,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEA23FE31A83D7A60083510F /* Integration Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */,
-				DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */,
-			);
-			name = "Integration Tests";
-			sourceTree = "<group>";
-		};
-		CEA23FE71A83D9900083510F /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				DCA355411A8C210300E3EDF8 /* MockNSUserDefaults.h */,
-				DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */,
-				CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */,
-				CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */,
-				DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */,
-				DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */,
-				CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */,
-				CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */,
-				CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */,
-				CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */,
-				CEA23FF81A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.h */,
-				CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */,
-				CEA23FE81A83D9C00083510F /* MockRefugeRestroomManagerDelegate.h */,
-				CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */,
-				DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */,
-				DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */,
-			);
-			name = Mocks;
-			sourceTree = "<group>";
-		};
 		CED0CB471A82A6D300F7F3D8 = {
 			isa = PBXGroup;
 			children = (
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
-				CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
 				EA08CCE57F3C7FE32EA6AC15 /* Pods */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
@@ -291,35 +228,6 @@
 				CED0CB541A82A6D400F7F3D8 /* Info.plist */,
 				CED0CB551A82A6D400F7F3D8 /* main.m */,
 				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				CEA23FE71A83D9900083510F /* Mocks */,
-				CEA23FE31A83D7A60083510F /* Integration Tests */,
-				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
-				DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */,
-				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
-				DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */,
-				DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */,
-				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
-				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
-				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
-				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
-				DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */,
-				DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */,
-				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
-			);
-			path = "refuge-iosTests";
-			sourceTree = "<group>";
-		};
-		CED0CB701A82A6D500F7F3D8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB711A82A6D500F7F3D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
