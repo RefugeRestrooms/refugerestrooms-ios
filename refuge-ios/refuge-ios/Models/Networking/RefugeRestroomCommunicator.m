@@ -25,7 +25,7 @@
 #import "RefugeRestroomCommunicatorDelegate.h"
 
 static NSInteger const kMaxRestroomsToFetch = 100;
-static NSString * const kApiBaseURL = @"http://www.refugerestrooms.org:80/api/v1/restrooms";
+static NSString * const kApiBaseURL = @"https://www.refugerestrooms.org/api/v1/restrooms";
 static NSString * const kApiEndPointRestroomsByDate = @"by_date.json";
 
 @interface RefugeRestroomCommunicator ()

@@ -15,9 +15,3 @@ pod 'Reachability', '~> 3.2'
 pod 'HNKGooglePlacesAutocomplete', '~> 1.0'
 
 end
-
-target 'refuge-iosTests' do
-
-end
-
-link_with 'refuge-ios', 'refuge-iosTests'
