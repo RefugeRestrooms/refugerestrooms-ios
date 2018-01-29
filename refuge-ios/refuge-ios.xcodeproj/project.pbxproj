@@ -16,6 +16,7 @@
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
+		DC157CBE201F556F000838ED /* refuge_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC157CBD201F556F000838ED /* refuge_iosTests.m */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
 		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
@@ -64,6 +65,16 @@
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DC157CC0201F556F000838ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CED0CB481A82A6D300F7F3D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CED0CB4F1A82A6D300F7F3D8;
+			remoteInfo = "refuge-ios";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-refuge-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
@@ -80,6 +91,9 @@
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
+		DC157CBB201F556C000838ED /* refuge-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "refuge-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC157CBD201F556F000838ED /* refuge_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = refuge_iosTests.m; sourceTree = "<group>"; };
+		DC157CBF201F556F000838ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -168,6 +182,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC157CB8201F556C000838ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -187,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
+				DC157CBC201F556F000838ED /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
 				EA08CCE57F3C7FE32EA6AC15 /* Pods */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
@@ -197,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */,
+				DC157CBB201F556C000838ED /* refuge-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,6 +253,15 @@
 				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC157CBC201F556F000838ED /* refuge-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC157CBD201F556F000838ED /* refuge_iosTests.m */,
+				DC157CBF201F556F000838ED /* Info.plist */,
+			);
+			path = "refuge-iosTests";
 			sourceTree = "<group>";
 		};
 		DC45BBD61B00EFD9001B2B52 /* Features */ = {
@@ -424,6 +456,24 @@
 			productReference = CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DC157CBA201F556C000838ED /* refuge-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC157CC2201F5573000838ED /* Build configuration list for PBXNativeTarget "refuge-iosTests" */;
+			buildPhases = (
+				DC157CB7201F556C000838ED /* Sources */,
+				DC157CB8201F556C000838ED /* Frameworks */,
+				DC157CB9201F556C000838ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC157CC1201F556F000838ED /* PBXTargetDependency */,
+			);
+			name = "refuge-iosTests";
+			productName = "refuge-iosTests";
+			productReference = DC157CBB201F556C000838ED /* refuge-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,6 +487,11 @@
 					CED0CB4F1A82A6D300F7F3D8 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = G58XPAD97M;
+					};
+					DC157CBA201F556C000838ED = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CED0CB4F1A82A6D300F7F3D8;
 					};
 				};
 			};
@@ -454,6 +509,7 @@
 			projectRoot = "";
 			targets = (
 				CED0CB4F1A82A6D300F7F3D8 /* refuge-ios */,
+				DC157CBA201F556C000838ED /* refuge-iosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -486,6 +542,13 @@
 				DC45BC471B00F4C0001B2B52 /* refuge-onboard2.png in Resources */,
 				DC45BC481B00F4C0001B2B52 /* refuge-onboard3.png in Resources */,
 				DC45BC431B00F4C0001B2B52 /* refuge-icon-twitter.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC157CB9201F556C000838ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +635,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC157CB7201F556C000838ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC157CBE201F556F000838ED /* refuge_iosTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC157CC1201F556F000838ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CED0CB4F1A82A6D300F7F3D8 /* refuge-ios */;
+			targetProxy = DC157CC0201F556F000838ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CED0CB601A82A6D400F7F3D8 /* Main.storyboard */ = {
@@ -724,6 +803,72 @@
 			};
 			name = Release;
 		};
+		DC157CC3201F5573000838ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "refuge-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RefugeRestrooms.refuge-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/refuge-ios.app/refuge-ios";
+			};
+			name = Debug;
+		};
+		DC157CC4201F5573000838ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "refuge-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RefugeRestrooms.refuge-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/refuge-ios.app/refuge-ios";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -741,6 +886,15 @@
 			buildConfigurations = (
 				CED0CB771A82A6D500F7F3D8 /* Debug */,
 				CED0CB781A82A6D500F7F3D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC157CC2201F5573000838ED /* Build configuration list for PBXNativeTarget "refuge-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC157CC3201F5573000838ED /* Debug */,
+				DC157CC4201F5573000838ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
