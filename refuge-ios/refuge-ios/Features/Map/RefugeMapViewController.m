@@ -119,6 +119,21 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
     [self.locationManager startUpdatingLocation];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Visit Refuge Web"
+                                   message:@"Our iOS app is being shut down, but Refuge Restrooms isn't! Visit refugerestrooms.org for a more functional, up-to-date experience."
+                                   preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+       handler:^(UIAlertAction * action) {}];
+
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Public methods
 
 #pragma mark CLLocationManagerDelegate methods
