@@ -57,7 +57,6 @@
 		DC45BC761B018812001B2B52 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC751B018812001B2B52 /* _clang-format */; };
 		DC50B7F41BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC50B7F21BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png */; };
 		DC50B7F51BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = DC50B7F31BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png */; };
-		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
@@ -161,7 +160,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
-				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
 				2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */,
 			);
