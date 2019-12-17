@@ -71,7 +71,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   HNKGooglePlacesAutocomplete:
-    :commit: 54dd2a9a5e6c71159a8f9c9c87df6396fd95e74d
+    :commit: 14a31bcd597b00505bf9f159fd3631295b38a664
     :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
 
 SPEC CHECKSUMS:

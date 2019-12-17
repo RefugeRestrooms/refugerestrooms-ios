@@ -20,7 +20,6 @@
 #import "RefugeMapPlace.h"
 
 #import "CLPlacemark+HNKAdditions.h"
-#import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.h>
 
 @implementation RefugeMapPlace
 
@@ -29,9 +28,18 @@
 - (void)resolveToPlacemarkWithSuccessBlock:(void (^)(CLPlacemark *))placemarkSuccess
                                    failure:(void (^)(NSError *))placemarkError
 {
-    HNKGooglePlacesAutocompletePlace *place = [self translateToHNKPlace];
+    NSString *typeString = [self typeToString];
+    NSDictionary *placeJSON = @{
+        @"description" : self.name,
+        @"id" : @"N/A",
+        @"matched_substrings" : @[],
+        @"place_id" : self.placeId,
+        @"reference" : @"N/A",
+        @"terms" : @[],
+        @"types" : @[ typeString ]
+    };
     
-    [CLPlacemark hnk_placemarkFromGooglePlace:place
+    [CLPlacemark hnk_placemarkFromJSON:placeJSON
                                        apiKey:self.key
                                    completion:^(CLPlacemark *placemark, NSString *addressString, NSError *error) {
                                        if (error) {
@@ -43,25 +51,6 @@
 }
 
 #pragma mark - Private methods
-
-- (HNKGooglePlacesAutocompletePlace *)translateToHNKPlace
-{
-    NSString *typeString = [self typeToString];
-    
-    NSDictionary *placeJSON = @{
-        @"description" : self.name,
-        @"id" : @"N/A",
-        @"matched_substrings" : @[],
-        @"place_id" : self.placeId,
-        @"reference" : @"N/A",
-        @"terms" : @[],
-        @"types" : @[ typeString ]
-    };
-    
-    HNKGooglePlacesAutocompletePlace *place = [HNKGooglePlacesAutocompletePlace modelFromJSONDictionary:placeJSON];
-    
-    return place;
-}
 
 - (NSString *)typeToString
 {
