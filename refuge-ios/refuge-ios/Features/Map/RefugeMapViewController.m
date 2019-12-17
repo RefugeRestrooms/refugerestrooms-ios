@@ -360,7 +360,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
         [self.locationManager requestWhenInUseAuthorization];
     } else // iOS 7
     {
-        if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorized) {
+        if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorizedAlways) {
             [self.locationManager startUpdatingLocation];
         } else {
             [self displayAlertForWithMessage:kRefugeErrorTextLocationServicesFailiOS7];
