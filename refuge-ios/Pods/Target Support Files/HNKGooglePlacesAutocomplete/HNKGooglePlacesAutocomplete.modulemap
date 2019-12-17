@@ -1,0 +1,6 @@
+framework module HNKGooglePlacesAutocomplete {
+  umbrella header "HNKGooglePlacesAutocomplete-umbrella.h"
+
+  export *
+  module * { export * }
+}

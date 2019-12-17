@@ -23,18 +23,16 @@ PODS:
     - AFNetworking/NSURLSession
   - EAIntroView (2.6.4)
   - HNKGooglePlacesAutocomplete (1.0.0):
+    - AFNetworking (= 2.5.4)
     - HNKGooglePlacesAutocomplete/Models (= 1.0.0)
-    - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
   - HNKGooglePlacesAutocomplete/Models (1.0.0):
+    - AFNetworking (= 2.5.4)
     - HNKGooglePlacesAutocomplete/Models/Networking (= 1.0.0)
-    - HNKServerFacade (~> 0.2)
     - Mantle (~> 1.5)
   - HNKGooglePlacesAutocomplete/Models/Networking (1.0.0):
-    - HNKServerFacade (~> 0.2)
+    - AFNetworking (= 2.5.4)
     - Mantle (~> 1.5)
-  - HNKServerFacade (0.2.1):
-    - AFNetworking (~> 2.5)
   - iRate (1.11.4)
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
@@ -50,21 +48,42 @@ DEPENDENCIES:
   - ADClusterMapView (= 1.1.0)
   - AFNetworking (~> 2.5)
   - EAIntroView (= 2.6.4)
-  - HNKGooglePlacesAutocomplete (~> 1.0)
+  - HNKGooglePlacesAutocomplete (from `https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git`, branch `refuge`)
   - iRate (~> 1.11)
   - Mantle (~> 1.5)
   - Mixpanel (~> 2.7)
   - Reachability (~> 3.2)
 
+SPEC REPOS:
+  trunk:
+    - ADClusterMapView
+    - AFNetworking
+    - EAIntroView
+    - iRate
+    - Mantle
+    - Mixpanel
+    - Reachability
+
+EXTERNAL SOURCES:
+  HNKGooglePlacesAutocomplete:
+    :branch: refuge
+    :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
+
+CHECKOUT OPTIONS:
+  HNKGooglePlacesAutocomplete:
+    :commit: 54dd2a9a5e6c71159a8f9c9c87df6396fd95e74d
+    :git: https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git
+
 SPEC CHECKSUMS:
   ADClusterMapView: dfbaabc62ec929be8fbac1e86754af98baffb365
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
-  HNKGooglePlacesAutocomplete: 68a110a52782ab1cf32ffba0ac25acb6fa3ae8d8
-  HNKServerFacade: 54102383a22b3aa61171574ad0b50ff24fd504cd
+  HNKGooglePlacesAutocomplete: df24f7b3d2eeca22f5b3db80bd70f0e160e605d8
   iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Mixpanel: 93c4825025e6380ced273ed7178496282e385077
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-COCOAPODS: 0.37.1
+PODFILE CHECKSUM: 32c93a907d748876f1e62139db59994a3924f056
+
+COCOAPODS: 1.8.4

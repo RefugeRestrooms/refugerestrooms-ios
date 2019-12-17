@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */; };
+		2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */; };
 		CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */; };
 		CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */; };
 		CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */; };
@@ -100,7 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-refuge-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refuge_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManagerTests.m; sourceTree = "<group>"; };
 		CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCreationWorkflowTests.m; sourceTree = "<group>"; };
 		CEA23FE81A83D9C00083510F /* MockRefugeRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomManagerDelegate.h; sourceTree = "<group>"; };
@@ -132,8 +134,6 @@
 		CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomTests.m; sourceTree = "<group>"; };
 		CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilderTests.m; sourceTree = "<group>"; };
 		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
-		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 				DC45BC781B01A110001B2B52 /* Crashlytics.framework in Frameworks */,
 				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
-				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
+				2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,9 +251,19 @@
 				CEA240271A8702E20083510F /* CoreLocation.framework */,
 				DC8354221AABAED3009BEA58 /* Fabric.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
-				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
+				BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DAC730BBCB54D00B2C519B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */,
+				C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		CEA23FE31A83D7A60083510F /* Integration Tests */ = {
@@ -294,8 +304,8 @@
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
 				CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
-				EA08CCE57F3C7FE32EA6AC15 /* Pods */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
+				9DAC730BBCB54D00B2C519B3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -528,15 +538,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EA08CCE57F3C7FE32EA6AC15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */,
-				D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -544,12 +545,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED0CB761A82A6D500F7F3D8 /* Build configuration list for PBXNativeTarget "refuge-ios" */;
 			buildPhases = (
-				06CA8934E178226555B3B49B /* Check Pods Manifest.lock */,
+				5D3A2D3910A40FAEA367574F /* [CP] Check Pods Manifest.lock */,
 				CED0CB4C1A82A6D300F7F3D8 /* Sources */,
 				CED0CB4D1A82A6D300F7F3D8 /* Frameworks */,
 				CED0CB4E1A82A6D300F7F3D8 /* Resources */,
-				1D69CA609FF701E4D138D1E9 /* Copy Pods Resources */,
 				DCE6BB8A1A96CCCB006B9B8A /* ShellScript */,
+				53832143D6CA6036ADDBD9AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -602,6 +603,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -658,34 +660,58 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06CA8934E178226555B3B49B /* Check Pods Manifest.lock */ = {
+		53832143D6CA6036ADDBD9AE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADClusterMapView/ADClusterMapView.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADClusterMapView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNKGooglePlacesAutocomplete.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1D69CA609FF701E4D138D1E9 /* Copy Pods Resources */ = {
+		5D3A2D3910A40FAEA367574F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-refuge-ios-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DCE6BB8A1A96CCCB006B9B8A /* ShellScript */ = {
@@ -833,7 +859,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -868,7 +894,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -877,7 +903,7 @@
 		};
 		CED0CB771A82A6D500F7F3D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */;
+			baseConfigurationReference = 246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -906,7 +932,7 @@
 		};
 		CED0CB781A82A6D500F7F3D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */;
+			baseConfigurationReference = C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -929,7 +955,6 @@
 		};
 		CED0CB7A1A82A6D500F7F3D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -949,7 +974,6 @@
 		};
 		CED0CB7B1A82A6D500F7F3D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

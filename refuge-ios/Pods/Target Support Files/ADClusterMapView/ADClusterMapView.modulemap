@@ -1,0 +1,6 @@
+framework module ADClusterMapView {
+  umbrella header "ADClusterMapView-umbrella.h"
+
+  export *
+  module * { export * }
+}
