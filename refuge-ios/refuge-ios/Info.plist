@@ -33,8 +33,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Location Services is used by the Map to locate Restrooms nearby.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Services is used by the Map to locate Restrooms nearby.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Location Services is used by the Map</string>
+	<string>Location Services is used by the Map to locate Restrooms nearby.</string>
 	<key>UILaunchImages</key>
 	<array>
 		<dict>
