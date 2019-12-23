@@ -7,19 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */; };
-		CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */; };
-		CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */; };
-		CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */; };
-		CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */; };
-		CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */; };
-		CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */; };
-		CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */; };
-		CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */; };
+		2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */; };
 		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
-		CEA240001A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
-		CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */; };
-		CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
 		CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA240271A8702E20083510F /* CoreLocation.framework */; };
 		CED0CB561A82A6D400F7F3D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB551A82A6D400F7F3D8 /* main.m */; };
@@ -27,9 +16,6 @@
 		CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB5A1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld */; };
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
-		CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */; };
-		CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */; };
-		CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
 		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
 		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
@@ -44,9 +30,7 @@
 		DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFA1B00F23F001B2B52 /* RefugeRestroomManager.m */; };
 		DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBFF1B00F280001B2B52 /* RefugeDataPersistenceManager.m */; };
 		DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */; };
-		DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */; };
 		DC45BC3D1B00F4C0001B2B52 /* refuge-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */; };
-		DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */; };
 		DC45BC3F1B00F4C0001B2B52 /* refuge-details-accessible.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */; };
 		DC45BC401B00F4C0001B2B52 /* refuge-details-unisex.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */; };
 		DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */; };
@@ -69,56 +53,20 @@
 		DC45BC691B00F72C001B2B52 /* RefugeOnboardingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC681B00F72C001B2B52 /* RefugeOnboardingViewController.m */; };
 		DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */; };
 		DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */; };
-		DC45BC741B00F7C2001B2B52 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */; };
 		DC45BC761B018812001B2B52 /* _clang-format in Resources */ = {isa = PBXBuildFile; fileRef = DC45BC751B018812001B2B52 /* _clang-format */; };
-		DC45BC781B01A110001B2B52 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC45BC771B01A110001B2B52 /* Crashlytics.framework */; };
 		DC50B7F41BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC50B7F21BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png */; };
 		DC50B7F51BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png in Resources */ = {isa = PBXBuildFile; fileRef = DC50B7F31BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png */; };
-		DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC8354221AABAED3009BEA58 /* Fabric.framework */; };
 		DC8F394C1A97FC8100A90B13 /* RefugeRestroomsSeed.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */; };
 		DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
-		DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */; };
 		DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
-		DC8F39BA1A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */; };
-		DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */; };
-		DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */; };
-		DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */; };
-		DCA355431A8C210300E3EDF8 /* MockNSUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */; };
-		DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */; };
-		DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */; };
-		DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */; };
-		DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */; };
-		DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CED0CB6D1A82A6D500F7F3D8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CED0CB481A82A6D300F7F3D8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CED0CB4F1A82A6D300F7F3D8;
-			remoteInfo = "refuge-ios";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-refuge-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomManagerTests.m; sourceTree = "<group>"; };
-		CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCreationWorkflowTests.m; sourceTree = "<group>"; };
-		CEA23FE81A83D9C00083510F /* MockRefugeRestroomManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomManagerDelegate.h; sourceTree = "<group>"; };
-		CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomManagerDelegate.m; sourceTree = "<group>"; };
-		CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomBuilder.h; sourceTree = "<group>"; };
-		CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomBuilder.m; sourceTree = "<group>"; };
-		CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicator.h; sourceTree = "<group>"; };
-		CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicator.m; sourceTree = "<group>"; };
-		CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomCommunicatorTests.m; sourceTree = "<group>"; };
-		CEA23FF81A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeRestroomCommunicatorDelegate.h; sourceTree = "<group>"; };
-		CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeRestroomCommunicatorDelegate.m; sourceTree = "<group>"; };
-		CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppStateTests.m; sourceTree = "<group>"; };
+		246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refuge_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
 		CEA23FFE1A84278B0083510F /* RefugeAppState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeAppState.m; sourceTree = "<group>"; };
-		CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeDataPersistenceManager.h; sourceTree = "<group>"; };
-		CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeDataPersistenceManager.m; sourceTree = "<group>"; };
 		CEA2401E1A86F9410083510F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEA240271A8702E20083510F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "refuge-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,13 +77,7 @@
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CED0CB6C1A82A6D500F7F3D8 /* refuge-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "refuge-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomTests.m; sourceTree = "<group>"; };
-		CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomBuilderTests.m; sourceTree = "<group>"; };
-		CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RefugeTests.m"; sourceTree = "<group>"; };
-		D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
@@ -167,9 +109,7 @@
 		DC45BC021B00F2C9001B2B52 /* RefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeMapDelegate.h; sourceTree = "<group>"; };
 		DC45BC071B00F2FA001B2B52 /* RefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeSearch.h; sourceTree = "<group>"; };
 		DC45BC081B00F2FA001B2B52 /* RefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearch.m; sourceTree = "<group>"; };
-		DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "refuge-background-bathroom.jpg"; sourceTree = "<group>"; };
 		DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-banner.png"; sourceTree = "<group>"; };
-		DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-credit-google.png"; sourceTree = "<group>"; };
 		DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-accessible.png"; sourceTree = "<group>"; };
 		DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-details-unisex.png"; sourceTree = "<group>"; };
 		DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refuge-icon-facebook.png"; sourceTree = "<group>"; };
@@ -199,8 +139,6 @@
 		DC45BC6B1B00F745001B2B52 /* RefugeMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapViewController.m; sourceTree = "<group>"; };
 		DC45BC6E1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomDetailsViewController.h; sourceTree = "<group>"; };
 		DC45BC6F1B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomDetailsViewController.m; sourceTree = "<group>"; };
-		DC45BC721B00F7C2001B2B52 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
-		DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
 		DC45BC751B018812001B2B52 /* _clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "_clang-format"; sourceTree = "<group>"; };
 		DC45BC771B01A110001B2B52 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		DC50B7F21BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS7-LaunchScreen-568@2x.png"; sourceTree = "<group>"; };
@@ -211,18 +149,6 @@
 		DC8F39B41A980FDE00A90B13 /* RefugeRestroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroom.m; sourceTree = "<group>"; };
 		DC8F39B51A980FDE00A90B13 /* RefugeRestroomEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeRestroomEntity.h; sourceTree = "<group>"; };
 		DC8F39B61A980FDE00A90B13 /* RefugeRestroomEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeRestroomEntity.m; sourceTree = "<group>"; };
-		DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeSearch.h; sourceTree = "<group>"; };
-		DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeSearch.m; sourceTree = "<group>"; };
-		DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeSearchTests.m; sourceTree = "<group>"; };
-		DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPinTests.m; sourceTree = "<group>"; };
-		DCA355411A8C210300E3EDF8 /* MockNSUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockNSUserDefaults.h; sourceTree = "<group>"; };
-		DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockNSUserDefaults.m; sourceTree = "<group>"; };
-		DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapTests.m; sourceTree = "<group>"; };
-		DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RefugeTests.m"; sourceTree = "<group>"; };
-		DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockRefugeMapDelegate.h; sourceTree = "<group>"; };
-		DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockRefugeMapDelegate.m; sourceTree = "<group>"; };
-		DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+RefugeTests.m"; sourceTree = "<group>"; };
-		DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefugeMapPlottingWorkflowTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,17 +157,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */,
-				DC45BC781B01A110001B2B52 /* Crashlytics.framework in Frameworks */,
-				DC8354231AABAED3009BEA58 /* Fabric.framework in Frameworks */,
 				CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */,
-				0DC72DF2C778FB11669B38CD /* libPods-refuge-ios.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CED0CB691A82A6D500F7F3D8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,41 +172,18 @@
 				CEA240271A8702E20083510F /* CoreLocation.framework */,
 				DC8354221AABAED3009BEA58 /* Fabric.framework */,
 				CEA2401E1A86F9410083510F /* MapKit.framework */,
-				959014171F527C71C6D9EB85 /* libPods-refuge-ios.a */,
+				BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEA23FE31A83D7A60083510F /* Integration Tests */ = {
+		9DAC730BBCB54D00B2C519B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CEA23FE41A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m */,
-				DCF866661A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m */,
+				246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */,
+				C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */,
 			);
-			name = "Integration Tests";
-			sourceTree = "<group>";
-		};
-		CEA23FE71A83D9900083510F /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				DCA355411A8C210300E3EDF8 /* MockNSUserDefaults.h */,
-				DCA355421A8C210300E3EDF8 /* MockNSUserDefaults.m */,
-				CEA240111A86CC9A0083510F /* MockRefugeDataPersistenceManager.h */,
-				CEA240121A86CC9A0083510F /* MockRefugeDataPersistenceManager.m */,
-				DCA355631A8C5A7100E3EDF8 /* MockRefugeMapDelegate.h */,
-				DCA355641A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m */,
-				CEA23FEB1A83D9F50083510F /* MockRefugeRestroomBuilder.h */,
-				CEA23FEC1A83D9F50083510F /* MockRefugeRestroomBuilder.m */,
-				CEA23FF21A83DA5E0083510F /* MockRefugeRestroomCommunicator.h */,
-				CEA23FF31A83DA5E0083510F /* MockRefugeRestroomCommunicator.m */,
-				CEA23FF81A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.h */,
-				CEA23FF91A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m */,
-				CEA23FE81A83D9C00083510F /* MockRefugeRestroomManagerDelegate.h */,
-				CEA23FE91A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m */,
-				DCA355311A8BD87800E3EDF8 /* MockRefugeSearch.h */,
-				DCA355321A8BD87800E3EDF8 /* MockRefugeSearch.m */,
-			);
-			name = Mocks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		CED0CB471A82A6D300F7F3D8 = {
@@ -298,8 +192,8 @@
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
 				CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
-				EA08CCE57F3C7FE32EA6AC15 /* Pods */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
+				9DAC730BBCB54D00B2C519B3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -307,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */,
-				CED0CB6C1A82A6D500F7F3D8 /* refuge-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -346,19 +239,6 @@
 		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
 			isa = PBXGroup;
 			children = (
-				CEA23FE71A83D9900083510F /* Mocks */,
-				CEA23FE31A83D7A60083510F /* Integration Tests */,
-				CED0CBB51A833B9800F7F3D8 /* NSDate+RefugeTests.m */,
-				DCD8F8221ABBC81A00E2E7E8 /* NSString+RefugeTests.m */,
-				CEA23FFB1A8426A60083510F /* RefugeAppStateTests.m */,
-				DCA355531A8C47E400E3EDF8 /* RefugeMapTests.m */,
-				DCA3553F1A8C1E6800E3EDF8 /* RefugeMapPinTests.m */,
-				CED0CBA91A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m */,
-				CEA23FF61A841BB00083510F /* RefugeRestroomCommunicatorTests.m */,
-				CEA23FDA1A835BBF0083510F /* RefugeRestroomManagerTests.m */,
-				CED0CB9F1A83259100F7F3D8 /* RefugeRestroomTests.m */,
-				DCA355341A8BD91A00E3EDF8 /* RefugeSearchTests.m */,
-				DCA3555D1A8C575200E3EDF8 /* UIImage+RefugeTests.m */,
 				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
 			);
 			path = "refuge-iosTests";
@@ -379,7 +259,6 @@
 				DC45BC011B00F2C9001B2B52 /* Map */,
 				DC45BC561B00F5E7001B2B52 /* Onboarding */,
 				DC45BC6D1B00F778001B2B52 /* Restroom Details */,
-				DC45BC711B00F7C2001B2B52 /* Restroom New */,
 				DC45BC061B00F2FA001B2B52 /* Search */,
 			);
 			path = Features;
@@ -457,9 +336,7 @@
 			children = (
 				DC50B7F21BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png */,
 				DC50B7F31BA5D3F500530DC2 /* iOS7-LaunchScreen-568h.png */,
-				DC45BC2E1B00F4C0001B2B52 /* refuge-background-bathroom.jpg */,
 				DC45BC2F1B00F4C0001B2B52 /* refuge-banner.png */,
-				DC45BC301B00F4C0001B2B52 /* refuge-credit-google.png */,
 				DC45BC311B00F4C0001B2B52 /* refuge-details-accessible.png */,
 				DC45BC321B00F4C0001B2B52 /* refuge-details-unisex.png */,
 				DC45BC331B00F4C0001B2B52 /* refuge-icon-facebook.png */,
@@ -506,15 +383,6 @@
 			path = "Restroom Details";
 			sourceTree = "<group>";
 		};
-		DC45BC711B00F7C2001B2B52 /* Restroom New */ = {
-			isa = PBXGroup;
-			children = (
-				DC45BC721B00F7C2001B2B52 /* RefugeNewRestroomViewController.h */,
-				DC45BC731B00F7C2001B2B52 /* RefugeNewRestroomViewController.m */,
-			);
-			path = "Restroom New";
-			sourceTree = "<group>";
-		};
 		DC8F39B21A980FDE00A90B13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,15 +402,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		EA08CCE57F3C7FE32EA6AC15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */,
-				D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -550,12 +409,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CED0CB761A82A6D500F7F3D8 /* Build configuration list for PBXNativeTarget "refuge-ios" */;
 			buildPhases = (
-				06CA8934E178226555B3B49B /* Check Pods Manifest.lock */,
+				5D3A2D3910A40FAEA367574F /* [CP] Check Pods Manifest.lock */,
 				CED0CB4C1A82A6D300F7F3D8 /* Sources */,
 				CED0CB4D1A82A6D300F7F3D8 /* Frameworks */,
 				CED0CB4E1A82A6D300F7F3D8 /* Resources */,
-				1D69CA609FF701E4D138D1E9 /* Copy Pods Resources */,
-				DCE6BB8A1A96CCCB006B9B8A /* ShellScript */,
+				53832143D6CA6036ADDBD9AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -565,24 +423,6 @@
 			productName = "refuge-ios";
 			productReference = CED0CB501A82A6D300F7F3D8 /* refuge-ios.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CED0CB6B1A82A6D500F7F3D8 /* refuge-iosTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CED0CB791A82A6D500F7F3D8 /* Build configuration list for PBXNativeTarget "refuge-iosTests" */;
-			buildPhases = (
-				CED0CB681A82A6D500F7F3D8 /* Sources */,
-				CED0CB691A82A6D500F7F3D8 /* Frameworks */,
-				CED0CB6A1A82A6D500F7F3D8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CED0CB6E1A82A6D500F7F3D8 /* PBXTargetDependency */,
-			);
-			name = "refuge-iosTests";
-			productName = "refuge-iosTests";
-			productReference = CED0CB6C1A82A6D500F7F3D8 /* refuge-iosTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -596,10 +436,7 @@
 				TargetAttributes = {
 					CED0CB4F1A82A6D300F7F3D8 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					CED0CB6B1A82A6D500F7F3D8 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = CED0CB4F1A82A6D300F7F3D8;
+						DevelopmentTeam = G58XPAD97M;
 					};
 				};
 			};
@@ -608,6 +445,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -617,7 +455,6 @@
 			projectRoot = "";
 			targets = (
 				CED0CB4F1A82A6D300F7F3D8 /* refuge-ios */,
-				CED0CB6B1A82A6D500F7F3D8 /* refuge-iosTests */,
 			);
 		};
 /* End PBXProject section */
@@ -646,68 +483,69 @@
 				DC45BC411B00F4C0001B2B52 /* refuge-icon-facebook.png in Resources */,
 				DC45BC5C1B00F60D001B2B52 /* RefugeOnboardPage2.xib in Resources */,
 				DC45BC5B1B00F60D001B2B52 /* RefugeOnboardPage1.xib in Resources */,
-				DC45BC3C1B00F4C0001B2B52 /* refuge-background-bathroom.jpg in Resources */,
 				DC50B7F41BA5D3F500530DC2 /* iOS7-LaunchScreen-568@2x.png in Resources */,
 				DC45BC471B00F4C0001B2B52 /* refuge-onboard2.png in Resources */,
 				DC45BC481B00F4C0001B2B52 /* refuge-onboard3.png in Resources */,
 				DC45BC431B00F4C0001B2B52 /* refuge-icon-twitter.png in Resources */,
-				DC45BC3E1B00F4C0001B2B52 /* refuge-credit-google.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CED0CB6A1A82A6D500F7F3D8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEA2401D1A86F6360083510F /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06CA8934E178226555B3B49B /* Check Pods Manifest.lock */ = {
+		53832143D6CA6036ADDBD9AE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADClusterMapView/ADClusterMapView.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
+				"${BUILT_PRODUCTS_DIR}/HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.framework",
+				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
+				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADClusterMapView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNKGooglePlacesAutocomplete.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1D69CA609FF701E4D138D1E9 /* Copy Pods Resources */ = {
+		5D3A2D3910A40FAEA367574F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
+			inputFileListPaths = (
 			);
-			name = "Copy Pods Resources";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-refuge-ios-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-refuge-ios/Pods-refuge-ios-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
-		};
-		DCE6BB8A1A96CCCB006B9B8A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 55973203d8a92c52515240df5e712184276733b6 f43afcc2f2d159ed7651cb0630e0afbaa839d7853b8eae2bee864413ab2dfd14";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -721,7 +559,6 @@
 				DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */,
 				DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */,
 				DC45BC4F1B00F507001B2B52 /* RefugeMapPlace.m in Sources */,
-				DC45BC741B00F7C2001B2B52 /* RefugeNewRestroomViewController.m in Sources */,
 				DC45BC621B00F6A8001B2B52 /* RefugeInfoViewController.m in Sources */,
 				DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */,
 				DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */,
@@ -746,46 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CED0CB681A82A6D500F7F3D8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEA23FF41A83DA5E0083510F /* MockRefugeRestroomCommunicator.m in Sources */,
-				CED0CBAA1A83320F00F7F3D8 /* RefugeRestroomBuilderTests.m in Sources */,
-				DCF866671A898A6700C73806 /* RefugeMapPlottingWorkflowTests.m in Sources */,
-				CEA23FFA1A841FD30083510F /* MockRefugeRestroomCommunicatorDelegate.m in Sources */,
-				DCD8F8231ABBC81A00E2E7E8 /* NSString+RefugeTests.m in Sources */,
-				DCA355651A8C5A7100E3EDF8 /* MockRefugeMapDelegate.m in Sources */,
-				CEA23FED1A83D9F50083510F /* MockRefugeRestroomBuilder.m in Sources */,
-				DCA355541A8C47E400E3EDF8 /* RefugeMapTests.m in Sources */,
-				CED0CBA01A83259100F7F3D8 /* RefugeRestroomTests.m in Sources */,
-				DC8F39B81A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
-				CED0CBB61A833B9800F7F3D8 /* NSDate+RefugeTests.m in Sources */,
-				DCA355401A8C1E6800E3EDF8 /* RefugeMapPinTests.m in Sources */,
-				CEA240131A86CC9A0083510F /* MockRefugeDataPersistenceManager.m in Sources */,
-				DCA355331A8BD87800E3EDF8 /* MockRefugeSearch.m in Sources */,
-				CEA240001A84278B0083510F /* RefugeAppState.m in Sources */,
-				DCA355431A8C210300E3EDF8 /* MockNSUserDefaults.m in Sources */,
-				CEA23FDB1A835BBF0083510F /* RefugeRestroomManagerTests.m in Sources */,
-				CEA23FFC1A8426A60083510F /* RefugeAppStateTests.m in Sources */,
-				CEA23FF71A841BB00083510F /* RefugeRestroomCommunicatorTests.m in Sources */,
-				CEA23FE51A83D8150083510F /* RefugeRestroomCreationWorkflowTests.m in Sources */,
-				CEA23FEA1A83D9C00083510F /* MockRefugeRestroomManagerDelegate.m in Sources */,
-				DCA3555E1A8C575200E3EDF8 /* UIImage+RefugeTests.m in Sources */,
-				DCA355351A8BD91A00E3EDF8 /* RefugeSearchTests.m in Sources */,
-				DC8F39BA1A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CED0CB6E1A82A6D500F7F3D8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CED0CB4F1A82A6D300F7F3D8 /* refuge-ios */;
-			targetProxy = CED0CB6D1A82A6D500F7F3D8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CED0CB601A82A6D400F7F3D8 /* Main.storyboard */ = {
@@ -841,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -876,7 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -885,12 +683,14 @@
 		};
 		CED0CB771A82A6D500F7F3D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */;
+			baseConfigurationReference = 246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2.0.0.5;
+				DEVELOPMENT_TEAM = G58XPAD97M;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -904,8 +704,9 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -914,12 +715,14 @@
 		};
 		CED0CB781A82A6D500F7F3D8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */;
+			baseConfigurationReference = C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2.0.0.5;
+				DEVELOPMENT_TEAM = G58XPAD97M;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -927,47 +730,12 @@
 				);
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CED0CB7A1A82A6D500F7F3D8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D67BB335B17D0B597EE2123D /* Pods-refuge-ios.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "refuge-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/refuge-ios.app/refuge-ios";
-			};
-			name = Debug;
-		};
-		CED0CB7B1A82A6D500F7F3D8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D938493C66A1C4E8E58FEA67 /* Pods-refuge-ios.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "refuge-iosTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/refuge-ios.app/refuge-ios";
 			};
 			name = Release;
 		};
@@ -988,15 +756,6 @@
 			buildConfigurations = (
 				CED0CB771A82A6D500F7F3D8 /* Debug */,
 				CED0CB781A82A6D500F7F3D8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CED0CB791A82A6D500F7F3D8 /* Build configuration list for PBXNativeTarget "refuge-iosTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CED0CB7A1A82A6D500F7F3D8 /* Debug */,
-				CED0CB7B1A82A6D500F7F3D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

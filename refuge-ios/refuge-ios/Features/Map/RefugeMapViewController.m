@@ -61,6 +61,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
 
 @property (nonatomic, assign) BOOL isSyncComplete;
 @property (nonatomic, assign) BOOL isInitialZoomComplete;
+@property (nonatomic, assign) BOOL hasSeenDecommissionAlert;
 
 @property (nonatomic, strong) RefugeSearch *searchQuery;
 @property (nonatomic, strong) NSArray *searchResults;
@@ -85,6 +86,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
     [self configureMap];
     [self configureSearch];
     [self configureRestroomManager];
+    self.hasSeenDecommissionAlert = false;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -117,6 +119,27 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
     }
     
     [self.locationManager startUpdatingLocation];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (self.hasSeenDecommissionAlert) {
+        return;
+    }
+    
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Visit Refuge Web"
+                                   message:@"Our iOS app is being shut down, but Refuge Restrooms isn't! Visit refugerestrooms.org for a more functional, up-to-date experience."
+                                   preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+       handler:^(UIAlertAction * action) {
+        self.hasSeenDecommissionAlert = true;
+    }];
+
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Public methods
@@ -360,7 +383,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
         [self.locationManager requestWhenInUseAuthorization];
     } else // iOS 7
     {
-        if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorized) {
+        if (status == kCLAuthorizationStatusNotDetermined || status == kCLAuthorizationStatusAuthorizedAlways) {
             [self.locationManager startUpdatingLocation];
         } else {
             [self displayAlertForWithMessage:kRefugeErrorTextLocationServicesFailiOS7];
