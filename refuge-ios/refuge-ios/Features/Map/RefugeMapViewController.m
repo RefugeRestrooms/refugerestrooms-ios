@@ -415,11 +415,6 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
         }
         
         [self.mapView addAnnotations:mapPins];
-        
-        // only track initial plot
-        if (self.appState.hasPreloadedRestrooms == NO) {
-            [[RefugeAnalyticsService sharedInstance] trackRestroomsPlotted:[allRestrooms count]];
-        }
     }
 }
 

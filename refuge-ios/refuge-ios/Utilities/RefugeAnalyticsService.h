@@ -33,7 +33,6 @@ typedef NS_ENUM(NSInteger, RefugeAnalyticsErrorType) {
 - (void)trackNewRestroomButtonTouched;
 - (void)trackOnboardingCompleted;
 - (void)trackRestroomDetailsViewed:(RefugeMapPin *)mapPin;
-- (void)trackRestroomsPlotted:(NSUInteger)numRestroomsPlotted;
 - (void)trackSearchWithString:(NSString *)searchString placemark:(CLPlacemark *)placemark;
 
 @end
