@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */; };
+		797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */; };
 		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
 		CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA240271A8702E20083510F /* CoreLocation.framework */; };
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		797B1D9123C12F7F00874703 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
+		797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
 		BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refuge_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
@@ -177,6 +180,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		797B1D9023C12F7400874703 /* Restroom New */ = {
+			isa = PBXGroup;
+			children = (
+				797B1D9123C12F7F00874703 /* RefugeNewRestroomViewController.h */,
+				797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */,
+			);
+			path = "Restroom New";
+			sourceTree = "<group>";
+		};
 		9DAC730BBCB54D00B2C519B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +271,7 @@
 				DC45BC011B00F2C9001B2B52 /* Map */,
 				DC45BC561B00F5E7001B2B52 /* Onboarding */,
 				DC45BC6D1B00F778001B2B52 /* Restroom Details */,
+				797B1D9023C12F7400874703 /* Restroom New */,
 				DC45BC061B00F2FA001B2B52 /* Search */,
 			);
 			path = Features;
@@ -580,6 +593,7 @@
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
 				DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
+				797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
