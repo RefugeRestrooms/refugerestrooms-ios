@@ -20,7 +20,6 @@
 #import "RefugeAppDelegate.h"
 
 #import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocompleteQuery.h>
-#import "iRate+Refuge.h"
 #import <Mixpanel.h>
 #import "Mixpanel+Refuge.h"
 #import "RefugeAppState.h"
@@ -43,7 +42,6 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
 
     [self setupSearch];
-    [self setupRatingPrompt];
     [self setupAnalytics];
 
     return YES;
@@ -219,15 +217,9 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey];
 }
 
-- (void)setupRatingPrompt
-{
-    [[iRate sharedInstance] refugeSetup];
-}
-
 - (void)setupAnalytics
 {
     [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
-    [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
     [[Mixpanel sharedInstance] refugeTrackAppLaunch];
 }
 

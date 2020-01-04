@@ -33,7 +33,6 @@ PODS:
   - HNKGooglePlacesAutocomplete/Models/Networking (1.0.0):
     - AFNetworking (= 2.5.4)
     - Mantle (~> 1.5)
-  - iRate (1.11.4)
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
@@ -49,7 +48,6 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - EAIntroView (= 2.6.4)
   - HNKGooglePlacesAutocomplete (from `https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git`, branch `refuge`)
-  - iRate (~> 1.11)
   - Mantle (~> 1.5)
   - Mixpanel (~> 2.7)
   - Reachability (~> 3.2)
@@ -59,7 +57,6 @@ SPEC REPOS:
     - ADClusterMapView
     - AFNetworking
     - EAIntroView
-    - iRate
     - Mantle
     - Mixpanel
     - Reachability
@@ -79,11 +76,10 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
   HNKGooglePlacesAutocomplete: df24f7b3d2eeca22f5b3db80bd70f0e160e605d8
-  iRate: 599ed07c854e0695f3c605d1b2a64c67d912acb7
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Mixpanel: 93c4825025e6380ced273ed7178496282e385077
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-PODFILE CHECKSUM: eb893c171ea238ae326bcff30479473b5ee5a13e
+PODFILE CHECKSUM: c5dd0c7cd613db569821d539b5d22fb74bc87771
 
 COCOAPODS: 1.8.4

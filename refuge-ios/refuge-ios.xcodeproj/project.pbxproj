@@ -18,7 +18,6 @@
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
-		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
 		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
 		DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */; };
 		DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */; };
@@ -82,8 +81,6 @@
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
-		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
@@ -280,8 +277,6 @@
 		DC45BBD71B00F02D001B2B52 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */,
-				DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */,
 				DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */,
 				DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */,
 				DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */,
@@ -520,7 +515,6 @@
 				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
 				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -531,7 +525,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -585,7 +578,6 @@
 				DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */,
 				DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */,
 				DC45BBE91B00F02D001B2B52 /* UIImage+Refuge.m in Sources */,
-				DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */,
 				DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */,
 				DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
 				DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */,
