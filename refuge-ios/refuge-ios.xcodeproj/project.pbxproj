@@ -81,7 +81,6 @@
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
-				CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
 				9DAC730BBCB54D00B2C519B3 /* Pods */,
@@ -241,22 +239,6 @@
 				CED0CB541A82A6D400F7F3D8 /* Info.plist */,
 				CED0CB551A82A6D400F7F3D8 /* main.m */,
 				DC8F394B1A97FC8000A90B13 /* RefugeRestroomsSeed.sqlite */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
-			);
-			path = "refuge-iosTests";
-			sourceTree = "<group>";
-		};
-		CED0CB701A82A6D500F7F3D8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB711A82A6D500F7F3D8 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
