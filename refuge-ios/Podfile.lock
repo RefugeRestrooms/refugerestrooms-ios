@@ -36,11 +36,6 @@ PODS:
   - Mantle (1.5.4):
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
-  - Mixpanel (2.8.1):
-    - Mixpanel/Mixpanel (= 2.8.1)
-  - Mixpanel/Mixpanel (2.8.1):
-    - Mixpanel/MPCategoryHelpers
-  - Mixpanel/MPCategoryHelpers (2.8.1)
   - Reachability (3.2)
 
 DEPENDENCIES:
@@ -49,7 +44,6 @@ DEPENDENCIES:
   - EAIntroView (= 2.6.4)
   - HNKGooglePlacesAutocomplete (from `https://github.com/hkellaway/HNKGooglePlacesAutocomplete.git`, branch `refuge`)
   - Mantle (~> 1.5)
-  - Mixpanel (~> 2.7)
   - Reachability (~> 3.2)
 
 SPEC REPOS:
@@ -58,7 +52,6 @@ SPEC REPOS:
     - AFNetworking
     - EAIntroView
     - Mantle
-    - Mixpanel
     - Reachability
 
 EXTERNAL SOURCES:
@@ -77,9 +70,8 @@ SPEC CHECKSUMS:
   EAIntroView: df7dc18da73e1831d06878b9c0e13da78e6bb3ce
   HNKGooglePlacesAutocomplete: df24f7b3d2eeca22f5b3db80bd70f0e160e605d8
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
-  Mixpanel: 93c4825025e6380ced273ed7178496282e385077
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
 
-PODFILE CHECKSUM: c5dd0c7cd613db569821d539b5d22fb74bc87771
+PODFILE CHECKSUM: 77df124b069a9d2b45debb6f682e1893b6bc927e
 
 COCOAPODS: 1.8.4

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */; };
 		797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */; };
+		797B1D9923C1352E00874703 /* RefugeAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */; };
 		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
 		CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA240271A8702E20083510F /* CoreLocation.framework */; };
@@ -18,7 +19,6 @@
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
-		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
 		DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */; };
 		DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */; };
 		DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBE11B00F02D001B2B52 /* UIColor+Refuge.m */; };
@@ -65,6 +65,8 @@
 		246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		797B1D9123C12F7F00874703 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
 		797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
+		797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeAnalyticsService.m; sourceTree = "<group>"; };
+		797B1D9A23C1354100874703 /* RefugeAnalyticsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeAnalyticsService.h; sourceTree = "<group>"; };
 		BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refuge_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
@@ -81,8 +83,6 @@
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
-		DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Refuge.h"; sourceTree = "<group>"; };
@@ -277,8 +277,8 @@
 		DC45BBD71B00F02D001B2B52 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */,
-				DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */,
+				797B1D9A23C1354100874703 /* RefugeAnalyticsService.h */,
+				797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */,
 				DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */,
 				DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */,
 				DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */,
@@ -513,7 +513,6 @@
 				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
 				"${BUILT_PRODUCTS_DIR}/HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.framework",
 				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
-				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -523,7 +522,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNKGooglePlacesAutocomplete.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,7 +565,6 @@
 				DC45BC4F1B00F507001B2B52 /* RefugeMapPlace.m in Sources */,
 				DC45BC621B00F6A8001B2B52 /* RefugeInfoViewController.m in Sources */,
 				DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */,
-				DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */,
 				DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				DC45BC691B00F72C001B2B52 /* RefugeOnboardingViewController.m in Sources */,
@@ -583,6 +580,7 @@
 				DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
+				797B1D9923C1352E00874703 /* RefugeAnalyticsService.m in Sources */,
 				DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
 				797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */,

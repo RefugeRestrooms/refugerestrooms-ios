@@ -18,7 +18,7 @@
 
 #import "RefugeNewRestroomViewController.h"
 
-#import "Mixpanel+Refuge.h"
+#import "RefugeAnalyticsService.h"
 
 static NSString *const kRefugeUrlNewRestroom = @"http://www.refugerestrooms.org/restrooms/new?mobile=true";
 
@@ -58,7 +58,7 @@ static NSString *const kRefugeUrlNewRestroom = @"http://www.refugerestrooms.org/
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLoadingNewRestroomWebViewFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeLoadingNewRestroomWebViewFailed];
     
     self.loadingView.hidden = YES;
     self.errorView.hidden = NO;
