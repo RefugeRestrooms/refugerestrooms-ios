@@ -19,7 +19,6 @@
 #import "Mixpanel+Refuge.h"
 
 #import <CoreLocation/CoreLocation.h>
-#import "iRate+Refuge.h"
 #import "RefugeMapPin.h"
 #import "RefugeRestroom.h"
 
@@ -32,24 +31,6 @@ static NSString *const kRefugePrefix = @"Refuge";
 @implementation Mixpanel (Refuge)
 
 #pragma mark - Public methods
-
-- (void)refugeRegisterSuperProperties
-{
-    if ([self hasEverLaunchedApp]) {
-        [[Mixpanel sharedInstance] registerSuperProperties:@{
-            [NSString stringWithFormat:@"%@ Date First Launched", kRefugePrefix] : [iRate sharedInstance].firstUsed,
-            [NSString stringWithFormat:@"%@ Number of Launches", kRefugePrefix] :
-                [NSNumber numberWithInteger:[iRate sharedInstance].usesCount],
-            [NSString stringWithFormat:@"%@ Has Declined to Rate", kRefugePrefix] :
-                    ([iRate sharedInstance].declinedAnyVersion)
-                ? @"Yes"
-                : @"No",
-            [NSString stringWithFormat:@"%@ Has Rated", kRefugePrefix] : ([iRate sharedInstance].ratedAnyVersion)
-                ? @"Yes"
-                : @"No"
-        }];
-    }
-}
 
 - (void)refugeTrackAppLaunch
 {
@@ -141,11 +122,6 @@ static NSString *const kRefugePrefix = @"Refuge";
 }
 
 #pragma mark - Private methods
-
-- (BOOL)hasEverLaunchedApp
-{
-    return [iRate sharedInstance].usesCount > 0;
-}
 
 - (NSString *)stringForErrorType:(RefugeMixpanelErrorType)errorType
 {

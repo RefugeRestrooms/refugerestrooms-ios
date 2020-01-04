@@ -36,7 +36,6 @@ typedef NS_ENUM(NSInteger, RefugeMixpanelErrorType) {
 
 @interface Mixpanel (Refuge)
 
-- (void)refugeRegisterSuperProperties;
 - (void)refugeTrackAppLaunch;
 - (void)refugeTrackError:(NSError *)error ofType:(RefugeMixpanelErrorType)errorType;
 - (void)refugeTrackNewRestroomButtonTouched;
