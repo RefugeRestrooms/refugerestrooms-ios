@@ -1,23 +1,14 @@
 //
-// Mixpanel+Refuge.m
+//  RefugeAnalyticsService.m
+//  refuge-ios
 //
-// Copyleft (c) 2015 Refuge Restrooms
+//  Created by Harlan Kellaway on 1/4/20.
+//  Copyright © 2020 Refuge Restrooms. All rights reserved.
 //
-// Refuge is licensed under the GNU AFFERO GENERAL PUBLIC LICENSE
-// Version 3, 19 November 2007
-//
-// This notice shall be included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
-#import "Mixpanel+Refuge.h"
-
+#import <Foundation/Foundation.h>
+#import "RefugeAnalyticsService.h"
+#import <Mixpanel.h>
 #import <CoreLocation/CoreLocation.h>
 #import "RefugeMapPin.h"
 #import "RefugeRestroom.h"
@@ -28,16 +19,43 @@ static NSString *const kRefugePrefix = @"Test";
 static NSString *const kRefugePrefix = @"Refuge";
 #endif
 
-@implementation Mixpanel (Refuge)
+@implementation RefugeAnalyticsService
 
-#pragma mark - Public methods
+#define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
 
-- (void)refugeTrackAppLaunch
+#pragma mark - Initialization
+
+static RefugeAnalyticsService *_sharedInstance = nil;
+
++(RefugeAnalyticsService *)sharedInstance {
+    @synchronized([RefugeAnalyticsService class]) {
+        if (!_sharedInstance)
+          _sharedInstance = [[self alloc] init];
+        return _sharedInstance;
+    }
+    return nil;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    return self;
+}
+
+
+#pragma mark - RefugeAnalyticsService
+
+- (void)setup
+{
+    [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
+}
+
+- (void)trackAppLaunch
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ App Launched", kRefugePrefix]];
 }
 
-- (void)refugeTrackError:(NSError *)error ofType:(RefugeMixpanelErrorType)errorType
+- (void)trackError:(NSError *)error ofType:(RefugeAnalyticsErrorType)errorType
 {
     NSString *errorDomain = [error domain];
     NSString *errorDescription = [error localizedDescription];
@@ -63,17 +81,17 @@ static NSString *const kRefugePrefix = @"Refuge";
         }];
 }
 
-- (void)refugeTrackNewRestroomButtonTouched
+- (void)trackNewRestroomButtonTouched
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ New Restroom Button Touched", kRefugePrefix]];
 }
 
-- (void)refugeTrackOnboardingCompleted
+- (void)trackOnboardingCompleted
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Onboarding Completed", kRefugePrefix]];
 }
 
-- (void)refugeTrackRestroomDetailsViewed:(RefugeMapPin *)mapPin
+- (void)trackRestroomDetailsViewed:(RefugeMapPin *)mapPin
 {
     RefugeRestroom *restroom = mapPin.restroom;
     
@@ -92,7 +110,7 @@ static NSString *const kRefugePrefix = @"Refuge";
         }];
 }
 
-- (void)refugeTrackRestroomsPlotted:(NSUInteger)numRestroomsPlotted
+- (void)trackRestroomsPlotted:(NSUInteger)numRestroomsPlotted
 {
     [[Mixpanel sharedInstance] track:[NSString stringWithFormat:@"%@ Restrooms Plotted", kRefugePrefix]
                           properties:@{
@@ -101,7 +119,7 @@ static NSString *const kRefugePrefix = @"Refuge";
                           }];
 }
 
-- (void)refugeTrackSearchWithString:(NSString *)searchString placemark:(CLPlacemark *)placemark
+- (void)trackSearchWithString:(NSString *)searchString placemark:(CLPlacemark *)placemark
 {
     NSDictionary *addressInfo = placemark.addressDictionary;
     NSString *searchName = [addressInfo objectForKey:@"Name"];
@@ -123,42 +141,42 @@ static NSString *const kRefugePrefix = @"Refuge";
 
 #pragma mark - Private methods
 
-- (NSString *)stringForErrorType:(RefugeMixpanelErrorType)errorType
+- (NSString *)stringForErrorType:(RefugeAnalyticsErrorType)errorType
 {
     switch (errorType) {
-    case RefugeMixpanelErrorTypeLocationManagerFailed:
+    case RefugeAnalyticsErrorTypeLocationManagerFailed:
         return @"Location Manager Failed";
         break;
         
-    case RefugeMixpanelErrorTypeFetchingRestroomsFailed:
+    case RefugeAnalyticsErrorTypeFetchingRestroomsFailed:
         return @"Fetching Restrooms From API Failed";
         break;
         
-    case RefugeMixpanelErrorTypeSavingRestroomsFailed:
+    case RefugeAnalyticsErrorTypeSavingRestroomsFailed:
         return @"Saving Restrooms Failed";
         break;
         
-    case RefugeMixpanelErrorTypeResolvingPlacemarkFailed:
+    case RefugeAnalyticsErrorTypeResolvingPlacemarkFailed:
         return @"Resolving Placemark Failed";
         break;
         
-    case RefugeMixpanelErrorTypeSearchAttemptFailed:
+    case RefugeAnalyticsErrorTypeSearchAttemptFailed:
         return @"Search Attempt Failed";
         break;
         
-    case RefugeMixpanelErrorTypePreloadingRestrooms:
+    case RefugeAnalyticsErrorTypePreloadingRestrooms:
         return @"Pre-loading Restrooms Failed";
         break;
         
-    case RefugeMixpanelErrorTypeLocalStoreFetchFailed:
+    case RefugeAnalyticsErrorTypeLocalStoreFetchFailed:
         return @"Fetching Restrooms From Local Store Failed";
         break;
         
-    case RefugeMixpanelErrorTypeOpeningLinkFailed:
+    case RefugeAnalyticsErrorTypeOpeningLinkFailed:
         return @"Opening Link Failed";
         break;
         
-    case RefugeMixpanelErrorTypeLoadingNewRestroomWebViewFailed:
+    case RefugeAnalyticsErrorTypeLoadingNewRestroomWebViewFailed:
         return @"Loading New Restroom Web View Failed";
         break;
         
