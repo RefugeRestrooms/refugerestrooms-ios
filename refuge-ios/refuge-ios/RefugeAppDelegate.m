@@ -20,12 +20,8 @@
 #import "RefugeAppDelegate.h"
 
 #import <HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocompleteQuery.h>
-#import "iRate+Refuge.h"
-#import <Mixpanel.h>
-#import "Mixpanel+Refuge.h"
 #import "RefugeAppState.h"
-
-#define REFUGE_MIXPANEL_TOKEN @"5140bc4b6ebcb9fe05feb7bc7bf7ed11"
+#import "RefugeAnalyticsService.h"
 
 static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2hD16SJyh-QGbpeZIwv5mCSlY";
 
@@ -43,9 +39,7 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     self.appState = [[RefugeAppState alloc] initWithUserDefaults:[NSUserDefaults standardUserDefaults]];
 
     [self setupSearch];
-    [self setupRatingPrompt];
     [self setupAnalytics];
-
     return YES;
 }
 
@@ -207,7 +201,7 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
         NSError *error = nil;
 
         if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&error]) {
-            [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypePreloadingRestrooms];
+            [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypePreloadingRestrooms];
         } else {
             self.appState.hasPreloadedRestrooms = YES;
         }
@@ -219,16 +213,10 @@ static NSString *const kRefugeGooglePlacesAutocompleteApiKey = @"AIzaSyAs1N-hce2
     [HNKGooglePlacesAutocompleteQuery setupSharedQueryWithAPIKey:kRefugeGooglePlacesAutocompleteApiKey];
 }
 
-- (void)setupRatingPrompt
-{
-    [[iRate sharedInstance] refugeSetup];
-}
-
 - (void)setupAnalytics
 {
-    [Mixpanel sharedInstanceWithToken:REFUGE_MIXPANEL_TOKEN];
-    [[Mixpanel sharedInstance] refugeRegisterSuperProperties];
-    [[Mixpanel sharedInstance] refugeTrackAppLaunch];
+    [[RefugeAnalyticsService sharedInstance] setup];
+    [[RefugeAnalyticsService sharedInstance] trackAppLaunch];
 }
 
 @end

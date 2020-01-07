@@ -18,7 +18,7 @@
 
 #import "RefugeInfoViewController.h"
 
-#import "Mixpanel+Refuge.h"
+#import "RefugeAnalyticsService.h"
 
 NSString *RefugeInfoViewErrorDomain = @"RefugeInfoViewErrorDomain";
 static NSInteger const kRefugeInfoErrorCode = 0;
@@ -95,7 +95,7 @@ static NSString *const kRefugeTwittetLinkName = @"https://twitter.com/refugerest
         @{ NSLocalizedDescriptionKey : [NSString stringWithFormat:@"Could not open link: %@", linkName] };
     NSError *error = [NSError errorWithDomain:RefugeInfoViewErrorDomain code:kRefugeInfoErrorCode userInfo:userInfo];
     
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeOpeningLinkFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeOpeningLinkFailed];
 }
 
 @end

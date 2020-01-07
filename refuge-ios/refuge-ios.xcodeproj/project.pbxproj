@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2839A4B38A1493314CB0AA06 /* Pods_refuge_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */; };
+		797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */; };
+		797B1D9923C1352E00874703 /* RefugeAnalyticsService.m in Sources */ = {isa = PBXBuildFile; fileRef = 797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */; };
 		CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA23FFE1A84278B0083510F /* RefugeAppState.m */; };
 		CEA2401F1A86F9410083510F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA2401E1A86F9410083510F /* MapKit.framework */; };
 		CEA240281A8702E20083510F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEA240271A8702E20083510F /* CoreLocation.framework */; };
@@ -17,8 +19,6 @@
 		CED0CB621A82A6D400F7F3D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB601A82A6D400F7F3D8 /* Main.storyboard */; };
 		CED0CB671A82A6D400F7F3D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED0CB651A82A6D400F7F3D8 /* LaunchScreen.xib */; };
 		DC3A1CB51A927F5100445D33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3A1CB41A927F5100445D33 /* Images.xcassets */; };
-		DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */; };
-		DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */; };
 		DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */; };
 		DC45BBE71B00F02D001B2B52 /* NSString+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBDF1B00F02D001B2B52 /* NSString+Refuge.m */; };
 		DC45BBE81B00F02D001B2B52 /* UIColor+Refuge.m in Sources */ = {isa = PBXBuildFile; fileRef = DC45BBE11B00F02D001B2B52 /* UIColor+Refuge.m */; };
@@ -63,6 +63,10 @@
 
 /* Begin PBXFileReference section */
 		246BBA90D5FC7E20DE185107 /* Pods-refuge-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.debug.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		797B1D9123C12F7F00874703 /* RefugeNewRestroomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeNewRestroomViewController.h; sourceTree = "<group>"; };
+		797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeNewRestroomViewController.m; sourceTree = "<group>"; };
+		797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RefugeAnalyticsService.m; sourceTree = "<group>"; };
+		797B1D9A23C1354100874703 /* RefugeAnalyticsService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RefugeAnalyticsService.h; sourceTree = "<group>"; };
 		BA7514E444654CEAD5C1F9E2 /* Pods_refuge_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_refuge_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C49E86F7E84AD0EEBC6184ED /* Pods-refuge-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-refuge-ios.release.xcconfig"; path = "Target Support Files/Pods-refuge-ios/Pods-refuge-ios.release.xcconfig"; sourceTree = "<group>"; };
 		CEA23FFD1A84278B0083510F /* RefugeAppState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefugeAppState.h; sourceTree = "<group>"; };
@@ -77,12 +81,7 @@
 		CED0CB5B1A82A6D400F7F3D8 /* refuge_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = refuge_ios.xcdatamodel; sourceTree = "<group>"; };
 		CED0CB611A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CED0CB661A82A6D400F7F3D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CED0CB711A82A6D500F7F3D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC3A1CB41A927F5100445D33 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "iRate+Refuge.h"; sourceTree = "<group>"; };
-		DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "iRate+Refuge.m"; sourceTree = "<group>"; };
-		DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Mixpanel+Refuge.h"; sourceTree = "<group>"; };
-		DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Mixpanel+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Refuge.h"; sourceTree = "<group>"; };
 		DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Refuge.m"; sourceTree = "<group>"; };
 		DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Refuge.h"; sourceTree = "<group>"; };
@@ -177,6 +176,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		797B1D9023C12F7400874703 /* Restroom New */ = {
+			isa = PBXGroup;
+			children = (
+				797B1D9123C12F7F00874703 /* RefugeNewRestroomViewController.h */,
+				797B1D9223C12F9200874703 /* RefugeNewRestroomViewController.m */,
+			);
+			path = "Restroom New";
+			sourceTree = "<group>";
+		};
 		9DAC730BBCB54D00B2C519B3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				CED0CB521A82A6D300F7F3D8 /* refuge-ios */,
-				CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */,
 				CED0CB511A82A6D300F7F3D8 /* Products */,
 				68FB1F0E5CB3E3A5E8E048A1 /* Frameworks */,
 				9DAC730BBCB54D00B2C519B3 /* Pods */,
@@ -236,22 +243,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CED0CB6F1A82A6D500F7F3D8 /* refuge-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB701A82A6D500F7F3D8 /* Supporting Files */,
-			);
-			path = "refuge-iosTests";
-			sourceTree = "<group>";
-		};
-		CED0CB701A82A6D500F7F3D8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CED0CB711A82A6D500F7F3D8 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		DC45BBD61B00EFD9001B2B52 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +250,7 @@
 				DC45BC011B00F2C9001B2B52 /* Map */,
 				DC45BC561B00F5E7001B2B52 /* Onboarding */,
 				DC45BC6D1B00F778001B2B52 /* Restroom Details */,
+				797B1D9023C12F7400874703 /* Restroom New */,
 				DC45BC061B00F2FA001B2B52 /* Search */,
 			);
 			path = Features;
@@ -267,10 +259,8 @@
 		DC45BBD71B00F02D001B2B52 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				DC45BBD81B00F02D001B2B52 /* iRate+Refuge.h */,
-				DC45BBD91B00F02D001B2B52 /* iRate+Refuge.m */,
-				DC45BBDA1B00F02D001B2B52 /* Mixpanel+Refuge.h */,
-				DC45BBDB1B00F02D001B2B52 /* Mixpanel+Refuge.m */,
+				797B1D9A23C1354100874703 /* RefugeAnalyticsService.h */,
+				797B1D9823C1352E00874703 /* RefugeAnalyticsService.m */,
 				DC45BBDC1B00F02D001B2B52 /* NSDate+Refuge.h */,
 				DC45BBDD1B00F02D001B2B52 /* NSDate+Refuge.m */,
 				DC45BBDE1B00F02D001B2B52 /* NSString+Refuge.h */,
@@ -505,9 +495,7 @@
 				"${BUILT_PRODUCTS_DIR}/EAIntroView/EAIntroView.framework",
 				"${BUILT_PRODUCTS_DIR}/HNKGooglePlacesAutocomplete/HNKGooglePlacesAutocomplete.framework",
 				"${BUILT_PRODUCTS_DIR}/Mantle/Mantle.framework",
-				"${BUILT_PRODUCTS_DIR}/Mixpanel/Mixpanel.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
-				"${BUILT_PRODUCTS_DIR}/iRate/iRate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -516,9 +504,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EAIntroView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNKGooglePlacesAutocomplete.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mantle.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mixpanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iRate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -561,7 +547,6 @@
 				DC45BC4F1B00F507001B2B52 /* RefugeMapPlace.m in Sources */,
 				DC45BC621B00F6A8001B2B52 /* RefugeInfoViewController.m in Sources */,
 				DC45BBF01B00F13E001B2B52 /* RefugeHTTPSessionManager.m in Sources */,
-				DC45BBE51B00F02D001B2B52 /* Mixpanel+Refuge.m in Sources */,
 				DC8F39B71A980FDE00A90B13 /* RefugeRestroom.m in Sources */,
 				CED0CB561A82A6D400F7F3D8 /* main.m in Sources */,
 				DC45BC691B00F72C001B2B52 /* RefugeOnboardingViewController.m in Sources */,
@@ -572,14 +557,15 @@
 				DC45BC6C1B00F745001B2B52 /* RefugeMapViewController.m in Sources */,
 				DC45BBE61B00F02D001B2B52 /* NSDate+Refuge.m in Sources */,
 				DC45BBE91B00F02D001B2B52 /* UIImage+Refuge.m in Sources */,
-				DC45BBE41B00F02D001B2B52 /* iRate+Refuge.m in Sources */,
 				DC45BBFC1B00F23F001B2B52 /* RefugeRestroomManager.m in Sources */,
 				DC8F39B91A980FDE00A90B13 /* RefugeRestroomEntity.m in Sources */,
 				DC45BC701B00F78B001B2B52 /* RefugeRestroomDetailsViewController.m in Sources */,
 				DC45BC001B00F280001B2B52 /* RefugeDataPersistenceManager.m in Sources */,
 				CED0CB5C1A82A6D400F7F3D8 /* refuge_ios.xcdatamodeld in Sources */,
+				797B1D9923C1352E00874703 /* RefugeAnalyticsService.m in Sources */,
 				DC45BC091B00F2FA001B2B52 /* RefugeSearch.m in Sources */,
 				CEA23FFF1A84278B0083510F /* RefugeAppState.m in Sources */,
+				797B1D9323C12F9200874703 /* RefugeNewRestroomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -689,7 +675,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.0.0.5;
+				CURRENT_PROJECT_VERSION = 2.1.0.1;
 				DEVELOPMENT_TEAM = G58XPAD97M;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -706,7 +692,7 @@
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -721,7 +707,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2.0.0.5;
+				CURRENT_PROJECT_VERSION = 2.1.0.1;
 				DEVELOPMENT_TEAM = G58XPAD97M;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -732,7 +718,7 @@
 				INFOPLIST_FILE = "refuge-ios/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -20,7 +20,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
-#import "Mixpanel+Refuge.h"
+#import "RefugeAnalyticsService.h"
 #import <Reachability/Reachability.h>
 #import "RefugeAppState.h"
 #import "RefugeDataPersistenceManager.h"
@@ -164,7 +164,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLocationManagerFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeLocationManagerFailed];
     
     [self.locationManager stopUpdatingLocation];
 }
@@ -173,14 +173,14 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
 
 - (void)tappingCalloutAccessoryDidRetrievedSingleMapPin:(RefugeMapPin *)mapPin
 {
-    [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:mapPin];
+    [[RefugeAnalyticsService sharedInstance] trackRestroomDetailsViewed:mapPin];
     
     [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:mapPin];
 }
 
 - (void)retrievingSingleMapPinFromCalloutAccessoryFailed:(RefugeMapPin *)firstPinRetrieved
 {
-    [[Mixpanel sharedInstance] refugeTrackRestroomDetailsViewed:firstPinRetrieved];
+    [[RefugeAnalyticsService sharedInstance] trackRestroomDetailsViewed:firstPinRetrieved];
     
     [self performSegueWithIdentifier:kRefugeSegueNameShowRestroomDetails sender:firstPinRetrieved];
 }
@@ -197,19 +197,19 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
 
 - (void)fetchingRestroomsFromApiFailedWithError:(NSError *)error
 {
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeFetchingRestroomsFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeFetchingRestroomsFailed];
     
     self.isSyncComplete = YES;
 }
 
 - (void)fetchingRestroomsFromLocalStoreFailedWithError:(NSError *)error
 {
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeLocalStoreFetchFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeLocalStoreFetchFailed];
 }
 
 - (void)savingRestroomsFailedWithError:(NSError *)error
 {
-    [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSavingRestroomsFailed];
+    [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeSavingRestroomsFailed];
     
     self.isSyncComplete = YES;
 }
@@ -262,14 +262,14 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
     
     [place resolveToPlacemarkWithSuccessBlock:^(CLPlacemark *placemark) {
     
-        [[Mixpanel sharedInstance] refugeTrackSearchWithString:cellText placemark:placemark];
+        [[RefugeAnalyticsService sharedInstance] trackSearchWithString:cellText placemark:placemark];
         
         [self placemarkSelected:placemark];
         
         [self.searchResultsTable deselectRowAtIndexPath:indexPath animated:NO];
     } failure:^(NSError *error) {
     
-        [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeResolvingPlacemarkFailed];
+        [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeResolvingPlacemarkFailed];
         
         [self displayAlertForWithMessage:kRefugeErrorTextPlacemarkCreationFail];
     }];
@@ -289,13 +289,13 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
     }
     
     if ([[segue identifier] isEqualToString:kRefugeSegueNameShowNewRestroomForm]) {
-        [[Mixpanel sharedInstance] refugeTrackNewRestroomButtonTouched];
+        [[RefugeAnalyticsService sharedInstance] trackNewRestroomButtonTouched];
     }
 }
 
 - (IBAction)unwindFromOnboardingView:(UIStoryboardSegue *)segue
 {
-    [[Mixpanel sharedInstance] refugeTrackOnboardingCompleted];
+    [[RefugeAnalyticsService sharedInstance] trackOnboardingCompleted];
     
     self.appState.hasViewedOnboarding = YES;
 }
@@ -415,11 +415,6 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
         }
         
         [self.mapView addAnnotations:mapPins];
-        
-        // only track initial plot
-        if (self.appState.hasPreloadedRestrooms == NO) {
-            [[Mixpanel sharedInstance] refugeTrackRestroomsPlotted:[allRestrooms count]];
-        }
     }
 }
 
@@ -439,7 +434,7 @@ static NSString *const kRefugeErrorTextLocationServicesFailiOS7 =
         }
         failure:^(NSError *error) {
         
-            [[Mixpanel sharedInstance] refugeTrackError:error ofType:RefugeMixpanelErrorTypeSearchAttemptFailed];
+            [[RefugeAnalyticsService sharedInstance] trackError:error ofType:RefugeAnalyticsErrorTypeSearchAttemptFailed];
             
             [self displayAlertForWithMessage:kRefugeErrorTextAutocompleteFail];
             [self dismissSearch];
